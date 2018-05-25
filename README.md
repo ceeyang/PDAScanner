@@ -1,20 +1,27 @@
-# PDAScanner
+## 项目介绍
+本项目由脚手架 [F7+Vue2.0+Cordova+WebPack][0] 搭建
 
-vue + cordova + webpack 跨平台开发的 PDA
 
-### 启动项目
+## 启动项目:
 
-```shell
-npm install -g phonegap
-
-npm install
-
-mkdir www
-
-phonegap platform add browser
-
-phonegap run browser
-s
-#开发时使用下面命令
-phonegap run browser -d -- --lr
 ```
+    // 安装 phonegap
+    npm install -g phonegap
+
+    // 安装依赖
+    npm/cnpm install
+
+    // 创建 www 文件夹
+    mkdir www
+
+    // 添加平台
+    phonegap platform add browser android ios
+
+    // 运行项目
+    phonegap run browser
+    phonegap run browser -d -- --lr --live-reload
+
+```
+
+
+[0]:https://github.com/caiobiodere/cordova-template-framework7-vue-webpack
