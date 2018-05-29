@@ -6,3 +6,102 @@ $main-line-color: #E4E4E4;
 
 // 主字体颜色
 $main-title-color: #333333;
+
+
+$font-size: px2rem(14);                /****** 14px ******/
+$small-font: px2rem(12);           /****** 12px ******/
+$tag-font: px2rem(5);           /****** 12px ******/
+$font-title: px2rem(16);           /****** 16px ******/
+$font-title-18: px2rem(18);           /****** 18px ******/
+$img-width: px2rem(170);           /****** 18px ******/
+$h3: px2rem(18);                   /****** 18px ******/
+$h2: px2rem(26);                   /****** 26px ******/
+$h1: px2rem(40);                   /****** 40px ******/
+$status-bar-font:px2rem(19);
+$main-background:#fff;
+
+$base-space:10;                              /****** 常用变量中没有定义的，page中基于base-space来计算 ******/
+$x-space:px2rem($base-space / 2);
+$space: px2rem($base-space);                 /****** 10px ******/
+$mx-space: px2rem(18);                      /****** 18px ******/
+$m-space: px2rem($base-space + $base-space / 2);     /****** 15px ******/
+$l-space: px2rem($base-space * 2);            /****** 20px ******/
+$base-gap: px2rem(40);                      /****** 40px ******/
+
+$icon-size:px2rem(24);              /****** 24px ******/
+
+$nav-height: px2rem(44);            /****** 状态栏20px，导航栏44px ******/
+$footbar-height:px2rem(49);           /****** 底部标签栏49px ******/
+$filter-height: px2rem(44);         /****** 顶部筛选高度44px ******/
+$banner-height: px2rem(125);            /****** 首页banner125px ******/
+$input-height: px2rem(48);          /****** 输入框高度48px ******/
+$btn-height: px2rem(44);          /****** 按钮高度44px ******/
+
+$btn-space:3;
+
+
+
+
+$subject-banner-height: 22rem;
+$course-player-height: px2rem(229);
+
+$p-line-height: 1.8;
+
+$line-height-12:px2rem(12);                    /****行高12****/
+$line-height-17:px2rem(17);                    /****行高17****/
+$line-height-18:px2rem(18);                    /****行高18****/
+$line-height-22:px2rem(22);                    /****行高22****/
+
+//color
+$icon-color-gray:#777;
+$icon-color-gray-2:#555;
+$icon-color-gray-3:#666;
+$icon-color-gray-4:#999;
+$icon-color-gray-5:#ccc;
+$icon-color-gray-6:#151515;
+$icon-color-gray-7:#333;
+
+$input-bg:#f3f3f3;
+$input-placeholder:#ccc;
+
+$font-color-gray:#999;
+$font-color-black:#333;
+$font-color-gray2:#777;
+$font-color-gray3:#ccc;
+$font-color-gray4:#eee;
+$font-color-white:#fff;
+
+$border-color:#ddd;
+$border-color2:#ccc;
+$border-radius: px2rem(3);
+
+$color-title-type:#7CFC00;          /*题目题型颜色*/
+$color-item-background:#F5FFFA;      /*做题背景颜色*/
+
+$color-description:#93999f;
+$color-count-red:#F56B6B;
+
+$subject-cover-height:100vw/3*2;
+
+$color-Light-grey:rgba(222, 222, 222, 0.3);
+
+h1,.h1 {
+    font-size: $h1;
+}
+
+h2,.h2 {
+    font-size: $h2;
+}
+
+h3,.h3 {
+    font-size: $h3;
+}
+
+.font-title {
+    font-size: $font-title;
+}
+
+.small-font,
+.tip-font {
+    font-size: $small-font;
+}

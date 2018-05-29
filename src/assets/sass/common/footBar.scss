@@ -1,0 +1,9 @@
+.common-footbar{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    .is-selected{
+      background-color: $color-Light-grey;
+    }
+}

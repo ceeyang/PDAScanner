@@ -3,6 +3,9 @@
 // 全局样式
 @import "themes/theme.scss";
 
+// 公共组件样式
+@import "common/footBar.scss";
+
 // 页面样式
 @import "pages/home/home.scss";
 @import "pages/home/homeItem.scss";

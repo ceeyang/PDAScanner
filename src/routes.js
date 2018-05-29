@@ -2,6 +2,15 @@ export default [
   {
     path: '/',
     component: require('./assets/vue/pages/home/home.vue')
+    // component: require('./assets/vue/pages/home.vue')
+  },
+  {
+    path: '/chats/',
+    component: require('./assets/vue/pages/chats/chats.vue')
+  },
+  {
+    path: '/mine/',
+    component: require('./assets/vue/pages/mine/mine.vue')
   },
   {
     path: '/about/',

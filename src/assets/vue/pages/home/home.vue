@@ -35,30 +35,17 @@
 
 
         <!-- tabbar -->
-        <f7-toolbar tabbar labels>
-              <f7-link tab-link="#tab1">
-                   <i class="f7-icons">chats</i>
-                   <span class="tabbar-label">消息</span>
-              </f7-link>
-              <f7-link tab-link="#tab1" class="isSelected">
-                  <i class="f7-icons">home</i>
-                  <span class="tabbar-label">消息</span>
-              </f7-link>
-              <f7-link tab-link="#tab1">
-                  <i class="f7-icons">person</i>
-                  <span class="tabbar-label">消息</span>
-              </f7-link>
-
-        </f7-toolbar>
+        <foot-bar select="home"></foot-bar>
     </f7-page>
 </template>
 
 <script>
-import HomeItem from './homeItem'
+import HomeItem from './homeItem';
+import FootBar from '../../common/footBar';
 
 export default {
     components: {
-        HomeItem
+        HomeItem, FootBar
     }
 }
 </script>
