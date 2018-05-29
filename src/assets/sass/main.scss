@@ -1,1 +1,11 @@
-@import "sys/login.scss";
+// @import "sys/main.scss";
+
+// 全局样式
+@import "themes/theme.scss";
+
+// 页面样式
+@import "pages/home/home.scss";
+@import "pages/home/homeItem.scss";
+
+
+@import "pages/sys/global.scss";
