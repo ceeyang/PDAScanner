@@ -1,5 +1,6 @@
 <template lang="html">
-    <f7-navbar style="background-color:#70D746">
+    <!-- <f7-navbar class="common-navBar"> -->
+    <f7-navbar class="common-navBar">
         <f7-nav-title :title='title'></f7-nav-title>
         <f7-nav-right>
             <div @click="barcodeScanner">
