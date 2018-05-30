@@ -2,11 +2,9 @@
     <f7-page class="mine-page">
 
         <!-- Nav -->
-        <f7-navbar>
-            <f7-nav-right>
-                <i class="f7-icons">settings</i>
-            </f7-nav-right>
-        </f7-navbar>
+        <nav-bar title="我"></nav-bar>
+
+        
 
         <!-- tabbar -->
         <foot-bar select="mine"></foot-bar>
@@ -15,11 +13,12 @@
 
 <script>
 import FootBar from '../../common/footBar';
-
+import NavBar from '../../common/navBar';
 export default {
     components: {
-        FootBar
-    }
+      FootBar,
+      NavBar,
+    },
 }
 </script>
 

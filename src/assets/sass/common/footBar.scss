@@ -1,9 +1,39 @@
-.common-footbar{
+.home-foot{
+
     position: absolute;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    .is-selected{
-      background-color: $color-Light-grey;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    .top-line{
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 1px;
+        background-color: $main-line-color;
+    }
+
+    .foot-content{
+        border: px2rem(1) solid $color-Light-grey;
+        display: flex;
+        background-color: white;
+        height: px2rem(55);
+        .home-item{
+          color: #555;
+          font-weight: 600;
+          font-size: $small-font;
+          flex:1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          .icon-size{
+            font-size: px2rem(15);
+          }
+        }
+        .is-selected{
+          background-color: $color-Light-grey;
+          color: $main-background-color;
+        }
     }
 }

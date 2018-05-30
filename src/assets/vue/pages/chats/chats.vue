@@ -2,9 +2,7 @@
     <f7-page class="chats-page">
 
         <!-- Nav -->
-        <f7-navbar>
-            <f7-nav-title>深圳市源泰达科技有限公司</f7-nav-title>
-        </f7-navbar>
+        <nav-bar title='消息'></nav-bar>
 
 
         <!-- tabbar -->
@@ -14,10 +12,11 @@
 
 <script>
 import FootBar from '../../common/footBar';
+import NavBar from '../../common/navBar';
 
 export default {
     components: {
-        FootBar
+        FootBar, NavBar
     }
 }
 </script>
