@@ -5,7 +5,9 @@
         <f7-navbar>
             <f7-nav-title>深圳市源泰达科技有限公司</f7-nav-title>
             <f7-nav-right>
-                <i class="f7-icons">add</i>
+                <div @click="barcodeScanner">
+                    <i class="f7-icons">camera</i>
+                </div>
             </f7-nav-right>
         </f7-navbar>
 
@@ -44,6 +46,23 @@ import HomeItem from './homeItem';
 import FootBar from '../../common/footBar';
 
 export default {
+
+    data () {
+        return {
+
+        }
+    },
+
+    mounted() {
+
+    },
+
+    methods: {
+        barcodeScanner() {
+            console.log('barcodeScanner');
+        }
+    },
+
     components: {
         HomeItem, FootBar
     }
