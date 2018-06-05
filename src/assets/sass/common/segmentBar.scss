@@ -1,0 +1,23 @@
+.segment-bar {
+  display: flex;
+  background-color: white;
+  // height: px2rem(33);
+  // border-bottom: px2rem(40) solid $main-line-color;
+  .segment-tab {
+    flex: 1;
+    font-size: $small-font;
+    padding: 0.4rem 0;
+    margin-bottom: 0;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .active {
+    border-bottom: px2rem(2) solid #26a2ff;
+    color: white;
+    background-color: $main-background-color;
+  }
+}
