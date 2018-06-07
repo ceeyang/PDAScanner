@@ -1,16 +1,26 @@
 <template>
-  <f7-page>
-    <f7-navbar title="About F7" back-link="Back" sliding></f7-navbar>
-    <f7-block-title>Welcome to Framework7</f7-block-title>
-    <f7-block strong>
-      <p>Framework7 - is a free and open source HTML mobile framework to develop hybrid mobile apps or web apps with iOS or Android (Material) native look and feel. It is also an indispensable prototyping apps tool to show working app prototype as soon as possible in case you need to. Framework7 is created by Vladimir Kharlampidi (iDangero.us).</p>
-      <p>The main approach of the Framework7 is to give you an opportunity to create iOS and Android (Material) apps with HTML, CSS and JavaScript easily and clear. Framework7 is full of freedom. It doesn't limit your imagination or offer ways of any solutions somehow. Framework7 gives you freedom!</p>
-      <p>Framework7 is not compatible with all platforms. It is focused only on iOS and Android (Material) to bring the best experience and simplicity.</p>
-      <p>Framework7 is definitely for you if you decide to build iOS and Android hybrid app (PhoneGap) or web app that looks like and feels as great native iOS or Android (Material) apps.</p>
-    </f7-block>
-  </f7-page>
+    <f7-page>
+        <f7-navbar title="关于我们" back-link="Back"></f7-navbar>
+
+        <div class="about-page">
+            <img class="about-logo-img" src="../../images/loginlogo.png"/>
+            <div class="about-page company-info">
+                <p>深圳市源泰达科技有限公司</p>
+                <a class="tell" @click="phoneCall">18108120400</a>
+                <a class="website" href="http://ceeyang.com">www.ceeyang.com</a>
+            </div>
+            <!-- <a class="version-info">LT Version 1.0</a> -->
+        </div>
+    </f7-page>
 </template>
+
 <script>
- export default {
-  };
+    export default {
+
+        methods: {
+            phoneCall() {
+                window.location.href="tel:18108120400"
+            }
+        },
+    }
 </script>

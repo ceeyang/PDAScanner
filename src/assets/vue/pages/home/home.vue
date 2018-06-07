@@ -2,7 +2,15 @@
     <f7-page class="home-page">
 
         <!-- Nav -->
-        <nav-bar title="深圳市源泰达科技有限公司"></nav-bar>
+        <!-- <nav-bar title="深圳市源泰达科技有限公司"></nav-bar> -->
+        <f7-navbar>
+            <f7-nav-title title='深圳市源泰达科技有限公司'></f7-nav-title>
+            <f7-nav-right>
+                <div @click="barcodeScanner">
+                    <i class="f7-icons">camera</i>
+                </div>
+            </f7-nav-right>
+        </f7-navbar>
 
         <!-- content -->
         <f7-swiper pagination class="home-page-swiper">

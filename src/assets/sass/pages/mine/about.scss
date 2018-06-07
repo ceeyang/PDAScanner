@@ -1,0 +1,37 @@
+.about-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  .about-logo-img{
+    margin-top: px2rem(70);
+    width: 50%;
+    height:50%;
+  }
+
+  .company-info{
+    height: 90px;
+    justify-content: space-between;
+    font-size: $font-size;
+    margin-top: px2rem(60);
+    .tell{
+      color: #3D7ADD;
+    }
+    .website{
+      color: #3D7ADD;
+    }
+  }
+
+  .version-info{
+    position:absolute;
+    bottom:px2rem(10);
+    width: 100%;
+    text-align: center;
+    line-height: 44px;
+    height: 44px;
+    font-size: $font-title;
+    &.text{
+      color: white;
+    }
+  }
+}
