@@ -34,6 +34,11 @@
 
         <!-- tabbar -->
         <foot-bar select="mine"></foot-bar>
+        <!-- <f7-toolbar tabbar labels>
+            <f7-link><a class="link" href="/chats/" animate><i class="f7-icons">chats</i><span>消息</span></a></f7-link>
+            <f7-link><a class="link" href="/"><i class="f7-icons">home</i><span>主页</span></a></f7-link>
+            <f7-link><a class="link" ><i class="f7-icons">personal</i><span>我的</span></a></f7-link>
+        </f7-toolbar> -->
     </f7-page>
 </template>
 

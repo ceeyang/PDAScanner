@@ -14,36 +14,24 @@
         <!-- segment 选择器 -->
         <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="currentIndex"></segment-bar>
 
-        <div class="content ptr-content" data-ptr-distance="55" @ptr:refresh="onfresh">
-            <div class="ptr-preloader">
-              <div class="preloader"></div>
-              <div class="ptr-arrow"></div>
-            </div>
-
-            <f7-list v-if='currentIndex==0'>
-                <f7-list-item title='hhaha'></f7-list-item>
-                <f7-list-item title='hhaha'></f7-list-item>
-                <f7-list-item title='hhaha'></f7-list-item>
-                <f7-list-item title='hhaha'></f7-list-item>
-            </f7-list>
-
-            <f7-list v-if='currentIndex==1'>
-                <f7-list-item title='hehheheh'></f7-list-item>
-                <f7-list-item title='heheheh'></f7-list-item>
-                <f7-list-item title='heheheh'></f7-list-item>
-                <f7-list-item title='hehehe'></f7-list-item>
-            </f7-list>
-
-            <f7-list v-if='currentIndex==2'>
-                <f7-list-item title='dkasjflsdjfaslk'></f7-list-item>
-                <f7-list-item title='sjfasfs'></f7-list-item>
-                <f7-list-item title='hhaha'></f7-list-item>
-                <f7-list-item title='hhaha'></f7-list-item>
+        <div class="page-content pull-to-refresh-content">
+            <f7-list>
+                <f7-list-item title="ahah"></f7-list-item>
+                <f7-list-item title="ahah"></f7-list-item>
+                <f7-list-item title="ahah"></f7-list-item>
+                <f7-list-item title="ahah"></f7-list-item>
+                <f7-list-item title="ahah"></f7-list-item>
+                <f7-list-item title="ahah"></f7-list-item>
+                <f7-list-item title="ahah"></f7-list-item>
             </f7-list>
         </div>
 
         <!-- tabbar -->
-        <foot-bar select="chats"></foot-bar>
+        <!-- <foot-bar select="chats"></foot-bar> -->
+        <f7-toolbar tabbar>
+  <f7-link tab-link="#tab1" active>Tab 1</f7-link>
+  <f7-link tab-link="#tab2">Tab 2</f7-link>
+</f7-toolbar>
     </f7-page>
 </template>
 
