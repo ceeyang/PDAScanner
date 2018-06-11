@@ -14,24 +14,10 @@
         <!-- segment 选择器 -->
         <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="currentIndex"></segment-bar>
 
-        <div class="page-content pull-to-refresh-content">
-            <f7-list>
-                <f7-list-item title="ahah"></f7-list-item>
-                <f7-list-item title="ahah"></f7-list-item>
-                <f7-list-item title="ahah"></f7-list-item>
-                <f7-list-item title="ahah"></f7-list-item>
-                <f7-list-item title="ahah"></f7-list-item>
-                <f7-list-item title="ahah"></f7-list-item>
-                <f7-list-item title="ahah"></f7-list-item>
-            </f7-list>
-        </div>
+        <scroll :onfresh='onfresh'></scroll>
 
         <!-- tabbar -->
-        <!-- <foot-bar select="chats"></foot-bar> -->
-        <f7-toolbar tabbar>
-  <f7-link tab-link="#tab1" active>Tab 1</f7-link>
-  <f7-link tab-link="#tab2">Tab 2</f7-link>
-</f7-toolbar>
+        <foot-bar select="chats"></foot-bar>
     </f7-page>
 </template>
 

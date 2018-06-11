@@ -1,0 +1,39 @@
+.page-login{
+
+    .login-background-image{
+        width:100%;
+        height: 100%;
+        background-color: lightgrey;
+    }
+
+    .login-content{
+        position: absolute;
+        top:0px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .login-logo{
+            // margin-top: px2rem(70);
+            margin-top: 70px;
+            width: 50%;
+        }
+
+        .login-input-div{
+            margin-top: 70px;
+            width: 90%;
+            .login-input{
+                border-radius: 5%;
+                background-color: white;
+            }
+        }
+
+        .login-button{
+            width: 90%;
+            color: white;
+            background-color: $main-background-color;
+            border-color: transparent;
+        }
+    }
+}

@@ -1,5 +1,7 @@
 <template>
     <f7-page>
+
+        <!-- Nav  -->
         <f7-navbar title="关于我们" back-link="Back"></f7-navbar>
 
         <div class="about-page">

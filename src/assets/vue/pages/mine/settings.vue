@@ -1,76 +1,72 @@
 <template lang="html">
     <f7-page>
-        <f7-navbar title="Stttings" back-link="Back" sliding></f7-navbar>
 
 
-        <!-- Tabs, 现在容器是"views" -->
-<div class="views tabs toolbar-fixed">
-  <!-- Tab 1 同时也是 View 1, 默认激活 -->
-  <div id="tab1" class="view tab active">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="center">View 1</div>
-      </div>
-    </div>
-    <div class="pages navbar-fixed">
-      <div data-page="home-1" class="page">
-        <div class="page-content">
-          <div class="content-block">
-            <p>This is view 1</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Tab 2 - View 2 -->
-  <div id="tab2" class="view tab">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="center">View 2</div>
-      </div>
-    </div>
-    <div class="pages navbar-fixed">
-      <div data-page="home-2" class="page">
-        <div class="page-content">
-          <div class="content-block">
-            <p>This is view 2</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Tab 3 - View 3 -->
-  <div id="tab3" class="view tab">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="center">View 3</div>
-      </div>
-    </div>
-    <div class="pages navbar-fixed">
-      <div data-page="home-3" class="page">
-        <div class="page-content">
-          <div class="content-block">
-            <p>This is view 3</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- 带有链接的标签栏 -->
-  <div class="toolbar tabbar">
-    <div class="toolbar-inner">
-      <a href="#tab1" class="tab-link active"><i class="icon demo-icon-1"></i></a>
-      <a href="#tab2" class="tab-link"><i class="icon demo-icon-2"></i></a>
-      <a href="#tab3" class="tab-link"><i class="icon demo-icon-3"></i></a>
-    </div>
-  </div>
-</div>
+        <!-- Nav  -->
+        <f7-navbar title="偏好设置" back-link="Back"></f7-navbar>
+
+
+        <!-- list -->
+        <f7-list>
+            <f7-list-item link="/modifypsd/" title="修改密码"></f7-list-item>
+            <f7-list-item @click='logoutpop' title="退出登录"></f7-list-item>
+        </f7-list>
+
+
+        <!-- Actions -->
+        <f7-actions :opened='show'>
+            <!-- Actions Group -->
+            <f7-actions-group>
+                <!-- Actions Label -->
+                <!-- <f7-actions-label>退出</f7-actions-label> -->
+                <!-- Actions Buttons -->
+                <f7-actions-button @click="logout">退出登录</f7-actions-button>
+            </f7-actions-group>
+            <!-- Another Group -->
+            <f7-actions-group>
+                <!-- Cancel/Close Button -->
+                <f7-actions-button @click="cancel" color="red" bold>取消</f7-actions-button>
+            </f7-actions-group>
+        </f7-actions>
+
 
     </f7-page>
 </template>
 
 <script>
 export default {
+
+    data(){
+        return{
+            show:false,
+        }
+    },
+
+
+    methods:{
+        logoutpop(){
+            console.log('logoutpop');
+            this.show = true;
+            console.log(this.show);
+        },
+
+        logout(){
+            console.log('logout');
+            this.show = false;
+            this.$f7router.navigate('/login/', {"animate":false});
+        },
+
+        cancel(){
+            console.log('cancel');
+            this.show = false;
+            console.log(this.show);
+        }
+
+
+
+
+    }
+
 }
 </script>
 

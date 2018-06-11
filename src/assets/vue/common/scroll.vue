@@ -1,5 +1,5 @@
 <template lang="html">
-    <div class="page ptr-content" data-ptr-distance="55" @ptr:refresh="onfresh">
+    <div class="page ptr-content toolbar-fixed" data-ptr-distance="55" @ptr:refresh="onfresh">
 
         <div class="ptr-preloader">
           <div class="preloader"></div>
