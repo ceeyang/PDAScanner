@@ -28,12 +28,26 @@ import routes from './routes.js'
 // Import Vuex Storage
 import store from './assets/vuex/storage.js'
 
+// import API
+import api from 'assets/vue/api/api'
+
 // Install Plugin
 Vue.use(Framework7Vue, Framework7);
 
 let theme = 'auto';
 if (document.location.search.indexOf('theme=') >= 0) {
   theme = document.location.search.split('theme=')[1].split('&')[0];
+}
+
+//封装全局的api请求
+Vue.prototype.api=api
+
+//封装公共请求(post)
+Vue.prototype.post=function(url,params){
+
+    // Framework7.request.contentType = "application/json; charset=utf-8";
+
+    return Framework7.request.post(url,params);
 }
 
 // Init Vue App

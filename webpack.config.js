@@ -103,7 +103,11 @@ let config = function (env) {
         headers: {
           "Access-Control-Allow-Origin": "*"
         },
-        host: "0.0.0.0"
+        host: "0.0.0.0",
+        proxy: [{
+            target:"http://120.78.92.212:8007",
+            changeOrigin: true
+        }]
       }
       returner.plugins.push(new webpack.NamedModulesPlugin())
     } else if (typeof env.release !== 'undefined' && env.release) {

@@ -118,6 +118,9 @@ export default {
             localStorage.account = this.user.account;
             localStorage.password = this.user.password;
 
+            this.post('http://demo.zhixueyun.com/zxy-mobile-new/user/login');
+
+
             this.$f7router.navigate('/', {"animate":false});
         }
     }
