@@ -1,3 +1,4 @@
 export default {
-    login:'Ajax/Loginout.ashx',
+    login:'/api/Login/Login',
+    
 }

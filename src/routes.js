@@ -25,8 +25,26 @@ export default [
     path: '/login/',
     component: require('./assets/vue/pages/mine/login.vue')
   },
-
-
+  {
+     path: 'assetcheck',
+     component: require('./assets/vue/pages/home/assetcheck/index.vue')
+  },
+  {
+     path: 'devicemeasure',
+     component: require('./assets/vue/pages/home/devicemeasure/index.vue')
+  },
+  {
+     path: 'repair',
+     component: require('./assets/vue/pages/home/repair/index.vue')
+  },
+  {
+     path: 'scanrepair',
+     component: require('./assets/vue/pages/home/scanrepair/index.vue')
+  },,
+  {
+     path: 'devicepolling',
+     component: require('./assets/vue/pages/home/devicepolling/index.vue')
+ },
 
   {
     path: '/form/',

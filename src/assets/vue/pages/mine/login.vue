@@ -46,9 +46,9 @@
 
 <script>
 
+let MD5KEY = 'YTDF5EF3A6174564E5981A446158F106'
+
 export default {
-
-
 
     data(){
         return {
@@ -72,8 +72,6 @@ export default {
 
     methods: {
         login() {
-
-            console.log(this.user);
 
             if (this.user.account.length < 1) {
                 const self = this;
@@ -118,10 +116,11 @@ export default {
             localStorage.account = this.user.account;
             localStorage.password = this.user.password;
 
-            this.post('http://demo.zhixueyun.com/zxy-mobile-new/user/login');
+            var token = 'userCode=' + this.user.account + '&password=' + this.user.password + MD5KEY;
 
+            this.get('/api/Login/Login', {'UserCode':this.user.account,'password': this.user.password, 'Token': token})
 
-            this.$f7router.navigate('/', {"animate":false});
+            // this.$f7router.navigate('/', {"animate":false});
         }
     }
 }

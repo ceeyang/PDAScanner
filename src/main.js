@@ -31,8 +31,13 @@ import store from './assets/vuex/storage.js'
 // import API
 import api from 'assets/vue/api/api'
 
+// import app config
+import projectConfig from './config.js'
+
+
 // Install Plugin
 Vue.use(Framework7Vue, Framework7);
+
 
 let theme = 'auto';
 if (document.location.search.indexOf('theme=') >= 0) {
@@ -45,10 +50,28 @@ Vue.prototype.api=api
 //封装公共请求(post)
 Vue.prototype.post=function(url,params){
 
-    // Framework7.request.contentType = "application/json; charset=utf-8";
-
     return Framework7.request.post(url,params);
+
 }
+
+Vue.prototype.get=function(url,params){
+
+    return Framework7.request.get(url,params);
+
+}
+
+Vue.options.root = projectConfig.serverPath
+Vue.options.timeout = 3000;
+
+
+Vue.mixin({
+    data () {
+        return {
+            globalSetting: projectConfig,
+        }
+    }
+})
+
 
 // Init Vue App
 export default new Vue({

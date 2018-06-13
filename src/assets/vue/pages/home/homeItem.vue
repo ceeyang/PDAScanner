@@ -1,5 +1,5 @@
 <template>
-    <a class="home-item">
+    <a class="home-item" href="href">
     <!-- <router-link :to="path"> -->
         <slot></slot>
         <p>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    props: ['text', 'path']
+    props: ['text', 'path', 'herf']
 }
 </script>
 

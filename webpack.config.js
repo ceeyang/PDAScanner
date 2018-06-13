@@ -23,7 +23,8 @@ let config = function (env) {
         'src': path.resolve(__dirname, 'src/'),
         'assets': path.resolve(__dirname, 'src/assets/'),
         'pages': path.resolve(__dirname, 'src/assets/vue/pages/'),
-        'components': path.resolve(__dirname, 'src/assets/vue/components/')
+        'components': path.resolve(__dirname, 'src/assets/vue/components/'),
+        'api': path.resolve(__dirname, 'src/assets/vue/api/'),
       }
     },
 
@@ -101,14 +102,22 @@ let config = function (env) {
           poll: 1000
         },
         headers: {
-          "Access-Control-Allow-Origin": "*"
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Allow-Headers": "X-Requested-With,Content-Type,Accept-Ranges",
+            "Access-Control-Allow-Methods": "GET,HEAD,POST,PUT,DELETE,TRACE,OPTIONS,PATCH"
         },
         host: "0.0.0.0",
-        proxy: [{
-            target:"http://120.78.92.212:8007",
-            changeOrigin: true
-        }]
+        proxy: {
+            '/api': {
+                target: 'http://192.168.1.41:8088',
+                pathRewrite: {
+                    '^/api': '/api',
+                }
+            }
+        }
       }
+
       returner.plugins.push(new webpack.NamedModulesPlugin())
     } else if (typeof env.release !== 'undefined' && env.release) {
       returner.plugins.push(new CleanPlugin("www", {
