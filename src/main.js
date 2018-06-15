@@ -50,11 +50,13 @@ Vue.prototype.api=api
 //封装公共请求(post)
 Vue.prototype.post=function(url,params){
 
-    return Framework7.request.post(url,params);
+    return Framework7.request.post(url,params, function(data){
+        console.log(data);
+    });
 
 }
 
-Vue.prototype.get=function(url,params){
+Vue.prototype.get=function(url, params){
 
     return Framework7.request.get(url,params);
 

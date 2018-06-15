@@ -27,7 +27,7 @@
 
 
         <div class="home-page-content">
-            <home-item text="资产盘点" :href='/assetcheck/'> <i class="f7-icons">bars</i> </home-item>
+            <home-item text="资产盘点" href='/assetcheck/'> <i class="f7-icons">bars</i> </home-item>
             <home-item text="扫码保修" :href='/scanrepair/'> <i class="f7-icons">camera</i> </home-item>
             <home-item text="维修处理" :href='/repair/'> <i class="f7-icons">favorites</i> </home-item>
             <home-item text="设备巡检" :href='/devicepolling/'> <i class="f7-icons">refresh_round</i> </home-item>

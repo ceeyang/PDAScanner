@@ -19,30 +19,30 @@ export default [
   },
   {
     path: '/about/',
-    component: require('./assets/vue/pages/about.vue')
+    component: require('./assets/vue/pages/sys/about.vue')
   },
   {
     path: '/login/',
     component: require('./assets/vue/pages/mine/login.vue')
   },
   {
-     path: 'assetcheck',
-     component: require('./assets/vue/pages/home/assetcheck/index.vue')
+     path: '/assetcheck/',
+     component: require('./assets/vue/pages/home/assetcheck/assetcheck.vue')
   },
   {
-     path: 'devicemeasure',
+     path: '/devicemeasure/',
      component: require('./assets/vue/pages/home/devicemeasure/index.vue')
   },
   {
-     path: 'repair',
+     path: '/repair/',
      component: require('./assets/vue/pages/home/repair/index.vue')
   },
   {
-     path: 'scanrepair',
+     path: '/scanrepair/',
      component: require('./assets/vue/pages/home/scanrepair/index.vue')
   },,
   {
-     path: 'devicepolling',
+     path: '/devicepolling/',
      component: require('./assets/vue/pages/home/devicepolling/index.vue')
  },
 
