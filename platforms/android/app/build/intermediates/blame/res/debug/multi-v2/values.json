@@ -4,7 +4,26 @@
             "outputFile": "/Users/yangxichuan/Desktop/pdascanner/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/private/var/root/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/res/values/values.xml",
+                    "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/924310c7c1a996df1754aed3dcb240b8/res/values/values.xml",
+                    "from": {
+                        "startLines": "2,66",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,2487",
+                        "endLines": "2,68",
+                        "endColumns": "60,12",
+                        "endOffsets": "111,2627"
+                    },
+                    "to": {
+                        "startLines": "46,341",
+                        "startColumns": "4,4",
+                        "startOffsets": "1238,18894",
+                        "endLines": "46,343",
+                        "endColumns": "60,12",
+                        "endOffsets": "1294,19034"
+                    }
+                },
+                {
+                    "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/res/values/values.xml",
                     "from": {
                         "startLines": "4,38,43,50,51,52,53,54,55,56,57,58,59,60,63,64,67,68,69,70,71,72,73,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,203,211,216",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +42,7 @@
                     }
                 },
                 {
-                    "source": "/private/var/root/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/96ec0f080c5f1401fee215b7d5c534e3/res/values/values.xml",
+                    "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/088080c364d131066efcc0f70d51b9f8/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,54,55,59,60,61",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -59,7 +78,7 @@
                     }
                 },
                 {
-                    "source": "/private/var/root/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/d0a9a82d6878a902d07402e5de56265f/res/values/values.xml",
+                    "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/cd028c0fa6ce35905ae390ef81691851/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -73,25 +92,6 @@
                         "startOffsets": "1529,1677,2006,7736,17933,18109,18231,18493,18688",
                         "endColumns": "88,70,72,59,65,121,60,65,66",
                         "endOffsets": "1613,1743,2074,7791,17994,18226,18287,18554,18750"
-                    }
-                },
-                {
-                    "source": "/private/var/root/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/3707a27975a7f142badc844bd9894e56/res/values/values.xml",
-                    "from": {
-                        "startLines": "2,66",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,2487",
-                        "endLines": "2,68",
-                        "endColumns": "60,12",
-                        "endOffsets": "111,2627"
-                    },
-                    "to": {
-                        "startLines": "46,341",
-                        "startColumns": "4,4",
-                        "startOffsets": "1238,18894",
-                        "endLines": "46,343",
-                        "endColumns": "60,12",
-                        "endOffsets": "1294,19034"
                     }
                 }
             ]
