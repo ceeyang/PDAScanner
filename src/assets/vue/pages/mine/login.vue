@@ -120,7 +120,7 @@ export default {
 
             var token = 'UserCode=' + this.user.account + '&Password=' + this.user.password + MD5KEY;
             token = md5(token);
-            let request = this.get('/api/Login/Login', {'UserCode':this.user.account,'password': this.user.password, 'Token': token});
+            // let request = this.get('/api/Login/Login', {'UserCode':this.user.account,'password': this.user.password, 'Token': token});
 
             this.$f7router.navigate('/', {"animate":false});
         }

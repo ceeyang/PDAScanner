@@ -1,5 +1,5 @@
 <template>
-    <a class="home-item" :href="href">
+    <a class="repair-item" :href="href">
         <slot></slot>
         <p>
         {{text}}
