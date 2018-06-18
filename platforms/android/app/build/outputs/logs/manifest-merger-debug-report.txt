@@ -4,18 +4,18 @@ ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/
 INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
 INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
 INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
-MERGED from [:barcodescanner-release-2.1.5:] /private/var/root/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:2:1-14:12
-MERGED from [com.android.support:support-v4:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/df990f5aec6c8eb5d962ffe8b3c1f18d/AndroidManifest.xml:17:1-22:12
+MERGED from [:barcodescanner-release-2.1.5:] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:support-v4:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/f68004cb559039920e9ca951f9174a24/AndroidManifest.xml:17:1-22:12
 MERGED from [:CordovaLib] /Users/yangxichuan/Desktop/pdascanner/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:1-27:12
-MERGED from [com.android.support:support-media-compat:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/d0a9a82d6878a902d07402e5de56265f/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/eb82eb98962733efbd278cdc744c936e/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/3707a27975a7f142badc844bd9894e56/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/3d2026714d8d519f299d0494745c697d/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/96ec0f080c5f1401fee215b7d5c534e3/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /private/var/root/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/efac86b02767182d8b505936697dd221/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /private/var/root/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/a4069ffc11359835b9540036918ae2ec/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /private/var/root/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/f89d9d8360e2a9d0626f6fea3b6c2402/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] /private/var/root/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3dba974093761cb080633c26671bc24b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/cd028c0fa6ce35905ae390ef81691851/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/31db7c8e95db8c0bad8885b2caee3ec7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/924310c7c1a996df1754aed3dcb240b8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/5418d6b4ea3230a69007663c392540dc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/088080c364d131066efcc0f70d51b9f8/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/74e777fec196a955a1b80791574856c8/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/d891bc53560b529a8ccb892a7cd8a99d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/11bb4aee2644f30f64cd2f48b0653c4a/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/d108f4f1fa019bda7e4d3a8288976a46/AndroidManifest.xml:17:1-22:12
 INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
 INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
 INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
@@ -55,8 +55,8 @@ ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/
 		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:4:22-64
 application
 ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:5:5-14:19
-MERGED from [:barcodescanner-release-2.1.5:] /private/var/root/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:11:5-12:19
-MERGED from [:barcodescanner-release-2.1.5:] /private/var/root/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:11:5-12:19
+MERGED from [:barcodescanner-release-2.1.5:] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:11:5-12:19
+MERGED from [:barcodescanner-release-2.1.5:] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:11:5-12:19
 	android:supportsRtl
 		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:5:114-140
 	android:label
@@ -113,30 +113,30 @@ ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/
 		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:13:41-109
 uses-sdk
 ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:15:5-74
-MERGED from [:barcodescanner-release-2.1.5:] /private/var/root/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:7:5-9:41
-MERGED from [:barcodescanner-release-2.1.5:] /private/var/root/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-v4:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/df990f5aec6c8eb5d962ffe8b3c1f18d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/df990f5aec6c8eb5d962ffe8b3c1f18d/AndroidManifest.xml:20:5-44
+MERGED from [:barcodescanner-release-2.1.5:] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:7:5-9:41
+MERGED from [:barcodescanner-release-2.1.5:] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/f68004cb559039920e9ca951f9174a24/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/f68004cb559039920e9ca951f9174a24/AndroidManifest.xml:20:5-44
 MERGED from [:CordovaLib] /Users/yangxichuan/Desktop/pdascanner/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-44
 MERGED from [:CordovaLib] /Users/yangxichuan/Desktop/pdascanner/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/d0a9a82d6878a902d07402e5de56265f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/d0a9a82d6878a902d07402e5de56265f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/eb82eb98962733efbd278cdc744c936e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/eb82eb98962733efbd278cdc744c936e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/3707a27975a7f142badc844bd9894e56/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/3707a27975a7f142badc844bd9894e56/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/3d2026714d8d519f299d0494745c697d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/3d2026714d8d519f299d0494745c697d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/96ec0f080c5f1401fee215b7d5c534e3/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /private/var/root/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/96ec0f080c5f1401fee215b7d5c534e3/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /private/var/root/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/efac86b02767182d8b505936697dd221/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /private/var/root/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/efac86b02767182d8b505936697dd221/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /private/var/root/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/a4069ffc11359835b9540036918ae2ec/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /private/var/root/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/a4069ffc11359835b9540036918ae2ec/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /private/var/root/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/f89d9d8360e2a9d0626f6fea3b6c2402/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /private/var/root/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/f89d9d8360e2a9d0626f6fea3b6c2402/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /private/var/root/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3dba974093761cb080633c26671bc24b/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /private/var/root/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3dba974093761cb080633c26671bc24b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/cd028c0fa6ce35905ae390ef81691851/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/cd028c0fa6ce35905ae390ef81691851/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/31db7c8e95db8c0bad8885b2caee3ec7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/31db7c8e95db8c0bad8885b2caee3ec7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/924310c7c1a996df1754aed3dcb240b8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/924310c7c1a996df1754aed3dcb240b8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/5418d6b4ea3230a69007663c392540dc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/5418d6b4ea3230a69007663c392540dc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/088080c364d131066efcc0f70d51b9f8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/088080c364d131066efcc0f70d51b9f8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/74e777fec196a955a1b80791574856c8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/74e777fec196a955a1b80791574856c8/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/d891bc53560b529a8ccb892a7cd8a99d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/d891bc53560b529a8ccb892a7cd8a99d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/11bb4aee2644f30f64cd2f48b0653c4a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/11bb4aee2644f30f64cd2f48b0653c4a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/d108f4f1fa019bda7e4d3a8288976a46/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/d108f4f1fa019bda7e4d3a8288976a46/AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
 		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:15:42-71
 	android:minSdkVersion

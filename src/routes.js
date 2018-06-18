@@ -1,5 +1,4 @@
-export default [
-  {
+export default [{
     path: '/',
     component: require('./assets/vue/pages/home/home.vue')
     // component: require('./assets/vue/pages/home.vue')
@@ -26,25 +25,32 @@ export default [
     component: require('./assets/vue/pages/mine/login.vue')
   },
   {
-     path: '/assetcheck/',
-     component: require('./assets/vue/pages/home/assetcheck/assetcheck.vue')
+    path: '/assetcheck/',
+    component: require('./assets/vue/pages/home/assetcheck/assetcheck.vue')
   },
   {
-     path: '/devicemeasure/',
-     component: require('./assets/vue/pages/home/devicemeasure/index.vue')
+    path: '/devicemeasure/',
+    component: require('./assets/vue/pages/home/devicemeasure/index.vue')
   },
   {
-     path: '/repair/',
-     component: require('./assets/vue/pages/home/repair/index.vue')
+    path: '/repair/',
+    component: require('./assets/vue/pages/home/repair/index.vue')
   },
   {
-     path: '/scanrepair/',
-     component: require('./assets/vue/pages/home/scanrepair/index.vue')
-  },,
+    path: '/scanrepair/',
+    component: require('./assets/vue/pages/home/scanrepair/index.vue')
+  },
   {
-     path: '/devicepolling/',
-     component: require('./assets/vue/pages/home/devicepolling/index.vue')
- },
+    path: '/devicepolling/',
+    component: require('./assets/vue/pages/home/devicepolling/index.vue')
+  },
+  {
+    path: '/morefunction/',
+    component: require('./assets/vue/pages/home/morefunction/index.vue')
+  },
+
+
+
 
   {
     path: '/form/',
