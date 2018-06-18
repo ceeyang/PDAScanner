@@ -16,6 +16,9 @@ import Framework7Icons from 'framework7-icons/css/framework7-icons.css'
 // Import Fontawesome Theme Styles
 import FontAwesome from 'font-awesome/css/font-awesome.css'
 
+// Import gobal css  
+import  gobal from './assets/css/gobal.css'
+
 // Import App Custom Styles
 import AppStyles from './assets/sass/main.scss'
 
