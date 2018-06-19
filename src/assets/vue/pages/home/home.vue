@@ -32,7 +32,7 @@
         <home-item text="维修管理" :href='/repair/'> <i class="f7-icons">favorites</i> </home-item>
         <home-item text="设备巡检" :href='/devicepolling/'> <i class="f7-icons">refresh_round</i> </home-item>
         <home-item text="设备计量" :href='/devicemeasure/'> <i class="f7-icons">bars</i> </home-item>
-        <home-item text="更多功能" :href='/morefunction/'> <i class="f7-icons">more_round</i> </home-item>
+        <home-item text="更多功能.." :href='/morefunction/'> <i class="f7-icons">more_round</i> </home-item>
     </div>
 
 
@@ -67,6 +67,7 @@ export default {
     methods: {
         barcodeScanner() {
             console.log('barcodeScanner');
+            console.log(cordova.plugins);
 
             cordova.plugins.barcodeScanner.scan(
                 function(result) {

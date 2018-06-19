@@ -1,3 +1,6 @@
 export default {
-    login:'/api/Login/Login',    
+    // 登录
+    login:'/api/Login/Login',
+    // 获取仓库地址
+    repositories: 'BLadmin/BasicSet/cksz/data/SetHandler.ashx',
 }

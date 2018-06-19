@@ -110,11 +110,20 @@ let config = function (env) {
         host: "0.0.0.0",
         proxy: {
             '/api': {
+                // target: 'http://192.168.1.41:8088',
                 target: 'http://192.168.1.41:8088',
                 pathRewrite: {
                     '^/api': '/api',
                 }
+            },
+            'BLadmin':{
+                target: 'http://192.168.1.41:8088',
+                pathRewrite: {
+                    '^/BLadmin': '/BLadmin',
+                }
             }
+BLadmin/BasicSet/cksz/data/SetHandler.ashx
+
         }
       }
 

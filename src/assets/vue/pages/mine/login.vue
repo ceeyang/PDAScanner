@@ -74,7 +74,6 @@ export default {
 
     methods: {
         login() {
-
             if (this.user.account.length < 1) {
                 const self = this;
                 if (!self.toastCenter) {
@@ -88,39 +87,38 @@ export default {
                 return;
             }
 
-            if (this.user.password.length < 1) {
-                const self = this;
-                if (!self.toastCenter) {
-                    self.toastCenter = self.$f7.toast.create({
-                        text: '请输入您的密码',
-                        closeTimeout: 2000,
-                        position: 'center',
-                    });
-                }
-                self.toastCenter.open();
-                return;
-            }
-
-            if (this.user.password !== 'admin') {
-                const self = this;
-                if (!self.toastCenter) {
-                    self.toastCenter = self.$f7.toast.create({
-                        text: '您输入的密码不正确',
-                        closeTimeout: 2000,
-                        position: 'center',
-                    });
-                }
-                self.toastCenter.open();
-                return;
-            }
-
-
             localStorage.account = this.user.account;
             localStorage.password = this.user.password;
 
             var token = 'UserCode=' + this.user.account + '&Password=' + this.user.password + MD5KEY;
             token = md5(token);
-            // let request = this.get('/api/Login/Login', {'UserCode':this.user.account,'password': this.user.password, 'Token': token});
+            let vm = this;
+            this.get(this.api.login, {'UserCode':this.user.account,'password': this.user.password, 'Token': token}, function(response) {
+                var data = JSON.parse(response);
+                if (data.Status) {
+                    vm.getRepositories();
+                }
+
+                else {
+                    let msg = data.Msg;
+                    console.log(msg);
+                    if (!vm.toastCenter) {
+                        vm.toastCenter = vm.$f7.toast.create({
+                            text: msg,
+                            closeTimeout: 2000,
+                            position: 'center',
+                        });
+                    }
+                    vm.toastCenter.open();
+                }
+            });
+
+        },
+
+        getRepositories() {
+            // this.post(this.api.repositories, {'type':'StoreHave', 'userId': this.user.account}, function(response) {
+            //     console.log(response);
+            // })
 
             this.$f7router.navigate('/', {"animate":false});
         }

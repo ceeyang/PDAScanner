@@ -1,0 +1,21 @@
+.menu-list-view{
+    display: flex;
+    flex-direction: row;
+    background-color: yellow;
+    height: 100%;
+    .menu-left-list{
+        left: 0px;
+        top: 0px;
+        width: 50%;
+        height: 100%;
+        background-color: green;
+        margin: 0px;
+    }
+    .menu-right-list{
+        top: 0px;
+        right: 0px;
+        width: 50%;
+        height: 100%;
+        background-color: blue;
+    }
+}

@@ -39,6 +39,10 @@ export default [{
     component: require('./assets/vue/pages/home/devicemeasure/index.vue')
   },
   {
+    path: '/measuredetail/',
+    component: require('./assets/vue/pages/home/devicemeasure/detail.vue')
+  },
+  {
     path: '/repair/',
     component: require('./assets/vue/pages/home/repair/index.vue')
   },

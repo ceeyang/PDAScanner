@@ -16,7 +16,7 @@ import Framework7Icons from 'framework7-icons/css/framework7-icons.css'
 // Import Fontawesome Theme Styles
 import FontAwesome from 'font-awesome/css/font-awesome.css'
 
-// Import gobal css  
+// Import gobal css
 import  gobal from './assets/css/gobal.css'
 
 // Import App Custom Styles
@@ -51,18 +51,12 @@ if (document.location.search.indexOf('theme=') >= 0) {
 Vue.prototype.api=api
 
 //封装公共请求(post)
-Vue.prototype.post=function(url,params){
-
-    return Framework7.request.post(url,params, function(data){
-        console.log(data);
-    });
-
+Vue.prototype.post=function(url, params, next){
+    return Framework7.request.post(url, params, next);
 }
 
-Vue.prototype.get=function(url, params){
-
-    return Framework7.request.get(url,params);
-
+Vue.prototype.get=function(url, params, next){
+    return Framework7.request.get(url, params, next);
 }
 
 Vue.options.root = projectConfig.serverPath
