@@ -9,10 +9,6 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.ceeyang.pdascanner"
-    },
-    "phonegap-plugin-barcodescanner": {
-      "ANDROID_SUPPORT_V4_VERSION": "27.+",
-      "PACKAGE_NAME": "com.ceeyang.pdascanner"
     }
   },
   "dependent_plugins": {}

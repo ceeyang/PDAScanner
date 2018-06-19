@@ -1,16 +1,16 @@
-cordova.define("phonegap-plugin-barcodescanner.BarcodeScannerProxy", function(require, exports, module) { function scan(success, error) {
-    var code = window.prompt("Enter barcode value (empty value will fire the error handler):");
-    if(code) {
-        var result = {
-            text:code,
-            format:"Fake",
-            cancelled:false
-        };
-        success(result);
-    } else {
-        error("No barcode");
-    }
-}
+// cordova.define("phonegap-plugin-barcodescanner.BarcodeScannerProxy", function(require, exports, module) { function scan(success, error) {
+//     var code = window.prompt("Enter barcode value (empty value will fire the error handler):");
+//     if(code) {
+//         var result = {
+//             text:code,
+//             format:"Fake",
+//             cancelled:false
+//         };
+//         success(result);
+//     } else {
+//         error("No barcode");
+//     }
+// }
 
 function encode(type, data, success, errorCallback) {
     success();
