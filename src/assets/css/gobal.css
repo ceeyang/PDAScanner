@@ -101,6 +101,9 @@ i{
   .succeed{
       color:#5FB878
   }
+  .normal{
+      color:#01AAED
+  }
 @font-face {font-family: "iconfont";
         src: url('../fonts/iconfont.eot');
         src: url('../fonts/iconfont.eot#iefix') format('embedded-opentype'), 
