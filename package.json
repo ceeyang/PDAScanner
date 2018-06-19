@@ -52,17 +52,13 @@
     "framework7-vue": "^2.0.0",
     "js-md5": "^0.7.3",
     "loglevel": "^1.4.1",
-    "phonegap-plugin-barcodescanner": "^8.0.0",
     "vue": "^2.5.13",
     "vuex": "^3.0.1"
   },
   "displayName": "pdascanner",
   "cordova": {
     "plugins": {
-      "cordova-plugin-whitelist": {},
-      "phonegap-plugin-barcodescanner": {
-        "ANDROID_SUPPORT_V4_VERSION": "27.+"
-      }
+      "cordova-plugin-whitelist": {}
     },
     "platforms": [
       "browser",
