@@ -39,30 +39,56 @@
             <f7-button class="login-button"@click='login'>登录</f7-button>
 
 
+
+            <template>
+  <mt-datetime-picker
+    ref="picker"
+    v-model="pickerValue">
+  </mt-datetime-picker>
+</template>
+
+    <!-- <mt-picker :slots="slots" @change="onValuesChange"></mt-picker> -->
+
         </div>
 
     </f7-page>
 </template>
 
 <script>
-
-
-import md5 from 'js-md5';
-let MD5KEY = 'YTDF5EF3A6174564E5981A446158F106'
-
+import {
+    MtDatatimePicker
+} from 'mint-ui';
+import {
+    Picker
+} from 'mint-ui';
+import {
+    MessageBox
+} from 'mint-ui';
 export default {
 
-    data(){
+    data() {
         return {
             user: {
-                account:'',
+                account: '',
                 password: '',
                 appsystem: 'iOS',
-            }
+            },
+            WarehouseData: [
+                "one",
+                "tow",
+                "three",
+            ],
+            pickerValue: '',
+            slots: [{
+                flex: 1,
+                values: ['2015-01', '2015-02', '2015-03', '2015-04', '2015-05', '2015-06'],
+                className: 'slot1',
+                textAlign: 'center'
+            }]
         }
     },
 
-    mounted () {
+    mounted() {
         if (localStorage.account) {
             this.user.account = localStorage.account;
         }
@@ -90,13 +116,14 @@ export default {
             localStorage.account = this.user.account;
             localStorage.password = this.user.password;
             let vm = this;
-            this.get(this.api.login, {'UserCode':this.user.account,'Password': this.user.password}, function(response) {
+            this.get(this.api.login, {
+                'UserCode': this.user.account,
+                'Password': this.user.password
+            }, function(response) {
                 var data = JSON.parse(response);
                 if (data.Status) {
                     vm.getRepositories();
-                }
-
-                else {
+                } else {
                     let msg = data.Msg;
                     console.log(msg);
                     if (!vm.toastCenter) {
@@ -113,14 +140,29 @@ export default {
         },
 
         getRepositories() {
+            let vm = this;
             this.get(this.api.WarehouseList, {'UserCode': this.user.account}, function(response) {
                 var data = JSON.parse(response);
                 console.log(data);
+                vm.$refs.picker.open();
             })
 
 
-            this.$f7router.navigate('/', {"animate":false});
+            // this.$f7router.navigate('/', {"animate":false});
+        },
+
+        onValuesChange(picker, values) {
+            if (values[0] > values[1]) {
+                picker.setSlotValue(1, values[0]);
+            }
         }
+    },
+
+    components: {
+        MtDatatimePicker,
+        Picker,
+        MessageBox,
+
     }
 }
 </script>

@@ -37,11 +37,17 @@ import api from 'assets/vue/api/api'
 // import app config
 import projectConfig from './config.js'
 
+// 引入饿了么 UI 组件
+import Mint from 'mint-ui';
+import 'mint-ui/lib/style.css';
+
+
 import md5 from 'js-md5';
 let MD5KEY = 'YTDF5EF3A6174564E5981A446158F106'
 
 // Install Plugin
 Vue.use(Framework7Vue, Framework7);
+Vue.use(Mint);
 
 
 let theme = 'auto';
