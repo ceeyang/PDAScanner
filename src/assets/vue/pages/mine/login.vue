@@ -89,11 +89,8 @@ export default {
 
             localStorage.account = this.user.account;
             localStorage.password = this.user.password;
-
-            var token = 'UserCode=' + this.user.account + '&Password=' + this.user.password + MD5KEY;
-            token = md5(token);
             let vm = this;
-            this.get(this.api.login, {'UserCode':this.user.account,'password': this.user.password, 'Token': token}, function(response) {
+            this.get(this.api.login, {'UserCode':this.user.account,'Password': this.user.password}, function(response) {
                 var data = JSON.parse(response);
                 if (data.Status) {
                     vm.getRepositories();
@@ -116,9 +113,11 @@ export default {
         },
 
         getRepositories() {
-            // this.post(this.api.repositories, {'type':'StoreHave', 'userId': this.user.account}, function(response) {
-            //     console.log(response);
-            // })
+            this.get(this.api.WarehouseList, {'UserCode': this.user.account}, function(response) {
+                var data = JSON.parse(response);
+                console.log(data);
+            })
+
 
             this.$f7router.navigate('/', {"animate":false});
         }

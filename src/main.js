@@ -37,6 +37,8 @@ import api from 'assets/vue/api/api'
 // import app config
 import projectConfig from './config.js'
 
+import md5 from 'js-md5';
+let MD5KEY = 'YTDF5EF3A6174564E5981A446158F106'
 
 // Install Plugin
 Vue.use(Framework7Vue, Framework7);
@@ -56,6 +58,13 @@ Vue.prototype.post=function(url, params, next){
 }
 
 Vue.prototype.get=function(url, params, next){
+    var token = '';
+    for (var item in params) {
+        token += (token.length<1?'':'&') + item + '=' + (params[item].length < 1 ? "" : params[item]);
+    }
+    token = token + MD5KEY;
+    token = md5(token);
+    params.Token = token;
     return Framework7.request.get(url, params, next);
 }
 

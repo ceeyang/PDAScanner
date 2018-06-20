@@ -116,14 +116,6 @@ let config = function (env) {
                     '^/api': '/api',
                 }
             },
-            'BLadmin':{
-                target: 'http://192.168.1.41:8088',
-                pathRewrite: {
-                    '^/BLadmin': '/BLadmin',
-                }
-            }
-BLadmin/BasicSet/cksz/data/SetHandler.ashx
-
         }
       }
 
