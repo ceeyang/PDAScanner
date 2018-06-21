@@ -1,6 +1,9 @@
 <template>
-    <div class="segment-bar">
-        <div v-for="(title,index) in titles" :key="index" class="segment-tab" :class="{'active':currentIndex===index}" @click="switchTab(index)">{{title}}</div>
+    <div class="segment-bar"  ref="">
+        <div v-for="(title,index) in titles"
+             :key="index" class="segment-tab"
+              :class="{'active':currentIndex===index}"
+               @click="switchTab(index)">{{title}}</div>
     </div>
 </template>
 
@@ -9,7 +12,7 @@
         props: {
             titles: {
                 type: Array,
-                required: true,
+                required: true
             },
             selectedIndex: {
                 type: Number,
@@ -21,15 +24,14 @@
                 currentIndex:this.selectedIndex
             }
         },
-
+        mounted(){
+        },
         methods:{
             switchTab(index){
                 this.currentIndex = index;
                 this.$emit('switchTab',index);
             },
-
         },
-
         watch: {
             selectedIndex: function (newValue, oldValue) {
                 this.currentIndex = newValue;

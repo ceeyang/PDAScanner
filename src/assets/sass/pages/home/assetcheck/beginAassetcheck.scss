@@ -1,0 +1,62 @@
+.beginAassetcheck-cont {
+    height: 100%;
+    overflow: auto;
+    .list_item {
+        background-color: #fffbf0;
+        border-bottom: 2px solid #eeeeee;
+       
+        .list-item-cont {
+            font-size: 0;
+            background-color: #eeeeee;
+        }
+        .list-item-cont .item-cont-icon {
+            width: 20%;
+            font-size: 12px;
+            line-height: 70px;
+        }
+        .list-item-cont .item-cont-icon i {
+            font-size: 45px;
+            color: #009688;
+        }
+        .list-item-cont .item-cont-text {
+            font-size: 12px;
+            width: 80%;
+            color: #828282;
+            padding: 2px 0;
+        }
+        .list-item-footer {
+            font-size: 12px;
+            color: #666666;
+             padding:0 0 0 5px;
+        }
+        .list-item-footer span {
+                font-size: 12px;
+                line-height: 20px;
+            }
+        .list-item-footer button {
+            background: none;
+            border: 1px solid #999999;
+            border-radius: 10px;
+            font-size: 12px;
+            height: 16px;
+            line-height: 16px;
+            margin: 3px 10px 0 0;
+            padding: 0 5px;
+            width: auto;
+        }
+        
+    }
+        .list_item h6 {
+            line-height: 15px;
+            padding: 3px 5px;
+            color: #666666;
+            font-weight: 400;
+            font-size: 13px;
+        }
+        .con-top-f{
+        position: fixed;
+        top: 40px;
+        left: 0;
+        width: 100%;
+    }
+}

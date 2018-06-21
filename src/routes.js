@@ -30,6 +30,10 @@ export default [{
     component: require('./assets/vue/pages/home/assetcheck/assetcheck.vue')
   },
   {
+    path: '/propertyDetail/',
+    component: require('./assets/vue/pages/home/assetcheck/propertyDetail.vue')
+  },
+  {
     path: '/devicemeasure/',
     component: require('./assets/vue/pages/home/devicemeasure/index.vue')
   },
