@@ -148,6 +148,7 @@
 
             itemclickaction(data){
                 global.assetcheckeddata = data;
+                debugger;
                 this.$f7router.navigate('/assetchecked/');
             }
 

@@ -22,7 +22,9 @@
                     <li><span class="inline-block">设备状态：</span>{{data.SBZT}}</li>
                 </ul>
             </div>
-           
+            <div class="">
+                
+            </div>
         </div>
     </f7-page>
 </template>
