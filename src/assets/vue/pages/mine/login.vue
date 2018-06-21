@@ -36,57 +36,49 @@
             </div>
 
             <!-- login button -->
-            <f7-button class="login-button"@click='login'>登录</f7-button>
+            <cube-button class="login-button"@click='login'>登录</cube-button>
 
-
-
-            <template>
-  <mt-datetime-picker
-    ref="picker"
-    v-model="pickerValue">
-  </mt-datetime-picker>
-</template>
-
-    <!-- <mt-picker :slots="slots" @change="onValuesChange"></mt-picker> -->
+            <mt-popup class="warehouse-picker"
+            v-model="popupVisible"
+            position="bottom">
+            <div class="picker-top-buttons">
+                <div class="picker-top-buttons">
+                    <button class="top-button cancel" @click='pickerCancel'>取消</button>
+                    <button class="top-button confirm" @click='pickerConfirm'>确认</button>
+                </div>
+            </div>
+                <mt-picker :slots="slots" @change="onValuesChange"></mt-picker>
+            </mt-popup>
 
         </div>
-
     </f7-page>
 </template>
 
 <script>
-import {
-    MtDatatimePicker
-} from 'mint-ui';
-import {
-    Picker
-} from 'mint-ui';
-import {
-    MessageBox
-} from 'mint-ui';
+import WarehouseData from './json/warehouse.json';
 export default {
 
     data() {
         return {
+            WarehouseData: [],
+            popupVisible: false,
+            // warehouseNameArr: [],
+            currentWarechouse: '',
             user: {
                 account: '',
                 password: '',
                 appsystem: 'iOS',
             },
-            WarehouseData: [
-                "one",
-                "tow",
-                "three",
-            ],
-            pickerValue: '',
             slots: [{
                 flex: 1,
-                values: ['2015-01', '2015-02', '2015-03', '2015-04', '2015-05', '2015-06'],
+                values: [''],
                 className: 'slot1',
                 textAlign: 'center'
-            }]
+            }, ],
+            showPicker: false,
         }
     },
+
 
     mounted() {
         if (localStorage.account) {
@@ -96,10 +88,39 @@ export default {
         if (localStorage.password) {
             this.user.password = localStorage.password;
         }
+
+
+        if (localStorage.isLogined == '1') {
+            this.$f7router.navigate('/home/', {"animate": false});
+        }
     },
 
+
     methods: {
+
+        pickerCancel() {
+            this.popupVisible = false;
+        },
+
+        pickerConfirm() {
+            var storeId = '';
+            for (var i = 0; i < WarehouseData.length; i++) {
+                let item = WarehouseData[i];
+                if (WarehouseData[i].storeName == this.currentWarechouse) {
+                    storeId = WarehouseData[i].storeId;
+                    localStorage.storeId = storeId;
+                    continue;
+                }
+            }
+
+            this.popupVisible = false;
+            this.$f7router.navigate('/home/', {"animate": false});
+            localStorage.isLogined = '1';
+        },
+
         login() {
+
+
             if (this.user.account.length < 1) {
                 const self = this;
                 if (!self.toastCenter) {
@@ -116,6 +137,8 @@ export default {
             localStorage.account = this.user.account;
             localStorage.password = this.user.password;
             let vm = this;
+
+            // LOGIN
             this.get(this.api.login, {
                 'UserCode': this.user.account,
                 'Password': this.user.password
@@ -140,30 +163,34 @@ export default {
         },
 
         getRepositories() {
+
+            // 获取仓库地址
             let vm = this;
-            this.get(this.api.WarehouseList, {'UserCode': this.user.account}, function(response) {
+            this.get(this.api.WarehouseList, {
+                'UserCode': this.user.account
+            }, function(response) {
                 var data = JSON.parse(response);
-                console.log(data);
-                vm.$refs.picker.open();
+                vm.WarehouseData = data;
+                localStorage.WarehouseData = data;
+
+                var warehouseNameArr = [];
+                for (var i = 0; i < WarehouseData.length; i++) {
+                    let item = WarehouseData[i];
+                    warehouseNameArr.push(item.storeName);
+                }
+                vm.slots[0].values = warehouseNameArr;
+                vm.popupVisible = true;
             })
 
-
-            // this.$f7router.navigate('/', {"animate":false});
         },
 
         onValuesChange(picker, values) {
             if (values[0] > values[1]) {
                 picker.setSlotValue(1, values[0]);
             }
+            this.currentWarechouse = values;
         }
     },
-
-    components: {
-        MtDatatimePicker,
-        Picker,
-        MessageBox,
-
-    }
 }
 </script>
 

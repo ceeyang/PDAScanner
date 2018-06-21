@@ -5,13 +5,18 @@
         <!-- <f7-panel left cover>
             <f7-view url="/panel-left/" links-view=".view-main" />
         </f7-panel> -->
-        <f7-view url="/login/" :main="true" class="ios-edges"></f7-view>
+        <f7-view url="/" :main="true" class="ios-edges"></f7-view>
     </div>
 </template>
 <script>
 export default {
     mounted() {
         console.log(this.$device);
+
+        let loinSuccess = localStorage.loinSuccess;
+        if (loinSuccess) {
+
+        }
     },
 }
 </script>

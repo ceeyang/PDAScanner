@@ -1,0 +1,12 @@
+.warehouse-picker{
+    width: 100%;
+    .picker-top-buttons{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        text-align: center !important;
+        .top-button{
+            width: 50%;
+        }
+    }
+}

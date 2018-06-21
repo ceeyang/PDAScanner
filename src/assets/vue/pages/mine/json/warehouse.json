@@ -1,0 +1,29 @@
+[{
+    "storeName": "中心仓库            ",
+    "storeId": "0101",
+    "have": true
+}, {
+    "storeName": "维修配件仓库        ",
+    "storeId": "0102",
+    "have": false
+}, {
+    "storeName": "设备仓库            ",
+    "storeId": "0103",
+    "have": true
+}, {
+    "storeName": "测试仓库            ",
+    "storeId": "0104",
+    "have": true
+}, {
+    "storeName": "后勤仓库            ",
+    "storeId": "0105",
+    "have": true
+}, {
+    "storeName": "2018012201仓库      ",
+    "storeId": "0106",
+    "have": false
+}, {
+    "storeName": "2018012202仓库2     ",
+    "storeId": "0107",
+    "have": false
+}]

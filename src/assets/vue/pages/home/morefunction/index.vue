@@ -7,11 +7,15 @@
             功能完善中, 敬请期待 ~
         </p>
 
+
+
+
     </f7-page>
 </template>
 
 <script>
 export default {
+
 }
 </script>
 
@@ -24,6 +28,7 @@ export default {
     align-items: center;
 }
 .more-hint{
+    margin-top: 100%;
     font-size: 24px;
 }
 

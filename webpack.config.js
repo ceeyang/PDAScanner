@@ -25,6 +25,7 @@ let config = function (env) {
         'pages': path.resolve(__dirname, 'src/assets/vue/pages/'),
         'components': path.resolve(__dirname, 'src/assets/vue/components/'),
         'api': path.resolve(__dirname, 'src/assets/vue/api/'),
+        'cube-ui': 'cube-ui/lib',
       }
     },
 

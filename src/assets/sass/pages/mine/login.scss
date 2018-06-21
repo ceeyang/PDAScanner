@@ -35,5 +35,23 @@
             background-color: $main-background-color;
             border-color: transparent;
         }
+
+        .warehouse-picker{
+            width: 100%;
+            .picker-top-buttons{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                text-align: center !important;
+                height: 40px;
+                .top-button{
+                    width: 50%;
+                }
+                .cancel{
+                    color: red;
+                }
+            }
+        }
+
     }
 }

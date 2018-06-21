@@ -46,7 +46,7 @@
                 if ('chats' === val) {
                     this.$f7router.navigate('/chats/', {"animate":false});
                 } else if ('home' === val) {
-                    _this.$f7router.navigate('/', {"animate":false});
+                    _this.$f7router.navigate('/home/', {"animate":false});
                 } else if ('mine' == val) {
                     _this.$f7router.navigate('/mine/', {"animate":false});
                 }

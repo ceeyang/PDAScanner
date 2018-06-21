@@ -51,9 +51,9 @@ export default {
         },
 
         logout(){
-            console.log('logout');
             this.show = false;
-            this.$f7router.navigate('/login/', {"animate":false});
+            localStorage.setItem('isLogined','0');
+            this.$f7router.navigate('/', {"animate":false});
         },
 
         cancel(){

@@ -1,26 +1,13 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-
+import Vue from 'vue';
+import Vuex from 'vuex';
 Vue.use(Vuex);
 
+import mineStore from './mine/store';
+
+
 export default new Vuex.Store({
-  state: {
-      user: {
-          account:'',
-          password: '',
-          appsystem: 'iOS',
-      }
-  },
+  modules: {
+      mineStore,
 
-  actions: {
-    userLogged ({commit}, user) {
-      commit('USER_LOGGED', user)
-    }
-  },
-
-  mutations: {
-    USER_LOGGED (state, user) {
-      state.user = user
-    }
-  },
-});
+  }
+})

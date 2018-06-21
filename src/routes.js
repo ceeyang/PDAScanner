@@ -1,8 +1,10 @@
 export default [{
     path: '/',
+    component: require('./assets/vue/pages/mine/login.vue')
+  },{
+    path: '/home/',
+    meta: {auth:true},
     component: require('./assets/vue/pages/home/home.vue')
-    // component: require('./assets/vue/pages/home.vue')
-    // component: require('./assets/vue/pages/sys/index.vue')
   },
   {
     path: '/chats/',
@@ -15,10 +17,6 @@ export default [{
   {
     path: '/settings/',
     component: require('./assets/vue/pages/mine/settings.vue')
-  },
-  {
-    path: '/about/',
-    component: require('./assets/vue/pages/sys/about.vue')
   },
   {
     path: '/login/',

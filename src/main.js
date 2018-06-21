@@ -37,9 +37,22 @@ import api from 'assets/vue/api/api'
 // import app config
 import projectConfig from './config.js'
 
+
+
+// -------------------------------------------------------
+// 因为使用 framework7 引擎, 以下两组件某些组件不可用, 请悉知
 // 引入饿了么 UI 组件
+// 文档地址: https://mint-ui.github.io/docs/#/zh-cn2/
 import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css';
+Vue.use(Mint);
+
+// 引入滴滴 UI 组件
+// 文档地址: https://didi.github.io/cube-ui/#/zh-CN/docs/
+import Cube from 'cube-ui';
+import 'cube-ui/lib/style.css'
+Vue.use(Cube)
+// -------------------------------------------------------
 
 
 import md5 from 'js-md5';
@@ -47,7 +60,7 @@ let MD5KEY = 'YTDF5EF3A6174564E5981A446158F106'
 
 // Install Plugin
 Vue.use(Framework7Vue, Framework7);
-Vue.use(Mint);
+
 
 
 let theme = 'auto';
@@ -85,7 +98,6 @@ Vue.mixin({
         }
     }
 })
-
 
 // Init Vue App
 export default new Vue({
