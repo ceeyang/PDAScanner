@@ -15,10 +15,10 @@
     }
 
     .foot-content{
-        border: px2rem(1) solid $color-Light-grey;
+        border: 1px solid $color-Light-grey;
         display: flex;
         background-color: white;
-        height: px2rem(55);
+        height: 55px;
         .home-item{
           color: #555;
           font-weight: 600;

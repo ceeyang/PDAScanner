@@ -53,7 +53,7 @@
             </scroll>
         </template>
 
-        <section-menu v-else></section-menu>
+        <section-menu v-else :menuData='menuData' :rightItemTapAction='menuClickAction'></section-menu>
 
     </f7-page>
 </template>
@@ -66,6 +66,8 @@ import SectionMenu from './sectionmenu';
 import allData from './json/allmeasure.json';
 import finished from './json/finishedmeasure.json'
 import unfinished from './json/unfinishedmeasure.json'
+import TestMenuData from './json/menu.json';
+
 export default {
 
     data() {
@@ -78,7 +80,7 @@ export default {
             loading: false,
             loadMoreNot: true,
             firstLoad: true,
-
+            menuData: [],
         }
     },
 
@@ -87,11 +89,17 @@ export default {
         this.allData = allData;
         this.finishedData = finished;
         this.unfinishedData = unfinished;
+        this.menuData = TestMenuData;
 
     },
 
 
     methods: {
+
+        menuClickAction() {
+            console.log(item);
+        },
+
         // 筛选按钮点击事件
         filterButtonClickAction() {
             console.log('筛选');
@@ -113,7 +121,13 @@ export default {
         itemclickaction() {
             console.log('itemclickaction');
             this.$f7router.navigate('/measuredetail/');
+        },
+
+        menuClickAction(item) {
+            console.log(item);
         }
+
+
 
 
     },
