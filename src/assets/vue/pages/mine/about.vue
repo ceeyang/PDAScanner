@@ -8,8 +8,8 @@
             <img class="about-logo-img" src="../../../images/loginlogo.png"/>
             <div class="about-page company-info">
                 <p>{{companyName}}</p>
-                <a class="tell" @click="phoneCall">18108120400</a>
-                <a class="website" href="http://ceeyang.com">www.ceeyang.com</a>
+                <a class="tell" @click="phoneCall">{{supportPhone}}</a>
+                <a class="website" href="http://ceeyang.com">{{supportWebsite}}</a>
             </div>
             <!-- <a class="version-info">LT Version 1.0</a> -->
         </div>
@@ -22,11 +22,15 @@
         data() {
             return {
                 companyName: '',
+                supportPhone: '',
+                supportWebsite: '',
             }
         },
 
         mounted() {
             this.companyName = this.globalSetting.companyName;
+            this.supportPhone = this.globalSetting.supportPhone;
+            this.supportWebsite = this.globalSetting.supportWebsite;
         },
 
         methods: {

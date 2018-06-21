@@ -4,7 +4,7 @@
     <!-- Nav -->
     <!-- <nav-bar title="深圳市源泰达科技有限公司"></nav-bar> -->
     <f7-navbar>
-        <f7-nav-title title='深圳市源泰达科技有限公司'></f7-nav-title>
+        <f7-nav-title :title='companyName'></f7-nav-title>
         <f7-nav-right>
             <div @click="barcodeScanner">
                 <i class="f7-icons">camera</i>
@@ -56,12 +56,12 @@ export default {
 
     data() {
         return {
-
+            companyName:'',
         }
     },
 
     mounted() {
-
+        this.companyName = this.globalSetting.companyName;
     },
 
     methods: {

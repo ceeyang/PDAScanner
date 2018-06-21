@@ -17,6 +17,9 @@ export default [{
   {
     path: '/settings/',
     component: require('./assets/vue/pages/mine/settings.vue')
+  },{
+    path: '/about/',
+    component: require('./assets/vue/pages/mine/about.vue')
   },
   {
     path: '/login/',
