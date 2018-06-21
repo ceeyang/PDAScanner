@@ -71,7 +71,7 @@ i{
 /* 清除浮动样式 */
 .clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
 .clearfix { *zoom:1; }
-.fz14{font-size:14px;}
+.fz12{font-size:12px;}
 .fz14{font-size:14px;}
 .fz16{font-size:16px;}
 .fz18{font-size:18px;}
@@ -100,6 +100,9 @@ i{
   }
   .succeed{
       color:#5FB878
+  }
+  .normal{
+      color:#01AAED
   }
 @font-face {font-family: "iconfont";
         src: url('../fonts/iconfont.eot');
