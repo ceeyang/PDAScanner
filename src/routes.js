@@ -28,12 +28,6 @@ export default [{
   {
     path: '/assetcheck/',
     component: require('./assets/vue/pages/home/assetcheck/assetcheck.vue')
-  },{
-    path: '/detailAssetcheck/',
-    component: require('./assets/vue/pages/home/assetcheck/detailAssetcheck.vue')
-  },{
-    path: '/beginAassetcheck/',
-    component: require('./assets/vue/pages/home/assetcheck/beginAassetcheck.vue')
   },
   {
     path: '/devicemeasure/',
