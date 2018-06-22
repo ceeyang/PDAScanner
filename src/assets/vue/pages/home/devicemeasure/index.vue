@@ -1,6 +1,6 @@
 <template lang="html">
     <f7-page class="device-measure-page">
-        <!-- Nav  -->
+        <!-- 导航栏  -->
         <f7-navbar title="设备计量" back-link="Back">
             <f7-nav-right>
                 <div @click="filterButtonClickAction">
@@ -9,51 +9,29 @@
             </f7-nav-right>
         </f7-navbar>
 
+        <!-- 分类选择器 -->
         <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="currentIndex"></segment-bar>
 
+        <!-- 待计量 -->
+        <template v-if='currentIndex == 0'>
+            <cube-scroll :item="items" ref="scroll" :options="options" @pulling-down="onPullingDown" @pulling-up="onPullingUp">
+                <li v-for="item in items" class="food-item border-1px">
+                    <measure-item :title='item.name' :subtitle='item.description' :subtitle1='item.sellCount'></measure-item>
+                </li>
+            </cube-scroll>
+        </template>
 
+        <!-- 已计量 -->
         <template v-if='currentIndex == 1'>
-            <scroll :onfresh='onfresh'>
-                <f7-list media-list>
-                    <template v-for='(item,index) in allData.rows' :index='index' :item='item'>
-                        <f7-list-item @click='itemclickaction'>
-                            <div slot="root-start">证书编号: {{item.ZSBH}}</div>
-                            <div slot="title">{{item.SBMC}}</div>
-                            <div slot="subtitle">备注: {{item.BZ || '暂无备注' }}</div>
-                            <div slot="after">计量检测</div>
-                            <!-- <img src="path-to-my-image.jpg" slot="media"> -->
-                            <!-- <div slot="root-start">证书编号: {{item.ZSBH}}</div> -->
-                            <!-- <div slot="content-start">Content Start</div> -->
-                            <!-- <div slot="content">Content End</div> -->
-                            <!-- <div slot="media-start">Media Start</div> -->
-                            <!-- <div slot="media">Media</div> -->
-                            <!-- <span slot="after-start">After Start</span> -->
-                            <!-- <span slot="after">After End</span> -->
-                            <!-- <div slot="inner">检查日期: {{item.JLSJ}}</div> -->
-                            <!-- <div slot="before-title">Before Title</div> -->
-                            <!-- <div slot="after-title">After Title</div> -->
-                        </f7-list-item>
-                    </template>
-                </f7-list>
+            <scroll :item='items' :onPullingDown="onPullingDown" :onPullingUp="onPullingUp">
+                <li v-for="item in items" class="food-item border-1px">
+                    <measure-item :title='item.name' :subtitle='item.description' :subtitle1='item.sellCount'></measure-item>
+                </li>
             </scroll>
         </template>
 
-        <template v-else-if='currentIndex == 2'>
-            <scroll :onfresh='onfresh'>
-                <f7-list media-list>
-                    <template v-for='(item,index) in finishedData.rows' :index='index' :item='item'>
-                        <f7-list-item @click='itemclickaction'>
-                            <div slot="root-start">证书编号: {{item.ZSBH}}</div>
-                            <div slot="title">{{item.SBMC}}</div>
-                            <div slot="subtitle">备注: {{item.BZ || '暂无备注' }}</div>
-                            <div slot="after">计量检测</div>
-                        </f7-list-item>
-                    </template>
-                </f7-list>
-            </scroll>
-        </template>
-
-        <section-menu v-else></section-menu>
+        <!-- 科室设备选择器 -->
+        <cube-drawer ref="drawer" title="请选择" :data="data" :selected-index="selectedIndex" @change="changeHandler" @select="selectHandler" @cancel="cancelHandler"></cube-drawer>
 
     </f7-page>
 </template>
@@ -62,10 +40,13 @@
 import SegmentBar from '../../../common/segmentBar';
 import scroll from '../../../common/scroll';
 import SectionMenu from './sectionmenu';
+import MeasureItem from './measureitem';
 
 import allData from './json/allmeasure.json';
 import finished from './json/finishedmeasure.json'
 import unfinished from './json/unfinishedmeasure.json'
+import TestMenuData from './json/menu.json';
+
 export default {
 
     data() {
@@ -73,12 +54,43 @@ export default {
             allData: [],
             finishedData: [],
             unfinishedData: [],
-            titlesArray: ['全部', '已计量', '待计量'],
-            currentIndex: 1,
+            titlesArray: ['待计量', '已计量'],
+            currentIndex: 0,
             loading: false,
             loadMoreNot: true,
             firstLoad: true,
+            menuData: [],
 
+            selectedIndex: [],
+            data: [],
+
+            items: [{
+                name: 'haha',
+                description: 'this is test',
+                sellCount: '20'
+            }, {
+                name: 'haha',
+                description: 'this is test',
+                sellCount: '20'
+            }, {
+                name: 'haha',
+                description: 'this is test',
+                sellCount: '20'
+            }, ],
+            options: {
+                pullDownRefresh: {
+                    threshold: 90,
+                    stop: 40,
+                    txt: 'Refresh success'
+                },
+                pullUpLoad: {
+                    threshold: 0,
+                    txt: {
+                        more: 'Load more',
+                        noMore: 'No more data'
+                    }
+                }
+            }
         }
     },
 
@@ -87,14 +99,105 @@ export default {
         this.allData = allData;
         this.finishedData = finished;
         this.unfinishedData = unfinished;
+        this.menuData = TestMenuData;
+
+        var arr = [];
+        for (var i = 0; i < this.menuData.length; i++) {
+            let item = this.menuData[i];
+            arr.push(item.name);
+        }
+        this.data.push(arr);
+        this.data.push(this.menuData);
 
     },
 
 
     methods: {
+
+        onPullingDown(scroll) {
+            console.log(scroll);
+            console.log('onPullingDown');
+            setTimeout(() => {
+                if (Math.random() > 0.5) {
+                    // If have new data, just update the data property.
+                    this.items.unshift('I am new data: ' + +new Date())
+                    if (scroll) {
+                        scroll.forceUpdate()
+                    }
+                    else {
+                        this.$refs.scroll.forceUpdate()
+                    }
+                } else {
+                    // If no new data, you need use the method forceUpdate to tell us the load is done.
+                    if (scroll) {
+                        scroll.forceUpdate()
+                    }
+                    else {
+                        this.$refs.scroll.forceUpdate()
+                    }
+                }
+            }, 1000)
+        },
+
+        onPullingUp() {
+            console.log('up');
+            // Mock async load.
+            setTimeout(() => {
+                if (Math.random() > 0.5) {
+                    // If have new data, just update the data property.
+                    let newPage = [
+                        'I am line ' + ++this.itemIndex,
+                        'I am line ' + ++this.itemIndex,
+                        'I am line ' + ++this.itemIndex,
+                        'I am line ' + ++this.itemIndex,
+                        'I am line ' + ++this.itemIndex
+                    ]
+
+                    this.items = this.items.concat(newPage)
+                    this.$refs.scroll.forceUpdate()
+                } else {
+                    // If no new data, you need use the method forceUpdate to tell us the load is done.
+                    this.$refs.scroll.forceUpdate()
+                }
+            }, 1000)
+        },
+
+
+        // cube-drawer 事件
+        // 一级按钮点击事件
+        changeHandler(index, item, selectedVal, selectedIndex, selectedText) {
+            var arr = [];
+            for (var i = 0; i < this.menuData.length; i++) {
+                if (this.menuData[i].name == selectedText) {
+                    arr = this.menuData[i].children;
+                    continue;
+                }
+            }
+            var secondArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                secondArr.push(arr[i].name);
+            }
+            this.$refs.drawer.refill(index + 1, secondArr)
+
+        },
+
+        // 按钮选择事件
+        selectHandler(selectedVal, selectedIndex, selectedText) {
+            console.log(selectedVal, selectedIndex, selectedText);
+        },
+
+        cancelHandler() {
+            console.log('cancel')
+        },
+
+
+        menuClickAction() {
+            console.log(item);
+        },
+
         // 筛选按钮点击事件
         filterButtonClickAction() {
-            console.log('筛选');
+            this.$refs.drawer.show()
         },
 
         // 导航栏点击事件
@@ -113,7 +216,13 @@ export default {
         itemclickaction() {
             console.log('itemclickaction');
             this.$f7router.navigate('/measuredetail/');
+        },
+
+        menuClickAction(item) {
+            console.log(item);
         }
+
+
 
 
     },
@@ -122,6 +231,7 @@ export default {
         SegmentBar,
         scroll,
         SectionMenu,
+        MeasureItem,
     }
 }
 </script>

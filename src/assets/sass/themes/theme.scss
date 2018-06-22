@@ -8,34 +8,35 @@ $main-line-color: #E4E4E4;
 $main-title-color: #333333;
 
 
-$font-size: px2rem(14);                /****** 14px ******/
-$small-font: px2rem(12);           /****** 12px ******/
-$tag-font: px2rem(5);           /****** 12px ******/
-$font-title: px2rem(16);           /****** 16px ******/
-$font-title-18: px2rem(18);           /****** 18px ******/
-$img-width: px2rem(170);           /****** 18px ******/
-$h3: px2rem(18);                   /****** 18px ******/
-$h2: px2rem(26);                   /****** 26px ******/
-$h1: px2rem(40);                   /****** 40px ******/
-$status-bar-font:px2rem(19);
+// 字体颜色
+$main-font-title: 18px;
+
+$font-size: 14px;                /****** 14px ******/
+$small-font: 12px;           /****** 12px ******/
+$tag-font: 5px;           /****** 12px ******/
+$font-title: 16px;           /****** 16px ******/
+$font-title-18: 18px;           /****** 18px ******/
+$img-width: 170px;           /****** 18px ******/
+$h3: 18px;                   /****** 18px ******/
+$h2: 26px;                   /****** 26px ******/
+$h1: 40px;                   /****** 40px ******/
+$status-bar-font:19px;
 $main-background:#fff;
 
-$base-space:10;                              /****** 常用变量中没有定义的，page中基于base-space来计算 ******/
-$x-space:px2rem($base-space / 2);
-$space: px2rem($base-space);                 /****** 10px ******/
-$mx-space: px2rem(18);                      /****** 18px ******/
-$m-space: px2rem($base-space + $base-space / 2);     /****** 15px ******/
-$l-space: px2rem($base-space * 2);            /****** 20px ******/
-$base-gap: px2rem(40);                      /****** 40px ******/
+$base-space:10px;                              /****** 常用变量中没有定义的，page中基于base-space来计算 ******/
+$mx-space: 18px;                      /****** 18px ******/
+$m-space: $base-space + $base-space / 2px;     /****** 15px ******/
+$l-space: $base-space * 2px;            /****** 20px ******/
+$base-gap: 40px;                      /****** 40px ******/
 
-$icon-size:px2rem(24);              /****** 24px ******/
+$icon-size:24px;              /****** 24px ******/
 
-$nav-height: px2rem(44);            /****** 状态栏20px，导航栏44px ******/
-$footbar-height:px2rem(49);           /****** 底部标签栏49px ******/
-$filter-height: px2rem(44);         /****** 顶部筛选高度44px ******/
-$banner-height: px2rem(125);            /****** 首页banner125px ******/
-$input-height: px2rem(48);          /****** 输入框高度48px ******/
-$btn-height: px2rem(44);          /****** 按钮高度44px ******/
+$nav-height: 44px;            /****** 状态栏20px，导航栏44px ******/
+$footbar-height:49px;           /****** 底部标签栏49px ******/
+$filter-height: 44px;         /****** 顶部筛选高度44px ******/
+$banner-height: 125px;            /****** 首页banner125px ******/
+$input-height: 48px;          /****** 输入框高度48px ******/
+$btn-height: 44px;          /****** 按钮高度44px ******/
 
 $btn-space:3;
 
@@ -43,14 +44,14 @@ $btn-space:3;
 
 
 $subject-banner-height: 22rem;
-$course-player-height: px2rem(229);
+$course-player-height: 229px;
 
 $p-line-height: 1.8;
 
-$line-height-12:px2rem(12);                    /****行高12****/
-$line-height-17:px2rem(17);                    /****行高17****/
-$line-height-18:px2rem(18);                    /****行高18****/
-$line-height-22:px2rem(22);                    /****行高22****/
+$line-height-12:12px;                    /****行高12****/
+$line-height-17:17px;                    /****行高17****/
+$line-height-18:18px;                    /****行高18****/
+$line-height-22:22px;                    /****行高22****/
 
 //color
 $icon-color-gray:#777;
@@ -73,7 +74,7 @@ $font-color-white:#fff;
 
 $border-color:#ddd;
 $border-color2:#ccc;
-$border-radius: px2rem(3);
+$border-radius: 3px;
 
 $color-title-type:#7CFC00;          /*题目题型颜色*/
 $color-item-background:#F5FFFA;      /*做题背景颜色*/

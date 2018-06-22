@@ -1,0 +1,19 @@
+.measure-item{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $main-line-color;
+    border-top:1px solid $main-line-color;
+    margin-top: 5px;
+    .item-content-left{
+        margin-left: 15px;
+        .item-content-title{
+            font-size: $main-font-title;
+        }
+    }
+    .item-content-right{
+        margin-right: 15px;
+    }
+}
