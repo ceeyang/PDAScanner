@@ -1,4 +1,3 @@
-
 <template>
     <f7-page>
         <f7-navbar title="盘点单" back-link=""></f7-navbar>
@@ -30,9 +29,7 @@
                       <p>设备数量：{{parseInt(item.ZDR)-0}}</p>
                       <p>盘点单状态：<span class="danger">未上传</span></p>
                       <button class="pos-a" @click="itemclickaction(item)" >
-                          <!--<a href="./beginAassetcheck/">-->
                           开始盘点
-                          <!--</a>-->
                       </button>
                       <button class="pos-a">上传盘点单</button>
                   </div>

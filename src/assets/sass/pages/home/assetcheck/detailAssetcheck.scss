@@ -47,11 +47,13 @@
 .cont-bottom{
     background-color: #fffbf0;
     margin-top: 10px;
+    font-size: 12px;
 }
 .cont-bottom .h6{
     border-bottom: 1px solid #e2e2e2;
     color:#5777d5;
     padding:4px 0 4px 5px;
+    font-size: 13px;
 }
 .cont-bottom-text{
     padding: 0 5px;
@@ -76,10 +78,4 @@
 .cont-bottom-text button+button{
     left: 52%;
 }
-  .danger{
-        color:#FF5722
-    }
-    .succeed{
-        color:#5FB878
-    }
 }

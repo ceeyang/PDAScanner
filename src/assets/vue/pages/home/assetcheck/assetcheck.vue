@@ -82,7 +82,6 @@
                     tab_cont = document.querySelector('.tab_content'),
                     have = tab_cont.querySelector('.have'),
                     add = tab_cont.querySelector('.add')
-
                     if(ev.target.parentNode==oul){
                         for(var i = 0; i< lis.length;i++){
                             this.removeClass(lis[i],'active')
@@ -118,11 +117,10 @@
                 }
             },
             itemclickaction(data){
+              
                 global.assetcheckeddata = data;
                 this.$f7router.navigate('/detailAssetcheck/');
             }
-
-
  
         },
          components: {
@@ -131,5 +129,4 @@
     }
 </script>
 <style scoped>
-
 </style>
