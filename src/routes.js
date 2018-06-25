@@ -53,10 +53,19 @@ export default [{
     path: '/repair/',
     component: require('./assets/vue/pages/home/repair/index.vue')
   },
+
+  //  scanrepair
   {
     path: '/scanrepair/',
     component: require('./assets/vue/pages/home/scanrepair/index.vue')
   },
+  {
+    path: '/applyrepair/',
+    component: require('./assets/vue/pages/home/scanrepair/applyrepair.vue')
+  },
+
+
+
   {
     path: '/devicepolling/',
     component: require('./assets/vue/pages/home/devicepolling/index.vue')

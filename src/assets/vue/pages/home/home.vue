@@ -27,7 +27,7 @@
 
 
     <div class="home-page-content">
-        <home-item text="扫码保修" :href='/scanrepair/'> <i class="f7-icons">camera</i> </home-item>
+        <home-item text="科室报修" :href='/scanrepair/'> <i class="iconfont">&#xe617;</i> </home-item>
         <home-item text="资产盘点" :href='/assetcheck/'> <i class="f7-icons">bars</i> </home-item>
         <home-item text="维修管理" :href='/repair/'> <i class="f7-icons">favorites</i> </home-item>
         <home-item text="设备巡检" :href='/devicepolling/'> <i class="f7-icons">refresh_round</i> </home-item>
@@ -65,6 +65,28 @@ export default {
     },
 
     methods: {
+
+        itemClick() {
+
+        },
+
+        switchTab(index) {
+            this.currentIndex = index;
+        },
+
+        onPullingDown(scroll) {
+            console.log('pullingDown: ' + scroll);
+            setTimeout(function () {
+                scroll.forceUpdate();
+            }, 1000);
+        },
+
+        onPullingUp(scroll) {
+            setTimeout(function () {
+                scroll.forceUpdate();
+            }, 1000);
+        },
+
         barcodeScanner() {
             console.log('barcodeScanner');
             console.log(cordova.plugins);

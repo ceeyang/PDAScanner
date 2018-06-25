@@ -1,29 +1,20 @@
+<!--
+申请设备维修页面
+codeer: cee
+2018-06-25 18:16:13
+-->
 <template lang="html">
     <f7-page>
         <!-- Nav  -->
-        <f7-navbar title="科室报修" back-link="Back"></f7-navbar>
+        <f7-navbar title="申请报修" back-link="Back"></f7-navbar>
 
-        <!-- 分类选择器 -->
-        <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="currentIndex"></segment-bar>
-
-        <!-- 待维修 -->
-        <template v-if="currentIndex==0">
-            <scroll :items="readyrepairData.rows" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
-                <li v-for="(item,index) in readyrepairData.rows" :key="index" :item="item">
-                    <repair-item :item="item" :itemClick="itemClick" className="readyrepair"></repair-item>
-                </li>
-            </scroll>
-        </template>
-
-        <!-- 已维修 -->
-        <template v-if="currentIndex==1">
-            <scroll :items="repairCompletedData.rows" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
-                <li v-for="(item,index) in repairCompletedData.rows" :key="index" :item="item">
-                    <repair-item :item="item" :itemClick="itemClick"></repair-item>
-                </li>
-            </scroll>
-        </template>
-
+        <scroll>
+            <li>sha</li>
+            <li>sha</li>
+            <li>sha</li>
+            <li>sha</li>
+            <li>sha</li>
+        </scroll>
 
     </f7-page>
 </template>
@@ -56,7 +47,7 @@ export default {
 
     methods: {
         itemClick() {
-            this.$f7router.navigate('/applyrepair/');
+
         },
 
         switchTab(index) {

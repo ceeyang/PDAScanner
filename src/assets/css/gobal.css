@@ -1,6 +1,6 @@
 @charset "utf-8";
 /**
- *+----2018-6-15  
+ *+----2018-6-15
  *	--李朝阳
  *	全局样式
  */
@@ -35,7 +35,7 @@ a,a:hover,a:focus{text-decoration:none;outline:none;-webkit-transition:all 0.3s;
 
 .white{color: #ffffff;font-size: 30px;}
 i{
-	font-size: 16px;
+	font-size: 25px;
 	font-style: normal;
 }
 /*common css*/
@@ -93,7 +93,7 @@ i{
     display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
     display: -webkit-box;   /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
     display: -moz-box;      /* 老版本语法: Firefox (buggy) */
-    display: -ms-flexbox;   /* 混合版本语法: IE 10 */   
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
 }
 .danger{
       color:#FF5722
@@ -106,10 +106,10 @@ i{
   }
 @font-face {font-family: "iconfont";
         src: url('../fonts/iconfont.eot');
-        src: url('../fonts/iconfont.eot#iefix') format('embedded-opentype'), 
-        url('../fonts/iconfont.woff') format('woff'), 
-        url('../fonts/iconfont.ttf') format('truetype'), 
-          url('../fonts/iconfont.svg#iconfont') format('svg'); 
+        src: url('../fonts/iconfont.eot#iefix') format('embedded-opentype'),
+        url('../fonts/iconfont.woff') format('woff'),
+        url('../fonts/iconfont.ttf') format('truetype'),
+          url('../fonts/iconfont.svg#iconfont') format('svg');
       }
 
     .iconfont {

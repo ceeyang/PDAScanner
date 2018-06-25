@@ -17,8 +17,9 @@ position: relative;
   }
 
   .active {
-    border-bottom: px2rem(2) solid #26a2ff;
-    color: white;
-    background-color: $main-background-color;
+    border-bottom: 2px solid $main-background-color;
+    color: $main-background-color;
+    font-size: 14px;
+    font-family: monospace;
   }
 }

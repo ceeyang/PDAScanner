@@ -21,9 +21,11 @@
         flex-wrap: wrap;
         a{
             color: $main-title-color;
-        }
+        };
+
+        i{
+            font-size: 25px;
+        };
+
     }
-
-
-
 }

@@ -12,7 +12,14 @@
             </div>
         </div>
         <div class="item-content-right">
-            <i class="iconfont">&#xe64a;</i>
+
+            <template v-if="className=='readyrepair'">
+                <i class="iconfont">&#xe617;</i>
+            </template>
+            <template v-else>
+                <i class="iconfont">&#xe64a;</i>
+            </template>
+
         </div>
     </div>
 </template>
@@ -20,7 +27,7 @@
 <script>
 export default {
 
-    props: ['item', 'itemClick'],
+    props: ['item', 'itemClick', 'className'],
 
     data() {
         return {

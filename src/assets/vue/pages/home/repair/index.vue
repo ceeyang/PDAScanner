@@ -4,70 +4,96 @@
         <f7-navbar title="维修处理" back-link="Back"></f7-navbar>
 
 
+        <!-- 分类选择器 -->
+        <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="currentIndex"></segment-bar>
 
-        <scroll class="repair-scroll" :onfresh='onfresh'>
-            <!-- <div class="repair-nav-items">
-                <repair-item text="维修派工" :href='/scanrepair/'> <i class="f7-icons">camera</i> </repair-item>
-                <repair-item text="维修接单" :href='/scanrepair/'> <i class="f7-icons">camera</i> </repair-item>
-                <repair-item text="维修处理" :href='/scanrepair/'> <i class="f7-icons">camera</i> </repair-item>
-            </div> -->
 
-            <f7-list media-list  v-for="(item,index) in data.rows" :key="index" :item="item">
-                <f7-list-item
-                link="/home/"
-                :text=item.SBMC
-                >
-                    <div slot="root-start">申请单号: {{item.SBBH}}</div>
-                    <div slot="root">最后报修时间: 2018-06-18 03:00:58</div>
-                    <!-- <div slot="content-start">{{item.SBMC}}</div> -->
-                    <!-- <div slot="content">Content End</div> -->
-                    <!-- <div slot="media-start">Media Start</div> -->
-                    <!-- <div slot="media">{{item.SBMC}}</div> -->
-                    <!-- <span slot="after-start">After Start</span> -->
-                    <!-- <span slot="after">After End</span> -->
-                    <div slot="inner-start">{{item.SBMC}}</div>
-                    <div slot="inner">维修状态: {{item.WXPHONE || '暂无维修状态'}}</div>
-                    <!-- <div slot="before-title">Before Title</div>
-                    <div slot="after-title">After Title</div> -->
-                </f7-list-item>
-            </f7-list>
+        <!-- 待派工 -->
+        <template v-if="currentIndex==0">
+            <scroll :items="readyrepairData.rows" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+                <li v-for="(item,index) in readyrepairData.rows" :key="index" :item="item">
+                    <repair-item :item="item" :itemClick="itemClick"></repair-item>
+                </li>
+            </scroll>
+        </template>
 
-        </scroll>
+        <!-- 待接单 -->
+        <template v-if="currentIndex==1">
+            <scroll :items="takeordersData.rows" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+                <li v-for="(item,index) in takeordersData.rows" :key="index" :item="item">
+                    <repair-item :item="item" :itemClick="itemClick"></repair-item>
+                </li>
+            </scroll>
+        </template>
+
+        <!-- 待处理 -->
+        <template v-if="currentIndex==2">
+            <scroll :items="waitehandleData.rows" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+                <li v-for="(item,index) in waitehandleData.rows" :key="index" :item="item">
+                    <repair-item :item="item" :itemClick="itemClick"></repair-item>
+                </li>
+            </scroll>
+        </template>
 
     </f7-page>
 </template>
 
 <script>
 import scroll from '../../../common/scroll.vue';
+import SegmentBar from '../../../common/segmentBar';
 import RepairItem from './repairitem.vue';
-import data from './repair.json';
+
+import data from './json/readyrepair.json';
+
 export default {
 
     data() {
         return {
-            data: []
+
+            titlesArray: ['待派工', '待接单', '待处理'],
+            currentIndex: 0,
+            // 待派工
+            readyrepairData: [],
+            // 待接单
+            takeordersData: [],
+            // 待处理
+            waitehandleData: [],
+
+
         }
     },
 
     mounted() {
-
-        this.data = data;
-
+        this.readyrepairData = data;
     },
 
     methods: {
-        onfresh() {
-            let vm = this;
-            setTimeout(function() {
-                vm.data = data;
-                vm.$f7.ptr.done();
-            }, 2000);
+        itemClick() {
+
+        },
+
+        switchTab(index) {
+            this.currentIndex = index;
+        },
+
+        onPullingDown(scroll) {
+            console.log('pullingDown: ' + scroll);
+            setTimeout(function () {
+                scroll.forceUpdate();
+            }, 1000);
+        },
+
+        onPullingUp(scroll) {
+            setTimeout(function () {
+                scroll.forceUpdate();
+            }, 1000);
         },
     },
 
     components: {
         scroll,
         RepairItem,
+        SegmentBar
     }
 }
 </script>

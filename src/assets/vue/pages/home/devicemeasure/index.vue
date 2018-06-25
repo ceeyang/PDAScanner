@@ -10,25 +10,33 @@
         </f7-navbar>
 
         <!-- 分类选择器 -->
-        <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="currentIndex"></segment-bar>
+        <!-- <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="currentIndex"></segment-bar> -->
 
         <!-- 待计量 -->
-        <template v-if='currentIndex == 0'>
-            <cube-scroll :item="items" ref="scroll" :options="options" @pulling-down="onPullingDown" @pulling-up="onPullingUp">
-                <li v-for="item in items" class="food-item border-1px">
-                    <measure-item :title='item.name' :subtitle='item.description' :subtitle1='item.sellCount'></measure-item>
-                </li>
-            </cube-scroll>
-        </template>
+        <!-- <template v-if='currentIndex == 0'> -->
+            <!-- <cube-scroll :item="items" ref="scroll" :options="options" @pulling-down="onPullingDown" @pulling-up="onPullingUp"> -->
+                <!-- <li v-for="item in items"> -->
+                    <!-- <measure-item :item="item" :itemClick="itemClick"></measure-item> -->
+                <!-- </li> -->
+            <!-- </cube-scroll> -->
+        <!-- </template> -->
 
         <!-- 已计量 -->
-        <template v-if='currentIndex == 1'>
-            <scroll :item='items' :onPullingDown="onPullingDown" :onPullingUp="onPullingUp">
-                <li v-for="item in items" class="food-item border-1px">
-                    <measure-item :title='item.name' :subtitle='item.description' :subtitle1='item.sellCount'></measure-item>
-                </li>
-            </scroll>
-        </template>
+        <!-- <template v-if='currentIndex == 1'> -->
+            <!-- <scroll :item='items' :onPullingDown="onPullingDown" :onPullingUp="onPullingUp"> -->
+                <!-- <li v-for="item in items"> -->
+                    <!-- <measure-item :item="item" :itemClick="itemClick"></measure-item> -->
+                <!-- </li> -->
+            <!-- </scroll> -->
+        <!-- </template> -->
+
+
+        <scroll :item="items.rows" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+            <li v-for="(item,index) in waitehandleData.rows" :key="index" :item="item">
+                <measure-item :item="item" :itemClick="itemClick"></measure-item>
+            </li>
+        </scroll>
+
 
         <!-- 科室设备选择器 -->
         <cube-drawer ref="drawer" title="请选择" :data="data" :selected-index="selectedIndex" @change="changeHandler" @select="selectHandler" @cancel="cancelHandler"></cube-drawer>
@@ -43,62 +51,38 @@ import SectionMenu from './sectionmenu';
 import MeasureItem from './measureitem';
 
 import allData from './json/allmeasure.json';
-import finished from './json/finishedmeasure.json'
-import unfinished from './json/unfinishedmeasure.json'
 import TestMenuData from './json/menu.json';
+import MeteringData from './json/metering.json';
 
 export default {
 
     data() {
         return {
-            allData: [],
-            finishedData: [],
-            unfinishedData: [],
             titlesArray: ['待计量', '已计量'],
             currentIndex: 0,
+            selectedIndex: [],
+
+
             loading: false,
             loadMoreNot: true,
             firstLoad: true,
-            menuData: [],
 
-            selectedIndex: [],
+            // 科室数据
+            // 所有科室数据
+            menuData: [],
+            // 一级科室目录
             data: [],
 
-            items: [{
-                name: 'haha',
-                description: 'this is test',
-                sellCount: '20'
-            }, {
-                name: 'haha',
-                description: 'this is test',
-                sellCount: '20'
-            }, {
-                name: 'haha',
-                description: 'this is test',
-                sellCount: '20'
-            }, ],
-            options: {
-                pullDownRefresh: {
-                    threshold: 90,
-                    stop: 40,
-                    txt: 'Refresh success'
-                },
-                pullUpLoad: {
-                    threshold: 0,
-                    txt: {
-                        more: 'Load more',
-                        noMore: 'No more data'
-                    }
-                }
-            }
+            //当前列表数据
+            items: [],
+
         }
     },
 
     mounted() {
 
-        this.allData = allData;
-        this.finishedData = finished;
-        this.unfinishedData = unfinished;
+        this.items = allData;
+        console.log(this.items);
         this.menuData = TestMenuData;
 
         var arr = [];
@@ -109,10 +93,17 @@ export default {
         this.data.push(arr);
         this.data.push(this.menuData);
 
+
+
     },
 
 
     methods: {
+
+        itemClick() {
+            console.log('itemclickaction');
+            this.$f7router.navigate('/measuredetail/');
+        },
 
         onPullingDown(scroll) {
             console.log(scroll);
@@ -123,23 +114,21 @@ export default {
                     this.items.unshift('I am new data: ' + +new Date())
                     if (scroll) {
                         scroll.forceUpdate()
-                    }
-                    else {
-                        this.$refs.scroll.forceUpdate()
+                    } else {
+                        scroll.forceUpdate()
                     }
                 } else {
                     // If no new data, you need use the method forceUpdate to tell us the load is done.
                     if (scroll) {
                         scroll.forceUpdate()
-                    }
-                    else {
-                        this.$refs.scroll.forceUpdate()
+                    } else {
+                        scroll.forceUpdate()
                     }
                 }
             }, 1000)
         },
 
-        onPullingUp() {
+        onPullingUp(scroll) {
             console.log('up');
             // Mock async load.
             setTimeout(() => {
@@ -154,10 +143,10 @@ export default {
                     ]
 
                     this.items = this.items.concat(newPage)
-                    this.$refs.scroll.forceUpdate()
+                    scroll.forceUpdate()
                 } else {
                     // If no new data, you need use the method forceUpdate to tell us the load is done.
-                    this.$refs.scroll.forceUpdate()
+                    scroll.forceUpdate()
                 }
             }, 1000)
         },
@@ -166,6 +155,8 @@ export default {
         // cube-drawer 事件
         // 一级按钮点击事件
         changeHandler(index, item, selectedVal, selectedIndex, selectedText) {
+
+            // 获取当前选择目录下所有子集目录
             var arr = [];
             for (var i = 0; i < this.menuData.length; i++) {
                 if (this.menuData[i].name == selectedText) {
@@ -173,10 +164,14 @@ export default {
                     continue;
                 }
             }
+
+            // 获取当前目录下子集目录的所有名称
             var secondArr = [];
             for (var i = 0; i < arr.length; i++) {
                 secondArr.push(arr[i].name);
             }
+
+            // 重新渲染当前二级目录
             this.$refs.drawer.refill(index + 1, secondArr)
 
         },
@@ -211,11 +206,6 @@ export default {
             setTimeout(function() {
                 vm.$f7.ptr.done();
             }, 1000);
-        },
-
-        itemclickaction() {
-            console.log('itemclickaction');
-            this.$f7router.navigate('/measuredetail/');
         },
 
         menuClickAction(item) {

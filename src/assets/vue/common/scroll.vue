@@ -1,24 +1,28 @@
 <template lang="html">
-    <cube-scroll :item="items" ref="scroll" :options="options" @pulling-down="pullingDown" @pulling-up="pullingUp">
-        <!-- <li v-for="item in items" class="food-item border-1px">
-            <slot></slot>
-        </li> -->
-
-
-
+    <cube-scroll :item="items" ref="scroll" :options="fresh?options:noFreshOptions" @pulling-down="pullingDown" @pulling-up="pullingUp">
         <slot></slot>
+
+        <!-- 刷新列表里显示没有更多数据 -->
+        <div v-if="fresh">
+            <div v-if="!items" class="no-more-data-hint">
+                一 没有更多啦 一
+            </div>
+        </div>
     </cube-scroll>
 </template>
 
 <script>
 export default {
 
-    props: ['items', 'onPullingDown', 'onPullingUp'],
+    props: [
+        'items',  // 数据源
+        'fresh',  // 是否需要刷新
+        'onPullingDown', // 下拉刷新事件
+        'onPullingUp' // 上啦刷新事件
+    ],
 
     data() {
         return {
-
-            
 
             options: {
                 pullDownRefresh: {
@@ -33,6 +37,10 @@ export default {
                         noMore: 'No more data'
                     }
                 }
+            },
+
+            noFreshOptions: {
+
             },
 
         }

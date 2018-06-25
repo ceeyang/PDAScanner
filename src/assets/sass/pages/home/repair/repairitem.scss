@@ -1,16 +1,35 @@
-.repair-item{
-    width: 33%;
-    height: 65px;
-    border-bottom: 1px solid $main-line-color;
-    border-right: 1px solid $main-line-color;
-
+.measure-item{
+    background-color: white;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-
-    p{
-        text-align:center!important;
-
+    justify-content: space-between;
+    border-bottom: 1px solid $main-line-color;
+    border-top:1px solid $main-line-color;
+    margin-top: 5px;
+    .item-content-left{
+        margin-left: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        .item-content-title{
+            font-size: $main-font-title;
+        }
+        .item-content-subtitle{
+            font-size: $main-font-subtitle;
+            color: $main-color-subtitle;
+        }
+    }
+    .item-content-right{
+        margin-right: 15px;
+        display: flex;
+        flex-direction: row;
+        i{
+            font-size: 25px;
+        };
+        .item-content-status{
+            border: 1px solid $main-background-color;
+            font-size: 15px;
+            text-align: center;
+        }
     }
 }
