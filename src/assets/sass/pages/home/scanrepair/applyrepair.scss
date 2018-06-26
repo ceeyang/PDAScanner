@@ -1,0 +1,11 @@
+.apply-repair-page{
+    .apply-repair-scroll{
+        height: calc(100% - 45px);
+    }
+    .apply-repair-bottom{
+        color: white;
+        height: 45px;
+        background-color: $main-background-color;
+        border-color: transparent;
+    }
+}

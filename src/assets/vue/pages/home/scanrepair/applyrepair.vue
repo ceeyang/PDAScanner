@@ -4,17 +4,18 @@ codeer: cee
 2018-06-25 18:16:13
 -->
 <template lang="html">
-    <f7-page>
+    <f7-page class="apply-repair-page">
         <!-- Nav  -->
         <f7-navbar title="申请报修" back-link="Back"></f7-navbar>
 
-        <scroll>
-            <li>sha</li>
-            <li>sha</li>
-            <li>sha</li>
-            <li>sha</li>
-            <li>sha</li>
+        <scroll class="apply-repair-scroll" :items="repairTitlesArr">
+            <li v-for="(item,index) in repairTitlesArr" :key="index" :item="item">
+                <!-- <input-cell :title="item.title" :disabled="item.disabled" placeholder="请填写您需要的内容" :inputValue="item.value"></input-cell> -->
+                <input-cell :title="item.title" :disabled="item.disabled" :inputValue="item.value"></input-cell>
+            </li>
         </scroll>
+
+        <cube-button class="apply-repair-bottom">申请</cube-button>
 
     </f7-page>
 </template>
@@ -22,7 +23,7 @@ codeer: cee
 <script>
 
 import scroll from '../../../common/scroll.vue';
-import SegmentBar from '../../../common/segmentBar';
+import InputCell from '../../../common/inputcell.vue';
 import RepairItem from '../../../common/repairitem.vue';
 
 import data from './json/readyrepair.json';
@@ -31,18 +32,89 @@ export default {
 
     data() {
         return {
-            titlesArray: ['待报修', '已报修'],
-            currentIndex: 0,
+            repairTitlesArr: [{
+                "title": "设备名称",
+                "name": "SBMC",
+                "value": "",
+                "disabled": true,
+            },{
+                "title": "报修科室",
+                "name": "SYKSMC",
+                "value": "西药库",
+                "disabled": false
+            },
+            {
+                "title": "报修人员",
+                "name": "WXR",
+                "value": "管理员",
+                "disabled": true
+            },
+            {
+                "title": "报修日期",
+                "name": "BXRQ",
+                "value": "2018-06-26",
+                "disabled": false
 
-            // 待维修
-            readyrepairData: [],
-            // 已维修
-            repairCompletedData: [],
+            },
+            {
+                "title": "维修期限",
+                "name": "WXQX",
+                "value": "2019-06-26",
+                "disabled": false
+            },
+            {
+                "title": "资产编号",
+                "name": "SBBH",
+                "value": "68990500067",
+                "disabled": true
+            },
+            {
+                "title": "规格型号",
+                "name": "SBXH",
+                "value": "",
+                "disabled": true
+            },
+            {
+                "title": "报修电话",
+                "name": "BXDH",
+                "value": "",
+                "disabled": false
+            },
+            {
+                "title": "维修状态",
+                "name": "SBZT",
+                "value": "",
+                "disabled": false
+            },
+            {
+                "title": "资产厂家",
+                "name": "SBCJMC",
+                "value": "",
+                "disabled": true
+            },
+            {
+                "title": "故障描述",
+                "name": "GZMS",
+                "value": "",
+                "disabled": false
+            }],
         }
     },
 
     mounted() {
         this.readyrepairData = data;
+
+        let itemData = JSON.parse(localStorage.ItemData);
+        for (var item in itemData) {
+            for (var i = 0; i < this.repairTitlesArr.length; i++) {
+                let repair = this.repairTitlesArr[i];
+                if (item == repair.name) {
+                    repair.value = itemData[item];
+                }
+                this.repairTitlesArr[i] = repair;
+            }
+        }
+
     },
 
     methods: {
@@ -70,9 +142,9 @@ export default {
 
 
     components: {
-        SegmentBar,
         scroll,
         RepairItem,
+        InputCell
     }
 }
 </script>

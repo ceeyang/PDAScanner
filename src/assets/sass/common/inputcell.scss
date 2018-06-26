@@ -1,0 +1,27 @@
+.common-input-cell{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid $main-line-color;
+    background-color: white;
+    .input-cell-title{
+        font-size: $main-font-title;
+        border-right: 2px solid $main-line-color;
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 10px;
+        width: 26%;
+    }
+    .comon-input{
+        font-size: $main-font-subtitle;
+        background-color: $main-color-input;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 74%;
+    }
+    .disabled{
+        background-color: $main-color-input-disable;
+    }
+}

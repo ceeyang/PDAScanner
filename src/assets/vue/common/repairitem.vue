@@ -8,7 +8,7 @@
                 设备编号: {{item.SBBH}}
             </div>
             <div class="item-content-subtitle">
-                证书编号: {{item.ZSBH}}
+                使用科室: {{item.SYKSMC}}
             </div>
         </div>
         <div class="item-content-right">
@@ -42,10 +42,8 @@ export default {
     methods: {
         itemClicks() {
             if (this.itemClick) {
-                // localStorage.measureItem = this.item;
                 let itemDataJson = JSON.stringify(this.item);
-                console.log(itemDataJson);
-                localStorage.setItem('measureItemData',itemDataJson);
+                localStorage.setItem('ItemData',itemDataJson);
                 this.itemClick();
             }
         }

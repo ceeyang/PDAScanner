@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-around;
   .about-logo-img{
-    margin-top: px2rem(70);
+    margin-top: 70px;
     width: 50%;
     height:50%;
   }
@@ -14,7 +14,7 @@
     height: 90px;
     justify-content: space-between;
     font-size: $font-size;
-    margin-top: px2rem(60);
+    margin-top: 60px;
     .tell{
       color: #3D7ADD;
     }
@@ -25,7 +25,7 @@
 
   .version-info{
     position:absolute;
-    bottom:px2rem(10);
+    bottom:10px;
     width: 100%;
     text-align: center;
     line-height: 44px;
