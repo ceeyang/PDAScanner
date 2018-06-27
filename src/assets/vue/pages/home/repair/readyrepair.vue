@@ -4,18 +4,18 @@ codeer: cee
 2018-06-25 18:16:13
 -->
 <template lang="html">
-    <f7-page class="apply-repair-page">
+    <f7-page class="ready-repair-page">
         <!-- Nav  -->
-        <f7-navbar title="申请报修" back-link="Back"></f7-navbar>
+        <f7-navbar title="维修派单" back-link="Back"></f7-navbar>
 
-        <scroll class="apply-repair-scroll" :items="repairTitlesArr">
+        <scroll class="ready-repair-scroll" :items="repairTitlesArr">
             <li v-for="(item,index) in repairTitlesArr" :key="index" :item="item">
                 <!-- <input-cell :title="item.title" :disabled="item.disabled" placeholder="请填写您需要的内容" :inputValue="item.value"></input-cell> -->
                 <input-cell :title="item.title" :disabled="item.disabled" :inputValue="item.value"></input-cell>
             </li>
         </scroll>
 
-        <cube-button @click="applyButtonAction" class="apply-repair-bottom">申请维修</cube-button>
+        <cube-button @click="readyButtonAction" class="ready-repair-bottom">维修派工</cube-button>
 
     </f7-page>
 </template>
@@ -116,7 +116,7 @@ export default {
 
     methods: {
 
-        applyButtonAction() {
+        readyButtonAction() {
             const self = this;
             if (!self.toastCenter) {
                 self.toastCenter = self.$f7.toast.create({

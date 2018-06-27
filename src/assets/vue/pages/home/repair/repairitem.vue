@@ -38,7 +38,7 @@ export default {
                 // localStorage.measureItem = this.item;
                 let itemDataJson = JSON.stringify(this.item);
                 console.log(itemDataJson);
-                localStorage.setItem('measureItemData',itemDataJson);
+                localStorage.setItem('ItemData',itemDataJson);
                 this.itemClick();
             }
         }

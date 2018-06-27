@@ -2,6 +2,7 @@
 position: relative;
   display: flex;
   background-color: white;
+  border-bottom: 1px solid $main-line-color;
   .segment-tab {
     flex: 1;
     font-size: $small-font;

@@ -86,7 +86,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		d6wiHDslOB6I0p7wn4YRDfJCrhg=
+		GtG5+yEcg4lMXNAiqLks2E5c/Zc=
 		</data>
 		<key>CDVBarcodeScanner.bundle/beep.caf</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		mhk7hszqNGag5RE5VYTXYJse57o=
+		ID1EndU7ZMb+K3vGCacgwDknH5k=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		+91xgXyXn7TKpCa7M9SfDPGH69k=
+		d807vNStJXNtqPRwjOle89FNs1c=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		ymyPcLoHrTK6ARKyksYlkmSz450=
+		4MMv/p+S/7Laf3rfgVvCxrR1Pqo=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>scannerOverlay.nib</key>
 		<data>
-		QlqpJxKkzTemTbF3It/ofUwRW+o=
+		6MUDn8E/cIRRjg/DwHmJs24s73w=
 		</data>
 		<key>www/cordova-js-src/exec.js</key>
 		<data>
@@ -166,7 +166,7 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		runVPu1Ewi39mbGulfj4JWbOeac=
+		yMdsICcHgxhnMoD5ufRtIhrzCW8=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -395,11 +395,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			d6wiHDslOB6I0p7wn4YRDfJCrhg=
+			GtG5+yEcg4lMXNAiqLks2E5c/Zc=
 			</data>
 			<key>hash2</key>
 			<data>
-			ccdulqETLbNpilDVmCzMVTSBZ9LOL27eBevGttY2EuM=
+			AE7C/DITLBbFh3a+erbiuIGbHX5P/pXXu1gQdKOe8Kc=
 			</data>
 		</dict>
 		<key>CDVBarcodeScanner.bundle/beep.caf</key>
@@ -450,11 +450,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mhk7hszqNGag5RE5VYTXYJse57o=
+			ID1EndU7ZMb+K3vGCacgwDknH5k=
 			</data>
 			<key>hash2</key>
 			<data>
-			d+NEHclzXtvh/eAXswBnxmmVmcWlSamh7c5P6qpWjaY=
+			pcFLtGAySOlPH2C2hWmQSXCro9H/krkOmkPnG9Yb9WA=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -472,22 +472,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+91xgXyXn7TKpCa7M9SfDPGH69k=
+			d807vNStJXNtqPRwjOle89FNs1c=
 			</data>
 			<key>hash2</key>
 			<data>
-			c27XcV+2HwEzeHdwL//cJN2vUDv64PWulFm9lXEq7yk=
+			pHKesah+LYhNnBMNHYe2JcWLf00TwDeGpTDX/DsLq1w=
 			</data>
 		</dict>
 		<key>MainViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ymyPcLoHrTK6ARKyksYlkmSz450=
+			4MMv/p+S/7Laf3rfgVvCxrR1Pqo=
 			</data>
 			<key>hash2</key>
 			<data>
-			zdXh1Df9rSeF0zyTnYqF/lyRGiLK7Zq5a1Gf7WunvXQ=
+			ijLZTvXM69sWrP2M1/yQUGgYlIcjd2Z62y6KSNqHwgY=
 			</data>
 		</dict>
 		<key>config.xml</key>
@@ -516,11 +516,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QlqpJxKkzTemTbF3It/ofUwRW+o=
+			6MUDn8E/cIRRjg/DwHmJs24s73w=
 			</data>
 			<key>hash2</key>
 			<data>
-			mQXqfkTCjqvO/gnZ+SdNXfLMfzlORNOllzoQJe0LVR8=
+			ia+Yjuiv3jY3cS7G9HRKhISQtlzX41be23hmU+r+FDk=
 			</data>
 		</dict>
 		<key>www/cordova-js-src/exec.js</key>
@@ -593,11 +593,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			runVPu1Ewi39mbGulfj4JWbOeac=
+			yMdsICcHgxhnMoD5ufRtIhrzCW8=
 			</data>
 			<key>hash2</key>
 			<data>
-			dMbaBGGHIAbT8oZTt7VkdA9lgtOhQ1ABOKcEUJZ9+48=
+			S/Ors9oqUMDZXs8H87YeKQ/jSm4egbrdI4RVreQiZ6M=
 			</data>
 		</dict>
 	</dict>

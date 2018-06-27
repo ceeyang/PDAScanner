@@ -32,7 +32,7 @@
 
 
         <scroll :item="items.rows" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
-            <li v-for="(item,index) in waitehandleData.rows" :key="index" :item="item">
+            <li v-for="(item,index) in items.rows" :key="index" :item="item">
                 <measure-item :item="item" :itemClick="itemClick"></measure-item>
             </li>
         </scroll>
