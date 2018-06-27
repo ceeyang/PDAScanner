@@ -120,6 +120,9 @@ export default {
 
         login() {
 
+            this.pickerConfirm();
+            return;
+
 
             if (this.user.account.length < 1) {
                 const self = this;
