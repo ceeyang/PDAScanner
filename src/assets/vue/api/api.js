@@ -5,4 +5,9 @@ export default {
     WarehouseList: '/api/Login/WarehouseList',
     // 获取科室集合
     departmentList: 'api/Repair/DepartmentList',
+    // 未报修设备集合
+    notRepairList: "api/Repair/DepartmentEquListNot",
+    // 已经报修设备集合
+    hadRepairedList: "api/Repair/DepartmentEquListHas",
+
 }

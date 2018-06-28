@@ -2,13 +2,13 @@
     <div class="measure-item" @click='itemClicks'>
         <div class="item-content-left">
             <div class="item-content-title">
-                {{item.SBMC}}
+                {{item.EquName}}
             </div>
             <div class="item-content-subtitle">
-                设备编号: {{item.SBBH}}
+                设备编号: {{item.EquCode}}
             </div>
             <div class="item-content-subtitle">
-                使用科室: {{item.SYKSMC}}
+                购入日期: {{item.BuyDate}}
             </div>
         </div>
         <div class="item-content-right">

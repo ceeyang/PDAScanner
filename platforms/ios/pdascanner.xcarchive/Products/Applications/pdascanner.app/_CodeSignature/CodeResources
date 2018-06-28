@@ -86,7 +86,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		d6wiHDslOB6I0p7wn4YRDfJCrhg=
+		HfjCFcra7sk3bvNjgHcdZDVdj9o=
 		</data>
 		<key>CDVBarcodeScanner.bundle/beep.caf</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		mhk7hszqNGag5RE5VYTXYJse57o=
+		oLCLU5n3QaZ57IlJi1RTU+SrgH4=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -114,15 +114,15 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		+91xgXyXn7TKpCa7M9SfDPGH69k=
+		tuHoFkpEeDxiUProOzK9hRqzoNw=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		sfqflqOMP2IpyDaMx2miKxWklls=
+		8LIC3wqN2yUaDcOSumBPIHS1wOI=
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		ymyPcLoHrTK6ARKyksYlkmSz450=
+		in06bCsrf2JyakED2XevMcXQpek=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>config.xml</key>
 		<data>
-		UnTcC767qsGW4vO8TuhZntTy6bs=
+		/s/Vcwis9kAQM67U8Pbx0moAiBw=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>scannerOverlay.nib</key>
 		<data>
-		QlqpJxKkzTemTbF3It/ofUwRW+o=
+		YvmZ/oLE6M9oW/vOYCsCboLTZQY=
 		</data>
 		<key>www/cordova-js-src/exec.js</key>
 		<data>
@@ -166,7 +166,11 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		runVPu1Ewi39mbGulfj4JWbOeac=
+		yMdsICcHgxhnMoD5ufRtIhrzCW8=
+		</data>
+		<key>www/plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js</key>
+		<data>
+		haJXivDxwB2BCbPcMrODx5ojVqQ=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -395,11 +399,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			d6wiHDslOB6I0p7wn4YRDfJCrhg=
+			HfjCFcra7sk3bvNjgHcdZDVdj9o=
 			</data>
 			<key>hash2</key>
 			<data>
-			ccdulqETLbNpilDVmCzMVTSBZ9LOL27eBevGttY2EuM=
+			Dr+6SE942BIKaLUzl/ewbtujV+ngtERH7qBh1JA1qvM=
 			</data>
 		</dict>
 		<key>CDVBarcodeScanner.bundle/beep.caf</key>
@@ -450,11 +454,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mhk7hszqNGag5RE5VYTXYJse57o=
+			oLCLU5n3QaZ57IlJi1RTU+SrgH4=
 			</data>
 			<key>hash2</key>
 			<data>
-			d+NEHclzXtvh/eAXswBnxmmVmcWlSamh7c5P6qpWjaY=
+			PRatMWHGK8XOQVpl3VIlblnDFiQy5W6sFbuZ3TKwOuM=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -472,33 +476,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+91xgXyXn7TKpCa7M9SfDPGH69k=
+			tuHoFkpEeDxiUProOzK9hRqzoNw=
 			</data>
 			<key>hash2</key>
 			<data>
-			c27XcV+2HwEzeHdwL//cJN2vUDv64PWulFm9lXEq7yk=
+			hCTXiJJLV4O5zVAyJDcRbzmJAMs9IylCKy1y03ls5F8=
 			</data>
 		</dict>
 		<key>MainViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ymyPcLoHrTK6ARKyksYlkmSz450=
+			in06bCsrf2JyakED2XevMcXQpek=
 			</data>
 			<key>hash2</key>
 			<data>
-			zdXh1Df9rSeF0zyTnYqF/lyRGiLK7Zq5a1Gf7WunvXQ=
+			YUEFhwzow8UYAiVWOuvDrd/S1NofPpoY4vYsAt3sRbo=
 			</data>
 		</dict>
 		<key>config.xml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UnTcC767qsGW4vO8TuhZntTy6bs=
+			/s/Vcwis9kAQM67U8Pbx0moAiBw=
 			</data>
 			<key>hash2</key>
 			<data>
-			taWCEsSY+Wjy1pzqMv/xeO1mfHO+tA01lAoojrxgh2E=
+			Q9KFHLK1GZNHNXBt8oP0G8vd+FMNyw2uWJMkhSalwUE=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>
@@ -516,11 +520,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QlqpJxKkzTemTbF3It/ofUwRW+o=
+			YvmZ/oLE6M9oW/vOYCsCboLTZQY=
 			</data>
 			<key>hash2</key>
 			<data>
-			mQXqfkTCjqvO/gnZ+SdNXfLMfzlORNOllzoQJe0LVR8=
+			y1ZtNlwB8y0w9swc9nmXS1j9/ItKJZH4g4BlCd47JaQ=
 			</data>
 		</dict>
 		<key>www/cordova-js-src/exec.js</key>
@@ -593,11 +597,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			runVPu1Ewi39mbGulfj4JWbOeac=
+			yMdsICcHgxhnMoD5ufRtIhrzCW8=
 			</data>
 			<key>hash2</key>
 			<data>
-			dMbaBGGHIAbT8oZTt7VkdA9lgtOhQ1ABOKcEUJZ9+48=
+			S/Ors9oqUMDZXs8H87YeKQ/jSm4egbrdI4RVreQiZ6M=
+			</data>
+		</dict>
+		<key>www/plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			haJXivDxwB2BCbPcMrODx5ojVqQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			ipGt28hFN1NR8Xi0CUelPM2biucyXPZ5M3iiW/KXQa4=
 			</data>
 		</dict>
 	</dict>

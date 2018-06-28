@@ -69,7 +69,7 @@ export default {
 
     methods: {
         itemClick() {
-
+            this.$f7router.navigate('/readyrepair/');
         },
 
         switchTab(index) {

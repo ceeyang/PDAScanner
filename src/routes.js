@@ -49,10 +49,18 @@ export default [{
     path: '/measuredetail/',
     component: require('./assets/vue/pages/home/devicemeasure/detail.vue')
   },
+
+
+  // Repair
   {
     path: '/repair/',
     component: require('./assets/vue/pages/home/repair/index.vue')
   },
+  {
+    path: '/readyrepair/',
+    component: require('./assets/vue/pages/home/repair/readyrepair.vue')
+  },
+
 
   //  scanrepair
   {

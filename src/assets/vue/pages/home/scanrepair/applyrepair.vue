@@ -15,7 +15,7 @@ codeer: cee
             </li>
         </scroll>
 
-        <cube-button class="apply-repair-bottom">申请</cube-button>
+        <cube-button v-if="segmentBarIndex==0" @click="applyButtonAction" class="apply-repair-bottom">申请维修</cube-button>
 
     </f7-page>
 </template>
@@ -26,12 +26,11 @@ import scroll from '../../../common/scroll.vue';
 import InputCell from '../../../common/inputcell.vue';
 import RepairItem from '../../../common/repairitem.vue';
 
-import data from './json/readyrepair.json';
-
 export default {
 
     data() {
         return {
+            segmentBarIndex: 0,
             repairTitlesArr: [{
                 "title": "设备名称",
                 "name": "SBMC",
@@ -102,7 +101,8 @@ export default {
     },
 
     mounted() {
-        this.readyrepairData = data;
+
+        this.segmentBarIndex = localStorage.segmentBarIndex;
 
         let itemData = JSON.parse(localStorage.ItemData);
         for (var item in itemData) {
@@ -118,6 +118,21 @@ export default {
     },
 
     methods: {
+
+        applyButtonAction() {
+            const self = this;
+            if (!self.toastCenter) {
+                self.toastCenter = self.$f7.toast.create({
+                    text: '申请成功',
+                    closeTimeout: 2000,
+                    position: 'center',
+                });
+            }
+            self.toastCenter.open();
+
+            this.$f7router.back();
+        },
+
         itemClick() {
 
         },

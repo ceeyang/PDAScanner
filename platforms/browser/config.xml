@@ -18,6 +18,9 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-navigation href="*" />
+    <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
+        <string>To scan barcodes</string>
+    </edit-config>
     <preference name="android-minSdkVersion" value="16" />
     <preference name="DisallowOverscroll" value="true" />
 </widget>
