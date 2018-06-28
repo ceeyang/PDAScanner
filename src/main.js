@@ -73,6 +73,13 @@ Vue.prototype.api=api
 
 //封装公共请求(post)
 Vue.prototype.post=function(url, params, next){
+    var token = '';
+    for (var item in params) {
+        token += (token.length<1?'':'&') + item + '=' + (params[item].length < 1 ? "" : params[item]);
+    }
+    token = token + MD5KEY;
+    token = md5(token);
+    params.Token = token;
     return Framework7.request.post(url, params, next);
 }
 
@@ -95,6 +102,9 @@ Vue.mixin({
     data () {
         return {
             globalSetting: projectConfig,
+            config: {
+                "PageSize": 10,
+            }
         }
     }
 })

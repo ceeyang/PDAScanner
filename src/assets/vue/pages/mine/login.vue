@@ -120,8 +120,8 @@ export default {
 
         login() {
 
-            this.pickerConfirm();
-            return;
+            // this.pickerConfirm();
+            // return;
 
 
             if (this.user.account.length < 1) {
@@ -141,11 +141,15 @@ export default {
             localStorage.password = this.user.password;
             let vm = this;
 
+
+
             // LOGIN
-            this.get(this.api.login, {
+            let params = {
                 'UserCode': this.user.account,
                 'Password': this.user.password
-            }, function(response) {
+            }
+            this.get(this.api.login, params, function(response) {
+                console.log(params);
                 var data = JSON.parse(response);
                 if (data.Status) {
                     vm.getRepositories();
@@ -169,9 +173,10 @@ export default {
 
             // 获取仓库地址
             let vm = this;
-            this.get(this.api.WarehouseList, {
-                'UserCode': this.user.account
-            }, function(response) {
+            let params = {
+                'UserCode': this.user.account,
+            }
+            this.get(this.api.WarehouseList, params, function(response) {
                 var data = JSON.parse(response);
                 vm.WarehouseData = data;
                 localStorage.WarehouseData = data;
