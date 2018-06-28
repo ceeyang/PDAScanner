@@ -120,9 +120,9 @@ export default {
 
         login() {
 
-            this.pickerConfirm();
-            return;
-
+            // this.pickerConfirm();
+            // return;
+            //
 
             if (this.user.account.length < 1) {
                 const self = this;
@@ -139,15 +139,13 @@ export default {
 
             localStorage.account = this.user.account;
             localStorage.password = this.user.password;
-            let vm = this;
-
-
 
             // LOGIN
             let params = {
                 'UserCode': this.user.account,
                 'Password': this.user.password
             }
+            let vm = this;
             this.get(this.api.login, params, function(response) {
                 console.log(params);
                 var data = JSON.parse(response);

@@ -15,7 +15,7 @@ codeer: cee
             </li>
         </scroll>
 
-        <cube-button @click="applyButtonAction" class="apply-repair-bottom">申请维修</cube-button>
+        <cube-button v-if="segmentBarIndex==0" @click="applyButtonAction" class="apply-repair-bottom">申请维修</cube-button>
 
     </f7-page>
 </template>
@@ -30,6 +30,7 @@ export default {
 
     data() {
         return {
+            segmentBarIndex: 0,
             repairTitlesArr: [{
                 "title": "设备名称",
                 "name": "SBMC",
@@ -100,6 +101,8 @@ export default {
     },
 
     mounted() {
+
+        this.segmentBarIndex = localStorage.segmentBarIndex;
 
         let itemData = JSON.parse(localStorage.ItemData);
         for (var item in itemData) {

@@ -7,4 +7,7 @@ export default {
     departmentList: 'api/Repair/DepartmentList',
     // 未报修设备集合
     notRepairList: "api/Repair/DepartmentEquListNot",
+    // 已经报修设备集合
+    hadRepairedList: "api/Repair/DepartmentEquListHas",
+
 }

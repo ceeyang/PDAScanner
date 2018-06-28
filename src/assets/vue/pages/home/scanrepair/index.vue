@@ -4,10 +4,10 @@
         <f7-navbar title="科室报修" back-link="Back"></f7-navbar>
 
         <!-- 分类选择器 -->
-        <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="currentIndex"></segment-bar>
+        <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="segmentBarIndex"></segment-bar>
 
         <!-- 待维修 -->
-        <template v-if="currentIndex==0">
+        <template v-if="segmentBarIndex==0">
             <scroll :items="readyrepairData.DepartmentEquList" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
                 <li v-for="(item,index) in readyrepairData.DepartmentEquList" :key="index" :item="item">
                     <repair-item :item="item" :itemClick="itemClick" className="readyrepair"></repair-item>
@@ -16,7 +16,7 @@
         </template>
 
         <!-- 已维修 -->
-        <template v-if="currentIndex==1">
+        <template v-if="segmentBarIndex==1">
             <scroll :items="repairCompletedData.rows" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
                 <li v-for="(item,index) in repairCompletedData.rows" :key="index" :item="item">
                     <repair-item :item="item" :itemClick="itemClick"></repair-item>
@@ -41,26 +41,32 @@ export default {
     data() {
         return {
             titlesArray: ['待报修', '已报修'],
-            currentIndex: 0,
+            segmentBarIndex: 0,
 
             // 待维修
             readyrepairData: [],
+            readyrepairPageIndex: 1,
+
             // 已维修
             repairCompletedData: [],
+            repairCompletedPageIndex: 1,
+
 
             currentPageIndex: 1,
         }
     },
 
     mounted() {
+        // 没有数据的时候显示本地数据
         this.readyrepairData = data;
+
         this.getItemsWhthPageNumber(this.currentPageIndex);
     },
 
     methods: {
 
         getItemsWhthPageNumber(pageNumber, scroll) {
-            console.log(scroll);
+            console.log(pageNumber);
             let params = {
                 'DepartmentId': '',
                 'EquName': '',
@@ -74,15 +80,30 @@ export default {
             };
 
             let vm = this;
-            this.post(this.api.notRepairList, params, function(response) {
-                console.log(params);
+            let URL = this.segmentBarIndex == 0 ? this.api.notRepairList : this.api.hadRepairedList;
+            this.post(URL, params, function(response) {
                 var data = JSON.parse(response);
+
+                console.log("---------------------------------------------------------------------: ");
+                console.log(" 请求地址: " + URL);
+                console.log(" 返回数据: ");
+                console.log(data);
+                console.log("---------------------------------------------------------------------- ");
+
                 if (data.Status) {
-                    vm.readyrepairData = data;
-                    console.log(vm.readyrepairData);
-                } else {
+                    if (vm.segmentBarIndex == 0) {
+                        vm.readyrepairData = data;
+                    }
+
+                    else {
+                        vm.repairCompletedData = data;
+                    }
+                }
+
+
+                else {
+
                     let msg = data.Msg;
-                    console.log(msg);
                     if (!vm.toastCenter) {
                         vm.toastCenter = vm.$f7.toast.create({
                             text: msg,
@@ -92,10 +113,12 @@ export default {
                     }
                     vm.toastCenter.open();
                 }
-                if (scroll) {scroll.forceUpdate();}
+                if (scroll && scroll.forceUpdate) {
+                    scroll.forceUpdate();
+                }
             });
 
-            if (scroll) {
+            if (scroll && scroll.forceUpdate) {
                 setTimeout(function () {
                     scroll.forceUpdate();
                 }, 5000);
@@ -104,21 +127,31 @@ export default {
         },
 
         itemClick() {
+            localStorage.setItem('segmentBarIndex',this.segmentBarIndex);
             this.$f7router.navigate('/applyrepair/');
         },
 
         switchTab(index) {
-            this.currentIndex = index;
+            this.segmentBarIndex = index;
+            if (this.repairCompletedData.length < 1) {
+                this.getItemsWhthPageNumber(1, scroll);
+            }
         },
 
         onPullingDown(scroll) {
-            this.getItemsWhthPageNumber(0, scroll);
+            this.getItemsWhthPageNumber(1, scroll);
         },
 
         onPullingUp(scroll) {
-            setTimeout(function () {
-                scroll.forceUpdate();
-            }, 1000);
+            if (this.segmentBarIndex == 0) {
+                this.readyrepairPageIndex += 1;
+                this.getItemsWhthPageNumber(this.readyrepairPageIndex, scroll);
+            }
+
+            else {
+                this.repairCompletedPageIndex += 1;
+                this.getItemsWhthPageNumber(this.repairCompletedPageIndex, scroll);
+            }
         },
     },
 

@@ -11,7 +11,6 @@
 <script>
 export default {
     mounted() {
-        console.log(this.$device);
 
         let loinSuccess = localStorage.loinSuccess;
         if (loinSuccess) {
