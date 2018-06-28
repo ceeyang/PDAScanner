@@ -21,7 +21,6 @@
                     <li><span class="inline-block">设备状态：</span>{{data.SBZT}}</li>
                 </ul>
             </div>
-           
         </div>
     </f7-page>
 </template>
@@ -29,13 +28,24 @@
     export default {
         data () {
             return {
-               data:''
+               data:'',
+               page:{
+                    counter:1,  
+                    pageStart:1,  
+                    pageEnd:1,  
+                    total:10
+                }
             }
         },
         mounted(){
           this.data = global.propertyDetail
+
+        },
+         components:{
+
         },
         methods: {
+          
         }
     }
 </script>

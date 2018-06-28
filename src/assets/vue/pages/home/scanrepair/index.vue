@@ -33,7 +33,6 @@
 import scroll from '../../../common/scroll.vue';
 import SegmentBar from '../../../common/segmentBar';
 import RepairItem from '../../../common/repairitem.vue';
-
 import data from './json/readyrepair.json';
 
 export default {

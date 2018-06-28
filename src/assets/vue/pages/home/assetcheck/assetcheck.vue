@@ -8,31 +8,32 @@
                 </ul>
                 <div class="tab_content">
                     <ul class="have tab_show">
-                        <li class="tab_item" v-for="item in items.rows" @click="itemclickaction(item)" >
-                            <div class="img_box inline-block center">
-                                <i class="iconfont">&#xe62a;</i>
-                            </div>
-                            <div class="inline-block text_box">
-                                <h5 class="h5 clearfix">
-                                    {{item.BZ}}
-                                    <a href="javascript:;"  class="tab_btn center inline-block fr">
-                                        删除
-                                    </a>
-                                </h5>
-                            <p class="text_box_item"><small>{{item.PDRXM}}</small></p> 
-                            <p class="text_box_item"><small>一共有<span class="danger">{{parseInt(item.STORE)-0}}</span>&nbsp;/&nbsp;{{parseInt(item.ZDR)-0}}台设备已盘点</small></p>
-                                <p class="text_box_item clearfix">
-                                    <small 
-                                    :class="parseInt(item.STORE) < parseInt(item.ZDR) ? 'danger' :'succeed'">
-                                        {{ parseInt(item.STORE) < parseInt(item.ZDR) ? "未完成" :"已完成" }}
-                                    </small>
-                                    <small class="fr">
-                                        {{item.SHRQ}}
-                                    </small>
-                                </p>
-                            </div>
-                            
-                        </li>
+                        <myScroll :items="items.rows" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+                            <li class="tab_item" v-for="item in items.rows" @click="itemclickaction(item)" >
+                                <div class="img_box inline-block center">
+                                    <i class="iconfont">&#xe62a;</i>
+                                </div>
+                                <div class="inline-block text_box">
+                                    <h5 class="h5 clearfix">
+                                        {{item.BZ}}
+                                        <a href="javascript:;"  class="tab_btn center inline-block fr">
+                                            删除
+                                        </a>
+                                    </h5>
+                                <p class="text_box_item"><small>{{item.PDRXM}}</small></p> 
+                                <p class="text_box_item"><small>一共有<span class="danger">{{parseInt(item.STORE)-0}}</span>&nbsp;/&nbsp;{{parseInt(item.ZDR)-0}}台设备已盘点</small></p>
+                                    <p class="text_box_item clearfix">
+                                        <small 
+                                        :class="parseInt(item.STORE) < parseInt(item.ZDR) ? 'danger' :'succeed'">
+                                            {{ parseInt(item.STORE) < parseInt(item.ZDR) ? "未完成" :"已完成" }}
+                                        </small>
+                                        <small class="fr">
+                                            {{item.SHRQ}}
+                                        </small>
+                                    </p>
+                                </div>
+                            </li>
+                        </myScroll>
                     </ul>
                     <div class="tab_hide add">
                         <form class="pos-r">
@@ -56,7 +57,8 @@
 </template>
 
 <script>
-   import datas from './assetcheck.json'
+   import datas from './assetcheck.json' 
+  import myScroll from '../../../common/scroll.vue'
     export default {
         data () {
             return {
@@ -117,14 +119,24 @@
                 }
             },
             itemclickaction(data){
-              
                 global.assetcheckeddata = data;
                 this.$f7router.navigate('/detailAssetcheck/');
+            },
+            onPullingDown(scroll) {
+                console.log('pullingDown: ' + scroll);
+                setTimeout(function () {
+                    scroll.forceUpdate();
+                }, 1000);
+            },
+
+            onPullingUp(scroll) {
+                setTimeout(function () {
+                    scroll.forceUpdate();
+                }, 1000);
             }
- 
         },
          components: {
-            
+             myScroll
         }
     }
 </script>
