@@ -120,8 +120,8 @@ export default {
 
         login() {
 
-            // this.pickerConfirm();
-            // return;
+            this.pickerConfirm();
+            return;
 
 
             if (this.user.account.length < 1) {
