@@ -1,0 +1,10 @@
+.scan-repair-page{
+    .scan-repair-scroll{
+        height: calc(100% - 84px);
+    }
+    .scan-repair-add-btn{
+        margin-bottom: 0px;
+        height: 44px;
+        background-color: $main-background-color;
+    }
+}

@@ -113,6 +113,7 @@ let config = function (env) {
             '/api': {
                 // target: 'http://192.168.1.41:8088',
                 target: 'http://192.168.1.41:8088',
+                target: 'http://120.78.92.212:8006',
                 pathRewrite: {
                     '^/api': '/api',
                 }

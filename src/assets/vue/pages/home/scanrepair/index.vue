@@ -1,14 +1,20 @@
 <template lang="html">
-    <f7-page>
+    <f7-page class="scan-repair-page">
         <!-- Nav  -->
-        <f7-navbar title="科室报修" back-link="Back"></f7-navbar>
+        <f7-navbar title="科室报修" back-link="Back">
+            <f7-nav-right>
+                <div @click="searchButtonAction">
+                    <i class="f7-icons">search</i>
+                </div>
+            </f7-nav-right>
+        </f7-navbar>
 
         <!-- 分类选择器 -->
         <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="segmentBarIndex"></segment-bar>
 
         <!-- 待维修 -->
         <template v-if="segmentBarIndex==0">
-            <scroll :items="readyrepairData.DepartmentEquList" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+            <scroll class="scan-repair-scroll" :items="readyrepairData.DepartmentEquList" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
                 <li v-for="(item,index) in readyrepairData.DepartmentEquList" :key="index" :item="item">
                     <repair-item :item="item" :itemClick="itemClick" className="readyrepair"></repair-item>
                 </li>
@@ -17,13 +23,15 @@
 
         <!-- 已维修 -->
         <template v-if="segmentBarIndex==1">
-            <scroll :items="repairCompletedData.rows" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+            <scroll class="scan-repair-scroll" :items="repairCompletedData.rows" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
                 <li v-for="(item,index) in repairCompletedData.rows" :key="index" :item="item">
                     <repair-item :item="item" :itemClick="itemClick"></repair-item>
                 </li>
             </scroll>
         </template>
 
+
+        <cube-button class="scan-repair-add-btn">新增</cube-button>
 
     </f7-page>
 </template>
@@ -65,6 +73,10 @@ export default {
 
     methods: {
 
+        searchButtonAction() {
+
+        },
+
         getItemsWhthPageNumber(pageNumber, scroll) {
             console.log(pageNumber);
             let params = {
@@ -83,12 +95,6 @@ export default {
             let URL = this.segmentBarIndex == 0 ? this.api.notRepairList : this.api.hadRepairedList;
             this.post(URL, params, function(response) {
                 var data = JSON.parse(response);
-
-                console.log("---------------------------------------------------------------------: ");
-                console.log(" 请求地址: " + URL);
-                console.log(" 返回数据: ");
-                console.log(data);
-                console.log("---------------------------------------------------------------------- ");
 
                 if (data.Status) {
                     if (vm.segmentBarIndex == 0) {
