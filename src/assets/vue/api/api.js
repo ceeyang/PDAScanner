@@ -14,6 +14,9 @@ export default {
     // 已经报修设备集合
     hadRepairedList: "api/Repair/DepartmentEquListHas",
 
+    // 4、设备名称集合
+    equNameList: 'api/Repair/EquNameList',
+
     // 获取所以科室集合
     departmentList: "api/Repair/DepartmentList",
 

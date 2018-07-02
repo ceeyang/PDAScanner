@@ -11,7 +11,7 @@ codeer: cee
         <scroll class="ready-repair-scroll" :items="repairTitlesArr">
             <li v-for="(item,index) in repairTitlesArr" :key="index" :item="item">
                 <!-- <input-cell :title="item.title" :disabled="item.disabled" placeholder="请填写您需要的内容" :inputValue="item.value"></input-cell> -->
-                <input-cell :title="item.title" :disabled="item.disabled" :inputValue="item.value"></input-cell>
+                <input-cell :title="item.title" :disabled="item.disabled" :inputValue="item.value" v-on:input="inputFunc"></input-cell>
             </li>
         </scroll>
 
@@ -115,6 +115,10 @@ export default {
     },
 
     methods: {
+
+        inputFunc() {
+
+        },
 
         readyButtonAction() {
             const self = this;
