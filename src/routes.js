@@ -3,7 +3,7 @@ export default [{
     component: require('./assets/vue/pages/mine/login.vue')
   },{
     path: '/home/',
-    meta: {auth:true},
+    // component: require('./assets/vue/pages/home.vue')
     component: require('./assets/vue/pages/home/home.vue')
   },
   {
@@ -70,6 +70,10 @@ export default [{
   {
     path: '/applyrepair/',
     component: require('./assets/vue/pages/home/scanrepair/applyrepair.vue')
+  },
+  {
+      path: '/search/',
+      component: require('./assets/vue/pages/home/search/index.vue')
   },
 
 

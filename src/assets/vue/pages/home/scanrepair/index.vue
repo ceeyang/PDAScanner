@@ -74,7 +74,7 @@ export default {
     methods: {
 
         searchButtonAction() {
-
+            this.$f7router.navigate('/search/');
         },
 
         getItemsWhthPageNumber(pageNumber, scroll) {

@@ -10,8 +10,7 @@ codeer: cee
 
         <scroll class="apply-repair-scroll" :items="repairTitlesArr">
             <li v-for="(item,index) in repairTitlesArr" :key="index" :item="item">
-                <!-- <input-cell :title="item.title" :disabled="item.disabled" placeholder="请填写您需要的内容" :inputValue="item.value"></input-cell> -->
-                <input-cell :title="item.title" :disabled="item.disabled" :inputValue="item.value"></input-cell>
+                <input-cell :title="item.title" :disabled="item.disabled" :onblur="onblur" v-model="item.value"></input-cell>
             </li>
         </scroll>
 
@@ -33,18 +32,18 @@ export default {
             segmentBarIndex: 0,
             repairTitlesArr: [{
                 "title": "设备名称",
-                "name": "SBMC",
+                "name": "EquName",
                 "value": "",
                 "disabled": true,
             },{
                 "title": "报修科室",
-                "name": "SYKSMC",
+                "name": "DepartmentName",
                 "value": "西药库",
-                "disabled": false
+                "disabled": true
             },
             {
                 "title": "报修人员",
-                "name": "WXR",
+                "name": "RepairUserId",
                 "value": "管理员",
                 "disabled": true
             },
@@ -63,7 +62,7 @@ export default {
             },
             {
                 "title": "资产编号",
-                "name": "SBBH",
+                "name": "EquCode",
                 "value": "68990500067",
                 "disabled": true
             },
@@ -105,6 +104,7 @@ export default {
         this.segmentBarIndex = localStorage.segmentBarIndex;
 
         let itemData = JSON.parse(localStorage.ItemData);
+        console.log(itemData);
         for (var item in itemData) {
             for (var i = 0; i < this.repairTitlesArr.length; i++) {
                 let repair = this.repairTitlesArr[i];
@@ -118,6 +118,11 @@ export default {
     },
 
     methods: {
+
+        // 失去焦点
+        onblur() {
+
+        },
 
         applyButtonAction() {
             const self = this;

@@ -1,24 +1,56 @@
 <template lang="html">
     <div class="common-input-cell">
+
+        <!-- 左侧标题 -->
         <div class="input-cell-title">
             {{title}}
         </div>
-        <template v-if="disabled">
-            <input class="comon-input disabled" disabled type="text" :placeholder="placeholder" :value="inputValue">
+
+        <!-- 时间选择器 -->
+        <template v-if="type=='DataInput'">
+            <div class="comon-input" @click="openDataPicker">
+                {{value  || placeholder}}
+            </div>
         </template>
+
+        <!-- 默认输入框 -->
         <template v-else>
-            <input class="comon-input" type="text" :placeholder="placeholder" :value="inputValue">
+            <template v-if="disabled">
+                <input class="comon-input disabled" disabled type="text" :placeholder="placeholder" v-on:blur='onblur' v-bind:value="value" v-on:input="$emit('input', $event.target.value)">
+            </template>
+            <template v-else>
+                <input class="comon-input" type="text" :placeholder="placeholder" v-bind:value="value" v-on:blur='onblur' v-on:input="$emit('input', $event.target.value)">
+            </template>
         </template>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['title', 'placeholder', 'inputValue', 'disabled'],
+
+    // type 可选类型:
+    // 默认类型, 可不填该属性 模型文字  +  输入框
+    // DataInput: 时间选择器, 输入框为时间选择器
+    props: ['type', 'title', 'placeholder', 'value', 'disabled', 'onblur', 'openDataPicker'],
+
+    data() {
+        return {
+            modelValue: '',
+        }
+    },
+
+    methods: {
+
+
+
+    },
 
     mounted() {
-        
+
     }
+
+
+
 }
 </script>
 

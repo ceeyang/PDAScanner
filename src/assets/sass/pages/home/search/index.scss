@@ -1,0 +1,21 @@
+.search-page {
+    .search-content-device-scroll {
+        border: 1px solid $main-line-color;
+        background-color: white;
+        height: 100px;
+        .search-item{
+            text-align: center !important;
+            border-bottom: 1px solid $main-line-color;
+        }
+    }
+    .search-content-department-scroll{
+        border: 1px solid $main-line-color;
+        background-color: white;
+        height: 100px;
+        .search-item{
+            text-align: center !important;
+            border-bottom: 1px solid $main-line-color;
+        }
+    }
+
+}
