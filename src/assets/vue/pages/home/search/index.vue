@@ -3,6 +3,8 @@
         <!-- Nav  -->
         <f7-navbar title="搜索" back-link="Back"></f7-navbar>
 
+        <input-cell type="DataInput" title="设备类型" placeholder="请选择设备类型" :value="deviceStatusValue" :openDataPicker="openDeviceStatusPicker"></input-cell>
+
         <!-- 设备名称选择器 -->
         <input-cell title="设备名称" placeholder="请输入设备名称" :onblur="onblur" v-model="deviceNameValue"></input-cell>
         <scroll v-if="deviceNameScrollData.length > 0" class="search-content-device-scroll" :items="deviceNameScrollData">
@@ -20,21 +22,23 @@
         </scroll>
 
         <!-- 设备型号 -->
-        <input-cell title="设备型号" placeholder="请输入设备型号" :onblur="modelNumberOnblur" v-model="deviceNumber"></input-cell>
+        <input-cell title="设备型号" placeholder="请输入设备型号" :onblur="modelNumberOnblur" v-model="repairNumber"></input-cell>
 
         <!-- 时间输入框 -->
         <input-cell type="DataInput" title="开始日期" placeholder="请选择日期" :value="startDataValue" :openDataPicker="openStartDataPicker"></input-cell>
         <input-cell type="DataInput" title="结束日期" placeholder="请选择日期" :value="endDataValue" :openDataPicker="openEndDataPicker"></input-cell>
 
         <!-- 搜索数据列表 -->
-        <scroll :items="searchData" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+        <scroll class="search-content-data-scroll" :items="searchData" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
             <li v-for="(item,index) in searchData" :key="index" :item="item">
-                <p class="search-item" @click="departmentCellClick(item)">{{item.DepaName}}</p>
+                <repair-item :item="item" :itemClick="searchDataClick"></repair-item>
             </li>
         </scroll>
 
         <!-- 时间选择器 -->
-        <mt-datetime-picker ref="picker" type="date" v-model="pickerValue" @confirm="pickerConfirm"></mt-datetime-picker>
+        <mt-datetime-picker ref="picker" type="date" v-model="pickerValue" @confirm="dataPickerConfirm"></mt-datetime-picker>
+
+        <picker :slots='slots' :onValuesChange="onValuesChange" :pickerCancel="pickerCancel" :pickerConfirm="pickerConfirm" :show="popupVisible"></picker>
 
     </f7-page>
 </template>
@@ -42,7 +46,8 @@
 <script>
 import scroll from '../../../common/scroll.vue'
 import InputCell from '../../../common/inputcell.vue';
-
+import picker from '../../../common/picker.vue';
+import RepairItem from '../../../common/repairitem.vue';
 
 export default {
 
@@ -50,6 +55,16 @@ export default {
         return {
 
             setValue: false,
+
+            deviceStatus: 0,
+            deviceStatusValue: '未保修',
+            popupVisible: false,
+            slots: [{
+                flex: 1,
+                values: ['未保修', '已报修'],
+                className: 'slot1',
+                textAlign: 'center'
+            }, ],
 
             deviceItem: [],
             deviceNameValue: '',
@@ -59,7 +74,7 @@ export default {
             departmentNameValue: '',
             departmentNameScrollData: [],
 
-            deviceNumber: '',
+            repairNumber: '',
 
             // 区分开始时间和结束时间
             showPickerIndex: 0,
@@ -67,6 +82,7 @@ export default {
             startDataValue: '',
             endDataValue: '',
 
+            // 搜索数据源
             searchData: [],
             searchPageNumber: 1,
         }
@@ -93,10 +109,38 @@ export default {
     },
 
     methods: {
+        searchDataClick() {
+            localStorage.setItem('repairViewType', this.deviceStatus == 0 ? "apply" : "check");
+            this.$f7router.navigate('/applyrepair/');
+        },
+
+        pickerCancel() {
+            console.log('cancel');
+            this.popupVisible = false
+        },
+
+        pickerConfirm() {
+            console.log('confirm');
+            this.popupVisible = false
+        },
+
+        onValuesChange(picker, values) {
+
+            this.deviceStatusValue = values;
+            this.deviceStatus = values == "未保修" ? 0 : 1
+            console.log(values);
+            console.log(this.deviceStatus);
+        },
+
+        // 打开设备类型选择器
+        openDeviceStatusPicker() {
+            console.log('openDeviceStatusPicker');
+            this.popupVisible = true
+        },
 
         onPullingDown(scroll) {
             this.searchPageNumber = 1;
-            this.getItemsWhthPageNumber(scroll);
+            this.getSearchData(scroll);
         },
 
         onPullingUp(scroll) {
@@ -104,7 +148,7 @@ export default {
             this.getSearchData(scroll);
         },
 
-        pickerConfirm(datetime) {
+        dataPickerConfirm(datetime) {
             var year = datetime.getFullYear();
             var month = datetime.getMonth() + 1; //js从0开始取
             var date = datetime.getDate();
@@ -114,7 +158,8 @@ export default {
             } else {
                 this.endDataValue = dateTime;
             }
-            this.getSearchData(1);
+            this.searchPageNumber = 1
+            this.getSearchData();
         },
 
 
@@ -134,6 +179,7 @@ export default {
             this.setValue = true
             this.deviceNameScrollData = []
             this.deviceItem = item
+            this.searchPageNumber = 1
             this.getSearchData(1);
         },
 
@@ -142,6 +188,7 @@ export default {
             this.setValue = true
             this.departmentNameScrollData = []
             this.departmentItem = item;
+            this.searchPageNumber = 1
             this.getSearchData(1);
         },
 
@@ -153,7 +200,6 @@ export default {
         // 设备型号失去焦点
         modelNumberOnblur() {
             this.getSearchData();
-            console.log(this.deviceNumber);
         },
 
         getDeviceNameData() {
@@ -196,32 +242,33 @@ export default {
             });
         },
 
+        // 获取查询数据
+        // scroll : 滚动组件, 用于结束刷新
         getSearchData(scroll) {
-
             let params = {
-                'RepairStatus': '',
-                'EquCode': this.deviceNumber,
-                'RepairOrder': '',
                 'DepartmentId': this.departmentItem.DepaCode,
-                'UserCode': global.account,
-                'Store': gloabl.storeId,
-                'SortType': '',
-                'AssignOrConfirm': 1,
+                'EquName': this.deviceNameValue,
+                'EquType': this.repairNumber,
                 'StartDate': this.startDataValue,
                 'EndDate': this.endDataValue,
-                'PageIndex': 1,
-                'PageSize': 10,
+                'UserCode': localStorage.account,
+                'Store': localStorage.storeId,
+                'PageIndex': this.searchPageNumber,
+                'PageSize': this.config.PageSize,
             }
             let vm = this;
-            this.post(this.api.dispatchList, params, function(response) {
-                scroll.forceUpdate()
+            let URL = this.deviceStatus == 0 ? this.api.notRepairList : this.api.hadRepairedList
+            this.post(URL, params, function(response) {
                 var data = JSON.parse(response);
                 if (data.Status) {
                     console.log(data);
-                    // vm.searchData = data.DepartmentList;
+                    vm.searchData = data.DepartmentEquList;
                 } else {
                     let msg = data.Msg;
                     console.log(msg);
+                }
+                if (scroll && scroll.forceUpdate) {
+                    scroll.forceUpdate()
                 }
             });
         }
@@ -233,7 +280,8 @@ export default {
     components: {
         scroll,
         InputCell,
-
+        picker,
+        RepairItem,
     },
 
 }

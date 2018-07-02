@@ -1,21 +1,19 @@
 <template lang="html">
-    <mt-popup class="warehouse-picker"
-    v-model="popupVisible"
-    position="bottom">
-    <div class="picker-top-buttons">
+    <mt-popup class="warehouse-picker" v-model="popupVisible" position="bottom">
         <div class="picker-top-buttons">
-            <button class="top-button cancel" @click='pickerCancel'>取消</button>
-            <button class="top-button confirm" @click='pickerConfirm'>确认</button>
+            <div class="picker-top-buttons">
+                <button class="top-button cancel" @click='pickerCancelAction'>取消</button>
+                <button class="top-button confirm" @click='pickerConfirmAction'>确认</button>
+            </div>
         </div>
-    </div>
-    <mt-picker :slots="slots" @change="onValuesChange"></mt-picker>
+        <mt-picker :slots="slots" @change="onValuesChange"></mt-picker>
     </mt-popup>
 </template>
 
 <script>
 export default {
 
-    props:['slots', 'onValuesChange'],
+    props: ['slots', 'pickerConfirm', 'pickerCancel', 'onValuesChange', 'show'],
 
     data() {
         return {
@@ -23,13 +21,27 @@ export default {
         }
     },
 
+    watch: {
+        show: function(val) {
+            this.popupVisible = val;
+        }
+    },
+
+
     methods: {
-        pickerCancel() {
+
+        pickerCancelAction() {
             this.popupVisible = false;
+            if (this.pickerCancel) {
+                this.pickerCancel();
+            }
         },
 
-        pickerConfirm() {
-            this.popupVisible = false;
+        pickerConfirmAction() {
+            this.popupVisible = false
+            if (this.pickerConfirm) {
+                this.pickerConfirm()
+            };
         },
 
         // onValuesChange(picker, values) {
