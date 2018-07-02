@@ -3,6 +3,7 @@
     flex-direction: row;
     border-bottom: 2px solid $main-line-color;
     background-color: white;
+    height: 40px;
     .input-cell-title{
         font-size: $main-font-title;
         border-right: 2px solid $main-line-color;
@@ -20,6 +21,9 @@
         padding-top: 5px;
         padding-bottom: 5px;
         width: 74%;
+    }
+    .picker-placeholder{
+        color: #6C6C6C;
     }
     .disabled{
         background-color: $main-color-input-disable;

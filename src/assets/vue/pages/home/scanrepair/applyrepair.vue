@@ -14,7 +14,7 @@ codeer: cee
             </li>
         </scroll>
 
-        <cube-button v-if="segmentBarIndex==0" @click="applyButtonAction" class="apply-repair-bottom">申请维修</cube-button>
+        <cube-button v-if="repairViewType=='apply'" @click="applyButtonAction" class="apply-repair-bottom">申请维修</cube-button>
 
     </f7-page>
 </template>
@@ -29,48 +29,53 @@ export default {
 
     data() {
         return {
-            segmentBarIndex: 0,
+            // 页面类型, 因为有多个页面跳入此页面
+            // apply: 申请维修
+            // check: 查看详细
+            //
+            repairViewType: 0,
+
             repairTitlesArr: [{
                 "title": "设备名称",
                 "name": "EquName",
                 "value": "",
-                "disabled": true,
+                "disabled": false,
             },{
                 "title": "报修科室",
                 "name": "DepartmentName",
-                "value": "西药库",
-                "disabled": true
+                "value": "",
+                "disabled": false
             },
             {
                 "title": "报修人员",
                 "name": "RepairUserId",
-                "value": "管理员",
-                "disabled": true
+                "value": "",
+                "disabled": false
             },
             {
                 "title": "报修日期",
                 "name": "BXRQ",
-                "value": "2018-06-26",
+                "value": "",
                 "disabled": false
 
             },
             {
                 "title": "维修期限",
                 "name": "WXQX",
-                "value": "2019-06-26",
+                "value": "",
                 "disabled": false
             },
             {
                 "title": "资产编号",
                 "name": "EquCode",
-                "value": "68990500067",
-                "disabled": true
+                "value": "",
+                "disabled": false
             },
             {
                 "title": "规格型号",
                 "name": "SBXH",
                 "value": "",
-                "disabled": true
+                "disabled": false
             },
             {
                 "title": "报修电话",
@@ -88,7 +93,7 @@ export default {
                 "title": "资产厂家",
                 "name": "SBCJMC",
                 "value": "",
-                "disabled": true
+                "disabled": false
             },
             {
                 "title": "故障描述",
@@ -101,20 +106,20 @@ export default {
 
     mounted() {
 
-        this.segmentBarIndex = localStorage.segmentBarIndex;
+        this.repairViewType = localStorage.repairViewType;
 
-        let itemData = JSON.parse(localStorage.ItemData);
-        console.log(itemData);
-        for (var item in itemData) {
-            for (var i = 0; i < this.repairTitlesArr.length; i++) {
-                let repair = this.repairTitlesArr[i];
-                if (item == repair.name) {
-                    repair.value = itemData[item];
+        if (localStorage.ItemData) {
+            let itemData = JSON.parse(localStorage.ItemData);
+            for (var item in itemData) {
+                for (var i = 0; i < this.repairTitlesArr.length; i++) {
+                    let repair = this.repairTitlesArr[i];
+                    if (item == repair.name) {
+                        repair.value = itemData[item];
+                    }
+                    this.repairTitlesArr[i] = repair;
                 }
-                this.repairTitlesArr[i] = repair;
             }
         }
-
     },
 
     methods: {
@@ -124,18 +129,70 @@ export default {
 
         },
 
-        applyButtonAction() {
-            const self = this;
-            if (!self.toastCenter) {
-                self.toastCenter = self.$f7.toast.create({
-                    text: '申请成功',
-                    closeTimeout: 2000,
-                    position: 'center',
-                });
+        getValueWithPropsName(name){
+            let value = ''
+            for (var i = 0; i < this.repairTitlesArr.length; i++) {
+                let repair = this.repairTitlesArr[i];
+                if (item == name) {
+                    value = itemData[item];
+                    continue
+                }
+                this.repairTitlesArr[i] = repair;
             }
-            self.toastCenter.open();
+            return value
+        },
 
-            this.$f7router.back();
+        applyButtonAction() {
+
+            let params = {
+                "EquId": '',
+                "EquName": '',
+                "StoreNumber": '',
+                "Store": '',
+                "RepairUserId": '',
+                "RepairUserName": '',
+                "DepartmentId": '',
+                "DepartmentName": '',
+                "RepairStatus": '',
+                "ApplyDate": '',
+                "SupplierId": '',
+                "SupplierName": '',
+                "RepairTerm": '',
+                "RepairPhone": '',
+                "FaultId": '',
+                "FaultDesription": '',
+                "Remark": '',
+                "RepairNo": '',
+                "RepairNoReadonly": '',
+            }
+            let vm = this;
+            let URL = this.deviceStatus == 0 ? this.api.notRepairList : this.api.hadRepairedList
+            this.post(URL, params, function(response) {
+                var data = JSON.parse(response);
+
+
+                if (data.Status) {
+                    console.log(data);
+                } else {
+                    let msg = data.Msg;
+                    console.log(msg)
+                }
+
+                let msg = data.Msg;
+                if (!vm.toastCenter) {
+                    vm.toastCenter = vm.$f7.toast.create({
+                        text: '申请成功',
+                        closeTimeout: 2000,
+                        position: 'center',
+                    });
+                }
+                vm.toastCenter.open();
+
+                if (scroll && scroll.forceUpdate) {
+                    scroll.forceUpdate()
+                }
+            });
+            vm.$f7router.back();
         },
 
         itemClick() {

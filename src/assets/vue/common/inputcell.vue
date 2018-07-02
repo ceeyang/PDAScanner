@@ -8,8 +8,11 @@
 
         <!-- 时间选择器 -->
         <template v-if="type=='DataInput'">
-            <div class="comon-input" @click="openDataPicker">
-                {{value  || placeholder}}
+            <div v-if="value" class="comon-input" @click="openDataPicker">
+                {{value}}
+            </div>
+            <div v-else class="comon-input picker-placeholder" @click="openDataPicker">
+                {{placeholder}}
             </div>
         </template>
 

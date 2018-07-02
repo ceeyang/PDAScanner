@@ -80,6 +80,8 @@ Vue.prototype.post=function(url, params, next){
     token = token + MD5KEY;
     token = md5(token);
     params.Token = token;
+    console.log('params: ');
+    console.log(params);
     return Framework7.request.post(url, params, next);
 }
 

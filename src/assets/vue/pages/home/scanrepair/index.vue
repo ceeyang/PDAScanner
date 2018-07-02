@@ -31,7 +31,7 @@
         </template>
 
 
-        <cube-button class="scan-repair-add-btn">新增</cube-button>
+        <cube-button class="scan-repair-add-btn" @click="newApplyButton">新增</cube-button>
 
     </f7-page>
 </template>
@@ -73,6 +73,54 @@ export default {
 
     methods: {
 
+        // 获取所有设备名称数据
+        getDeviceNameData() {
+            let params = {
+                'Store': localStorage.storeId,
+                'QueryText': '',
+            };
+
+            let vm = this;
+            this.post(this.api.equNameList, params, function(response) {
+                var data = JSON.parse(response);
+
+                if (data.Status) {
+                    console.log(data);
+                    vm.deviceNameScrollData = data.EquNameList;
+                } else {
+                    let msg = data.Msg;
+                    console.log(msg);
+                }
+            });
+        },
+
+        getDepartmentNameData() {
+            let params = {
+                'UserCode': localStorage.account,
+                'QueryText': '',
+            };
+
+            let vm = this;
+            this.post(this.api.departmentList, params, function(response) {
+                var data = JSON.parse(response);
+
+                if (data.Status) {
+                    console.log(data);
+                    vm.departmentNameScrollData = data.DepartmentList;
+                } else {
+                    let msg = data.Msg;
+                    console.log(msg);
+                }
+            });
+        },
+
+        // 新增维修接口
+        newApplyButton() {
+            localStorage.removeItem('ItemData');
+            localStorage.setItem('repairViewType', "apply");
+            this.$f7router.navigate('/applyrepair/');
+        },
+
         searchButtonAction() {
             this.$f7router.navigate('/search/');
         },
@@ -95,7 +143,7 @@ export default {
             let URL = this.segmentBarIndex == 0 ? this.api.notRepairList : this.api.hadRepairedList;
             this.post(URL, params, function(response) {
                 var data = JSON.parse(response);
-
+                console.log(data);
                 if (data.Status) {
                     if (vm.segmentBarIndex == 0) {
                         vm.readyrepairData = data;
@@ -133,7 +181,8 @@ export default {
         },
 
         itemClick() {
-            localStorage.setItem('segmentBarIndex',this.segmentBarIndex);
+
+            localStorage.setItem('repairViewType', this.segmentBarIndex == 0 ? "apply" : "check");
             this.$f7router.navigate('/applyrepair/');
         },
 
