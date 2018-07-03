@@ -1,4 +1,9 @@
-.no-more-data-hint{
-    margin-top: 20px;
-    text-align: center;
+.common-scroll{
+    top: 0px;
+    bottom: 45px;
+    position: inherit;
+    .no-more-data-hint{
+        margin-top: 20px;
+        text-align: center;
+    }
 }

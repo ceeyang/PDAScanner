@@ -8,11 +8,12 @@ codeer: cee
         <!-- Nav  -->
         <f7-navbar title="维修派单" back-link="Back"></f7-navbar>
 
-        <scroll class="ready-repair-scroll" :items="repairTitlesArr">
-            <li v-for="(item,index) in repairTitlesArr" :key="index" :item="item">
-                <!-- <input-cell :title="item.title" :disabled="item.disabled" placeholder="请填写您需要的内容" :inputValue="item.value"></input-cell> -->
-                <input-cell :title="item.title" :disabled="item.disabled" :inputValue="item.value" v-on:input="inputFunc"></input-cell>
-            </li>
+        <scroll>
+            <template v-for="(item, index) in 200">
+                <div class="">
+                    {{item}}
+                </div>
+            </template>
         </scroll>
 
         <cube-button @click="readyButtonAction" class="ready-repair-bottom">维修派工</cube-button>
@@ -102,6 +103,8 @@ export default {
     mounted() {
 
         let itemData = JSON.parse(localStorage.ItemData);
+        console.log(itemData);
+
         for (var item in itemData) {
             for (var i = 0; i < this.repairTitlesArr.length; i++) {
                 let repair = this.repairTitlesArr[i];
@@ -115,6 +118,10 @@ export default {
     },
 
     methods: {
+
+        onblur() {
+
+        },
 
         inputFunc() {
 

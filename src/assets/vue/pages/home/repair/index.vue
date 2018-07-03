@@ -10,8 +10,8 @@
 
         <!-- 待派工 -->
         <template v-if="segmentBarIndex==0">
-            <scroll :items="readyrepairData.rows" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
-                <li v-for="(item,index) in readyrepairData.rows" :key="index" :item="item">
+            <scroll :items="readyrepairData" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+                <li v-for="(item,index) in readyrepairData" :key="index" :item="item">
                     <repair-item :item="item" :itemClick="itemClick"></repair-item>
                 </li>
             </scroll>
@@ -19,8 +19,8 @@
 
         <!-- 待接单 -->
         <template v-if="segmentBarIndex==1">
-            <scroll :items="takeordersData.rows" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
-                <li v-for="(item,index) in takeordersData.rows" :key="index" :item="item">
+            <scroll :items="takeordersData" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+                <li v-for="(item,index) in takeordersData" :key="index" :item="item">
                     <repair-item :item="item" :itemClick="itemClick"></repair-item>
                 </li>
             </scroll>
@@ -28,8 +28,8 @@
 
         <!-- 待处理 -->
         <template v-if="segmentBarIndex==2">
-            <scroll :items="waitehandleData.rows" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
-                <li v-for="(item,index) in waitehandleData.rows" :key="index" :item="item">
+            <scroll :items="waitehandleData" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+                <li v-for="(item,index) in waitehandleData" :key="index" :item="item">
                     <repair-item :item="item" :itemClick="itemClick"></repair-item>
                 </li>
             </scroll>
@@ -41,7 +41,7 @@
 <script>
 import scroll from '../../../common/scroll.vue';
 import SegmentBar from '../../../common/segmentBar';
-import RepairItem from './repairitem.vue';
+import RepairItem from '../../../common/repairitem';
 
 import data from './json/readyrepair.json';
 
@@ -127,11 +127,17 @@ export default {
 
                 if (data.Status) {
                     if (vm.segmentBarIndex == 0) {
-                        vm.readyrepairData = data;
+                        vm.readyrepairData = data.DispatchList;
+                        console.log(data);
+                        console.log(vm.readyrepairData);
+                    }
+
+                    else if (vm.segmentBarIndex == 1) {
+                        vm.takeordersData = data.DispatchList;
                     }
 
                     else {
-                        vm.takeordersData = data;
+                        vm.waitehandleData = data.DispatchList
                     }
                 }
 

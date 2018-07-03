@@ -1,10 +1,10 @@
 <template lang="html">
-    <cube-scroll :item="items" ref="scroll" :options="fresh?options:noFreshOptions" @pulling-down="pullingDown" @pulling-up="pullingUp">
+    <cube-scroll class="common-scroll" :item="items" ref="scroll" :options="fresh?options:noFreshOptions" @pulling-down="pullingDown" @pulling-up="pullingUp">
         <slot></slot>
 
         <!-- 刷新列表里显示没有更多数据 -->
         <div v-if="fresh">
-            <div v-if="!items" class="no-more-data-hint">
+            <div class="no-more-data-hint" v-if="!items || items.length < 1">
                 一 没有更多啦 一
             </div>
         </div>
