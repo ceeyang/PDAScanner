@@ -16,12 +16,12 @@
 
     <!-- 全部 -->
     <template v-if="currentIndex==0">
-            <scroll :items="allDataArr" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
-                <li v-for="(item,index) in allDataArr" :key="index" :item="item">
-                    <repair-item :item="item" :itemClick="itemClick" className="readyrepair"></repair-item>
-                </li>
-            </scroll>
-        </template>
+        <scroll :items="allDataArr" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+            <li v-for="(item,index) in allDataArr" :key="index" :item="item">
+                <repair-item :item="item" :itemClick="itemClick" className="readyrepair"></repair-item>
+            </li>
+        </scroll>
+    </template>
 
     <!-- 待维修 -->
     <template v-if="currentIndex==1">
@@ -33,7 +33,7 @@
         </template>
 
     <!-- 已维修 -->
-    <template v-if="currentIndex==1">
+    <template v-if="currentIndex==2">
             <scroll :items="finishedDataArr" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
                 <li v-for="(item,index) in finishedDataArr" :key="index" :item="item">
                     <repair-item :item="item" :itemClick="itemClick"></repair-item>
@@ -75,28 +75,24 @@ export default {
         },
 
         onPullingDown(scroll) {
-            setTimeout(function () {
+            setTimeout(function() {
                 scroll.forceUpdate()
             }, 2000);
         },
 
         onPullingUp(scroll) {
 
-            setTimeout(function () {
+            setTimeout(function() {
                 scroll.forceUpdate()
             }, 2000);
 
             if (this.currentIndex == 0) {
 
 
-            }
-
-            else if (this.currentIndex == 1) {
+            } else if (this.currentIndex == 1) {
 
 
-            }
-
-            else {
+            } else {
 
             }
         },

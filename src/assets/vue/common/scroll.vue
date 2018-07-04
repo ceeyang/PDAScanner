@@ -5,7 +5,7 @@
         <!-- 刷新列表里显示没有更多数据 -->
         <div v-if="fresh">
             <div class="no-more-data-hint" v-if="!items || items.length < 1">
-                一 没有更多啦 一
+                <img src="../../images/NoMoreData.png">
             </div>
         </div>
     </cube-scroll>

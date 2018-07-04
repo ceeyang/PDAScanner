@@ -66,7 +66,7 @@ export default {
 
     mounted() {
         // 没有数据的时候显示本地数据
-        this.readyrepairData = data;
+        // this.readyrepairData = data;
 
         this.getItemsWhthPageNumber(this.currentPageIndex);
     },

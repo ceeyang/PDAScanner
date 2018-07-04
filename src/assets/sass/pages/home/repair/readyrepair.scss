@@ -1,7 +1,16 @@
 .ready-repair-page{
+
+    .ready-repair-content {
+        top: 0px;
+        bottom: 45px;
+        .device-icon {
+            font-size: 50px;
+        }
+    }
+
     .ready-repair-bottom{
         bottom: 0px;
-        position: absolute;
+        position: fixed;
         color: white;
         height: 45px;
         background-color: $main-background-color;

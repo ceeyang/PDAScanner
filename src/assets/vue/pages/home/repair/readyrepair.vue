@@ -8,13 +8,17 @@ codeer: cee
         <!-- Nav  -->
         <f7-navbar title="维修派单" back-link="Back"></f7-navbar>
 
-        <scroll>
-            <template v-for="(item, index) in 200">
-                <div class="">
-                    {{item}}
-                </div>
-            </template>
-        </scroll>
+        <f7-list>
+      <f7-list-group>
+        <f7-list-item title="设备信息" group-title></f7-list-item>
+        <f7-list-item title="Item 1"></f7-list-item>
+      </f7-list-group>
+      <f7-list-group>
+        <f7-list-item title="维修信息" group-title></f7-list-item>
+        <f7-list-item title="Item 1"></f7-list-item>
+        <f7-list-item title="Item 1"></f7-list-item>
+      </f7-list-group>
+    </f7-list>
 
         <cube-button @click="readyButtonAction" class="ready-repair-bottom">维修派工</cube-button>
 
@@ -22,7 +26,6 @@ codeer: cee
 </template>
 
 <script>
-
 import scroll from '../../../common/scroll.vue';
 import InputCell from '../../../common/inputcell.vue';
 import RepairItem from '../../../common/repairitem.vue';
@@ -32,71 +35,72 @@ export default {
     data() {
         return {
             repairTitlesArr: [{
-                "title": "设备名称",
-                "name": "SBMC",
-                "value": "",
-                "disabled": true,
-            },{
-                "title": "报修科室",
-                "name": "SYKSMC",
-                "value": "西药库",
-                "disabled": false
-            },
-            {
-                "title": "报修人员",
-                "name": "WXR",
-                "value": "管理员",
-                "disabled": true
-            },
-            {
-                "title": "报修日期",
-                "name": "BXRQ",
-                "value": "2018-06-26",
-                "disabled": false
+                    "title": "设备名称",
+                    "name": "SBMC",
+                    "value": "",
+                    "disabled": true,
+                }, {
+                    "title": "报修科室",
+                    "name": "SYKSMC",
+                    "value": "西药库",
+                    "disabled": false
+                },
+                {
+                    "title": "报修人员",
+                    "name": "WXR",
+                    "value": "管理员",
+                    "disabled": true
+                },
+                {
+                    "title": "报修日期",
+                    "name": "BXRQ",
+                    "value": "2018-06-26",
+                    "disabled": false
 
-            },
-            {
-                "title": "维修期限",
-                "name": "WXQX",
-                "value": "2019-06-26",
-                "disabled": false
-            },
-            {
-                "title": "资产编号",
-                "name": "SBBH",
-                "value": "68990500067",
-                "disabled": true
-            },
-            {
-                "title": "规格型号",
-                "name": "SBXH",
-                "value": "",
-                "disabled": true
-            },
-            {
-                "title": "报修电话",
-                "name": "BXDH",
-                "value": "",
-                "disabled": false
-            },
-            {
-                "title": "维修状态",
-                "name": "SBZT",
-                "value": "",
-                "disabled": false
-            },
-            {
-                "title": "资产厂家",
-                "name": "SBCJMC",
-                "value": "",
-                "disabled": true
-            },
-            {
-                "title": "故障描述",
-                "name": "GZMS",
-                "value": "",
-                "disabled": false
-            }],
+                },
+                {
+                    "title": "维修期限",
+                    "name": "WXQX",
+                    "value": "2019-06-26",
+                    "disabled": false
+                },
+                {
+                    "title": "资产编号",
+                    "name": "SBBH",
+                    "value": "68990500067",
+                    "disabled": true
+                },
+                {
+                    "title": "规格型号",
+                    "name": "SBXH",
+                    "value": "",
+                    "disabled": true
+                },
+                {
+                    "title": "报修电话",
+                    "name": "BXDH",
+                    "value": "",
+                    "disabled": false
+                },
+                {
+                    "title": "维修状态",
+                    "name": "SBZT",
+                    "value": "",
+                    "disabled": false
+                },
+                {
+                    "title": "资产厂家",
+                    "name": "SBCJMC",
+                    "value": "",
+                    "disabled": true
+                },
+                {
+                    "title": "故障描述",
+                    "name": "GZMS",
+                    "value": "",
+                    "disabled": false
+                }
+            ],
         }
     },
 
@@ -151,13 +155,13 @@ export default {
 
         onPullingDown(scroll) {
             console.log('pullingDown: ' + scroll);
-            setTimeout(function () {
+            setTimeout(function() {
                 scroll.forceUpdate();
             }, 1000);
         },
 
         onPullingUp(scroll) {
-            setTimeout(function () {
+            setTimeout(function() {
                 scroll.forceUpdate();
             }, 1000);
         },
