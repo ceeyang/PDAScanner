@@ -6,5 +6,16 @@
     <false/>
     <key>method</key>
     <string>development</string>
+    <key>teamID</key>
+    <string>Y8MK4UJH8L</string>
+    <key>provisioningProfiles</key>
+    <dict>
+      <key>com.ceeyang.pdascanner</key>
+      <string>851d3711-bda3-4e75-a09c-3a0959eaea40</string>
+    </dict>
+    <key>signingStyle</key>
+    <string>manual</string>
+    <key>signingCertificate</key>
+    <string>iPhone Developer: 767781606@qq.com (KESCQXS589)</string>
   </dict>
 </plist>

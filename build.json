@@ -1,0 +1,15 @@
+{
+  "ios": {
+    "debug": {
+      "codeSignIdentity": "iPhone Developer: 767781606@qq.com (KESCQXS589)",
+      "provisioningProfile": "851d3711-bda3-4e75-a09c-3a0959eaea40",
+      "developmentTeam": "Y8MK4UJH8L",
+      "packageType": "development"
+    },
+    "release": {
+      "codeSignIdentity": "iPhone Distribution: XiChuan Yang (Y8MK4UJH8L)",
+      "provisioningProfile": "3ce25275-a253-4f70-817d-c764f5b83e10",
+      "packageType": "enterprise"
+    }
+  }
+}

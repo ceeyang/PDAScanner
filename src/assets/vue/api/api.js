@@ -1,102 +1,108 @@
+
+// 正式环境打包使用
+// const rootURL = `http://120.78.92.212:8006`
+// 浏览器运行使用
+const rootURL = ``
+
 export default {
     // 登录
-    login:'/api/Login/Login',
+    login:`${rootURL}/api/Login/Login`,
 
     // 获取仓库集合
-    WarehouseList: '/api/Login/WarehouseList',
+    WarehouseList: `${rootURL}/api/Login/WarehouseList`,
 
     // 获取科室集合
-    departmentList: 'api/Repair/DepartmentList',
+    departmentList: `${rootURL}/api/Repair/DepartmentList`,
 
     // 未报修设备集合
-    notRepairList: "api/Repair/DepartmentEquListNot",
+    notRepairList: `${rootURL}/api/Repair/DepartmentEquListNot`,
 
     // 已经报修设备集合
-    hadRepairedList: "api/Repair/DepartmentEquListHas",
+    hadRepairedList: `${rootURL}/api/Repair/DepartmentEquListHas`,
 
     // 4、设备名称集合
-    equNameList: 'api/Repair/EquNameList',
+    equNameList: `${rootURL}/api/Repair/EquNameList`,
 
     // 获取所以科室集合
-    departmentList: "api/Repair/DepartmentList",
+    departmentList: `${rootURL}/api/Repair/DepartmentList`,
 
     // 报修申请
-    applyRepair: "api/Repair/ApplyRepair",
+    applyRepair: `${rootURL}/api/Repair/ApplyRepair`,
 
     // 撤销申请
-    revokeApply: "api/Repair/Revoke",
+    revokeApply: `${rootURL}/api/Repair/Revoke`,
 
     // 获取资产信息
-    getEquById: "api/Repair/GetEquById",
+    getEquById: `${rootURL}/api/Repair/GetEquById`,
 
     // 维修, 派工, 接单信息查询
-    dispatchList: "api/Dispatch/DispatchList",
+    dispatchList: `${rootURL}/api/Dispatch/DispatchList`,
 
     // 加载维修派工用户
-    getRepaitUsers: "api/Dispatch/GetRepaitUsers",
+    getRepaitUsers: `${rootURL}/api/Dispatch/GetRepaitUsers`,
 
     // 派单或者转单(通过维修状态)
-    sendOrder: "api/Dispatch/Assign",
+    sendOrder: `${rootURL}/api/Dispatch/Assign`,
 
     // 忽略维修派工
-    dispatchIgnore: "api/Dispatch/Ignore",
+    dispatchIgnore: `${rootURL}/api/Dispatch/Ignore`,
 
     // 确认维修派工
-    confirmOrder: "api/PickOrder/ConfirmOrder",
+    confirmOrder: `${rootURL}/api/PickOrder/ConfirmOrder`,
 
     // 获取维修信息
-    getRepairInfo: "api/PickOrder/GetRepairInfo",
+    getRepairInfo: `${rootURL}/api/PickOrder/GetRepairInfo`,
 
     // 故障类型列表
-    getQuestionTypeList: "api/PickOrder/QuestionTypeList",
+    getQuestionTypeList: `${rootURL}/api/PickOrder/QuestionTypeList`,
 
     // 故障列表
-    getQuestionList: "api/PickOrder/QuestionList",
+    getQuestionList: `${rootURL}/api/PickOrder/QuestionList`,
 
     // 接单
-    checkOrder: "api/PickOrder/CheckOrder",
+    checkOrder: `${rootURL}/api/PickOrder/CheckOrder`,
 
     // 撤销接单
-    cancelOrder: "api/PickOrder/CancelOrder",
+    cancelOrder: `${rootURL}/api/PickOrder/CancelOrder`,
 
     // 审核列表
-    auditList: "api/Audit/AuditList",
+    auditList: `${rootURL}/api/Audit/AuditList`,
 
     // 获取维修进程对象
-    getRepairProcessModel: "api/Audit/GetRepairProcessModel",
+    getRepairProcessModel: `${rootURL}/api/Audit/GetRepairProcessModel`,
 
     // 维修审核
-    repairAudit: "api/Audit/RepairAudit",
+    repairAudit: `${rootURL}/api/Audit/RepairAudit`,
 
     // 22、维修处理集合
-    repairHandleList: "api/RepairHandle/RepairHandleList",
+    repairHandleList: `${rootURL}/api/RepairHandle/RepairHandleList`,
 
     // 23、维修过程列表
-    repairProcessList: "api/RepairHandle/RepairProcessList",
+    repairProcessList: `${rootURL}/api/RepairHandle/RepairProcessList`,
 
     // 24、新增维修过程
-    addRepairProcess: "api/RepairHandle/AddRepairProcess",
+    addRepairProcess: `${rootURL}/api/RepairHandle/AddRepairProcess`,
 
     // 25、维修人员列表
-    repairUserList: "api/RepairHandle/RepairUserList",
+    repairUserList: `${rootURL}/api/RepairHandle/RepairUserList`,
 
     // 26、新增维修人员
-    addRepairUser: "api/RepairHandle/AddRepairUser",
+    addRepairUser: `${rootURL}/api/RepairHandle/AddRepairUser`,
 
     // 27、维修配件列表
-    repairPartsList: "api/RepairHandle/RepairPartsList",
+    repairPartsList: `${rootURL}/api/RepairHandle/RepairPartsList`,
 
     // 28、新增维修配件
-    addRepairParts: "api/RepairHandle/AddRepairParts",
+    addRepairParts: `${rootURL}/api/RepairHandle/AddRepairParts`,
 
     // 29、提交验收
-    submitApproval: "api/RepairHandle/SubmitApproval",
+    submitApproval: `${rootURL}/api/RepairHandle/SubmitApproval`,
 
     // 30、科室验收列表
-    approvalList: "api/Approval/ApprovalList",
+    approvalList: `${rootURL}/api/Approval/ApprovalList`,
 
     // 31、科室验收
-    departmentApproval: "api/Approval/DepartmentApproval",
+    departmentApproval: `${rootURL}/api/Approval/DepartmentApproval`,
 
 
 
