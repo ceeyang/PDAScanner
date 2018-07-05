@@ -86,7 +86,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		Vf2AY8UukW92mm1v1jLeIkikO2U=
+		ByOBpkY7CJB4VFOmPYNTB9dOqXI=
 		</data>
 		<key>CDVBarcodeScanner.bundle/beep.caf</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		yS80x1RJ0DIbJ6ZEsEOEk6yToHw=
+		7avUzPsK9HT2n92+9fFKlAMHnqY=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		w3dIWps9UzzXrlQp5Et3JrrOt3w=
+		Uy9w8nYqfaPaG42H7hTTv2EsDoI=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		OZ2bFiKf3gLbiNCQwX5DlOrQJbg=
+		i3DkUBsdU1f0A4mrisyx4e8mmN8=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -134,11 +134,11 @@
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		ynZ6w9Vrr/dTYRK02tPk+xt3eaY=
+		4QjGqMwkqmaut4ZLLY0OLsZUy4w=
 		</data>
 		<key>scannerOverlay.nib</key>
 		<data>
-		qc/2tdQgiYFvITEwqPfoFPILCVQ=
+		w1yxFPcNAEDdyS0ZPJ4XFSaH0z4=
 		</data>
 		<key>www/Framework7Icons-Regular.eot</key>
 		<data>
@@ -159,6 +159,10 @@
 		<key>www/NoMoreData.png</key>
 		<data>
 		c9CZzVP+yMMEut3Jz3XFZosrcr8=
+		</data>
+		<key>www/bb75130ff27d5cd82636.main.js</key>
+		<data>
+		BJeqJUlZZS+c4acV3tW6GlIC8uM=
 		</data>
 		<key>www/cordova-js-src/exec.js</key>
 		<data>
@@ -187,10 +191,6 @@
 		<key>www/cubeic.dcc2b6f.ttf</key>
 		<data>
 		elgURsb50JlMWYUDM/4aVLjl1uo=
-		</data>
-		<key>www/d43648fde677b82e3973.main.js</key>
-		<data>
-		7QiDY/4E3w24LXfcU07Fmm5srvM=
 		</data>
 		<key>www/fontawesome-webfont.eot</key>
 		<data>
@@ -226,7 +226,7 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		DHQYGx1N+DQqc39LN7rmp4aO6WA=
+		2L3aNeQTl2uDJ9FEIjDzeUXGyi4=
 		</data>
 		<key>www/loginlogo.png</key>
 		<data>
@@ -483,11 +483,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Vf2AY8UukW92mm1v1jLeIkikO2U=
+			ByOBpkY7CJB4VFOmPYNTB9dOqXI=
 			</data>
 			<key>hash2</key>
 			<data>
-			J7suEv6eX2UnH/y01EYMLEcAva8ae6r4D5Q19DY+2rA=
+			5+IEl01uDQNtT3D70Q7k8ijMzl6LEouXRPx/cdMVx2w=
 			</data>
 		</dict>
 		<key>CDVBarcodeScanner.bundle/beep.caf</key>
@@ -538,11 +538,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yS80x1RJ0DIbJ6ZEsEOEk6yToHw=
+			7avUzPsK9HT2n92+9fFKlAMHnqY=
 			</data>
 			<key>hash2</key>
 			<data>
-			9cSQjWCHDouAOyGSvZ0X9VWuMA0oodhrjK54br5e7L4=
+			F1zraCVvwrmVwCzsEjZRsDS96c479FM5X1wY9lrs1A4=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -560,22 +560,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w3dIWps9UzzXrlQp5Et3JrrOt3w=
+			Uy9w8nYqfaPaG42H7hTTv2EsDoI=
 			</data>
 			<key>hash2</key>
 			<data>
-			Wn9htBy3oklptAoDlk+cn7CDicqec59UkOlNX0z6jtM=
+			Y04Srw2vaeXbEBv2hST2Dtj/k17GyTSl61ly3Je8MQ4=
 			</data>
 		</dict>
 		<key>MainViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			OZ2bFiKf3gLbiNCQwX5DlOrQJbg=
+			i3DkUBsdU1f0A4mrisyx4e8mmN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			0mLjrOhPE3OwEXW1AtbHqjB8DGqviFhqsZdGGHfHxUw=
+			J5s2UPXOtEkhp2jAmGZjlX4l08pB2Ol8RLz/bR6ykzI=
 			</data>
 		</dict>
 		<key>config.xml</key>
@@ -593,22 +593,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ynZ6w9Vrr/dTYRK02tPk+xt3eaY=
+			4QjGqMwkqmaut4ZLLY0OLsZUy4w=
 			</data>
 			<key>hash2</key>
 			<data>
-			gn+lvrO+7zf5POYxWusNuevlGcWQQiN5f7xurwx4h7w=
+			kaU1g7Q8dyFpzXyhEFwKrgOP296hPf1bMziEcpq6mfE=
 			</data>
 		</dict>
 		<key>scannerOverlay.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qc/2tdQgiYFvITEwqPfoFPILCVQ=
+			w1yxFPcNAEDdyS0ZPJ4XFSaH0z4=
 			</data>
 			<key>hash2</key>
 			<data>
-			KDqxZoqmkPC0eaTppU8INjDBCLESCqFFFLbuwSdf+/0=
+			RcF0eXvnWPW+dvvz1XZ6ihKssn0yidglsrh18bbsoYw=
 			</data>
 		</dict>
 		<key>www/Framework7Icons-Regular.eot</key>
@@ -664,6 +664,17 @@
 			<key>hash2</key>
 			<data>
 			jaA1RHz9pJjIjZYf6No5dpLYsM923LCMft+uRZUj1rQ=
+			</data>
+		</dict>
+		<key>www/bb75130ff27d5cd82636.main.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			BJeqJUlZZS+c4acV3tW6GlIC8uM=
+			</data>
+			<key>hash2</key>
+			<data>
+			XX/A1rHDWBZDQ0EP1kAD6+SDrdYmr/WpoWQ0Q+uxrcA=
 			</data>
 		</dict>
 		<key>www/cordova-js-src/exec.js</key>
@@ -741,17 +752,6 @@
 			<key>hash2</key>
 			<data>
 			CHgyVmhfaviDYFqzdUcYk1VrZW6h5TjxzuDkSNqEx2s=
-			</data>
-		</dict>
-		<key>www/d43648fde677b82e3973.main.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			7QiDY/4E3w24LXfcU07Fmm5srvM=
-			</data>
-			<key>hash2</key>
-			<data>
-			Lzh+LTFA5qn5w35o2U9CPKcIx3gjutS+1JBsHSVv/N4=
 			</data>
 		</dict>
 		<key>www/fontawesome-webfont.eot</key>
@@ -846,11 +846,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DHQYGx1N+DQqc39LN7rmp4aO6WA=
+			2L3aNeQTl2uDJ9FEIjDzeUXGyi4=
 			</data>
 			<key>hash2</key>
 			<data>
-			S/cvnTe9E1Ij1v+3QqYg7iwMeJAAG7K3GDXTt7q/6LE=
+			keMHRvOe3bwHG90cGUvsPUPlO9CkkKdEy8EEWHT6eZw=
 			</data>
 		</dict>
 		<key>www/loginlogo.png</key>

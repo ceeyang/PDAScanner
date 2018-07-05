@@ -1,10 +1,61 @@
 .ready-repair-page{
 
-    .ready-repair-content {
+    .repair-content{
         top: 0px;
         bottom: 45px;
-        .device-icon {
-            font-size: 50px;
+
+        .content-header{
+            color: $main-color-subtitle;
+            font-size: $main-font-subtitle;
+            background-color: white;
+            border-bottom: 1px solid $main-line-color;
+        }
+
+        .content-top {
+            margin-top: 15px;
+            background-color: white;
+
+            .contet-top-device-info{
+                display: flex;
+                flex-direction: row;
+                .device-icon {
+                    font-size: 80px;
+                    color: $main-background-color;
+                    margin-left: 15px;
+                    margin-right: 15px;
+                }
+                .top-right{
+                    .content-device-name{
+                        margin-top: 15px;
+                        font-size: $main-font-title;
+                        color: $main-color-title;
+                    }
+                    .content-device-subname{
+                        margin-top: 5px;
+                        font-size: $main-font-subtitle;
+                        color: $main-color-subtitle;
+                    }
+                }
+            }
+        }
+
+        .content-middle{
+            margin-top: 15px;
+            background-color: white;
+            .content-repair-info{
+                height: 30px;
+                font-size: $main-font-title;
+                color: $main-color-title;
+            }
+            .problem-description{
+                border-bottom: 1px solid $main-line-color;
+                border-top: 1px solid $main-line-color;
+                height: 50px;
+            }
+        }
+        .content-bottom{
+            margin-top: 15px;
+
         }
     }
 
