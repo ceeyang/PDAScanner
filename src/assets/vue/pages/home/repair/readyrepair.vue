@@ -19,7 +19,7 @@ codeer: cee
                             {{deviceName || "设备名称"}}
                         </div>
                         <div class="content-device-subname">
-                            设备型号:  {{deviceType || "无"}}
+                            维修编号:  {{repairOrder || "无"}}
                         </div>
                         <div class="content-device-subname">
                             资产编号:  {{deviceNumber || "无"}}
@@ -31,27 +31,31 @@ codeer: cee
             <div class="content-middle">
                 <div class="content-header">报修信息</div>
                 <div class="content-repair-info">
-                    报修科室:  {{repairDepartment || "无"}}
+                    报修科室 |  {{repairDepartment || "无"}}
                 </div>
                 <div class="content-repair-info">
-                    报修日期:  {{repairTime || "无"}}
+                    报修日期 |  {{repairTime || "无"}}
                 </div>
                 <div class="content-repair-info">
-                    报修人员:  {{repairUser || "无"}}
+                    报修人员 |  {{repairUserName || "无"}}
                 </div>
                 <div class="content-repair-info">
-                    报修电话:  {{repairUserPhone || "无"}}
+                    报修电话 |  {{repairUserPhone || "无"}}
                 </div>
-                <div class="content-repair-info problem-description">
-                    报修电话:  {{repairUserPhone || "无"}}
+                <div class="content-repair-info">
+                    故障描述 |  {{repairIntroduction || "无"}}
                 </div>
-                <!-- <mt-field label="故障描述" placeholder="故障描述" type="textarea" rows="4" v-modal="introduction"></mt-field> -->
+                <!-- <mt-field label="故障描述" placeholder="无" type="textarea" rows="4" v-modal="repairIntroduction"></mt-field> -->
             </div>
 
             <div class="content-bottom">
-                <div class="content-header">选派人员</div>
-                <selected-input :itemlist="showArr" placeholder="请输入..." nodatatext="暂无数据"></selected-input>
-                <!-- <selected-input :itemlist="showArr" placeholder="请输入..." nodatatext="暂无数据"></selected-input> -->
+                <div class="content-header">选派信息</div>
+                <div class="content-selecte-user">
+                    <div class="selecte-user-title">
+                        报修人员 |
+                    </div>
+                    <selected-input class="selecte-input" :data="repairUsersNameArr" placeholder="添加派修人员" @itemClick="searchItemClickAction" @searchAction="inputSearchAction"></selected-input>
+                </div>
             </div>
         </div>
 
@@ -70,126 +74,161 @@ export default {
 
     data() {
         return {
+            itemData: [],
+
             deviceName: '',
-            deviceType: '',
+            repairOrder: '',
             deviceNumber: '',
+
             repairDepartment: '',
             repairTime: '',
-            repairUser: '',
+            repairUserName: '',
             repairUserPhone: '',
-            introduction: '',
+            repairIntroduction: '',
 
-            showArr: [],
 
-            repairTitlesArr: [{
-                    "title": "设备名称",
-                    "name": "SBMC",
-                    "value": "",
-                    "disabled": true,
-                }, {
-                    "title": "报修科室",
-                    "name": "SYKSMC",
-                    "value": "西药库",
-                    "disabled": false
-                },
-                {
-                    "title": "报修人员",
-                    "name": "WXR",
-                    "value": "管理员",
-                    "disabled": true
-                },
-                {
-                    "title": "报修日期",
-                    "name": "BXRQ",
-                    "value": "2018-06-26",
-                    "disabled": false
+            repairUsersNameArr: [],
+            repairUsersArr: [],
+            repairUser: [],
 
-                },
-                {
-                    "title": "维修期限",
-                    "name": "WXQX",
-                    "value": "2019-06-26",
-                    "disabled": false
-                },
-                {
-                    "title": "资产编号",
-                    "name": "SBBH",
-                    "value": "68990500067",
-                    "disabled": true
-                },
-                {
-                    "title": "规格型号",
-                    "name": "SBXH",
-                    "value": "",
-                    "disabled": true
-                },
-                {
-                    "title": "报修电话",
-                    "name": "BXDH",
-                    "value": "",
-                    "disabled": false
-                },
-                {
-                    "title": "维修状态",
-                    "name": "SBZT",
-                    "value": "",
-                    "disabled": false
-                },
-                {
-                    "title": "资产厂家",
-                    "name": "SBCJMC",
-                    "value": "",
-                    "disabled": true
-                },
-                {
-                    "title": "故障描述",
-                    "name": "GZMS",
-                    "value": "",
-                    "disabled": false
-                }
-            ],
         }
     },
+
 
     mounted() {
 
         let itemData = JSON.parse(localStorage.ItemData);
-        console.log(itemData);
+        this.itemData = itemData
 
-        for (var item in itemData) {
-            for (var i = 0; i < this.repairTitlesArr.length; i++) {
-                let repair = this.repairTitlesArr[i];
-                if (item == repair.name) {
-                    repair.value = itemData[item];
-                }
-                this.repairTitlesArr[i] = repair;
-            }
-        }
+        this.deviceName = itemData.EquName
+        this.RepairOrder = itemData.RepairOrder
+        this.repairDepartment = itemData.DepartmentName
+        this.repairTime = itemData.RepairDate
+        this.repairUserName = itemData.RepairPeople
+        // this.repairUserPhone = itemData.phone
+        this.repairIntroduction = itemData.FaultDescribe
 
     },
 
     methods: {
+        // 遍历用户模型列表取出名称
+        parseUsers() {
+            this.repairUsersNameArr = []
+            var nameArr = []
+            for (var i = 0; i < this.repairUsersArr.length; i++) {
+                nameArr.push(this.repairUsersArr[i].UserName)
+            }
+            this.repairUsersNameArr = nameArr
+        },
+
+        searchItemClickAction(data, event) {
+            this.currentSelecteInputData = []
+            for (var i = 0; i < this.repairUsersArr.length; i++) {
+                if (this.repairUsersArr[i].UserName == data) {
+                    this.repairUser = this.repairUsersArr[i]
+                }
+            }
+        },
+
+        inputSearchAction(searchvalue) {
+
+            this.currentSelecteInputData = ['hahah', 'heiheie', 'nice']
+            console.log('searchvalue : ' + searchvalue);
+
+            let params = {
+                'QueryText': searchvalue,
+                'UserCode': localStorage.account,
+                'PageIndex': 1,
+                'PageSize': 100,
+            };
+
+            let vm = this;
+            this.get(this.api.getRepaitUsers, params, function(response) {
+                console.log(params);
+                var data = JSON.parse(response);
+                if (data.Status) {
+                    vm.repairUsersArr = data.AssignUserList;
+                    vm.parseUsers()
+                } else {
+                    let msg = data.Msg;
+                    console.log(msg);
+                    if (!vm.toastCenter) {
+                        vm.toastCenter = vm.$f7.toast.create({
+                            text: msg,
+                            closeTimeout: 2000,
+                            position: 'center',
+                        });
+                    }
+                    vm.toastCenter.open();
+                }
+            });
+        },
 
         onblur() {
 
         },
 
-        inputFunc() {
-
-        },
-
         readyButtonAction() {
-            const self = this;
-            if (!self.toastCenter) {
-                self.toastCenter = self.$f7.toast.create({
-                    text: '申请成功',
-                    closeTimeout: 2000,
-                    position: 'center',
-                });
-            }
-            self.toastCenter.open();
 
-            this.$f7router.back();
+            if (this.repairUser.UserName == undefined) {
+                const toast = this.$createToast({
+                    time: 0,
+                    txt: '请选择派修人员',
+                    type: 'error'
+                })
+                toast.show()
+                setTimeout(() => {
+                    toast.hide()
+                }, 2000)
+
+                return
+            }
+
+            let params = {
+                "DepartmentId": this.itemData.DepartmentId | "",
+                "DepartmentName": this.itemData.DepartmentName | "",
+                "ApplyDate": '',
+                "RepairTerm": 1,
+                "EquId": this.itemData.EquId | "",
+                "EquName": this.itemData.EquName | "",
+                "SpecType": '',
+                "RepairPhone": '',
+                "RepairStatus": '',
+                "Factory": '',
+                "FaultId": 'xxxx',
+                "RepairUserId": this.repairUser.UserCode | "",
+                "RepairUserName": this.repairUser.UserName | "",
+                "FaultDesription": this.repairIntroduction | "",
+                "Remark": '',
+                "StoreNumber": '',
+                "Store": '',
+                "SupplierId": '',
+                "SupplierName": '',
+                "RepairNo": '',
+                "RepairNoReadonly": '',
+            };
+
+            let vm = this;
+            let URL = this.api.ApplyRepair;
+            this.post(URL, params, function(response) {
+                var data = JSON.parse(response);
+
+                console.log(params);
+
+                console.log("---------------------------------------------------------------------: ");
+                console.log(" 请求地址: " + URL);
+                console.log(" 返回数据: ");
+                console.log(data);
+                console.log("---------------------------------------------------------------------- ");
+
+                if (data.Status) {
+
+                } else {
+
+
+                }
+            });
+
         },
 
         itemClick() {

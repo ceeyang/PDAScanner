@@ -4,145 +4,175 @@ codeer: cee
 2018-06-25 18:16:13
 -->
 <template lang="html">
-    <f7-page class="apply-repair-page">
+    <f7-page class="ready-repair-page">
         <!-- Nav  -->
-        <f7-navbar title="申请报修" back-link="Back"></f7-navbar>
+        <f7-navbar title="维修派单" back-link="Back"></f7-navbar>
 
-        <scroll class="apply-repair-scroll" :items="repairTitlesArr">
-            <li v-for="(item,index) in repairTitlesArr" :key="index" :item="item">
-                <input-cell :title="item.title" :disabled="item.disabled" :onblur="onblur" v-model="item.value"></input-cell>
-            </li>
-        </scroll>
+        <div class="repair-content">
+            <div class="content-top">
+                <div class="content-header">设备信息</div>
+                <div class="contet-top-device-info">
 
-        <cube-button v-if="repairViewType=='apply'" @click="applyButtonAction" class="apply-repair-bottom">申请维修</cube-button>
+                    <i class="iconfont device-icon">&#xe736;</i>
+                    <div class="top-right">
+                        <div class="content-device-name">
+                            {{deviceName || "设备名称"}}
+                        </div>
+                        <div class="content-device-subname">
+                            维修编号:  {{repairOrder || "无"}}
+                        </div>
+                        <div class="content-device-subname">
+                            资产编号:  {{deviceNumber || "无"}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-middle">
+                <div class="content-header">报修信息</div>
+                <div class="content-repair-info">
+                    报修科室 |  {{repairDepartment || "无"}}
+                </div>
+                <div class="content-repair-info">
+                    报修日期 |  {{repairTime || "无"}}
+                </div>
+                <div class="content-repair-info">
+                    报修人员 |  {{repairUserName || "无"}}
+                </div>
+                <div class="content-repair-info">
+                    报修电话 |  {{repairUserPhone || "无"}}
+                </div>
+                <div class="content-repair-info">
+                    故障描述 |  {{repairIntroduction || "无"}}
+                </div>
+                <!-- <mt-field label="故障描述" placeholder="无" type="textarea" rows="4" v-modal="repairIntroduction"></mt-field> -->
+            </div>
+        </div>
+
+        <cube-button @click="applyButtonAction" class="ready-repair-bottom">申请报修</cube-button>
 
     </f7-page>
 </template>
 
 <script>
-
 import scroll from '../../../common/scroll.vue';
 import InputCell from '../../../common/inputcell.vue';
 import RepairItem from '../../../common/repairitem.vue';
+import SelectedInput from '../../../common/selectedinput.vue';
 
 export default {
 
     data() {
         return {
-            // 页面类型, 因为有多个页面跳入此页面
-            // apply: 申请维修
-            // check: 查看详细
-            //
-            repairViewType: 0,
+            itemData: [],
 
-            repairTitlesArr: [{
-                "title": "设备名称",
-                "name": "EquName",
-                "value": "",
-                "disabled": false,
-            },{
-                "title": "报修科室",
-                "name": "DepartmentName",
-                "value": "",
-                "disabled": false
-            },
-            {
-                "title": "报修人员",
-                "name": "RepairUserId",
-                "value": "",
-                "disabled": false
-            },
-            {
-                "title": "报修日期",
-                "name": "BXRQ",
-                "value": "",
-                "disabled": false
+            deviceName: '',
+            repairOrder: '',
+            deviceNumber: '',
 
-            },
-            {
-                "title": "维修期限",
-                "name": "WXQX",
-                "value": "",
-                "disabled": false
-            },
-            {
-                "title": "资产编号",
-                "name": "EquCode",
-                "value": "",
-                "disabled": false
-            },
-            {
-                "title": "规格型号",
-                "name": "SBXH",
-                "value": "",
-                "disabled": false
-            },
-            {
-                "title": "报修电话",
-                "name": "BXDH",
-                "value": "",
-                "disabled": false
-            },
-            {
-                "title": "维修状态",
-                "name": "SBZT",
-                "value": "",
-                "disabled": false
-            },
-            {
-                "title": "资产厂家",
-                "name": "SBCJMC",
-                "value": "",
-                "disabled": false
-            },
-            {
-                "title": "故障描述",
-                "name": "GZMS",
-                "value": "",
-                "disabled": false
-            }],
+            repairDepartment: '',
+            repairTime: '',
+            repairUserName: '',
+            repairUserPhone: '',
+            repairIntroduction: '',
+
+
+            repairUsersNameArr: [],
+            repairUsersArr: [],
+            repairUser: [],
+
         }
     },
+
 
     mounted() {
 
-        this.repairViewType = localStorage.repairViewType;
+        let itemData = JSON.parse(localStorage.ItemData);
+        this.itemData = itemData
 
-        if (localStorage.ItemData) {
-            let itemData = JSON.parse(localStorage.ItemData);
-            for (var item in itemData) {
-                for (var i = 0; i < this.repairTitlesArr.length; i++) {
-                    let repair = this.repairTitlesArr[i];
-                    if (item == repair.name) {
-                        repair.value = itemData[item];
-                    }
-                    this.repairTitlesArr[i] = repair;
-                }
-            }
-        }
+        this.deviceName = itemData.EquName
+        this.RepairOrder = itemData.RepairOrder
+        this.repairDepartment = itemData.DepartmentName
+        this.repairTime = itemData.RepairDate
+        this.repairUserName = itemData.RepairPeople
+        // this.repairUserPhone = itemData.phone
+        this.repairIntroduction = itemData.FaultDescribe
+
     },
 
     methods: {
+        // 遍历用户模型列表取出名称
+        parseUsers() {
+            this.repairUsersNameArr = []
+            var nameArr = []
+            for (var i = 0; i < this.repairUsersArr.length; i++) {
+                nameArr.push(this.repairUsersArr[i].UserName)
+            }
+            this.repairUsersNameArr = nameArr
+        },
 
-        // 失去焦点
+        searchItemClickAction(data, event) {
+            this.currentSelecteInputData = []
+            for (var i = 0; i < this.repairUsersArr.length; i++) {
+                if (this.repairUsersArr[i].UserName == data) {
+                    this.repairUser = this.repairUsersArr[i]
+                }
+            }
+        },
+
+        inputSearchAction(searchvalue) {
+
+            this.currentSelecteInputData = ['hahah', 'heiheie', 'nice']
+            console.log('searchvalue : ' + searchvalue);
+
+            let params = {
+                'QueryText': searchvalue,
+                'UserCode': localStorage.account,
+                'PageIndex': 1,
+                'PageSize': 100,
+            };
+
+            let vm = this;
+            this.get(this.api.getRepaitUsers, params, function(response) {
+                console.log(params);
+                var data = JSON.parse(response);
+                if (data.Status) {
+                    vm.repairUsersArr = data.AssignUserList;
+                    vm.parseUsers()
+                } else {
+                    let msg = data.Msg;
+                    console.log(msg);
+                    if (!vm.toastCenter) {
+                        vm.toastCenter = vm.$f7.toast.create({
+                            text: msg,
+                            closeTimeout: 2000,
+                            position: 'center',
+                        });
+                    }
+                    vm.toastCenter.open();
+                }
+            });
+        },
+
         onblur() {
 
         },
 
-        getValueWithPropsName(name){
-            let value = ''
-            for (var i = 0; i < this.repairTitlesArr.length; i++) {
-                let repair = this.repairTitlesArr[i];
-                if (item == name) {
-                    value = itemData[item];
-                    continue
-                }
-                this.repairTitlesArr[i] = repair;
-            }
-            return value
-        },
-
         applyButtonAction() {
+
+            if (this.repairUser.UserName == undefined) {
+                const toast = this.$createToast({
+                    time: 0,
+                    txt: '请选择派修人员',
+                    type: 'error'
+                })
+                toast.show()
+                setTimeout(() => {
+                    toast.hide()
+                }, 2000)
+
+                return
+            }
 
             let params = {
                 "EquId": '',
@@ -205,13 +235,13 @@ export default {
 
         onPullingDown(scroll) {
             console.log('pullingDown: ' + scroll);
-            setTimeout(function () {
+            setTimeout(function() {
                 scroll.forceUpdate();
             }, 1000);
         },
 
         onPullingUp(scroll) {
-            setTimeout(function () {
+            setTimeout(function() {
                 scroll.forceUpdate();
             }, 1000);
         },
@@ -221,7 +251,8 @@ export default {
     components: {
         scroll,
         RepairItem,
-        InputCell
+        InputCell,
+        SelectedInput
     }
 }
 </script>

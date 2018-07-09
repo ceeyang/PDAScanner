@@ -25,6 +25,7 @@ export default {
         return {
 
             options: {
+                scrollbar: true,
                 pullDownRefresh: {
                     threshold: 90,
                     stop: 40,

@@ -5,6 +5,7 @@
         bottom: 45px;
 
         .content-header{
+            padding-left: 15px;
             color: $main-color-subtitle;
             font-size: $main-font-subtitle;
             background-color: white;
@@ -43,6 +44,7 @@
             margin-top: 15px;
             background-color: white;
             .content-repair-info{
+                padding-left: 15px;
                 height: 30px;
                 font-size: $main-font-title;
                 color: $main-color-title;
@@ -55,6 +57,26 @@
         }
         .content-bottom{
             margin-top: 15px;
+            .content-selecte-user{
+                border-bottom: 1px solid $main-line-color;
+                flex: 1;
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 30px;
+                .selecte-user-title{
+                    padding-left: 15px;
+                    background-color: white;
+                    // height: 30px;
+                    width: 130px;
+                    font-size: $main-font-title;
+
+                }
+
+                .selecte-input{
+                    width: 100%;
+                }
+            }
 
         }
     }

@@ -14,8 +14,8 @@
 
         <!-- 待维修 -->
         <template v-if="segmentBarIndex==0">
-            <scroll class="scan-repair-scroll" :items="readyrepairData.DepartmentEquList" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
-                <li v-for="(item,index) in readyrepairData.DepartmentEquList" :key="index" :item="item">
+            <scroll class="scan-repair-scroll" :items="readyrepairData" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+                <li v-for="(item,index) in readyrepairData" :key="index" :item="item">
                     <repair-item :item="item" :itemClick="itemClick" className="readyrepair"></repair-item>
                 </li>
             </scroll>
@@ -23,8 +23,8 @@
 
         <!-- 已维修 -->
         <template v-if="segmentBarIndex==1">
-            <scroll class="scan-repair-scroll" :items="repairCompletedData.rows" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
-                <li v-for="(item,index) in repairCompletedData.rows" :key="index" :item="item">
+            <scroll class="scan-repair-scroll" :items="repairCompletedData" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+                <li v-for="(item,index) in repairCompletedData" :key="index" :item="item">
                     <repair-item :item="item" :itemClick="itemClick"></repair-item>
                 </li>
             </scroll>
@@ -146,11 +146,19 @@ export default {
                 console.log(data);
                 if (data.Status) {
                     if (vm.segmentBarIndex == 0) {
-                        vm.readyrepairData = data;
+                        if (pageNumber == 1) {
+                            vm.readyrepairData = data.DepartmentEquList
+                        } else {
+                            vm.readyrepairData = vm.readyrepairData.concat(data.DepartmentEquList)
+                        }
                     }
 
                     else {
-                        vm.repairCompletedData = data;
+                        if (pageNumber == 1) {
+                            vm.repairCompletedData = data.DepartmentEquListHas;
+                        } else {
+                            vm.repairCompletedData.push(data.DepartmentEquListHas);
+                        }
                     }
                 }
 

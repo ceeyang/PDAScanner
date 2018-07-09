@@ -1,3 +1,42 @@
 .vue-selected-input{
-    
+    height: 30px;
+    .search-input{
+        height: 30px;
+        display: flex;
+        flex-direction: row;
+         width: 100%;
+        .search-text{
+            width: 100%;
+            color: $main-color-subtitle;
+        }
+        .search-icon {
+            width: auto;
+            padding-right: 10px;
+            height: auto;
+            align-items: center;
+            color: $main-color-subtitle;
+            background-color: white;
+            padding-top: 5px;
+        }
+    }
+
+    .list-module {
+        overflow: auto;
+        top: 0px;
+        height: auto;
+        z-index: 999;
+        background-color: white;
+        li {
+            position: relative;
+
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            white-space: nowrap;
+            & > span {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+        }
+    }
 }

@@ -96,6 +96,7 @@ Vue.prototype.get=function(url, params, next){
     return Framework7.request.get(url, params, next);
 }
 
+
 Vue.options.root = projectConfig.serverPath
 Vue.options.timeout = 3000;
 
