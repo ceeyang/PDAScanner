@@ -67,14 +67,14 @@
                 .selecte-user-title{
                     padding-left: 15px;
                     background-color: white;
-                    // height: 30px;
-                    width: 130px;
+                    width: 126px;
+                    border-right: 1px solid $main-line-color;
                     font-size: $main-font-title;
 
                 }
-
                 .selecte-input{
                     width: 100%;
+                    padding-left: 15px;
                 }
             }
 

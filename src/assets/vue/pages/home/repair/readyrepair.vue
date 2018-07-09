@@ -49,15 +49,30 @@ codeer: cee
             </div>
 
             <div class="content-bottom">
-                <div class="content-header">选派信息</div>
+                <div class="content-header">派修信息</div>
+                <input-cell type="DataInput" title="维修期限" placeholder="请选择日期" :value="startDataValue" :openDataPicker="openStartDataPicker"></input-cell>
                 <div class="content-selecte-user">
                     <div class="selecte-user-title">
-                        报修人员 |
+                        报修人员
                     </div>
-                    <selected-input class="selecte-input" :data="repairUsersNameArr" placeholder="添加派修人员" @itemClick="searchItemClickAction" @searchAction="inputSearchAction"></selected-input>
+                    <selected-input class="selecte-input" :data="repairUsersNameArr" placeholder="添加派修人员" @itemClick="userSearchItemClickAction" @searchAction="userInputSearchAction"></selected-input>
+                </div>
+                <div class="content-selecte-user">
+                    <div class="selecte-user-title">
+                        故障问题
+                    </div>
+                    <selected-input class="selecte-input" :data="falutNameArr" placeholder="添加故障问题" @itemClick="faultSearchItemClickAction" @searchAction="faultInputSearchAction"></selected-input>
+                </div>
+                <div class="content-selecte-user">
+                    <div class="selecte-user-title">
+                        故障描述
+                    </div>
+                    <selected-input class="selecte-input" :data="falutDesNameArr" placeholder="添加故障描述" @itemClick="faultDesriptionSearchItemClickAction" @searchAction="faultDesriptionInputSearchAction"></selected-input>
                 </div>
             </div>
         </div>
+
+        <mt-datetime-picker ref="picker" type="date" v-model="pickerValue" @confirm="dataPickerConfirm"></mt-datetime-picker>
 
         <cube-button @click="readyButtonAction" class="ready-repair-bottom">维修派工</cube-button>
 
@@ -86,10 +101,23 @@ export default {
             repairUserPhone: '',
             repairIntroduction: '',
 
-
+            // 派修人员
+            repairUser: [],
             repairUsersNameArr: [],
             repairUsersArr: [],
-            repairUser: [],
+
+
+            // 故障问题
+            fault: [],
+            falutNameArr: [],
+            falutsArr: [],
+            falutDesNameArr: [],
+
+
+            // 报修期限
+            startDataValue: '',
+            pickerValue: '',
+
 
         }
     },
@@ -111,6 +139,21 @@ export default {
     },
 
     methods: {
+
+        // 时间选择器回调
+        dataPickerConfirm(datetime) {
+            var year = datetime.getFullYear();
+            var month = datetime.getMonth() + 1; //js从0开始取
+            var date = datetime.getDate();
+            var dateTime = year + '-' + month + '-' + date;
+            this.startDataValue = dateTime;
+        },
+
+        // 打开时间选择器
+        openStartDataPicker() {
+            this.$refs.picker.open();
+        },
+
         // 遍历用户模型列表取出名称
         parseUsers() {
             this.repairUsersNameArr = []
@@ -121,7 +164,8 @@ export default {
             this.repairUsersNameArr = nameArr
         },
 
-        searchItemClickAction(data, event) {
+        // 派修人员选择回调
+        userSearchItemClickAction(data, event) {
             this.currentSelecteInputData = []
             for (var i = 0; i < this.repairUsersArr.length; i++) {
                 if (this.repairUsersArr[i].UserName == data) {
@@ -129,12 +173,85 @@ export default {
                 }
             }
         },
+        // 故障问题选择器回调
+        faultSearchItemClickAction(data, event) {
+            
 
-        inputSearchAction(searchvalue) {
+        },
+        // 故障描述选择器回调
+        faultDesriptionSearchItemClickAction(data, event) {
+            this.currentSelecteInputData = []
+
+        },
+
+        // 输入用户时候的事件
+        userInputSearchAction(searchvalue) {
 
             this.currentSelecteInputData = ['hahah', 'heiheie', 'nice']
             console.log('searchvalue : ' + searchvalue);
 
+            let params = {
+                'QueryText': searchvalue,
+                'UserCode': localStorage.account,
+                'PageIndex': 1,
+                'PageSize': 100,
+            };
+
+            let vm = this;
+            this.get(this.api.getRepaitUsers, params, function(response) {
+                console.log(params);
+                var data = JSON.parse(response);
+                if (data.Status) {
+                    vm.repairUsersArr = data.AssignUserList;
+                    vm.parseUsers()
+                } else {
+                    let msg = data.Msg;
+                    console.log(msg);
+                    if (!vm.toastCenter) {
+                        vm.toastCenter = vm.$f7.toast.create({
+                            text: msg,
+                            closeTimeout: 2000,
+                            position: 'center',
+                        });
+                    }
+                    vm.toastCenter.open();
+                }
+            });
+        },
+
+        // 故障问题输入的时候选择器
+        faultInputSearchAction(searchvalue) {
+
+            let params = {
+                'QueryText': searchvalue,
+                'UserCode': localStorage.account,
+                'PageIndex': 1,
+                'PageSize': 100,
+            };
+
+            let vm = this;
+            this.get(this.api.getRepaitUsers, params, function(response) {
+                console.log(params);
+                var data = JSON.parse(response);
+                if (data.Status) {
+                    vm.repairUsersArr = data.AssignUserList;
+                    vm.parseUsers()
+                } else {
+                    let msg = data.Msg;
+                    console.log(msg);
+                    if (!vm.toastCenter) {
+                        vm.toastCenter = vm.$f7.toast.create({
+                            text: msg,
+                            closeTimeout: 2000,
+                            position: 'center',
+                        });
+                    }
+                    vm.toastCenter.open();
+                }
+            });
+        },
+
+        inputSearchAction(searchvalue) {
             let params = {
                 'QueryText': searchvalue,
                 'UserCode': localStorage.account,
@@ -184,12 +301,26 @@ export default {
                 return
             }
 
+            if (this.startDataValue == '') {
+                const toast = this.$createToast({
+                    time: 0,
+                    txt: '请选择维修期限',
+                    type: 'error'
+                })
+                toast.show()
+                setTimeout(() => {
+                    toast.hide()
+                }, 2000)
+
+                return
+            }
+
             let params = {
                 "DepartmentId": this.itemData.DepartmentId | "",
                 "DepartmentName": this.itemData.DepartmentName | "",
                 "ApplyDate": '',
-                "RepairTerm": 1,
-                "EquId": this.itemData.EquId | "",
+                "RepairTerm": this.startDataValue | "",
+                "EquId": this.itemData.EquCode | "",
                 "EquName": this.itemData.EquName | "",
                 "SpecType": '',
                 "RepairPhone": '',

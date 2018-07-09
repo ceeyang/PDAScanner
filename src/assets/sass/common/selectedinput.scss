@@ -7,15 +7,18 @@
          width: 100%;
         .search-text{
             width: 100%;
+            background-color: #f5f5f5;
             color: $main-color-subtitle;
+            border-bottom: 1px solid $main-line-color;
         }
         .search-icon {
             width: auto;
             padding-right: 10px;
             height: auto;
+            border-bottom: 1px solid $main-line-color;
             align-items: center;
             color: $main-color-subtitle;
-            background-color: white;
+            background-color: #f5f5f5;
             padding-top: 5px;
         }
     }
@@ -24,8 +27,9 @@
         overflow: auto;
         top: 0px;
         height: auto;
-        z-index: 999;
-        background-color: white;
+        z-index: 9998;
+        position:relative;
+        background-color: white !important;
         li {
             position: relative;
 

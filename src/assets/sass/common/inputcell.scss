@@ -1,26 +1,25 @@
 .common-input-cell{
     display: flex;
     flex-direction: row;
-    border-bottom: 2px solid $main-line-color;
+    border-bottom: 1px solid $main-line-color;
     background-color: white;
-    height: 40px;
+    height: 30px;
     .input-cell-title{
+        padding-left: 15px;
+        background-color: white;
+        // height: 30px;
+        width: 126px;
+        border-right: 1px solid $main-line-color;
         font-size: $main-font-title;
-        border-right: 2px solid $main-line-color;
-        padding-left: 10px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-right: 10px;
-        width: 26%;
     }
     .comon-input{
         font-size: $main-font-subtitle;
         background-color: $main-color-input;
-        padding-left: 10px;
+        padding-left: 15px;
         padding-right: 10px;
         padding-top: 5px;
         padding-bottom: 5px;
-        width: 74%;
+        width: 100%;
     }
     .picker-placeholder{
         color: #6C6C6C;
