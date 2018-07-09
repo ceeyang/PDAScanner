@@ -25,9 +25,15 @@ export default [{
     path: '/login/',
     component: require('./assets/vue/pages/mine/login.vue')
   },
+
+
   {
     path: '/assetcheck/',
     component: require('./assets/vue/pages/home/assetcheck/assetcheck.vue')
+  },
+  {
+    path: '/newAssetCheck/',
+    component: require('./assets/vue/pages/home/assetcheck/newAssetCheck.vue')
   },
    {
     path: '/detailAssetcheck/',

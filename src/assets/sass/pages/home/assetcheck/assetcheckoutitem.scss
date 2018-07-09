@@ -1,0 +1,24 @@
+.asset-checkou-item{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    border-bottom: 1px solid $main-color-line;
+    .item-content-left{
+        font-size: 50px;
+        color: $main-background-color;
+        padding-left: 13px;
+    }
+    .item-content-middle{
+        width: 100%;
+        .item-content-title{
+            padding-top: 10px;
+        }
+        .item-content-subtitle{
+            padding-top: 5px;
+        }
+    }
+    .item-content-right{
+        font-size: 40px;
+        padding-right: 15px;
+    }
+}

@@ -68,6 +68,7 @@ if (document.location.search.indexOf('theme=') >= 0) {
   theme = document.location.search.split('theme=')[1].split('&')[0];
 }
 
+
 //封装全局的api请求
 Vue.prototype.api=api
 
@@ -111,6 +112,7 @@ Vue.mixin({
         }
     }
 })
+
 
 // Init Vue App
 export default new Vue({

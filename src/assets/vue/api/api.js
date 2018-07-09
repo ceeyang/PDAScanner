@@ -104,6 +104,8 @@ export default {
     // 31、科室验收
     departmentApproval: `${rootURL}/api/Approval/DepartmentApproval`,
 
+    // 获取盘点单列表
+    getInventoryList: `${rootURL}/api/Inventory/GetInventoryList`,
 
 
 }

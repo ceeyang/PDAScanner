@@ -175,7 +175,7 @@ export default {
         },
         // 故障问题选择器回调
         faultSearchItemClickAction(data, event) {
-            
+
 
         },
         // 故障描述选择器回调
@@ -251,7 +251,7 @@ export default {
             });
         },
 
-        inputSearchAction(searchvalue) {
+        faultDesriptionInputSearchAction(searchvalue) {
             let params = {
                 'QueryText': searchvalue,
                 'UserCode': localStorage.account,
