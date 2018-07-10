@@ -40,53 +40,52 @@ export default {
 
     methods: {
         itemClicks() {
-            if (this.itemClick) {
 
-                // 本地资产盘点信息
+            // 本地资产盘点信息
 
-                if (this.type && this.type == '0') {
-                    var localAssetArr = []
-                    if (localStorage.localAssetArr) {
-                        localAssetArr = JSON.parse(localStorage.localAssetArr);
-                    }
+            if (this.type && this.type == '0') {
+                var localAssetArr = []
+                if (localStorage.localAssetArr) {
+                    localAssetArr = JSON.parse(localStorage.localAssetArr);
+                }
 
-                    var inNotExist = true
-                    if (localAssetArr.length > 0) {
-                        for (var i = 0; i < localAssetArr.length; i++) {
-                            if (localAssetArr[i].InventoryNo == this.item.InventoryNo) {
-                                console.log('sssssssssssssssssss');
-                                const toast = this.$createToast({
-                                    time: 0,
-                                    type: 'error',
-                                    txt: '该单号已经存在了!',
-                                })
-                                toast.show()
-                                setTimeout(function () {
-                                    toast.hide()
-                                }, 2000);
+                var inNotExist = true
+                if (localAssetArr.length > 0) {
+                    for (var i = 0; i < localAssetArr.length; i++) {
+                        if (localAssetArr[i].InventoryNo == this.item.InventoryNo) {
+                            console.log('sssssssssssssssssss');
+                            const toast = this.$createToast({
+                                time: 0,
+                                type: 'error',
+                                txt: '该单号已经存在了!',
+                            })
+                            toast.show()
+                            setTimeout(function () {
+                                toast.hide()
+                            }, 2000);
 
-                                inNotExist = false
-                                continue
-                            }
+                            inNotExist = false
+                            continue
                         }
                     }
-
-                    if (inNotExist) {
-                        localAssetArr.push(this.item)
-                        let localAssetArrData = JSON.stringify(localAssetArr);
-                        localStorage.setItem('localAssetArr',localAssetArrData);
-                    }
-
                 }
 
-                // 默认类型, 普通 cell
-                else {
-                    let itemDataJson = JSON.stringify(this.item);
-                    localStorage.setItem('ItemData',itemDataJson);
+                if (inNotExist) {
+                    localAssetArr.push(this.item)
+                    let localAssetArrData = JSON.stringify(localAssetArr);
+                    localStorage.setItem('localAssetArr',localAssetArrData);
                 }
 
+            }
+
+            // 默认类型, 普通 cell
+            else {
+                let itemDataJson = JSON.stringify(this.item);
+                localStorage.setItem('ItemData',itemDataJson);
+            }
+
+            if (this.itemClick) {
                 this.itemClick()
-
             }
         }
     }

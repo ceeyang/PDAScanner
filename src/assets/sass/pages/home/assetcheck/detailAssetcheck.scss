@@ -1,81 +1,60 @@
-.conterBox-assetcheck{
-
-     .cont-top{
-        width:100%;
-        overflow: hidden;
-        color: white;
-        border-top: 1px solid #fff;
+.detail-asset-acheck{
+    .content-header{
+        padding-left: 15px;
+        color: $main-color-subtitle;
+        font-size: $main-font-subtitle;
+        background-color: white;
+        border-bottom: 1px solid $main-line-color;
     }
- .cont-top p{
-     margin:40px 0 ;
-     padding-left: 30px;
-     font-size: 15px
- }
- .cont-top p span{
-     font-size:1.5rem;
-     font-weight:100
- }
- .cont-cont{
-     margin:5px 0 0;
-     background-color: #fffbf0
- }
- .cont-cont-title{
-     padding:2px 15px 2px 0;
-     font-size:12px;
-     border-bottom: 1px solid #eeeeee;
- }
-.cont-cont-icon{
-    vertical-align: top;
-    width:20%;
-}
-.cont-cont-icon i{
-    font-size:60px;
-    color: #c2c2c2
-}
-.cont-cont-list{
-    font-size: 12px;
-    vertical-align: top;
-    width:78%;
-    padding-bottom: 10px;
-}
-.cont-cont-list li{
-    padding:2px 0
-}
-.cont-cont-list li span{
-    width:35%
-}
-.cont-bottom{
-    background-color: #fffbf0;
-    margin-top: 10px;
-    font-size: 12px;
-}
-.cont-bottom .h6{
-    border-bottom: 1px solid #e2e2e2;
-    color:#5777d5;
-    padding:4px 0 4px 5px;
-    font-size: 13px;
-}
-.cont-bottom-text{
-    padding: 0 5px;
-}
-.cont-bottom-text p{
-    border-bottom: 1px solid #e2e2e2;
-    background-color: #f0fcff;
-    margin: 0;
-    padding: 3px 5px;
-}
-.cont-bottom-text button{
-    bottom:5%;
-    border: none;
-    border-radius:5px;
-    background-color: #009688;
-    color:#ffffff;
-    left: 22%;
-    outline: none;
-    width:25%;
-    padding: 5px 0
-}
-.cont-bottom-text button+button{
-    left: 52%;
-}
+
+    .content-top {
+        margin-top: 15px;
+        background-color: white;
+
+        .contet-top-device-info{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .device-icon {
+                font-size: 80px;
+                color: $main-background-color;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            .content-device-name{
+                font-size: $main-font-title;
+                color: $main-color-title;
+            }
+        }
+    }
+
+    .content-middle{
+        margin-top: 15px;
+        background-color: white;
+        .content-repair-info{
+            padding-left: 15px;
+            height: 30px;
+            font-size: $main-font-title;
+            color: $main-color-title;
+        }
+        .problem-description{
+            border-bottom: 1px solid $main-line-color;
+            border-top: 1px solid $main-line-color;
+            height: 50px;
+        }
+    }
+
+    .asset-checkout-bottom-btn{
+        display: flex;
+        margin-top: 15px;
+        flex-direction: row;
+        flex: 1;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        .asset-check-bottom-btn{
+            background-color: $main-background-color;
+            width: 40%;
+        }
+    }
 }

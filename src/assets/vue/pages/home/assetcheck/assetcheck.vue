@@ -21,9 +21,6 @@
         </li>
     </scroll>
 
-
-
-
 </f7-page>
 </template>
 
@@ -39,27 +36,20 @@ export default {
     },
 
     beforeDestroy() {
-        console.log('xxxbeforeDestroy');
+        if (this.timer) {
+            this.timer = []
+        }
     },
 
     mounted() {
         this.loadData()
 
-        var storageHander = function() {
-            let localAssetArr = []
-            if (localStorage.localAssetArr) {
-                localAssetArr = JSON.parse(localStorage.localAssetArr);
-            }
-            this.data = localAssetArr
-        }
-//window.addEventListener('storage', storageHander, false)
+        let vm = this
+        this.timer = setInterval(function () {
+            vm.loadData()
+        }, 1000);
     },
     methods: {
-
-        // 本方法重复监听  缓存值是否变化,
-        initTimmer() {
-
-        },
 
         loadData() {
             let localAssetArr = []
@@ -87,7 +77,8 @@ export default {
         },
 
         itemClick() {
-
+            console.log('itemClick');
+            this.$f7router.navigate('/detailAssetcheck/');
         }
 
 

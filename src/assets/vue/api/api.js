@@ -107,5 +107,7 @@ export default {
     // 获取盘点单列表
     getInventoryList: `${rootURL}/api/Inventory/GetInventoryList`,
 
+    // 获取资产列表
+    getInventoryItemList: `${rootURL}/api/Inventory/GetInventoryItemList`,
 
 }

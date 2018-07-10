@@ -1,0 +1,44 @@
+.asset-item{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $main-line-color;
+    border-top:1px solid $main-line-color;
+    margin-top: 5px;
+    align-self: center;
+    flex: 1;
+
+    .item-content-left{
+        margin-left: 15px;
+        font-size: 60px;
+        color: $main-background-color;
+    }
+
+    .item-content-middle{
+        margin-top: 5px;
+        margin-left: 15px;
+        margin-bottom: 5px;
+        width: 100%;
+        .item-content-title{
+            font-size: $main-font-title;
+            color: $main-color-title;
+        }
+        .item-content-subtitle{
+            font-size: $main-font-subtitle;
+            color: $main-color-subtitle;
+        }
+    }
+
+    .item-content-right{
+        margin-right: 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-self: center;
+        .item-content-status{
+            border: 1px solid $main-background-color;
+            font-size: 15px;
+            text-align: center;
+        }
+    }
+}

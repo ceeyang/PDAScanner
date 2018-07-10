@@ -1,76 +1,124 @@
-<template>
-    <f7-page>
-        <f7-navbar title="盘点单" back-link=""></f7-navbar>
-          <div class="conterBox-assetcheck">
-              <div class="cont-top" :style="note">
-                    <p>
-                        <span>{{parseInt(item.STORE)-0}}&nbsp;/&nbsp;</span>{{parseInt(item.ZDR)-0}}
-                        <br>
-                        台设备已盘点
-                    </p>
-              </div>
-              <div class="cont-cont">
-                  <div class="cont-cont-title right">
-                    <a href="">查看资产</a>
+<!--
+申请设备维修页面
+codeer: cee
+2018-06-25 18:16:13
+-->
+<template lang="html">
+    <f7-page class="detail-asset-acheck">
+        <!-- Nav  -->
+        <f7-navbar>
+            <f7-nav-left>
+                <div @click="NavBack">
+                    <i class="iconfont">&#xe605;</i>
                 </div>
-                <ul class="cont-cont-list inline-block">
-                    <li><span class="inline-block right">盘点单号：</span>{{item.PDDH}}</li>
-                    <li><span class="inline-block right">盘点人：</span>{{item.PDRXM}}</li>
-                    <li><span class="inline-block right">盘点生成日期：</span>{{item.SHRQ}}</li>
-                    <li><span class="inline-block right">备注：</span>{{item.BZ}}</li>
-                </ul>
-                <div class="cont-cont-icon inline-block center">
-                    <i class="iconfont normal">&#xe62a;</i>
+            </f7-nav-left>
+            <f7-nav-title title='盘点详情'></f7-nav-title>
+        </f7-navbar>
+
+
+            <div class="content-top">
+                <div class="content-header">盘点信息</div>
+                <div class="contet-top-device-info">
+
+                    <i class="iconfont device-icon">&#xe62a;</i>
+                    <div class="content-device-name">
+                        盘点单号:  {{InventoryNo || "No.000"}}
+                    </div>
                 </div>
-              </div>
-              <div class="cont-bottom pos-r">
-                  <h6 class="h6">盘点单详情</h6>
-                  <div class="cont-bottom-text">
-                      <p>设备数量：{{parseInt(item.ZDR)-0}}</p>
-                      <p>盘点单状态：<span class="danger">未上传</span></p>
-                      <button class="pos-a" @click="itemclickaction(item)" >
-                          开始盘点
-                      </button>
-                      <button class="pos-a">上传盘点单</button>
-                  </div>
-              </div>
-          </div>
+            </div>
+
+            <div class="content-middle">
+                <div class="content-header">详细信息</div>
+                <div class="content-repair-info">
+                    盘点人员 |  {{InventoryUserName || "无"}}
+                </div>
+                <div class="content-repair-info">
+                    盘点日期 |  {{InventoryTime || "无"}}
+                </div>
+                <div class="content-repair-info">
+                    设备数量 |  {{deviceTotalNumber || "无"}}
+                </div>
+                <div class="content-repair-info">
+                    盘点状态 |  {{InventoryType || "无"}}
+                </div>
+                <div class="content-repair-info">
+                    盘点备注 |  {{Remarks || "无"}}
+                </div>
+            </div>
+
+
+            <div class="asset-checkout-bottom-btn">
+                <cube-button @click="startCheckAction" class="asset-check-bottom-btn">开始盘点</cube-button>
+                <cube-button @click="uploadAssetCheckAction" class="asset-check-bottom-btn">上传盘点</cube-button>
+            </div>
+
     </f7-page>
 </template>
+
 <script>
-    export default {
-        data () {
-            return {
-                  item:'',
-                  note: {
-                    backgroundImage: "url(" + require("../../../../images/pdd.png") + ")",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "100% 100%",
-                },
-            }
-        },
-        mounted(){
-            this.setContBottom()
-            this.item = global.assetcheckeddata
-        },
-        methods: {
-            phoneCall() {
-                window.location.href="tel:18108120400"
-            },
-            setContBottom(){
-                let conterBox = document.querySelector('.conterBox-assetcheck'),
-                    contTop = conterBox.querySelector('.cont-top'),
-                    contCont = conterBox.querySelector('.cont-cont'),
-                    contBottom = conterBox.querySelector('.cont-bottom')
-                    contBottom.style.height=parseInt(window.innerHeight-44-10-(contCont.offsetHeight+5)-contTop.offsetHeight)+"px"
-            },
-            itemclickaction(data){
-                global.detailAssetchecked = data;
-                this.$f7router.navigate('/beginAassetcheck/');
-            }
+import scroll from '../../../common/scroll.vue';
+import InputCell from '../../../common/inputcell.vue';
+import RepairItem from '../../../common/repairitem.vue';
+import SelectedInput from '../../../common/selectedinput.vue';
+
+export default {
+
+    data() {
+        return {
+            itemData: [],
+
+            InventoryNo: '',
+
+            InventoryUserName: '',
+            InventoryTime: '',
+            deviceTotalNumber: '',
+            InventoryType: '',
+            Remarks: '',
+
         }
+    },
+
+
+    mounted() {
+
+        let itemData = JSON.parse(localStorage.ItemData);
+        this.itemData = itemData
+        console.log(this.itemData);
+
+        this.InventoryNo = itemData.InventoryNo
+        this.InventoryUserName = itemData.InventoryUserName
+        this.InventoryTime = itemData.InventoryTime
+        this.deviceTotalNumber = itemData.deviceTotalNumber
+        this.InventoryType = itemData.InventoryType
+        this.Remarks = itemData.Remarks
+
+    },
+
+    methods: {
+
+        NavBack() {
+            this.$f7router.back()
+        },
+
+        startCheckAction() {
+            this.$f7router.navigate('/beginAassetcheck/')
+        },
+
+        uploadAssetCheckAction() {
+
+        },
+
+    },
+
+
+    components: {
+        scroll,
+        RepairItem,
+        InputCell,
+        SelectedInput
     }
+}
 </script>
-<style scoped>
-   
+
+<style lang="css">
 </style>
