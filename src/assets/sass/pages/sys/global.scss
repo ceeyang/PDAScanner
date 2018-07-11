@@ -9,6 +9,10 @@
     z-index: 9999 !important;
 }
 
+.cube-popup_mask {
+    z-index: 9999 !important;
+}
+
 // 修改  mint-cell 的 title 颜色字体
 .mint-cell-title{
     color: $main-color-title !important;

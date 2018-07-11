@@ -80,8 +80,12 @@ export default {
         let itemData = JSON.parse(localStorage.ItemData);
         this.itemData = itemData
 
+        var cacheKey = 'KeyCache+' + itemData.InventoryNo
+        let allData = JSON.parse(localStorage.getItem(cacheKey))
+        this.allData = allData
+        this.notCheckData = allData;
 
-        this.getRepairData(1, 1);
+        // this.getRepairData(1, 1);
     },
 
     methods: {

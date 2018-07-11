@@ -22,6 +22,14 @@
           </li>
       </scroll>
 
+      <!-- <div v-if="popupVisible" class="downloading-content">
+          <div class="">
+              <mt-progress :value="60">
+                  <div slot="start">0%</div>
+                  <div slot="end">100%</div>
+              </mt-progress>
+          </div>
+      </div> -->
 
 
   </f7-page>
@@ -37,6 +45,9 @@ export default {
             searchvalue: '',
             searchPage: 1,
             data: [],
+            selectedItem: [],
+
+            popupVisible: true,
 
         }
     },
@@ -51,7 +62,79 @@ export default {
             this.$f7router.back()
         },
 
-        itemClick() {
+        itemClick(item) {
+
+            // 判断本地是否已经存在
+            var isNotExist = true
+            var localAssetArr = []
+            if (localStorage.localAssetArr) {
+                localAssetArr = JSON.parse(localStorage.localAssetArr);
+            }
+
+            if (localAssetArr.length > 0) {
+                for (var i = 0; i < localAssetArr.length; i++) {
+                    if (localAssetArr[i].InventoryNo == item.InventoryNo) {
+                        const toast = this.$createToast({
+                            time: 0,
+                            type: 'error',
+                            txt: '该单号已经存在了!',
+                        })
+                        toast.show()
+                        let vm = this
+                        setTimeout(function () {
+                            toast.hide()
+                            vm.$f7router.back()
+                        }, 2000);
+
+                        isNotExist = false
+                        continue
+                    }
+                }
+            }
+
+            // 如果不存在, 缓存盘点单, 并缓存盘点单下的资产
+            if (isNotExist) {
+                localAssetArr.push(item)
+                let localAssetArrData = JSON.stringify(localAssetArr);
+                localStorage.setItem('localAssetArr',localAssetArrData);
+
+                this.getRepairData(item)
+            }
+        },
+
+        getRepairData(item) {
+            const toast = this.$createToast({
+                time: 0,
+                txt: '正在缓存资产数据...',
+            })
+            toast.show()
+            console.log('toast.show()');
+
+            let params = {
+                'PageSize': 10000,
+                'PageIndex': 1,
+                'InventoryNo': item.InventoryNo,
+            };
+
+            let vm = this;
+            let URL = this.api.getInventoryItemList;
+            this.post(URL, params, function(response) {
+                var data = JSON.parse(response);
+                if (data.Status) {
+                    vm.cacheInventorysData(item, data.InventoryItemList)
+                }
+
+                else {
+
+                }
+                toast.hide()
+            });
+        },
+
+        cacheInventorysData(item, InventoryItemList) {
+            var cacheKey = 'KeyCache+' + item.InventoryNo
+            let localAssetArrData = JSON.stringify(InventoryItemList);
+            localStorage.setItem(cacheKey,localAssetArrData);
             this.$f7router.back()
         },
 
@@ -97,7 +180,8 @@ export default {
 
                 toast.hide()
             });
-        }
+        },
+
     },
 
     components: {

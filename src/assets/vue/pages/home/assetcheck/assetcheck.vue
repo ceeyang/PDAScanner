@@ -17,7 +17,7 @@
 
     <scroll class="asset-check-scroll" :items="data" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
         <li v-for="(item,index) in data" :key="index" :item="item">
-            <asset-check-item :item="item" :itemClick="itemClick"></asset-check-item>
+            <asset-check-item :item="item" :itemClick="itemClick" :rightBtnAction="deleteBtnAction"></asset-check-item>
         </li>
     </scroll>
 
@@ -45,11 +45,60 @@ export default {
         this.loadData()
 
         let vm = this
-        this.timer = setInterval(function () {
+        this.timer = setInterval(function() {
             vm.loadData()
         }, 1000);
     },
     methods: {
+        deleteBtnAction(item) {
+            let vm = this
+            this.$createDialog({
+                type: 'confirm',
+                icon: 'cubeic-alert',
+                content: '是否确认删除该条数据?',
+                confirmBtn: {
+                    text: '删除',
+                    active: true,
+                    disabled: false,
+                    href: 'javascript:;'
+                },
+                cancelBtn: {
+                    text: '取消',
+                    active: false,
+                    disabled: false,
+                    href: 'javascript:;'
+                },
+                onConfirm: () => {
+                    vm.deleteItem(item)
+                },
+                onCancel: () => {
+
+                }
+            }).show()
+        },
+
+        deleteItem(item) {
+            var localAssetArr = []
+            if (localStorage.localAssetArr) {
+                localAssetArr = JSON.parse(localStorage.localAssetArr);
+            }
+            var newLocalAssetArr = []
+            if (localAssetArr.length > 0) {
+                for (var i = 0; i < localAssetArr.length; i++) {
+                    if (localAssetArr[i].InventoryNo == item.InventoryNo) {
+                        var cacheKey = 'KeyCache+' + item.InventoryNo
+                        localStorage.removeItem(cacheKey);
+                        continue
+                    }
+                    newLocalAssetArr.push(localAssetArr[i])
+                }
+            }
+
+            let localAssetArrData = JSON.stringify(newLocalAssetArr);
+            localStorage.setItem('localAssetArr', localAssetArrData);
+
+            this.loadData()
+        },
 
         loadData() {
             let localAssetArr = []
@@ -60,7 +109,6 @@ export default {
         },
 
         addDevice() {
-
             this.$f7router.navigate('/newAssetCheck/');
         },
 
@@ -76,15 +124,17 @@ export default {
             scroll.forceUpdate()
         },
 
-        itemClick() {
-            console.log('itemClick');
+        itemClick(item) {
+            var itemDataJson = JSON.stringify(item);
+            localStorage.setItem('ItemData', itemDataJson);
             this.$f7router.navigate('/detailAssetcheck/');
         }
 
 
     },
     components: {
-        scroll, AssetCheckItem,
+        scroll,
+        AssetCheckItem,
     }
 }
 </script>
