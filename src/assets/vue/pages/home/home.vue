@@ -56,12 +56,35 @@ export default {
 
     data() {
         return {
-            companyName:'',
+            companyName: '',
         }
     },
 
     mounted() {
         this.companyName = this.globalSetting.companyName;
+    },
+
+    beforeCreate: function() {
+        //('创建vue实例前',this);
+    },
+    created: function() {
+        //('创建vue实例后',this);
+    },
+    beforeMount: function() {
+        //('挂载到dom前',this);
+    },
+
+    beforeUpdate: function() {
+        //('数据变化更新前',this);
+    },
+    updated: function() {
+        //('数据变化更新后',this);
+    },
+    beforeDestroy: function() {
+        //('vue实例销毁前',this);
+    },
+    destroyed: function() {
+        //('vue实例销毁后',this);
     },
 
     methods: {
@@ -76,13 +99,13 @@ export default {
 
         onPullingDown(scroll) {
             console.log('pullingDown: ' + scroll);
-            setTimeout(function () {
+            setTimeout(function() {
                 scroll.forceUpdate();
             }, 1000);
         },
 
         onPullingUp(scroll) {
-            setTimeout(function () {
+            setTimeout(function() {
                 scroll.forceUpdate();
             }, 1000);
         },

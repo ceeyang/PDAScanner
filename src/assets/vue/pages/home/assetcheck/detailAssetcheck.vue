@@ -1,8 +1,3 @@
-<!--
-申请设备维修页面
-codeer: cee
-2018-06-25 18:16:13
--->
 <template lang="html">
     <f7-page class="detail-asset-acheck">
         <!-- Nav  -->

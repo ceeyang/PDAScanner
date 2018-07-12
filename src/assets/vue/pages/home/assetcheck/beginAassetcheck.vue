@@ -16,8 +16,8 @@
 
         <!-- 待派工 -->
         <template v-if="segmentBarIndex==0">
-            <scroll :items="allData" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
-                <li v-for="(item,index) in allData" :key="index" :item="item">
+            <scroll :items="data" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+                <li v-for="(item,index) in data" :key="index" :item="item">
                     <asset-item :item="item" :itemClick="itemClick"></asset-item>
                 </li>
             </scroll>
@@ -48,7 +48,12 @@
 import scroll from '../../../common/scroll.vue';
 import SegmentBar from '../../../common/segmentBar';
 import AssetItem from './AssetItem';
-
+import {
+    mapState,
+    mapActions,
+    mapMutations,
+    mapGetters
+} from 'vuex';
 export default {
 
     data() {
@@ -61,19 +66,32 @@ export default {
 
             // 待派工
             allData: [],
+            data: [],
             allDataPage: 1,
 
             // 待接单
+            allNotCheckData: [],
             notCheckData: [],
             notCheckDataPage: 1,
 
             // 待处理
+            allCheckedData: [],
             checkedData: [],
             checkedDataPage: 1,
 
 
         }
     },
+
+    computed: {
+        ...mapState([
+            'assetCheckStore',
+        ])
+    },
+
+    ...mapActions([
+        "refreshFinishedData",
+    ]),
 
     mounted() {
 
@@ -83,15 +101,38 @@ export default {
         var cacheKey = 'KeyCache+' + itemData.InventoryNo
         let allData = JSON.parse(localStorage.getItem(cacheKey))
         this.allData = allData
-        this.notCheckData = allData;
 
-        // this.getRepairData(1, 1);
+        var cacheKeyUnfinished = 'KeyCacheUnfinished+' + itemData.InventoryNo
+        var unfinishedData = localStorage.getItem(cacheKeyUnfinished)
+        if (!unfinishedData) {
+            this.unfinishedData = allData
+        } else {
+            this.unfinishedData = JSON.parse(localStorage.getItem(cacheKeyUnfinished))
+        }
+
+        this.getRepairData()
     },
 
     methods: {
-        itemClick() {
-            console.log('itemClick');
-            // this.$f7router.navigate('/readyrepair/');
+
+        loadUnfinishedData() {
+
+        },
+
+        loadFinishedData() {
+            debugger
+            var cacheKeyFinished = 'KeyCacheFinished+' + this.itemData.InventoryNo
+            var finishedData = localStorage.getItem(cacheKeyFinished)
+            if (finishedData) {
+                this.finishedData = JSON.parse(localStorage.getItem(cacheKeyUnfinished))
+            }
+        },
+
+
+
+        itemClick(item) {
+            localStorage.setItem('detailAssetData', JSON.stringify(item))
+            this.$f7router.navigate('/detailAsset/');
         },
 
         switchTab(index) {
@@ -101,90 +142,124 @@ export default {
         onPullingDown(scroll) {
             if (this.segmentBarIndex == 0) {
                 this.allDataPage = 1
-            } else if (this.segmentBarIndex == 1){
+            } else if (this.segmentBarIndex == 1) {
                 this.notCheckDataPage = 1
             } else {
                 this.checkedDataPage = 1
             }
-            this.getRepairData(1, 1, scroll)
+            this.getRepairData(scroll)
         },
 
         onPullingUp(scroll) {
             if (this.segmentBarIndex == 0) {
                 this.allDataPage += 1
-            } else if (this.segmentBarIndex == 1){
+            } else if (this.segmentBarIndex == 1) {
                 this.notCheckDataPage += 1
             } else {
                 this.checkedDataPage += 1
             }
+            this.getRepairData(scroll)
         },
 
-        getRepairData(pageNumber, type, scroll) {
+        getRepairData(scroll) {
 
-            const toast = this.$createToast({
-                time: 0,
-                txt: '加载中...',
-            })
-            toast.show()
-            console.log('toast.show()');
+            // 用来储存当前应该新增的
+            var arr = []
+            // 自定义每次加载多少数据
+            var pageSize = 20
+            // 第一次加载的个数
+            var firstIndex = 0
 
-            let params = {
-                'PageSize': this.config.PageSize,
-                'PageIndex': pageNumber,
-                'InventoryNo': this.itemData.InventoryNo,
-            };
-            console.log(params);
+            if (this.segmentBarIndex == 0) {
 
+                if (this.data) {
+                    firstIndex = this.data.length
+                }
 
-            let vm = this;
-            let URL = this.api.getInventoryItemList;
-            this.post(URL, params, function(response) {
-                var data = JSON.parse(response);
-                if (data.Status) {
-                    if (vm.segmentBarIndex == 0) {
-                        if (pageNumber == 1) {
-                            vm.allData = data.InventoryItemList;
-                        } else {
-                            vm.allData = vm.allData.push(data.InventoryItemList)
+                if (this.allDataPage == 1) {
+                    firstIndex = 0
+                }
+
+                // 遍历总数组, 获取应该加载的数组
+                outer:
+                    for (var i = firstIndex; i < this.allData.length; i++) {
+
+                        // 添加各个 item 到需要新增的数组
+                        arr.push(this.allData[i])
+
+                        // 当前遍历次数达到 pagesize 值
+                        if (i - firstIndex == pageSize - 1) {
+                            console.log(i);
+                            break outer
                         }
                     }
 
-                    else if (vm.segmentBarIndex == 1) {
-                        if (pageNumber == 1) {
-                            vm.notCheckData = data.InventoryItemList;
-                        } else {
-                            vm.notCheckData = vm.notCheckData.push(data.InventoryItemList)
-                        }
-                    }
+                // 将应该新增的内容添加到原有数组
+                this.data = firstIndex == 0 ? arr : this.data.concat(arr)
+            }
 
-                    else {
-                        if (pageNumber == 1) {
-                            vm.checkedData = data.InventoryItemList;
-                        } else {
-                            vm.checkedData = vm.checkedData.push(data.InventoryItemList)
-                        }
+
+            // 未完成
+            else if (this.segmentBarIndex == 1) {
+
+                if (this.notCheckData) {
+                    firstIndex = this.notCheckData.length
+                }
+
+                if (this.notCheckDataPage == 1) {
+                    firstIndex = 0
+                }
+
+                // 遍历总数组, 获取应该加载的数组
+                for (var i = firstIndex; i < this.allNotCheckData.length; i++) {
+
+                    // 添加各个 item 到需要新增的数组
+                    arr.push(this.allNotCheckData[i])
+
+                    // 当前遍历次数达到 pagesize 值
+                    if (i - firstIndex == pageSize - 1) {
+                        break
                     }
                 }
 
+                // 将应该新增的内容添加到原有数组
+                this.notCheckData = firstIndex == 0 ? arr : this.notCheckData.concat(arr)
 
-                else {
+            } else {
 
-                    let msg = data.Msg;
-                    if (!vm.toastCenter) {
-                        vm.toastCenter = vm.$f7.toast.create({
-                            text: msg,
-                            closeTimeout: 2000,
-                            position: 'center',
-                        });
-                    }
-                    vm.toastCenter.open();
+                if (this.checkedData) {
+                    firstIndex = this.checkedData.length
                 }
-                if (scroll && scroll.forceUpdate) {
+
+                if (this.checkedDataPage == 1) {
+                    firstIndex = 0
+                }
+
+                // 遍历总数组, 获取应该加载的数组
+                for (var i = firstIndex; i < this.allCheckedData.length; i++) {
+
+                    // 添加各个 item 到需要新增的数组
+                    arr.push(this.allCheckedData[i])
+
+                    // 当前遍历次数达到 pagesize 值
+                    if (i - firstIndex == pageSize - 1) {
+                        break
+                    }
+                }
+
+                // 将应该新增的内容添加到原有数组
+                this.checkedData = firstIndex == 0 ? arr : this.checkedData.concat(arr)
+
+            }
+
+
+
+            if (scroll && scroll.forceUpdate) {
+                // 数据量太大, 预留5秒刷新页面
+                setTimeout(function() {
                     scroll.forceUpdate();
-                }
-
-                toast.hide()
-            });
+                }, 5000);
+            }
         },
 
         NavBack() {

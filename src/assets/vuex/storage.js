@@ -4,12 +4,13 @@ Vue.use(Vuex);
 
 import mineStore from './mine/store';
 import departmentStore from './home/scanrepair/store';
+import assetCheckStore from './home/assetcheck/store';
 
 
 export default new Vuex.Store({
   modules: {
       mineStore,
       departmentStore,
-
+      assetCheckStore,
   }
 })

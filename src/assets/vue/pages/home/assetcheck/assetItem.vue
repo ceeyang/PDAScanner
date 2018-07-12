@@ -48,7 +48,7 @@ export default {
         itemClicks() {
 
             if (this.itemClick) {
-                this.itemClick()
+                this.itemClick(this.item)
             }
         }
     }

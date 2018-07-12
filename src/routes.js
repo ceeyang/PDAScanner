@@ -43,6 +43,12 @@ export default [{
     path: '/beginAassetcheck/',
     component: require('./assets/vue/pages/home/assetcheck/beginAassetcheck.vue')
   },
+  {
+    path: '/detailAsset/',
+    component: require('./assets/vue/pages/home/assetcheck/detailAsset.vue')
+  },
+
+
    {
     path: '/propertyDetail/',
     component: require('./assets/vue/pages/home/assetcheck/propertyDetail.vue')
@@ -55,6 +61,7 @@ export default [{
     path: '/measuredetail/',
     component: require('./assets/vue/pages/home/devicemeasure/detail.vue')
   },
+
 
 
   // Repair

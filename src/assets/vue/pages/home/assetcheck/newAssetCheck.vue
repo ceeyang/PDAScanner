@@ -13,7 +13,7 @@
 
 
       <div class="search-input">
-          <input type="search" placeholder="请输入盘点单号" :value="searchvalue" @keyup='search($event)'>
+          <input ref="input" type="search" placeholder="请输入盘点单号" :value="searchvalue" @keyup='search($event)'>
       </div>
 
       <scroll class="scan-repair-scroll" :items="data" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
@@ -50,6 +50,10 @@ export default {
             popupVisible: true,
 
         }
+    },
+
+    mounted() {
+        this.$refs['input'].focus
     },
 
     methods: {
@@ -94,6 +98,7 @@ export default {
 
             // 如果不存在, 缓存盘点单, 并缓存盘点单下的资产
             if (isNotExist) {
+                // 本地资产盘点单列表
                 localAssetArr.push(item)
                 let localAssetArrData = JSON.stringify(localAssetArr);
                 localStorage.setItem('localAssetArr',localAssetArrData);
