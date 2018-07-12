@@ -19,10 +19,10 @@
         <!-- 默认输入框 -->
         <template v-else>
             <template v-if="disabled">
-                <input class="comon-input disabled" disabled type="text" :placeholder="placeholder" v-on:blur='onblur' v-bind:value="value" v-on:input="$emit('input', $event.target.value)">
+                <input class="comon-input disabled" disabled type="text" :placeholder="placeholder" v-on:blur='onblur' v-model="value" v-on:input="$emit('input', $event.target.value)">
             </template>
             <template v-else>
-                <input class="comon-input" type="text" :placeholder="placeholder" v-bind:value="value" v-on:blur='onblur' v-on:input="$emit('input', $event.target.value)">
+                <input class="comon-input" type="text" :placeholder="placeholder" v-model="value" v-on:blur='onblur' v-on:input="$emit('input', $event.target.value)">
             </template>
         </template>
     </div>

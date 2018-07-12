@@ -64,7 +64,12 @@ import InputCell from '../../../common/inputcell.vue';
 import RepairItem from '../../../common/repairitem.vue';
 import SelectedInput from '../../../common/selectedinput.vue';
 import Picker from '../../../common/picker.vue';
-
+import {
+    mapState,
+    mapActions,
+    mapMutations,
+    mapGetters
+} from 'vuex';
 export default {
 
     data() {
@@ -79,43 +84,71 @@ export default {
             popupVisible: false,
             status: 1,
             statusName: '在用',
+            firstTime: true,
         }
     },
 
 
+    computed: {
+        ...mapState([
+            'assetCheckStore',
+        ])
+    },
+
     mounted() {
         let itemData = JSON.parse(localStorage.getItem('detailAssetData'));
         this.item = itemData
-        console.log(itemData);
+
+        if (this.item.State) {
+            this.statusName = this.getValuesWith(this.item.State)
+        }
     },
 
     methods: {
+
+        ...mapActions([
+                'refreshFinishedData',
+            ]),
+
         openDeviceStatusPicker() {
             this.popupVisible = true
         },
 
         NavBack() {
+            this.refreshFinishedData(this.item)
             this.$f7router.back()
         },
 
         checkBtnAction() {
 
-            let checkedItem = {
-                "InventoryNo": this.item.InventoryNo,
-                "EquId": this.item.EquId,
-                "State": this.Status,
-                "DepartmentId": this.item.DepartmentId,
-                "Location": this.item.Location,
-            };
+            // let checkedItem = {
+            //     "InventoryNo": this.item.InventoryNo,
+            //     "EquId": this.item.EquId,
+            //     "State": this.Status,
+            //     "DepartmentId": this.item.DepartmentId,
+            //     "Location": this.item.Location,
+            // };
+
+            this.item.State = this.status
 
             var cacheKeyFinishedArr = []
             var cacheKeyFinished = 'KeyCacheFinished+' + this.item.InventoryNo
             var finishedData = localStorage.getItem(cacheKeyFinished)
             if (finishedData) {
                 cacheKeyFinishedArr = JSON.parse(localStorage.getItem(cacheKeyFinished))
-                cacheKeyFinishedArr.push(checkedItem)
+                cacheKeyFinishedArr.push(this.item)
             } else {
-                cacheKeyFinishedArr.push(checkedItem)
+
+                // 如果有重复的, 删除重复的数据, js 中暂时不知道如何删除 item, 遍历删除
+                var newArr = []
+                for (var i = 0; i < cacheKeyFinishedArr.length; i++) {
+                    if (this.item.InventoryNo == cacheKeyFinishedArr[i].InventoryNo) {
+                        continue
+                    }
+                    newArr.push(cacheKeyFinishedArr[i])
+                }
+                newArr.push(this.item)
+                cacheKeyFinishedArr = newArr
             }
             localStorage.setItem(cacheKeyFinished, JSON.stringify(cacheKeyFinishedArr))
             this.$f7router.back()
@@ -133,43 +166,79 @@ export default {
 
         onValuesChange(picker, values) {
 
-            this.statusName = values;
-
-            if ( values == '在用' ) {
-                this.status = "1"
-            } else if (values == '保养') {
-                this.status = '2'
-            } else if (values == '维修') {
-                this.status = '3'
-            } else if (values == '计量') {
-                this.status = '4'
-            } else if (values == '退库') {
-                this.status = '5'
-            } else if (values == '闲置') {
-                this.status = '7'
-            } else if (values == '报废申请中') {
-                this.status = '9'
-            } else if (values == '保养') {
-                this.status = '2'
-            } else if (values == '保养') {
-                this.status = '2'
-            } else if (values == '在库') {
-                this.status = "C"
-            } else if (values == '调出') {
-                this.status = "D"
-            } else if (values == '捐赠') {
-                this.status = "J"
-            } else if (values == '缺失') {
-                this.status =  "Q"
-            } else if (values == '外调申请中') {
-                this.status = "W"
-            } else if (values == '外售') {
-                this.Status = "Z"
+            // bug : 加载的时候默认调用了一次
+            if (this.firstTime) {
+                this.firstTime = false;
+                return;
             }
+
+            this.statusName = values;
+            this.status = this.getStatusWith(values)
 
             console.log(this.status);
         },
 
+        // 根据 value 返回 code
+        getStatusWith(values) {
+            if ( values == '在用' ) {
+                return "1"
+            } else if (values == '保养') {
+                return '2'
+            } else if (values == '维修') {
+                return '3'
+            } else if (values == '计量') {
+                return '4'
+            } else if (values == '退库') {
+                return '5'
+            } else if (values == '闲置') {
+                return '7'
+            } else if (values == '报废申请中') {
+                return '9'
+            } else if (values == '在库') {
+                return "C"
+            } else if (values == '调出') {
+                return "D"
+            } else if (values == '捐赠') {
+                return "J"
+            } else if (values == '缺失') {
+                return  "Q"
+            } else if (values == '外调申请中') {
+                return "W"
+            } else if (values == '外售') {
+                return "Z"
+            }
+            return ''
+        },
+        getValuesWith(status) {
+            if ( status == '1' ) {
+                return "在用"
+            } else if (status == '2') {
+                return '保养'
+            } else if (status == '3') {
+                return '维修'
+            } else if (status == '4') {
+                return '计量'
+            } else if (status == '5') {
+                return '退库'
+            } else if (status == '7') {
+                return '闲置'
+            } else if (status == '9') {
+                return '报废申请中'
+            } else if (status == 'C') {
+                return "在库"
+            } else if (status == 'D') {
+                return "调出"
+            } else if (status == 'J') {
+                return "捐赠"
+            } else if (status == 'Q') {
+                return  "缺失"
+            } else if (status == 'W') {
+                return "外调申请中"
+            } else if (status == 'Z') {
+                return "外售"
+            }
+            return ''
+        },
 
     },
 

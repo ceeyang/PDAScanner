@@ -6,14 +6,14 @@
                 <button class="top-button confirm" @click='pickerConfirmAction'>确认</button>
             </div>
         </div>
-        <mt-picker :slots="slots" @change="onValuesChange"></mt-picker>
+        <mt-picker :slots="slots" :valueKey="valueKey" @change="onValuesChange"></mt-picker>
     </mt-popup>
 </template>
 
 <script>
 export default {
 
-    props: ['slots', 'pickerConfirm', 'pickerCancel', 'onValuesChange', 'show'],
+    props: ['slots', 'valueKey', 'pickerConfirm', 'pickerCancel', 'onValuesChange', 'show'],
 
     data() {
         return {

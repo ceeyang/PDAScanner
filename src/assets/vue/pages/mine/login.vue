@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import WarehouseData from './json/warehouse.json';
+
 export default {
 
     data() {
@@ -177,7 +177,7 @@ export default {
             this.get(this.api.WarehouseList, params, function(response) {
                 var data = JSON.parse(response);
                 vm.WarehouseData = data;
-                localStorage.WarehouseData = data;
+                localStorage.WarehouseData = JSON.stringify(data);
 
                 var warehouseNameArr = [];
                 for (var i = 0; i < WarehouseData.length; i++) {
