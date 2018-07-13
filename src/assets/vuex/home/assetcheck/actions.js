@@ -106,7 +106,6 @@ export const getNewAssetData = ({commit,dispatch,state}, type) => {
 
         } else {
 
-            debugger
             let itemData = JSON.parse(localStorage.ItemData);
             var cacheKeyFinished = 'KeyCacheFinished+' + itemData.InventoryNo
             var finishedData = localStorage.getItem(cacheKeyFinished)

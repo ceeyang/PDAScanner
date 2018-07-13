@@ -101,7 +101,6 @@ export default {
         },
 
         onPullingDown(scroll) {
-            debugger
             if (this.segmentBarIndex == 0) {
                 this.assetCheckStore.allDataPage = 1
             } else if (this.segmentBarIndex == 1) {
@@ -113,7 +112,6 @@ export default {
         },
 
         onPullingUp(scroll) {
-            debugger
             if (this.segmentBarIndex == 0) {
                 this.assetCheckStore.allDataPage += 1
             } else if (this.segmentBarIndex == 1) {
@@ -125,7 +123,6 @@ export default {
         },
 
         getRepairData(scroll) {
-            debugger
             this.$store.dispatch('getNewAssetData',this.segmentBarIndex)
             if (scroll && scroll.forceUpdate) {
                 // 数据量太大, 预留5秒刷新页面

@@ -121,13 +121,6 @@ export default {
 
         checkBtnAction() {
 
-            // let checkedItem = {
-            //     "InventoryNo": this.item.InventoryNo,
-            //     "EquId": this.item.EquId,
-            //     "State": this.Status,
-            //     "DepartmentId": this.item.DepartmentId,
-            //     "Location": this.item.Location,
-            // };
 
             this.item.State = this.status
 

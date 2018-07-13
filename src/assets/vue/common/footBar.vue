@@ -5,16 +5,16 @@
 
         <div class="foot-content">
             <a class="home-item" :class="[(select=='chats')?'is-selected':'']" @click="switchFootBar('chats')">
-                <i class="f7-icons">chats</i>
-                <span class="tabbar-label">消息</span>
+                <i class="iconfont">&#xe63d;</i>
+                <!-- <span class="tabbar-label">消息</span> -->
             </a>
             <a class="home-item" :class="[(select=='home')?'is-selected':'']" @click="switchFootBar('home')">
-                <i class="f7-icons">home</i>
-                <span class="tabbar-label">主页</span>
+                <i class="iconfont">&#xe606;</i>
+                <!-- <span class="tabbar-label">主页</span> -->
             </a>
             <a class="home-item" :class="[(select=='mine')?'is-selected':'']" @click="switchFootBar('mine')">
                 <i class="f7-icons">personal</i>
-                <span class="tabbar-label">我的</span>
+                <!-- <span class="tabbar-label">我的</span> -->
             </a>
         </div>
     </div>

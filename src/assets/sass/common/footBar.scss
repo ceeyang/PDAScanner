@@ -5,6 +5,7 @@
     left: 0;
     bottom: 0;
     z-index: 1;
+    height: 40px;
 
     .top-line{
         top: 0px;
@@ -20,6 +21,7 @@
         background-color: white;
         height: 55px;
         .home-item{
+            height: 40px;
           color: #555;
           font-weight: 600;
           font-size: $small-font;
@@ -28,9 +30,11 @@
           align-items: center;
           justify-content: center;
           flex-direction: column;
-          .icon-size{
-            font-size: 15px;
+          .iconfont{
+            font-size: 25px;
           }
+          background-color: white;
+          color: $main-color-subtitle;
         }
         .is-selected{
           background-color: $color-Light-grey;

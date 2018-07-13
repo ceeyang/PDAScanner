@@ -101,6 +101,76 @@ export default {
 
         uploadAssetCheckAction() {
 
+            const toast = this.$createToast({
+                time: 0,
+                txt: '上传中...',
+            })
+            toast.show()
+
+            debugger
+
+            var cachedFinishedArr = []
+            var cacheKeyFinished = 'KeyCacheFinished+' + this.itemData.InventoryNo
+            var finishedData = localStorage.getItem(cacheKeyFinished)
+            if (finishedData) {
+                cachedFinishedArr = JSON.parse(finishedData)
+            } else {
+                const errorToast = this.$createToast({
+                    time: 0,
+                    txt: '还没有盘点单可以上传哦...',
+                    type: 'error'
+                })
+                errorToast.show()
+                setTimeout(function () {
+                    errorToast.hide()
+                }, 2000);
+                return
+            }
+
+            var itemListData = []
+            for (var i = 0; i < cachedFinishedArr.length; i++) {
+                let item = cachedFinishedArr[i]
+                let checkedItem = {
+                    "InventoryNo": item.InventoryNo,
+                    "EquId": item.AssetNo,
+                    "State": item.State,
+                    "DepartmentId": item.DepartmentId,
+                    "Location": item.Location,
+                };
+                itemListData.push(checkedItem)
+            }
+
+
+            let params = {
+                "InventoryNo": this.itemData.InventoryNo,
+                "StoreId": localStorage.storeId,
+                "ItemList": JSON.stringify(itemListData),
+            };
+            console.log(params);
+
+            let vm = this;
+            let URL = this.api.updateInventoryItem;
+            this.post(URL, params, function(response) {
+                var data = JSON.parse(response);
+
+                if (data.Status) {
+
+                }
+                var msg = data.Msg
+                type = data.Status ? 'success' : 'error'
+                const errorToast = this.$createToast({
+                    time: 0,
+                    txt: msg,
+                    type: type
+                })
+                errorToast.show()
+                setTimeout(function () {
+                    errorToast.hide()
+                }, 2000);
+
+                toast.hide()
+            });
+
         },
 
     },
