@@ -1,7 +1,14 @@
 <template lang="html">
     <f7-page class="moref-unction-page">
         <!-- Nav  -->
-        <f7-navbar title="更多功能" back-link="Back"></f7-navbar>
+        <f7-navbar>
+            <f7-nav-left>
+                <div @click="NavBack">
+                    <i class="iconfont">&#xe605;</i>
+                </div>
+            </f7-nav-left>
+            <f7-nav-title title='更多功能'></f7-nav-title>
+        </f7-navbar>
 
         <p class="more-hint">
             功能完善中, 敬请期待 ~
@@ -15,6 +22,11 @@
 
 <script>
 export default {
+    methods: {
+        NavBack() {
+                this.$f7router.back()
+            },
+    }
 
 }
 </script>

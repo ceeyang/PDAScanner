@@ -1,13 +1,21 @@
 <template lang="html">
     <f7-page class="device-measure-page">
         <!-- 导航栏  -->
-        <f7-navbar title="设备计量" back-link="Back">
+        <f7-navbar>
+            <f7-nav-left>
+                <div @click="NavBack">
+                    <i class="iconfont">&#xe605;</i>
+                </div>
+            </f7-nav-left>
+            <f7-nav-title title='设备计量'></f7-nav-title>
             <f7-nav-right>
                 <div @click="filterButtonClickAction">
                     <i class="f7-icons">data</i>
                 </div>
             </f7-nav-right>
         </f7-navbar>
+
+
 
         <!-- 分类选择器 -->
         <!-- <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="currentIndex"></segment-bar> -->
@@ -99,6 +107,9 @@ export default {
 
 
     methods: {
+        NavBack() {
+                this.$f7router.back()
+            },
 
         itemClick() {
             console.log('itemclickaction');

@@ -1,10 +1,19 @@
 <template>
     <f7-page>
-        <f7-navbar title="资产明细" back-link=""></f7-navbar>
+
+        <f7-navbar>
+            <f7-nav-left>
+                <div @click="NavBack">
+                    <i class="iconfont">&#xe605;</i>
+                </div>
+            </f7-nav-left>
+            <f7-nav-title title='资产明细'></f7-nav-title>
+        </f7-navbar>
+
         <div class="propertyDetail">
             <div class="detail">
                 <blockquote class="elem-quote">资产详情明细</blockquote>
-                <ul class="list-text">  
+                <ul class="list-text">
                     <li><span class="inline-block">资产名称：</span>{{data.SBMC}}</li>
                     <li><span class="inline-block">设备型号：</span>{{data.SBXH}}</li>
                     <li><span class="inline-block">资产编号：</span>{{data.SBBH}}</li>
@@ -21,7 +30,7 @@
                     <li><span class="inline-block">设备状态：</span>{{data.SBZT}}</li>
                 </ul>
             </div>
-           
+
         </div>
     </f7-page>
 </template>
@@ -36,6 +45,9 @@
           this.data = global.propertyDetail
         },
         methods: {
+            NavBack() {
+                this.$f7router.back()
+            },
         }
     }
 </script>

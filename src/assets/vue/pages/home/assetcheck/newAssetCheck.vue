@@ -107,6 +107,7 @@ export default {
             }
         },
 
+        // 获取该盘点单下的所有资产
         getRepairData(item) {
             const toast = this.$createToast({
                 time: 0,

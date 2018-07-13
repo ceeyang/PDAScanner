@@ -1,7 +1,13 @@
 <template lang="html">
     <f7-page class="scan-repair-page">
         <!-- Nav  -->
-        <f7-navbar title="科室报修" back-link="Back">
+        <f7-navbar>
+            <f7-nav-left>
+            <div @click="NavBack">
+                <i class="iconfont">&#xe605;</i>
+            </div>
+        </f7-nav-left>
+        <f7-nav-title title='科室报修'></f7-nav-title>
             <f7-nav-right>
                 <div @click="searchButtonAction">
                     <i class="f7-icons">search</i>
@@ -37,7 +43,6 @@
 </template>
 
 <script>
-
 import scroll from '../../../common/scroll.vue';
 import SegmentBar from '../../../common/segmentBar';
 import RepairItem from '../../../common/repairitem.vue';
@@ -72,6 +77,9 @@ export default {
     },
 
     methods: {
+        NavBack() {
+            this.$f7router.back()
+        },
 
         // 获取所有设备名称数据
         getDeviceNameData() {
@@ -151,19 +159,14 @@ export default {
                         } else {
                             vm.readyrepairData = vm.readyrepairData.concat(data.DepartmentEquList)
                         }
-                    }
-
-                    else {
+                    } else {
                         if (pageNumber == 1) {
                             vm.repairCompletedData = data.DepartmentEquListHas;
                         } else {
                             vm.repairCompletedData.push(data.DepartmentEquListHas);
                         }
                     }
-                }
-
-
-                else {
+                } else {
 
                     let msg = data.Msg;
                     if (!vm.toastCenter) {
@@ -181,7 +184,7 @@ export default {
             });
 
             if (scroll && scroll.forceUpdate) {
-                setTimeout(function () {
+                setTimeout(function() {
                     scroll.forceUpdate();
                 }, 5000);
             }
@@ -209,9 +212,7 @@ export default {
             if (this.segmentBarIndex == 0) {
                 this.readyrepairPageIndex += 1;
                 this.getItemsWhthPageNumber(this.readyrepairPageIndex, scroll);
-            }
-
-            else {
+            } else {
                 this.repairCompletedPageIndex += 1;
                 this.getItemsWhthPageNumber(this.repairCompletedPageIndex, scroll);
             }

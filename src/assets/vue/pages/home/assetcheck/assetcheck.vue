@@ -97,6 +97,11 @@ export default {
             let localAssetArrData = JSON.stringify(newLocalAssetArr);
             localStorage.setItem('localAssetArr', localAssetArrData);
 
+
+            // 删除该盘点单下的所有资产数据
+            var cacheKey = 'KeyCache+' + item.InventoryNo
+            localStorage.removeItem(cacheKey);
+
             this.loadData()
         },
 

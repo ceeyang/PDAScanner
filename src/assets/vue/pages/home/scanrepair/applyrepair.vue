@@ -6,7 +6,14 @@ codeer: cee
 <template lang="html">
     <f7-page class="ready-repair-page">
         <!-- Nav  -->
-        <f7-navbar title="维修派单" back-link="Back"></f7-navbar>
+        <f7-navbar>
+            <f7-nav-left>
+                <div @click="NavBack">
+                    <i class="iconfont">&#xe605;</i>
+                </div>
+            </f7-nav-left>
+            <f7-nav-title title='维修派单'></f7-nav-title>
+        </f7-navbar>
 
         <div class="repair-content">
             <div class="content-top">
@@ -101,6 +108,10 @@ export default {
     },
 
     methods: {
+        NavBack() {
+                this.$f7router.back()
+            },
+
         // 遍历用户模型列表取出名称
         parseUsers() {
             this.repairUsersNameArr = []

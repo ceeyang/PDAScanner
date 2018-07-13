@@ -1,7 +1,14 @@
 <template lang="html">
     <f7-page class="search-page">
         <!-- Nav  -->
-        <f7-navbar title="搜索" back-link="Back"></f7-navbar>
+        <f7-navbar>
+            <f7-nav-left>
+                <div @click="NavBack">
+                    <i class="iconfont">&#xe605;</i>
+                </div>
+            </f7-nav-left>
+            <f7-nav-title title='搜索'></f7-nav-title>
+        </f7-navbar>
 
         <input-cell type="DataInput" title="设备类型" placeholder="请选择设备类型" :value="deviceStatusValue" :openDataPicker="openDeviceStatusPicker"></input-cell>
 
@@ -109,6 +116,11 @@ export default {
     },
 
     methods: {
+
+        NavBack() {
+                this.$f7router.back()
+            },
+            
         searchDataClick() {
             localStorage.setItem('repairViewType', this.deviceStatus == 0 ? "apply" : "check");
             this.$f7router.navigate('/applyrepair/');
