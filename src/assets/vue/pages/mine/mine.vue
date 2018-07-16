@@ -24,9 +24,6 @@
             <f7-list-item link="/about/" title="关于我们" panel-close>
                 <f7-icon slot="media" icon="fa fa-info fa-fw"></f7-icon>
             </f7-list-item>
-            <f7-list-item link="/dynamic-route/blog/11/post/23/" title="意见反馈" panel-close>
-                <f7-icon slot="media" icon="fa fa-user fa-fw"></f7-icon>
-            </f7-list-item>
             <f7-list-item link="/settings/" title="偏好设置" panel-close>
                 <f7-icon slot="media" icon="fa fa-user fa-fw"></f7-icon>
             </f7-list-item>

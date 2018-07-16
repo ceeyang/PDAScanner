@@ -104,11 +104,12 @@ export default {
 
         pickerConfirm() {
             var storeId = '';
-            for (var i = 0; i < WarehouseData.length; i++) {
-                let item = WarehouseData[i];
-                if (WarehouseData[i].storeName == this.currentWarechouse) {
-                    storeId = WarehouseData[i].storeId;
+            for (var i = 0; i < this.WarehouseData.length; i++) {
+                let item = this.WarehouseData[i];
+                if (item.StoreName == this.currentWarechouse) {
+                    storeId = this.WarehouseData[i].StoreId;
                     localStorage.storeId = storeId;
+                    localStorage.store = item.StoreName
                     continue;
                 }
             }
@@ -119,10 +120,6 @@ export default {
         },
 
         login() {
-
-            // this.pickerConfirm();
-            // return;
-            //
 
             if (this.user.account.length < 1) {
                 const self = this;
@@ -137,6 +134,12 @@ export default {
                 return;
             }
 
+            const toast = this.$createToast({
+                time: 0,
+                txt: '登录中...',
+            })
+            toast.show()
+
             localStorage.account = this.user.account;
             localStorage.password = this.user.password;
 
@@ -150,6 +153,7 @@ export default {
                 console.log(params);
                 var data = JSON.parse(response);
                 if (data.Status) {
+                    localStorage.UserName = data.UserName;
                     vm.getRepositories();
                 } else {
                     let msg = data.Msg;
@@ -165,6 +169,8 @@ export default {
                 }
             });
 
+            toast.hide()
+
         },
 
         getRepositories() {
@@ -175,14 +181,15 @@ export default {
                 'UserCode': this.user.account,
             }
             this.get(this.api.WarehouseList, params, function(response) {
+
                 var data = JSON.parse(response);
-                vm.WarehouseData = data;
-                localStorage.WarehouseData = JSON.stringify(data);
+                vm.WarehouseData = data.WarehouseList;
+                localStorage.WarehouseData = JSON.stringify(data.WarehouseList);
 
                 var warehouseNameArr = [];
-                for (var i = 0; i < WarehouseData.length; i++) {
-                    let item = WarehouseData[i];
-                    warehouseNameArr.push(item.storeName);
+                for (var i = 0; i < vm.WarehouseData.length; i++) {
+                    let item = vm.WarehouseData[i];
+                    warehouseNameArr.push(item.StoreName);
                 }
                 vm.slots[0].values = warehouseNameArr;
                 vm.popupVisible = true;
@@ -191,9 +198,6 @@ export default {
         },
 
         onValuesChange(picker, values) {
-            if (values[0] > values[1]) {
-                picker.setSlotValue(1, values[0]);
-            }
             this.currentWarechouse = values;
         }
     },

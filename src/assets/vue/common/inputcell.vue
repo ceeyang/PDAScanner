@@ -22,7 +22,7 @@
                 <input class="comon-input disabled" disabled type="text" :placeholder="placeholder" v-on:blur='onblur' v-model="value" v-on:input="$emit('input', $event.target.value)">
             </template>
             <template v-else>
-                <input class="comon-input" type="text" :placeholder="placeholder" v-model="value" v-on:blur='onblur' v-on:input="$emit('input', $event.target.value)">
+                <input class="comon-input" type="text" :placeholder="placeholder" :value="value" @input="$emit('input', $event.target.value)">
             </template>
         </template>
     </div>

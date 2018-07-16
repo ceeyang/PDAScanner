@@ -47,8 +47,6 @@ import scroll from '../../../common/scroll.vue';
 import SegmentBar from '../../../common/segmentBar';
 import RepairItem from '../../../common/repairitem.vue';
 
-import data from './json/readyrepair.json';
-
 export default {
 
     data() {
@@ -134,7 +132,13 @@ export default {
         },
 
         getItemsWhthPageNumber(pageNumber, scroll) {
-            console.log(pageNumber);
+
+            const toast = this.$createToast({
+                time: 0,
+                txt: '加载中...',
+            })
+            toast.show()
+
             let params = {
                 'DepartmentId': '',
                 'EquName': '',
@@ -181,6 +185,7 @@ export default {
                 if (scroll && scroll.forceUpdate) {
                     scroll.forceUpdate();
                 }
+                toast.hide()
             });
 
             if (scroll && scroll.forceUpdate) {

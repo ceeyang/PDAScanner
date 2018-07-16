@@ -1,8 +1,3 @@
-<!--
-申请设备维修页面
-codeer: cee
-2018-06-25 18:16:13
--->
 <template lang="html">
     <f7-page class="ready-repair-page">
         <!-- Nav  -->
@@ -12,7 +7,7 @@ codeer: cee
                     <i class="iconfont">&#xe605;</i>
                 </div>
             </f7-nav-left>
-            <f7-nav-title title='维修派单'></f7-nav-title>
+            <f7-nav-title :title="viewType=='apply'?'申请报修':'查看详情'"></f7-nav-title>
         </f7-navbar>
 
         <div class="repair-content">
@@ -23,13 +18,13 @@ codeer: cee
                     <i class="iconfont device-icon">&#xe736;</i>
                     <div class="top-right">
                         <div class="content-device-name">
-                            {{deviceName || "设备名称"}}
+                            {{itemData.EquName || "设备名称"}}
                         </div>
                         <div class="content-device-subname">
-                            维修编号:  {{repairOrder || "无"}}
+                            资产编号:  {{itemData.EquCode || "无"}}
                         </div>
                         <div class="content-device-subname">
-                            资产编号:  {{deviceNumber || "无"}}
+                            规格型号:  {{itemData.EquType || "无"}}
                         </div>
                     </div>
                 </div>
@@ -37,26 +32,14 @@ codeer: cee
 
             <div class="content-middle">
                 <div class="content-header">报修信息</div>
-                <div class="content-repair-info">
-                    报修科室 |  {{repairDepartment || "无"}}
-                </div>
-                <div class="content-repair-info">
-                    报修日期 |  {{repairTime || "无"}}
-                </div>
-                <div class="content-repair-info">
-                    报修人员 |  {{repairUserName || "无"}}
-                </div>
-                <div class="content-repair-info">
-                    报修电话 |  {{repairUserPhone || "无"}}
-                </div>
-                <div class="content-repair-info">
-                    故障描述 |  {{repairIntroduction || "无"}}
-                </div>
-                <!-- <mt-field label="故障描述" placeholder="无" type="textarea" rows="4" v-modal="repairIntroduction"></mt-field> -->
+                <common-cell title="报修科室" :subtitle="itemData.DepartmentName || '无'"></common-cell>
+                <common-cell title="报修人员" :subtitle="username || '无'"></common-cell>
+                <selected-input title="故障问题" :data="problemNameArr" placeholder="请输入故障问题" @itemClick="problemItemClickAction" @searchAction="problemInputSearchAction"></selected-input>
+                <input-cell title="故障描述" placeholder="请输入故障描述" :value="problemDes"></input-cell>
             </div>
         </div>
 
-        <cube-button @click="applyButtonAction" class="ready-repair-bottom">申请报修</cube-button>
+        <cube-button v-if="viewType=='apply'" @click="applyButtonAction" class="ready-repair-bottom">申请报修</cube-button>
 
     </f7-page>
 </template>
@@ -65,29 +48,29 @@ codeer: cee
 import scroll from '../../../common/scroll.vue';
 import InputCell from '../../../common/inputcell.vue';
 import RepairItem from '../../../common/repairitem.vue';
+import CommonCell from '../../../common/commonCell.vue';
 import SelectedInput from '../../../common/selectedinput.vue';
 
 export default {
 
     data() {
         return {
+            // 页面类型 : 1. apply 申请页面; 2. check 查看页面
+            viewType: '',
+
             itemData: [],
 
-            deviceName: '',
-            repairOrder: '',
-            deviceNumber: '',
+            username: '',
 
-            repairDepartment: '',
-            repairTime: '',
-            repairUserName: '',
-            repairUserPhone: '',
-            repairIntroduction: '',
+            // 故障问题 title 数组
+            problemNameArr: [],
+
+            problemDes: '',
 
 
             repairUsersNameArr: [],
             repairUsersArr: [],
             repairUser: [],
-
         }
     },
 
@@ -97,17 +80,22 @@ export default {
         let itemData = JSON.parse(localStorage.ItemData);
         this.itemData = itemData
 
-        this.deviceName = itemData.EquName
-        this.RepairOrder = itemData.RepairOrder
-        this.repairDepartment = itemData.DepartmentName
-        this.repairTime = itemData.RepairDate
-        this.repairUserName = itemData.RepairPeople
-        // this.repairUserPhone = itemData.phone
-        this.repairIntroduction = itemData.FaultDescribe
+        this.username = localStorage.UserName
 
+        this.viewType = localStorage.repairViewType
+        console.log(this.viewType);
     },
 
     methods: {
+
+        problemItemClickAction(title) {
+            console.log(title);
+        },
+
+        problemInputSearchAction(searchvalue) {
+            console.log(searchvalue);
+        },
+
         NavBack() {
                 this.$f7router.back()
             },
@@ -171,69 +159,63 @@ export default {
 
         applyButtonAction() {
 
-            if (this.repairUser.UserName == undefined) {
-                const toast = this.$createToast({
-                    time: 0,
-                    txt: '请选择派修人员',
-                    type: 'error'
-                })
-                toast.show()
-                setTimeout(() => {
-                    toast.hide()
-                }, 2000)
-
-                return
-            }
+            var storeNumber = localStorage.storeId
 
             let params = {
-                "EquId": '',
-                "EquName": '',
-                "StoreNumber": '',
-                "Store": '',
-                "RepairUserId": '',
-                "RepairUserName": '',
-                "DepartmentId": '',
-                "DepartmentName": '',
-                "RepairStatus": '',
-                "ApplyDate": '',
+
+                "EquId": this.itemData.EquCode,
+                "EquName": this.itemData.EquName,
+                "StoreNumber": '2',
+                "Store": localStorage.storeId,
+                "RepairUserId": localStorage.account,
+                "RepairUserName": '', //
+                "DepartmentId": this.itemData.DepartmentId,
+                "DepartmentName": this.itemData.DepartmentName,
+                "RepairStatus": '1',
+                "ApplyDate": '', //
                 "SupplierId": '',
                 "SupplierName": '',
                 "RepairTerm": '',
-                "RepairPhone": '',
-                "FaultId": '',
-                "FaultDesription": '',
-                "Remark": '',
+                "RepairPhone": '', //
+                "FaultId": '', //
+                "FaultDesription": '', //
+                "Remark": '', //
                 "RepairNo": '',
-                "RepairNoReadonly": '',
+                "RepairNoReadonly": 'true',
+
             }
+
+
             let vm = this;
-            let URL = this.deviceStatus == 0 ? this.api.notRepairList : this.api.hadRepairedList
+            let URL = this.api.applyRepair
             this.post(URL, params, function(response) {
                 var data = JSON.parse(response);
 
-
-                if (data.Status) {
-                    console.log(data);
-                } else {
-                    let msg = data.Msg;
-                    console.log(msg)
-                }
-
                 let msg = data.Msg;
-                if (!vm.toastCenter) {
-                    vm.toastCenter = vm.$f7.toast.create({
-                        text: '申请成功',
-                        closeTimeout: 2000,
-                        position: 'center',
-                    });
+                if (data.Status) {
+
+                } else {
+
                 }
-                vm.toastCenter.open();
+
+                var type = data.Status ? "sucess" : "error"
+                const toast = vm.$createToast({
+                    time: 0,
+                    txt: msg,
+                    type: type,
+                    time: 2000,
+                    onTimeout: () => {
+                        toast.hide()
+                    }
+                })
+                toast.show()
+
 
                 if (scroll && scroll.forceUpdate) {
                     scroll.forceUpdate()
                 }
             });
-            vm.$f7router.back();
+
         },
 
         itemClick() {
@@ -263,7 +245,8 @@ export default {
         scroll,
         RepairItem,
         InputCell,
-        SelectedInput
+        SelectedInput,
+        CommonCell
     }
 }
 </script>

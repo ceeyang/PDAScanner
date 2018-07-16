@@ -107,8 +107,6 @@ export default {
             })
             toast.show()
 
-            debugger
-
             var cachedFinishedArr = []
             var cacheKeyFinished = 'KeyCacheFinished+' + this.itemData.InventoryNo
             var finishedData = localStorage.getItem(cacheKeyFinished)

@@ -5,12 +5,12 @@
     background-color: white;
     height: 30px;
     .input-cell-title{
-        padding-left: 15px;
+        width: 100px;
+        padding-top: 3px;
+        color: $main-color-title;
         background-color: white;
-        // height: 30px;
-        width: 126px;
-        border-right: 1px solid $main-line-color;
-        font-size: $main-font-title;
+        min-width: 100px;
+        text-align: center;
     }
     .comon-input{
         font-size: $main-font-subtitle;

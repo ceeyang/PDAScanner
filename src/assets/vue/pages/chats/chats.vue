@@ -18,7 +18,7 @@
     <template v-if="currentIndex==0">
         <scroll :items="allDataArr" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
             <li v-for="(item,index) in allDataArr" :key="index" :item="item">
-                <repair-item :item="item" :itemClick="itemClick" className="readyrepair"></repair-item>
+                <chats-item :item="item" :itemClick="itemClick" className="readyrepair"></chats-item>
             </li>
         </scroll>
     </template>
@@ -51,6 +51,7 @@ import FootBar from '../../common/footBar';
 import NavBar from '../../common/navBar';
 import SegmentBar from '../../common/segmentBar';
 import scroll from '../../common/scroll';
+import ChatsItem from './ChatsItem'
 
 export default {
 
@@ -68,7 +69,31 @@ export default {
         }
     },
 
+    mounted() {
+        this.testChats()
+    },
+
     methods: {
+        testChats() {
+            var items = []
+            for (var i = 0; i < 10; i++) {
+                var item=[]
+                var random = Math.random()
+                if (random < 0.5) {
+                    item.type = "维修"
+                    item.title = "打印机"
+                    item.subtitle = "打印机卡主了"
+                    item.status = "待巡检"
+                } else {
+                    item.title = "电脑"
+                    item.type = "巡检"
+                    item.subtitle = "电脑无法开机"
+                    item.status = "待维修"
+                }
+                items.push(item)
+            }
+            this.allDataArr = items
+        },
 
         itemClick() {
 
@@ -119,6 +144,7 @@ export default {
         NavBar,
         SegmentBar,
         scroll,
+        ChatsItem,
     }
 }
 </script>

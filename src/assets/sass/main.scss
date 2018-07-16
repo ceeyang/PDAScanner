@@ -14,6 +14,7 @@
 @import "common/repairitem.scss";
 @import "common/inputcell.scss";
 @import "common/selectedinput.scss";
+@import "common/commonCell.scss";
 
 
 
@@ -37,6 +38,7 @@
 
 // chats
 @import "pages/chats/chats.scss";
+@import "pages/chats/chatsItem.scss";
 
 // setting
 @import "pages/mine/mine.scss";

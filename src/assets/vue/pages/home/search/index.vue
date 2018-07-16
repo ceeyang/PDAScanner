@@ -120,7 +120,7 @@ export default {
         NavBack() {
                 this.$f7router.back()
             },
-            
+
         searchDataClick() {
             localStorage.setItem('repairViewType', this.deviceStatus == 0 ? "apply" : "check");
             this.$f7router.navigate('/applyrepair/');
@@ -258,15 +258,15 @@ export default {
         // scroll : 滚动组件, 用于结束刷新
         getSearchData(scroll) {
             let params = {
-                'DepartmentId': this.departmentItem.DepaCode,
-                'EquName': this.deviceNameValue,
-                'EquType': this.repairNumber,
-                'StartDate': this.startDataValue,
-                'EndDate': this.endDataValue,
-                'UserCode': localStorage.account,
-                'Store': localStorage.storeId,
-                'PageIndex': this.searchPageNumber,
-                'PageSize': this.config.PageSize,
+                'DepartmentId': this.departmentItem.DepaCode || "",
+                'EquName': this.deviceNameValue || "",
+                'EquType': this.repairNumber || "",
+                'StartDate': this.startDataValue || "",
+                'EndDate': this.endDataValue || "",
+                'UserCode': localStorage.account || "",
+                'Store': localStorage.storeId || "",
+                'PageIndex': this.searchPageNumber || "",
+                'PageSize': this.config.PageSize || "",
             }
             let vm = this;
             let URL = this.deviceStatus == 0 ? this.api.notRepairList : this.api.hadRepairedList

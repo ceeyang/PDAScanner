@@ -1,0 +1,22 @@
+.cell-content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex: 1;
+    border-bottom: 1px solid $main-color-line;
+    .cell-content-title {
+        min-width: 100px;
+        text-align: center;
+        padding-top: 3px;
+        color: $main-color-title;
+        background-color: white;
+    }
+
+    .cell-content-subtitle {
+        font-size: $main-font-subtitle;
+        background-color: $main-color-input;
+        padding-left: 15px;
+        width: 100%;
+        color: $main-color-subtitle;
+    }
+}

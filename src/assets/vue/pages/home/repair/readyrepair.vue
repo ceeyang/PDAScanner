@@ -58,24 +58,9 @@ codeer: cee
             <div class="content-bottom">
                 <div class="content-header">派修信息</div>
                 <input-cell type="DataInput" title="维修期限" placeholder="请选择日期" :value="startDataValue" :openDataPicker="openStartDataPicker"></input-cell>
-                <div class="content-selecte-user">
-                    <div class="selecte-user-title">
-                        报修人员
-                    </div>
-                    <selected-input class="selecte-input" :data="repairUsersNameArr" placeholder="添加派修人员" @itemClick="userSearchItemClickAction" @searchAction="userInputSearchAction"></selected-input>
-                </div>
-                <div class="content-selecte-user">
-                    <div class="selecte-user-title">
-                        故障问题
-                    </div>
-                    <selected-input class="selecte-input" :data="falutNameArr" placeholder="添加故障问题" @itemClick="faultSearchItemClickAction" @searchAction="faultInputSearchAction"></selected-input>
-                </div>
-                <div class="content-selecte-user">
-                    <div class="selecte-user-title">
-                        故障描述
-                    </div>
-                    <selected-input class="selecte-input" :data="falutDesNameArr" placeholder="添加故障描述" @itemClick="faultDesriptionSearchItemClickAction" @searchAction="faultDesriptionInputSearchAction"></selected-input>
-                </div>
+                <selected-input title="报修人员" :data="repairUsersNameArr" placeholder="添加派修人员" @itemClick="userSearchItemClickAction" @searchAction="userInputSearchAction"></selected-input>
+                <selected-input title="故障问题" :data="falutNameArr" placeholder="添加故障问题" @itemClick="faultSearchItemClickAction" @searchAction="faultInputSearchAction"></selected-input>
+                <input-cell title="故障描述" placeholder="请输入故障描述" v-model="falutDes"></input-cell>
             </div>
         </div>
 
@@ -119,6 +104,7 @@ export default {
             falutNameArr: [],
             falutsArr: [],
             falutDesNameArr: [],
+            falutDes: '', // 故障描述
 
 
             // 报修期限
@@ -129,6 +115,11 @@ export default {
         }
     },
 
+    watch: {
+        falutDes: function(newValue){
+            console.log(newValue);
+        }
+    },
 
     mounted() {
 
@@ -146,6 +137,10 @@ export default {
     },
 
     methods: {
+        onblur() {
+
+        },
+
         NavBack() {
                 this.$f7router.back()
             },
@@ -240,12 +235,11 @@ export default {
             };
 
             let vm = this;
-            this.get(this.api.getRepaitUsers, params, function(response) {
+            this.get(this.api.getQuestionList, params, function(response) {
                 console.log(params);
                 var data = JSON.parse(response);
                 if (data.Status) {
-                    vm.repairUsersArr = data.AssignUserList;
-                    vm.parseUsers()
+
                 } else {
                     let msg = data.Msg;
                     console.log(msg);
