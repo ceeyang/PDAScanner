@@ -85,6 +85,10 @@ export default [{
     component: require('./assets/vue/pages/home/scanrepair/applyrepair.vue')
   },
   {
+    path: '/newRepair/',
+    component: require('./assets/vue/pages/home/scanrepair/newRepair.vue')
+  },
+  {
       path: '/search/',
       component: require('./assets/vue/pages/home/search/index.vue')
   },

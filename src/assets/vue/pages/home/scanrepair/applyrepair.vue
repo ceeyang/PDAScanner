@@ -198,7 +198,7 @@ export default {
 
                 }
 
-                var type = data.Status ? "sucess" : "error"
+                var type = data.Status ? "success" : "error"
                 const toast = vm.$createToast({
                     time: 0,
                     txt: msg,
@@ -209,11 +209,6 @@ export default {
                     }
                 })
                 toast.show()
-
-
-                if (scroll && scroll.forceUpdate) {
-                    scroll.forceUpdate()
-                }
             });
 
         },

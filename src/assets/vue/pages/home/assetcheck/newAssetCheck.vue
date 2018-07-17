@@ -22,16 +22,6 @@
           </li>
       </scroll>
 
-      <!-- <div v-if="popupVisible" class="downloading-content">
-          <div class="">
-              <mt-progress :value="60">
-                  <div slot="start">0%</div>
-                  <div slot="end">100%</div>
-              </mt-progress>
-          </div>
-      </div> -->
-
-
   </f7-page>
 </template>
 

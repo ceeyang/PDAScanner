@@ -100,9 +100,7 @@ export default {
         },
 
         onPullingDown(scroll) {
-            setTimeout(function() {
-                scroll.forceUpdate()
-            }, 2000);
+            this.getChatsList(scroll)
         },
 
         onPullingUp(scroll) {
@@ -119,6 +117,53 @@ export default {
 
             } else {
 
+            }
+        },
+
+        getChatsList(scroll) {
+            const toast = this.$createToast({
+                time: 0,
+                txt: '加载中...',
+            })
+            toast.show()
+
+            let params = {
+                "State":'1',
+                "UserCode": localStorage.account,
+                "StoreId": localStorage.storeId,
+                "StartDate":'',
+                "EndDate":'',
+                "PageIndex": 1,
+                "PageSize": this.config.PageSize,
+            };
+
+            let vm = this;
+            this.post(this.api.getNoticeList, params, function(response) {
+                var data = JSON.parse(response);
+                console.log(data);
+                if (data.Status) {
+
+                } else {
+                    let msg = data.Msg;
+                    if (!vm.toastCenter) {
+                        vm.toastCenter = vm.$f7.toast.create({
+                            text: msg,
+                            closeTimeout: 2000,
+                            position: 'center',
+                        });
+                    }
+                    vm.toastCenter.open();
+                }
+                if (scroll && scroll.forceUpdate) {
+                    scroll.forceUpdate();
+                }
+                toast.hide()
+            });
+
+            if (scroll && scroll.forceUpdate) {
+                setTimeout(function() {
+                    scroll.forceUpdate();
+                }, 5000);
             }
         },
 

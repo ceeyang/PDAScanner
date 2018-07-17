@@ -113,4 +113,7 @@ export default {
     // 上传盘点单
     updateInventoryItem: `${rootURL}/api/Inventory/UpdateInventoryItem`,
 
+    // 消息解耦
+    getNoticeList: `${rootURL}/api/BlendQuery/NoticeList`,
+
 }

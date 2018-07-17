@@ -13,11 +13,28 @@ const state = {
     readyrepairPage:1,
     repairCompletedPage:1,             //页码
 
+
+
+
+    // 新增资产
+    // 资产
+    EquData: [], // 当前选中的资产
+    EquDataList: [], // 当前资产列表
+    EquNameList: [], // 当前资产名称列表
+
+    // 科室
+    departmentData: [], // 当前选择科室
+    departmentDataList: [], // 当前搜索科室列表
+    departmentNameList: [], // 当前搜索科室名称列表
+
+    // 问题
+    problemData: [], // 当前选择问题
+    problemDataList: [], // 当前搜索问题列表
+    problemNameList: [], // 当前搜索问题名称列表
+
 }
 
 export default {
     state,
-    mutations,
-    getters,
-    actions
+    actions,
 }

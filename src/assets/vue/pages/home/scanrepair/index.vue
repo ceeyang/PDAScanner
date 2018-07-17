@@ -124,7 +124,7 @@ export default {
         newApplyButton() {
             localStorage.removeItem('ItemData');
             localStorage.setItem('repairViewType', "apply");
-            this.$f7router.navigate('/applyrepair/');
+            this.$f7router.navigate('/newRepair/');
         },
 
         searchButtonAction() {
@@ -167,7 +167,7 @@ export default {
                         if (pageNumber == 1) {
                             vm.repairCompletedData = data.DepartmentEquListHas;
                         } else {
-                            vm.repairCompletedData.push(data.DepartmentEquListHas);
+                            vm.repairCompletedData = vm.repairCompletedData.concat(data.DepartmentEquListHas)
                         }
                     }
                 } else {
