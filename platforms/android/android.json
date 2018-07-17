@@ -46,6 +46,18 @@
             }
           ]
         }
+      },
+      "*-Info.plist": {
+        "parents": {
+          "NSCameraUsageDescription": [
+            {
+              "xml": "<string>To scan barcodes</string>",
+              "count": 1,
+              "mode": "merge",
+              "id": "config.xml"
+            }
+          ]
+        }
       }
     }
   },
