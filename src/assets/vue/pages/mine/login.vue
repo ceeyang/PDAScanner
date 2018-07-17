@@ -121,6 +121,8 @@ export default {
 
         login() {
 
+            console.log('xxxx');
+
             if (this.user.account.length < 1) {
                 const self = this;
                 if (!self.toastCenter) {
