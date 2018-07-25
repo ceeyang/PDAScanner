@@ -1,5 +1,5 @@
 <template>
-<f7-page class="chats-page">
+<f7-page class="chats-page no-swipeback">
 
     <!-- Nav -->
     <f7-navbar>
@@ -18,7 +18,7 @@
     <template v-if="currentIndex==0">
         <scroll :items="allDataArr" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
             <li v-for="(item,index) in allDataArr" :key="index" :item="item">
-                <chats-item :item="item" :itemClick="itemClick" className="readyrepair"></chats-item>
+                <chats-item :item="item" @itemClick="itemClick" className="readyrepair"></chats-item>
             </li>
         </scroll>
     </template>
@@ -70,33 +70,60 @@ export default {
     },
 
     mounted() {
-        this.testChats()
+        this.getChatsList()
     },
 
     methods: {
-        testChats() {
-            var items = []
-            for (var i = 0; i < 10; i++) {
-                var item=[]
-                var random = Math.random()
-                if (random < 0.5) {
-                    item.type = "维修"
-                    item.title = "打印机"
-                    item.subtitle = "打印机卡主了"
-                    item.status = "待巡检"
-                } else {
-                    item.title = "电脑"
-                    item.type = "巡检"
-                    item.subtitle = "电脑无法开机"
-                    item.status = "待维修"
+
+        itemClick(data) {
+
+            // 维修
+            if (data.TypeId == "1" || data.TypeId == "1 ") {
+                // 待派工
+                if (data.State == "1" || data.State == "1 ") {
+                    let equNumber = data.EquId
+                    equNumber = equNumber.replace(/\s*/g,"")
+                    this.getEquInfo(equNumber)
                 }
-                items.push(item)
             }
-            this.allDataArr = items
         },
 
-        itemClick() {
+        getEquInfo(EquId) {
 
+            const toast = this.$createToast({
+                time: 0,
+                txt: '加载中...',
+            })
+            toast.show()
+
+            let params = {
+                "EquNo":EquId,
+                "UserCode": localStorage.account,
+                // 'Store': localStorage.storeId,
+            };
+            let vm = this;
+            this.get(this.api.getEquById, params, function(response) {
+                var data = JSON.parse(response);
+                console.log(data);
+                if (data.Status) {
+
+                } else {
+                    let msg = data.Msg;
+                    if (!vm.toastCenter) {
+                        vm.toastCenter = vm.$f7.toast.create({
+                            text: msg,
+                            closeTimeout: 2000,
+                            position: 'center',
+                        });
+                    }
+                    vm.toastCenter.open();
+                }
+                toast.hide()
+            });
+
+            setTimeout(function () {
+                toast.hide()
+            }, 2000);
         },
 
         onPullingDown(scroll) {
@@ -142,7 +169,7 @@ export default {
                 var data = JSON.parse(response);
                 console.log(data);
                 if (data.Status) {
-
+                    vm.allDataArr = data.NoticeList
                 } else {
                     let msg = data.Msg;
                     if (!vm.toastCenter) {

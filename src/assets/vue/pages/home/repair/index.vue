@@ -18,7 +18,7 @@
         <template v-if="segmentBarIndex==0">
             <scroll :items="readyrepairData" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
                 <li v-for="(item,index) in readyrepairData" :key="index" :item="item">
-                    <repair-item :item="item" :itemClick="itemClick"></repair-item>
+                    <repair-item :item="item" :itemClick="readyrepairItemClick"></repair-item>
                 </li>
             </scroll>
         </template>
@@ -27,7 +27,7 @@
         <template v-if="segmentBarIndex==1">
             <scroll :items="takeordersData" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
                 <li v-for="(item,index) in takeordersData" :key="index" :item="item">
-                    <repair-item :item="item" :itemClick="itemClick"></repair-item>
+                    <repair-item :item="item" :itemClick="takeordersItemClick"></repair-item>
                 </li>
             </scroll>
         </template>
@@ -36,7 +36,7 @@
         <template v-if="segmentBarIndex==2">
             <scroll :items="waitehandleData" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
                 <li v-for="(item,index) in waitehandleData" :key="index" :item="item">
-                    <repair-item :item="item" :itemClick="itemClick"></repair-item>
+                    <repair-item :item="item" :itemClick="waitehandleItemClick"></repair-item>
                 </li>
             </scroll>
         </template>
@@ -48,8 +48,6 @@
 import scroll from '../../../common/scroll.vue';
 import SegmentBar from '../../../common/segmentBar';
 import RepairItem from '../../../common/repairitem';
-
-import data from './json/readyrepair.json';
 
 export default {
 
@@ -76,38 +74,56 @@ export default {
     },
 
     mounted() {
-        // 测试数据
-        this.readyrepairData = data;
-
         this.getRepairData(1, 1);
-
     },
 
     methods: {
-        itemClick() {
+
+        // 待派单
+        readyrepairItemClick() {
+            this.$f7router.navigate('/readyrepair/');
+        },
+        // 待接单
+        takeordersItemClick() {
+            this.$f7router.navigate('/takeorders/');
+        },
+        // 待维修
+        waitehandleItemClick() {
             this.$f7router.navigate('/readyrepair/');
         },
 
         switchTab(index) {
             this.segmentBarIndex = index;
+            if (index == 1) {
+                if (this.takeordersData.length < 1) {
+                    this.onPullingDown()
+                }
+            } else if (index == 2){
+                if (this.waitehandleData.length < 1) {
+                    this.onPullingDown()
+                }
+            }
         },
 
         onPullingDown(scroll) {
             if (this.segmentBarIndex == 0) {
                 this.readyrepairPage = 1
+                this.getRepairData(1, 1, scroll)
             } else if (this.segmentBarIndex == 1){
                 this.takeordersPage = 1
+                this.getRepairData(1, 2, scroll)
             } else {
                 this.waitehandlePage = 1
             }
-            this.getRepairData(1, 1, scroll)
         },
 
         onPullingUp(scroll) {
             if (this.segmentBarIndex == 0) {
                 this.readyrepairPage += 1
+                this.getRepairData(this.readyrepairPage, 2, scroll)
             } else if (this.segmentBarIndex == 1){
                 this.takeordersPage += 1
+                this.getRepairData(this.takeordersPage, 2, scroll)
             } else {
                 this.waitehandlePage += 1
             }
@@ -120,7 +136,6 @@ export default {
                 txt: '加载中...',
             })
             toast.show()
-            console.log('toast.show()');
 
             let params = {
                 'EquCode': '',
@@ -148,7 +163,9 @@ export default {
                         if (pageNumber == 1) {
                             vm.readyrepairData = data.DispatchList;
                         } else {
-                            vm.readyrepairData = vm.readyrepairData.push(data.DispatchList)
+                            if (data.DispatchList.count > 0) {
+                                vm.readyrepairData = vm.readyrepairData.push(data.DispatchList)
+                            }
                         }
                     }
 
@@ -156,7 +173,9 @@ export default {
                         if (pageNumber == 1) {
                             vm.takeordersData = data.DispatchList;
                         } else {
-                            vm.takeordersData = vm.takeordersData.push(data.DispatchList)
+                            if (data.DispatchList.count > 0) {
+                                vm.takeordersData = vm.takeordersData.push(data.DispatchList)
+                            }
                         }
                     }
 
@@ -164,7 +183,9 @@ export default {
                         if (pageNumber == 1) {
                             vm.waitehandleData = data.DispatchList;
                         } else {
-                            vm.waitehandleData = vm.waitehandleData.push(data.DispatchList)
+                            if (data.DispatchList.count > 0) {
+                                vm.waitehandleData = vm.waitehandleData.push(data.DispatchList)
+                            }
                         }
                     }
                 }

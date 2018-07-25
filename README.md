@@ -25,3 +25,8 @@
 
 
 [0]:https://github.com/caiobiodere/cordova-template-framework7-vue-webpack
+
+
+## 项目测试 PC 地址
+http://120.78.92.212:8066/BLadmin/
+登录账号: 999999 密码: 无

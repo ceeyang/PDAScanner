@@ -23,9 +23,6 @@ export default {
     // 4、设备名称集合
     equNameList: `${rootURL}/api/Repair/EquNameList`,
 
-    // 获取所以科室集合
-    departmentList: `${rootURL}/api/Repair/DepartmentList`,
-
     // 报修申请
     applyRepair: `${rootURL}/api/Repair/ApplyRepair`,
 
@@ -115,5 +112,8 @@ export default {
 
     // 消息解耦
     getNoticeList: `${rootURL}/api/BlendQuery/NoticeList`,
+
+    // 巡检资产的科室列表
+    getMeteringEqu: `${rootURL}/api/Metering/MeteringEqu`,
 
 }

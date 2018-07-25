@@ -193,12 +193,12 @@ export default {
 
                 let msg = data.Msg;
                 if (data.Status) {
-
+                    vm.$f7router.back()
                 } else {
 
                 }
 
-                var type = data.Status ? "success" : "error"
+                var type = data.Status ? "correct" : "error"
                 const toast = vm.$createToast({
                     time: 0,
                     txt: msg,

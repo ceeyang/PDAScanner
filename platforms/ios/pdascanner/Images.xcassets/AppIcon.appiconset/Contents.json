@@ -1,221 +1,111 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
       "size" : "20x20",
-      "filename" : "icon-20@2x.png",
+      "idiom" : "iphone",
+      "filename" : "loginlogoiPhoneNotification_20pt@2x.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "20x20",
-      "filename" : "icon-20@3x.png",
+      "idiom" : "iphone",
+      "filename" : "loginlogoiPhoneNotification_20pt@3x.png",
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
       "size" : "29x29",
-      "filename" : "icon-small.png",
-      "scale" : "1x"
-    },
-    {
       "idiom" : "iphone",
-      "size" : "29x29",
-      "filename" : "icon-small@2x.png",
+      "filename" : "loginlogoiPhoneSpootlight5_29pt@2x.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "29x29",
-      "filename" : "icon-small@3x.png",
+      "idiom" : "iphone",
+      "filename" : "loginlogoiPhoneSpootlight5_29pt@3x.png",
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
       "size" : "40x40",
-      "filename" : "icon-40@2x.png",
+      "idiom" : "iphone",
+      "filename" : "loginlogoiPhoneSpootlight7_40pt@2x.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "40x40",
-      "filename" : "icon-60@2x.png",
+      "idiom" : "iphone",
+      "filename" : "loginlogoiPhoneSpootlight7_40pt@3x.png",
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
-      "size" : "57x57",
-      "filename" : "icon.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "iphone",
-      "size" : "57x57",
-      "filename" : "icon@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "iphone",
       "size" : "60x60",
-      "filename" : "icon-60@2x.png",
+      "idiom" : "iphone",
+      "filename" : "loginlogoiPhoneApp_60pt@2x.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "60x60",
-      "filename" : "icon-60@3x.png",
+      "idiom" : "iphone",
+      "filename" : "loginlogoiPhoneApp_60pt@3x.png",
       "scale" : "3x"
     },
     {
-      "idiom" : "ipad",
       "size" : "20x20",
-      "filename" : "icon-20.png",
+      "idiom" : "ipad",
+      "filename" : "loginlogoiPadNotifications_20pt.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "20x20",
-      "filename" : "icon-20@2x.png",
+      "idiom" : "ipad",
+      "filename" : "loginlogoiPadNotifications_20pt@2x.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "29x29",
-      "filename" : "icon-small.png",
+      "idiom" : "ipad",
+      "filename" : "loginlogoiPadSpootlight5_29pt.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "29x29",
-      "filename" : "icon-small@2x.png",
+      "idiom" : "ipad",
+      "filename" : "loginlogoiPadSpootlight5_29pt@2x.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "40x40",
-      "filename" : "icon-40.png",
+      "idiom" : "ipad",
+      "filename" : "loginlogoiPadSpootlight7_40pt.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "40x40",
-      "filename" : "icon-40@2x.png",
+      "idiom" : "ipad",
+      "filename" : "loginlogoiPadSpootlight7_40pt@2x.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
-      "size" : "50x50",
-      "filename" : "icon-50.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "ipad",
-      "size" : "50x50",
-      "filename" : "icon-50@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "ipad",
-      "size" : "72x72",
-      "filename" : "icon-72.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "ipad",
-      "size" : "72x72",
-      "filename" : "icon-72@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "ipad",
       "size" : "76x76",
-      "filename" : "icon-76.png",
+      "idiom" : "ipad",
+      "filename" : "loginlogoiPadApp_76pt.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
-      "filename" : "icon-76@2x.png",
+      "idiom" : "ipad",
+      "filename" : "loginlogoiPadApp_76pt@2x.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "83.5x83.5",
-      "filename" : "icon-83.5@2x.png",
+      "idiom" : "ipad",
+      "filename" : "loginlogoiPadProApp_83.5pt@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "icon-1024.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "24x24",
-      "idiom" : "watch",
-      "filename" : "AppIcon24x24@2x.png",
-      "scale" : "2x",
-      "role" : "notificationCenter",
-      "subtype" : "38mm"
-    },
-    {
-      "size" : "27.5x27.5",
-      "idiom" : "watch",
-      "filename" : "AppIcon27.5x27.5@2x.png",
-      "scale" : "2x",
-      "role" : "notificationCenter",
-      "subtype" : "42mm"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "watch",
-      "filename" : "AppIcon29x29@2x.png",
-      "role" : "companionSettings",
-      "scale" : "2x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "watch",
-      "filename" : "AppIcon29x29@3x.png",
-      "role" : "companionSettings",
-      "scale" : "3x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "watch",
-      "filename" : "AppIcon40x40@2x.png",
-      "scale" : "2x",
-      "role" : "appLauncher",
-      "subtype" : "38mm"
-    },
-    {
-      "size" : "44x44",
-      "idiom" : "watch",
-      "filename" : "AppIcon44x44@2x.png",
-      "scale" : "2x",
-      "role" : "longLook",
-      "subtype" : "42mm"
-    },
-    {
-      "size" : "86x86",
-      "idiom" : "watch",
-      "filename" : "AppIcon86x86@2x.png",
-      "scale" : "2x",
-      "role" : "quickLook",
-      "subtype" : "38mm"
-    },
-    {
-      "size" : "98x98",
-      "idiom" : "watch",
-      "filename" : "AppIcon98x98@2x.png",
-      "scale" : "2x",
-      "role" : "quickLook",
-      "subtype" : "42mm"
-    },
-    {
-      "size" : "1024x1024",
-      "idiom" : "watch-marketing",
-      "filename" : "icon-1024.png",
+      "filename" : "loginlogostore_1024pt.png",
       "scale" : "1x"
     }
   ],

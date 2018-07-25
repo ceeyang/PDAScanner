@@ -89,6 +89,8 @@ export default {
 
     mounted() {
 
+        this.getMeteringEqu()
+
         this.items = allData;
         console.log(this.items);
         this.menuData = TestMenuData;
@@ -107,6 +109,27 @@ export default {
 
 
     methods: {
+        getMeteringEqu() {
+            let params = {
+                'StoreId': localStorage.storeId,
+            };
+
+            console.log(localStorage.storeId);
+
+            let vm = this;
+            this.get(this.api.getMeteringEqu, params, function(response) {
+                var data = JSON.parse(response);
+
+                if (data.Status) {
+                    console.log(data);
+
+                } else {
+                    let msg = data.Msg;
+                    console.log(msg);
+                }
+            });
+        },
+
         NavBack() {
                 this.$f7router.back()
             },

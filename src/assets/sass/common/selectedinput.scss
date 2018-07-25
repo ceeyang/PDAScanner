@@ -46,6 +46,7 @@
             z-index: 9998;
             position:relative;
             background-color: white !important;
+            max-height: 200px;
             li {
                 position: relative;
 
@@ -55,6 +56,10 @@
                 & > span {
                     display: inline-block;
                     vertical-align: middle;
+                }
+
+                .list-module-item{
+                    font-size: 12px;
                 }
 
             }

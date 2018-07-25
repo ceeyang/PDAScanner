@@ -73,6 +73,10 @@ export default [{
     path: '/readyrepair/',
     component: require('./assets/vue/pages/home/repair/readyrepair.vue')
   },
+  {
+    path: '/takeorders/',
+    component: require('./assets/vue/pages/home/repair/takeorders.vue')
+  },
 
 
   //  scanrepair

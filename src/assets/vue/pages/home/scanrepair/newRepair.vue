@@ -11,8 +11,10 @@
         </f7-navbar>
 
         <selected-input title="报修科室" :data="scanRepairStore.departmentNameList" placeholder="请添加科室" @itemClick="departmentSearchItemClickAction" @searchAction="departmentInputSearchAction"></selected-input>
-        <selected-input title="资产名称" :data="scanRepairStore.EquNameList" placeholder="请添加资产" @itemClick="EquSearchItemClickAction" @searchAction="EquInputSearchAction"></selected-input>
+        <selected-input title="资产名称" :data="scanRepairStore.EquNameList" placeholder="请添加资产名称" @itemClick="EquSearchItemClickAction" @searchAction="EquInputSearchAction"></selected-input>
+        <selected-input title="资产编号" :data="scanRepairStore.EquCodeList" :value="scanRepairStore.EquData.EquCode" placeholder="请添加资产编号"></selected-input>
         <selected-input title="故障问题" :data="scanRepairStore.problemNameList" placeholder="请输入故障问题" @itemClick="problemSearchItemClickAction" @searchAction="problemInputSearchAction"></selected-input>
+        <selected-input title="故障描述" :data="scanRepairStore.EquCodeList" :value="scanRepairStore.problemData.EquCode" placeholder="请添加故障描述"></selected-input>
 
         <cube-button @click="applyButtonAction" class="ready-repair-bottom">申请报修</cube-button>
     </f7-page>
@@ -47,22 +49,32 @@ export default {
     methods: {
         ...mapActions([
             'getEquDataList',
+            'applyRepair'
         ]),
 
         NavBack() {
             this.$f7router.back()
         },
 
+        // 资产名称
         EquSearchItemClickAction(equName){
-            
+            console.log(equName);
+            for (var i = 0; i < this.scanRepairStore.EquDataList.length; i++) {
+                if (equName == this.scanRepairStore.EquDataList[i].EquName) {
+                    this.scanRepairStore.EquData = this.scanRepairStore.EquDataList[i]
+                    this.scanRepairStore.EquCodeValue = this.scanRepairStore.EquDataList[i].EquCode
+                }
+            }
         },
 
         EquInputSearchAction(searchvalue) {
             console.log(searchvalue);
+            this.scanRepairStore.equSearchValue = searchvalue
             this.getEquDataList(searchvalue)
         },
 
 
+        // 故障问题
         problemInputSearchAction(searchvalue) {
             console.log(searchvalue);
         },
@@ -71,6 +83,7 @@ export default {
             console.log(problemName);
         },
 
+        // 科室名称
         departmentInputSearchAction(searchvalue) {
             console.log(searchvalue);
         },
@@ -80,59 +93,11 @@ export default {
         },
 
         applyButtonAction() {
-
-            var storeNumber = localStorage.storeId
-
-            let params = {
-
-                "EquId": this.EquData.EquCode,
-                "EquName": this.EquData.EquName,
-                "StoreNumber": '2',
-                "Store": localStorage.storeId,
-                "RepairUserId": localStorage.account,
-                "RepairUserName": '', //
-                "DepartmentId": this.departmentData.DepartmentId,
-                "DepartmentName": this.departmentData.DepartmentName,
-                "RepairStatus": '1',
-                "ApplyDate": '', //
-                "SupplierId": '',
-                "SupplierName": '',
-                "RepairTerm": '',
-                "RepairPhone": '', //
-                "FaultId": '', //
-                "FaultDesription": '', //
-                "Remark": '', //
-                "RepairNo": '',
-                "RepairNoReadonly": 'true',
-
-            }
-
-
-            let vm = this;
-            let URL = this.api.applyRepair
-            this.post(URL, params, function(response) {
-                var data = JSON.parse(response);
-
-                let msg = data.Msg;
-                if (data.Status) {
-
-                } else {
-
-                }
-
-                var type = data.Status ? "success" : "error"
-                const toast = vm.$createToast({
-                    time: 0,
-                    txt: msg,
-                    type: type,
-                    time: 2000,
-                    onTimeout: () => {
-                        toast.hide()
-                    }
-                })
-                toast.show()
-            });
-
+            this.applyRepair()
+            let vm = this
+            setTimeout(function () {
+                vm.$f7router.back()
+            }, 2000);
         },
 
     },

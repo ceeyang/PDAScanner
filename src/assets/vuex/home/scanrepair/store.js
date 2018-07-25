@@ -13,14 +13,16 @@ const state = {
     readyrepairPage:1,
     repairCompletedPage:1,             //页码
 
-
+    departmentData: [], // 科室数据
 
 
     // 新增资产
     // 资产
+    equSearchValue: '',
     EquData: [], // 当前选中的资产
     EquDataList: [], // 当前资产列表
     EquNameList: [], // 当前资产名称列表
+    EquCodeValue: "",
 
     // 科室
     departmentData: [], // 当前选择科室

@@ -12,11 +12,13 @@
             <i class="search-icon iconfont">&#xe651;</i>
         </div>
 
-        <ul class="list-module" v-show="searchData">
+
+
+        <cube-scroll class="list-module" v-show="searchData" :item="searchData">
             <li v-for="(item,index) in searchData" @click="appClick(item,$event)" :key="index" :item="item">
-                <span>{{item}}</span>
+                <span class="list-module-item">{{item}}</span>
             </li>
-        </ul>
+        </cube-scroll>
     </div>
 </div>
 </template>
@@ -39,6 +41,10 @@ export default {
     watch: {
         data: function(newValue, oldValue) {
             this.searchData = newValue;
+        },
+
+        value: function(newValue, oldValue) {
+            this.searchvalue = newValue;
         }
     },
     methods: {

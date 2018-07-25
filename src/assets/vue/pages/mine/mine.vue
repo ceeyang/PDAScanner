@@ -1,5 +1,5 @@
 <template>
-    <f7-page class="mine-page">
+    <f7-page class="mine-page no-swipeback">
 
         <!-- Nav -->
         <!-- 封装该组件后 ios 下显示异常, 暂不知原因 -->

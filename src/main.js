@@ -71,7 +71,9 @@ Vue.prototype.post=function(url, params, next){
     token = token + MD5KEY;
     token = md5(token);
     params.Token = token;
-    console.log('params: ');
+    console.log('RequestUrl: ');
+    console.log(url);
+    console.log('RequestParams: ');
     console.log(params);
     return Framework7.request.post(url, params, next);
 }
@@ -79,11 +81,18 @@ Vue.prototype.post=function(url, params, next){
 Vue.prototype.get=function(url, params, next){
     var token = '';
     for (var item in params) {
+        console.log(item);
+        console.log(params);
+        console.log(params[item]);
         token += (token.length<1?'':'&') + item + '=' + (params[item].length < 1 ? "" : params[item]);
     }
     token = token + MD5KEY;
     token = md5(token);
     params.Token = token;
+    console.log('RequestUrl: ');
+    console.log(url);
+    console.log('RequestParams: ');
+    console.log(params);
     return Framework7.request.get(url, params, next);
 }
 

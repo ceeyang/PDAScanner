@@ -1,5 +1,5 @@
 <template>
-<f7-page class="home-page">
+<f7-page class="home-page no-swipeback">
 
     <!-- Nav -->
     <!-- <nav-bar title="深圳市源泰达科技有限公司"></nav-bar> -->
@@ -15,10 +15,10 @@
     <!-- content -->
     <f7-swiper pagination class="home-page-swiper">
         <f7-swiper-slide>
-            <img class="swiper-images" src="../../../images/swiperImage0.png" />
+            <img class="swiper-images" src="../../../images/swiperImage1.png" />
         </f7-swiper-slide>
         <f7-swiper-slide>
-            <img class="swiper-images" src="../../../images/swiperImage1.png" />
+            <img class="swiper-images" src="../../../images/swiperImage0.png" />
         </f7-swiper-slide>
         <f7-swiper-slide>
             <img class="swiper-images" src="../../../images/swiperImage2.png" />
@@ -39,11 +39,6 @@
 
     <!-- tabbar -->
     <foot-bar select="home"></foot-bar>
-    <!-- <f7-toolbar tabbar labels>
-            <f7-link><a class="link" href="/chats/"><i class="f7-icons">chats</i><span>消息</span></a></f7-link>
-            <f7-link><a class="link"><i class="f7-icons">home</i><span>主页</span></a></f7-link>
-            <f7-link><a class="link" href="/mine/"><i class="f7-icons">personal</i><span>我的</span></a></f7-link>
-        </f7-toolbar> -->
 </f7-page>
 </template>
 
