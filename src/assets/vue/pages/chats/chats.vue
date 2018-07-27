@@ -77,13 +77,20 @@ export default {
 
         itemClick(data) {
 
+            console.log(data);
+
             // 维修
             if (data.TypeId == "1" || data.TypeId == "1 ") {
                 // 待派工
                 if (data.State == "1" || data.State == "1 ") {
                     let equNumber = data.EquId
+                    // 去除空格
                     equNumber = equNumber.replace(/\s*/g,"")
-                    this.getEquInfo(equNumber)
+                    //this.getEquInfo(equNumber)
+
+                    let itemDataJson = JSON.stringify(data);
+                    localStorage.setItem('ItemData',itemDataJson);
+                    this.$f7router.navigate('/readyrepair/');
                 }
             }
         },

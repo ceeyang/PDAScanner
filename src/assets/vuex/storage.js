@@ -5,6 +5,7 @@ Vue.use(Vuex);
 import mineStore from './mine/store';
 import scanRepairStore from './home/scanrepair/store';
 import assetCheckStore from './home/assetcheck/store';
+import RepairStore from './home/repair/store';
 
 
 export default new Vuex.Store({
@@ -12,5 +13,6 @@ export default new Vuex.Store({
       mineStore,
       scanRepairStore,
       assetCheckStore,
+      RepairStore,
   }
 })

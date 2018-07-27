@@ -1,8 +1,3 @@
-<!--
-申请设备维修页面
-codeer: cee
-2018-06-25 18:16:13
--->
 <template lang="html">
     <f7-page class="ready-repair-page">
         <!-- Nav  -->
@@ -59,6 +54,13 @@ import InputCell from '../../../common/inputcell.vue';
 import RepairItem from '../../../common/repairitem.vue';
 import SelectedInput from '../../../common/selectedinput.vue';
 
+import {
+    mapState,
+    mapActions,
+    mapMutations,
+    mapGetters
+} from 'vuex';
+
 export default {
 
     data() {
@@ -83,6 +85,8 @@ export default {
             pickerValue: '',
         }
     },
+
+
 
     watch: {
         falutDes: function(newValue){
@@ -118,7 +122,12 @@ export default {
 
         // 故障描述选择器回调
         faultTypeSearchItemClickAction(data, event) {
-            console.log(data);
+            for (var i = 0; i < this.falutTypeArr.length; i++) {
+                if (this.falutTypeArr[i].QuestionTypeName == data) {
+                    this.falutType = this.falutTypeArr[i]
+                    return
+                }
+            }
         },
 
         // 故障问题选择器回调
@@ -140,12 +149,17 @@ export default {
             };
 
             let vm = this;
-            this.get(this.api.getRepaitUsers, params, function(response) {
+            this.get(this.api.getQuestionTypeList, params, function(response) {
                 console.log(params);
                 var data = JSON.parse(response);
                 if (data.Status) {
-                    // vm.falutTypeArr =
-                    // vm.parseUsers()
+                    vm.falutTypeArr = data.QuestionTypeList
+                    vm.falutTypeNameArr = []
+                    var nameArr = []
+                    for (var i = 0; i < vm.falutTypeArr.length; i++) {
+                        nameArr.push(vm.falutTypeArr[i].QuestionTypeName)
+                    }
+                    vm.falutTypeNameArr = nameArr
                 } else {
                     let msg = data.Msg;
                     console.log(msg);
@@ -161,21 +175,16 @@ export default {
             });
         },
 
-        // 输入用户时候的事件
+        // 故障输入搜索事件
         faultInputSearchAction(searchvalue) {
-
-            this.currentSelecteInputData = ['hahah', 'heiheie', 'nice']
-            console.log('searchvalue : ' + searchvalue);
 
             let params = {
                 'QueryText': searchvalue,
-                'UserCode': localStorage.account,
-                'PageIndex': 1,
-                'PageSize': 100,
+                'QuestionTypeId': this.falutType.QuestionTypeCode | ""
             };
 
             let vm = this;
-            this.get(this.api.getRepaitUsers, params, function(response) {
+            this.get(this.api.getQuestionList, params, function(response) {
                 console.log(params);
                 var data = JSON.parse(response);
                 if (data.Status) {

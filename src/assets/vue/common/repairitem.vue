@@ -1,6 +1,9 @@
 <template lang="html">
     <div class="measure-item" @click='itemClicks'>
-        <div class="item-content-left">
+
+        <i class="iconfont item-content-left">&#xe62a;</i>
+
+        <div class="item-content-centern">
             <div class="item-content-title">
                 {{item.EquName}}
             </div>
@@ -11,15 +14,15 @@
                 购入日期: {{item.BuyDate}}
             </div>
         </div>
-        <div class="item-content-right">
 
+
+        <div class="item-content-right">
             <template v-if="className=='readyrepair'">
                 <i class="iconfont">&#xe617;</i>
             </template>
             <template v-else>
                 <i class="iconfont">&#xe64a;</i>
             </template>
-
         </div>
     </div>
 </template>
@@ -44,7 +47,7 @@ export default {
             if (this.itemClick) {
                 let itemDataJson = JSON.stringify(this.item);
                 localStorage.setItem('ItemData',itemDataJson);
-                this.itemClick();
+                this.itemClick(this.item);
             }
         }
     }

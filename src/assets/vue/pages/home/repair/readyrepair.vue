@@ -408,6 +408,17 @@ export default {
 
                 if (data.Status) {
 
+                    if (!vm.toastCenter) {
+                        vm.toastCenter = vm.$f7.toast.create({
+                            text: "派工成功, #^_^# ",
+                            closeTimeout: 2000,
+                            position: 'center',
+                        });
+                    }
+                    vm.toastCenter.open();
+
+                    this.$f7router.back()
+
                 } else {
 
 

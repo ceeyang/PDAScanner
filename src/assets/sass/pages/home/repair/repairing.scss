@@ -1,0 +1,67 @@
+.repairing-page{
+    .repairing-content{
+        top: 0px;
+        bottom: 45px;
+
+        .content-header{
+            padding-left: 15px;
+            color: $main-color-subtitle;
+            font-size: $main-font-subtitle;
+            background-color: white;
+            border-bottom: 1px solid $main-line-color;
+        }
+
+        .content-top {
+            margin-top: 15px;
+            background-color: white;
+
+            .contet-top-device-info{
+                display: flex;
+                flex-direction: row;
+                .device-icon {
+                    font-size: 80px;
+                    color: $main-background-color;
+                    margin-left: 15px;
+                    margin-right: 15px;
+                }
+                .top-right{
+                    .content-device-name{
+                        margin-top: 15px;
+                        font-size: $main-font-title;
+                        color: $main-color-title;
+                    }
+                    .content-device-subname{
+                        margin-top: 5px;
+                        font-size: $main-font-subtitle;
+                        color: $main-color-subtitle;
+                    }
+                }
+            }
+        }
+
+        .content-bottom{
+            margin-top: 15px;
+            .content-selecte-user{
+                border-bottom: 1px solid $main-line-color;
+                flex: 1;
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 30px;
+                .selecte-user-title{
+                    padding-left: 15px;
+                    background-color: white;
+                    width: 126px;
+                    border-right: 1px solid $main-line-color;
+                    font-size: $main-font-title;
+
+                }
+                .selecte-input{
+                    width: 100%;
+                    padding-left: 15px;
+                }
+            }
+
+        }
+    }
+}

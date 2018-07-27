@@ -34,9 +34,9 @@
 
         <!-- 待处理 -->
         <template v-if="segmentBarIndex==2">
-            <scroll :items="waitehandleData" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
-                <li v-for="(item,index) in waitehandleData" :key="index" :item="item">
-                    <repair-item :item="item" :itemClick="waitehandleItemClick"></repair-item>
+            <scroll :items="RepairStore.handleingData" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
+                <li v-for="(item,index) in RepairStore.handleingData" :key="index" :item="item">
+                    <repair-item :item="item" :itemClick="handleingItemClick"></repair-item>
                 </li>
             </scroll>
         </template>
@@ -49,12 +49,17 @@ import scroll from '../../../common/scroll.vue';
 import SegmentBar from '../../../common/segmentBar';
 import RepairItem from '../../../common/repairitem';
 
+import {
+    mapState,
+    mapActions,
+} from 'vuex';
+
 export default {
 
     data() {
         return {
 
-            titlesArray: ['待派工', '待接单', '待处理'],
+            titlesArray: ['待派工', '待接单', '维修中'],
             segmentBarIndex: 0,
 
             // 待派工
@@ -65,12 +70,13 @@ export default {
             takeordersData: [],
             takeordersPage: 1,
 
-            // 待处理
-            waitehandleData: [],
-            waitehandlePage: 1,
-
-
         }
+    },
+
+    computed: {
+        ...mapState([
+            'RepairStore',
+        ])
     },
 
     mounted() {
@@ -78,6 +84,10 @@ export default {
     },
 
     methods: {
+        ...mapActions([
+            'getRepairHandleList',
+            'getRepairProcessList',
+        ]),
 
         // 待派单
         readyrepairItemClick() {
@@ -87,9 +97,10 @@ export default {
         takeordersItemClick() {
             this.$f7router.navigate('/takeorders/');
         },
-        // 待维修
-        waitehandleItemClick() {
-            this.$f7router.navigate('/readyrepair/');
+        // 维修中
+        handleingItemClick(itemData) {
+            this.getRepairProcessList(itemData)
+            this.$f7router.navigate('/repairing/');
         },
 
         switchTab(index) {
@@ -99,7 +110,7 @@ export default {
                     this.onPullingDown()
                 }
             } else if (index == 2){
-                if (this.waitehandleData.length < 1) {
+                if (this.RepairStore.handleingData.length < 1) {
                     this.onPullingDown()
                 }
             }
@@ -114,6 +125,8 @@ export default {
                 this.getRepairData(1, 2, scroll)
             } else {
                 this.waitehandlePage = 1
+                this.getRepairHandleList()
+                console.log(this.RepairStore.handleingData);
             }
         },
 
@@ -125,7 +138,8 @@ export default {
                 this.takeordersPage += 1
                 this.getRepairData(this.takeordersPage, 2, scroll)
             } else {
-                this.waitehandlePage += 1
+                this.RepairStore.handleingPageNumber += 1
+                this.getRepairHandleList()
             }
         },
 
@@ -179,15 +193,6 @@ export default {
                         }
                     }
 
-                    else {
-                        if (pageNumber == 1) {
-                            vm.waitehandleData = data.DispatchList;
-                        } else {
-                            if (data.DispatchList.count > 0) {
-                                vm.waitehandleData = vm.waitehandleData.push(data.DispatchList)
-                            }
-                        }
-                    }
                 }
 
 

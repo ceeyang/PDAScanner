@@ -1,26 +1,26 @@
 .measure-item{
-    background-color: white;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid $main-line-color;
-    border-top:1px solid $main-line-color;
-    margin-top: 5px;
+    flex: 1;
+    border-bottom: 1px solid $main-color-line;
+    padding-bottom: 10px;
     .item-content-left{
-        margin-left: 15px;
+        font-size: 50px;
+        color: $main-background-color;
+        //padding-left: 13px;
+    }
+    .item-content-centern{
+        width: 100%;
+        padding-left: 15px;
         .item-content-title{
-            font-size: $main-font-title;
+            padding-top: 10px;
+        }
+        .item-content-subtitle{
+            padding-top: 2px;
         }
     }
     .item-content-right{
-        margin-right: 15px;
-        display: flex;
-        flex-direction: row;
-        .item-content-status{
-            border: 1px solid $main-background-color;
-            font-size: 15px;
-            text-align: center;
-        }
+        font-size: 40px;
+        // padding-right: 15px;
     }
 }

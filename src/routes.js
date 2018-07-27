@@ -77,6 +77,10 @@ export default [{
     path: '/takeorders/',
     component: require('./assets/vue/pages/home/repair/takeorders.vue')
   },
+  {
+    path: '/repairing/',
+    component: require('./assets/vue/pages/home/repair/repairing.vue')
+  },
 
 
   //  scanrepair
