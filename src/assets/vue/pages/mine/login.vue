@@ -157,6 +157,7 @@ export default {
                 if (data.Status) {
                     localStorage.UserName = data.UserName;
                     vm.getRepositories();
+                    toast.hide()
                 } else {
                     let msg = data.Msg;
                     console.log(msg);
@@ -170,9 +171,6 @@ export default {
                     vm.toastCenter.open();
                 }
             });
-
-            toast.hide()
-
         },
 
         getRepositories() {
