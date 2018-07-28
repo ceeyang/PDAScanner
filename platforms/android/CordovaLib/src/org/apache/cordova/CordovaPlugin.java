@@ -31,6 +31,7 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.KeyEvent;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -417,6 +418,10 @@ public class CordovaPlugin {
      */
     public void onRequestPermissionResult(int requestCode, String[] permissions,
                                           int[] grantResults) throws JSONException {
+
+    }
+
+    public void dispatchKeyEvent(KeyEvent event){
 
     }
 }

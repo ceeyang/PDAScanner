@@ -19,23 +19,44 @@
 
 package com.ceeyang.pdascanner;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.view.KeyEvent;
+
+import com.common.plugin.scanner.ScannerPlugin;
+
 import org.apache.cordova.*;
 
-public class MainActivity extends CordovaActivity
-{
+public class MainActivity extends CordovaActivity {
+
+    private ScannerPlugin mScannerPlugin = null;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
-        // enable Cordova apps to be started in the background
         Bundle extras = getIntent().getExtras();
         if (extras != null && extras.getBoolean("cdvStartInBackground", false)) {
             moveTaskToBack(true);
         }
-
-        // Set by <content src="index.html" /> in config.xml
         loadUrl(launchUrl);
+        if(ActivityCompat.checkSelfPermission(this,Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CAMERA},00);
+        }
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (appView!=null){
+            CordovaPlugin scannerPlugin = appView.getPluginManager().getPlugin("ScannerPlugin");
+            if (scannerPlugin!=null){
+                scannerPlugin.dispatchKeyEvent(event);
+            }
+        }
+        return super.dispatchKeyEvent(event);
     }
 }

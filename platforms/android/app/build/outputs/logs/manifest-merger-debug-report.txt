@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
-INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
-INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
-INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
+ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-21:12
 MERGED from [:barcodescanner-release-2.1.5:] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:support-v4:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/f68004cb559039920e9ca951f9174a24/AndroidManifest.xml:17:1-22:12
 MERGED from [:CordovaLib] /Users/yangxichuan/Desktop/pdascanner/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:1-27:12
@@ -16,9 +16,9 @@ MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/yangxichuan/.gradle/ca
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/d891bc53560b529a8ccb892a7cd8a99d/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/11bb4aee2644f30f64cd2f48b0653c4a/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/d108f4f1fa019bda7e4d3a8288976a46/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
-INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
-INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
+INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:1-21:12
 	package
 		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:2:102-134
 		INJECTED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml
@@ -54,7 +54,7 @@ ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/
 	android:name
 		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:4:22-64
 application
-ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:5:5-14:19
+ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:5:5-15:19
 MERGED from [:barcodescanner-release-2.1.5:] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:11:5-12:19
 MERGED from [:barcodescanner-release-2.1.5:] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:11:5-12:19
 	android:supportsRtl
@@ -111,8 +111,14 @@ ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/
 		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:13:19-40
 	android:name
 		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:13:41-109
+activity#com.zbar.lib.CaptureActivity
+ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:14:9-102
+	android:screenOrientation
+		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:14:63-99
+	android:name
+		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:14:19-62
 uses-sdk
-ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:15:5-74
+ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:16:5-74
 MERGED from [:barcodescanner-release-2.1.5:] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:7:5-9:41
 MERGED from [:barcodescanner-release-2.1.5:] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:27.1.1] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/f68004cb559039920e9ca951f9174a24/AndroidManifest.xml:20:5-44
@@ -138,20 +144,24 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/yangxichuan/.gradle/
 MERGED from [android.arch.core:runtime:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/d108f4f1fa019bda7e4d3a8288976a46/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.0] /Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/d108f4f1fa019bda7e4d3a8288976a46/AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
-		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:15:42-71
+		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:16:42-71
 	android:minSdkVersion
-		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:15:15-41
+		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:16:15-41
 uses-permission#android.permission.CAMERA
-ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:16:5-65
+ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:17:5-65
 	android:name
-		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:16:22-62
+		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:17:22-62
+uses-permission#android.permission.VIBRATE
+ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:18:5-66
+	android:name
+		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:18:22-63
 uses-permission#android.permission.FLASHLIGHT
-ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:17:5-69
+ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:19:5-69
 	android:name
-		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:17:22-66
+		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:19:22-66
 uses-feature#android.hardware.camera
-ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:18:5-84
+ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:20:5-84
 	android:required
-		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:18:58-81
+		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:20:58-81
 	android:name
-		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:18:19-57
+		ADDED from /Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml:20:19-57
