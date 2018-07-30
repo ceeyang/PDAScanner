@@ -14,23 +14,17 @@
 
         <!-- list -->
         <f7-list>
-            <f7-list-item link="/modifypsd/" title="修改密码"></f7-list-item>
+            <!-- <f7-list-item link="/modifypsd/" title="修改密码"></f7-list-item> -->
             <f7-list-item @click='logoutpop' title="退出登录"></f7-list-item>
         </f7-list>
 
 
         <!-- Actions -->
         <f7-actions :opened='show'>
-            <!-- Actions Group -->
             <f7-actions-group>
-                <!-- Actions Label -->
-                <!-- <f7-actions-label>退出</f7-actions-label> -->
-                <!-- Actions Buttons -->
                 <f7-actions-button @click="logout">退出登录</f7-actions-button>
             </f7-actions-group>
-            <!-- Another Group -->
             <f7-actions-group>
-                <!-- Cancel/Close Button -->
                 <f7-actions-button @click="cancel" color="red" bold>取消</f7-actions-button>
             </f7-actions-group>
         </f7-actions>

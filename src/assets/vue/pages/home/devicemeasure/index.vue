@@ -89,6 +89,7 @@ export default {
 
     mounted() {
 
+        // 获取科室列表
         this.getMeteringEqu()
 
         this.items = allData;
@@ -109,6 +110,8 @@ export default {
 
 
     methods: {
+
+        // 获取科室下面的设备
         getMeteringEqu() {
             let params = {
                 'StoreId': localStorage.storeId,

@@ -17,20 +17,27 @@
                     <i class="iconfont device-icon">&#xe736;</i>
                     <div class="top-right">
                         <div class="content-device-name">
-                            {{itemData.EquName || "设备名称"}}
+                            设备名称:  {{RepairStore.mCurrentRepair.EquName || "暂无名称"}}
                         </div>
                         <div class="content-device-subname">
-                            报修科室:  {{itemData.DepartmentName || "暂无科室"}}
+                            报修科室:  {{RepairStore.mCurrentRepair.DepartmentName || "暂无科室"}}
                         </div>
                         <div class="content-device-subname">
-                            维修单号:  {{itemData.RepairNo || "暂无编号"}}
+                            维修单号:  {{RepairStore.mCurrentRepair.RepairNo || "暂无编号"}}
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="content-bottom">
-                <div class="content-header">维修过程记录</div>
+                <div class="content-header-bottom">
+                    <div class="content-header-title">
+                        维修过程记录
+                    </div>
+                    <div class="content-add-button" @click="addClickAction">
+                        <i class="iconfont">&#xe6df;</i>
+                    </div>
+                </div>
                 <scroll :items="RepairStore.mCurrentRepairProcessList">
                     <li v-for="(item,index) in RepairStore.mCurrentRepairProcessList" :key="index" :item="item">
                         <repairing-item :item="item" :itemClick="repairingItemClick" :itemDeleteBtnClick="itemDeleteBtnClick"></repairing-item>
@@ -59,7 +66,7 @@ export default {
 
     data() {
         return {
-            itemData: [],
+
         }
     },
 
@@ -77,12 +84,16 @@ export default {
 
     mounted() {
 
-        let itemData = JSON.parse(localStorage.ItemData);
-        this.itemData = itemData
-        console.log(itemData);
+        // 初始化维修记录
+        this.$store.dispatch('getRepairProcessList')
     },
 
     methods: {
+
+        addClickAction() {
+            this.$f7router.navigate("/NewRepairRecord/")
+        },
+
         NavBack() {
             this.$f7router.back()
         },

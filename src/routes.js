@@ -1,10 +1,6 @@
 export default [{
     path: '/',
     component: require('./assets/vue/pages/mine/login.vue')
-  },{
-    path: '/home/',
-    // component: require('./assets/vue/pages/home.vue')
-    component: require('./assets/vue/pages/home/home.vue')
   },
   {
     path: '/chats/',
@@ -27,6 +23,11 @@ export default [{
   },
 
 
+
+  {
+    path: '/home/',
+    component: require('./assets/vue/pages/home/home.vue')
+  },
   {
     path: '/assetcheck/',
     component: require('./assets/vue/pages/home/assetcheck/assetcheck.vue')
@@ -81,6 +82,12 @@ export default [{
     path: '/repairing/',
     component: require('./assets/vue/pages/home/repair/repairing.vue')
   },
+  {
+    path: '/NewRepairRecord/',
+    component: require('./assets/vue/pages/home/repair/NewRepairRecord.vue')
+  },
+
+
 
 
   //  scanrepair
@@ -96,6 +103,13 @@ export default [{
     path: '/newRepair/',
     component: require('./assets/vue/pages/home/scanrepair/newRepair.vue')
   },
+  {
+    path: '/ScanRepairDetail/',
+    component: require('./assets/vue/pages/home/scanrepair/ScanRepairDetail.vue')
+  },
+
+
+
   {
       path: '/search/',
       component: require('./assets/vue/pages/home/search/index.vue')

@@ -1,5 +1,5 @@
 <template lang="html">
-    <f7-page class="ready-repair-page">
+    <f7-page class="apply-repair-page">
         <!-- Nav  -->
         <f7-navbar>
             <f7-nav-left>
@@ -7,7 +7,7 @@
                     <i class="iconfont">&#xe605;</i>
                 </div>
             </f7-nav-left>
-            <f7-nav-title :title="viewType=='apply'?'申请报修':'查看详情'"></f7-nav-title>
+            <f7-nav-title :title="scanRepairStore.mViewType=='apply'?'申请报修':'查看详情'"></f7-nav-title>
         </f7-navbar>
 
         <div class="repair-content">
@@ -18,13 +18,13 @@
                     <i class="iconfont device-icon">&#xe736;</i>
                     <div class="top-right">
                         <div class="content-device-name">
-                            {{itemData.EquName || "设备名称"}}
+                            资产名称:  {{scanRepairStore.mEquModel.EquName || "设备名称"}}
                         </div>
                         <div class="content-device-subname">
-                            资产编号:  {{itemData.EquCode || "无"}}
+                            资产编号:  {{scanRepairStore.mEquModel.EquCode || "无"}}
                         </div>
                         <div class="content-device-subname">
-                            规格型号:  {{itemData.EquType || "无"}}
+                            规格型号:  {{scanRepairStore.mEquModel.EquType || "无"}}
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <cube-button v-if="viewType=='apply'" @click="applyButtonAction" class="ready-repair-bottom">申请报修</cube-button>
+        <cube-button v-if="scanRepairStore.mViewType=='apply'" @click="applyButtonAction" class="ready-repair-bottom">申请报修</cube-button>
 
     </f7-page>
 </template>
@@ -50,6 +50,12 @@ import InputCell from '../../../common/inputcell.vue';
 import RepairItem from '../../../common/repairitem.vue';
 import CommonCell from '../../../common/commonCell.vue';
 import SelectedInput from '../../../common/selectedinput.vue';
+import {
+    mapState,
+    mapActions,
+    mapMutations,
+    mapGetters
+} from 'vuex';
 
 export default {
 
@@ -74,6 +80,11 @@ export default {
         }
     },
 
+    computed: {
+        ...mapState([
+            'scanRepairStore',
+        ])
+    },
 
     mounted() {
 
@@ -120,9 +131,6 @@ export default {
         },
 
         inputSearchAction(searchvalue) {
-
-            this.currentSelecteInputData = ['hahah', 'heiheie', 'nice']
-            console.log('searchvalue : ' + searchvalue);
 
             let params = {
                 'QueryText': searchvalue,

@@ -46,6 +46,12 @@
 import scroll from '../../../common/scroll.vue';
 import SegmentBar from '../../../common/segmentBar';
 import RepairItem from '../../../common/repairitem.vue';
+import {
+    mapState,
+    mapActions,
+    mapMutations,
+    mapGetters
+} from 'vuex';
 
 export default {
 
@@ -65,6 +71,12 @@ export default {
 
             currentPageIndex: 1,
         }
+    },
+
+    computed: {
+        ...mapState([
+            'scanRepairStore',
+        ])
     },
 
     mounted() {
@@ -196,9 +208,10 @@ export default {
 
         },
 
-        itemClick() {
-
-            localStorage.setItem('repairViewType', this.segmentBarIndex == 0 ? "apply" : "check");
+        itemClick(item) {
+            this.scanRepairStore.mEquModel = item
+            this.scanRepairStore.mViewType = this.segmentBarIndex == 0 ? "apply" : "check"
+            console.log(this.scanRepairStore.mViewType);
             this.$f7router.navigate('/applyrepair/');
         },
 

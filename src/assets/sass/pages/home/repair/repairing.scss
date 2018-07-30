@@ -41,6 +41,25 @@
 
         .content-bottom{
             margin-top: 15px;
+            .content-header-bottom{
+                display: flex;
+                background-color: white;
+                justify-content: space-between;
+                border-bottom: 1px solid $main-line-color;
+                flex: 1;
+
+                height: 20px;
+                .content-header-title{
+                    margin-left: 15px;
+                    color: $main-color-subtitle;
+                    font-size: $main-font-subtitle;
+                }
+                .content-add-button{
+                    margin-right: 15px;
+                    color: $main-color-subtitle;
+                    font-size: $main-font-subtitle;
+                }
+            }
             .content-selecte-user{
                 border-bottom: 1px solid $main-line-color;
                 flex: 1;

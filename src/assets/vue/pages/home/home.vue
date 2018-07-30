@@ -48,6 +48,12 @@ import FootBar from '../../common/footBar';
 import NavBar from '../../common/navBar';
 import {exec} from 'assets/js/common/androidPlugin.js'
 import * as Env from 'assets/js/common/env.js'
+import {
+    mapState,
+    mapActions,
+    mapMutations,
+    mapGetters
+} from 'vuex';
 
 export default {
 
@@ -57,12 +63,19 @@ export default {
         }
     },
 
+    computed: {
+        ...mapState([
+            'scanRepairStore',
+        ])
+    },
+
     mounted() {
         this.companyName = this.globalSetting.companyName;
         if (Env.isAndroid) {//android platform
             exec('ScannerPlugin','init',[],this.handleCode,()=>{})
         }
     },
+
 
     beforeCreate: function() {
         //('创建vue实例前',this);
@@ -88,6 +101,9 @@ export default {
     },
 
     methods: {
+        ...mapActions([
+            'getEquDetail',
+        ]),
 
         itemClick() {
 
@@ -112,43 +128,54 @@ export default {
 
         handleCode(res){
             console.log(res);
+
+            const toast = this.$createToast({
+                time: 0,
+                txt: '获取资产信息中...',
+            })
+            toast.show()
+
+            let vm = this
+            this.getEquDetail(res).then((data) => {
+                toast.hide()
+                if (data.Status && data.EquModel) {
+                    vm.scanRepairStore.mViewType = "apply"
+                    vm.$f7router.navigate("/applyrepair/")
+                } else {
+                    if (!vm.toastCenter) {
+                        vm.toastCenter = vm.$f7.toast.create({
+                            text: "获取资产信息失败",
+                            closeTimeout: 2000,
+                            position: 'center',
+                        });
+                    }
+                    vm.toastCenter.open();
+                }
+            })
+            setTimeout(function () {
+                toast.hide()
+            }, 3000);
         },
 
         barcodeScanner() {
-            console.log('barcodeScanner');
-            console.log(cordova.plugins);
+            let vm = this
             if (Env.isAndroid) {//android platform
-                exec('ScannerPlugin','camera',[],this.handleCode,()=>{})
+                exec('ScannerPlugin','camera',[],this.handleCode,(error)=>{
+                    if (!vm.toastCenter) {
+                        vm.toastCenter = vm.$f7.toast.create({
+                            text: "扫码失败, 请重试",
+                            closeTimeout: 2000,
+                            position: 'center',
+                        });
+                    }
+                    vm.toastCenter.open();
+                })
             }
             if(Env.isIOS){
-                
+
             }
-            // cordova.plugins.barcodeScanner.scan(
-            //     function(result) {
-            //         alert("We got a barcode\n" +
-            //             "Result: " + result.text + "\n" +
-            //             "Format: " + result.format + "\n" +
-            //             "Cancelled: " + result.cancelled);
-            //     },
-            //     function(error) {
-            //         alert("Scanning failed: " + error);
-            //     }, {
-            //         preferFrontCamera: false, // iOS and Android
-            //         showFlipCameraButton: true, // iOS and Android
-            //         showTorchButton: true, // iOS and Android
-            //         torchOn: true, // Android, launch with the torch switched on (if available)
-            //         saveHistory: true, // Android, save scan history (default false)
-            //         prompt: "Place a barcode inside the scan area", // Android
-            //         resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
-            //         formats: "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
-            //         orientation: "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
-            //         disableAnimations: true, // iOS
-            //         disableSuccessBeep: false // iOS and Android
-            //     }
-            // );
 
-
-        }
+        },
     },
 
     components: {

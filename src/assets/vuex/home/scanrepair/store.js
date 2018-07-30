@@ -1,6 +1,4 @@
 import * as actions from './actions';
-import getters from './getters';
-import mutations from './mutations';
 
 const state = {
     readyrepairData:[],            // 未报修
@@ -33,6 +31,16 @@ const state = {
     problemData: [], // 当前选择问题
     problemDataList: [], // 当前搜索问题列表
     problemNameList: [], // 当前搜索问题名称列表
+
+
+
+    // 详情页面的资产信息, 包括扫码申请, 新增申请, 已经设备报修申请
+    mEquModel: [],
+
+    // 详情页面类型 : 1. apply 申请页面; 2. check 查看页面
+    mViewType: '',
+
+
 
 }
 

@@ -99,7 +99,7 @@ export default {
         },
         // 维修中
         handleingItemClick(itemData) {
-            this.getRepairProcessList(itemData)
+            this.RepairStore.mCurrentRepair = itemData
             this.$f7router.navigate('/repairing/');
         },
 

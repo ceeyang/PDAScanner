@@ -4,11 +4,6 @@
     <!-- Nav -->
     <f7-navbar>
         <f7-nav-title title='消息'></f7-nav-title>
-        <f7-nav-right>
-            <div @click="barcodeScanner">
-                <i class="f7-icons">camera</i>
-            </div>
-        </f7-nav-right>
     </f7-navbar>
 
     <!-- segment 选择器 -->
@@ -206,9 +201,6 @@ export default {
             this.currentIndex = index;
         },
 
-        barcodeScanner() {
-
-        },
 
         onfresh() {
             console.log('.....');

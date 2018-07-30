@@ -7,7 +7,7 @@
                     <i class="iconfont">&#xe605;</i>
                 </div>
             </f7-nav-left>
-            <f7-nav-title title='资产报修'></f7-nav-title>
+            <f7-nav-title title='新增资产报修'></f7-nav-title>
         </f7-navbar>
 
         <selected-input title="报修科室" :data="scanRepairStore.departmentNameList" placeholder="请添加科室" @itemClick="departmentSearchItemClickAction" @searchAction="departmentInputSearchAction"></selected-input>
@@ -25,8 +25,6 @@ import SelectedInput from '../../../common/selectedinput'
 import {
     mapState,
     mapActions,
-    mapMutations,
-    mapGetters
 } from 'vuex';
 export default {
 

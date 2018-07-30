@@ -160,7 +160,6 @@ export default {
                     toast.hide()
                 } else {
                     let msg = data.Msg;
-                    console.log(msg);
                     if (!vm.toastCenter) {
                         vm.toastCenter = vm.$f7.toast.create({
                             text: msg,
@@ -175,6 +174,12 @@ export default {
 
         getRepositories() {
 
+            const toast = this.$createToast({
+                time: 0,
+                txt: '获取仓库地址中...',
+            })
+            toast.show()
+
             // 获取仓库地址
             let vm = this;
             let params = {
@@ -182,6 +187,7 @@ export default {
             }
             this.get(this.api.WarehouseList, params, function(response) {
 
+                toast.hide()
                 var data = JSON.parse(response);
                 vm.WarehouseData = data.WarehouseList;
                 localStorage.WarehouseData = JSON.stringify(data.WarehouseList);
@@ -194,7 +200,9 @@ export default {
                 vm.slots[0].values = warehouseNameArr;
                 vm.popupVisible = true;
             })
-
+            setTimeout(function () {
+                toast.hide()
+            }, 5000);
         },
 
         onValuesChange(picker, values) {

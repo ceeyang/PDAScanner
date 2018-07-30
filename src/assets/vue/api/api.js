@@ -1,8 +1,8 @@
 
 // 正式环境打包使用
-const rootURL = `http://120.78.92.212:8006`
+// const rootURL = `http://120.78.92.212:8006`
 // 浏览器运行使用
-// const rootURL = ``
+const rootURL = ``
 
 export default {
     // 登录
@@ -113,7 +113,7 @@ export default {
     // 消息解耦
     getNoticeList: `${rootURL}/api/BlendQuery/NoticeList`,
 
-    // 巡检资产的科室列表
+    // 计量资产的科室列表
     getMeteringEqu: `${rootURL}/api/Metering/MeteringEqu`,
 
 }

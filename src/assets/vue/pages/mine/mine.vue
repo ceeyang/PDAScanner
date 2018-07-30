@@ -6,11 +6,6 @@
         <!-- <nav-bar title="我"></nav-bar> -->
         <f7-navbar>
             <f7-nav-title title='我'></f7-nav-title>
-            <f7-nav-right>
-                <div @click="barcodeScanner">
-                    <i class="f7-icons">camera</i>
-                </div>
-            </f7-nav-right>
         </f7-navbar>
 
         <f7-list class="components-list">
@@ -31,11 +26,6 @@
 
         <!-- tabbar -->
         <foot-bar select="mine"></foot-bar>
-        <!-- <f7-toolbar tabbar labels>
-            <f7-link><a class="link" href="/chats/" animate><i class="f7-icons">chats</i><span>消息</span></a></f7-link>
-            <f7-link><a class="link" href="/"><i class="f7-icons">home</i><span>主页</span></a></f7-link>
-            <f7-link><a class="link" ><i class="f7-icons">personal</i><span>我的</span></a></f7-link>
-        </f7-toolbar> -->
     </f7-page>
 </template>
 
@@ -53,9 +43,7 @@ export default {
     },
 
     methods: {
-        barcodeScanner() {
-            console.log('barcodeScanner');
-        }
+
     },
 
 
