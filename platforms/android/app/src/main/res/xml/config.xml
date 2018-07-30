@@ -13,7 +13,7 @@
     </feature>
     <hook src="hooks/hookers.js" type="before_prepare" />
     <hook src="hooks/beforedep.js" type="before_deploy" />
-    <name>pdascanner</name>
+    <name>扫描器</name>
     <description>
         Brand new cordova project!
     </description>

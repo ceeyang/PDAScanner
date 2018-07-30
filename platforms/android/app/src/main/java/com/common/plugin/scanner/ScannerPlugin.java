@@ -1,8 +1,11 @@
 package com.common.plugin.scanner;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.os.Build;
+import android.support.v4.app.ActivityCompat;
 import android.view.KeyEvent;
 
 import com.zbar.lib.CaptureActivity;
@@ -35,30 +38,34 @@ public class ScannerPlugin extends CordovaPlugin{
 
 
     private void startCamera() {
-        String brand = Build.BRAND;
-        if ("idata".equalsIgnoreCase(brand)){
-            if(open){
-                return;
-            }
-            scannerInterface.scan_start();
-            open = true;
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    open = false;
-                    scannerInterface.scan_stop();
+            String brand = Build.BRAND;
+            if ("idata".equalsIgnoreCase(brand)){
+                if(open){
+                    return;
                 }
-            }).start();
-        }else {
-            Intent intent = new Intent(cordova.getActivity(), CaptureActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            cordova.startActivityForResult(this,intent,Constants.CAMERA_SCANNER);
-        }
+                scannerInterface.scan_start();
+                open = true;
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        open = false;
+                        scannerInterface.scan_stop();
+                    }
+                }).start();
+            }else {
+                if(ActivityCompat.checkSelfPermission(cordova.getActivity(), Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(cordova.getActivity(),new String[]{Manifest.permission.CAMERA},00);
+                }else {
+                    Intent intent = new Intent(cordova.getActivity(), CaptureActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    cordova.startActivityForResult(this,intent,Constants.CAMERA_SCANNER);
+                }
+            }
     }
 
     private void init(){

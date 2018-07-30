@@ -44,9 +44,6 @@ public class MainActivity extends CordovaActivity {
             moveTaskToBack(true);
         }
         loadUrl(launchUrl);
-        if(ActivityCompat.checkSelfPermission(this,Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CAMERA},00);
-        }
     }
 
     @Override

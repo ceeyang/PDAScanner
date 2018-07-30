@@ -120,6 +120,9 @@ export default {
             if (Env.isAndroid) {//android platform
                 exec('ScannerPlugin','camera',[],this.handleCode,()=>{})
             }
+            if(Env.isIOS){
+                
+            }
             // cordova.plugins.barcodeScanner.scan(
             //     function(result) {
             //         alert("We got a barcode\n" +

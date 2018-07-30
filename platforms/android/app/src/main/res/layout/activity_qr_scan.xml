@@ -15,8 +15,7 @@
     <ImageView
         android:id="@+id/top_mask"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="150dp"
         android:background="@mipmap/scan_mask"
         android:contentDescription="@string/app_name" />
 

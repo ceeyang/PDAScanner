@@ -32,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ScannerPlugin.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ScannerPlugin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/common/plugin/scanner/ScannerPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="44" column="39" lean-forward="true" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+            <state relative-caret-position="474">
+              <caret line="63" column="75" lean-forward="false" selection-start-line="63" selection-start-column="75" selection-end-line="63" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,8 +47,8 @@
       <file leaf-file-name="CaptureActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zbar/lib/CaptureActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1935">
-              <caret line="149" column="62" lean-forward="false" selection-start-line="149" selection-start-column="62" selection-end-line="149" selection-end-column="62" />
+            <state relative-caret-position="268">
+              <caret line="106" column="39" lean-forward="false" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,8 +83,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ceeyang/pdascanner/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="47" column="94" lean-forward="false" selection-start-line="47" selection-start-column="94" selection-end-line="47" selection-end-column="94" />
+            <state relative-caret-position="270">
+              <caret line="45" column="27" lean-forward="false" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -96,21 +96,21 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider editor-type-id="android-manifest">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="64" lean-forward="false" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
+            <state relative-caret-position="135">
+              <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -3176,13 +3176,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/common/zbar/lib/decode/DecodeThread.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zbar/lib/decode/DecodeThread.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_qr_scan.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zbar/lib/CaptureActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zbar/lib/decode/CaptureActivityHandler.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zbar/lib/decode/DecodeHandler.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ceeyang/pdascanner/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/common/plugin/scanner/ScannerPlugin.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_qr_scan.xml" />
       </list>
     </option>
   </component>
@@ -3364,13 +3364,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.0.0" />
     <property name="device.picker.selection" value="1270516" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1532765410896" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1532766776084" />
     <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
     <property name="ExportApk.Flavors" value="" />
     <property name="ExportApk.BuildType" value="release" />
     <property name="ExportApk.SignV1" value="true" />
     <property name="ExportApk.SignV2" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="And&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml&#10;Sc&#9;PSI&#9;JAVA://com.common.plugin.scanner.ScannerPlugin&#10;main&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/java/com/ceeyang/pdascanner/MainActivity.java&#10;Scan&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/java/com/common/plugin/scanner/ScannerPlugin.java&#10;config.xml&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/res/xml/config.xml&#10;Main&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/java/com/ceeyang/pdascanner/MainActivity.java&#10;Sy&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/CordovaLib/src/org/apache/cordova/engine/SystemWebView.java&#10;Sca&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/java/com/common/plugin/scanner/ScannerPlugin.java&#10;Co&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/CordovaLib/src/org/apache/cordova/CordovaActivity.java&#10;Cordo&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/CordovaLib/src/org/apache/cordova/CordovaPlugin.java&#10;Cordova&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/CordovaLib/src/org/apache/cordova/CordovaActivity.java&#10;CordovaWeb&#9;PSI&#9;JAVA://org.apache.cordova.CordovaWebView&#10;config&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/res/xml/config.xml&#10;config.xm&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/res/xml/config.xml" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml&#10;main&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/java/com/ceeyang/pdascanner/MainActivity.java&#10;And&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/AndroidManifest.xml&#10;Sc&#9;PSI&#9;JAVA://com.common.plugin.scanner.ScannerPlugin&#10;Scan&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/java/com/common/plugin/scanner/ScannerPlugin.java&#10;config.xml&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/res/xml/config.xml&#10;Main&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/java/com/ceeyang/pdascanner/MainActivity.java&#10;Sy&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/CordovaLib/src/org/apache/cordova/engine/SystemWebView.java&#10;Sca&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/java/com/common/plugin/scanner/ScannerPlugin.java&#10;Co&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/CordovaLib/src/org/apache/cordova/CordovaActivity.java&#10;Cordo&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/CordovaLib/src/org/apache/cordova/CordovaPlugin.java&#10;Cordova&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/CordovaLib/src/org/apache/cordova/CordovaActivity.java&#10;CordovaWeb&#9;PSI&#9;JAVA://org.apache.cordova.CordovaWebView&#10;config&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/res/xml/config.xml&#10;config.xm&#9;FILE&#9;file:///Users/yangxichuan/Desktop/pdascanner/platforms/android/app/src/main/res/xml/config.xml" />
     <property name="DEBUGGABLE_DEVICE" value="idata-50_series-1270516" />
     <property name="DEBUGGABLE_PROCESS" value="com.ceeyang.pdascanner" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
@@ -4001,38 +4001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zbar/lib/CaptureActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1935">
-          <caret line="149" column="62" lean-forward="false" selection-start-line="149" selection-start-column="62" selection-end-line="149" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_qr_scan.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="64" lean-forward="false" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2235">
@@ -4059,19 +4027,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ceeyang/pdascanner/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="47" column="94" lean-forward="false" selection-start-line="47" selection-start-column="94" selection-end-line="47" selection-end-column="94" />
+        <state relative-caret-position="270">
+          <caret line="45" column="27" lean-forward="false" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/common/plugin/scanner/ScannerPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="44" column="39" lean-forward="true" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+        <state relative-caret-position="474">
+          <caret line="63" column="75" lean-forward="false" selection-start-line="63" selection-start-column="75" selection-end-line="63" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zbar/lib/CaptureActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="106" column="39" lean-forward="false" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_qr_scan.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
