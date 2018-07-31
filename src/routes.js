@@ -27,6 +27,7 @@ export default [{
   {
     path: '/home/',
     component: require('./assets/vue/pages/home/home.vue')
+    // component: require('./assets/vue/pages/home/index.vue')
   },
   {
     path: '/assetcheck/',

@@ -211,6 +211,7 @@ export default {
 
         // 设备型号失去焦点
         modelNumberOnblur() {
+            console.log('modelNumberOnblur');
             this.getSearchData();
         },
 

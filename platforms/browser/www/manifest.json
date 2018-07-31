@@ -1,10 +1,10 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "扫描器",
-  "short_name": "扫描器",
+  "name": "医修",
+  "short_name": "医修",
   "version": "com.ceeyang.pdascanner",
-  "description": "Brand new cordova project!",
+  "description": "医疗管理系统, 深圳市源泰达科技有限公司出品.",
   "author": "Apache Cordova Team",
   "icons": [],
   "start_url": "index.html"

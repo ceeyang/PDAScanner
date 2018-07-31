@@ -1,6 +1,4 @@
 export default {
-  // serverPath: 'http://tc.zhixueyun.com/zxy-mobile-new',
-  // serverPath: '/wechatserver',
   companyName: '深圳市源泰达科技有限公司',
   supportName: '深圳市源泰达科技有限公司',
   supportPhone: '18108120400',

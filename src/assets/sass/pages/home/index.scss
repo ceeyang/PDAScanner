@@ -1,0 +1,30 @@
+.page-content{
+    .page-content{
+        background-color: white;
+    }
+
+    .home-page-swiper{
+        height: 25%;
+        .swiper-wrapper{
+            border-bottom: 2px solid $main-line-color;
+        }
+        .swiper-images{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+    .home-page-content{
+        display: flex;
+        flex-wrap: wrap;
+        a{
+            color: $main-title-color;
+        };
+
+        i{
+            font-size: 25px;
+        };
+
+    }
+}
