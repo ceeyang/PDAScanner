@@ -1,8 +1,8 @@
 
 // 正式环境打包使用
-// const rootURL = `http://120.78.92.212:8006`
+const rootURL = `http://120.78.92.212:8006`
 // 浏览器运行使用
-const rootURL = ``
+// const rootURL = ``
 
 export default {
     // 登录

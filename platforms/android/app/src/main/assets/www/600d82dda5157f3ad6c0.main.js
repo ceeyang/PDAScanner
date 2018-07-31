@@ -83,11 +83,11 @@ var _toConsumableArray2 = __webpack_require__(/*! babel-runtime/helpers/toConsum
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
-var _getOwnPropertyDescriptor = __webpack_require__(/*! babel-runtime/core-js/object/get-own-property-descriptor */ 107);
+var _getOwnPropertyDescriptor = __webpack_require__(/*! babel-runtime/core-js/object/get-own-property-descriptor */ 108);
 
 var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
 
-var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 51);
+var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 52);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -229,7 +229,7 @@ var _freeze = __webpack_require__(/*! babel-runtime/core-js/object/freeze */ 156
 
 var _freeze2 = _interopRequireDefault(_freeze);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -1870,7 +1870,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getOwnPropertyDescriptor = __webpack_require__(/*! babel-runtime/core-js/object/get-own-property-descriptor */ 107);
+var _getOwnPropertyDescriptor = __webpack_require__(/*! babel-runtime/core-js/object/get-own-property-descriptor */ 108);
 
 var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
 
@@ -1878,7 +1878,7 @@ var _typeof2 = __webpack_require__(/*! babel-runtime/helpers/typeof */ 30);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
-var _promise = __webpack_require__(/*! babel-runtime/core-js/promise */ 63);
+var _promise = __webpack_require__(/*! babel-runtime/core-js/promise */ 51);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -2764,26 +2764,6 @@ exports.default = function (component, events) {
 
 /***/ }),
 /* 10 */
-/*!**************************************************************!*\
-  !*** ./node_modules/babel-runtime/helpers/classCallCheck.js ***!
-  \**************************************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-exports.default = function (instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-};
-
-/***/ }),
-/* 11 */
 /*!*************************************************!*\
   !*** ./node_modules/css-loader/lib/css-base.js ***!
   \*************************************************/
@@ -2870,7 +2850,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /*!**************************************************************!*\
   !*** ./node_modules/vue-style-loader/lib/addStylesClient.js ***!
   \**************************************************************/
@@ -3103,6 +3083,26 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
+/* 12 */
+/*!**************************************************************!*\
+  !*** ./node_modules/babel-runtime/helpers/classCallCheck.js ***!
+  \**************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+exports.default = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+/***/ }),
 /* 13 */
 /*!***********************************************************************!*\
   !*** ./node_modules/babel-runtime/core-js/object/get-prototype-of.js ***!
@@ -3295,7 +3295,7 @@ var _keys = __webpack_require__(/*! babel-runtime/core-js/object/keys */ 17);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -4969,7 +4969,7 @@ var index_esm = {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(/*! ./_is-object */ 36);
+var isObject = __webpack_require__(/*! ./_is-object */ 37);
 module.exports = function (it) {
   if (!isObject(it)) throw TypeError(it + ' is not an object!');
   return it;
@@ -5085,7 +5085,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -5354,96 +5354,6 @@ exports.default = Modal;
 
 /***/ }),
 /* 35 */
-/*!************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_object-dp.js ***!
-  \************************************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject = __webpack_require__(/*! ./_an-object */ 32);
-var IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ 97);
-var toPrimitive = __webpack_require__(/*! ./_to-primitive */ 76);
-var dP = Object.defineProperty;
-
-exports.f = __webpack_require__(/*! ./_descriptors */ 39) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
-  anObject(O);
-  P = toPrimitive(P, true);
-  anObject(Attributes);
-  if (IE8_DOM_DEFINE) try {
-    return dP(O, P, Attributes);
-  } catch (e) { /* empty */ }
-  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
-  if ('value' in Attributes) O[P] = Attributes.value;
-  return O;
-};
-
-
-/***/ }),
-/* 36 */
-/*!************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_is-object.js ***!
-  \************************************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports) {
-
-module.exports = function (it) {
-  return typeof it === 'object' ? it !== null : typeof it === 'function';
-};
-
-
-/***/ }),
-/* 37 */
-/*!**********************************************!*\
-  !*** ./src/assets/vue/common/repairitem.vue ***!
-  \**********************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-e8610a0c","scoped":false,"hasInlineConfig":false}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./repairitem.vue */ 548)
-}
-var Component = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
-  /* script */
-  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./repairitem.vue */ 550),
-  /* template */
-  __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-e8610a0c","hasScoped":false}!../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./repairitem.vue */ 551),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/yangxichuan/Desktop/pdascanner/src/assets/vue/common/repairitem.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] repairitem.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-e8610a0c", Component.options)
-  } else {
-    hotAPI.reload("data-v-e8610a0c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 38 */
 /*!*********************************************!*\
   !*** ./node_modules/vue/dist/vue.common.js ***!
   \*********************************************/
@@ -16414,6 +16324,96 @@ module.exports = Vue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 47), __webpack_require__(/*! ./../../timers-browserify/main.js */ 140).setImmediate))
 
 /***/ }),
+/* 36 */
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_object-dp.js ***!
+  \************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(/*! ./_an-object */ 32);
+var IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ 98);
+var toPrimitive = __webpack_require__(/*! ./_to-primitive */ 76);
+var dP = Object.defineProperty;
+
+exports.f = __webpack_require__(/*! ./_descriptors */ 39) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+  anObject(O);
+  P = toPrimitive(P, true);
+  anObject(Attributes);
+  if (IE8_DOM_DEFINE) try {
+    return dP(O, P, Attributes);
+  } catch (e) { /* empty */ }
+  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
+  if ('value' in Attributes) O[P] = Attributes.value;
+  return O;
+};
+
+
+/***/ }),
+/* 37 */
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_is-object.js ***!
+  \************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports) {
+
+module.exports = function (it) {
+  return typeof it === 'object' ? it !== null : typeof it === 'function';
+};
+
+
+/***/ }),
+/* 38 */
+/*!**********************************************!*\
+  !*** ./src/assets/vue/common/repairitem.vue ***!
+  \**********************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-e8610a0c","scoped":false,"hasInlineConfig":false}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./repairitem.vue */ 548)
+}
+var Component = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
+  /* script */
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./repairitem.vue */ 550),
+  /* template */
+  __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-e8610a0c","hasScoped":false}!../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./repairitem.vue */ 551),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/yangxichuan/Desktop/pdascanner/src/assets/vue/common/repairitem.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] repairitem.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e8610a0c", Component.options)
+  } else {
+    hotAPI.reload("data-v-e8610a0c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
 /* 39 */
 /*!**************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_descriptors.js ***!
@@ -16499,8 +16499,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(/*! ./_object-dp */ 35);
-var createDesc = __webpack_require__(/*! ./_property-desc */ 56);
+var dP = __webpack_require__(/*! ./_object-dp */ 36);
+var createDesc = __webpack_require__(/*! ./_property-desc */ 57);
 module.exports = __webpack_require__(/*! ./_descriptors */ 39) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
@@ -16534,7 +16534,7 @@ module.exports = function (it, key) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(/*! ./_iobject */ 99);
+var IObject = __webpack_require__(/*! ./_iobject */ 100);
 var defined = __webpack_require__(/*! ./_defined */ 77);
 module.exports = function (it) {
   return IObject(defined(it));
@@ -16904,6 +16904,17 @@ module.exports = {};
 
 /***/ }),
 /* 51 */
+/*!*******************************************************!*\
+  !*** ./node_modules/babel-runtime/core-js/promise.js ***!
+  \*******************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(/*! core-js/library/fn/promise */ 187), __esModule: true };
+
+/***/ }),
+/* 52 */
 /*!*************************************************************!*\
   !*** ./node_modules/babel-runtime/helpers/slicedToArray.js ***!
   \*************************************************************/
@@ -16965,7 +16976,7 @@ exports.default = function () {
 }();
 
 /***/ }),
-/* 52 */
+/* 53 */
 /*!********************************************************************************!*\
   !*** ./node_modules/framework7/components/swiper/swiper-class/utils/device.js ***!
   \********************************************************************************/
@@ -16989,7 +17000,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _device2.default;
 
 /***/ }),
-/* 53 */
+/* 54 */
 /*!*************************************************!*\
   !*** ./node_modules/framework7-vue/utils/f7.js ***!
   \*************************************************/
@@ -17046,7 +17057,7 @@ var f7 = {
 exports.default = f7;
 
 /***/ }),
-/* 54 */
+/* 55 */
 /*!********************************************************************************!*\
   !*** ./node_modules/framework7-vue/runtime-helpers/vue-component-set-state.js ***!
   \********************************************************************************/
@@ -17082,7 +17093,7 @@ exports.default = function (component, updater, callback) {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 55 */
+/* 56 */
 /*!******************************************************!*\
   !*** ./node_modules/template7/dist/template7.esm.js ***!
   \******************************************************/
@@ -17097,7 +17108,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -17113,7 +17124,7 @@ var _isFinite = __webpack_require__(/*! babel-runtime/core-js/number/is-finite *
 
 var _isFinite2 = _interopRequireDefault(_isFinite);
 
-var _stringify = __webpack_require__(/*! babel-runtime/core-js/json/stringify */ 61);
+var _stringify = __webpack_require__(/*! babel-runtime/core-js/json/stringify */ 62);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -17751,7 +17762,7 @@ exports.default = Template7;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 47)))
 
 /***/ }),
-/* 56 */
+/* 57 */
 /*!****************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_property-desc.js ***!
   \****************************************************************/
@@ -17770,7 +17781,7 @@ module.exports = function (bitmap, value) {
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /*!************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_to-object.js ***!
   \************************************************************/
@@ -17786,7 +17797,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /*!**************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_object-keys.js ***!
   \**************************************************************/
@@ -17795,7 +17806,7 @@ module.exports = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(/*! ./_object-keys-internal */ 98);
+var $keys = __webpack_require__(/*! ./_object-keys-internal */ 99);
 var enumBugKeys = __webpack_require__(/*! ./_enum-bug-keys */ 82);
 
 module.exports = Object.keys || function keys(O) {
@@ -17804,7 +17815,7 @@ module.exports = Object.keys || function keys(O) {
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /*!******************************************************!*\
   !*** ./node_modules/core-js/library/modules/_cof.js ***!
   \******************************************************/
@@ -17820,7 +17831,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/library/modules/_library.js ***!
   \**********************************************************/
@@ -17832,7 +17843,7 @@ module.exports = true;
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /*!**************************************************************!*\
   !*** ./node_modules/babel-runtime/core-js/json/stringify.js ***!
   \**************************************************************/
@@ -17843,7 +17854,7 @@ module.exports = true;
 module.exports = { "default": __webpack_require__(/*! core-js/library/fn/json/stringify */ 152), __esModule: true };
 
 /***/ }),
-/* 62 */
+/* 63 */
 /*!*********************************************************************!*\
   !*** ./node_modules/core-js/library/modules/es6.string.iterator.js ***!
   \*********************************************************************/
@@ -17856,7 +17867,7 @@ module.exports = { "default": __webpack_require__(/*! core-js/library/fn/json/st
 var $at = __webpack_require__(/*! ./_string-at */ 164)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(/*! ./_iter-define */ 102)(String, 'String', function (iterated) {
+__webpack_require__(/*! ./_iter-define */ 103)(String, 'String', function (iterated) {
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -17870,17 +17881,6 @@ __webpack_require__(/*! ./_iter-define */ 102)(String, 'String', function (itera
   return { value: point, done: false };
 });
 
-
-/***/ }),
-/* 63 */
-/*!*******************************************************!*\
-  !*** ./node_modules/babel-runtime/core-js/promise.js ***!
-  \*******************************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(/*! core-js/library/fn/promise */ 187), __esModule: true };
 
 /***/ }),
 /* 64 */
@@ -18073,7 +18073,7 @@ exports.f = {}.propertyIsEnumerable;
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var def = __webpack_require__(/*! ./_object-dp */ 35).f;
+var def = __webpack_require__(/*! ./_object-dp */ 36).f;
 var has = __webpack_require__(/*! ./_has */ 42);
 var TAG = __webpack_require__(/*! ./_wks */ 27)('toStringTag');
 
@@ -18389,7 +18389,7 @@ module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(/*! ./_is-object */ 36);
+var isObject = __webpack_require__(/*! ./_is-object */ 37);
 var document = __webpack_require__(/*! ./_global */ 25).document;
 // typeof document.createElement is 'object' in old IE
 var is = isObject(document) && isObject(document.createElement);
@@ -18408,7 +18408,7 @@ module.exports = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
-var isObject = __webpack_require__(/*! ./_is-object */ 36);
+var isObject = __webpack_require__(/*! ./_is-object */ 37);
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
 // and the second argument - flag - preferred type is a string
 module.exports = function (it, S) {
@@ -18505,7 +18505,7 @@ var store = global[SHARED] || (global[SHARED] = {});
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
   version: core.version,
-  mode: __webpack_require__(/*! ./_library */ 60) ? 'pure' : 'global',
+  mode: __webpack_require__(/*! ./_library */ 61) ? 'pure' : 'global',
   copyright: '© 2018 Denis Pushkarev (zloirock.ru)'
 });
 
@@ -18563,7 +18563,7 @@ var createDict = function () {
   var gt = '>';
   var iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(/*! ./_html */ 104).appendChild(iframe);
+  __webpack_require__(/*! ./_html */ 105).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -18612,9 +18612,9 @@ exports.f = __webpack_require__(/*! ./_wks */ 27);
 
 var global = __webpack_require__(/*! ./_global */ 25);
 var core = __webpack_require__(/*! ./_core */ 19);
-var LIBRARY = __webpack_require__(/*! ./_library */ 60);
+var LIBRARY = __webpack_require__(/*! ./_library */ 61);
 var wksExt = __webpack_require__(/*! ./_wks-ext */ 85);
-var defineProperty = __webpack_require__(/*! ./_object-dp */ 35).f;
+var defineProperty = __webpack_require__(/*! ./_object-dp */ 36).f;
 module.exports = function (name) {
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
   if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
@@ -18631,11 +18631,11 @@ module.exports = function (name) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var pIE = __webpack_require__(/*! ./_object-pie */ 69);
-var createDesc = __webpack_require__(/*! ./_property-desc */ 56);
+var createDesc = __webpack_require__(/*! ./_property-desc */ 57);
 var toIObject = __webpack_require__(/*! ./_to-iobject */ 43);
 var toPrimitive = __webpack_require__(/*! ./_to-primitive */ 76);
 var has = __webpack_require__(/*! ./_has */ 42);
-var IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ 97);
+var IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ 98);
 var gOPD = Object.getOwnPropertyDescriptor;
 
 exports.f = __webpack_require__(/*! ./_descriptors */ 39) ? gOPD : function getOwnPropertyDescriptor(O, P) {
@@ -18658,7 +18658,7 @@ exports.f = __webpack_require__(/*! ./_descriptors */ 39) ? gOPD : function getO
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
-var cof = __webpack_require__(/*! ./_cof */ 59);
+var cof = __webpack_require__(/*! ./_cof */ 60);
 var TAG = __webpack_require__(/*! ./_wks */ 27)('toStringTag');
 // ES3 wrong here
 var ARG = cof(function () { return arguments; }()) == 'Arguments';
@@ -19067,7 +19067,7 @@ var _vueComponentTransformJsxProps = __webpack_require__(/*! ../runtime-helpers/
 
 var _vueComponentTransformJsxProps2 = _interopRequireDefault(_vueComponentTransformJsxProps);
 
-var _vueComponentSetState = __webpack_require__(/*! ../runtime-helpers/vue-component-set-state.js */ 54);
+var _vueComponentSetState = __webpack_require__(/*! ../runtime-helpers/vue-component-set-state.js */ 55);
 
 var _vueComponentSetState2 = _interopRequireDefault(_vueComponentSetState);
 
@@ -19425,6 +19425,242 @@ module.exports = Component.exports
 
 /***/ }),
 /* 97 */
+/*!***********************************************!*\
+  !*** ./node_modules/path-browserify/index.js ***!
+  \***********************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// resolves . and .. elements in a path array with directory names there
+// must be no slashes, empty elements, or device names (c:\) in the array
+// (so also no leading and trailing slashes - it does not distinguish
+// relative and absolute paths)
+function normalizeArray(parts, allowAboveRoot) {
+  // if the path tries to go above the root, `up` ends up > 0
+  var up = 0;
+  for (var i = parts.length - 1; i >= 0; i--) {
+    var last = parts[i];
+    if (last === '.') {
+      parts.splice(i, 1);
+    } else if (last === '..') {
+      parts.splice(i, 1);
+      up++;
+    } else if (up) {
+      parts.splice(i, 1);
+      up--;
+    }
+  }
+
+  // if the path is allowed to go above the root, restore leading ..s
+  if (allowAboveRoot) {
+    for (; up--; up) {
+      parts.unshift('..');
+    }
+  }
+
+  return parts;
+}
+
+// Split a filename into [root, dir, basename, ext], unix version
+// 'root' is just a slash, or nothing.
+var splitPathRe =
+    /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
+var splitPath = function(filename) {
+  return splitPathRe.exec(filename).slice(1);
+};
+
+// path.resolve([from ...], to)
+// posix version
+exports.resolve = function() {
+  var resolvedPath = '',
+      resolvedAbsolute = false;
+
+  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
+    var path = (i >= 0) ? arguments[i] : process.cwd();
+
+    // Skip empty and invalid entries
+    if (typeof path !== 'string') {
+      throw new TypeError('Arguments to path.resolve must be strings');
+    } else if (!path) {
+      continue;
+    }
+
+    resolvedPath = path + '/' + resolvedPath;
+    resolvedAbsolute = path.charAt(0) === '/';
+  }
+
+  // At this point the path should be resolved to a full absolute path, but
+  // handle relative paths to be safe (might happen when process.cwd() fails)
+
+  // Normalize the path
+  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
+    return !!p;
+  }), !resolvedAbsolute).join('/');
+
+  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
+};
+
+// path.normalize(path)
+// posix version
+exports.normalize = function(path) {
+  var isAbsolute = exports.isAbsolute(path),
+      trailingSlash = substr(path, -1) === '/';
+
+  // Normalize the path
+  path = normalizeArray(filter(path.split('/'), function(p) {
+    return !!p;
+  }), !isAbsolute).join('/');
+
+  if (!path && !isAbsolute) {
+    path = '.';
+  }
+  if (path && trailingSlash) {
+    path += '/';
+  }
+
+  return (isAbsolute ? '/' : '') + path;
+};
+
+// posix version
+exports.isAbsolute = function(path) {
+  return path.charAt(0) === '/';
+};
+
+// posix version
+exports.join = function() {
+  var paths = Array.prototype.slice.call(arguments, 0);
+  return exports.normalize(filter(paths, function(p, index) {
+    if (typeof p !== 'string') {
+      throw new TypeError('Arguments to path.join must be strings');
+    }
+    return p;
+  }).join('/'));
+};
+
+
+// path.relative(from, to)
+// posix version
+exports.relative = function(from, to) {
+  from = exports.resolve(from).substr(1);
+  to = exports.resolve(to).substr(1);
+
+  function trim(arr) {
+    var start = 0;
+    for (; start < arr.length; start++) {
+      if (arr[start] !== '') break;
+    }
+
+    var end = arr.length - 1;
+    for (; end >= 0; end--) {
+      if (arr[end] !== '') break;
+    }
+
+    if (start > end) return [];
+    return arr.slice(start, end - start + 1);
+  }
+
+  var fromParts = trim(from.split('/'));
+  var toParts = trim(to.split('/'));
+
+  var length = Math.min(fromParts.length, toParts.length);
+  var samePartsLength = length;
+  for (var i = 0; i < length; i++) {
+    if (fromParts[i] !== toParts[i]) {
+      samePartsLength = i;
+      break;
+    }
+  }
+
+  var outputParts = [];
+  for (var i = samePartsLength; i < fromParts.length; i++) {
+    outputParts.push('..');
+  }
+
+  outputParts = outputParts.concat(toParts.slice(samePartsLength));
+
+  return outputParts.join('/');
+};
+
+exports.sep = '/';
+exports.delimiter = ':';
+
+exports.dirname = function(path) {
+  var result = splitPath(path),
+      root = result[0],
+      dir = result[1];
+
+  if (!root && !dir) {
+    // No dirname whatsoever
+    return '.';
+  }
+
+  if (dir) {
+    // It has a dirname, strip trailing slash
+    dir = dir.substr(0, dir.length - 1);
+  }
+
+  return root + dir;
+};
+
+
+exports.basename = function(path, ext) {
+  var f = splitPath(path)[2];
+  // TODO: make this comparison case-insensitive on windows?
+  if (ext && f.substr(-1 * ext.length) === ext) {
+    f = f.substr(0, f.length - ext.length);
+  }
+  return f;
+};
+
+
+exports.extname = function(path) {
+  return splitPath(path)[3];
+};
+
+function filter (xs, f) {
+    if (xs.filter) return xs.filter(f);
+    var res = [];
+    for (var i = 0; i < xs.length; i++) {
+        if (f(xs[i], i, xs)) res.push(xs[i]);
+    }
+    return res;
+}
+
+// String.prototype.substr - negative index don't work in IE8
+var substr = 'ab'.substr(-1) === 'b'
+    ? function (str, start, len) { return str.substr(start, len) }
+    : function (str, start, len) {
+        if (start < 0) start = str.length + start;
+        return str.substr(start, len);
+    }
+;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../process/browser.js */ 73)))
+
+/***/ }),
+/* 98 */
 /*!*****************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_ie8-dom-define.js ***!
   \*****************************************************************/
@@ -19438,7 +19674,7 @@ module.exports = !__webpack_require__(/*! ./_descriptors */ 39) && !__webpack_re
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /*!***********************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_object-keys-internal.js ***!
   \***********************************************************************/
@@ -19466,7 +19702,7 @@ module.exports = function (object, names) {
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/library/modules/_iobject.js ***!
   \**********************************************************/
@@ -19475,7 +19711,7 @@ module.exports = function (object, names) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(/*! ./_cof */ 59);
+var cof = __webpack_require__(/*! ./_cof */ 60);
 // eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
@@ -19483,7 +19719,7 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /*!*******************************************************!*\
   !*** ./node_modules/core-js/library/modules/_meta.js ***!
   \*******************************************************/
@@ -19492,9 +19728,9 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var META = __webpack_require__(/*! ./_uid */ 67)('meta');
-var isObject = __webpack_require__(/*! ./_is-object */ 36);
+var isObject = __webpack_require__(/*! ./_is-object */ 37);
 var has = __webpack_require__(/*! ./_has */ 42);
-var setDesc = __webpack_require__(/*! ./_object-dp */ 35).f;
+var setDesc = __webpack_require__(/*! ./_object-dp */ 36).f;
 var id = 0;
 var isExtensible = Object.isExtensible || function () {
   return true;
@@ -19547,7 +19783,7 @@ var meta = module.exports = {
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /*!*************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_object-gpo.js ***!
   \*************************************************************/
@@ -19557,7 +19793,7 @@ var meta = module.exports = {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has = __webpack_require__(/*! ./_has */ 42);
-var toObject = __webpack_require__(/*! ./_to-object */ 57);
+var toObject = __webpack_require__(/*! ./_to-object */ 58);
 var IE_PROTO = __webpack_require__(/*! ./_shared-key */ 80)('IE_PROTO');
 var ObjectProto = Object.prototype;
 
@@ -19571,7 +19807,7 @@ module.exports = Object.getPrototypeOf || function (O) {
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /*!**************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_iter-define.js ***!
   \**************************************************************/
@@ -19581,14 +19817,14 @@ module.exports = Object.getPrototypeOf || function (O) {
 
 "use strict";
 
-var LIBRARY = __webpack_require__(/*! ./_library */ 60);
+var LIBRARY = __webpack_require__(/*! ./_library */ 61);
 var $export = __webpack_require__(/*! ./_export */ 29);
-var redefine = __webpack_require__(/*! ./_redefine */ 103);
+var redefine = __webpack_require__(/*! ./_redefine */ 104);
 var hide = __webpack_require__(/*! ./_hide */ 41);
 var Iterators = __webpack_require__(/*! ./_iterators */ 50);
 var $iterCreate = __webpack_require__(/*! ./_iter-create */ 165);
 var setToStringTag = __webpack_require__(/*! ./_set-to-string-tag */ 70);
-var getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 101);
+var getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 102);
 var ITERATOR = __webpack_require__(/*! ./_wks */ 27)('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 var FF_ITERATOR = '@@iterator';
@@ -19652,7 +19888,7 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /*!***********************************************************!*\
   !*** ./node_modules/core-js/library/modules/_redefine.js ***!
   \***********************************************************/
@@ -19664,7 +19900,7 @@ module.exports = __webpack_require__(/*! ./_hide */ 41);
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /*!*******************************************************!*\
   !*** ./node_modules/core-js/library/modules/_html.js ***!
   \*******************************************************/
@@ -19677,7 +19913,7 @@ module.exports = document && document.documentElement;
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /*!**************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_object-gopn.js ***!
   \**************************************************************/
@@ -19686,7 +19922,7 @@ module.exports = document && document.documentElement;
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys = __webpack_require__(/*! ./_object-keys-internal */ 98);
+var $keys = __webpack_require__(/*! ./_object-keys-internal */ 99);
 var hiddenKeys = __webpack_require__(/*! ./_enum-bug-keys */ 82).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
@@ -19695,7 +19931,7 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /*!**********************************************************************!*\
   !*** ./node_modules/core-js/library/modules/es6.object.to-string.js ***!
   \**********************************************************************/
@@ -19706,7 +19942,7 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /*!**********************************************************************************!*\
   !*** ./node_modules/babel-runtime/core-js/object/get-own-property-descriptor.js ***!
   \**********************************************************************************/
@@ -19717,7 +19953,7 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptor */ 185), __esModule: true };
 
 /***/ }),
-/* 108 */
+/* 109 */
 /*!************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_iter-call.js ***!
   \************************************************************/
@@ -19740,7 +19976,7 @@ module.exports = function (iterator, fn, value, entries) {
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /*!****************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_is-array-iter.js ***!
   \****************************************************************/
@@ -19759,7 +19995,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /*!**********************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_species-constructor.js ***!
   \**********************************************************************/
@@ -19779,7 +20015,7 @@ module.exports = function (O, D) {
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /*!*******************************************************!*\
   !*** ./node_modules/core-js/library/modules/_task.js ***!
   \*******************************************************/
@@ -19789,7 +20025,7 @@ module.exports = function (O, D) {
 
 var ctx = __webpack_require__(/*! ./_ctx */ 48);
 var invoke = __webpack_require__(/*! ./_invoke */ 191);
-var html = __webpack_require__(/*! ./_html */ 104);
+var html = __webpack_require__(/*! ./_html */ 105);
 var cel = __webpack_require__(/*! ./_dom-create */ 75);
 var global = __webpack_require__(/*! ./_global */ 25);
 var process = global.process;
@@ -19830,7 +20066,7 @@ if (!setTask || !clearTask) {
     delete queue[id];
   };
   // Node.js 0.8-
-  if (__webpack_require__(/*! ./_cof */ 59)(process) == 'process') {
+  if (__webpack_require__(/*! ./_cof */ 60)(process) == 'process') {
     defer = function (id) {
       process.nextTick(ctx(run, id, 1));
     };
@@ -19874,7 +20110,7 @@ module.exports = {
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/library/modules/_perform.js ***!
   \**********************************************************/
@@ -19892,7 +20128,7 @@ module.exports = function (exec) {
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /*!******************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_promise-resolve.js ***!
   \******************************************************************/
@@ -19901,7 +20137,7 @@ module.exports = function (exec) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(/*! ./_an-object */ 32);
-var isObject = __webpack_require__(/*! ./_is-object */ 36);
+var isObject = __webpack_require__(/*! ./_is-object */ 37);
 var newPromiseCapability = __webpack_require__(/*! ./_new-promise-capability */ 90);
 
 module.exports = function (C, x) {
@@ -19915,7 +20151,7 @@ module.exports = function (C, x) {
 
 
 /***/ }),
-/* 114 */
+/* 115 */
 /*!**************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_iter-detect.js ***!
   \**************************************************************/
@@ -19948,7 +20184,7 @@ module.exports = function (exec, skipClosing) {
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /*!**************************************************!*\
   !*** ./node_modules/framework7/utils/request.js ***!
   \**************************************************/
@@ -19963,7 +20199,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = __webpack_require__(/*! babel-runtime/core-js/json/stringify */ 61);
+var _stringify = __webpack_require__(/*! babel-runtime/core-js/json/stringify */ 62);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -20338,7 +20574,7 @@ Request.setup = function setup(options) {
 exports.default = Request;
 
 /***/ }),
-/* 116 */
+/* 117 */
 /*!***************************************************************!*\
   !*** ./node_modules/framework7/components/view/view-class.js ***!
   \***************************************************************/
@@ -20361,7 +20597,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -20385,7 +20621,7 @@ var _utils = __webpack_require__(/*! ../../utils/utils */ 2);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _router = __webpack_require__(/*! ../../modules/router/router */ 117);
+var _router = __webpack_require__(/*! ../../modules/router/router */ 118);
 
 var _router2 = _interopRequireDefault(_router);
 
@@ -20552,7 +20788,7 @@ View.use(_router2.default);
 exports.default = View;
 
 /***/ }),
-/* 117 */
+/* 118 */
 /*!**********************************************************!*\
   !*** ./node_modules/framework7/modules/router/router.js ***!
   \**********************************************************/
@@ -20600,7 +20836,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 118 */
+/* 119 */
 /*!************************************************************!*\
   !*** ./node_modules/framework7/modules/router/redirect.js ***!
   \************************************************************/
@@ -20650,7 +20886,7 @@ var _utils2 = _interopRequireDefault(_utils);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 119 */
+/* 120 */
 /*!***********************************************************************!*\
   !*** ./node_modules/framework7/modules/router/process-route-queue.js ***!
   \***********************************************************************/
@@ -20735,7 +20971,7 @@ function processQueue(router, routerQueue, routeQueue, to, from, resolve, reject
 }
 
 /***/ }),
-/* 120 */
+/* 121 */
 /*!**********************************************************************************************!*\
   !*** ./node_modules/framework7/components/swiper/swiper-class/components/core/core-class.js ***!
   \**********************************************************************************************/
@@ -20762,7 +20998,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -21310,7 +21546,7 @@ var Swiper = function (_SwiperClass) {
 exports.default = Swiper;
 
 /***/ }),
-/* 121 */
+/* 122 */
 /*!*******************************************************************!*\
   !*** ./node_modules/framework7-vue/components/routable-modals.js ***!
   \*******************************************************************/
@@ -21325,7 +21561,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _f = __webpack_require__(/*! ../utils/f7 */ 53);
+var _f = __webpack_require__(/*! ../utils/f7 */ 54);
 
 var _f2 = _interopRequireDefault(_f);
 
@@ -21333,7 +21569,7 @@ var _events = __webpack_require__(/*! ../utils/events */ 64);
 
 var _events2 = _interopRequireDefault(_events);
 
-var _vueComponentSetState = __webpack_require__(/*! ../runtime-helpers/vue-component-set-state.js */ 54);
+var _vueComponentSetState = __webpack_require__(/*! ../runtime-helpers/vue-component-set-state.js */ 55);
 
 var _vueComponentSetState2 = _interopRequireDefault(_vueComponentSetState);
 
@@ -21402,7 +21638,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 122 */
+/* 123 */
 /*!****************************************************************!*\
   !*** ./node_modules/framework7-vue/components/card-content.js ***!
   \****************************************************************/
@@ -21474,7 +21710,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 123 */
+/* 124 */
 /*!***************************************************************!*\
   !*** ./node_modules/framework7-vue/components/card-footer.js ***!
   \***************************************************************/
@@ -21539,7 +21775,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 124 */
+/* 125 */
 /*!***************************************************************!*\
   !*** ./node_modules/framework7-vue/components/card-header.js ***!
   \***************************************************************/
@@ -21604,7 +21840,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 125 */
+/* 126 */
 /*!*********************************************************!*\
   !*** ./node_modules/framework7-vue/components/input.js ***!
   \*********************************************************/
@@ -21635,11 +21871,11 @@ var _mixins = __webpack_require__(/*! ../utils/mixins */ 5);
 
 var _mixins2 = _interopRequireDefault(_mixins);
 
-var _toggle = __webpack_require__(/*! ./toggle */ 126);
+var _toggle = __webpack_require__(/*! ./toggle */ 127);
 
 var _toggle2 = _interopRequireDefault(_toggle);
 
-var _range = __webpack_require__(/*! ./range */ 127);
+var _range = __webpack_require__(/*! ./range */ 128);
 
 var _range2 = _interopRequireDefault(_range);
 
@@ -22019,7 +22255,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 126 */
+/* 127 */
 /*!**********************************************************!*\
   !*** ./node_modules/framework7-vue/components/toggle.js ***!
   \**********************************************************/
@@ -22177,7 +22413,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 127 */
+/* 128 */
 /*!*********************************************************!*\
   !*** ./node_modules/framework7-vue/components/range.js ***!
   \*********************************************************/
@@ -22370,7 +22606,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 128 */
+/* 129 */
 /*!*********************************************************************!*\
   !*** ./node_modules/framework7-vue/components/list-item-content.js ***!
   \*********************************************************************/
@@ -22405,7 +22641,7 @@ var _badge = __webpack_require__(/*! ./badge */ 92);
 
 var _badge2 = _interopRequireDefault(_badge);
 
-var _vueComponentSetState = __webpack_require__(/*! ../runtime-helpers/vue-component-set-state.js */ 54);
+var _vueComponentSetState = __webpack_require__(/*! ../runtime-helpers/vue-component-set-state.js */ 55);
 
 var _vueComponentSetState2 = _interopRequireDefault(_vueComponentSetState);
 
@@ -22855,7 +23091,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 129 */
+/* 130 */
 /*!************************************************************!*\
   !*** ./node_modules/framework7-vue/components/nav-left.js ***!
   \************************************************************/
@@ -22972,7 +23208,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 130 */
+/* 131 */
 /*!*************************************************************!*\
   !*** ./node_modules/framework7-vue/components/nav-title.js ***!
   \*************************************************************/
@@ -23054,7 +23290,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 131 */
+/* 132 */
 /*!****************************************************************!*\
   !*** ./node_modules/framework7-vue/components/page-content.js ***!
   \****************************************************************/
@@ -23285,7 +23521,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 132 */
+/* 133 */
 /*!*********************************************!*\
   !*** ./src/assets/vue/pages/mine/login.vue ***!
   \*********************************************/
@@ -23334,7 +23570,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /*!*****************************************!*\
   !*** ./src/assets/images/loginlogo.png ***!
   \*****************************************/
@@ -23345,7 +23581,7 @@ module.exports = Component.exports
 module.exports = __webpack_require__.p + "loginlogo.png?d0e7c0d35b75684fdc02bd37e1b0ddae";
 
 /***/ }),
-/* 134 */
+/* 135 */
 /*!*****************************************************************!*\
   !*** ./src/assets/vue/pages/home/assetcheck/assetCheckItem.vue ***!
   \*****************************************************************/
@@ -23394,7 +23630,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 135 */
+/* 136 */
 /*!******************************************!*\
   !*** ./src/assets/vue/common/picker.vue ***!
   \******************************************/
@@ -23443,7 +23679,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 136 */
+/* 137 */
 /*!****************************************************************!*\
   !*** ./src/assets/vue/pages/home/devicemeasure/json/menu.json ***!
   \****************************************************************/
@@ -23454,7 +23690,7 @@ module.exports = Component.exports
 module.exports = [{"children":[{"id":"68010200004","pId":"0001  ","name":"回家的设备[68010200004]","isParent":false}],"id":"0001  ","pId":null,"name":"皮肤科","isParent":false},{"children":[{"id":"68210100018","pId":"0002  ","name":"除颤监护仪[68210100018]","isParent":false},{"id":"68210100019","pId":"0002  ","name":"除颤监护仪[68210100019]","isParent":false},{"id":"68210900143","pId":"0002  ","name":"多参数监护仪[68210900143]","isParent":false},{"id":"68210900144","pId":"0002  ","name":"多参数监护仪[68210900144]","isParent":false},{"id":"68210900145","pId":"0002  ","name":"多参数监护仪[68210900145]","isParent":false},{"id":"68210900146","pId":"0002  ","name":"多参数监护仪[68210900146]","isParent":false},{"id":"68210900147","pId":"0002  ","name":"多参数监护仪[68210900147]","isParent":false},{"id":"68210900148","pId":"0002  ","name":"多参数监护仪[68210900148]","isParent":false},{"id":"68210900149","pId":"0002  ","name":"多参数监护仪[68210900149]","isParent":false},{"id":"68210900150","pId":"0002  ","name":"多参数监护仪[68210900150]","isParent":false},{"id":"68210900151","pId":"0002  ","name":"多参数监护仪[68210900151]","isParent":false},{"id":"68210900152","pId":"0002  ","name":"多参数监护仪[68210900152]","isParent":false},{"id":"68210900153","pId":"0002  ","name":"多参数监护仪[68210900153]","isParent":false},{"id":"68210900154","pId":"0002  ","name":"多参数监护仪[68210900154]","isParent":false},{"id":"68210900155","pId":"0002  ","name":"多参数监护仪[68210900155]","isParent":false},{"id":"68210900212","pId":"0002  ","name":"多参数监护仪[68210900212]","isParent":false},{"id":"68210900222","pId":"0002  ","name":"多参数监护仪[68210900222]","isParent":false},{"id":"68250100001","pId":"0002  ","name":"高频电刀[68250100001]","isParent":false},{"id":"68250100005","pId":"0002  ","name":"高频电刀[68250100005]","isParent":false},{"id":"68250100011","pId":"0002  ","name":"高频电刀[68250100011]","isParent":false},{"id":"68250100012","pId":"0002  ","name":"高频电刀[68250100012]","isParent":false},{"id":"68250100013","pId":"0002  ","name":"高频电刀[68250100013]","isParent":false},{"id":"68250100014","pId":"0002  ","name":"高频电刀[68250100014]","isParent":false},{"id":"68250100015","pId":"0002  ","name":"高频电刀[68250100015]","isParent":false},{"id":"68250100016","pId":"0002  ","name":"高频电刀[68250100016]","isParent":false},{"id":"68250100017","pId":"0002  ","name":"高频电刀[68250100017]","isParent":false},{"id":"68300200001","pId":"0002  ","name":"骨科C臂X线机[68300200001]","isParent":false},{"id":"68300200003","pId":"0002  ","name":"移动式C型臂X线机[68300200003]","isParent":false},{"id":"68540200009","pId":"0002  ","name":"呼吸机[68540200009]","isParent":false},{"id":"68540200031","pId":"0002  ","name":"呼吸机[68540200031]","isParent":false},{"id":"68540300001","pId":"0002  ","name":"麻醉机[68540300001]","isParent":false},{"id":"68540300002","pId":"0002  ","name":"麻醉机[68540300002]","isParent":false},{"id":"68540300003","pId":"0002  ","name":"麻醉机[68540300003]","isParent":false},{"id":"68540300004","pId":"0002  ","name":"麻醉机[68540300004]","isParent":false},{"id":"68540300005","pId":"0002  ","name":"麻醉机[68540300005]","isParent":false},{"id":"68540300006","pId":"0002  ","name":"麻醉机[68540300006]","isParent":false},{"id":"68540300007","pId":"0002  ","name":"麻醉机[68540300007]","isParent":false},{"id":"68540300008","pId":"0002  ","name":"麻醉机[68540300008]","isParent":false},{"id":"68540300009","pId":"0002  ","name":"麻醉机[68540300009]","isParent":false},{"id":"68540300010","pId":"0002  ","name":"麻醉机[68540300010]","isParent":false},{"id":"68540300011","pId":"0002  ","name":"麻醉机[68540300011]","isParent":false},{"id":"68540300012","pId":"0002  ","name":"麻醉机[68540300012]","isParent":false},{"id":"68540300013","pId":"0002  ","name":"麻醉机[68540300013]","isParent":false},{"id":"68540500165","pId":"0002  ","name":"双道注射泵[68540500165]","isParent":false},{"id":"68540500166","pId":"0002  ","name":"双道注射泵[68540500166]","isParent":false},{"id":"68540500169","pId":"0002  ","name":"双道注射泵[68540500169]","isParent":false},{"id":"68540500170","pId":"0002  ","name":"双道注射泵[68540500170]","isParent":false},{"id":"68540500174","pId":"0002  ","name":"双道注射泵[68540500174]","isParent":false},{"id":"68540500175","pId":"0002  ","name":"双道注射泵[68540500175]","isParent":false},{"id":"68540500297","pId":"0002  ","name":"双道注射泵[68540500297]","isParent":false},{"id":"68540500298","pId":"0002  ","name":"双道注射泵[68540500298]","isParent":false},{"id":"68540500307","pId":"0002  ","name":"双道注射泵[68540500307]","isParent":false},{"id":"68540500309","pId":"0002  ","name":"双道注射泵[68540500309]","isParent":false},{"id":"68540500310","pId":"0002  ","name":"双道注射泵[68540500310]","isParent":false},{"id":"68540500311","pId":"0002  ","name":"双道注射泵[68540500311]","isParent":false},{"id":"68540500312","pId":"0002  ","name":"双道注射泵[68540500312]","isParent":false},{"id":"68540500320","pId":"0002  ","name":"组合式注射泵[68540500320]","isParent":false},{"id":"68540500331","pId":"0002  ","name":"组合式注射泵[68540500331]","isParent":false}],"id":"0002  ","pId":null,"name":"麻醉科","isParent":false},{"children":[{"id":"682100022","pId":"0003  ","name":"冲击波治疗仪[682100022]","isParent":false}],"id":"0003  ","pId":null,"name":"病理科","isParent":false},{"children":[{"id":"68200200101","pId":"0005  ","name":"水银血压计[68200200101]","isParent":false},{"id":"682100019","pId":"0005  ","name":"动态血糖监测系统[682100019]","isParent":false},{"id":"68210100022","pId":"0005  ","name":"除颤监护仪[68210100022]","isParent":false},{"id":"68230200001","pId":"0005  ","name":"彩色超声诊断仪[68230200001]","isParent":false},{"id":"68230200004","pId":"0005  ","name":"彩色超声诊断仪[68230200004]","isParent":false},{"id":"68230200005","pId":"0005  ","name":"彩色超声诊断仪[68230200005]","isParent":false},{"id":"68230200006","pId":"0005  ","name":"彩色超声诊断仪[68230200006]","isParent":false},{"id":"68230200007","pId":"0005  ","name":"彩色超声诊断仪[68230200007]","isParent":false},{"id":"68230200008","pId":"0005  ","name":"彩色超声诊断仪[68230200008]","isParent":false},{"id":"68230200009","pId":"0005  ","name":"彩色多普勒超声诊断仪[68230200009]","isParent":false},{"id":"68230200010","pId":"0005  ","name":"彩色多普勒超声诊断仪[68230200010]","isParent":false},{"id":"68230200011","pId":"0005  ","name":"彩色多普勒超声诊断仪[68230200011]","isParent":false},{"id":"68230200012","pId":"0005  ","name":"彩色多普勒超声诊断仪[68230200012]","isParent":false},{"id":"68230200015","pId":"0005  ","name":"超声诊断仪[68230200015]","isParent":false},{"id":"68230200016","pId":"0005  ","name":"超声诊断仪[68230200016]","isParent":false}],"id":"0005  ","pId":null,"name":"超声科办公室","isParent":false},{"children":[{"id":"68200200017","pId":"0006  ","name":"水银血压计[68200200017]","isParent":false},{"id":"68200200081","pId":"0006  ","name":"水银血压计[68200200081]","isParent":false},{"id":"68200200083","pId":"0006  ","name":"水银血压计[68200200083]","isParent":false},{"id":"68210100011","pId":"0006  ","name":"除颤监护仪[68210100011]","isParent":false},{"id":"68210900024","pId":"0006  ","name":"多参数监护仪[68210900024]","isParent":false},{"id":"68280100001","pId":"0006  ","name":"磁共振成像系统[68280100001]","isParent":false},{"id":"68300200002","pId":"0006  ","name":"医用诊断X射线系统[68300200002]","isParent":false},{"id":"68300200004","pId":"0006  ","name":"诊断X线机[68300200004]","isParent":false},{"id":"68300200005","pId":"0006  ","name":"诊断X线机[68300200005]","isParent":false},{"id":"68300200007","pId":"0006  ","name":"诊断X线机[68300200007]","isParent":false},{"id":"68300200008","pId":"0006  ","name":"诊断X线机[68300200008]","isParent":false},{"id":"68300200009","pId":"0006  ","name":"诊断X线机[68300200009]","isParent":false},{"id":"68300200010","pId":"0006  ","name":"诊断X线机[68300200010]","isParent":false},{"id":"68300200011","pId":"0006  ","name":"诊断X线机[68300200011]","isParent":false},{"id":"68300200012","pId":"0006  ","name":"诊断X线机[68300200012]","isParent":false},{"id":"68300300001","pId":"0006  ","name":"电子计算机断层扫描仪[68300300001]","isParent":false},{"id":"68300300002","pId":"0006  ","name":"电子计算机断层扫描仪[68300300002]","isParent":false},{"id":"68310200001","pId":"0006  ","name":"爱克发CR系统[68310200001]","isParent":false},{"id":"68560500033","pId":"0006  ","name":"身高体重秤[68560500033]","isParent":false}],"id":"0006  ","pId":null,"name":"医学影像科办公室","isParent":false},{"children":[{"id":"68200200006","pId":"0007  ","name":"电子血压计[68200200006]","isParent":false},{"id":"68200200007","pId":"0007  ","name":"电子血压计[68200200007]","isParent":false},{"id":"68200200008","pId":"0007  ","name":"电子血压计[68200200008]","isParent":false},{"id":"68200200095","pId":"0007  ","name":"水银血压计[68200200095]","isParent":false},{"id":"68200200096","pId":"0007  ","name":"水银血压计[68200200096]","isParent":false},{"id":"68210900021","pId":"0007  ","name":"多参数监护仪[68210900021]","isParent":false},{"id":"68210900031","pId":"0007  ","name":"多参数监护仪[68210900031]","isParent":false},{"id":"68210900032","pId":"0007  ","name":"多参数监护仪[68210900032]","isParent":false},{"id":"68210900097","pId":"0007  ","name":"多参数监护仪[68210900097]","isParent":false},{"id":"68210900166","pId":"0007  ","name":"多参数监护仪[68210900166]","isParent":false},{"id":"68210900185","pId":"0007  ","name":"多参数监护仪[68210900185]","isParent":false},{"id":"68210900224","pId":"0007  ","name":"多参数监护仪[68210900224]","isParent":false},{"id":"68210900238","pId":"0007  ","name":"多参数监护仪[68210900238]","isParent":false},{"id":"68540500275","pId":"0007  ","name":"双道注射泵[68540500275]","isParent":false},{"id":"68540500303","pId":"0007  ","name":"双道注射泵[68540500303]","isParent":false},{"id":"68560500044","pId":"0007  ","name":"身高体重秤[68560500044]","isParent":false}],"id":"0007  ","pId":null,"name":"骨二科病区","isParent":false},{"children":[{"id":"68210400001","pId":"0008  ","name":"动态心电分析盒[68210400001]","isParent":false},{"id":"68210400002","pId":"0008  ","name":"动态心电分析盒[68210400002]","isParent":false},{"id":"68210400010","pId":"0008  ","name":"同步12导联心电分析系统[68210400010]","isParent":false},{"id":"68210400011","pId":"0008  ","name":"心电图机[68210400011]","isParent":false},{"id":"68210400013","pId":"0008  ","name":"心电图机[68210400013]","isParent":false},{"id":"68210400016","pId":"0008  ","name":"心电图机[68210400016]","isParent":false},{"id":"68210400021","pId":"0008  ","name":"心电图机[68210400021]","isParent":false},{"id":"68700300004","pId":"0008  ","name":"十二导动态心电分析系统[68700300004]","isParent":false},{"id":"68700300005","pId":"0008  ","name":"十二导动态心电分析系统[68700300005]","isParent":false}],"id":"0008  ","pId":null,"name":"心电图室","isParent":false},{"children":[{"id":"68200200005","pId":"0009  ","name":"电子血压计[68200200005]","isParent":false},{"id":"68200200093","pId":"0009  ","name":"水银血压计[68200200093]","isParent":false},{"id":"68200200094","pId":"0009  ","name":"水银血压计[68200200094]","isParent":false},{"id":"68210900018","pId":"0009  ","name":"多参数监护仪[68210900018]","isParent":false},{"id":"68210900019","pId":"0009  ","name":"多参数监护仪[68210900019]","isParent":false},{"id":"68210900020","pId":"0009  ","name":"多参数监护仪[68210900020]","isParent":false},{"id":"68210900073","pId":"0009  ","name":"多参数监护仪[68210900073]","isParent":false},{"id":"68230200017","pId":"0009  ","name":"超声诊断仪[68230200017]","isParent":false},{"id":"68250100007","pId":"0009  ","name":"高频电刀[68250100007]","isParent":false},{"id":"68560500042","pId":"0009  ","name":"身高体重秤[68560500042]","isParent":false}],"id":"0009  ","pId":null,"name":"泌尿外科病区","isParent":false},{"children":[{"id":"68300200006","pId":"0010  ","name":"诊断X线机[68300200006]","isParent":false}],"id":"0010  ","pId":null,"name":"口腔科","isParent":false},{"children":[{"id":"68210900001","pId":"0011  ","name":"多参数监护仪[68210900001]","isParent":false},{"id":"68250100003","pId":"0011  ","name":"高频电刀[68250100003]","isParent":false}],"id":"0011  ","pId":null,"name":"胃镜室","isParent":false},{"children":[{"id":"68400100002","pId":"0012  ","name":"多功能血细胞分类仪[68400100002]","isParent":false},{"id":"68400100003","pId":"0012  ","name":"多功能血细胞分类仪[68400100003]","isParent":false},{"id":"68400100004","pId":"0012  ","name":"多功能血细胞分类仪[68400100004]","isParent":false},{"id":"68400100008","pId":"0012  ","name":"全自动血细胞分析仪[68400100008]","isParent":false},{"id":"68400100009","pId":"0012  ","name":"全自动血细胞分析仪[68400100009]","isParent":false},{"id":"68400100010","pId":"0012  ","name":"全自动血细胞分析仪[68400100010]","isParent":false},{"id":"68400200002","pId":"0012  ","name":"可见分光光度计[68400200002]","isParent":false},{"id":"68400200004","pId":"0012  ","name":"全自动生化分析仪[68400200004]","isParent":false},{"id":"68400200005","pId":"0012  ","name":"全自动生化分析仪[68400200005]","isParent":false},{"id":"68400300001","pId":"0012  ","name":"酶标仪[68400300001]","isParent":false},{"id":"68400500002","pId":"0012  ","name":"尿有形成份分析仪[68400500002]","isParent":false},{"id":"68400500003","pId":"0012  ","name":"全自动尿液分析仪[68400500003]","isParent":false},{"id":"68400700001","pId":"0012  ","name":"全自动血气分析仪[68400700001]","isParent":false},{"id":"68640700001","pId":"0012  ","name":"生物安全柜[68640700001]","isParent":false},{"id":"68640700002","pId":"0012  ","name":"生物安全柜[68640700002]","isParent":false},{"id":"68640700003","pId":"0012  ","name":"生物安全柜[68640700003]","isParent":false},{"id":"68990000006","pId":"0012  ","name":"电子天平[68990000006]","isParent":false}],"id":"0012  ","pId":null,"name":"检验科办公室","isParent":false},{"children":[{"id":"68200200102","pId":"0013  ","name":"水银血压计[68200200102]","isParent":false},{"id":"68200200103","pId":"0013  ","name":"水银血压计[68200200103]","isParent":false},{"id":"68200200104","pId":"0013  ","name":"水银血压计[68200200104]","isParent":false},{"id":"68200200105","pId":"0013  ","name":"水银血压计[68200200105]","isParent":false},{"id":"68200200106","pId":"0013  ","name":"水银血压计[68200200106]","isParent":false},{"id":"68210100013","pId":"0013  ","name":"除颤监护仪[68210100013]","isParent":false},{"id":"68210400004","pId":"0013  ","name":"动态心电记录盒[68210400004]","isParent":false},{"id":"68210400005","pId":"0013  ","name":"动态心电记录盒[68210400005]","isParent":false},{"id":"68210400008","pId":"0013  ","name":"十二道心电图机[68210400008]","isParent":false},{"id":"68210900033","pId":"0013  ","name":"多参数监护仪[68210900033]","isParent":false},{"id":"68210900042","pId":"0013  ","name":"多参数监护仪[68210900042]","isParent":false},{"id":"68210900101","pId":"0013  ","name":"多参数监护仪[68210900101]","isParent":false},{"id":"68210900116","pId":"0013  ","name":"多参数监护仪[68210900116]","isParent":false},{"id":"68210900128","pId":"0013  ","name":"多参数监护仪[68210900128]","isParent":false},{"id":"68210900136","pId":"0013  ","name":"多参数监护仪[68210900136]","isParent":false},{"id":"68210900137","pId":"0013  ","name":"多参数监护仪[68210900137]","isParent":false},{"id":"68210900138","pId":"0013  ","name":"多参数监护仪[68210900138]","isParent":false},{"id":"68210900139","pId":"0013  ","name":"多参数监护仪[68210900139]","isParent":false},{"id":"68211300005","pId":"0013  ","name":"动态血压记录盒[68211300005]","isParent":false},{"id":"68211300016","pId":"0013  ","name":"动态血压记录盒[68211300016]","isParent":false},{"id":"68211300019","pId":"0013  ","name":"动态血压记录盒[68211300019]","isParent":false},{"id":"68211300020","pId":"0013  ","name":"动态血压记录器[68211300020]","isParent":false},{"id":"68211300023","pId":"0013  ","name":"动态血压记录器[68211300023]","isParent":false},{"id":"68540500021","pId":"0013  ","name":"单道注射泵[68540500021]","isParent":false},{"id":"68540500026","pId":"0013  ","name":"单道注射泵[68540500026]","isParent":false},{"id":"68540500029","pId":"0013  ","name":"单道注射泵[68540500029]","isParent":false},{"id":"68540500031","pId":"0013  ","name":"单道注射泵[68540500031]","isParent":false},{"id":"68540500260","pId":"0013  ","name":"双道注射泵[68540500260]","isParent":false},{"id":"68540500279","pId":"0013  ","name":"双道注射泵[68540500279]","isParent":false},{"id":"68540500282","pId":"0013  ","name":"双道注射泵[68540500282]","isParent":false},{"id":"68560500045","pId":"0013  ","name":"身高体重秤[68560500045]","isParent":false}],"id":"0013  ","pId":null,"name":"干部医疗科病区","isParent":false},{"children":[{"id":"68200200031","pId":"0014  ","name":"水银血压计[68200200031]","isParent":false},{"id":"68200200077","pId":"0014  ","name":"水银血压计[68200200077]","isParent":false},{"id":"68200200087","pId":"0014  ","name":"水银血压计[68200200087]","isParent":false},{"id":"68210100015","pId":"0014  ","name":"除颤监护仪[68210100015]","isParent":false},{"id":"68210900050","pId":"0014  ","name":"多参数监护仪[68210900050]","isParent":false},{"id":"68210900100","pId":"0014  ","name":"多参数监护仪[68210900100]","isParent":false},{"id":"68211300002","pId":"0014  ","name":"动态血压记录盒[68211300002]","isParent":false},{"id":"68211300006","pId":"0014  ","name":"动态血压记录盒[68211300006]","isParent":false},{"id":"68211300007","pId":"0014  ","name":"动态血压记录盒[68211300007]","isParent":false},{"id":"68211300010","pId":"0014  ","name":"动态血压记录盒[68211300010]","isParent":false},{"id":"68540200015","pId":"0014  ","name":"呼吸机[68540200015]","isParent":false},{"id":"68540500001","pId":"0014  ","name":"单道注射泵[68540500001]","isParent":false},{"id":"68540500005","pId":"0014  ","name":"单道注射泵[68540500005]","isParent":false},{"id":"68540500006","pId":"0014  ","name":"单道注射泵[68540500006]","isParent":false},{"id":"68540500164","pId":"0014  ","name":"双道注射泵[68540500164]","isParent":false},{"id":"68540500253","pId":"0014  ","name":"双道注射泵[68540500253]","isParent":false},{"id":"68560500015","pId":"0014  ","name":"身高体重秤[68560500015]","isParent":false}],"id":"0014  ","pId":null,"name":"神经内科病区","isParent":false},{"children":[{"id":"68200200097","pId":"0015  ","name":"水银血压计[68200200097]","isParent":false},{"id":"68200200098","pId":"0015  ","name":"水银血压计[68200200098]","isParent":false},{"id":"68200200100","pId":"0015  ","name":"水银血压计[68200200100]","isParent":false},{"id":"68210900023","pId":"0015  ","name":"多参数监护仪[68210900023]","isParent":false},{"id":"68210900029","pId":"0015  ","name":"多参数监护仪[68210900029]","isParent":false},{"id":"68210900211","pId":"0015  ","name":"多参数监护仪[68210900211]","isParent":false},{"id":"68210900231","pId":"0015  ","name":"多参数监护仪[68210900231]","isParent":false},{"id":"68210900237","pId":"0015  ","name":"多参数监护仪[68210900237]","isParent":false},{"id":"68210900243","pId":"0015  ","name":"心电监护[68210900243]","isParent":false},{"id":"68250100008","pId":"0015  ","name":"高频电刀[68250100008]","isParent":false},{"id":"68540500135","pId":"0015  ","name":"输液泵[68540500135]","isParent":false},{"id":"68540500137","pId":"0015  ","name":"输液泵[68540500137]","isParent":false},{"id":"68540500157","pId":"0015  ","name":"输液泵[68540500157]","isParent":false},{"id":"68540500304","pId":"0015  ","name":"双道注射泵[68540500304]","isParent":false},{"id":"68560500043","pId":"0015  ","name":"身高体重秤[68560500043]","isParent":false}],"id":"0015  ","pId":null,"name":"普外二科病区","isParent":false},{"children":[{"id":"68200200065","pId":"0016  ","name":"水银血压计[68200200065]","isParent":false},{"id":"68200200070","pId":"0016  ","name":"水银血压计[68200200070]","isParent":false},{"id":"68210900037","pId":"0016  ","name":"多参数监护仪[68210900037]","isParent":false},{"id":"68210900063","pId":"0016  ","name":"多参数监护仪[68210900063]","isParent":false},{"id":"68210900086","pId":"0016  ","name":"多参数监护仪[68210900086]","isParent":false},{"id":"68210900098","pId":"0016  ","name":"多参数监护仪[68210900098]","isParent":false},{"id":"68210900184","pId":"0016  ","name":"多参数监护仪[68210900184]","isParent":false},{"id":"68560500003","pId":"0016  ","name":"身高体重秤[68560500003]","isParent":false},{"id":"68560500010","pId":"0016  ","name":"身高体重秤[68560500010]","isParent":false}],"id":"0016  ","pId":null,"name":"普外一科病区","isParent":false},{"children":[{"id":"68200200018","pId":"0017  ","name":"水银血压计[68200200018]","isParent":false},{"id":"68200200043","pId":"0017  ","name":"水银血压计[68200200043]","isParent":false},{"id":"68200200045","pId":"0017  ","name":"水银血压计[68200200045]","isParent":false},{"id":"68200200082","pId":"0017  ","name":"水银血压计[68200200082]","isParent":false},{"id":"68210900022","pId":"0017  ","name":"多参数监护仪[68210900022]","isParent":false},{"id":"68210900028","pId":"0017  ","name":"多参数监护仪[68210900028]","isParent":false},{"id":"68210900064","pId":"0017  ","name":"多参数监护仪[68210900064]","isParent":false},{"id":"68540500136","pId":"0017  ","name":"输液泵[68540500136]","isParent":false},{"id":"68560500021","pId":"0017  ","name":"身高体重秤[68560500021]","isParent":false}],"id":"0017  ","pId":null,"name":"骨一科病区","isParent":false},{"children":[{"id":"68200200001","pId":"0018  ","name":"电子血压计[68200200001]","isParent":false},{"id":"68200200002","pId":"0018  ","name":"电子血压计[68200200002]","isParent":false},{"id":"68200200084","pId":"0018  ","name":"水银血压计[68200200084]","isParent":false},{"id":"68200200085","pId":"0018  ","name":"水银血压计[68200200085]","isParent":false},{"id":"68210100003","pId":"0018  ","name":"除颤监护仪[68210100003]","isParent":false},{"id":"68210900010","pId":"0018  ","name":"多参数监护仪[68210900010]","isParent":false},{"id":"68210900011","pId":"0018  ","name":"多参数监护仪[68210900011]","isParent":false},{"id":"68210900213","pId":"0018  ","name":"多参数监护仪[68210900213]","isParent":false},{"id":"68210900215","pId":"0018  ","name":"多参数监护仪[68210900215]","isParent":false},{"id":"68210900216","pId":"0018  ","name":"多参数监护仪[68210900216]","isParent":false},{"id":"68210900217","pId":"0018  ","name":"多参数监护仪[68210900217]","isParent":false},{"id":"68210900218","pId":"0018  ","name":"多参数监护仪[68210900218]","isParent":false},{"id":"68210900221","pId":"0018  ","name":"多参数监护仪[68210900221]","isParent":false},{"id":"68210900230","pId":"0018  ","name":"多参数监护仪[68210900230]","isParent":false},{"id":"68210900233","pId":"0018  ","name":"多参数监护仪[68210900233]","isParent":false},{"id":"68210900235","pId":"0018  ","name":"多参数监护仪[68210900235]","isParent":false},{"id":"68210900236","pId":"0018  ","name":"多参数监护仪[68210900236]","isParent":false},{"id":"68210900244","pId":"0018  ","name":"转运宝[68210900244]","isParent":false},{"id":"68211300014","pId":"0018  ","name":"动态血压记录盒[68211300014]","isParent":false},{"id":"68211300015","pId":"0018  ","name":"动态血压记录盒[68211300015]","isParent":false},{"id":"68540200008","pId":"0018  ","name":"呼吸机[68540200008]","isParent":false},{"id":"68540200016","pId":"0018  ","name":"呼吸机[68540200016]","isParent":false},{"id":"68540200017","pId":"0018  ","name":"呼吸机[68540200017]","isParent":false},{"id":"68540200026","pId":"0018  ","name":"呼吸机[68540200026]","isParent":false},{"id":"68540200027","pId":"0018  ","name":"呼吸机[68540200027]","isParent":false},{"id":"68540200063","pId":"0018  ","name":"呼吸机[68540200063]","isParent":false},{"id":"68540500036","pId":"0018  ","name":"输液泵[68540500036]","isParent":false},{"id":"68540500074","pId":"0018  ","name":"输液泵[68540500074]","isParent":false},{"id":"68540500075","pId":"0018  ","name":"输液泵[68540500075]","isParent":false},{"id":"68540500076","pId":"0018  ","name":"输液泵[68540500076]","isParent":false},{"id":"68540500077","pId":"0018  ","name":"输液泵[68540500077]","isParent":false},{"id":"68540500078","pId":"0018  ","name":"输液泵[68540500078]","isParent":false},{"id":"68540500079","pId":"0018  ","name":"输液泵[68540500079]","isParent":false},{"id":"68540500080","pId":"0018  ","name":"输液泵[68540500080]","isParent":false},{"id":"68540500081","pId":"0018  ","name":"输液泵[68540500081]","isParent":false},{"id":"68540500082","pId":"0018  ","name":"输液泵[68540500082]","isParent":false},{"id":"68540500140","pId":"0018  ","name":"输液泵[68540500140]","isParent":false},{"id":"68540500141","pId":"0018  ","name":"输液泵[68540500141]","isParent":false},{"id":"68540500142","pId":"0018  ","name":"输液泵[68540500142]","isParent":false},{"id":"68540500143","pId":"0018  ","name":"输液泵[68540500143]","isParent":false},{"id":"68540500144","pId":"0018  ","name":"输液泵[68540500144]","isParent":false},{"id":"68540500145","pId":"0018  ","name":"输液泵[68540500145]","isParent":false},{"id":"68540500146","pId":"0018  ","name":"输液泵[68540500146]","isParent":false},{"id":"68540500147","pId":"0018  ","name":"输液泵[68540500147]","isParent":false},{"id":"68540500148","pId":"0018  ","name":"输液泵[68540500148]","isParent":false},{"id":"68540500163","pId":"0018  ","name":"双道注射泵[68540500163]","isParent":false},{"id":"68540500167","pId":"0018  ","name":"双道注射泵[68540500167]","isParent":false},{"id":"68540500168","pId":"0018  ","name":"双道注射泵[68540500168]","isParent":false},{"id":"68540500181","pId":"0018  ","name":"双道注射泵[68540500181]","isParent":false},{"id":"68540500182","pId":"0018  ","name":"双道注射泵[68540500182]","isParent":false},{"id":"68540500183","pId":"0018  ","name":"双道注射泵[68540500183]","isParent":false},{"id":"68540500184","pId":"0018  ","name":"双道注射泵[68540500184]","isParent":false},{"id":"68540500185","pId":"0018  ","name":"双道注射泵[68540500185]","isParent":false},{"id":"68540500186","pId":"0018  ","name":"双道注射泵[68540500186]","isParent":false},{"id":"68540500187","pId":"0018  ","name":"双道注射泵[68540500187]","isParent":false},{"id":"68540500188","pId":"0018  ","name":"双道注射泵[68540500188]","isParent":false},{"id":"68540500189","pId":"0018  ","name":"双道注射泵[68540500189]","isParent":false},{"id":"68540500190","pId":"0018  ","name":"双道注射泵[68540500190]","isParent":false},{"id":"68540500191","pId":"0018  ","name":"双道注射泵[68540500191]","isParent":false},{"id":"68540500192","pId":"0018  ","name":"双道注射泵[68540500192]","isParent":false},{"id":"68540500193","pId":"0018  ","name":"双道注射泵[68540500193]","isParent":false},{"id":"68540500194","pId":"0018  ","name":"双道注射泵[68540500194]","isParent":false},{"id":"68540500195","pId":"0018  ","name":"双道注射泵[68540500195]","isParent":false},{"id":"68540500196","pId":"0018  ","name":"双道注射泵[68540500196]","isParent":false},{"id":"68540500197","pId":"0018  ","name":"双道注射泵[68540500197]","isParent":false},{"id":"68540500198","pId":"0018  ","name":"双道注射泵[68540500198]","isParent":false},{"id":"68540500199","pId":"0018  ","name":"双道注射泵[68540500199]","isParent":false},{"id":"68560500004","pId":"0018  ","name":"身高体重秤[68560500004]","isParent":false}],"id":"0018  ","pId":null,"name":"神经外科病区","isParent":false},{"children":[{"id":"68200200010","pId":"0019  ","name":"电子血压计[68200200010]","isParent":false},{"id":"68200200011","pId":"0019  ","name":"电子血压计[68200200011]","isParent":false},{"id":"68200200012","pId":"0019  ","name":"电子血压计[68200200012]","isParent":false},{"id":"68200200013","pId":"0019  ","name":"电子血压计[68200200013]","isParent":false},{"id":"68200200107","pId":"0019  ","name":"水银血压计[68200200107]","isParent":false},{"id":"68200200108","pId":"0019  ","name":"水银血压计[68200200108]","isParent":false},{"id":"68200200109","pId":"0019  ","name":"水银血压计[68200200109]","isParent":false},{"id":"68200200110","pId":"0019  ","name":"水银血压计[68200200110]","isParent":false},{"id":"68200200111","pId":"0019  ","name":"水银血压计[68200200111]","isParent":false},{"id":"68210900061","pId":"0019  ","name":"多参数监护仪[68210900061]","isParent":false},{"id":"68560500017","pId":"0019  ","name":"身高体重秤[68560500017]","isParent":false}],"id":"0019  ","pId":null,"name":"中医风湿病科病区","isParent":false},{"children":[{"id":"68200200066","pId":"0020  ","name":"水银血压计[68200200066]","isParent":false},{"id":"68200200086","pId":"0020  ","name":"水银血压计[68200200086]","isParent":false},{"id":"68210900034","pId":"0020  ","name":"多参数监护仪[68210900034]","isParent":false},{"id":"68210900035","pId":"0020  ","name":"多参数监护仪[68210900035]","isParent":false},{"id":"68210900040","pId":"0020  ","name":"多参数监护仪[68210900040]","isParent":false},{"id":"68210900051","pId":"0020  ","name":"多参数监护仪[68210900051]","isParent":false},{"id":"68210900052","pId":"0020  ","name":"多参数监护仪[68210900052]","isParent":false},{"id":"68210900053","pId":"0020  ","name":"多参数监护仪[68210900053]","isParent":false},{"id":"68210900080","pId":"0020  ","name":"多参数监护仪[68210900080]","isParent":false},{"id":"68210900096","pId":"0020  ","name":"多参数监护仪[68210900096]","isParent":false},{"id":"68540500002","pId":"0020  ","name":"单道注射泵[68540500002]","isParent":false},{"id":"68540500171","pId":"0020  ","name":"双道注射泵[68540500171]","isParent":false},{"id":"68540500176","pId":"0020  ","name":"双道注射泵[68540500176]","isParent":false},{"id":"68540500177","pId":"0020  ","name":"双道注射泵[68540500177]","isParent":false},{"id":"68540500200","pId":"0020  ","name":"双道注射泵[68540500200]","isParent":false},{"id":"68540500205","pId":"0020  ","name":"双道注射泵[68540500205]","isParent":false},{"id":"68560500019","pId":"0020  ","name":"身高体重秤[68560500019]","isParent":false}],"id":"0020  ","pId":null,"name":"感染性疾病科病区","isParent":false},{"children":[{"id":"68200200020","pId":"0021  ","name":"水银血压计[68200200020]","isParent":false},{"id":"68210100008","pId":"0021  ","name":"除颤监护仪[68210100008]","isParent":false},{"id":"68210400014","pId":"0021  ","name":"心电图机[68210400014]","isParent":false},{"id":"68210400015","pId":"0021  ","name":"心电图机[68210400015]","isParent":false},{"id":"68210900054","pId":"0021  ","name":"多参数监护仪[68210900054]","isParent":false},{"id":"68210900079","pId":"0021  ","name":"多参数监护仪[68210900079]","isParent":false},{"id":"68210900115","pId":"0021  ","name":"多参数监护仪[68210900115]","isParent":false},{"id":"68210900117","pId":"0021  ","name":"多参数监护仪[68210900117]","isParent":false},{"id":"68210900118","pId":"0021  ","name":"多参数监护仪[68210900118]","isParent":false},{"id":"68210900119","pId":"0021  ","name":"多参数监护仪[68210900119]","isParent":false},{"id":"68210900120","pId":"0021  ","name":"多参数监护仪[68210900120]","isParent":false},{"id":"68210900121","pId":"0021  ","name":"多参数监护仪[68210900121]","isParent":false},{"id":"68210900122","pId":"0021  ","name":"多参数监护仪[68210900122]","isParent":false},{"id":"68210900123","pId":"0021  ","name":"多参数监护仪[68210900123]","isParent":false},{"id":"68210900124","pId":"0021  ","name":"多参数监护仪[68210900124]","isParent":false},{"id":"68250100009","pId":"0021  ","name":"高频电刀[68250100009]","isParent":false},{"id":"68540200010","pId":"0021  ","name":"呼吸机[68540200010]","isParent":false},{"id":"68540500009","pId":"0021  ","name":"单道注射泵[68540500009]","isParent":false},{"id":"68540500012","pId":"0021  ","name":"单道注射泵[68540500012]","isParent":false},{"id":"68540500019","pId":"0021  ","name":"单道注射泵[68540500019]","isParent":false},{"id":"68540500020","pId":"0021  ","name":"单道注射泵[68540500020]","isParent":false},{"id":"68540500133","pId":"0021  ","name":"输液泵[68540500133]","isParent":false},{"id":"68540500162","pId":"0021  ","name":"双道注射泵[68540500162]","isParent":false},{"id":"68540500178","pId":"0021  ","name":"双道注射泵[68540500178]","isParent":false},{"id":"68560500013","pId":"0021  ","name":"身高体重秤[68560500013]","isParent":false}],"id":"0021  ","pId":null,"name":"急诊科门诊","isParent":false},{"children":[{"id":"68200200074","pId":"0022  ","name":"水银血压计[68200200074]","isParent":false},{"id":"68200200075","pId":"0022  ","name":"水银血压计[68200200075]","isParent":false},{"id":"68200200076","pId":"0022  ","name":"水银血压计[68200200076]","isParent":false},{"id":"68200200078","pId":"0022  ","name":"水银血压计[68200200078]","isParent":false},{"id":"68200200080","pId":"0022  ","name":"水银血压计[68200200080]","isParent":false},{"id":"68200200112","pId":"0022  ","name":"水银血压计[68200200112]","isParent":false},{"id":"68200200113","pId":"0022  ","name":"水银血压计[68200200113]","isParent":false},{"id":"68210100006","pId":"0022  ","name":"除颤监护仪[68210100006]","isParent":false},{"id":"68210400006","pId":"0022  ","name":"动态心电记录盒[68210400006]","isParent":false},{"id":"68210400007","pId":"0022  ","name":"动态心电记录盒[68210400007]","isParent":false},{"id":"68210400009","pId":"0022  ","name":"十二道心电图机[68210400009]","isParent":false},{"id":"68210400020","pId":"0022  ","name":"心电图机[68210400020]","isParent":false},{"id":"68210400022","pId":"0022  ","name":"心电图机[68210400022]","isParent":false},{"id":"68210900002","pId":"0022  ","name":"多参数监护仪[68210900002]","isParent":false},{"id":"68210900003","pId":"0022  ","name":"多参数监护仪[68210900003]","isParent":false},{"id":"68210900004","pId":"0022  ","name":"多参数监护仪[68210900004]","isParent":false},{"id":"68210900005","pId":"0022  ","name":"多参数监护仪[68210900005]","isParent":false},{"id":"68210900006","pId":"0022  ","name":"多参数监护仪[68210900006]","isParent":false},{"id":"68210900007","pId":"0022  ","name":"多参数监护仪[68210900007]","isParent":false},{"id":"68210900008","pId":"0022  ","name":"多参数监护仪[68210900008]","isParent":false},{"id":"68210900014","pId":"0022  ","name":"多参数监护仪[68210900014]","isParent":false},{"id":"68210900015","pId":"0022  ","name":"多参数监护仪[68210900015]","isParent":false},{"id":"68210900026","pId":"0022  ","name":"多参数监护仪[68210900026]","isParent":false},{"id":"68210900027","pId":"0022  ","name":"多参数监护仪[68210900027]","isParent":false},{"id":"68210900087","pId":"0022  ","name":"多参数监护仪[68210900087]","isParent":false},{"id":"68211300012","pId":"0022  ","name":"动态血压记录盒[68211300012]","isParent":false},{"id":"68211300013","pId":"0022  ","name":"动态血压记录盒[68211300013]","isParent":false},{"id":"68211300017","pId":"0022  ","name":"动态血压记录盒[68211300017]","isParent":false},{"id":"68211300018","pId":"0022  ","name":"动态血压记录盒[68211300018]","isParent":false},{"id":"68211300022","pId":"0022  ","name":"动态血压记录器[68211300022]","isParent":false},{"id":"68540200013","pId":"0022  ","name":"呼吸机[68540200013]","isParent":false},{"id":"68540500024","pId":"0022  ","name":"单道注射泵[68540500024]","isParent":false},{"id":"68540500173","pId":"0022  ","name":"双道注射泵[68540500173]","isParent":false},{"id":"68540500248","pId":"0022  ","name":"双道注射泵[68540500248]","isParent":false},{"id":"68540500249","pId":"0022  ","name":"双道注射泵[68540500249]","isParent":false},{"id":"68540500250","pId":"0022  ","name":"双道注射泵[68540500250]","isParent":false},{"id":"68540500251","pId":"0022  ","name":"双道注射泵[68540500251]","isParent":false},{"id":"68540500254","pId":"0022  ","name":"双道注射泵[68540500254]","isParent":false},{"id":"68540500274","pId":"0022  ","name":"双道注射泵[68540500274]","isParent":false},{"id":"68540500281","pId":"0022  ","name":"双道注射泵[68540500281]","isParent":false},{"id":"68540500306","pId":"0022  ","name":"双道注射泵[68540500306]","isParent":false},{"id":"68560500027","pId":"0022  ","name":"身高体重秤[68560500027]","isParent":false},{"id":"68560500037","pId":"0022  ","name":"身高体重秤[68560500037]","isParent":false}],"id":"0022  ","pId":null,"name":"心内科病区","isParent":false},{"children":[{"id":"68200200022","pId":"0023  ","name":"水银血压计[68200200022]","isParent":false},{"id":"68200200048","pId":"0023  ","name":"水银血压计[68200200048]","isParent":false},{"id":"68200200049","pId":"0023  ","name":"水银血压计[68200200049]","isParent":false},{"id":"68200200052","pId":"0023  ","name":"水银血压计[68200200052]","isParent":false},{"id":"68210100005","pId":"0023  ","name":"除颤监护仪[68210100005]","isParent":false},{"id":"68210900025","pId":"0023  ","name":"多参数监护仪[68210900025]","isParent":false},{"id":"68210900095","pId":"0023  ","name":"多参数监护仪[68210900095]","isParent":false},{"id":"68210900156","pId":"0023  ","name":"多参数监护仪[68210900156]","isParent":false},{"id":"68210900157","pId":"0023  ","name":"多参数监护仪[68210900157]","isParent":false},{"id":"68210900160","pId":"0023  ","name":"多参数监护仪[68210900160]","isParent":false},{"id":"68210900173","pId":"0023  ","name":"多参数监护仪[68210900173]","isParent":false},{"id":"68210900189","pId":"0023  ","name":"多参数监护仪[68210900189]","isParent":false},{"id":"68210900219","pId":"0023  ","name":"多参数监护仪[68210900219]","isParent":false},{"id":"68210900223","pId":"0023  ","name":"多参数监护仪[68210900223]","isParent":false},{"id":"68210900226","pId":"0023  ","name":"多参数监护仪[68210900226]","isParent":false},{"id":"68210900227","pId":"0023  ","name":"多参数监护仪[68210900227]","isParent":false},{"id":"68210900234","pId":"0023  ","name":"多参数监护仪[68210900234]","isParent":false},{"id":"68210900239","pId":"0023  ","name":"多参数监护仪[68210900239]","isParent":false},{"id":"68210900242","pId":"0023  ","name":"心电监护[68210900242]","isParent":false},{"id":"68211300011","pId":"0023  ","name":"动态血压记录盒[68211300011]","isParent":false},{"id":"68540500003","pId":"0023  ","name":"单道注射泵[68540500003]","isParent":false},{"id":"68540500032","pId":"0023  ","name":"单道注射泵[68540500032]","isParent":false},{"id":"68540500098","pId":"0023  ","name":"输液泵[68540500098]","isParent":false},{"id":"68540500102","pId":"0023  ","name":"输液泵[68540500102]","isParent":false},{"id":"68540500149","pId":"0023  ","name":"输液泵[68540500149]","isParent":false},{"id":"68540500154","pId":"0023  ","name":"输液泵[68540500154]","isParent":false},{"id":"68540500161","pId":"0023  ","name":"输液泵[68540500161]","isParent":false},{"id":"68540500270","pId":"0023  ","name":"双道注射泵[68540500270]","isParent":false},{"id":"68540500295","pId":"0023  ","name":"双道注射泵[68540500295]","isParent":false},{"id":"68560500024","pId":"0023  ","name":"身高体重秤[68560500024]","isParent":false},{"id":"68560500036","pId":"0023  ","name":"身高体重秤[68560500036]","isParent":false},{"id":"68640700004","pId":"0023  ","name":"生物安全柜[68640700004]","isParent":false}],"id":"0023  ","pId":null,"name":"肿瘤科（血液科）病区","isParent":false},{"children":[{"id":"68200200003","pId":"0025  ","name":"电子血压计[68200200003]","isParent":false},{"id":"68200200004","pId":"0025  ","name":"电子血压计[68200200004]","isParent":false},{"id":"68200200009","pId":"0025  ","name":"电子血压计[68200200009]","isParent":false},{"id":"68200200023","pId":"0025  ","name":"水银血压计[68200200023]","isParent":false},{"id":"68200200028","pId":"0025  ","name":"水银血压计[68200200028]","isParent":false},{"id":"68200200029","pId":"0025  ","name":"水银血压计[68200200029]","isParent":false},{"id":"68200200042","pId":"0025  ","name":"水银血压计[68200200042]","isParent":false},{"id":"68210100017","pId":"0025  ","name":"除颤监护仪[68210100017]","isParent":false},{"id":"68210900068","pId":"0025  ","name":"多参数监护仪[68210900068]","isParent":false},{"id":"68210900078","pId":"0025  ","name":"多参数监护仪[68210900078]","isParent":false},{"id":"68210900104","pId":"0025  ","name":"多参数监护仪[68210900104]","isParent":false},{"id":"68210900105","pId":"0025  ","name":"多参数监护仪[68210900105]","isParent":false},{"id":"68210900228","pId":"0025  ","name":"多参数监护仪[68210900228]","isParent":false},{"id":"68210900232","pId":"0025  ","name":"多参数监护仪[68210900232]","isParent":false},{"id":"68450400002","pId":"0025  ","name":"血液透析机[68450400002]","isParent":false},{"id":"68450400003","pId":"0025  ","name":"血液透析机[68450400003]","isParent":false},{"id":"68450400004","pId":"0025  ","name":"血液透析机[68450400004]","isParent":false},{"id":"68450400005","pId":"0025  ","name":"血液透析机[68450400005]","isParent":false},{"id":"68450400006","pId":"0025  ","name":"血液透析机[68450400006]","isParent":false},{"id":"68450400007","pId":"0025  ","name":"血液透析机[68450400007]","isParent":false},{"id":"68450400008","pId":"0025  ","name":"血液透析机[68450400008]","isParent":false},{"id":"68450400009","pId":"0025  ","name":"血液透析机[68450400009]","isParent":false},{"id":"68450400010","pId":"0025  ","name":"血液透析机[68450400010]","isParent":false},{"id":"68450400011","pId":"0025  ","name":"血液透析机[68450400011]","isParent":false},{"id":"68450400012","pId":"0025  ","name":"血液透析机[68450400012]","isParent":false},{"id":"68450400013","pId":"0025  ","name":"血液透析机[68450400013]","isParent":false},{"id":"68450400014","pId":"0025  ","name":"血液透析机[68450400014]","isParent":false},{"id":"68450400015","pId":"0025  ","name":"血液透析机[68450400015]","isParent":false},{"id":"68450400016","pId":"0025  ","name":"血液透析机[68450400016]","isParent":false},{"id":"68450400017","pId":"0025  ","name":"血液透析机[68450400017]","isParent":false},{"id":"68450400018","pId":"0025  ","name":"血液透析机[68450400018]","isParent":false},{"id":"68450400019","pId":"0025  ","name":"血液透析机[68450400019]","isParent":false},{"id":"68450400020","pId":"0025  ","name":"血液透析机[68450400020]","isParent":false},{"id":"68450400021","pId":"0025  ","name":"血液透析机[68450400021]","isParent":false},{"id":"68450400022","pId":"0025  ","name":"血液透析机[68450400022]","isParent":false},{"id":"68450400023","pId":"0025  ","name":"血液透析机[68450400023]","isParent":false},{"id":"68450500004","pId":"0025  ","name":"血透纯水机[68450500004]","isParent":false},{"id":"68540500155","pId":"0025  ","name":"输液泵[68540500155]","isParent":false},{"id":"68540500156","pId":"0025  ","name":"输液泵[68540500156]","isParent":false},{"id":"68540500172","pId":"0025  ","name":"双道注射泵[68540500172]","isParent":false},{"id":"68540500245","pId":"0025  ","name":"双道注射泵[68540500245]","isParent":false},{"id":"68540500246","pId":"0025  ","name":"双道注射泵[68540500246]","isParent":false},{"id":"68540500247","pId":"0025  ","name":"双道注射泵[68540500247]","isParent":false},{"id":"68540500305","pId":"0025  ","name":"双道注射泵[68540500305]","isParent":false},{"id":"68560500016","pId":"0025  ","name":"身高体重秤[68560500016]","isParent":false},{"id":"68560500018","pId":"0025  ","name":"身高体重秤[68560500018]","isParent":false},{"id":"68560500028","pId":"0025  ","name":"身高体重秤[68560500028]","isParent":false},{"id":"68560500039","pId":"0025  ","name":"身高体重秤[68560500039]","isParent":false}],"id":"0025  ","pId":null,"name":"肾病学科病区","isParent":false},{"children":[{"id":"68200200032","pId":"0026  ","name":"水银血压计[68200200032]","isParent":false},{"id":"68200200033","pId":"0026  ","name":"水银血压计[68200200033]","isParent":false},{"id":"68200200038","pId":"0026  ","name":"水银血压计[68200200038]","isParent":false},{"id":"68200200039","pId":"0026  ","name":"水银血压计[68200200039]","isParent":false},{"id":"68200200040","pId":"0026  ","name":"水银血压计[68200200040]","isParent":false},{"id":"68200200046","pId":"0026  ","name":"水银血压计[68200200046]","isParent":false},{"id":"68200200061","pId":"0026  ","name":"水银血压计[68200200061]","isParent":false},{"id":"68200200064","pId":"0026  ","name":"水银血压计[68200200064]","isParent":false},{"id":"68210100009","pId":"0026  ","name":"除颤监护仪[68210100009]","isParent":false},{"id":"68210900009","pId":"0026  ","name":"多参数监护仪[68210900009]","isParent":false},{"id":"68210900041","pId":"0026  ","name":"多参数监护仪[68210900041]","isParent":false},{"id":"68210900074","pId":"0026  ","name":"多参数监护仪[68210900074]","isParent":false},{"id":"68210900077","pId":"0026  ","name":"多参数监护仪[68210900077]","isParent":false},{"id":"68210900114","pId":"0026  ","name":"多参数监护仪[68210900114]","isParent":false},{"id":"68210900131","pId":"0026  ","name":"多参数监护仪[68210900131]","isParent":false},{"id":"68210900140","pId":"0026  ","name":"多参数监护仪[68210900140]","isParent":false},{"id":"68210900162","pId":"0026  ","name":"多参数监护仪[68210900162]","isParent":false},{"id":"68210900168","pId":"0026  ","name":"多参数监护仪[68210900168]","isParent":false},{"id":"68210900169","pId":"0026  ","name":"多参数监护仪[68210900169]","isParent":false},{"id":"68210900177","pId":"0026  ","name":"多参数监护仪[68210900177]","isParent":false},{"id":"68210900180","pId":"0026  ","name":"多参数监护仪[68210900180]","isParent":false},{"id":"68210900190","pId":"0026  ","name":"多参数监护仪[68210900190]","isParent":false},{"id":"68210900220","pId":"0026  ","name":"多参数监护仪[68210900220]","isParent":false},{"id":"68210900225","pId":"0026  ","name":"多参数监护仪[68210900225]","isParent":false},{"id":"68211000002","pId":"0026  ","name":"肺功能仪[68211000002]","isParent":false},{"id":"68211300021","pId":"0026  ","name":"动态血压记录器[68211300021]","isParent":false},{"id":"68211300024","pId":"0026  ","name":"动态血压监测系统[68211300024]","isParent":false},{"id":"68540200058","pId":"0026  ","name":"呼吸机[68540200058]","isParent":false},{"id":"68540500011","pId":"0026  ","name":"单道注射泵[68540500011]","isParent":false},{"id":"68540500014","pId":"0026  ","name":"单道注射泵[68540500014]","isParent":false},{"id":"68540500015","pId":"0026  ","name":"单道注射泵[68540500015]","isParent":false},{"id":"68540500027","pId":"0026  ","name":"单道注射泵[68540500027]","isParent":false},{"id":"68540500252","pId":"0026  ","name":"双道注射泵[68540500252]","isParent":false},{"id":"68540500287","pId":"0026  ","name":"双道注射泵[68540500287]","isParent":false},{"id":"68540500308","pId":"0026  ","name":"双道注射泵[68540500308]","isParent":false},{"id":"68560500008","pId":"0026  ","name":"身高体重秤[68560500008]","isParent":false},{"id":"68560500034","pId":"0026  ","name":"身高体重秤[68560500034]","isParent":false}],"id":"0026  ","pId":null,"name":"呼吸内科病区","isParent":false},{"children":[{"id":"68200200021","pId":"0027  ","name":"水银血压计[68200200021]","isParent":false},{"id":"68210100016","pId":"0027  ","name":"除颤监护仪[68210100016]","isParent":false},{"id":"68210400012","pId":"0027  ","name":"心电图机[68210400012]","isParent":false},{"id":"68210900108","pId":"0027  ","name":"多参数监护仪[68210900108]","isParent":false},{"id":"68210900109","pId":"0027  ","name":"多参数监护仪[68210900109]","isParent":false},{"id":"68210900110","pId":"0027  ","name":"多参数监护仪[68210900110]","isParent":false},{"id":"68210900111","pId":"0027  ","name":"多参数监护仪[68210900111]","isParent":false},{"id":"68210900112","pId":"0027  ","name":"多参数监护仪[68210900112]","isParent":false},{"id":"68540200011","pId":"0027  ","name":"呼吸机[68540200011]","isParent":false},{"id":"68540200014","pId":"0027  ","name":"呼吸机[68540200014]","isParent":false},{"id":"68540200018","pId":"0027  ","name":"呼吸机[68540200018]","isParent":false},{"id":"68540200019","pId":"0027  ","name":"呼吸机[68540200019]","isParent":false},{"id":"68540200022","pId":"0027  ","name":"呼吸机[68540200022]","isParent":false},{"id":"68540200023","pId":"0027  ","name":"呼吸机[68540200023]","isParent":false},{"id":"68540200024","pId":"0027  ","name":"呼吸机[68540200024]","isParent":false},{"id":"68540200025","pId":"0027  ","name":"呼吸机[68540200025]","isParent":false},{"id":"68540200028","pId":"0027  ","name":"呼吸机[68540200028]","isParent":false},{"id":"68540200029","pId":"0027  ","name":"呼吸机[68540200029]","isParent":false},{"id":"68540200030","pId":"0027  ","name":"呼吸机[68540200030]","isParent":false},{"id":"68540200062","pId":"0027  ","name":"呼吸机[68540200062]","isParent":false},{"id":"68540500084","pId":"0027  ","name":"输液泵[68540500084]","isParent":false},{"id":"68540500092","pId":"0027  ","name":"输液泵[68540500092]","isParent":false},{"id":"68540500096","pId":"0027  ","name":"输液泵[68540500096]","isParent":false},{"id":"68540500101","pId":"0027  ","name":"输液泵[68540500101]","isParent":false},{"id":"68540500118","pId":"0027  ","name":"输液泵[68540500118]","isParent":false},{"id":"68540500119","pId":"0027  ","name":"输液泵[68540500119]","isParent":false},{"id":"68540500120","pId":"0027  ","name":"输液泵[68540500120]","isParent":false},{"id":"68540500121","pId":"0027  ","name":"输液泵[68540500121]","isParent":false},{"id":"68540500122","pId":"0027  ","name":"输液泵[68540500122]","isParent":false},{"id":"68540500123","pId":"0027  ","name":"输液泵[68540500123]","isParent":false},{"id":"68540500124","pId":"0027  ","name":"输液泵[68540500124]","isParent":false},{"id":"68540500125","pId":"0027  ","name":"输液泵[68540500125]","isParent":false},{"id":"68540500126","pId":"0027  ","name":"输液泵[68540500126]","isParent":false},{"id":"68540500127","pId":"0027  ","name":"输液泵[68540500127]","isParent":false},{"id":"68540500128","pId":"0027  ","name":"输液泵[68540500128]","isParent":false},{"id":"68540500129","pId":"0027  ","name":"输液泵[68540500129]","isParent":false},{"id":"68540500130","pId":"0027  ","name":"输液泵[68540500130]","isParent":false},{"id":"68540500131","pId":"0027  ","name":"输液泵[68540500131]","isParent":false},{"id":"68540500132","pId":"0027  ","name":"输液泵[68540500132]","isParent":false},{"id":"68540500321","pId":"0027  ","name":"组合式注射泵[68540500321]","isParent":false},{"id":"68540500322","pId":"0027  ","name":"组合式注射泵[68540500322]","isParent":false},{"id":"68540500323","pId":"0027  ","name":"组合式注射泵[68540500323]","isParent":false},{"id":"68540500324","pId":"0027  ","name":"组合式注射泵[68540500324]","isParent":false},{"id":"68540500325","pId":"0027  ","name":"组合式注射泵[68540500325]","isParent":false},{"id":"68540500326","pId":"0027  ","name":"组合式注射泵[68540500326]","isParent":false},{"id":"68540500327","pId":"0027  ","name":"组合式注射泵[68540500327]","isParent":false},{"id":"68540500328","pId":"0027  ","name":"组合式注射泵[68540500328]","isParent":false},{"id":"68540500329","pId":"0027  ","name":"组合式注射泵[68540500329]","isParent":false},{"id":"68540500330","pId":"0027  ","name":"组合式注射泵[68540500330]","isParent":false},{"id":"68540500332","pId":"0027  ","name":"组合式注射泵[68540500332]","isParent":false},{"id":"68540500333","pId":"0027  ","name":"组合式注射泵[68540500333]","isParent":false},{"id":"68560500020","pId":"0027  ","name":"身高体重秤[68560500020]","isParent":false}],"id":"0027  ","pId":null,"name":"重症医学科病区","isParent":false},{"children":[{"id":"68210500001","pId":"0028  ","name":"脑电图机[68210500001]","isParent":false}],"id":"0028  ","pId":null,"name":"脑电图室","isParent":false},{"children":[{"id":"68210900043","pId":"0030  ","name":"多参数监护仪[68210900043]","isParent":false},{"id":"68210900044","pId":"0030  ","name":"多参数监护仪[68210900044]","isParent":false},{"id":"68210900045","pId":"0030  ","name":"多参数监护仪[68210900045]","isParent":false},{"id":"68210900048","pId":"0030  ","name":"多参数监护仪[68210900048]","isParent":false},{"id":"68210900059","pId":"0030  ","name":"多参数监护仪[68210900059]","isParent":false},{"id":"68210900060","pId":"0030  ","name":"多参数监护仪[68210900060]","isParent":false},{"id":"68210900062","pId":"0030  ","name":"多参数监护仪[68210900062]","isParent":false},{"id":"68210900089","pId":"0030  ","name":"多参数监护仪[68210900089]","isParent":false},{"id":"68210900090","pId":"0030  ","name":"多参数监护仪[68210900090]","isParent":false},{"id":"68210900092","pId":"0030  ","name":"多参数监护仪[68210900092]","isParent":false},{"id":"68210900093","pId":"0030  ","name":"多参数监护仪[68210900093]","isParent":false},{"id":"68210900094","pId":"0030  ","name":"多参数监护仪[68210900094]","isParent":false},{"id":"68210900163","pId":"0030  ","name":"多参数监护仪[68210900163]","isParent":false},{"id":"68210900164","pId":"0030  ","name":"多参数监护仪[68210900164]","isParent":false},{"id":"68210900167","pId":"0030  ","name":"多参数监护仪[68210900167]","isParent":false},{"id":"68210900170","pId":"0030  ","name":"多参数监护仪[68210900170]","isParent":false},{"id":"68210900171","pId":"0030  ","name":"多参数监护仪[68210900171]","isParent":false},{"id":"68210900172","pId":"0030  ","name":"多参数监护仪[68210900172]","isParent":false},{"id":"68210900174","pId":"0030  ","name":"多参数监护仪[68210900174]","isParent":false},{"id":"68210900178","pId":"0030  ","name":"多参数监护仪[68210900178]","isParent":false},{"id":"68210900179","pId":"0030  ","name":"多参数监护仪[68210900179]","isParent":false},{"id":"68210900181","pId":"0030  ","name":"多参数监护仪[68210900181]","isParent":false},{"id":"68210900182","pId":"0030  ","name":"多参数监护仪[68210900182]","isParent":false},{"id":"68210900183","pId":"0030  ","name":"多参数监护仪[68210900183]","isParent":false},{"id":"68210900186","pId":"0030  ","name":"多参数监护仪[68210900186]","isParent":false},{"id":"68210900187","pId":"0030  ","name":"多参数监护仪[68210900187]","isParent":false},{"id":"68210900188","pId":"0030  ","name":"多参数监护仪[68210900188]","isParent":false},{"id":"68210900191","pId":"0030  ","name":"多参数监护仪[68210900191]","isParent":false},{"id":"68210900192","pId":"0030  ","name":"多参数监护仪[68210900192]","isParent":false},{"id":"68210900193","pId":"0030  ","name":"多参数监护仪[68210900193]","isParent":false},{"id":"68210900194","pId":"0030  ","name":"多参数监护仪[68210900194]","isParent":false},{"id":"68210900195","pId":"0030  ","name":"多参数监护仪[68210900195]","isParent":false},{"id":"68210900196","pId":"0030  ","name":"多参数监护仪[68210900196]","isParent":false},{"id":"68210900197","pId":"0030  ","name":"多参数监护仪[68210900197]","isParent":false},{"id":"68210900198","pId":"0030  ","name":"多参数监护仪[68210900198]","isParent":false},{"id":"68210900199","pId":"0030  ","name":"多参数监护仪[68210900199]","isParent":false},{"id":"68210900200","pId":"0030  ","name":"多参数监护仪[68210900200]","isParent":false},{"id":"68210900201","pId":"0030  ","name":"多参数监护仪[68210900201]","isParent":false},{"id":"68210900202","pId":"0030  ","name":"多参数监护仪[68210900202]","isParent":false},{"id":"68210900203","pId":"0030  ","name":"多参数监护仪[68210900203]","isParent":false},{"id":"68210900204","pId":"0030  ","name":"多参数监护仪[68210900204]","isParent":false},{"id":"68210900205","pId":"0030  ","name":"多参数监护仪[68210900205]","isParent":false},{"id":"68210900206","pId":"0030  ","name":"多参数监护仪[68210900206]","isParent":false},{"id":"68210900207","pId":"0030  ","name":"多参数监护仪[68210900207]","isParent":false},{"id":"68210900208","pId":"0030  ","name":"多参数监护仪[68210900208]","isParent":false},{"id":"68210900209","pId":"0030  ","name":"多参数监护仪[68210900209]","isParent":false},{"id":"68210900210","pId":"0030  ","name":"多参数监护仪[68210900210]","isParent":false},{"id":"68540200004","pId":"0030  ","name":"呼吸机[68540200004]","isParent":false},{"id":"68540200007","pId":"0030  ","name":"呼吸机[68540200007]","isParent":false},{"id":"68540200032","pId":"0030  ","name":"呼吸机[68540200032]","isParent":false},{"id":"68540200033","pId":"0030  ","name":"呼吸机[68540200033]","isParent":false},{"id":"68540200034","pId":"0030  ","name":"呼吸机[68540200034]","isParent":false},{"id":"68540200035","pId":"0030  ","name":"呼吸机[68540200035]","isParent":false},{"id":"68540200041","pId":"0030  ","name":"呼吸机[68540200041]","isParent":false},{"id":"68540200042","pId":"0030  ","name":"呼吸机[68540200042]","isParent":false},{"id":"68540200043","pId":"0030  ","name":"呼吸机[68540200043]","isParent":false},{"id":"68540400062","pId":"0030  ","name":"婴儿温箱[68540400062]","isParent":false},{"id":"68540400063","pId":"0030  ","name":"婴儿温箱[68540400063]","isParent":false},{"id":"68540400064","pId":"0030  ","name":"婴儿温箱[68540400064]","isParent":false},{"id":"68540400065","pId":"0030  ","name":"婴儿温箱[68540400065]","isParent":false},{"id":"68540400066","pId":"0030  ","name":"婴儿温箱[68540400066]","isParent":false},{"id":"68540400067","pId":"0030  ","name":"婴儿温箱[68540400067]","isParent":false},{"id":"68540400068","pId":"0030  ","name":"婴儿温箱[68540400068]","isParent":false},{"id":"68540400069","pId":"0030  ","name":"婴儿温箱[68540400069]","isParent":false},{"id":"68540400070","pId":"0030  ","name":"婴儿温箱[68540400070]","isParent":false},{"id":"68540400071","pId":"0030  ","name":"婴儿温箱[68540400071]","isParent":false},{"id":"68540400072","pId":"0030  ","name":"婴儿温箱[68540400072]","isParent":false},{"id":"68540400073","pId":"0030  ","name":"婴儿温箱[68540400073]","isParent":false},{"id":"68540400074","pId":"0030  ","name":"婴儿温箱[68540400074]","isParent":false},{"id":"68540400075","pId":"0030  ","name":"婴儿温箱[68540400075]","isParent":false},{"id":"68540400076","pId":"0030  ","name":"婴儿温箱[68540400076]","isParent":false},{"id":"68540400077","pId":"0030  ","name":"婴儿温箱[68540400077]","isParent":false},{"id":"68540400078","pId":"0030  ","name":"婴儿温箱[68540400078]","isParent":false},{"id":"68540400079","pId":"0030  ","name":"婴儿温箱[68540400079]","isParent":false},{"id":"68540400080","pId":"0030  ","name":"婴儿温箱[68540400080]","isParent":false},{"id":"68540400081","pId":"0030  ","name":"婴儿温箱[68540400081]","isParent":false},{"id":"68540400082","pId":"0030  ","name":"婴儿温箱[68540400082]","isParent":false},{"id":"68540400083","pId":"0030  ","name":"婴儿温箱[68540400083]","isParent":false},{"id":"68540400084","pId":"0030  ","name":"婴儿温箱[68540400084]","isParent":false},{"id":"68540400085","pId":"0030  ","name":"婴儿温箱[68540400085]","isParent":false},{"id":"68540400086","pId":"0030  ","name":"婴儿温箱[68540400086]","isParent":false},{"id":"68540400087","pId":"0030  ","name":"婴儿温箱[68540400087]","isParent":false},{"id":"68540400088","pId":"0030  ","name":"婴儿温箱[68540400088]","isParent":false},{"id":"68540400089","pId":"0030  ","name":"婴儿温箱[68540400089]","isParent":false},{"id":"68540400090","pId":"0030  ","name":"婴儿温箱[68540400090]","isParent":false},{"id":"68540400091","pId":"0030  ","name":"婴儿温箱[68540400091]","isParent":false},{"id":"68540400092","pId":"0030  ","name":"婴儿温箱[68540400092]","isParent":false},{"id":"68540400093","pId":"0030  ","name":"婴儿温箱[68540400093]","isParent":false},{"id":"68540400094","pId":"0030  ","name":"婴儿温箱[68540400094]","isParent":false},{"id":"68540400095","pId":"0030  ","name":"婴儿温箱[68540400095]","isParent":false},{"id":"68540400096","pId":"0030  ","name":"婴儿温箱[68540400096]","isParent":false},{"id":"68540400097","pId":"0030  ","name":"婴儿温箱[68540400097]","isParent":false},{"id":"68540400098","pId":"0030  ","name":"婴儿温箱[68540400098]","isParent":false},{"id":"68540400099","pId":"0030  ","name":"婴儿温箱[68540400099]","isParent":false},{"id":"68540400100","pId":"0030  ","name":"婴儿温箱[68540400100]","isParent":false},{"id":"68540400101","pId":"0030  ","name":"婴儿温箱[68540400101]","isParent":false},{"id":"68540400102","pId":"0030  ","name":"婴儿温箱[68540400102]","isParent":false},{"id":"68540400103","pId":"0030  ","name":"婴儿温箱[68540400103]","isParent":false},{"id":"68540400104","pId":"0030  ","name":"婴儿温箱[68540400104]","isParent":false},{"id":"68540400105","pId":"0030  ","name":"婴儿温箱[68540400105]","isParent":false},{"id":"68540400106","pId":"0030  ","name":"婴儿温箱[68540400106]","isParent":false},{"id":"68540400107","pId":"0030  ","name":"婴儿温箱[68540400107]","isParent":false},{"id":"68540400108","pId":"0030  ","name":"婴儿温箱[68540400108]","isParent":false},{"id":"68540400109","pId":"0030  ","name":"婴儿温箱[68540400109]","isParent":false},{"id":"68540400110","pId":"0030  ","name":"婴儿温箱[68540400110]","isParent":false},{"id":"68540400111","pId":"0030  ","name":"婴儿温箱[68540400111]","isParent":false},{"id":"68540400112","pId":"0030  ","name":"婴儿温箱[68540400112]","isParent":false},{"id":"68540400113","pId":"0030  ","name":"婴儿温箱[68540400113]","isParent":false},{"id":"68540400114","pId":"0030  ","name":"婴儿温箱[68540400114]","isParent":false},{"id":"68540400115","pId":"0030  ","name":"婴儿温箱[68540400115]","isParent":false},{"id":"68540400116","pId":"0030  ","name":"婴儿温箱[68540400116]","isParent":false},{"id":"68540400117","pId":"0030  ","name":"婴儿温箱[68540400117]","isParent":false},{"id":"68540400118","pId":"0030  ","name":"婴儿温箱[68540400118]","isParent":false},{"id":"68540400119","pId":"0030  ","name":"婴儿温箱[68540400119]","isParent":false},{"id":"68540400120","pId":"0030  ","name":"婴儿温箱[68540400120]","isParent":false},{"id":"68540400121","pId":"0030  ","name":"婴儿温箱[68540400121]","isParent":false},{"id":"68540400122","pId":"0030  ","name":"婴儿温箱[68540400122]","isParent":false},{"id":"68540400123","pId":"0030  ","name":"婴儿温箱[68540400123]","isParent":false},{"id":"68540400124","pId":"0030  ","name":"婴儿温箱[68540400124]","isParent":false},{"id":"68540400125","pId":"0030  ","name":"婴儿温箱[68540400125]","isParent":false},{"id":"68540400126","pId":"0030  ","name":"婴儿温箱[68540400126]","isParent":false},{"id":"68540400127","pId":"0030  ","name":"婴儿温箱[68540400127]","isParent":false},{"id":"68540400128","pId":"0030  ","name":"婴儿温箱[68540400128]","isParent":false},{"id":"68540400129","pId":"0030  ","name":"婴儿温箱[68540400129]","isParent":false},{"id":"68540500017","pId":"0030  ","name":"单道注射泵[68540500017]","isParent":false},{"id":"68540500018","pId":"0030  ","name":"单道注射泵[68540500018]","isParent":false},{"id":"68540500038","pId":"0030  ","name":"输液泵[68540500038]","isParent":false},{"id":"68540500040","pId":"0030  ","name":"输液泵[68540500040]","isParent":false},{"id":"68540500041","pId":"0030  ","name":"输液泵[68540500041]","isParent":false},{"id":"68540500042","pId":"0030  ","name":"输液泵[68540500042]","isParent":false},{"id":"68540500043","pId":"0030  ","name":"输液泵[68540500043]","isParent":false},{"id":"68540500044","pId":"0030  ","name":"输液泵[68540500044]","isParent":false},{"id":"68540500045","pId":"0030  ","name":"输液泵[68540500045]","isParent":false},{"id":"68540500046","pId":"0030  ","name":"输液泵[68540500046]","isParent":false},{"id":"68540500049","pId":"0030  ","name":"输液泵[68540500049]","isParent":false},{"id":"68540500050","pId":"0030  ","name":"输液泵[68540500050]","isParent":false},{"id":"68540500051","pId":"0030  ","name":"输液泵[68540500051]","isParent":false},{"id":"68540500052","pId":"0030  ","name":"输液泵[68540500052]","isParent":false},{"id":"68540500053","pId":"0030  ","name":"输液泵[68540500053]","isParent":false},{"id":"68540500054","pId":"0030  ","name":"输液泵[68540500054]","isParent":false},{"id":"68540500055","pId":"0030  ","name":"输液泵[68540500055]","isParent":false},{"id":"68540500056","pId":"0030  ","name":"输液泵[68540500056]","isParent":false},{"id":"68540500057","pId":"0030  ","name":"输液泵[68540500057]","isParent":false},{"id":"68540500058","pId":"0030  ","name":"输液泵[68540500058]","isParent":false},{"id":"68540500059","pId":"0030  ","name":"输液泵[68540500059]","isParent":false},{"id":"68540500060","pId":"0030  ","name":"输液泵[68540500060]","isParent":false},{"id":"68540500061","pId":"0030  ","name":"输液泵[68540500061]","isParent":false},{"id":"68540500062","pId":"0030  ","name":"输液泵[68540500062]","isParent":false},{"id":"68540500063","pId":"0030  ","name":"输液泵[68540500063]","isParent":false},{"id":"68540500064","pId":"0030  ","name":"输液泵[68540500064]","isParent":false},{"id":"68540500065","pId":"0030  ","name":"输液泵[68540500065]","isParent":false},{"id":"68540500066","pId":"0030  ","name":"输液泵[68540500066]","isParent":false},{"id":"68540500068","pId":"0030  ","name":"输液泵[68540500068]","isParent":false},{"id":"68540500069","pId":"0030  ","name":"输液泵[68540500069]","isParent":false},{"id":"68540500070","pId":"0030  ","name":"输液泵[68540500070]","isParent":false},{"id":"68540500071","pId":"0030  ","name":"输液泵[68540500071]","isParent":false},{"id":"68540500072","pId":"0030  ","name":"输液泵[68540500072]","isParent":false},{"id":"68540500085","pId":"0030  ","name":"输液泵[68540500085]","isParent":false},{"id":"68540500087","pId":"0030  ","name":"输液泵[68540500087]","isParent":false},{"id":"68540500088","pId":"0030  ","name":"输液泵[68540500088]","isParent":false},{"id":"68540500089","pId":"0030  ","name":"输液泵[68540500089]","isParent":false},{"id":"68540500090","pId":"0030  ","name":"输液泵[68540500090]","isParent":false},{"id":"68540500091","pId":"0030  ","name":"输液泵[68540500091]","isParent":false},{"id":"68540500094","pId":"0030  ","name":"输液泵[68540500094]","isParent":false},{"id":"68540500095","pId":"0030  ","name":"输液泵[68540500095]","isParent":false},{"id":"68540500097","pId":"0030  ","name":"输液泵[68540500097]","isParent":false},{"id":"68540500099","pId":"0030  ","name":"输液泵[68540500099]","isParent":false},{"id":"68540500105","pId":"0030  ","name":"输液泵[68540500105]","isParent":false},{"id":"68540500106","pId":"0030  ","name":"输液泵[68540500106]","isParent":false},{"id":"68540500107","pId":"0030  ","name":"输液泵[68540500107]","isParent":false},{"id":"68540500111","pId":"0030  ","name":"输液泵[68540500111]","isParent":false},{"id":"68540500112","pId":"0030  ","name":"输液泵[68540500112]","isParent":false},{"id":"68540500113","pId":"0030  ","name":"输液泵[68540500113]","isParent":false},{"id":"68540500114","pId":"0030  ","name":"输液泵[68540500114]","isParent":false},{"id":"68540500115","pId":"0030  ","name":"输液泵[68540500115]","isParent":false},{"id":"68540500116","pId":"0030  ","name":"输液泵[68540500116]","isParent":false},{"id":"68540500117","pId":"0030  ","name":"输液泵[68540500117]","isParent":false},{"id":"68540500208","pId":"0030  ","name":"双道注射泵[68540500208]","isParent":false},{"id":"68540500209","pId":"0030  ","name":"双道注射泵[68540500209]","isParent":false},{"id":"68540500210","pId":"0030  ","name":"双道注射泵[68540500210]","isParent":false},{"id":"68540500211","pId":"0030  ","name":"双道注射泵[68540500211]","isParent":false},{"id":"68540500212","pId":"0030  ","name":"双道注射泵[68540500212]","isParent":false},{"id":"68540500213","pId":"0030  ","name":"双道注射泵[68540500213]","isParent":false},{"id":"68540500214","pId":"0030  ","name":"双道注射泵[68540500214]","isParent":false},{"id":"68540500215","pId":"0030  ","name":"双道注射泵[68540500215]","isParent":false},{"id":"68540500216","pId":"0030  ","name":"双道注射泵[68540500216]","isParent":false},{"id":"68540500217","pId":"0030  ","name":"双道注射泵[68540500217]","isParent":false},{"id":"68540500218","pId":"0030  ","name":"双道注射泵[68540500218]","isParent":false},{"id":"68540500219","pId":"0030  ","name":"双道注射泵[68540500219]","isParent":false},{"id":"68540500220","pId":"0030  ","name":"双道注射泵[68540500220]","isParent":false},{"id":"68540500221","pId":"0030  ","name":"双道注射泵[68540500221]","isParent":false},{"id":"68540500222","pId":"0030  ","name":"双道注射泵[68540500222]","isParent":false},{"id":"68540500223","pId":"0030  ","name":"双道注射泵[68540500223]","isParent":false},{"id":"68540500224","pId":"0030  ","name":"双道注射泵[68540500224]","isParent":false},{"id":"68540500225","pId":"0030  ","name":"双道注射泵[68540500225]","isParent":false},{"id":"68540500226","pId":"0030  ","name":"双道注射泵[68540500226]","isParent":false},{"id":"68540500227","pId":"0030  ","name":"双道注射泵[68540500227]","isParent":false},{"id":"68540500228","pId":"0030  ","name":"双道注射泵[68540500228]","isParent":false},{"id":"68540500229","pId":"0030  ","name":"双道注射泵[68540500229]","isParent":false},{"id":"68540500230","pId":"0030  ","name":"双道注射泵[68540500230]","isParent":false},{"id":"68540500231","pId":"0030  ","name":"双道注射泵[68540500231]","isParent":false},{"id":"68540500232","pId":"0030  ","name":"双道注射泵[68540500232]","isParent":false},{"id":"68540500233","pId":"0030  ","name":"双道注射泵[68540500233]","isParent":false},{"id":"68540500234","pId":"0030  ","name":"双道注射泵[68540500234]","isParent":false},{"id":"68540500235","pId":"0030  ","name":"双道注射泵[68540500235]","isParent":false},{"id":"68540500236","pId":"0030  ","name":"双道注射泵[68540500236]","isParent":false},{"id":"68540500237","pId":"0030  ","name":"双道注射泵[68540500237]","isParent":false},{"id":"68540500238","pId":"0030  ","name":"双道注射泵[68540500238]","isParent":false},{"id":"68540500239","pId":"0030  ","name":"双道注射泵[68540500239]","isParent":false},{"id":"68540500240","pId":"0030  ","name":"双道注射泵[68540500240]","isParent":false},{"id":"68540500241","pId":"0030  ","name":"双道注射泵[68540500241]","isParent":false},{"id":"68540500242","pId":"0030  ","name":"双道注射泵[68540500242]","isParent":false},{"id":"68540500243","pId":"0030  ","name":"双道注射泵[68540500243]","isParent":false},{"id":"68540500244","pId":"0030  ","name":"双道注射泵[68540500244]","isParent":false},{"id":"68540500255","pId":"0030  ","name":"双道注射泵[68540500255]","isParent":false},{"id":"68540500256","pId":"0030  ","name":"双道注射泵[68540500256]","isParent":false},{"id":"68540500257","pId":"0030  ","name":"双道注射泵[68540500257]","isParent":false},{"id":"68540500258","pId":"0030  ","name":"双道注射泵[68540500258]","isParent":false},{"id":"68540500259","pId":"0030  ","name":"双道注射泵[68540500259]","isParent":false},{"id":"68540500267","pId":"0030  ","name":"双道注射泵[68540500267]","isParent":false},{"id":"68540500268","pId":"0030  ","name":"双道注射泵[68540500268]","isParent":false},{"id":"68540500271","pId":"0030  ","name":"双道注射泵[68540500271]","isParent":false},{"id":"68540500272","pId":"0030  ","name":"双道注射泵[68540500272]","isParent":false},{"id":"68540500276","pId":"0030  ","name":"双道注射泵[68540500276]","isParent":false},{"id":"68540500277","pId":"0030  ","name":"双道注射泵[68540500277]","isParent":false},{"id":"68540500278","pId":"0030  ","name":"双道注射泵[68540500278]","isParent":false},{"id":"68540500280","pId":"0030  ","name":"双道注射泵[68540500280]","isParent":false},{"id":"68540500283","pId":"0030  ","name":"双道注射泵[68540500283]","isParent":false},{"id":"68540500284","pId":"0030  ","name":"双道注射泵[68540500284]","isParent":false},{"id":"68540500285","pId":"0030  ","name":"双道注射泵[68540500285]","isParent":false},{"id":"68540500286","pId":"0030  ","name":"双道注射泵[68540500286]","isParent":false},{"id":"68540500288","pId":"0030  ","name":"双道注射泵[68540500288]","isParent":false},{"id":"68540500289","pId":"0030  ","name":"双道注射泵[68540500289]","isParent":false},{"id":"68540500290","pId":"0030  ","name":"双道注射泵[68540500290]","isParent":false},{"id":"68540500291","pId":"0030  ","name":"双道注射泵[68540500291]","isParent":false},{"id":"68540500292","pId":"0030  ","name":"双道注射泵[68540500292]","isParent":false},{"id":"68540500293","pId":"0030  ","name":"双道注射泵[68540500293]","isParent":false},{"id":"68540500294","pId":"0030  ","name":"双道注射泵[68540500294]","isParent":false},{"id":"68540500296","pId":"0030  ","name":"双道注射泵[68540500296]","isParent":false}],"id":"0030  ","pId":null,"name":"新生儿病区","isParent":false},{"children":[{"id":"68570200004","pId":"0032  ","name":"压力表[68570200004]","isParent":false},{"id":"68570200005","pId":"0032  ","name":"压力表[68570200005]","isParent":false},{"id":"68570200006","pId":"0032  ","name":"压力表[68570200006]","isParent":false},{"id":"68570200007","pId":"0032  ","name":"压力表[68570200007]","isParent":false},{"id":"68570200008","pId":"0032  ","name":"压力真空表[68570200008]","isParent":false},{"id":"68570200009","pId":"0032  ","name":"压力真空表[68570200009]","isParent":false},{"id":"68570200010","pId":"0032  ","name":"压力真空表[68570200010]","isParent":false}],"id":"0032  ","pId":null,"name":"供应室","isParent":false},{"children":[{"id":"68210100001","pId":"0033  ","name":"除颤监护仪[68210100001]","isParent":false},{"id":"68210100002","pId":"0033  ","name":"除颤监护仪[68210100002]","isParent":false},{"id":"68210100004","pId":"0033  ","name":"除颤监护仪[68210100004]","isParent":false},{"id":"68210100010","pId":"0033  ","name":"除颤监护仪[68210100010]","isParent":false},{"id":"68210400017","pId":"0033  ","name":"心电图机[68210400017]","isParent":false},{"id":"68210400018","pId":"0033  ","name":"心电图机[68210400018]","isParent":false},{"id":"68210400019","pId":"0033  ","name":"心电图机[68210400019]","isParent":false},{"id":"68210900036","pId":"0033  ","name":"多参数监护仪[68210900036]","isParent":false},{"id":"68210900039","pId":"0033  ","name":"多参数监护仪[68210900039]","isParent":false},{"id":"68210900057","pId":"0033  ","name":"多参数监护仪[68210900057]","isParent":false},{"id":"68210900058","pId":"0033  ","name":"多参数监护仪[68210900058]","isParent":false}],"id":"0033  ","pId":null,"name":"急救中心","isParent":false},{"children":[{"id":"68210100014","pId":"0034  ","name":"除颤监护仪[68210100014]","isParent":false},{"id":"68210900066","pId":"0034  ","name":"多参数监护仪[68210900066]","isParent":false},{"id":"68210900067","pId":"0034  ","name":"多参数监护仪[68210900067]","isParent":false},{"id":"68210900069","pId":"0034  ","name":"多参数监护仪[68210900069]","isParent":false},{"id":"68210900070","pId":"0034  ","name":"多参数监护仪[68210900070]","isParent":false},{"id":"68210900072","pId":"0034  ","name":"多参数监护仪[68210900072]","isParent":false},{"id":"68211400001","pId":"0034  ","name":"4道生命体征模拟仪[68211400001]","isParent":false},{"id":"68540200012","pId":"0034  ","name":"呼吸机[68540200012]","isParent":false},{"id":"68540200020","pId":"0034  ","name":"呼吸机[68540200020]","isParent":false},{"id":"68540200021","pId":"0034  ","name":"呼吸机[68540200021]","isParent":false},{"id":"68540500033","pId":"0034  ","name":"单通道输液设备分析仪[68540500033]","isParent":false},{"id":"68540500151","pId":"0034  ","name":"输液泵[68540500151]","isParent":false},{"id":"68540500152","pId":"0034  ","name":"输液泵[68540500152]","isParent":false},{"id":"68540500201","pId":"0034  ","name":"双道注射泵[68540500201]","isParent":false},{"id":"68540500202","pId":"0034  ","name":"双道注射泵[68540500202]","isParent":false},{"id":"68540500203","pId":"0034  ","name":"双道注射泵[68540500203]","isParent":false},{"id":"68540500206","pId":"0034  ","name":"双道注射泵[68540500206]","isParent":false},{"id":"688800001","pId":"0034  ","name":"电气安全分析仪[688800001]","isParent":false},{"id":"688800002","pId":"0034  ","name":"气流分析仪[688800002]","isParent":false}],"id":"0034  ","pId":null,"name":"医疗设备科","isParent":false},{"children":[{"id":"68200200124","pId":"0035  ","name":"水银血压计[68200200124]","isParent":false},{"id":"68200200125","pId":"0035  ","name":"水银血压计[68200200125]","isParent":false},{"id":"68210900113","pId":"0035  ","name":"多参数监护仪[68210900113]","isParent":false},{"id":"68210900165","pId":"0035  ","name":"多参数监护仪[68210900165]","isParent":false},{"id":"68210900175","pId":"0035  ","name":"多参数监护仪[68210900175]","isParent":false},{"id":"68210900176","pId":"0035  ","name":"多参数监护仪[68210900176]","isParent":false},{"id":"68250100002","pId":"0035  ","name":"高频电刀[68250100002]","isParent":false},{"id":"68560500009","pId":"0035  ","name":"身高体重秤[68560500009]","isParent":false}],"id":"0035  ","pId":null,"name":"中医肛肠科病区","isParent":false},{"children":[{"id":"68200200071","pId":"0036  ","name":"水银血压计[68200200071]","isParent":false},{"id":"68200200072","pId":"0036  ","name":"水银血压计[68200200072]","isParent":false},{"id":"68210100012","pId":"0036  ","name":"除颤监护仪[68210100012]","isParent":false},{"id":"68210900103","pId":"0036  ","name":"多参数监护仪[68210900103]","isParent":false},{"id":"68210900126","pId":"0036  ","name":"多参数监护仪[68210900126]","isParent":false},{"id":"68210900127","pId":"0036  ","name":"多参数监护仪[68210900127]","isParent":false},{"id":"68210900129","pId":"0036  ","name":"多参数监护仪[68210900129]","isParent":false},{"id":"68210900133","pId":"0036  ","name":"多参数监护仪[68210900133]","isParent":false},{"id":"68210900135","pId":"0036  ","name":"多参数监护仪[68210900135]","isParent":false},{"id":"68210900141","pId":"0036  ","name":"多参数监护仪[68210900141]","isParent":false},{"id":"68210900142","pId":"0036  ","name":"多参数监护仪[68210900142]","isParent":false},{"id":"68210900214","pId":"0036  ","name":"多参数监护仪[68210900214]","isParent":false},{"id":"68210900229","pId":"0036  ","name":"多参数监护仪[68210900229]","isParent":false},{"id":"68211300003","pId":"0036  ","name":"动态血压记录盒[68211300003]","isParent":false},{"id":"68211300004","pId":"0036  ","name":"动态血压记录盒[68211300004]","isParent":false},{"id":"68540500004","pId":"0036  ","name":"单道注射泵[68540500004]","isParent":false},{"id":"68540500007","pId":"0036  ","name":"单道注射泵[68540500007]","isParent":false},{"id":"68540500010","pId":"0036  ","name":"单道注射泵[68540500010]","isParent":false},{"id":"68540500013","pId":"0036  ","name":"单道注射泵[68540500013]","isParent":false},{"id":"68540500016","pId":"0036  ","name":"单道注射泵[68540500016]","isParent":false},{"id":"68540500103","pId":"0036  ","name":"输液泵[68540500103]","isParent":false},{"id":"68540500180","pId":"0036  ","name":"双道注射泵[68540500180]","isParent":false},{"id":"68540500261","pId":"0036  ","name":"双道注射泵[68540500261]","isParent":false},{"id":"68540500262","pId":"0036  ","name":"双道注射泵[68540500262]","isParent":false},{"id":"68540500273","pId":"0036  ","name":"双道注射泵[68540500273]","isParent":false},{"id":"68560500012","pId":"0036  ","name":"身高体重秤[68560500012]","isParent":false}],"id":"0036  ","pId":null,"name":"消化内科病区","isParent":false},{"children":[{"id":"68200200117","pId":"0037  ","name":"水银血压计[68200200117]","isParent":false},{"id":"68200200118","pId":"0037  ","name":"水银血压计[68200200118]","isParent":false},{"id":"68200200119","pId":"0037  ","name":"水银血压计[68200200119]","isParent":false},{"id":"68200200120","pId":"0037  ","name":"水银血压计[68200200120]","isParent":false},{"id":"68200200121","pId":"0037  ","name":"水银血压计[68200200121]","isParent":false},{"id":"68200200122","pId":"0037  ","name":"水银血压计[68200200122]","isParent":false},{"id":"68200200123","pId":"0037  ","name":"水银血压计[68200200123]","isParent":false},{"id":"68211300025","pId":"0037  ","name":"全自动电子血压计[68211300025]","isParent":false},{"id":"68250100010","pId":"0037  ","name":"高频电刀[68250100010]","isParent":false},{"id":"68560500046","pId":"0037  ","name":"身高体重秤[68560500046]","isParent":false}],"id":"0037  ","pId":null,"name":"门诊部","isParent":false},{"children":[{"id":"68200200050","pId":"0038  ","name":"水银血压计[68200200050]","isParent":false},{"id":"68200200051","pId":"0038  ","name":"水银血压计[68200200051]","isParent":false},{"id":"68200200053","pId":"0038  ","name":"水银血压计[68200200053]","isParent":false},{"id":"68200200054","pId":"0038  ","name":"水银血压计[68200200054]","isParent":false},{"id":"68200200056","pId":"0038  ","name":"水银血压计[68200200056]","isParent":false},{"id":"68200200057","pId":"0038  ","name":"水银血压计[68200200057]","isParent":false},{"id":"68200200059","pId":"0038  ","name":"水银血压计[68200200059]","isParent":false},{"id":"68200200063","pId":"0038  ","name":"水银血压计[68200200063]","isParent":false},{"id":"68200200115","pId":"0038  ","name":"水银血压计[68200200115]","isParent":false},{"id":"68200200116","pId":"0038  ","name":"水银血压计[68200200116]","isParent":false},{"id":"68210100007","pId":"0038  ","name":"除颤监护仪[68210100007]","isParent":false},{"id":"68210900038","pId":"0038  ","name":"多参数监护仪[68210900038]","isParent":false},{"id":"68210900065","pId":"0038  ","name":"多参数监护仪[68210900065]","isParent":false},{"id":"68211300001","pId":"0038  ","name":"动态血压记录盒[68211300001]","isParent":false},{"id":"68211300008","pId":"0038  ","name":"动态血压记录盒[68211300008]","isParent":false},{"id":"68211300009","pId":"0038  ","name":"动态血压记录盒[68211300009]","isParent":false},{"id":"68540500022","pId":"0038  ","name":"单道注射泵[68540500022]","isParent":false},{"id":"68540500023","pId":"0038  ","name":"单道注射泵[68540500023]","isParent":false},{"id":"68540500030","pId":"0038  ","name":"单道注射泵[68540500030]","isParent":false},{"id":"68540500179","pId":"0038  ","name":"双道注射泵[68540500179]","isParent":false},{"id":"68560500011","pId":"0038  ","name":"身高体重秤[68560500011]","isParent":false}],"id":"0038  ","pId":null,"name":"内分泌科病区","isParent":false},{"children":[{"id":"68200200130","pId":"0040  ","name":"水银血压计[68200200130]","isParent":false},{"id":"68200200131","pId":"0040  ","name":"水银血压计[68200200131]","isParent":false},{"id":"68211300026","pId":"0040  ","name":"医用全自动电子血压计[68211300026]","isParent":false}],"id":"0040  ","pId":null,"name":"体检科","isParent":false},{"children":[{"id":"68200200016","pId":"0041  ","name":"水银血压计[68200200016]","isParent":false},{"id":"68200200019","pId":"0041  ","name":"水银血压计[68200200019]","isParent":false},{"id":"68200200024","pId":"0041  ","name":"水银血压计[68200200024]","isParent":false},{"id":"68200200025","pId":"0041  ","name":"水银血压计[68200200025]","isParent":false},{"id":"68200200026","pId":"0041  ","name":"水银血压计[68200200026]","isParent":false},{"id":"68560500006","pId":"0041  ","name":"身高体重秤[68560500006]","isParent":false},{"id":"68560500022","pId":"0041  ","name":"身高体重秤[68560500022]","isParent":false}],"id":"0041  ","pId":null,"name":"中医门诊部","isParent":false},{"children":[{"id":"68200200030","pId":"0043  ","name":"水银血压计[68200200030]","isParent":false},{"id":"68200200034","pId":"0043  ","name":"水银血压计[68200200034]","isParent":false},{"id":"68200200069","pId":"0043  ","name":"水银血压计[68200200069]","isParent":false},{"id":"68210900125","pId":"0043  ","name":"多参数监护仪[68210900125]","isParent":false},{"id":"68210900130","pId":"0043  ","name":"多参数监护仪[68210900130]","isParent":false},{"id":"68210900132","pId":"0043  ","name":"多参数监护仪[68210900132]","isParent":false},{"id":"68210900134","pId":"0043  ","name":"多参数监护仪[68210900134]","isParent":false},{"id":"68540500008","pId":"0043  ","name":"单道注射泵[68540500008]","isParent":false},{"id":"68540500086","pId":"0043  ","name":"输液泵[68540500086]","isParent":false},{"id":"68560500023","pId":"0043  ","name":"身高体重秤[68560500023]","isParent":false}],"id":"0043  ","pId":null,"name":"心胸外科病区","isParent":false},{"children":[{"id":"68200200035","pId":"0045  ","name":"水银血压计[68200200035]","isParent":false},{"id":"68200200036","pId":"0045  ","name":"水银血压计[68200200036]","isParent":false},{"id":"68200200037","pId":"0045  ","name":"水银血压计[68200200037]","isParent":false},{"id":"68210900056","pId":"0045  ","name":"多参数监护仪[68210900056]","isParent":false},{"id":"68540500159","pId":"0045  ","name":"输液泵[68540500159]","isParent":false},{"id":"68540500160","pId":"0045  ","name":"输液泵[68540500160]","isParent":false},{"id":"68540500263","pId":"0045  ","name":"双道注射泵[68540500263]","isParent":false},{"id":"68540500264","pId":"0045  ","name":"双道注射泵[68540500264]","isParent":false},{"id":"68560500030","pId":"0045  ","name":"身高体重秤[68560500030]","isParent":false}],"id":"0045  ","pId":null,"name":"中医康复科病区","isParent":false},{"children":[{"id":"68200200058","pId":"0047  ","name":"水银血压计[68200200058]","isParent":false},{"id":"68200200060","pId":"0047  ","name":"水银血压计[68200200060]","isParent":false},{"id":"68200200062","pId":"0047  ","name":"水银血压计[68200200062]","isParent":false},{"id":"68200200099","pId":"0047  ","name":"水银血压计[68200200099]","isParent":false},{"id":"68210900158","pId":"0047  ","name":"多参数监护仪[68210900158]","isParent":false},{"id":"68210900159","pId":"0047  ","name":"多参数监护仪[68210900159]","isParent":false},{"id":"68210900161","pId":"0047  ","name":"多参数监护仪[68210900161]","isParent":false},{"id":"68540500083","pId":"0047  ","name":"输液泵[68540500083]","isParent":false},{"id":"68540500265","pId":"0047  ","name":"双道注射泵[68540500265]","isParent":false},{"id":"68540500266","pId":"0047  ","name":"双道注射泵[68540500266]","isParent":false},{"id":"68560500025","pId":"0047  ","name":"身高体重秤[68560500025]","isParent":false}],"id":"0047  ","pId":null,"name":"中医骨伤科病区","isParent":false},{"children":[{"id":"68210100020","pId":"0048  ","name":"模拟AED自动体外除颤仪[68210100020]","isParent":false}],"id":"0048  ","pId":null,"name":"医务科","isParent":false},{"children":[{"id":"68540500269","pId":"0049  ","name":"双道注射泵[68540500269]","isParent":false}],"id":"0049  ","pId":null,"name":"消化内科门诊","isParent":false},{"children":[{"id":"68200200079","pId":"0050  ","name":"水银血压计[68200200079]","isParent":false}],"id":"0050  ","pId":null,"name":"疼痛科","isParent":false},{"children":[{"id":"68200200047","pId":"100101","name":"水银血压计[68200200047]","isParent":false},{"id":"68200200068","pId":"100101","name":"水银血压计[68200200068]","isParent":false},{"id":"68210900107","pId":"100101","name":"多参数监护仪[68210900107]","isParent":false},{"id":"68220400003","pId":"100101","name":"电脑验光仪[68220400003]","isParent":false},{"id":"68220400004","pId":"100101","name":"非接触眼压计[68220400004]","isParent":false},{"id":"68220400006","pId":"100101","name":"回弹式眼压计[68220400006]","isParent":false},{"id":"68220400011","pId":"100101","name":"晶玉试光箱[68220400011]","isParent":false},{"id":"68220400012","pId":"100101","name":"镜片箱[68220400012]","isParent":false},{"id":"68220400013","pId":"100101","name":"镜片箱[68220400013]","isParent":false},{"id":"68540500138","pId":"100101","name":"输液泵[68540500138]","isParent":false},{"id":"68560500001","pId":"100101","name":"身高体重秤[68560500001]","isParent":false},{"id":"68560500026","pId":"100101","name":"身高体重秤[68560500026]","isParent":false},{"id":"68560500031","pId":"100101","name":"身高体重秤[68560500031]","isParent":false}],"id":"100101","pId":null,"name":"眼科病区","isParent":false},{"children":[{"id":"68210800001","pId":"100201","name":"电测听仪[68210800001]","isParent":false},{"id":"68210800002","pId":"100201","name":"电声阻抗仪[68210800002]","isParent":false},{"id":"68210900071","pId":"100201","name":"多参数监护仪[68210900071]","isParent":false},{"id":"68210900082","pId":"100201","name":"多参数监护仪[68210900082]","isParent":false},{"id":"68210900106","pId":"100201","name":"多参数监护仪[68210900106]","isParent":false},{"id":"68250100006","pId":"100201","name":"高频电刀[68250100006]","isParent":false},{"id":"68540500204","pId":"100201","name":"双道注射泵[68540500204]","isParent":false},{"id":"68560500038","pId":"100201","name":"身高体重秤[68560500038]","isParent":false}],"id":"100201","pId":null,"name":"耳鼻喉科病区","isParent":false},{"children":[{"id":"68200200088","pId":"1003  ","name":"水银血压计[68200200088]","isParent":false},{"id":"68200200089","pId":"1003  ","name":"水银血压计[68200200089]","isParent":false},{"id":"68200200090","pId":"1003  ","name":"水银血压计[68200200090]","isParent":false},{"id":"68200200091","pId":"1003  ","name":"水银血压计[68200200091]","isParent":false},{"id":"68200200092","pId":"1003  ","name":"水银血压计[68200200092]","isParent":false},{"id":"68560500041","pId":"1003  ","name":"身高体重秤[68560500041]","isParent":false}],"id":"1003  ","pId":null,"name":"妇科","isParent":false},{"children":[{"id":"68210900016","pId":"100301","name":"多参数监护仪[68210900016]","isParent":false},{"id":"68210900030","pId":"100301","name":"多参数监护仪[68210900030]","isParent":false},{"id":"68210900055","pId":"100301","name":"多参数监护仪[68210900055]","isParent":false},{"id":"68210900075","pId":"100301","name":"多参数监护仪[68210900075]","isParent":false},{"id":"68210900099","pId":"100301","name":"多参数监护仪[68210900099]","isParent":false},{"id":"68250100004","pId":"100301","name":"高频电刀[68250100004]","isParent":false},{"id":"68540500093","pId":"100301","name":"输液泵[68540500093]","isParent":false},{"id":"68540500134","pId":"100301","name":"输液泵[68540500134]","isParent":false},{"id":"68540500158","pId":"100301","name":"输液泵[68540500158]","isParent":false},{"id":"68540500302","pId":"100301","name":"双道注射泵[68540500302]","isParent":false}],"id":"100301","pId":null,"name":"妇科病区","isParent":false},{"children":[{"id":"68130600001","pId":"100401","name":"电动流产吸引器[68130600001]","isParent":false},{"id":"68200200041","pId":"100401","name":"水银血压计[68200200041]","isParent":false},{"id":"68200200044","pId":"100401","name":"水银血压计[68200200044]","isParent":false},{"id":"68200200073","pId":"100401","name":"水银血压计[68200200073]","isParent":false},{"id":"68210900017","pId":"100401","name":"多参数监护仪[68210900017]","isParent":false},{"id":"68210900076","pId":"100401","name":"多参数监护仪[68210900076]","isParent":false},{"id":"68230300023","pId":"100401","name":"胎儿中央监护[68230300023]","isParent":false},{"id":"68540500025","pId":"100401","name":"单道注射泵[68540500025]","isParent":false},{"id":"68540500028","pId":"100401","name":"单道注射泵[68540500028]","isParent":false},{"id":"68540500100","pId":"100401","name":"输液泵[68540500100]","isParent":false},{"id":"68540500104","pId":"100401","name":"输液泵[68540500104]","isParent":false},{"id":"68540500139","pId":"100401","name":"输液泵[68540500139]","isParent":false},{"id":"68540500150","pId":"100401","name":"输液泵[68540500150]","isParent":false},{"id":"68540500153","pId":"100401","name":"输液泵[68540500153]","isParent":false},{"id":"68540500207","pId":"100401","name":"双道注射泵[68540500207]","isParent":false},{"id":"68560500005","pId":"100401","name":"身高体重秤[68560500005]","isParent":false},{"id":"68560500032","pId":"100401","name":"身高体重秤[68560500032]","isParent":false}],"id":"100401","pId":null,"name":"产科病区","isParent":false},{"children":[{"id":"68200200015","pId":"100501","name":"水银血压计[68200200015]","isParent":false},{"id":"68200200027","pId":"100501","name":"水银血压计[68200200027]","isParent":false},{"id":"68210900047","pId":"100501","name":"多参数监护仪[68210900047]","isParent":false},{"id":"68210900049","pId":"100501","name":"多参数监护仪[68210900049]","isParent":false},{"id":"68210900081","pId":"100501","name":"多参数监护仪[68210900081]","isParent":false},{"id":"68210900083","pId":"100501","name":"多参数监护仪[68210900083]","isParent":false},{"id":"68210900088","pId":"100501","name":"多参数监护仪[68210900088]","isParent":false},{"id":"68210900091","pId":"100501","name":"多参数监护仪[68210900091]","isParent":false},{"id":"68540500039","pId":"100501","name":"输液泵[68540500039]","isParent":false},{"id":"68540500047","pId":"100501","name":"输液泵[68540500047]","isParent":false},{"id":"68540500110","pId":"100501","name":"输液泵[68540500110]","isParent":false},{"id":"68540500300","pId":"100501","name":"双道注射泵[68540500300]","isParent":false},{"id":"68540500301","pId":"100501","name":"双道注射泵[68540500301]","isParent":false},{"id":"68560500014","pId":"100501","name":"身高体重秤[68560500014]","isParent":false},{"id":"68560500035","pId":"100501","name":"身高体重秤[68560500035]","isParent":false}],"id":"100501","pId":null,"name":"儿科二病区","isParent":false},{"children":[{"id":"68210900012","pId":"100502","name":"多参数监护仪[68210900012]","isParent":false},{"id":"68210900013","pId":"100502","name":"多参数监护仪[68210900013]","isParent":false}],"id":"100502","pId":null,"name":"儿科共用","isParent":false},{"children":[{"id":"68560500002","pId":"100504","name":"身高体重秤[68560500002]","isParent":false},{"id":"68560500029","pId":"100504","name":"身高体重秤[68560500029]","isParent":false}],"id":"100504","pId":null,"name":"儿科三病区","isParent":false},{"children":[{"id":"68200200014","pId":"100505","name":"水银血压计[68200200014]","isParent":false},{"id":"68200200055","pId":"100505","name":"水银血压计[68200200055]","isParent":false},{"id":"68210900046","pId":"100505","name":"多参数监护仪[68210900046]","isParent":false},{"id":"68210900084","pId":"100505","name":"多参数监护仪[68210900084]","isParent":false},{"id":"68210900085","pId":"100505","name":"多参数监护仪[68210900085]","isParent":false},{"id":"68210900102","pId":"100505","name":"多参数监护仪[68210900102]","isParent":false},{"id":"68210900240","pId":"100505","name":"多参数监护仪[68210900240]","isParent":false},{"id":"68210900241","pId":"100505","name":"多参数监护仪[68210900241]","isParent":false},{"id":"68540500037","pId":"100505","name":"输液泵[68540500037]","isParent":false},{"id":"68540500048","pId":"100505","name":"输液泵[68540500048]","isParent":false},{"id":"68540500067","pId":"100505","name":"输液泵[68540500067]","isParent":false},{"id":"68540500073","pId":"100505","name":"输液泵[68540500073]","isParent":false},{"id":"68540500108","pId":"100505","name":"输液泵[68540500108]","isParent":false},{"id":"68540500109","pId":"100505","name":"输液泵[68540500109]","isParent":false},{"id":"68540500299","pId":"100505","name":"双道注射泵[68540500299]","isParent":false},{"id":"68560500007","pId":"100505","name":"身高体重秤[68560500007]","isParent":false}],"id":"100505","pId":null,"name":"儿科一病区","isParent":false}]
 
 /***/ }),
-/* 137 */
+/* 138 */
 /*!**********************************************!*\
   !*** ./src/assets/vue/common/commonCell.vue ***!
   \**********************************************/
@@ -23465,13 +23701,13 @@ module.exports = [{"children":[{"id":"68010200004","pId":"0001  ","name":"回家
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-7432fa47","scoped":false,"hasInlineConfig":false}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./commonCell.vue */ 637)
+  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-7432fa47","scoped":false,"hasInlineConfig":false}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./commonCell.vue */ 642)
 }
 var Component = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
   /* script */
-  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./commonCell.vue */ 639),
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./commonCell.vue */ 644),
   /* template */
-  __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-7432fa47","hasScoped":false}!../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./commonCell.vue */ 640),
+  __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-7432fa47","hasScoped":false}!../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./commonCell.vue */ 645),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -23503,242 +23739,6 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 138 */
-/*!***********************************************!*\
-  !*** ./node_modules/path-browserify/index.js ***!
-  \***********************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-// resolves . and .. elements in a path array with directory names there
-// must be no slashes, empty elements, or device names (c:\) in the array
-// (so also no leading and trailing slashes - it does not distinguish
-// relative and absolute paths)
-function normalizeArray(parts, allowAboveRoot) {
-  // if the path tries to go above the root, `up` ends up > 0
-  var up = 0;
-  for (var i = parts.length - 1; i >= 0; i--) {
-    var last = parts[i];
-    if (last === '.') {
-      parts.splice(i, 1);
-    } else if (last === '..') {
-      parts.splice(i, 1);
-      up++;
-    } else if (up) {
-      parts.splice(i, 1);
-      up--;
-    }
-  }
-
-  // if the path is allowed to go above the root, restore leading ..s
-  if (allowAboveRoot) {
-    for (; up--; up) {
-      parts.unshift('..');
-    }
-  }
-
-  return parts;
-}
-
-// Split a filename into [root, dir, basename, ext], unix version
-// 'root' is just a slash, or nothing.
-var splitPathRe =
-    /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
-var splitPath = function(filename) {
-  return splitPathRe.exec(filename).slice(1);
-};
-
-// path.resolve([from ...], to)
-// posix version
-exports.resolve = function() {
-  var resolvedPath = '',
-      resolvedAbsolute = false;
-
-  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
-    var path = (i >= 0) ? arguments[i] : process.cwd();
-
-    // Skip empty and invalid entries
-    if (typeof path !== 'string') {
-      throw new TypeError('Arguments to path.resolve must be strings');
-    } else if (!path) {
-      continue;
-    }
-
-    resolvedPath = path + '/' + resolvedPath;
-    resolvedAbsolute = path.charAt(0) === '/';
-  }
-
-  // At this point the path should be resolved to a full absolute path, but
-  // handle relative paths to be safe (might happen when process.cwd() fails)
-
-  // Normalize the path
-  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
-    return !!p;
-  }), !resolvedAbsolute).join('/');
-
-  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
-};
-
-// path.normalize(path)
-// posix version
-exports.normalize = function(path) {
-  var isAbsolute = exports.isAbsolute(path),
-      trailingSlash = substr(path, -1) === '/';
-
-  // Normalize the path
-  path = normalizeArray(filter(path.split('/'), function(p) {
-    return !!p;
-  }), !isAbsolute).join('/');
-
-  if (!path && !isAbsolute) {
-    path = '.';
-  }
-  if (path && trailingSlash) {
-    path += '/';
-  }
-
-  return (isAbsolute ? '/' : '') + path;
-};
-
-// posix version
-exports.isAbsolute = function(path) {
-  return path.charAt(0) === '/';
-};
-
-// posix version
-exports.join = function() {
-  var paths = Array.prototype.slice.call(arguments, 0);
-  return exports.normalize(filter(paths, function(p, index) {
-    if (typeof p !== 'string') {
-      throw new TypeError('Arguments to path.join must be strings');
-    }
-    return p;
-  }).join('/'));
-};
-
-
-// path.relative(from, to)
-// posix version
-exports.relative = function(from, to) {
-  from = exports.resolve(from).substr(1);
-  to = exports.resolve(to).substr(1);
-
-  function trim(arr) {
-    var start = 0;
-    for (; start < arr.length; start++) {
-      if (arr[start] !== '') break;
-    }
-
-    var end = arr.length - 1;
-    for (; end >= 0; end--) {
-      if (arr[end] !== '') break;
-    }
-
-    if (start > end) return [];
-    return arr.slice(start, end - start + 1);
-  }
-
-  var fromParts = trim(from.split('/'));
-  var toParts = trim(to.split('/'));
-
-  var length = Math.min(fromParts.length, toParts.length);
-  var samePartsLength = length;
-  for (var i = 0; i < length; i++) {
-    if (fromParts[i] !== toParts[i]) {
-      samePartsLength = i;
-      break;
-    }
-  }
-
-  var outputParts = [];
-  for (var i = samePartsLength; i < fromParts.length; i++) {
-    outputParts.push('..');
-  }
-
-  outputParts = outputParts.concat(toParts.slice(samePartsLength));
-
-  return outputParts.join('/');
-};
-
-exports.sep = '/';
-exports.delimiter = ':';
-
-exports.dirname = function(path) {
-  var result = splitPath(path),
-      root = result[0],
-      dir = result[1];
-
-  if (!root && !dir) {
-    // No dirname whatsoever
-    return '.';
-  }
-
-  if (dir) {
-    // It has a dirname, strip trailing slash
-    dir = dir.substr(0, dir.length - 1);
-  }
-
-  return root + dir;
-};
-
-
-exports.basename = function(path, ext) {
-  var f = splitPath(path)[2];
-  // TODO: make this comparison case-insensitive on windows?
-  if (ext && f.substr(-1 * ext.length) === ext) {
-    f = f.substr(0, f.length - ext.length);
-  }
-  return f;
-};
-
-
-exports.extname = function(path) {
-  return splitPath(path)[3];
-};
-
-function filter (xs, f) {
-    if (xs.filter) return xs.filter(f);
-    var res = [];
-    for (var i = 0; i < xs.length; i++) {
-        if (f(xs[i], i, xs)) res.push(xs[i]);
-    }
-    return res;
-}
-
-// String.prototype.substr - negative index don't work in IE8
-var substr = 'ab'.substr(-1) === 'b'
-    ? function (str, start, len) { return str.substr(start, len) }
-    : function (str, start, len) {
-        if (start < 0) start = str.length + start;
-        return str.substr(start, len);
-    }
-;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../process/browser.js */ 73)))
-
-/***/ }),
 /* 139 */
 /*!*********************!*\
   !*** ./src/main.js ***!
@@ -23754,7 +23754,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _vue = __webpack_require__(/*! vue */ 38);
+var _vue = __webpack_require__(/*! vue */ 35);
 
 var _vue2 = _interopRequireDefault(_vue);
 
@@ -23790,31 +23790,31 @@ var _main3 = __webpack_require__(/*! ./main.vue */ 469);
 
 var _main4 = _interopRequireDefault(_main3);
 
-var _storage = __webpack_require__(/*! ./assets/vuex/storage.js */ 668);
+var _storage = __webpack_require__(/*! ./assets/vuex/storage.js */ 673);
 
 var _storage2 = _interopRequireDefault(_storage);
 
-var _api = __webpack_require__(/*! assets/vue/api/api */ 681);
+var _api = __webpack_require__(/*! assets/vue/api/api */ 688);
 
 var _api2 = _interopRequireDefault(_api);
 
-var _config = __webpack_require__(/*! ./config.js */ 682);
+var _config = __webpack_require__(/*! ./config.js */ 689);
 
 var _config2 = _interopRequireDefault(_config);
 
-var _mintUi = __webpack_require__(/*! mint-ui */ 683);
+var _mintUi = __webpack_require__(/*! mint-ui */ 690);
 
 var _mintUi2 = _interopRequireDefault(_mintUi);
 
-__webpack_require__(/*! mint-ui/lib/style.css */ 687);
+__webpack_require__(/*! mint-ui/lib/style.css */ 694);
 
-var _cubeUi = __webpack_require__(/*! cube-ui */ 688);
+var _cubeUi = __webpack_require__(/*! cube-ui */ 695);
 
 var _cubeUi2 = _interopRequireDefault(_cubeUi);
 
-__webpack_require__(/*! cube-ui/lib/style.css */ 689);
+__webpack_require__(/*! cube-ui/lib/style.css */ 696);
 
-var _jsMd = __webpack_require__(/*! js-md5 */ 690);
+var _jsMd = __webpack_require__(/*! js-md5 */ 697);
 
 var _jsMd2 = _interopRequireDefault(_jsMd);
 
@@ -24233,7 +24233,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Support = exports.Device = exports.Utils = exports.Request = exports.Dom7 = exports.Template7 = undefined;
 
-var _template = __webpack_require__(/*! template7 */ 55);
+var _template = __webpack_require__(/*! template7 */ 56);
 
 var _template2 = _interopRequireDefault(_template);
 
@@ -24245,7 +24245,7 @@ var _appClass = __webpack_require__(/*! ./components/app/app-class */ 159);
 
 var _appClass2 = _interopRequireDefault(_appClass);
 
-var _request = __webpack_require__(/*! ./utils/request */ 115);
+var _request = __webpack_require__(/*! ./utils/request */ 116);
 
 var _request2 = _interopRequireDefault(_request);
 
@@ -24289,7 +24289,7 @@ var _clicks = __webpack_require__(/*! ./modules/clicks/clicks */ 209);
 
 var _clicks2 = _interopRequireDefault(_clicks);
 
-var _router = __webpack_require__(/*! ./modules/router/router */ 117);
+var _router = __webpack_require__(/*! ./modules/router/router */ 118);
 
 var _router2 = _interopRequireDefault(_router);
 
@@ -24589,7 +24589,7 @@ module.exports = function defineProperty(it, key, desc) {
 
 var $export = __webpack_require__(/*! ./_export */ 29);
 // 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
-$export($export.S + $export.F * !__webpack_require__(/*! ./_descriptors */ 39), 'Object', { defineProperty: __webpack_require__(/*! ./_object-dp */ 35).f });
+$export($export.S + $export.F * !__webpack_require__(/*! ./_descriptors */ 39), 'Object', { defineProperty: __webpack_require__(/*! ./_object-dp */ 36).f });
 
 
 /***/ }),
@@ -24615,8 +24615,8 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ 19).Object.keys;
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
-var toObject = __webpack_require__(/*! ./_to-object */ 57);
-var $keys = __webpack_require__(/*! ./_object-keys */ 58);
+var toObject = __webpack_require__(/*! ./_to-object */ 58);
+var $keys = __webpack_require__(/*! ./_object-keys */ 59);
 
 __webpack_require__(/*! ./_object-sap */ 68)('keys', function () {
   return function keys(it) {
@@ -24777,11 +24777,11 @@ $export($export.S + $export.F, 'Object', { assign: __webpack_require__(/*! ./_ob
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys = __webpack_require__(/*! ./_object-keys */ 58);
+var getKeys = __webpack_require__(/*! ./_object-keys */ 59);
 var gOPS = __webpack_require__(/*! ./_object-gops */ 83);
 var pIE = __webpack_require__(/*! ./_object-pie */ 69);
-var toObject = __webpack_require__(/*! ./_to-object */ 57);
-var IObject = __webpack_require__(/*! ./_iobject */ 99);
+var toObject = __webpack_require__(/*! ./_to-object */ 58);
+var IObject = __webpack_require__(/*! ./_iobject */ 100);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
@@ -24845,8 +24845,8 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ 19).Object.freez
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.5 Object.freeze(O)
-var isObject = __webpack_require__(/*! ./_is-object */ 36);
-var meta = __webpack_require__(/*! ./_meta */ 100).onFreeze;
+var isObject = __webpack_require__(/*! ./_is-object */ 37);
+var meta = __webpack_require__(/*! ./_meta */ 101).onFreeze;
 
 __webpack_require__(/*! ./_object-sap */ 68)('freeze', function ($freeze) {
   return function freeze(it) {
@@ -24879,7 +24879,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -24899,7 +24899,7 @@ var _dom = __webpack_require__(/*! dom7 */ 1);
 
 var _dom2 = _interopRequireDefault(_dom);
 
-var _template = __webpack_require__(/*! template7 */ 55);
+var _template = __webpack_require__(/*! template7 */ 56);
 
 var _template2 = _interopRequireDefault(_template);
 
@@ -25113,8 +25113,8 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ 19).Object.getPr
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 Object.getPrototypeOf(O)
-var toObject = __webpack_require__(/*! ./_to-object */ 57);
-var $getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 101);
+var toObject = __webpack_require__(/*! ./_to-object */ 58);
+var $getPrototypeOf = __webpack_require__(/*! ./_object-gpo */ 102);
 
 __webpack_require__(/*! ./_object-sap */ 68)('getPrototypeOf', function () {
   return function getPrototypeOf(it) {
@@ -25143,7 +25143,7 @@ module.exports = { "default": __webpack_require__(/*! core-js/library/fn/symbol/
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../../modules/es6.string.iterator */ 62);
+__webpack_require__(/*! ../../modules/es6.string.iterator */ 63);
 __webpack_require__(/*! ../../modules/web.dom.iterable */ 71);
 module.exports = __webpack_require__(/*! ../../modules/_wks-ext */ 85).f('iterator');
 
@@ -25188,7 +25188,7 @@ module.exports = function (TO_STRING) {
 "use strict";
 
 var create = __webpack_require__(/*! ./_object-create */ 84);
-var descriptor = __webpack_require__(/*! ./_property-desc */ 56);
+var descriptor = __webpack_require__(/*! ./_property-desc */ 57);
 var setToStringTag = __webpack_require__(/*! ./_set-to-string-tag */ 70);
 var IteratorPrototype = {};
 
@@ -25210,9 +25210,9 @@ module.exports = function (Constructor, NAME, next) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(/*! ./_object-dp */ 35);
+var dP = __webpack_require__(/*! ./_object-dp */ 36);
 var anObject = __webpack_require__(/*! ./_an-object */ 32);
-var getKeys = __webpack_require__(/*! ./_object-keys */ 58);
+var getKeys = __webpack_require__(/*! ./_object-keys */ 59);
 
 module.exports = __webpack_require__(/*! ./_descriptors */ 39) ? Object.defineProperties : function defineProperties(O, Properties) {
   anObject(O);
@@ -25245,7 +25245,7 @@ var toIObject = __webpack_require__(/*! ./_to-iobject */ 43);
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(/*! ./_iter-define */ 102)(Array, 'Array', function (iterated, kind) {
+module.exports = __webpack_require__(/*! ./_iter-define */ 103)(Array, 'Array', function (iterated, kind) {
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -25318,7 +25318,7 @@ module.exports = { "default": __webpack_require__(/*! core-js/library/fn/symbol 
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ../../modules/es6.symbol */ 172);
-__webpack_require__(/*! ../../modules/es6.object.to-string */ 106);
+__webpack_require__(/*! ../../modules/es6.object.to-string */ 107);
 __webpack_require__(/*! ../../modules/es7.symbol.async-iterator */ 176);
 __webpack_require__(/*! ../../modules/es7.symbol.observable */ 177);
 module.exports = __webpack_require__(/*! ../../modules/_core */ 19).Symbol;
@@ -25340,8 +25340,8 @@ var global = __webpack_require__(/*! ./_global */ 25);
 var has = __webpack_require__(/*! ./_has */ 42);
 var DESCRIPTORS = __webpack_require__(/*! ./_descriptors */ 39);
 var $export = __webpack_require__(/*! ./_export */ 29);
-var redefine = __webpack_require__(/*! ./_redefine */ 103);
-var META = __webpack_require__(/*! ./_meta */ 100).KEY;
+var redefine = __webpack_require__(/*! ./_redefine */ 104);
+var META = __webpack_require__(/*! ./_meta */ 101).KEY;
 var $fails = __webpack_require__(/*! ./_fails */ 49);
 var shared = __webpack_require__(/*! ./_shared */ 81);
 var setToStringTag = __webpack_require__(/*! ./_set-to-string-tag */ 70);
@@ -25352,15 +25352,15 @@ var wksDefine = __webpack_require__(/*! ./_wks-define */ 86);
 var enumKeys = __webpack_require__(/*! ./_enum-keys */ 173);
 var isArray = __webpack_require__(/*! ./_is-array */ 174);
 var anObject = __webpack_require__(/*! ./_an-object */ 32);
-var isObject = __webpack_require__(/*! ./_is-object */ 36);
+var isObject = __webpack_require__(/*! ./_is-object */ 37);
 var toIObject = __webpack_require__(/*! ./_to-iobject */ 43);
 var toPrimitive = __webpack_require__(/*! ./_to-primitive */ 76);
-var createDesc = __webpack_require__(/*! ./_property-desc */ 56);
+var createDesc = __webpack_require__(/*! ./_property-desc */ 57);
 var _create = __webpack_require__(/*! ./_object-create */ 84);
 var gOPNExt = __webpack_require__(/*! ./_object-gopn-ext */ 175);
 var $GOPD = __webpack_require__(/*! ./_object-gopd */ 87);
-var $DP = __webpack_require__(/*! ./_object-dp */ 35);
-var $keys = __webpack_require__(/*! ./_object-keys */ 58);
+var $DP = __webpack_require__(/*! ./_object-dp */ 36);
+var $keys = __webpack_require__(/*! ./_object-keys */ 59);
 var gOPD = $GOPD.f;
 var dP = $DP.f;
 var gOPN = gOPNExt.f;
@@ -25483,11 +25483,11 @@ if (!USE_NATIVE) {
 
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f = $defineProperty;
-  __webpack_require__(/*! ./_object-gopn */ 105).f = gOPNExt.f = $getOwnPropertyNames;
+  __webpack_require__(/*! ./_object-gopn */ 106).f = gOPNExt.f = $getOwnPropertyNames;
   __webpack_require__(/*! ./_object-pie */ 69).f = $propertyIsEnumerable;
   __webpack_require__(/*! ./_object-gops */ 83).f = $getOwnPropertySymbols;
 
-  if (DESCRIPTORS && !__webpack_require__(/*! ./_library */ 60)) {
+  if (DESCRIPTORS && !__webpack_require__(/*! ./_library */ 61)) {
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
   }
 
@@ -25580,7 +25580,7 @@ setToStringTag(global.JSON, 'JSON', true);
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
-var getKeys = __webpack_require__(/*! ./_object-keys */ 58);
+var getKeys = __webpack_require__(/*! ./_object-keys */ 59);
 var gOPS = __webpack_require__(/*! ./_object-gops */ 83);
 var pIE = __webpack_require__(/*! ./_object-pie */ 69);
 module.exports = function (it) {
@@ -25606,7 +25606,7 @@ module.exports = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
-var cof = __webpack_require__(/*! ./_cof */ 59);
+var cof = __webpack_require__(/*! ./_cof */ 60);
 module.exports = Array.isArray || function isArray(arg) {
   return cof(arg) == 'Array';
 };
@@ -25623,7 +25623,7 @@ module.exports = Array.isArray || function isArray(arg) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 var toIObject = __webpack_require__(/*! ./_to-iobject */ 43);
-var gOPN = __webpack_require__(/*! ./_object-gopn */ 105).f;
+var gOPN = __webpack_require__(/*! ./_object-gopn */ 106).f;
 var toString = {}.toString;
 
 var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -25715,7 +25715,7 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(/*! ./_set-pr
 
 // Works with __proto__ only. Old v8 can't work with null proto objects.
 /* eslint-disable no-proto */
-var isObject = __webpack_require__(/*! ./_is-object */ 36);
+var isObject = __webpack_require__(/*! ./_is-object */ 37);
 var anObject = __webpack_require__(/*! ./_an-object */ 32);
 var check = function (O, proto) {
   anObject(O);
@@ -25826,8 +25826,8 @@ __webpack_require__(/*! ./_object-sap */ 68)('getOwnPropertyDescriptor', functio
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../modules/es6.object.to-string */ 106);
-__webpack_require__(/*! ../modules/es6.string.iterator */ 62);
+__webpack_require__(/*! ../modules/es6.object.to-string */ 107);
+__webpack_require__(/*! ../modules/es6.string.iterator */ 63);
 __webpack_require__(/*! ../modules/web.dom.iterable */ 71);
 __webpack_require__(/*! ../modules/es6.promise */ 188);
 __webpack_require__(/*! ../modules/es7.promise.finally */ 196);
@@ -25846,22 +25846,22 @@ module.exports = __webpack_require__(/*! ../modules/_core */ 19).Promise;
 
 "use strict";
 
-var LIBRARY = __webpack_require__(/*! ./_library */ 60);
+var LIBRARY = __webpack_require__(/*! ./_library */ 61);
 var global = __webpack_require__(/*! ./_global */ 25);
 var ctx = __webpack_require__(/*! ./_ctx */ 48);
 var classof = __webpack_require__(/*! ./_classof */ 88);
 var $export = __webpack_require__(/*! ./_export */ 29);
-var isObject = __webpack_require__(/*! ./_is-object */ 36);
+var isObject = __webpack_require__(/*! ./_is-object */ 37);
 var aFunction = __webpack_require__(/*! ./_a-function */ 66);
 var anInstance = __webpack_require__(/*! ./_an-instance */ 189);
 var forOf = __webpack_require__(/*! ./_for-of */ 190);
-var speciesConstructor = __webpack_require__(/*! ./_species-constructor */ 110);
-var task = __webpack_require__(/*! ./_task */ 111).set;
+var speciesConstructor = __webpack_require__(/*! ./_species-constructor */ 111);
+var task = __webpack_require__(/*! ./_task */ 112).set;
 var microtask = __webpack_require__(/*! ./_microtask */ 192)();
 var newPromiseCapabilityModule = __webpack_require__(/*! ./_new-promise-capability */ 90);
-var perform = __webpack_require__(/*! ./_perform */ 112);
+var perform = __webpack_require__(/*! ./_perform */ 113);
 var userAgent = __webpack_require__(/*! ./_user-agent */ 193);
-var promiseResolve = __webpack_require__(/*! ./_promise-resolve */ 113);
+var promiseResolve = __webpack_require__(/*! ./_promise-resolve */ 114);
 var PROMISE = 'Promise';
 var TypeError = global.TypeError;
 var process = global.process;
@@ -26087,7 +26087,7 @@ $export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
     return promiseResolve(LIBRARY && this === Wrapper ? $Promise : this, x);
   }
 });
-$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(/*! ./_iter-detect */ 114)(function (iter) {
+$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(/*! ./_iter-detect */ 115)(function (iter) {
   $Promise.all(iter)['catch'](empty);
 })), PROMISE, {
   // 25.4.4.1 Promise.all(iterable)
@@ -26159,8 +26159,8 @@ module.exports = function (it, Constructor, name, forbiddenField) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx = __webpack_require__(/*! ./_ctx */ 48);
-var call = __webpack_require__(/*! ./_iter-call */ 108);
-var isArrayIter = __webpack_require__(/*! ./_is-array-iter */ 109);
+var call = __webpack_require__(/*! ./_iter-call */ 109);
+var isArrayIter = __webpack_require__(/*! ./_is-array-iter */ 110);
 var anObject = __webpack_require__(/*! ./_an-object */ 32);
 var toLength = __webpack_require__(/*! ./_to-length */ 78);
 var getIterFn = __webpack_require__(/*! ./core.get-iterator-method */ 89);
@@ -26222,11 +26222,11 @@ module.exports = function (fn, args, that) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(/*! ./_global */ 25);
-var macrotask = __webpack_require__(/*! ./_task */ 111).set;
+var macrotask = __webpack_require__(/*! ./_task */ 112).set;
 var Observer = global.MutationObserver || global.WebKitMutationObserver;
 var process = global.process;
 var Promise = global.Promise;
-var isNode = __webpack_require__(/*! ./_cof */ 59)(process) == 'process';
+var isNode = __webpack_require__(/*! ./_cof */ 60)(process) == 'process';
 
 module.exports = function () {
   var head, last, notify;
@@ -26338,7 +26338,7 @@ module.exports = function (target, src, safe) {
 
 var global = __webpack_require__(/*! ./_global */ 25);
 var core = __webpack_require__(/*! ./_core */ 19);
-var dP = __webpack_require__(/*! ./_object-dp */ 35);
+var dP = __webpack_require__(/*! ./_object-dp */ 36);
 var DESCRIPTORS = __webpack_require__(/*! ./_descriptors */ 39);
 var SPECIES = __webpack_require__(/*! ./_wks */ 27)('species');
 
@@ -26366,8 +26366,8 @@ module.exports = function (KEY) {
 var $export = __webpack_require__(/*! ./_export */ 29);
 var core = __webpack_require__(/*! ./_core */ 19);
 var global = __webpack_require__(/*! ./_global */ 25);
-var speciesConstructor = __webpack_require__(/*! ./_species-constructor */ 110);
-var promiseResolve = __webpack_require__(/*! ./_promise-resolve */ 113);
+var speciesConstructor = __webpack_require__(/*! ./_species-constructor */ 111);
+var promiseResolve = __webpack_require__(/*! ./_promise-resolve */ 114);
 
 $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
   var C = speciesConstructor(this, core.Promise || global.Promise);
@@ -26397,7 +26397,7 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 // https://github.com/tc39/proposal-promise-try
 var $export = __webpack_require__(/*! ./_export */ 29);
 var newPromiseCapability = __webpack_require__(/*! ./_new-promise-capability */ 90);
-var perform = __webpack_require__(/*! ./_perform */ 112);
+var perform = __webpack_require__(/*! ./_perform */ 113);
 
 $export($export.S, 'Promise', { 'try': function (callbackfn) {
   var promiseCapability = newPromiseCapability.f(this);
@@ -26427,7 +26427,7 @@ module.exports = { "default": __webpack_require__(/*! core-js/library/fn/array/f
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ../../modules/es6.string.iterator */ 62);
+__webpack_require__(/*! ../../modules/es6.string.iterator */ 63);
 __webpack_require__(/*! ../../modules/es6.array.from */ 200);
 module.exports = __webpack_require__(/*! ../../modules/_core */ 19).Array.from;
 
@@ -26445,14 +26445,14 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ 19).Array.from;
 
 var ctx = __webpack_require__(/*! ./_ctx */ 48);
 var $export = __webpack_require__(/*! ./_export */ 29);
-var toObject = __webpack_require__(/*! ./_to-object */ 57);
-var call = __webpack_require__(/*! ./_iter-call */ 108);
-var isArrayIter = __webpack_require__(/*! ./_is-array-iter */ 109);
+var toObject = __webpack_require__(/*! ./_to-object */ 58);
+var call = __webpack_require__(/*! ./_iter-call */ 109);
+var isArrayIter = __webpack_require__(/*! ./_is-array-iter */ 110);
 var toLength = __webpack_require__(/*! ./_to-length */ 78);
 var createProperty = __webpack_require__(/*! ./_create-property */ 201);
 var getIterFn = __webpack_require__(/*! ./core.get-iterator-method */ 89);
 
-$export($export.S + $export.F * !__webpack_require__(/*! ./_iter-detect */ 114)(function (iter) { Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(/*! ./_iter-detect */ 115)(function (iter) { Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
     var O = toObject(arrayLike);
@@ -26492,8 +26492,8 @@ $export($export.S + $export.F * !__webpack_require__(/*! ./_iter-detect */ 114)(
 
 "use strict";
 
-var $defineProperty = __webpack_require__(/*! ./_object-dp */ 35);
-var createDesc = __webpack_require__(/*! ./_property-desc */ 56);
+var $defineProperty = __webpack_require__(/*! ./_object-dp */ 36);
+var createDesc = __webpack_require__(/*! ./_property-desc */ 57);
 
 module.exports = function (object, index, value) {
   if (index in object) $defineProperty.f(object, index, createDesc(0, value));
@@ -26878,7 +26878,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _request = __webpack_require__(/*! ../../utils/request */ 115);
+var _request = __webpack_require__(/*! ../../utils/request */ 116);
 
 var _request2 = _interopRequireDefault(_request);
 
@@ -27576,7 +27576,7 @@ var _support = __webpack_require__(/*! ../../utils/support */ 33);
 
 var _support2 = _interopRequireDefault(_support);
 
-var _viewClass = __webpack_require__(/*! ../../components/view/view-class */ 116);
+var _viewClass = __webpack_require__(/*! ../../components/view/view-class */ 117);
 
 var _viewClass2 = _interopRequireDefault(_viewClass);
 
@@ -27691,7 +27691,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = __webpack_require__(/*! babel-runtime/core-js/json/stringify */ 61);
+var _stringify = __webpack_require__(/*! babel-runtime/core-js/json/stringify */ 62);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -27703,7 +27703,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -27725,7 +27725,7 @@ var _dom = __webpack_require__(/*! dom7 */ 1);
 
 var _dom2 = _interopRequireDefault(_dom);
 
-var _template = __webpack_require__(/*! template7 */ 55);
+var _template = __webpack_require__(/*! template7 */ 56);
 
 var _template2 = _interopRequireDefault(_template);
 
@@ -29500,7 +29500,7 @@ var _keys = __webpack_require__(/*! babel-runtime/core-js/object/keys */ 17);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -29510,7 +29510,7 @@ var _dom = __webpack_require__(/*! dom7 */ 1);
 
 var _dom2 = _interopRequireDefault(_dom);
 
-var _template = __webpack_require__(/*! template7 */ 55);
+var _template = __webpack_require__(/*! template7 */ 56);
 
 var _template2 = _interopRequireDefault(_template);
 
@@ -30323,11 +30323,11 @@ var _history = __webpack_require__(/*! ../../utils/history */ 44);
 
 var _history2 = _interopRequireDefault(_history);
 
-var _redirect = __webpack_require__(/*! ./redirect */ 118);
+var _redirect = __webpack_require__(/*! ./redirect */ 119);
 
 var _redirect2 = _interopRequireDefault(_redirect);
 
-var _processRouteQueue = __webpack_require__(/*! ./process-route-queue */ 119);
+var _processRouteQueue = __webpack_require__(/*! ./process-route-queue */ 120);
 
 var _processRouteQueue2 = _interopRequireDefault(_processRouteQueue);
 
@@ -31440,11 +31440,11 @@ var _history = __webpack_require__(/*! ../../utils/history */ 44);
 
 var _history2 = _interopRequireDefault(_history);
 
-var _redirect = __webpack_require__(/*! ./redirect */ 118);
+var _redirect = __webpack_require__(/*! ./redirect */ 119);
 
 var _redirect2 = _interopRequireDefault(_redirect);
 
-var _processRouteQueue = __webpack_require__(/*! ./process-route-queue */ 119);
+var _processRouteQueue = __webpack_require__(/*! ./process-route-queue */ 120);
 
 var _processRouteQueue2 = _interopRequireDefault(_processRouteQueue);
 
@@ -32119,7 +32119,7 @@ var _keys = __webpack_require__(/*! babel-runtime/core-js/object/keys */ 17);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _stringify = __webpack_require__(/*! babel-runtime/core-js/json/stringify */ 61);
+var _stringify = __webpack_require__(/*! babel-runtime/core-js/json/stringify */ 62);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -32451,7 +32451,7 @@ var _utils = __webpack_require__(/*! ../../utils/utils */ 2);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _viewClass = __webpack_require__(/*! ./view-class */ 116);
+var _viewClass = __webpack_require__(/*! ./view-class */ 117);
 
 var _viewClass2 = _interopRequireDefault(_viewClass);
 
@@ -33305,7 +33305,7 @@ var _keys = __webpack_require__(/*! babel-runtime/core-js/object/keys */ 17);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -33467,7 +33467,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -33596,7 +33596,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 51);
+var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 52);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -33906,7 +33906,7 @@ module.exports = { "default": __webpack_require__(/*! core-js/library/fn/is-iter
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ../modules/web.dom.iterable */ 71);
-__webpack_require__(/*! ../modules/es6.string.iterator */ 62);
+__webpack_require__(/*! ../modules/es6.string.iterator */ 63);
 module.exports = __webpack_require__(/*! ../modules/core.is-iterable */ 233);
 
 
@@ -33952,7 +33952,7 @@ module.exports = { "default": __webpack_require__(/*! core-js/library/fn/get-ite
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ../modules/web.dom.iterable */ 71);
-__webpack_require__(/*! ../modules/es6.string.iterator */ 62);
+__webpack_require__(/*! ../modules/es6.string.iterator */ 63);
 module.exports = __webpack_require__(/*! ../modules/core.get-iterator */ 236);
 
 
@@ -33994,7 +33994,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -34301,7 +34301,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -34490,7 +34490,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -34667,7 +34667,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 51);
+var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 52);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -34675,7 +34675,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -35080,7 +35080,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -35468,7 +35468,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -35715,7 +35715,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -35973,7 +35973,7 @@ var _typeof2 = __webpack_require__(/*! babel-runtime/helpers/typeof */ 30);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
-var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 51);
+var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 52);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -36443,7 +36443,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 51);
+var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 52);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -37178,7 +37178,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -37200,7 +37200,7 @@ var _dom = __webpack_require__(/*! dom7 */ 1);
 
 var _dom2 = _interopRequireDefault(_dom);
 
-var _template = __webpack_require__(/*! template7 */ 55);
+var _template = __webpack_require__(/*! template7 */ 56);
 
 var _template2 = _interopRequireDefault(_template);
 
@@ -37931,7 +37931,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -38364,7 +38364,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 51);
+var _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ 52);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
@@ -38845,7 +38845,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -39553,7 +39553,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _stringify = __webpack_require__(/*! babel-runtime/core-js/json/stringify */ 61);
+var _stringify = __webpack_require__(/*! babel-runtime/core-js/json/stringify */ 62);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -40337,7 +40337,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -40682,7 +40682,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -41277,7 +41277,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -41822,7 +41822,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -42627,7 +42627,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -44156,7 +44156,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -45306,7 +45306,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -45951,7 +45951,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -46490,7 +46490,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -47160,7 +47160,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -47809,7 +47809,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -48418,7 +48418,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _coreClass = __webpack_require__(/*! ./components/core/core-class */ 120);
+var _coreClass = __webpack_require__(/*! ./components/core/core-class */ 121);
 
 var _coreClass2 = _interopRequireDefault(_coreClass);
 
@@ -50703,7 +50703,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _ssrWindow = __webpack_require__(/*! ssr-window */ 7);
 
-var _device = __webpack_require__(/*! ../../../utils/device */ 52);
+var _device = __webpack_require__(/*! ../../../utils/device */ 53);
 
 var _device2 = _interopRequireDefault(_device);
 
@@ -50914,7 +50914,7 @@ var _dom = __webpack_require__(/*! ../../../utils/dom */ 22);
 
 var _dom2 = _interopRequireDefault(_dom);
 
-var _device = __webpack_require__(/*! ../../../utils/device */ 52);
+var _device = __webpack_require__(/*! ../../../utils/device */ 53);
 
 var _device2 = _interopRequireDefault(_device);
 
@@ -51763,7 +51763,7 @@ var _support = __webpack_require__(/*! ../../../utils/support */ 23);
 
 var _support2 = _interopRequireDefault(_support);
 
-var _device = __webpack_require__(/*! ../../../utils/device */ 52);
+var _device = __webpack_require__(/*! ../../../utils/device */ 53);
 
 var _device2 = _interopRequireDefault(_device);
 
@@ -52101,7 +52101,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _device = __webpack_require__(/*! ../../utils/device */ 52);
+var _device = __webpack_require__(/*! ../../utils/device */ 53);
 
 var _device2 = _interopRequireDefault(_device);
 
@@ -53092,7 +53092,7 @@ var _support = __webpack_require__(/*! ../../utils/support */ 23);
 
 var _support2 = _interopRequireDefault(_support);
 
-var _device = __webpack_require__(/*! ../../utils/device */ 52);
+var _device = __webpack_require__(/*! ../../utils/device */ 53);
 
 var _device2 = _interopRequireDefault(_device);
 
@@ -53631,7 +53631,7 @@ var _utils = __webpack_require__(/*! ../../utils/utils */ 18);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _device = __webpack_require__(/*! ../../utils/device */ 52);
+var _device = __webpack_require__(/*! ../../utils/device */ 53);
 
 var _device2 = _interopRequireDefault(_device);
 
@@ -54403,7 +54403,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _coreClass = __webpack_require__(/*! ../core/core-class */ 120);
+var _coreClass = __webpack_require__(/*! ../core/core-class */ 121);
 
 var _coreClass2 = _interopRequireDefault(_coreClass);
 
@@ -55725,7 +55725,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -56503,7 +56503,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -56903,7 +56903,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -57808,7 +57808,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -58246,7 +58246,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -58660,7 +58660,7 @@ var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-p
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 10);
+var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 12);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
@@ -58941,7 +58941,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(/*! vue */ 38);
+var _vue = __webpack_require__(/*! vue */ 35);
 
 var _vue2 = _interopRequireDefault(_vue);
 
@@ -59005,15 +59005,15 @@ var _button = __webpack_require__(/*! ./components/button */ 407);
 
 var _button2 = _interopRequireDefault(_button);
 
-var _cardContent = __webpack_require__(/*! ./components/card-content */ 122);
+var _cardContent = __webpack_require__(/*! ./components/card-content */ 123);
 
 var _cardContent2 = _interopRequireDefault(_cardContent);
 
-var _cardFooter = __webpack_require__(/*! ./components/card-footer */ 123);
+var _cardFooter = __webpack_require__(/*! ./components/card-footer */ 124);
 
 var _cardFooter2 = _interopRequireDefault(_cardFooter);
 
-var _cardHeader = __webpack_require__(/*! ./components/card-header */ 124);
+var _cardHeader = __webpack_require__(/*! ./components/card-header */ 125);
 
 var _cardHeader2 = _interopRequireDefault(_cardHeader);
 
@@ -59053,7 +59053,7 @@ var _icon = __webpack_require__(/*! ./components/icon */ 93);
 
 var _icon2 = _interopRequireDefault(_icon);
 
-var _input = __webpack_require__(/*! ./components/input */ 125);
+var _input = __webpack_require__(/*! ./components/input */ 126);
 
 var _input2 = _interopRequireDefault(_input);
 
@@ -59081,7 +59081,7 @@ var _listItemCell = __webpack_require__(/*! ./components/list-item-cell */ 420);
 
 var _listItemCell2 = _interopRequireDefault(_listItemCell);
 
-var _listItemContent = __webpack_require__(/*! ./components/list-item-content */ 128);
+var _listItemContent = __webpack_require__(/*! ./components/list-item-content */ 129);
 
 var _listItemContent2 = _interopRequireDefault(_listItemContent);
 
@@ -59141,7 +59141,7 @@ var _messages = __webpack_require__(/*! ./components/messages */ 434);
 
 var _messages2 = _interopRequireDefault(_messages);
 
-var _navLeft = __webpack_require__(/*! ./components/nav-left */ 129);
+var _navLeft = __webpack_require__(/*! ./components/nav-left */ 130);
 
 var _navLeft2 = _interopRequireDefault(_navLeft);
 
@@ -59149,7 +59149,7 @@ var _navRight = __webpack_require__(/*! ./components/nav-right */ 435);
 
 var _navRight2 = _interopRequireDefault(_navRight);
 
-var _navTitle = __webpack_require__(/*! ./components/nav-title */ 130);
+var _navTitle = __webpack_require__(/*! ./components/nav-title */ 131);
 
 var _navTitle2 = _interopRequireDefault(_navTitle);
 
@@ -59157,7 +59157,7 @@ var _navbar = __webpack_require__(/*! ./components/navbar */ 436);
 
 var _navbar2 = _interopRequireDefault(_navbar);
 
-var _pageContent = __webpack_require__(/*! ./components/page-content */ 131);
+var _pageContent = __webpack_require__(/*! ./components/page-content */ 132);
 
 var _pageContent2 = _interopRequireDefault(_pageContent);
 
@@ -59193,11 +59193,11 @@ var _radio = __webpack_require__(/*! ./components/radio */ 444);
 
 var _radio2 = _interopRequireDefault(_radio);
 
-var _range = __webpack_require__(/*! ./components/range */ 127);
+var _range = __webpack_require__(/*! ./components/range */ 128);
 
 var _range2 = _interopRequireDefault(_range);
 
-var _routableModals = __webpack_require__(/*! ./components/routable-modals */ 121);
+var _routableModals = __webpack_require__(/*! ./components/routable-modals */ 122);
 
 var _routableModals2 = _interopRequireDefault(_routableModals);
 
@@ -59253,7 +59253,7 @@ var _tabs = __webpack_require__(/*! ./components/tabs */ 457);
 
 var _tabs2 = _interopRequireDefault(_tabs);
 
-var _toggle = __webpack_require__(/*! ./components/toggle */ 126);
+var _toggle = __webpack_require__(/*! ./components/toggle */ 127);
 
 var _toggle2 = _interopRequireDefault(_toggle);
 
@@ -59273,7 +59273,7 @@ var _componentsRouter = __webpack_require__(/*! ./utils/components-router */ 461
 
 var _componentsRouter2 = _interopRequireDefault(_componentsRouter);
 
-var _f = __webpack_require__(/*! ./utils/f7 */ 53);
+var _f = __webpack_require__(/*! ./utils/f7 */ 54);
 
 var _f2 = _interopRequireDefault(_f);
 
@@ -60271,11 +60271,11 @@ var _mixins = __webpack_require__(/*! ../utils/mixins */ 5);
 
 var _mixins2 = _interopRequireDefault(_mixins);
 
-var _f = __webpack_require__(/*! ../utils/f7 */ 53);
+var _f = __webpack_require__(/*! ../utils/f7 */ 54);
 
 var _f2 = _interopRequireDefault(_f);
 
-var _routableModals = __webpack_require__(/*! ./routable-modals */ 121);
+var _routableModals = __webpack_require__(/*! ./routable-modals */ 122);
 
 var _routableModals2 = _interopRequireDefault(_routableModals);
 
@@ -60960,15 +60960,15 @@ var _mixins = __webpack_require__(/*! ../utils/mixins */ 5);
 
 var _mixins2 = _interopRequireDefault(_mixins);
 
-var _cardHeader = __webpack_require__(/*! ./card-header */ 124);
+var _cardHeader = __webpack_require__(/*! ./card-header */ 125);
 
 var _cardHeader2 = _interopRequireDefault(_cardHeader);
 
-var _cardContent = __webpack_require__(/*! ./card-content */ 122);
+var _cardContent = __webpack_require__(/*! ./card-content */ 123);
 
 var _cardContent2 = _interopRequireDefault(_cardContent);
 
-var _cardFooter = __webpack_require__(/*! ./card-footer */ 123);
+var _cardFooter = __webpack_require__(/*! ./card-footer */ 124);
 
 var _cardFooter2 = _interopRequireDefault(_cardFooter);
 
@@ -62620,7 +62620,7 @@ var _utils = __webpack_require__(/*! ../utils/utils */ 0);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _listItemContent = __webpack_require__(/*! ./list-item-content */ 128);
+var _listItemContent = __webpack_require__(/*! ./list-item-content */ 129);
 
 var _listItemContent2 = _interopRequireDefault(_listItemContent);
 
@@ -62632,7 +62632,7 @@ var _vueComponentTransformJsxProps = __webpack_require__(/*! ../runtime-helpers/
 
 var _vueComponentTransformJsxProps2 = _interopRequireDefault(_vueComponentTransformJsxProps);
 
-var _vueComponentSetState = __webpack_require__(/*! ../runtime-helpers/vue-component-set-state.js */ 54);
+var _vueComponentSetState = __webpack_require__(/*! ../runtime-helpers/vue-component-set-state.js */ 55);
 
 var _vueComponentSetState2 = _interopRequireDefault(_vueComponentSetState);
 
@@ -64252,7 +64252,7 @@ var _mixins = __webpack_require__(/*! ../utils/mixins */ 5);
 
 var _mixins2 = _interopRequireDefault(_mixins);
 
-var _input = __webpack_require__(/*! ./input */ 125);
+var _input = __webpack_require__(/*! ./input */ 126);
 
 var _input2 = _interopRequireDefault(_input);
 
@@ -65006,11 +65006,11 @@ var _mixins = __webpack_require__(/*! ../utils/mixins */ 5);
 
 var _mixins2 = _interopRequireDefault(_mixins);
 
-var _navLeft = __webpack_require__(/*! ./nav-left */ 129);
+var _navLeft = __webpack_require__(/*! ./nav-left */ 130);
 
 var _navLeft2 = _interopRequireDefault(_navLeft);
 
-var _navTitle = __webpack_require__(/*! ./nav-title */ 130);
+var _navTitle = __webpack_require__(/*! ./nav-title */ 131);
 
 var _navTitle2 = _interopRequireDefault(_navTitle);
 
@@ -65192,7 +65192,7 @@ var _mixins = __webpack_require__(/*! ../utils/mixins */ 5);
 
 var _mixins2 = _interopRequireDefault(_mixins);
 
-var _pageContent = __webpack_require__(/*! ./page-content */ 131);
+var _pageContent = __webpack_require__(/*! ./page-content */ 132);
 
 var _pageContent2 = _interopRequireDefault(_pageContent);
 
@@ -68197,7 +68197,7 @@ var _events = __webpack_require__(/*! ../utils/events */ 64);
 
 var _events2 = _interopRequireDefault(_events);
 
-var _f = __webpack_require__(/*! ../utils/f7 */ 53);
+var _f = __webpack_require__(/*! ../utils/f7 */ 54);
 
 var _f2 = _interopRequireDefault(_f);
 
@@ -68209,7 +68209,7 @@ var _mixins = __webpack_require__(/*! ../utils/mixins */ 5);
 
 var _mixins2 = _interopRequireDefault(_mixins);
 
-var _vueComponentSetState = __webpack_require__(/*! ../runtime-helpers/vue-component-set-state.js */ 54);
+var _vueComponentSetState = __webpack_require__(/*! ../runtime-helpers/vue-component-set-state.js */ 55);
 
 var _vueComponentSetState2 = _interopRequireDefault(_vueComponentSetState);
 
@@ -68580,7 +68580,7 @@ var _assign = __webpack_require__(/*! babel-runtime/core-js/object/assign */ 4);
 
 var _assign2 = _interopRequireDefault(_assign);
 
-var _f = __webpack_require__(/*! ../utils/f7 */ 53);
+var _f = __webpack_require__(/*! ../utils/f7 */ 54);
 
 var _f2 = _interopRequireDefault(_f);
 
@@ -68596,7 +68596,7 @@ var _mixins = __webpack_require__(/*! ../utils/mixins */ 5);
 
 var _mixins2 = _interopRequireDefault(_mixins);
 
-var _vueComponentSetState = __webpack_require__(/*! ../runtime-helpers/vue-component-set-state.js */ 54);
+var _vueComponentSetState = __webpack_require__(/*! ../runtime-helpers/vue-component-set-state.js */ 55);
 
 var _vueComponentSetState2 = _interopRequireDefault(_vueComponentSetState);
 
@@ -68891,7 +68891,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _f = __webpack_require__(/*! ./f7 */ 53);
+var _f = __webpack_require__(/*! ./f7 */ 54);
 
 var _f2 = _interopRequireDefault(_f);
 
@@ -69146,7 +69146,7 @@ var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../..
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("42fd507e", content, false, {});
+var update = __webpack_require__(/*! ../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("42fd507e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -69170,12 +69170,12 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/****** 14px ******/\n/****** 12px ******/\n/****** 12px ******/\n/****** 16px ******/\n/****** 18px ******/\n/****** 18px ******/\n/****** 18px ******/\n/****** 26px ******/\n/****** 40px ******/\n/****** 常用变量中没有定义的，page中基于base-space来计算 ******/\n/****** 18px ******/\n/****** 15px ******/\n/****** 20px ******/\n/****** 40px ******/\n/****** 24px ******/\n/****** 状态栏20px，导航栏44px ******/\n/****** 底部标签栏49px ******/\n/****** 顶部筛选高度44px ******/\n/****** 首页banner125px ******/\n/****** 输入框高度48px ******/\n/****** 按钮高度44px ******/\n/****行高12****/\n/****行高17****/\n/****行高18****/\n/****行高22****/\n/*题目题型颜色*/\n/*做题背景颜色*/\nh1, .h1 {\n  font-size: 40px; }\n\nh2, .h2 {\n  font-size: 26px; }\n\nh3, .h3 {\n  font-size: 18px; }\n\n.font-title {\n  font-size: 16px; }\n\n.small-font,\n.tip-font {\n  font-size: 12px; }\n\n.navbar-inner {\n  background-color: #70D746;\n  color: white; }\n\n.cube-toast.cube-popup {\n  z-index: 9999 !important; }\n\n.cube-popup_mask {\n  z-index: 9999 !important; }\n\n.mint-cell-title {\n  color: #333333 !important; }\n\n.home-foot {\n  position: fixed;\n  right: 0;\n  left: 0;\n  bottom: 0;\n  z-index: 1;\n  height: 40px; }\n  .home-foot .top-line {\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    height: 1px;\n    background-color: #E4E4E4; }\n  .home-foot .foot-content {\n    border: 1px solid rgba(222, 222, 222, 0.3);\n    display: flex;\n    background-color: white;\n    height: 55px; }\n    .home-foot .foot-content .home-item {\n      height: 40px;\n      color: #555;\n      font-weight: 600;\n      font-size: 12px;\n      flex: 1;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      flex-direction: column;\n      background-color: white;\n      color: #93999f; }\n      .home-foot .foot-content .home-item .iconfont {\n        font-size: 25px; }\n    .home-foot .foot-content .is-selected {\n      background-color: rgba(222, 222, 222, 0.3);\n      color: #70D746; }\n\n.common-navBar .navbar-inner {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  background-color: #70D746;\n  color: white; }\n\n.segment-bar {\n  position: relative;\n  display: flex;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4;\n  height: 30px; }\n  .segment-bar .segment-tab {\n    flex: 1;\n    font-size: 12px;\n    padding: 0.4rem 0;\n    margin-bottom: 0;\n    align-items: center;\n    text-align: center;\n    white-space: nowrap;\n    text-overflow: ellipsis;\n    overflow: hidden; }\n  .segment-bar .active {\n    border-bottom: 2px solid #70D746;\n    color: #70D746;\n    font-size: 14px;\n    font-family: monospace; }\n\n.warehouse-picker {\n  width: 100%; }\n  .warehouse-picker .picker-top-buttons {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    text-align: center !important;\n    height: 40px; }\n    .warehouse-picker .picker-top-buttons .top-button {\n      width: 50%; }\n    .warehouse-picker .picker-top-buttons .cancel {\n      color: red; }\n\n.common-scroll {\n  top: 0px;\n  bottom: 45px;\n  position: inherit; }\n  .common-scroll .no-more-data-hint img {\n    width: 100%; }\n\n.measure-item {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4;\n  padding-bottom: 10px; }\n  .measure-item .item-content-left {\n    font-size: 50px;\n    color: #70D746; }\n  .measure-item .item-content-centern {\n    width: 100%;\n    padding-left: 15px; }\n    .measure-item .item-content-centern .item-content-title {\n      padding-top: 10px; }\n    .measure-item .item-content-centern .item-content-subtitle {\n      padding-top: 2px; }\n  .measure-item .item-content-right {\n    font-size: 40px; }\n\n.common-input-cell {\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4;\n  background-color: white;\n  height: 30px; }\n  .common-input-cell .input-cell-title {\n    width: 100px;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white;\n    min-width: 100px;\n    text-align: center; }\n  .common-input-cell .comon-input {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    padding-left: 15px;\n    padding-right: 10px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    width: 100%; }\n  .common-input-cell .picker-placeholder {\n    color: #6C6C6C; }\n  .common-input-cell .disabled {\n    background-color: #F3F3F3; }\n\n.vue-selected-input {\n  height: 30px;\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4; }\n  .vue-selected-input .selecte-user-title {\n    min-width: 100px;\n    text-align: center;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white; }\n  .vue-selected-input .selecte-user-input {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    width: 100%; }\n    .vue-selected-input .selecte-user-input .search-input {\n      height: 30px;\n      display: flex;\n      flex-direction: row;\n      width: 100%; }\n      .vue-selected-input .selecte-user-input .search-input .search-text {\n        padding-left: 15px;\n        width: 100%;\n        background-color: #f5f5f5;\n        color: #93999f;\n        border-bottom: 1px solid #E4E4E4; }\n      .vue-selected-input .selecte-user-input .search-input .search-icon {\n        width: auto;\n        padding-right: 10px;\n        height: auto;\n        border-bottom: 1px solid #E4E4E4;\n        align-items: center;\n        color: #93999f;\n        background-color: #f5f5f5;\n        padding-top: 5px; }\n    .vue-selected-input .selecte-user-input .list-module {\n      overflow: auto;\n      top: 0px;\n      height: auto;\n      z-index: 9998;\n      position: relative;\n      background-color: white !important;\n      max-height: 200px; }\n      .vue-selected-input .selecte-user-input .list-module li {\n        position: relative;\n        padding: 0.5em;\n        border: 1px solid #ccc;\n        white-space: nowrap; }\n        .vue-selected-input .selecte-user-input .list-module li > span {\n          display: inline-block;\n          vertical-align: middle; }\n        .vue-selected-input .selecte-user-input .list-module li .list-module-item {\n          font-size: 12px; }\n\n.cell-content {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4; }\n  .cell-content .cell-content-title {\n    min-width: 100px;\n    text-align: center;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white; }\n  .cell-content .cell-content-subtitle {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    padding-left: 15px;\n    width: 100%;\n    color: #93999f; }\n\n.home-page .page-content {\n  background-color: white; }\n\n.home-page .home-page-swiper {\n  height: 25%; }\n  .home-page .home-page-swiper .swiper-wrapper {\n    border-bottom: 2px solid #E4E4E4; }\n  .home-page .home-page-swiper .swiper-images {\n    width: 100%;\n    height: 100%; }\n\n.home-page .home-page-content {\n  display: flex;\n  flex-wrap: wrap; }\n  .home-page .home-page-content a {\n    color: #333333; }\n  .home-page .home-page-content i {\n    font-size: 25px; }\n\n.home-item {\n  width: 50%;\n  height: 65px;\n  border-bottom: 1px solid #E4E4E4;\n  border-right: 1px solid #E4E4E4;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-around; }\n  .home-item p {\n    text-align: center !important; }\n\n.repair-manager-page .repair-scroll {\n  margin-top: -40px;\n  margin-bottom: 40px; }\n  .repair-manager-page .repair-scroll .repair-nav-items {\n    display: flex;\n    flex-direction: row; }\n\n.measure-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px; }\n  .measure-item .item-content-left {\n    margin-left: 15px;\n    margin-top: 5px;\n    margin-bottom: 5px; }\n    .measure-item .item-content-left .item-content-title {\n      font-size: 16px; }\n    .measure-item .item-content-left .item-content-subtitle {\n      font-size: 14px;\n      color: #93999f; }\n  .measure-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row; }\n    .measure-item .item-content-right i {\n      font-size: 25px; }\n    .measure-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n\n.ready-repair-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .ready-repair-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .ready-repair-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .ready-repair-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .ready-repair-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .ready-repair-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .ready-repair-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .ready-repair-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .ready-repair-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .ready-repair-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .ready-repair-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.ready-repair-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.take-orders-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .take-orders-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .take-orders-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .take-orders-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .take-orders-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .take-orders-page .repair-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .take-orders-page .repair-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .take-orders-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .take-orders-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .take-orders-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .take-orders-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .take-orders-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .take-orders-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .take-orders-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.take-orders-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.repairing-page .repairing-content {\n  top: 0px;\n  bottom: 45px; }\n  .repairing-page .repairing-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .repairing-page .repairing-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .repairing-page .repairing-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .repairing-page .repairing-content .content-bottom {\n    margin-top: 15px; }\n    .repairing-page .repairing-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .repairing-page .repairing-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .repairing-page .repairing-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.device-measure-page .device-measure-items {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between; }\n\n.menu-list-view {\n  display: flex;\n  flex-direction: row;\n  height: 100%; }\n  .menu-list-view .menu-left-list {\n    border: 1px solid #E4E4E4 !important;\n    left: 0px;\n    top: 0px;\n    width: 50%;\n    height: 100%;\n    margin: 0px; }\n    .menu-list-view .menu-left-list li {\n      border: 1px solid #E4E4E4 !important;\n      text-align: left; }\n  .menu-list-view .menu-right-list {\n    top: 0px;\n    right: 0px;\n    width: 50%;\n    height: 100%;\n    border: 1px solid #E4E4E4 !important; }\n    .menu-list-view .menu-right-list li {\n      text-align: left;\n      font-size: 10px;\n      border: 1px solid #E4E4E4 !important; }\n\n.measure-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px; }\n  .measure-item .item-content-left {\n    margin-left: 15px; }\n    .measure-item .item-content-left .item-content-title {\n      font-size: 16px; }\n  .measure-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row; }\n    .measure-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n\n.apply-repair-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .apply-repair-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .apply-repair-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .apply-repair-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .apply-repair-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .apply-repair-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .apply-repair-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .apply-repair-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .apply-repair-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .apply-repair-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .apply-repair-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.apply-repair-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  margin-bottom: 0px;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.scan-repair-page .scan-repair-scroll {\n  height: calc(100% - 75px); }\n\n.scan-repair-page .scan-repair-add-btn {\n  margin-bottom: 0px;\n  height: 44px;\n  background-color: #70D746; }\n\n.search-page .search-content-device-scroll {\n  border: 1px solid #E4E4E4;\n  background-color: white;\n  height: 100px; }\n  .search-page .search-content-device-scroll .search-item {\n    text-align: center !important;\n    border-bottom: 1px solid #E4E4E4; }\n\n.search-page .search-content-department-scroll {\n  border: 1px solid #E4E4E4;\n  background-color: white;\n  height: 100px; }\n  .search-page .search-content-department-scroll .search-item {\n    text-align: center !important;\n    border-bottom: 1px solid #E4E4E4; }\n\n.search-page .search-content-data-scroll {\n  height: calc(100% - 200px); }\n\n.view {\n  margin-bottom: 44px; }\n\n.chats-item-content {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4;\n  margin-top: 5px;\n  align-items: center;\n  background-color: white;\n  justify-content: space-between; }\n  .chats-item-content .chats-content-type {\n    margin-top: 10px;\n    margin-bottom: 10px;\n    text-align: center;\n    padding-top: 12px;\n    border: 2px solid #70D746;\n    color: #70D746;\n    border-radius: 50%;\n    margin-left: 15px;\n    height: 50px;\n    width: 70px;\n    font-size: 16px; }\n  .chats-item-content .chats-content {\n    width: 100%;\n    margin-left: 10px; }\n    .chats-item-content .chats-content .chats-content-title {\n      font-size: 16px; }\n    .chats-item-content .chats-content .chats-content-subtitle {\n      color: #93999f;\n      font-size: 14px; }\n  .chats-item-content .chats-content-status {\n    text-align: center;\n    padding-top: 14px;\n    color: #F8C143;\n    border: 1px solid #F8C143;\n    border-radius: 50%;\n    margin-right: 15px;\n    height: 45px;\n    font-size: 14px;\n    width: 70px; }\n\n.ready-repair-bottom {\n  bottom: 0px;\n  position: absolute;\n  color: white;\n  height: 45px;\n  background-color: #70D746 !important;\n  border-color: transparent;\n  z-index: 10; }\n\n.about-page {\n  margin-top: 100px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around; }\n  .about-page .about-logo-img {\n    margin-top: 70px;\n    width: 50%;\n    height: 50%; }\n  .about-page .company-info {\n    height: 90px;\n    justify-content: space-between;\n    font-size: 14px;\n    margin-top: 60px; }\n    .about-page .company-info .tell {\n      color: #3D7ADD; }\n    .about-page .company-info .website {\n      color: #3D7ADD; }\n  .about-page .version-info {\n    position: absolute;\n    bottom: 10px;\n    width: 100%;\n    text-align: center;\n    line-height: 44px;\n    height: 44px;\n    font-size: 16px; }\n    .about-page .version-info.text {\n      color: white; }\n\n.page-login .login-background-image {\n  width: 100%;\n  height: 100%;\n  background-color: #F8F8F8; }\n\n.page-login .login-content {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .page-login .login-content .login-logo {\n    margin-top: 70px;\n    width: 50%; }\n  .page-login .login-content .login-input-div {\n    margin-top: 70px;\n    width: 90%; }\n    .page-login .login-content .login-input-div .login-input {\n      border-radius: 5%;\n      background-color: white; }\n  .page-login .login-content .login-button {\n    width: 90%;\n    color: white;\n    background-color: #70D746;\n    border-color: transparent; }\n  .page-login .login-content .warehouse-picker {\n    width: 100%; }\n    .page-login .login-content .warehouse-picker .picker-top-buttons {\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      text-align: center !important;\n      height: 40px; }\n      .page-login .login-content .warehouse-picker .picker-top-buttons .top-button {\n        width: 50%; }\n      .page-login .login-content .warehouse-picker .picker-top-buttons .cancel {\n        color: red; }\n\n.home-assetcheck .tab {\n  width: 100%;\n  font-size: 0;\n  background-color: #fff; }\n\n.home-assetcheck .tab li {\n  width: 45%;\n  display: inline-block;\n  text-align: center;\n  font-size: 1rem;\n  padding: 10px 0;\n  font-weight: 400; }\n\n.home-assetcheck .list_cont {\n  margin: 0; }\n\n.home-assetcheck .tab_item {\n  color: #666666;\n  font-size: 0;\n  margin-top: 3px;\n  background-color: #FFFFF0; }\n\n.home-assetcheck .img_box {\n  width: 20%;\n  height: auto; }\n\n.home-assetcheck .img_box i {\n  font-size: 55px;\n  color: #999999; }\n\n.home-assetcheck .text_box {\n  width: 78%;\n  font-size: 12px; }\n\n.home-assetcheck .text_box .h5 {\n  font-size: .5rem;\n  color: #333333;\n  line-height: 20px; }\n\n.home-assetcheck .text_box .h5 .tab_btn {\n  color: #666;\n  width: 2rem;\n  height: 17px;\n  line-height: 15px;\n  margin: 3px 5px 0 0;\n  font-size: 12px;\n  font-weight: 400;\n  background: none;\n  border: 1px solid #d2d2d2;\n  border-radius: 2px; }\n\n.home-assetcheck .text_box_item {\n  font-size: 12px;\n  margin: 0; }\n\n.home-assetcheck .text_box_item small + small {\n  margin-right: 5px; }\n\n.home-assetcheck .add {\n  overflow: hidden;\n  padding-top: 30px;\n  background: #FFFFF0; }\n\n.home-assetcheck form {\n  height: 100%;\n  overflow: hidden; }\n\n.home-assetcheck .form-item {\n  width: 90%;\n  margin: 0 auto 10px;\n  font-size: 0;\n  color: #666666; }\n\n.home-assetcheck .form-item .label-item {\n  font-size: 12px;\n  width: 30%;\n  height: 35px;\n  line-height: 35px;\n  color: #333333; }\n\n.home-assetcheck .form-item .input-box {\n  font-size: 12px;\n  width: 70%; }\n\n.home-assetcheck .form-item .input-box input {\n  display: block;\n  width: 95%;\n  height: 35px;\n  line-height: 35px;\n  border: 1px solid #c2c2c2;\n  border-radius: 4px;\n  text-indent: 1em; }\n\n.home-assetcheck .form-item .input-box .right-text {\n  top: 25%;\n  right: 8%;\n  z-index: 0; }\n\n.home-assetcheck .form-btn-box {\n  width: 100%;\n  bottom: 0; }\n\n.home-assetcheck .form-btn-box button {\n  font-size: 15px;\n  height: 40px;\n  line-height: 40px;\n  outline: none;\n  border: none;\n  background-color: #70D746;\n  color: #fff;\n  cursor: pointer; }\n\n.home-assetcheck .tab_show {\n  display: block; }\n\n.home-assetcheck .tab_hide {\n  display: none; }\n\n.home-assetcheck .active {\n  color: #5FB878;\n  font-weight: 500;\n  border-bottom: 2px solid #5FB878; }\n\n.detail-asset-acheck .content-header {\n  padding-left: 15px;\n  color: #93999f;\n  font-size: 14px;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4; }\n\n.detail-asset-acheck .content-top {\n  margin-top: 15px;\n  background-color: white; }\n  .detail-asset-acheck .content-top .contet-top-device-info {\n    display: flex;\n    flex-direction: row;\n    align-items: center; }\n    .detail-asset-acheck .content-top .contet-top-device-info .device-icon {\n      font-size: 80px;\n      color: #70D746;\n      margin-left: 15px;\n      margin-right: 15px; }\n    .detail-asset-acheck .content-top .contet-top-device-info .content-device-name {\n      font-size: 16px;\n      color: #333333; }\n\n.detail-asset-acheck .content-middle {\n  margin-top: 15px;\n  background-color: white; }\n  .detail-asset-acheck .content-middle .content-repair-info {\n    padding-left: 15px;\n    height: 30px;\n    font-size: 16px;\n    color: #333333; }\n  .detail-asset-acheck .content-middle .problem-description {\n    border-bottom: 1px solid #E4E4E4;\n    border-top: 1px solid #E4E4E4;\n    height: 50px; }\n\n.detail-asset-acheck .asset-checkout-bottom-btn {\n  display: flex;\n  margin-top: 15px;\n  flex-direction: row;\n  flex: 1;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n  .detail-asset-acheck .asset-checkout-bottom-btn .asset-check-bottom-btn {\n    background-color: #70D746;\n    width: 40%; }\n\n.beginAassetcheck-cont {\n  height: 100%;\n  overflow: auto; }\n  .beginAassetcheck-cont .list_item {\n    background-color: #fffbf0;\n    border-bottom: 2px solid #eeeeee; }\n    .beginAassetcheck-cont .list_item .list-item-cont {\n      font-size: 0;\n      background-color: #eeeeee; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-icon {\n      width: 20%;\n      font-size: 12px;\n      line-height: 70px; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-icon i {\n      font-size: 45px;\n      color: #009688; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-text {\n      font-size: 12px;\n      width: 80%;\n      color: #828282;\n      padding: 2px 0; }\n    .beginAassetcheck-cont .list_item .list-item-footer {\n      font-size: 12px;\n      color: #666666;\n      padding: 0 0 0 5px; }\n    .beginAassetcheck-cont .list_item .list-item-footer span {\n      font-size: 12px;\n      line-height: 20px; }\n    .beginAassetcheck-cont .list_item .list-item-footer button {\n      background: none;\n      border: 1px solid #999999;\n      border-radius: 10px;\n      font-size: 12px;\n      height: 16px;\n      line-height: 16px;\n      margin: 3px 10px 0 0;\n      padding: 0 5px;\n      width: auto; }\n  .beginAassetcheck-cont .list_item h6 {\n    line-height: 15px;\n    padding: 3px 5px;\n    color: #666666;\n    font-weight: 400;\n    font-size: 13px; }\n  .beginAassetcheck-cont .con-top-f {\n    position: fixed;\n    top: 40px;\n    left: 0;\n    width: 100%; }\n\n.new-asset-check-page .search-input {\n  height: 40px;\n  padding-left: 15px;\n  background-color: #DEDEDE4D;\n  border-bottom: 1px solid #E4E4E4; }\n  .new-asset-check-page .search-input input {\n    width: 100%;\n    height: 40px; }\n\n.new-asset-check-page .downloading-content {\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  top: 0px;\n  background-color: black;\n  opacity: 0.1; }\n\n.asset-checkou-item {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4; }\n  .asset-checkou-item .item-content-left {\n    font-size: 50px;\n    color: #70D746;\n    padding-left: 13px; }\n  .asset-checkou-item .item-content-middle {\n    width: 100%; }\n    .asset-checkou-item .item-content-middle .item-content-title {\n      padding-top: 10px; }\n    .asset-checkou-item .item-content-middle .item-content-subtitle {\n      padding-top: 5px; }\n  .asset-checkou-item .item-content-right {\n    font-size: 40px;\n    padding-right: 15px; }\n\n.asset-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px;\n  align-self: center;\n  flex: 1; }\n  .asset-item .item-content-left {\n    margin-left: 15px;\n    font-size: 60px;\n    color: #70D746; }\n  .asset-item .item-content-middle {\n    margin-top: 5px;\n    margin-left: 15px;\n    margin-bottom: 5px;\n    width: 100%; }\n    .asset-item .item-content-middle .item-content-title {\n      font-size: 16px;\n      color: #333333; }\n    .asset-item .item-content-middle .item-content-subtitle {\n      font-size: 14px;\n      color: #93999f; }\n  .asset-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    align-self: center; }\n    .asset-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/****** 14px ******/\n/****** 12px ******/\n/****** 12px ******/\n/****** 16px ******/\n/****** 18px ******/\n/****** 18px ******/\n/****** 18px ******/\n/****** 26px ******/\n/****** 40px ******/\n/****** 常用变量中没有定义的，page中基于base-space来计算 ******/\n/****** 18px ******/\n/****** 15px ******/\n/****** 20px ******/\n/****** 40px ******/\n/****** 24px ******/\n/****** 状态栏20px，导航栏44px ******/\n/****** 底部标签栏49px ******/\n/****** 顶部筛选高度44px ******/\n/****** 首页banner125px ******/\n/****** 输入框高度48px ******/\n/****** 按钮高度44px ******/\n/****行高12****/\n/****行高17****/\n/****行高18****/\n/****行高22****/\n/*题目题型颜色*/\n/*做题背景颜色*/\nh1, .h1 {\n  font-size: 40px; }\n\nh2, .h2 {\n  font-size: 26px; }\n\nh3, .h3 {\n  font-size: 18px; }\n\n.font-title {\n  font-size: 16px; }\n\n.small-font,\n.tip-font {\n  font-size: 12px; }\n\n.navbar-inner {\n  background-color: #70D746;\n  color: white; }\n\n.cube-toast.cube-popup {\n  z-index: 9999 !important; }\n\n.cube-popup_mask {\n  z-index: 9999 !important; }\n\n.mint-cell-title {\n  color: #333333 !important; }\n\n.home-foot {\n  position: fixed;\n  right: 0;\n  left: 0;\n  bottom: 0;\n  z-index: 1;\n  height: 40px; }\n  .home-foot .top-line {\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    height: 1px;\n    background-color: #E4E4E4; }\n  .home-foot .foot-content {\n    border: 1px solid rgba(222, 222, 222, 0.3);\n    display: flex;\n    background-color: white;\n    height: 55px; }\n    .home-foot .foot-content .home-item {\n      height: 40px;\n      color: #555;\n      font-weight: 600;\n      font-size: 12px;\n      flex: 1;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      flex-direction: column;\n      background-color: white;\n      color: #93999f; }\n      .home-foot .foot-content .home-item .iconfont {\n        font-size: 25px; }\n    .home-foot .foot-content .is-selected {\n      background-color: rgba(222, 222, 222, 0.3);\n      color: #70D746; }\n\n.common-navBar .navbar-inner {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  background-color: #70D746;\n  color: white; }\n\n.segment-bar {\n  position: relative;\n  display: flex;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4;\n  height: 30px; }\n  .segment-bar .segment-tab {\n    flex: 1;\n    font-size: 12px;\n    padding: 0.4rem 0;\n    margin-bottom: 0;\n    align-items: center;\n    text-align: center;\n    white-space: nowrap;\n    text-overflow: ellipsis;\n    overflow: hidden; }\n  .segment-bar .active {\n    border-bottom: 2px solid #70D746;\n    color: #70D746;\n    font-size: 14px;\n    font-family: monospace; }\n\n.warehouse-picker {\n  width: 100%; }\n  .warehouse-picker .picker-top-buttons {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    text-align: center !important;\n    height: 40px; }\n    .warehouse-picker .picker-top-buttons .top-button {\n      width: 50%; }\n    .warehouse-picker .picker-top-buttons .cancel {\n      color: red; }\n\n.common-scroll {\n  top: 0px;\n  bottom: 45px;\n  position: inherit; }\n  .common-scroll .no-more-data-hint img {\n    width: 100%; }\n\n.measure-item {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4;\n  padding-bottom: 10px; }\n  .measure-item .item-content-left {\n    font-size: 50px;\n    color: #70D746; }\n  .measure-item .item-content-centern {\n    width: 100%;\n    padding-left: 15px; }\n    .measure-item .item-content-centern .item-content-title {\n      padding-top: 10px; }\n    .measure-item .item-content-centern .item-content-subtitle {\n      padding-top: 2px; }\n  .measure-item .item-content-right {\n    font-size: 40px; }\n\n.common-input-cell {\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4;\n  background-color: white;\n  height: 30px; }\n  .common-input-cell .input-cell-title {\n    width: 100px;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white;\n    min-width: 100px;\n    text-align: center; }\n  .common-input-cell .comon-input {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    padding-left: 15px;\n    padding-right: 10px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    width: 100%; }\n  .common-input-cell .picker-placeholder {\n    color: #6C6C6C; }\n  .common-input-cell .disabled {\n    background-color: #F3F3F3; }\n\n.vue-selected-input {\n  height: 30px;\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4; }\n  .vue-selected-input .selecte-user-title {\n    min-width: 100px;\n    text-align: center;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white; }\n  .vue-selected-input .selecte-user-input {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    width: 100%; }\n    .vue-selected-input .selecte-user-input .search-input {\n      height: 30px;\n      display: flex;\n      flex-direction: row;\n      width: 100%; }\n      .vue-selected-input .selecte-user-input .search-input .search-text {\n        padding-left: 15px;\n        width: 100%;\n        background-color: #f5f5f5;\n        color: #93999f;\n        border-bottom: 1px solid #E4E4E4; }\n      .vue-selected-input .selecte-user-input .search-input .search-icon {\n        width: auto;\n        padding-right: 10px;\n        height: auto;\n        border-bottom: 1px solid #E4E4E4;\n        align-items: center;\n        color: #93999f;\n        background-color: #f5f5f5;\n        padding-top: 5px; }\n    .vue-selected-input .selecte-user-input .list-module {\n      overflow: auto;\n      top: 0px;\n      height: auto;\n      z-index: 9998;\n      position: relative;\n      background-color: white !important;\n      max-height: 200px; }\n      .vue-selected-input .selecte-user-input .list-module li {\n        position: relative;\n        padding: 0.5em;\n        border: 1px solid #ccc;\n        white-space: nowrap; }\n        .vue-selected-input .selecte-user-input .list-module li > span {\n          display: inline-block;\n          vertical-align: middle; }\n        .vue-selected-input .selecte-user-input .list-module li .list-module-item {\n          font-size: 12px; }\n\n.cell-content {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4; }\n  .cell-content .cell-content-title {\n    min-width: 100px;\n    text-align: center;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white; }\n  .cell-content .cell-content-subtitle {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    padding-left: 15px;\n    width: 100%;\n    color: #93999f; }\n\n.home-page .page-content {\n  background-color: white; }\n\n.home-page .home-page-swiper {\n  height: 25%; }\n  .home-page .home-page-swiper .swiper-wrapper {\n    border-bottom: 2px solid #E4E4E4; }\n  .home-page .home-page-swiper .swiper-images {\n    width: 100%;\n    height: 100%; }\n\n.home-page .home-page-content {\n  display: flex;\n  flex-wrap: wrap; }\n  .home-page .home-page-content a {\n    color: #333333; }\n  .home-page .home-page-content i {\n    font-size: 25px; }\n\n.home-item {\n  width: 50%;\n  height: 65px;\n  border-bottom: 1px solid #E4E4E4;\n  border-right: 1px solid #E4E4E4;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-around; }\n  .home-item p {\n    text-align: center !important; }\n\n.repair-manager-page .repair-scroll {\n  margin-top: -40px;\n  margin-bottom: 40px; }\n  .repair-manager-page .repair-scroll .repair-nav-items {\n    display: flex;\n    flex-direction: row; }\n\n.measure-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px; }\n  .measure-item .item-content-left {\n    margin-left: 15px;\n    margin-top: 5px;\n    margin-bottom: 5px; }\n    .measure-item .item-content-left .item-content-title {\n      font-size: 16px; }\n    .measure-item .item-content-left .item-content-subtitle {\n      font-size: 14px;\n      color: #93999f; }\n  .measure-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row; }\n    .measure-item .item-content-right i {\n      font-size: 25px; }\n    .measure-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n\n.ready-repair-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .ready-repair-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .ready-repair-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .ready-repair-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .ready-repair-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .ready-repair-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .ready-repair-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .ready-repair-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .ready-repair-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .ready-repair-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .ready-repair-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.ready-repair-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.take-orders-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .take-orders-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .take-orders-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .take-orders-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .take-orders-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .take-orders-page .repair-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .take-orders-page .repair-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .take-orders-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .take-orders-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .take-orders-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .take-orders-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .take-orders-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .take-orders-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .take-orders-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.take-orders-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.repairing-page .repairing-content {\n  top: 0px;\n  bottom: 45px; }\n  .repairing-page .repairing-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .repairing-page .repairing-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .repairing-page .repairing-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .repairing-page .repairing-content .content-bottom {\n    margin-top: 15px; }\n    .repairing-page .repairing-content .content-bottom .content-header-bottom {\n      display: flex;\n      background-color: white;\n      justify-content: space-between;\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      height: 20px; }\n      .repairing-page .repairing-content .content-bottom .content-header-bottom .content-header-title {\n        margin-left: 15px;\n        color: #93999f;\n        font-size: 14px; }\n      .repairing-page .repairing-content .content-bottom .content-header-bottom .content-add-button {\n        margin-right: 15px;\n        color: #93999f;\n        font-size: 14px; }\n    .repairing-page .repairing-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .repairing-page .repairing-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .repairing-page .repairing-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.device-measure-page .device-measure-items {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between; }\n\n.menu-list-view {\n  display: flex;\n  flex-direction: row;\n  height: 100%; }\n  .menu-list-view .menu-left-list {\n    border: 1px solid #E4E4E4 !important;\n    left: 0px;\n    top: 0px;\n    width: 50%;\n    height: 100%;\n    margin: 0px; }\n    .menu-list-view .menu-left-list li {\n      border: 1px solid #E4E4E4 !important;\n      text-align: left; }\n  .menu-list-view .menu-right-list {\n    top: 0px;\n    right: 0px;\n    width: 50%;\n    height: 100%;\n    border: 1px solid #E4E4E4 !important; }\n    .menu-list-view .menu-right-list li {\n      text-align: left;\n      font-size: 10px;\n      border: 1px solid #E4E4E4 !important; }\n\n.measure-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px; }\n  .measure-item .item-content-left {\n    margin-left: 15px; }\n    .measure-item .item-content-left .item-content-title {\n      font-size: 16px; }\n  .measure-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row; }\n    .measure-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n\n.apply-repair-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .apply-repair-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .apply-repair-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .apply-repair-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .apply-repair-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .apply-repair-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .apply-repair-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .apply-repair-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .apply-repair-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .apply-repair-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .apply-repair-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.apply-repair-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  margin-bottom: 0px;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.scan-repair-page .scan-repair-scroll {\n  height: calc(100% - 75px); }\n\n.scan-repair-page .scan-repair-add-btn {\n  margin-bottom: 0px;\n  height: 44px;\n  background-color: #70D746; }\n\n.search-page .search-content-device-scroll {\n  border: 1px solid #E4E4E4;\n  background-color: white;\n  height: 100px; }\n  .search-page .search-content-device-scroll .search-item {\n    text-align: center !important;\n    border-bottom: 1px solid #E4E4E4; }\n\n.search-page .search-content-department-scroll {\n  border: 1px solid #E4E4E4;\n  background-color: white;\n  height: 100px; }\n  .search-page .search-content-department-scroll .search-item {\n    text-align: center !important;\n    border-bottom: 1px solid #E4E4E4; }\n\n.search-page .search-content-data-scroll {\n  height: calc(100% - 200px); }\n\n.view {\n  margin-bottom: 44px; }\n\n.chats-item-content {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4;\n  margin-top: 5px;\n  align-items: center;\n  background-color: white;\n  justify-content: space-between; }\n  .chats-item-content .chats-content-type {\n    margin-top: 10px;\n    margin-bottom: 10px;\n    text-align: center;\n    padding-top: 12px;\n    border: 2px solid #70D746;\n    color: #70D746;\n    border-radius: 50%;\n    margin-left: 15px;\n    height: 50px;\n    width: 70px;\n    font-size: 16px; }\n  .chats-item-content .chats-content {\n    width: 100%;\n    margin-left: 10px; }\n    .chats-item-content .chats-content .chats-content-title {\n      font-size: 16px; }\n    .chats-item-content .chats-content .chats-content-subtitle {\n      color: #93999f;\n      font-size: 14px; }\n  .chats-item-content .chats-content-status {\n    text-align: center;\n    padding-top: 14px;\n    color: #F8C143;\n    border: 1px solid #F8C143;\n    border-radius: 50%;\n    margin-right: 15px;\n    height: 45px;\n    font-size: 14px;\n    width: 70px; }\n\n.ready-repair-bottom {\n  bottom: 0px;\n  position: absolute;\n  color: white;\n  height: 45px;\n  background-color: #70D746 !important;\n  border-color: transparent;\n  z-index: 10; }\n\n.about-page {\n  margin-top: 100px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around; }\n  .about-page .about-logo-img {\n    margin-top: 70px;\n    width: 50%;\n    height: 50%; }\n  .about-page .company-info {\n    height: 90px;\n    justify-content: space-between;\n    font-size: 14px;\n    margin-top: 60px; }\n    .about-page .company-info .tell {\n      color: #3D7ADD; }\n    .about-page .company-info .website {\n      color: #3D7ADD; }\n  .about-page .version-info {\n    position: absolute;\n    bottom: 10px;\n    width: 100%;\n    text-align: center;\n    line-height: 44px;\n    height: 44px;\n    font-size: 16px; }\n    .about-page .version-info.text {\n      color: white; }\n\n.page-login .login-background-image {\n  width: 100%;\n  height: 100%;\n  background-color: #F8F8F8; }\n\n.page-login .login-content {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .page-login .login-content .login-logo {\n    margin-top: 70px;\n    width: 50%; }\n  .page-login .login-content .login-input-div {\n    margin-top: 70px;\n    width: 90%; }\n    .page-login .login-content .login-input-div .login-input {\n      border-radius: 5%;\n      background-color: white; }\n  .page-login .login-content .login-button {\n    width: 90%;\n    color: white;\n    background-color: #70D746;\n    border-color: transparent; }\n  .page-login .login-content .warehouse-picker {\n    width: 100%; }\n    .page-login .login-content .warehouse-picker .picker-top-buttons {\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      text-align: center !important;\n      height: 40px; }\n      .page-login .login-content .warehouse-picker .picker-top-buttons .top-button {\n        width: 50%; }\n      .page-login .login-content .warehouse-picker .picker-top-buttons .cancel {\n        color: red; }\n\n.home-assetcheck .tab {\n  width: 100%;\n  font-size: 0;\n  background-color: #fff; }\n\n.home-assetcheck .tab li {\n  width: 45%;\n  display: inline-block;\n  text-align: center;\n  font-size: 1rem;\n  padding: 10px 0;\n  font-weight: 400; }\n\n.home-assetcheck .list_cont {\n  margin: 0; }\n\n.home-assetcheck .tab_item {\n  color: #666666;\n  font-size: 0;\n  margin-top: 3px;\n  background-color: #FFFFF0; }\n\n.home-assetcheck .img_box {\n  width: 20%;\n  height: auto; }\n\n.home-assetcheck .img_box i {\n  font-size: 55px;\n  color: #999999; }\n\n.home-assetcheck .text_box {\n  width: 78%;\n  font-size: 12px; }\n\n.home-assetcheck .text_box .h5 {\n  font-size: .5rem;\n  color: #333333;\n  line-height: 20px; }\n\n.home-assetcheck .text_box .h5 .tab_btn {\n  color: #666;\n  width: 2rem;\n  height: 17px;\n  line-height: 15px;\n  margin: 3px 5px 0 0;\n  font-size: 12px;\n  font-weight: 400;\n  background: none;\n  border: 1px solid #d2d2d2;\n  border-radius: 2px; }\n\n.home-assetcheck .text_box_item {\n  font-size: 12px;\n  margin: 0; }\n\n.home-assetcheck .text_box_item small + small {\n  margin-right: 5px; }\n\n.home-assetcheck .add {\n  overflow: hidden;\n  padding-top: 30px;\n  background: #FFFFF0; }\n\n.home-assetcheck form {\n  height: 100%;\n  overflow: hidden; }\n\n.home-assetcheck .form-item {\n  width: 90%;\n  margin: 0 auto 10px;\n  font-size: 0;\n  color: #666666; }\n\n.home-assetcheck .form-item .label-item {\n  font-size: 12px;\n  width: 30%;\n  height: 35px;\n  line-height: 35px;\n  color: #333333; }\n\n.home-assetcheck .form-item .input-box {\n  font-size: 12px;\n  width: 70%; }\n\n.home-assetcheck .form-item .input-box input {\n  display: block;\n  width: 95%;\n  height: 35px;\n  line-height: 35px;\n  border: 1px solid #c2c2c2;\n  border-radius: 4px;\n  text-indent: 1em; }\n\n.home-assetcheck .form-item .input-box .right-text {\n  top: 25%;\n  right: 8%;\n  z-index: 0; }\n\n.home-assetcheck .form-btn-box {\n  width: 100%;\n  bottom: 0; }\n\n.home-assetcheck .form-btn-box button {\n  font-size: 15px;\n  height: 40px;\n  line-height: 40px;\n  outline: none;\n  border: none;\n  background-color: #70D746;\n  color: #fff;\n  cursor: pointer; }\n\n.home-assetcheck .tab_show {\n  display: block; }\n\n.home-assetcheck .tab_hide {\n  display: none; }\n\n.home-assetcheck .active {\n  color: #5FB878;\n  font-weight: 500;\n  border-bottom: 2px solid #5FB878; }\n\n.detail-asset-acheck .content-header {\n  padding-left: 15px;\n  color: #93999f;\n  font-size: 14px;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4; }\n\n.detail-asset-acheck .content-top {\n  margin-top: 15px;\n  background-color: white; }\n  .detail-asset-acheck .content-top .contet-top-device-info {\n    display: flex;\n    flex-direction: row;\n    align-items: center; }\n    .detail-asset-acheck .content-top .contet-top-device-info .device-icon {\n      font-size: 80px;\n      color: #70D746;\n      margin-left: 15px;\n      margin-right: 15px; }\n    .detail-asset-acheck .content-top .contet-top-device-info .content-device-name {\n      font-size: 16px;\n      color: #333333; }\n\n.detail-asset-acheck .content-middle {\n  margin-top: 15px;\n  background-color: white; }\n  .detail-asset-acheck .content-middle .content-repair-info {\n    padding-left: 15px;\n    height: 30px;\n    font-size: 16px;\n    color: #333333; }\n  .detail-asset-acheck .content-middle .problem-description {\n    border-bottom: 1px solid #E4E4E4;\n    border-top: 1px solid #E4E4E4;\n    height: 50px; }\n\n.detail-asset-acheck .asset-checkout-bottom-btn {\n  display: flex;\n  margin-top: 15px;\n  flex-direction: row;\n  flex: 1;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n  .detail-asset-acheck .asset-checkout-bottom-btn .asset-check-bottom-btn {\n    background-color: #70D746;\n    width: 40%; }\n\n.beginAassetcheck-cont {\n  height: 100%;\n  overflow: auto; }\n  .beginAassetcheck-cont .list_item {\n    background-color: #fffbf0;\n    border-bottom: 2px solid #eeeeee; }\n    .beginAassetcheck-cont .list_item .list-item-cont {\n      font-size: 0;\n      background-color: #eeeeee; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-icon {\n      width: 20%;\n      font-size: 12px;\n      line-height: 70px; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-icon i {\n      font-size: 45px;\n      color: #009688; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-text {\n      font-size: 12px;\n      width: 80%;\n      color: #828282;\n      padding: 2px 0; }\n    .beginAassetcheck-cont .list_item .list-item-footer {\n      font-size: 12px;\n      color: #666666;\n      padding: 0 0 0 5px; }\n    .beginAassetcheck-cont .list_item .list-item-footer span {\n      font-size: 12px;\n      line-height: 20px; }\n    .beginAassetcheck-cont .list_item .list-item-footer button {\n      background: none;\n      border: 1px solid #999999;\n      border-radius: 10px;\n      font-size: 12px;\n      height: 16px;\n      line-height: 16px;\n      margin: 3px 10px 0 0;\n      padding: 0 5px;\n      width: auto; }\n  .beginAassetcheck-cont .list_item h6 {\n    line-height: 15px;\n    padding: 3px 5px;\n    color: #666666;\n    font-weight: 400;\n    font-size: 13px; }\n  .beginAassetcheck-cont .con-top-f {\n    position: fixed;\n    top: 40px;\n    left: 0;\n    width: 100%; }\n\n.new-asset-check-page .search-input {\n  height: 40px;\n  padding-left: 15px;\n  background-color: #DEDEDE4D;\n  border-bottom: 1px solid #E4E4E4; }\n  .new-asset-check-page .search-input input {\n    width: 100%;\n    height: 40px; }\n\n.new-asset-check-page .downloading-content {\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  top: 0px;\n  background-color: black;\n  opacity: 0.1; }\n\n.asset-checkou-item {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4; }\n  .asset-checkou-item .item-content-left {\n    font-size: 50px;\n    color: #70D746;\n    padding-left: 13px; }\n  .asset-checkou-item .item-content-middle {\n    width: 100%; }\n    .asset-checkou-item .item-content-middle .item-content-title {\n      padding-top: 10px; }\n    .asset-checkou-item .item-content-middle .item-content-subtitle {\n      padding-top: 5px; }\n  .asset-checkou-item .item-content-right {\n    font-size: 40px;\n    padding-right: 15px; }\n\n.asset-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px;\n  align-self: center;\n  flex: 1; }\n  .asset-item .item-content-left {\n    margin-left: 15px;\n    font-size: 60px;\n    color: #70D746; }\n  .asset-item .item-content-middle {\n    margin-top: 5px;\n    margin-left: 15px;\n    margin-bottom: 5px;\n    width: 100%; }\n    .asset-item .item-content-middle .item-content-title {\n      font-size: 16px;\n      color: #333333; }\n    .asset-item .item-content-middle .item-content-subtitle {\n      font-size: 14px;\n      color: #93999f; }\n  .asset-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    align-self: center; }\n    .asset-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n", ""]);
 
 // exports
 
@@ -69243,7 +69243,7 @@ var Component = __webpack_require__(/*! ../node_modules/vue-loader/lib/component
   /* script */
   __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../node_modules/vue-loader/lib/selector?type=script&index=0!./main.vue */ 470),
   /* template */
-  __webpack_require__(/*! !../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-4086f7c4","hasScoped":false}!../node_modules/vue-loader/lib/selector?type=template&index=0!./main.vue */ 667),
+  __webpack_require__(/*! !../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-4086f7c4","hasScoped":false}!../node_modules/vue-loader/lib/selector?type=template&index=0!./main.vue */ 672),
   /* styles */
   null,
   /* scopeId */
@@ -69338,7 +69338,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = [{
   path: '/',
-  component: __webpack_require__(/*! ./assets/vue/pages/mine/login.vue */ 132)
+  component: __webpack_require__(/*! ./assets/vue/pages/mine/login.vue */ 133)
 }, {
   path: '/chats/',
   component: __webpack_require__(/*! ./assets/vue/pages/chats/chats.vue */ 476)
@@ -69353,7 +69353,7 @@ exports.default = [{
   component: __webpack_require__(/*! ./assets/vue/pages/mine/about.vue */ 508)
 }, {
   path: '/login/',
-  component: __webpack_require__(/*! ./assets/vue/pages/mine/login.vue */ 132)
+  component: __webpack_require__(/*! ./assets/vue/pages/mine/login.vue */ 133)
 }, {
   path: '/home/',
   component: __webpack_require__(/*! ./assets/vue/pages/home/home.vue */ 511)
@@ -69396,30 +69396,33 @@ exports.default = [{
 }, {
   path: '/repairing/',
   component: __webpack_require__(/*! ./assets/vue/pages/home/repair/repairing.vue */ 618)
+}, {
+  path: '/NewRepairRecord/',
+  component: __webpack_require__(/*! ./assets/vue/pages/home/repair/NewRepairRecord.vue */ 628)
 },
 
 //  scanrepair
 {
   path: '/scanrepair/',
-  component: __webpack_require__(/*! ./assets/vue/pages/home/scanrepair/index.vue */ 628)
+  component: __webpack_require__(/*! ./assets/vue/pages/home/scanrepair/index.vue */ 633)
 }, {
   path: '/applyrepair/',
-  component: __webpack_require__(/*! ./assets/vue/pages/home/scanrepair/applyrepair.vue */ 633)
+  component: __webpack_require__(/*! ./assets/vue/pages/home/scanrepair/applyrepair.vue */ 638)
 }, {
   path: '/newRepair/',
-  component: __webpack_require__(/*! ./assets/vue/pages/home/scanrepair/newRepair.vue */ 642)
+  component: __webpack_require__(/*! ./assets/vue/pages/home/scanrepair/newRepair.vue */ 647)
 }, {
   path: '/ScanRepairDetail/',
-  component: __webpack_require__(/*! ./assets/vue/pages/home/scanrepair/ScanRepairDetail.vue */ 647)
+  component: __webpack_require__(/*! ./assets/vue/pages/home/scanrepair/ScanRepairDetail.vue */ 652)
 }, {
   path: '/search/',
-  component: __webpack_require__(/*! ./assets/vue/pages/home/search/index.vue */ 652)
+  component: __webpack_require__(/*! ./assets/vue/pages/home/search/index.vue */ 657)
 }, {
   path: '/devicepolling/',
-  component: __webpack_require__(/*! ./assets/vue/pages/home/devicepolling/index.vue */ 657)
+  component: __webpack_require__(/*! ./assets/vue/pages/home/devicepolling/index.vue */ 662)
 }, {
   path: '/morefunction/',
-  component: __webpack_require__(/*! ./assets/vue/pages/home/morefunction/index.vue */ 662)
+  component: __webpack_require__(/*! ./assets/vue/pages/home/morefunction/index.vue */ 667)
 }];
 
 /***/ }),
@@ -69438,7 +69441,7 @@ var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!..
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("0d5a3831", content, false, {});
+var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("0d5a3831", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -69462,7 +69465,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -69710,7 +69713,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('img', {
     staticClass: "login-logo",
     attrs: {
-      "src": __webpack_require__(/*! ../../../images/loginlogo.png */ 133)
+      "src": __webpack_require__(/*! ../../../images/loginlogo.png */ 134)
     }
   }), _vm._v(" "), _c('div', {
     staticClass: "login-input-div"
@@ -69894,7 +69897,7 @@ var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!..
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("35c854f2", content, false, {});
+var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("35c854f2", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -69918,7 +69921,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -70300,7 +70303,7 @@ var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../..
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("b25fb50e", content, false, {});
+var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("b25fb50e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -70324,7 +70327,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -70722,7 +70725,7 @@ var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!..
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("6ecc021e", content, false, {});
+var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("6ecc021e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -70746,7 +70749,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -71034,7 +71037,7 @@ var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!..
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("d365e746", content, false, {});
+var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("d365e746", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -71058,7 +71061,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -71291,7 +71294,7 @@ var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!..
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("41e5fa7c", content, false, {});
+var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("41e5fa7c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -71315,7 +71318,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -71596,7 +71599,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('img', {
     staticClass: "about-logo-img",
     attrs: {
-      "src": __webpack_require__(/*! ../../../images/loginlogo.png */ 133)
+      "src": __webpack_require__(/*! ../../../images/loginlogo.png */ 134)
     }
   }), _vm._v(" "), _c('div', {
     staticClass: "about-page company-info"
@@ -71685,7 +71688,7 @@ var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!..
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("f77eea0c", content, false, {});
+var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("f77eea0c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -71709,12 +71712,12 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -71864,18 +71867,23 @@ exports.default = {
         },
         handleCode: function handleCode(res) {
             console.log(res);
+
+            var toast = this.$createToast({
+                time: 0,
+                txt: '获取资产信息中...'
+            });
+            toast.show();
+
             var vm = this;
             this.getEquDetail(res).then(function (data) {
-                console.log("getEquDetail");
-                console.log(data);
-                if (data.Status) {
+                toast.hide();
+                if (data.Status && data.EquModel !== null) {
                     vm.scanRepairStore.mViewType = "apply";
                     vm.$f7router.navigate("/applyrepair/");
                 } else {
-                    var msg = data.Msg;
                     if (!vm.toastCenter) {
                         vm.toastCenter = vm.$f7.toast.create({
-                            text: msg,
+                            text: "获取资产信息失败",
                             closeTimeout: 2000,
                             position: 'center'
                         });
@@ -71883,6 +71891,9 @@ exports.default = {
                     vm.toastCenter.open();
                 }
             });
+            setTimeout(function () {
+                toast.hide();
+            }, 3000);
         },
         barcodeScanner: function barcodeScanner() {
             var vm = this;
@@ -71975,7 +71986,7 @@ var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!..
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("0b55d604", content, false, {});
+var update = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("0b55d604", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -71999,7 +72010,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -72207,12 +72218,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "f7-icons"
   }, [_vm._v("favorites")])]), _vm._v(" "), _c('home-item', {
     attrs: {
-      "text": "设备计量",
-      "href": /devicemeasure/
+      "text": "更多功能..",
+      "href": /morefunction/
     }
   }, [_c('i', {
     staticClass: "f7-icons"
-  }, [_vm._v("bars")])])], 1), _vm._v(" "), _c('foot-bar', {
+  }, [_vm._v("more_round")])])], 1), _vm._v(" "), _c('foot-bar', {
     attrs: {
       "select": "home"
     }
@@ -72324,7 +72335,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("635bfb9a", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("635bfb9a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -72348,7 +72359,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -72378,7 +72389,7 @@ var _scroll = __webpack_require__(/*! ../../../common/scroll */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
-var _assetCheckItem = __webpack_require__(/*! ./assetCheckItem */ 134);
+var _assetCheckItem = __webpack_require__(/*! ./assetCheckItem */ 135);
 
 var _assetCheckItem2 = _interopRequireDefault(_assetCheckItem);
 
@@ -72530,7 +72541,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("5b8eef59", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("5b8eef59", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -72554,7 +72565,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -72799,7 +72810,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("dcaa3a72", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("dcaa3a72", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -72823,7 +72834,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -72853,7 +72864,7 @@ var _scroll = __webpack_require__(/*! ../../../common/scroll */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
-var _assetCheckItem = __webpack_require__(/*! ./assetCheckItem */ 134);
+var _assetCheckItem = __webpack_require__(/*! ./assetCheckItem */ 135);
 
 var _assetCheckItem2 = _interopRequireDefault(_assetCheckItem);
 
@@ -73172,7 +73183,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("17faee29", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("17faee29", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -73196,7 +73207,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -73230,7 +73241,7 @@ var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
-var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 37);
+var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 38);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
@@ -73423,7 +73434,7 @@ var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../..
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("ed1bcb30", content, false, {});
+var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("ed1bcb30", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -73447,7 +73458,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -73601,7 +73612,7 @@ var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../..
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("36c5c261", content, false, {});
+var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("36c5c261", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -73625,7 +73636,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -73758,7 +73769,7 @@ var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../..
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("8860beee", content, false, {});
+var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("8860beee", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -73782,7 +73793,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -74094,7 +74105,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("cffc261a", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("cffc261a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -74118,7 +74129,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -74359,7 +74370,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("23c814ff", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("23c814ff", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -74383,7 +74394,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -74665,7 +74676,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("03b95edc", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("03b95edc", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -74689,7 +74700,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -74784,7 +74795,7 @@ var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
-var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 37);
+var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 38);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
@@ -74792,7 +74803,7 @@ var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue *
 
 var _selectedinput2 = _interopRequireDefault(_selectedinput);
 
-var _picker = __webpack_require__(/*! ../../../common/picker.vue */ 135);
+var _picker = __webpack_require__(/*! ../../../common/picker.vue */ 136);
 
 var _picker2 = _interopRequireDefault(_picker);
 
@@ -74975,7 +74986,7 @@ var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../..
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("2fa48bcc", content, false, {});
+var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("2fa48bcc", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -74999,7 +75010,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -75276,7 +75287,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("33ae14ae", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("33ae14ae", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -75300,7 +75311,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -75511,7 +75522,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("0cfd72d0", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("0cfd72d0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -75535,12 +75546,12 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -75581,7 +75592,7 @@ var _allmeasure = __webpack_require__(/*! ./json/allmeasure.json */ 595);
 
 var _allmeasure2 = _interopRequireDefault(_allmeasure);
 
-var _menu = __webpack_require__(/*! ./json/menu.json */ 136);
+var _menu = __webpack_require__(/*! ./json/menu.json */ 137);
 
 var _menu2 = _interopRequireDefault(_menu);
 
@@ -75670,6 +75681,7 @@ exports.default = {
     },
     mounted: function mounted() {
 
+        // 获取科室列表
         this.getMeteringEqu();
 
         this.items = _allmeasure2.default;
@@ -75687,6 +75699,8 @@ exports.default = {
 
 
     methods: _defineProperty({
+
+        // 获取科室下面的设备
         getMeteringEqu: function getMeteringEqu() {
             var params = {
                 'StoreId': localStorage.storeId
@@ -75887,7 +75901,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("23568393", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("23568393", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -75911,7 +75925,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -75937,7 +75951,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _menu = __webpack_require__(/*! ./json/menu.json */ 136);
+var _menu = __webpack_require__(/*! ./json/menu.json */ 137);
 
 var _menu2 = _interopRequireDefault(_menu);
 
@@ -76099,7 +76113,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("38c5dd21", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("38c5dd21", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -76123,7 +76137,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -76389,7 +76403,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("377843bc", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("377843bc", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -76413,7 +76427,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -76573,7 +76587,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("27d4b46a", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("27d4b46a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -76597,7 +76611,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -76678,7 +76692,7 @@ var _segmentBar = __webpack_require__(/*! ../../../common/segmentBar */ 65);
 
 var _segmentBar2 = _interopRequireDefault(_segmentBar);
 
-var _repairitem = __webpack_require__(/*! ../../../common/repairitem */ 37);
+var _repairitem = __webpack_require__(/*! ../../../common/repairitem */ 38);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
@@ -76726,7 +76740,7 @@ exports.default = {
 
         // 维修中
         handleingItemClick: function handleingItemClick(itemData) {
-            this.getRepairProcessList(itemData);
+            this.RepairStore.mCurrentRepair = itemData;
             this.$f7router.navigate('/repairing/');
         },
         switchTab: function switchTab(index) {
@@ -77005,7 +77019,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("71cfd652", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("71cfd652", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -77029,7 +77043,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -77065,7 +77079,7 @@ var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
-var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 37);
+var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 38);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
@@ -77715,7 +77729,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("fa928d1e", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("fa928d1e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -77739,7 +77753,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -77773,7 +77787,7 @@ var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
-var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 37);
+var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 38);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
@@ -78311,7 +78325,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("0191e142", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("0191e142", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -78335,12 +78349,12 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -78406,6 +78420,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
@@ -78421,9 +78442,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
     data: function data() {
-        return {
-            itemData: []
-        };
+        return {};
     },
 
 
@@ -78437,13 +78456,15 @@ exports.default = {
 
     mounted: function mounted() {
 
-        var itemData = JSON.parse(localStorage.ItemData);
-        this.itemData = itemData;
-        console.log(itemData);
+        // 初始化维修记录
+        this.$store.dispatch('getRepairProcessList');
     },
 
 
     methods: {
+        addClickAction: function addClickAction() {
+            this.$f7router.navigate("/NewRepairRecord/");
+        },
         NavBack: function NavBack() {
             this.$f7router.back();
         },
@@ -78568,7 +78589,7 @@ var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("0be316eb", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("0be316eb", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -78592,7 +78613,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -78760,15 +78781,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "top-right"
   }, [_c('div', {
     staticClass: "content-device-name"
-  }, [_vm._v("\n                        " + _vm._s(_vm.itemData.EquName || "设备名称") + "\n                    ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                        设备名称:  " + _vm._s(_vm.RepairStore.mCurrentRepair.EquName || "暂无名称") + "\n                    ")]), _vm._v(" "), _c('div', {
     staticClass: "content-device-subname"
-  }, [_vm._v("\n                        报修科室:  " + _vm._s(_vm.itemData.DepartmentName || "暂无科室") + "\n                    ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                        报修科室:  " + _vm._s(_vm.RepairStore.mCurrentRepair.DepartmentName || "暂无科室") + "\n                    ")]), _vm._v(" "), _c('div', {
     staticClass: "content-device-subname"
-  }, [_vm._v("\n                        维修单号:  " + _vm._s(_vm.itemData.RepairNo || "暂无编号") + "\n                    ")])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                        维修单号:  " + _vm._s(_vm.RepairStore.mCurrentRepair.RepairNo || "暂无编号") + "\n                    ")])])])]), _vm._v(" "), _c('div', {
     staticClass: "content-bottom"
   }, [_c('div', {
-    staticClass: "content-header"
-  }, [_vm._v("维修过程记录")]), _vm._v(" "), _c('scroll', {
+    staticClass: "content-header-bottom"
+  }, [_c('div', {
+    staticClass: "content-header-title"
+  }, [_vm._v("\n                    维修过程记录\n                ")]), _vm._v(" "), _c('div', {
+    staticClass: "content-add-button",
+    on: {
+      "click": _vm.addClickAction
+    }
+  }, [_c('i', {
+    staticClass: "iconfont"
+  }, [_vm._v("")])])]), _vm._v(" "), _c('scroll', {
     attrs: {
       "items": _vm.RepairStore.mCurrentRepairProcessList
     }
@@ -78797,6 +78827,203 @@ if (false) {
 
 /***/ }),
 /* 628 */
+/*!**************************************************************!*\
+  !*** ./src/assets/vue/pages/home/repair/NewRepairRecord.vue ***!
+  \**************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-2d297677","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./NewRepairRecord.vue */ 629)
+}
+var Component = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
+  /* script */
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./NewRepairRecord.vue */ 631),
+  /* template */
+  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-2d297677","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./NewRepairRecord.vue */ 632),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/yangxichuan/Desktop/pdascanner/src/assets/vue/pages/home/repair/NewRepairRecord.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] NewRepairRecord.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2d297677", Component.options)
+  } else {
+    hotAPI.reload("data-v-2d297677", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 629 */
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-2d297677","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/repair/NewRepairRecord.vue ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-2d297677","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NewRepairRecord.vue */ 630);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("991aae20", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d297677\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NewRepairRecord.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d297677\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NewRepairRecord.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 630 */
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-2d297677","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/repair/NewRepairRecord.vue ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 631 */
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/assets/vue/pages/home/repair/NewRepairRecord.vue ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+var _vuex = __webpack_require__(/*! vuex */ 31);
+
+exports.default = {
+    data: function data() {
+        return {
+            itemData: []
+        };
+    },
+
+
+    computed: _extends({}, (0, _vuex.mapState)(['RepairStore'])),
+
+    watch: {
+        falutDes: function falutDes(newValue) {
+            console.log(newValue);
+        }
+    },
+
+    mounted: function mounted() {},
+
+
+    methods: {
+        confirmBtnClickAction: function confirmBtnClickAction() {},
+        NavBack: function NavBack() {
+            this.$f7router.back();
+        }
+    },
+
+    components: {}
+};
+
+/***/ }),
+/* 632 */
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-2d297677","hasScoped":false}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/home/repair/NewRepairRecord.vue ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('f7-page', {
+    staticClass: "repairing-page"
+  }, [_c('f7-navbar', [_c('f7-nav-left', [_c('div', {
+    on: {
+      "click": _vm.NavBack
+    }
+  }, [_c('i', {
+    staticClass: "iconfont"
+  }, [_vm._v("")])])]), _vm._v(" "), _c('f7-nav-title', {
+    attrs: {
+      "title": "新增维修记录"
+    }
+  })], 1)], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-2d297677", module.exports)
+  }
+}
+
+/***/ }),
+/* 633 */
 /*!********************************************************!*\
   !*** ./src/assets/vue/pages/home/scanrepair/index.vue ***!
   \********************************************************/
@@ -78807,13 +79034,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-645bd5a8","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./index.vue */ 629)
+  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-645bd5a8","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./index.vue */ 634)
 }
 var Component = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
   /* script */
-  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./index.vue */ 631),
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./index.vue */ 636),
   /* template */
-  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-645bd5a8","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./index.vue */ 632),
+  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-645bd5a8","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./index.vue */ 637),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -78845,7 +79072,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 629 */
+/* 634 */
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-645bd5a8","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/scanrepair/index.vue ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -78856,11 +79083,11 @@ module.exports = Component.exports
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-645bd5a8","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue */ 630);
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-645bd5a8","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue */ 635);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("6dc3bc9c", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("6dc3bc9c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -78876,7 +79103,7 @@ if(false) {
 }
 
 /***/ }),
-/* 630 */
+/* 635 */
 /*!************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-645bd5a8","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/scanrepair/index.vue ***!
   \************************************************************************************************************************************************************************************************************************************************************************/
@@ -78884,7 +79111,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -78895,7 +79122,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 631 */
+/* 636 */
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/assets/vue/pages/home/scanrepair/index.vue ***!
   \*********************************************************************************************************************************************************************************************************************/
@@ -78963,7 +79190,7 @@ var _segmentBar = __webpack_require__(/*! ../../../common/segmentBar */ 65);
 
 var _segmentBar2 = _interopRequireDefault(_segmentBar);
 
-var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 37);
+var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 38);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
@@ -79153,7 +79380,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 632 */
+/* 637 */
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-645bd5a8","hasScoped":false}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/home/scanrepair/index.vue ***!
   \*******************************************************************************************************************************************************************************************************************/
@@ -79245,7 +79472,7 @@ if (false) {
 }
 
 /***/ }),
-/* 633 */
+/* 638 */
 /*!**************************************************************!*\
   !*** ./src/assets/vue/pages/home/scanrepair/applyrepair.vue ***!
   \**************************************************************/
@@ -79256,13 +79483,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-dc74bb5e","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./applyrepair.vue */ 634)
+  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-dc74bb5e","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./applyrepair.vue */ 639)
 }
 var Component = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
   /* script */
-  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./applyrepair.vue */ 636),
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./applyrepair.vue */ 641),
   /* template */
-  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-dc74bb5e","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./applyrepair.vue */ 641),
+  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-dc74bb5e","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./applyrepair.vue */ 646),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -79294,7 +79521,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 634 */
+/* 639 */
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-dc74bb5e","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/scanrepair/applyrepair.vue ***!
   \**************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -79305,11 +79532,11 @@ module.exports = Component.exports
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-dc74bb5e","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./applyrepair.vue */ 635);
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-dc74bb5e","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./applyrepair.vue */ 640);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("0ea9face", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("0ea9face", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -79325,7 +79552,7 @@ if(false) {
 }
 
 /***/ }),
-/* 635 */
+/* 640 */
 /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-dc74bb5e","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/scanrepair/applyrepair.vue ***!
   \******************************************************************************************************************************************************************************************************************************************************************************/
@@ -79333,7 +79560,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -79344,7 +79571,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 636 */
+/* 641 */
 /*!***************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/assets/vue/pages/home/scanrepair/applyrepair.vue ***!
   \***************************************************************************************************************************************************************************************************************************/
@@ -79414,11 +79641,11 @@ var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
-var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 37);
+var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 38);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
-var _commonCell = __webpack_require__(/*! ../../../common/commonCell.vue */ 137);
+var _commonCell = __webpack_require__(/*! ../../../common/commonCell.vue */ 138);
 
 var _commonCell2 = _interopRequireDefault(_commonCell);
 
@@ -79606,7 +79833,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 637 */
+/* 642 */
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-7432fa47","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/common/commonCell.vue ***!
   \**********************************************************************************************************************************************************************************************************************************************************************************************/
@@ -79617,11 +79844,11 @@ exports.default = {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-7432fa47","scoped":false,"hasInlineConfig":false}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commonCell.vue */ 638);
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-7432fa47","scoped":false,"hasInlineConfig":false}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commonCell.vue */ 643);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("8782b1ae", content, false, {});
+var update = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("8782b1ae", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -79637,7 +79864,7 @@ if(false) {
 }
 
 /***/ }),
-/* 638 */
+/* 643 */
 /*!**************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-7432fa47","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/common/commonCell.vue ***!
   \**************************************************************************************************************************************************************************************************************************************************************/
@@ -79645,7 +79872,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -79656,7 +79883,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 
 /***/ }),
-/* 639 */
+/* 644 */
 /*!***********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/assets/vue/common/commonCell.vue ***!
   \***********************************************************************************************************************************************************************************************************/
@@ -79687,7 +79914,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 640 */
+/* 645 */
 /*!*********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-7432fa47","hasScoped":false}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/common/commonCell.vue ***!
   \*********************************************************************************************************************************************************************************************************/
@@ -79713,7 +79940,7 @@ if (false) {
 }
 
 /***/ }),
-/* 641 */
+/* 646 */
 /*!*************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-dc74bb5e","hasScoped":false}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/home/scanrepair/applyrepair.vue ***!
   \*************************************************************************************************************************************************************************************************************************/
@@ -79798,7 +80025,7 @@ if (false) {
 }
 
 /***/ }),
-/* 642 */
+/* 647 */
 /*!************************************************************!*\
   !*** ./src/assets/vue/pages/home/scanrepair/newRepair.vue ***!
   \************************************************************/
@@ -79809,13 +80036,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-2ce925a3","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./newRepair.vue */ 643)
+  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-2ce925a3","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./newRepair.vue */ 648)
 }
 var Component = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
   /* script */
-  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./newRepair.vue */ 645),
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./newRepair.vue */ 650),
   /* template */
-  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-2ce925a3","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./newRepair.vue */ 646),
+  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-2ce925a3","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./newRepair.vue */ 651),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -79847,7 +80074,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 643 */
+/* 648 */
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-2ce925a3","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/scanrepair/newRepair.vue ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -79858,11 +80085,11 @@ module.exports = Component.exports
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-2ce925a3","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./newRepair.vue */ 644);
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-2ce925a3","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./newRepair.vue */ 649);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("4b7a972a", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("4b7a972a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -79878,7 +80105,7 @@ if(false) {
 }
 
 /***/ }),
-/* 644 */
+/* 649 */
 /*!****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-2ce925a3","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/scanrepair/newRepair.vue ***!
   \****************************************************************************************************************************************************************************************************************************************************************************/
@@ -79886,7 +80113,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -79897,7 +80124,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 645 */
+/* 650 */
 /*!*************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/assets/vue/pages/home/scanrepair/newRepair.vue ***!
   \*************************************************************************************************************************************************************************************************************************/
@@ -80009,7 +80236,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 646 */
+/* 651 */
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-2ce925a3","hasScoped":false}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/home/scanrepair/newRepair.vue ***!
   \***********************************************************************************************************************************************************************************************************************/
@@ -80088,7 +80315,7 @@ if (false) {
 }
 
 /***/ }),
-/* 647 */
+/* 652 */
 /*!*******************************************************************!*\
   !*** ./src/assets/vue/pages/home/scanrepair/ScanRepairDetail.vue ***!
   \*******************************************************************/
@@ -80099,13 +80326,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-14a20895","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./ScanRepairDetail.vue */ 648)
+  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-14a20895","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./ScanRepairDetail.vue */ 653)
 }
 var Component = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
   /* script */
-  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./ScanRepairDetail.vue */ 650),
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./ScanRepairDetail.vue */ 655),
   /* template */
-  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-14a20895","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./ScanRepairDetail.vue */ 651),
+  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-14a20895","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./ScanRepairDetail.vue */ 656),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -80137,7 +80364,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 648 */
+/* 653 */
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-14a20895","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/scanrepair/ScanRepairDetail.vue ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -80148,11 +80375,11 @@ module.exports = Component.exports
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-14a20895","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ScanRepairDetail.vue */ 649);
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-14a20895","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ScanRepairDetail.vue */ 654);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("4ea6bc63", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("4ea6bc63", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -80168,7 +80395,7 @@ if(false) {
 }
 
 /***/ }),
-/* 649 */
+/* 654 */
 /*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-14a20895","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/scanrepair/ScanRepairDetail.vue ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************/
@@ -80176,7 +80403,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -80187,7 +80414,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 650 */
+/* 655 */
 /*!********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/assets/vue/pages/home/scanrepair/ScanRepairDetail.vue ***!
   \********************************************************************************************************************************************************************************************************************************/
@@ -80248,11 +80475,11 @@ var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
-var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 37);
+var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 38);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
-var _commonCell = __webpack_require__(/*! ../../../common/commonCell.vue */ 137);
+var _commonCell = __webpack_require__(/*! ../../../common/commonCell.vue */ 138);
 
 var _commonCell2 = _interopRequireDefault(_commonCell);
 
@@ -80291,7 +80518,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 651 */
+/* 656 */
 /*!******************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-14a20895","hasScoped":false}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/home/scanrepair/ScanRepairDetail.vue ***!
   \******************************************************************************************************************************************************************************************************************************/
@@ -80341,7 +80568,7 @@ if (false) {
 }
 
 /***/ }),
-/* 652 */
+/* 657 */
 /*!****************************************************!*\
   !*** ./src/assets/vue/pages/home/search/index.vue ***!
   \****************************************************/
@@ -80352,13 +80579,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-3a222306","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./index.vue */ 653)
+  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-3a222306","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./index.vue */ 658)
 }
 var Component = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
   /* script */
-  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./index.vue */ 655),
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./index.vue */ 660),
   /* template */
-  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-3a222306","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./index.vue */ 656),
+  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-3a222306","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./index.vue */ 661),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -80390,7 +80617,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 653 */
+/* 658 */
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-3a222306","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/search/index.vue ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -80401,11 +80628,11 @@ module.exports = Component.exports
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-3a222306","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue */ 654);
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-3a222306","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue */ 659);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("422ea08e", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("422ea08e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -80421,7 +80648,7 @@ if(false) {
 }
 
 /***/ }),
-/* 654 */
+/* 659 */
 /*!********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-3a222306","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/search/index.vue ***!
   \********************************************************************************************************************************************************************************************************************************************************************/
@@ -80429,7 +80656,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -80440,7 +80667,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 655 */
+/* 660 */
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/assets/vue/pages/home/search/index.vue ***!
   \*****************************************************************************************************************************************************************************************************************/
@@ -80463,11 +80690,11 @@ var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
-var _picker = __webpack_require__(/*! ../../../common/picker.vue */ 135);
+var _picker = __webpack_require__(/*! ../../../common/picker.vue */ 136);
 
 var _picker2 = _interopRequireDefault(_picker);
 
-var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 37);
+var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 38);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
@@ -80751,7 +80978,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 656 */
+/* 661 */
 /*!***************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-3a222306","hasScoped":false}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/home/search/index.vue ***!
   \***************************************************************************************************************************************************************************************************************/
@@ -80927,7 +81154,7 @@ if (false) {
 }
 
 /***/ }),
-/* 657 */
+/* 662 */
 /*!***********************************************************!*\
   !*** ./src/assets/vue/pages/home/devicepolling/index.vue ***!
   \***********************************************************/
@@ -80938,13 +81165,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-153b5c36","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./index.vue */ 658)
+  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-153b5c36","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./index.vue */ 663)
 }
 var Component = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
   /* script */
-  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./index.vue */ 660),
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./index.vue */ 665),
   /* template */
-  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-153b5c36","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./index.vue */ 661),
+  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-153b5c36","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./index.vue */ 666),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -80976,7 +81203,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 658 */
+/* 663 */
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-153b5c36","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/devicepolling/index.vue ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -80987,11 +81214,11 @@ module.exports = Component.exports
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-153b5c36","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue */ 659);
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-153b5c36","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue */ 664);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("57ac2628", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("57ac2628", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -81007,7 +81234,7 @@ if(false) {
 }
 
 /***/ }),
-/* 659 */
+/* 664 */
 /*!***************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-153b5c36","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/devicepolling/index.vue ***!
   \***************************************************************************************************************************************************************************************************************************************************************************/
@@ -81015,7 +81242,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -81026,7 +81253,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 660 */
+/* 665 */
 /*!************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/assets/vue/pages/home/devicepolling/index.vue ***!
   \************************************************************************************************************************************************************************************************************************/
@@ -81069,7 +81296,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 661 */
+/* 666 */
 /*!**********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-153b5c36","hasScoped":false}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/home/devicepolling/index.vue ***!
   \**********************************************************************************************************************************************************************************************************************/
@@ -81099,7 +81326,7 @@ if (false) {
 }
 
 /***/ }),
-/* 662 */
+/* 667 */
 /*!**********************************************************!*\
   !*** ./src/assets/vue/pages/home/morefunction/index.vue ***!
   \**********************************************************/
@@ -81110,13 +81337,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-2e90b1ea","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./index.vue */ 663)
+  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-2e90b1ea","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./index.vue */ 668)
 }
 var Component = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
   /* script */
-  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./index.vue */ 665),
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./index.vue */ 670),
   /* template */
-  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-2e90b1ea","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./index.vue */ 666),
+  __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-2e90b1ea","hasScoped":false}!../../../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./index.vue */ 671),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -81148,7 +81375,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 663 */
+/* 668 */
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-2e90b1ea","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/morefunction/index.vue ***!
   \**********************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -81159,11 +81386,11 @@ module.exports = Component.exports
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-2e90b1ea","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue */ 664);
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-2e90b1ea","scoped":false,"hasInlineConfig":false}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue */ 669);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 12)("3c944433", content, false, {});
+var update = __webpack_require__(/*! ../../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ 11)("3c944433", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -81179,7 +81406,7 @@ if(false) {
 }
 
 /***/ }),
-/* 664 */
+/* 669 */
 /*!**************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/style-compiler?{"vue":true,"id":"data-v-2e90b1ea","scoped":false,"hasInlineConfig":false}!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/assets/vue/pages/home/morefunction/index.vue ***!
   \**************************************************************************************************************************************************************************************************************************************************************************/
@@ -81187,7 +81414,7 @@ if(false) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 11)(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ 10)(false);
 // imports
 
 
@@ -81198,7 +81425,7 @@ exports.push([module.i, "\n.moref-unction-page{\n    width: 100%;\n    height: 1
 
 
 /***/ }),
-/* 665 */
+/* 670 */
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/assets/vue/pages/home/morefunction/index.vue ***!
   \***********************************************************************************************************************************************************************************************************************/
@@ -81245,7 +81472,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 666 */
+/* 671 */
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-2e90b1ea","hasScoped":false}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/assets/vue/pages/home/morefunction/index.vue ***!
   \*********************************************************************************************************************************************************************************************************************/
@@ -81279,7 +81506,7 @@ if (false) {
 }
 
 /***/ }),
-/* 667 */
+/* 672 */
 /*!*********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-4086f7c4","hasScoped":false}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/main.vue ***!
   \*********************************************************************************************************************************************************************************/
@@ -81309,7 +81536,7 @@ if (false) {
 }
 
 /***/ }),
-/* 668 */
+/* 673 */
 /*!************************************!*\
   !*** ./src/assets/vuex/storage.js ***!
   \************************************/
@@ -81324,7 +81551,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _vue = __webpack_require__(/*! vue */ 38);
+var _vue = __webpack_require__(/*! vue */ 35);
 
 var _vue2 = _interopRequireDefault(_vue);
 
@@ -81332,21 +81559,25 @@ var _vuex = __webpack_require__(/*! vuex */ 31);
 
 var _vuex2 = _interopRequireDefault(_vuex);
 
-var _store = __webpack_require__(/*! ./mine/store */ 669);
+var _store = __webpack_require__(/*! ./mine/store */ 674);
 
 var _store2 = _interopRequireDefault(_store);
 
-var _store3 = __webpack_require__(/*! ./home/scanrepair/store */ 673);
+var _store3 = __webpack_require__(/*! ./home/scanrepair/store */ 678);
 
 var _store4 = _interopRequireDefault(_store3);
 
-var _store5 = __webpack_require__(/*! ./home/assetcheck/store */ 675);
+var _store5 = __webpack_require__(/*! ./home/assetcheck/store */ 680);
 
 var _store6 = _interopRequireDefault(_store5);
 
-var _store7 = __webpack_require__(/*! ./home/repair/store */ 679);
+var _store7 = __webpack_require__(/*! ./home/repair/store */ 684);
 
 var _store8 = _interopRequireDefault(_store7);
+
+var _store9 = __webpack_require__(/*! ./home/measure/store */ 686);
+
+var _store10 = _interopRequireDefault(_store9);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -81357,12 +81588,13 @@ exports.default = new _vuex2.default.Store({
         mineStore: _store2.default,
         scanRepairStore: _store4.default,
         assetCheckStore: _store6.default,
-        RepairStore: _store8.default
+        RepairStore: _store8.default,
+        MeasureStore: _store10.default
     }
 });
 
 /***/ }),
-/* 669 */
+/* 674 */
 /*!***************************************!*\
   !*** ./src/assets/vuex/mine/store.js ***!
   \***************************************/
@@ -81377,15 +81609,15 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _actions = __webpack_require__(/*! ./actions */ 670);
+var _actions = __webpack_require__(/*! ./actions */ 675);
 
 var actions = _interopRequireWildcard(_actions);
 
-var _getters = __webpack_require__(/*! ./getters */ 671);
+var _getters = __webpack_require__(/*! ./getters */ 676);
 
 var _getters2 = _interopRequireDefault(_getters);
 
-var _mutations = __webpack_require__(/*! ./mutations */ 672);
+var _mutations = __webpack_require__(/*! ./mutations */ 677);
 
 var _mutations2 = _interopRequireDefault(_mutations);
 
@@ -81420,7 +81652,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 670 */
+/* 675 */
 /*!*****************************************!*\
   !*** ./src/assets/vuex/mine/actions.js ***!
   \*****************************************/
@@ -81436,11 +81668,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getOnGoingSurveyList = undefined;
 
-var _promise = __webpack_require__(/*! babel-runtime/core-js/promise */ 63);
+var _promise = __webpack_require__(/*! babel-runtime/core-js/promise */ 51);
 
 var _promise2 = _interopRequireDefault(_promise);
 
-var _vue = __webpack_require__(/*! vue */ 38);
+var _vue = __webpack_require__(/*! vue */ 35);
 
 var _vue2 = _interopRequireDefault(_vue);
 
@@ -81474,7 +81706,7 @@ var getOnGoingSurveyList = exports.getOnGoingSurveyList = function getOnGoingSur
 };
 
 /***/ }),
-/* 671 */
+/* 676 */
 /*!*****************************************!*\
   !*** ./src/assets/vuex/mine/getters.js ***!
   \*****************************************/
@@ -81491,7 +81723,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {};
 
 /***/ }),
-/* 672 */
+/* 677 */
 /*!*******************************************!*\
   !*** ./src/assets/vuex/mine/mutations.js ***!
   \*******************************************/
@@ -81503,7 +81735,7 @@ exports.default = {};
 
 
 /***/ }),
-/* 673 */
+/* 678 */
 /*!**************************************************!*\
   !*** ./src/assets/vuex/home/scanrepair/store.js ***!
   \**************************************************/
@@ -81524,7 +81756,7 @@ var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
 var _state;
 
-var _actions = __webpack_require__(/*! ./actions */ 674);
+var _actions = __webpack_require__(/*! ./actions */ 679);
 
 var actions = _interopRequireWildcard(_actions);
 
@@ -81562,7 +81794,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 674 */
+/* 679 */
 /*!****************************************************!*\
   !*** ./src/assets/vuex/home/scanrepair/actions.js ***!
   \****************************************************/
@@ -81582,11 +81814,11 @@ var _defineProperty2 = __webpack_require__(/*! babel-runtime/helpers/definePrope
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
-var _promise = __webpack_require__(/*! babel-runtime/core-js/promise */ 63);
+var _promise = __webpack_require__(/*! babel-runtime/core-js/promise */ 51);
 
 var _promise2 = _interopRequireDefault(_promise);
 
-var _vue = __webpack_require__(/*! vue */ 38);
+var _vue = __webpack_require__(/*! vue */ 35);
 
 var _vue2 = _interopRequireDefault(_vue);
 
@@ -81702,19 +81934,14 @@ var getEquDetail = exports.getEquDetail = function getEquDetail(_ref3, equId) {
 
         _vue2.default.prototype.get(_vue2.default.prototype.api.getEquById, params, function (response) {
             var data = JSON.parse(response);
-            var msg = data.Msg;
-            if (data.Status) {
-                state.mEquModel = data.EquModel;
-                resolve(data);
-            } else {
-                resolve(data);
-            }
+            state.mEquModel = data.EquModel;
+            resolve(data);
         });
     });
 };
 
 /***/ }),
-/* 675 */
+/* 680 */
 /*!**************************************************!*\
   !*** ./src/assets/vuex/home/assetcheck/store.js ***!
   \**************************************************/
@@ -81735,15 +81962,15 @@ var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
 var _state$state$mutation;
 
-var _actions = __webpack_require__(/*! ./actions */ 676);
+var _actions = __webpack_require__(/*! ./actions */ 681);
 
 var actions = _interopRequireWildcard(_actions);
 
-var _getters = __webpack_require__(/*! ./getters */ 677);
+var _getters = __webpack_require__(/*! ./getters */ 682);
 
 var _getters2 = _interopRequireDefault(_getters);
 
-var _mutations = __webpack_require__(/*! ./mutations */ 678);
+var _mutations = __webpack_require__(/*! ./mutations */ 683);
 
 var _mutations2 = _interopRequireDefault(_mutations);
 
@@ -81773,7 +82000,7 @@ exports.default = (_state$state$mutation = {
 }, (0, _defineProperty3.default)(_state$state$mutation, 'state', state), (0, _defineProperty3.default)(_state$state$mutation, 'mutations', _mutations2.default), (0, _defineProperty3.default)(_state$state$mutation, 'getters', _getters2.default), (0, _defineProperty3.default)(_state$state$mutation, 'actions', actions), _state$state$mutation);
 
 /***/ }),
-/* 676 */
+/* 681 */
 /*!****************************************************!*\
   !*** ./src/assets/vuex/home/assetcheck/actions.js ***!
   \****************************************************/
@@ -81789,15 +82016,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getNewAssetData = exports.refreshAllData = exports.refreshUnFinishedData = exports.refreshFinishedData = undefined;
 
-var _promise = __webpack_require__(/*! babel-runtime/core-js/promise */ 63);
+var _promise = __webpack_require__(/*! babel-runtime/core-js/promise */ 51);
 
 var _promise2 = _interopRequireDefault(_promise);
 
-var _vue = __webpack_require__(/*! vue */ 38);
+var _vue = __webpack_require__(/*! vue */ 35);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _path = __webpack_require__(/*! path */ 138);
+var _path = __webpack_require__(/*! path */ 97);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -81950,7 +82177,7 @@ var getNewAssetData = exports.getNewAssetData = function getNewAssetData(_ref4, 
 };
 
 /***/ }),
-/* 677 */
+/* 682 */
 /*!****************************************************!*\
   !*** ./src/assets/vuex/home/assetcheck/getters.js ***!
   \****************************************************/
@@ -81967,7 +82194,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {};
 
 /***/ }),
-/* 678 */
+/* 683 */
 /*!******************************************************!*\
   !*** ./src/assets/vuex/home/assetcheck/mutations.js ***!
   \******************************************************/
@@ -81979,7 +82206,7 @@ exports.default = {};
 
 
 /***/ }),
-/* 679 */
+/* 684 */
 /*!**********************************************!*\
   !*** ./src/assets/vuex/home/repair/store.js ***!
   \**********************************************/
@@ -81994,7 +82221,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _actions = __webpack_require__(/*! ./actions */ 680);
+var _actions = __webpack_require__(/*! ./actions */ 685);
 
 var actions = _interopRequireWildcard(_actions);
 
@@ -82006,8 +82233,12 @@ var state = {
     handleingData: [],
     handleingPageNumber: 1,
 
+    // 当前处理的维修设备
+    mCurrentRepair: [],
+
     // 当前处理中设备的维修记录
     mCurrentRepairProcessList: []
+
 };
 
 exports.default = {
@@ -82016,7 +82247,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 680 */
+/* 685 */
 /*!************************************************!*\
   !*** ./src/assets/vuex/home/repair/actions.js ***!
   \************************************************/
@@ -82032,15 +82263,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getRepairProcessList = exports.getRepairHandleList = undefined;
 
-var _promise = __webpack_require__(/*! babel-runtime/core-js/promise */ 63);
+var _promise = __webpack_require__(/*! babel-runtime/core-js/promise */ 51);
 
 var _promise2 = _interopRequireDefault(_promise);
 
-var _vue = __webpack_require__(/*! vue */ 38);
+var _vue = __webpack_require__(/*! vue */ 35);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _path = __webpack_require__(/*! path */ 138);
+var _path = __webpack_require__(/*! path */ 97);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -82080,10 +82311,88 @@ var getRepairHandleList = exports.getRepairHandleList = function getRepairHandle
     });
 };
 
-var getRepairProcessList = exports.getRepairProcessList = function getRepairProcessList(_ref2, itemData) {
+var getRepairProcessList = exports.getRepairProcessList = function getRepairProcessList(_ref2) {
     var commit = _ref2.commit,
         dispatch = _ref2.dispatch,
         state = _ref2.state;
+
+    return new _promise2.default(function (resolve, reject) {
+        // 清空当前资产维修记录列表
+        state.mCurrentRepairProcessList = [];
+        var params = {
+            "RepairNo": state.mCurrentRepair.RepairNo
+        };
+        _vue2.default.prototype.get(_vue2.default.prototype.api.repairProcessList, params, function (response) {
+            var data = JSON.parse(response);
+            if (data.Status) {
+                state.mCurrentRepairProcessList = data.RepairProcessList;
+            }
+        });
+    });
+};
+
+/***/ }),
+/* 686 */
+/*!***********************************************!*\
+  !*** ./src/assets/vuex/home/measure/store.js ***!
+  \***********************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _actions = __webpack_require__(/*! ./actions */ 687);
+
+var actions = _interopRequireWildcard(_actions);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var state = {};
+
+exports.default = {
+    state: state,
+    actions: actions
+};
+
+/***/ }),
+/* 687 */
+/*!*************************************************!*\
+  !*** ./src/assets/vuex/home/measure/actions.js ***!
+  \*************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.xxxxx = undefined;
+
+var _promise = __webpack_require__(/*! babel-runtime/core-js/promise */ 51);
+
+var _promise2 = _interopRequireDefault(_promise);
+
+var _vue = __webpack_require__(/*! vue */ 35);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _path = __webpack_require__(/*! path */ 97);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var xxxxx = exports.xxxxx = function xxxxx(_ref, itemData) {
+    var commit = _ref.commit,
+        dispatch = _ref.dispatch,
+        state = _ref.state;
 
     return new _promise2.default(function (resolve, reject) {
         var params = {
@@ -82103,7 +82412,7 @@ var getRepairProcessList = exports.getRepairProcessList = function getRepairProc
 };
 
 /***/ }),
-/* 681 */
+/* 688 */
 /*!***********************************!*\
   !*** ./src/assets/vue/api/api.js ***!
   \***********************************/
@@ -82232,13 +82541,13 @@ exports.default = {
     // 消息解耦
     getNoticeList: rootURL + "/api/BlendQuery/NoticeList",
 
-    // 巡检资产的科室列表
+    // 计量资产的科室列表
     getMeteringEqu: rootURL + "/api/Metering/MeteringEqu"
 
 };
 
 /***/ }),
-/* 682 */
+/* 689 */
 /*!***********************!*\
   !*** ./src/config.js ***!
   \***********************/
@@ -82263,7 +82572,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 683 */
+/* 690 */
 /*!****************************************************!*\
   !*** ./node_modules/mint-ui/lib/mint-ui.common.js ***!
   \****************************************************/
@@ -82441,7 +82750,7 @@ module.exports = function normalizeComponent (
 /* 1 */
 /***/ function(module, exports) {
 
-module.exports = __webpack_require__(/*! vue */ 38);
+module.exports = __webpack_require__(/*! vue */ 35);
 
 /***/ },
 /* 2 */
@@ -92165,19 +92474,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /* 199 */
 /***/ function(module, exports) {
 
-module.exports = __webpack_require__(/*! array-find-index */ 684);
+module.exports = __webpack_require__(/*! array-find-index */ 691);
 
 /***/ },
 /* 200 */
 /***/ function(module, exports) {
 
-module.exports = __webpack_require__(/*! raf.js */ 685);
+module.exports = __webpack_require__(/*! raf.js */ 692);
 
 /***/ },
 /* 201 */
 /***/ function(module, exports) {
 
-module.exports = __webpack_require__(/*! vue-lazyload */ 686);
+module.exports = __webpack_require__(/*! vue-lazyload */ 693);
 
 /***/ },
 /* 202 */
@@ -92190,7 +92499,7 @@ module.exports = __webpack_require__(14);
 /******/ ]);
 
 /***/ }),
-/* 684 */
+/* 691 */
 /*!************************************************!*\
   !*** ./node_modules/array-find-index/index.js ***!
   \************************************************/
@@ -92227,7 +92536,7 @@ module.exports = function (arr, predicate, ctx) {
 
 
 /***/ }),
-/* 685 */
+/* 692 */
 /*!************************************!*\
   !*** ./node_modules/raf.js/raf.js ***!
   \************************************/
@@ -92279,7 +92588,7 @@ module.exports = function (arr, predicate, ctx) {
 
 
 /***/ }),
-/* 686 */
+/* 693 */
 /*!***************************************************!*\
   !*** ./node_modules/vue-lazyload/vue-lazyload.js ***!
   \***************************************************/
@@ -92296,7 +92605,7 @@ module.exports = function (arr, predicate, ctx) {
 
 
 /***/ }),
-/* 687 */
+/* 694 */
 /*!********************************************!*\
   !*** ./node_modules/mint-ui/lib/style.css ***!
   \********************************************/
@@ -92307,7 +92616,7 @@ module.exports = function (arr, predicate, ctx) {
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 688 */
+/* 695 */
 /*!*******************************************!*\
   !*** ./node_modules/cube-ui/lib/index.js ***!
   \*******************************************/
@@ -111892,7 +112201,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 });
 
 /***/ }),
-/* 689 */
+/* 696 */
 /*!********************************************!*\
   !*** ./node_modules/cube-ui/lib/style.css ***!
   \********************************************/
@@ -111903,7 +112212,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 690 */
+/* 697 */
 /*!****************************************!*\
   !*** ./node_modules/js-md5/src/md5.js ***!
   \****************************************/
@@ -111937,7 +112246,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     root = self;
   }
   var COMMON_JS = !root.JS_MD5_NO_COMMON_JS && typeof module === 'object' && module.exports;
-  var AMD = "function" === 'function' && __webpack_require__(/*! !webpack amd options */ 691);
+  var AMD = "function" === 'function' && __webpack_require__(/*! !webpack amd options */ 698);
   var ARRAY_BUFFER = !root.JS_MD5_NO_ARRAY_BUFFER && typeof ArrayBuffer !== 'undefined';
   var HEX_CHARS = '0123456789abcdef'.split('');
   var EXTRA = [128, 32768, 8388608, -2147483648];
@@ -112599,7 +112908,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 73), __webpack_require__(/*! ./../../webpack/buildin/global.js */ 47)))
 
 /***/ }),
-/* 691 */
+/* 698 */
 /*!****************************************!*\
   !*** (webpack)/buildin/amd-options.js ***!
   \****************************************/
