@@ -50,7 +50,7 @@ export default {
             if (this.itemClick) {
                 this.itemClick(this.item)
             }
-        }
+        },
     }
 }
 </script>

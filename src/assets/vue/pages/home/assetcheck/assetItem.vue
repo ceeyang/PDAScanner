@@ -18,6 +18,9 @@
             <div class="item-content-subtitle">
                 使用科室: {{item.DepartmentName}}
             </div>
+            <div class="item-content-subtitle">
+                规格型号: {{item.DepartmentName}}
+            </div>
         </div>
 
         <div class="item-content-right">
