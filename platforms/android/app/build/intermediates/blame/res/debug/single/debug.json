@@ -28,12 +28,12 @@
         "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/088080c364d131066efcc0f70d51b9f8/res/layout-v21/notification_action_tombstone.xml"
     },
     {
-        "merged": "/Users/yangxichuan/Desktop/pdascanner/platforms/android/app/build/intermediates/res/merged/debug/layout_help.xml.flat",
-        "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/res/layout/help.xml"
-    },
-    {
         "merged": "/Users/yangxichuan/Desktop/pdascanner/platforms/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
         "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/088080c364d131066efcc0f70d51b9f8/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/Users/yangxichuan/Desktop/pdascanner/platforms/android/app/build/intermediates/res/merged/debug/layout_help.xml.flat",
+        "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/res/layout/help.xml"
     },
     {
         "merged": "/Users/yangxichuan/Desktop/pdascanner/platforms/android/app/build/intermediates/res/merged/debug/drawable-land-xxhdpi_screen.png.flat",
@@ -148,16 +148,16 @@
         "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/cd028c0fa6ce35905ae390ef81691851/res/layout/notification_template_lines_media.xml"
     },
     {
-        "merged": "/Users/yangxichuan/Desktop/pdascanner/platforms/android/app/build/intermediates/res/merged/debug/drawable_notification_icon_background.xml.flat",
-        "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/088080c364d131066efcc0f70d51b9f8/res/drawable/notification_icon_background.xml"
+        "merged": "/Users/yangxichuan/Desktop/pdascanner/platforms/android/app/build/intermediates/res/merged/debug/drawable_share_via_barcode.png.flat",
+        "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/res/drawable/share_via_barcode.png"
     },
     {
         "merged": "/Users/yangxichuan/Desktop/pdascanner/platforms/android/app/build/intermediates/res/merged/debug/layout_capture.xml.flat",
         "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/res/layout/capture.xml"
     },
     {
-        "merged": "/Users/yangxichuan/Desktop/pdascanner/platforms/android/app/build/intermediates/res/merged/debug/drawable_share_via_barcode.png.flat",
-        "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/barcodescanner-release-2.1.5.aar/02863fe889d09aa93a9cbce473afb300/res/drawable/share_via_barcode.png"
+        "merged": "/Users/yangxichuan/Desktop/pdascanner/platforms/android/app/build/intermediates/res/merged/debug/drawable_notification_icon_background.xml.flat",
+        "source": "/Users/yangxichuan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/088080c364d131066efcc0f70d51b9f8/res/drawable/notification_icon_background.xml"
     },
     {
         "merged": "/Users/yangxichuan/Desktop/pdascanner/platforms/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",

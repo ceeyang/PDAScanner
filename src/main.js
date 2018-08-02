@@ -64,6 +64,9 @@ Vue.prototype.api=api
 
 //封装公共请求(post)
 Vue.prototype.post=function(url, params, next){
+    let rootUrl = localStorage.getItem("rootUrl")
+    rootUrl = ""
+
     var token = '';
     for (var item in params) {
         token += (token.length<1?'':'&') + item + '=' + (params[item].length < 1 ? "" : params[item]);
@@ -79,10 +82,13 @@ Vue.prototype.post=function(url, params, next){
     console.log(params);
     console.log("----------------------------------------");
     console.log("");
-    return Framework7.request.post(url, params, next);
+    return Framework7.request.post(rootUrl+url, params, next);
 }
 
 Vue.prototype.get=function(url, params, next){
+    let rootUrl = localStorage.getItem("rootUrl")
+    rootUrl = ""
+
     var token = '';
     for (var item in params) {
         token += (token.length<1?'':'&') + item + '=' + (params[item].length < 1 ? "" : params[item]);
@@ -98,7 +104,7 @@ Vue.prototype.get=function(url, params, next){
     console.log(params);
     console.log("----------------------------------------");
     console.log("");
-    return Framework7.request.get(url, params, next);
+    return Framework7.request.get(rootUrl+url, params, next);
 }
 
 

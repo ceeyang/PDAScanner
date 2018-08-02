@@ -16,6 +16,15 @@
                 <form class="login-input list form-store-data" id="demo-form">
                     <li class="item-content item-input">
                         <div class="item-inner">
+                            <div class="item-title item-label">API</div>
+                            <div class="item-input-wrap">
+                                <input v-model='mRootUrl' name="mRootUrl" type="text" placeholder="请输入 API 地址与端口号">
+                                <span class="input-clear-button"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-content item-input">
+                        <div class="item-inner">
                             <div class="item-title item-label">账号</div>
                             <div class="item-input-wrap">
                                 <input v-model='user.account' name="name" type="text" placeholder="请输入您的账号">
@@ -60,6 +69,8 @@ export default {
 
     data() {
         return {
+            mRootUrl: "http://120.78.92.212:8006",
+
             WarehouseData: [],
             popupVisible: false,
             // warehouseNameArr: [],
@@ -81,6 +92,10 @@ export default {
 
 
     mounted() {
+        if (localStorage.rootUrl) {
+            this.mRootUrl = localStorage.rootUrl
+        }
+
         if (localStorage.account) {
             this.user.account = localStorage.account;
         }
@@ -93,6 +108,7 @@ export default {
         if (localStorage.isLogined == '1') {
             this.$f7router.navigate('/home/', {"animate": false});
         }
+
     },
 
 
@@ -120,8 +136,22 @@ export default {
         },
 
         login() {
+            console.log(this.mRootUrl);
+            localStorage.setItem('rootUrl', this.mRootUrl);
+            this.globalSetting.rootUrl = this.mRootUrl
 
-            console.log('xxxx');
+            if (this.mRootUrl.length < 1) {
+                const self = this;
+                if (!self.toastCenter) {
+                    self.toastCenter = self.$f7.toast.create({
+                        text: '请输入API地址',
+                        closeTimeout: 2000,
+                        position: 'center',
+                    });
+                }
+                self.toastCenter.open();
+                return;
+            }
 
             if (this.user.account.length < 1) {
                 const self = this;
@@ -152,12 +182,11 @@ export default {
             }
             let vm = this;
             this.get(this.api.login, params, function(response) {
-                console.log(params);
+                toast.hide()
                 var data = JSON.parse(response);
                 if (data.Status) {
                     localStorage.UserName = data.UserName;
                     vm.getRepositories();
-                    toast.hide()
                 } else {
                     let msg = data.Msg;
                     if (!vm.toastCenter) {
@@ -170,6 +199,17 @@ export default {
                     vm.toastCenter.open();
                 }
             });
+
+            setTimeout(function () {
+                if (!this.toastCenter) {
+                    this.toastCenter = this.$f7.toast.create({
+                        text: "API 地址输入错误",
+                        closeTimeout: 2000,
+                        position: 'center',
+                    });
+                }
+                this.toastCenter.open();
+            }, 5000);
         },
 
         getRepositories() {

@@ -24,22 +24,13 @@
 
             <div class="content-middle">
                 <div class="content-header">详细信息</div>
-                <div class="content-repair-info">
-                    盘点人员 |  {{InventoryUserName || "无"}}
-                </div>
-                <div class="content-repair-info">
-                    盘点日期 |  {{InventoryTime || "无"}}
-                </div>
-                <div class="content-repair-info">
-                    设备数量 |  {{deviceTotalNumber || "无"}}
-                </div>
-                <div class="content-repair-info">
-                    盘点状态 |  {{InventoryType || "无"}}
-                </div>
-                <div class="content-repair-info">
-                    盘点备注 |  {{Remarks || "无"}}
-                </div>
+                <input-cell title="维修单号" disabled=true v-model="itemData.InventoryUserName"></input-cell>
+                <input-cell title="盘点日期" disabled=true v-model="itemData.InventoryTime"></input-cell>
+                <input-cell title="设备数量" disabled=true v-model="mEquCount"></input-cell>
+                <input-cell title="盘点状态" disabled=true v-model="itemData.InventoryState"></input-cell>
+                <input-cell title="盘点备注" disabled=true v-model="itemData.Remarks"></input-cell>
             </div>
+
 
 
             <div class="asset-checkout-bottom-btn">
@@ -61,6 +52,8 @@ export default {
     data() {
         return {
             itemData: [],
+
+            mEquCount: 0,
 
             InventoryNo: '',
 

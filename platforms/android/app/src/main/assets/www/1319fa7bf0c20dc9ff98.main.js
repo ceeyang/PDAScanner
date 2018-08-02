@@ -3916,8 +3916,8 @@ exports.default = Device;
 var global = __webpack_require__(/*! ./_global */ 25);
 var core = __webpack_require__(/*! ./_core */ 19);
 var ctx = __webpack_require__(/*! ./_ctx */ 48);
-var hide = __webpack_require__(/*! ./_hide */ 41);
-var has = __webpack_require__(/*! ./_has */ 42);
+var hide = __webpack_require__(/*! ./_hide */ 43);
+var has = __webpack_require__(/*! ./_has */ 44);
 var PROTOTYPE = 'prototype';
 
 var $export = function (type, name, source) {
@@ -16492,6 +16492,104 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 /* 41 */
+/*!*********************************************!*\
+  !*** ./src/assets/vue/common/inputcell.vue ***!
+  \*********************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-4be34c42","scoped":false,"hasInlineConfig":false}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./inputcell.vue */ 544)
+}
+var Component = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
+  /* script */
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./inputcell.vue */ 546),
+  /* template */
+  __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-4be34c42","hasScoped":false}!../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./inputcell.vue */ 547),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/yangxichuan/Desktop/pdascanner/src/assets/vue/common/inputcell.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] inputcell.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4be34c42", Component.options)
+  } else {
+    hotAPI.reload("data-v-4be34c42", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 42 */
+/*!*************************************************!*\
+  !*** ./src/assets/vue/common/selectedinput.vue ***!
+  \*************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-ddf2d4b6","scoped":true,"hasInlineConfig":false}!sass-loader!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./selectedinput.vue */ 552)
+}
+var Component = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
+  /* script */
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./selectedinput.vue */ 554),
+  /* template */
+  __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-ddf2d4b6","hasScoped":true}!../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./selectedinput.vue */ 555),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-ddf2d4b6",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/yangxichuan/Desktop/pdascanner/src/assets/vue/common/selectedinput.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] selectedinput.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ddf2d4b6", Component.options)
+  } else {
+    hotAPI.reload("data-v-ddf2d4b6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 43 */
 /*!*******************************************************!*\
   !*** ./node_modules/core-js/library/modules/_hide.js ***!
   \*******************************************************/
@@ -16510,7 +16608,7 @@ module.exports = __webpack_require__(/*! ./_descriptors */ 39) ? function (objec
 
 
 /***/ }),
-/* 42 */
+/* 44 */
 /*!******************************************************!*\
   !*** ./node_modules/core-js/library/modules/_has.js ***!
   \******************************************************/
@@ -16525,7 +16623,7 @@ module.exports = function (it, key) {
 
 
 /***/ }),
-/* 43 */
+/* 45 */
 /*!*************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_to-iobject.js ***!
   \*************************************************************/
@@ -16542,7 +16640,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 44 */
+/* 46 */
 /*!**************************************************!*\
   !*** ./node_modules/framework7/utils/history.js ***!
   \**************************************************/
@@ -16710,104 +16808,6 @@ var History = {
 };
 
 exports.default = History;
-
-/***/ }),
-/* 45 */
-/*!*********************************************!*\
-  !*** ./src/assets/vue/common/inputcell.vue ***!
-  \*********************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-4be34c42","scoped":false,"hasInlineConfig":false}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./inputcell.vue */ 544)
-}
-var Component = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
-  /* script */
-  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./inputcell.vue */ 546),
-  /* template */
-  __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-4be34c42","hasScoped":false}!../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./inputcell.vue */ 547),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/yangxichuan/Desktop/pdascanner/src/assets/vue/common/inputcell.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] inputcell.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4be34c42", Component.options)
-  } else {
-    hotAPI.reload("data-v-4be34c42", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 46 */
-/*!*************************************************!*\
-  !*** ./src/assets/vue/common/selectedinput.vue ***!
-  \*************************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(/*! !vue-style-loader!css-loader!../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-ddf2d4b6","scoped":true,"hasInlineConfig":false}!sass-loader!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./selectedinput.vue */ 552)
-}
-var Component = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/component-normalizer */ 8)(
-  /* script */
-  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./selectedinput.vue */ 554),
-  /* template */
-  __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-ddf2d4b6","hasScoped":true}!../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./selectedinput.vue */ 555),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-ddf2d4b6",
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/yangxichuan/Desktop/pdascanner/src/assets/vue/common/selectedinput.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] selectedinput.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ddf2d4b6", Component.options)
-  } else {
-    hotAPI.reload("data-v-ddf2d4b6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
 
 /***/ }),
 /* 47 */
@@ -18074,7 +18074,7 @@ exports.f = {}.propertyIsEnumerable;
 /***/ (function(module, exports, __webpack_require__) {
 
 var def = __webpack_require__(/*! ./_object-dp */ 36).f;
-var has = __webpack_require__(/*! ./_has */ 42);
+var has = __webpack_require__(/*! ./_has */ 44);
 var TAG = __webpack_require__(/*! ./_wks */ 27)('toStringTag');
 
 module.exports = function (it, tag, stat) {
@@ -18093,7 +18093,7 @@ module.exports = function (it, tag, stat) {
 
 __webpack_require__(/*! ./es6.array.iterator */ 167);
 var global = __webpack_require__(/*! ./_global */ 25);
-var hide = __webpack_require__(/*! ./_hide */ 41);
+var hide = __webpack_require__(/*! ./_hide */ 43);
 var Iterators = __webpack_require__(/*! ./_iterators */ 50);
 var TO_STRING_TAG = __webpack_require__(/*! ./_wks */ 27)('toStringTag');
 
@@ -18632,9 +18632,9 @@ module.exports = function (name) {
 
 var pIE = __webpack_require__(/*! ./_object-pie */ 69);
 var createDesc = __webpack_require__(/*! ./_property-desc */ 57);
-var toIObject = __webpack_require__(/*! ./_to-iobject */ 43);
+var toIObject = __webpack_require__(/*! ./_to-iobject */ 45);
 var toPrimitive = __webpack_require__(/*! ./_to-primitive */ 76);
-var has = __webpack_require__(/*! ./_has */ 42);
+var has = __webpack_require__(/*! ./_has */ 44);
 var IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ 98);
 var gOPD = Object.getOwnPropertyDescriptor;
 
@@ -19682,8 +19682,8 @@ module.exports = !__webpack_require__(/*! ./_descriptors */ 39) && !__webpack_re
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var has = __webpack_require__(/*! ./_has */ 42);
-var toIObject = __webpack_require__(/*! ./_to-iobject */ 43);
+var has = __webpack_require__(/*! ./_has */ 44);
+var toIObject = __webpack_require__(/*! ./_to-iobject */ 45);
 var arrayIndexOf = __webpack_require__(/*! ./_array-includes */ 147)(false);
 var IE_PROTO = __webpack_require__(/*! ./_shared-key */ 80)('IE_PROTO');
 
@@ -19729,7 +19729,7 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 
 var META = __webpack_require__(/*! ./_uid */ 67)('meta');
 var isObject = __webpack_require__(/*! ./_is-object */ 37);
-var has = __webpack_require__(/*! ./_has */ 42);
+var has = __webpack_require__(/*! ./_has */ 44);
 var setDesc = __webpack_require__(/*! ./_object-dp */ 36).f;
 var id = 0;
 var isExtensible = Object.isExtensible || function () {
@@ -19792,7 +19792,7 @@ var meta = module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has = __webpack_require__(/*! ./_has */ 42);
+var has = __webpack_require__(/*! ./_has */ 44);
 var toObject = __webpack_require__(/*! ./_to-object */ 58);
 var IE_PROTO = __webpack_require__(/*! ./_shared-key */ 80)('IE_PROTO');
 var ObjectProto = Object.prototype;
@@ -19820,7 +19820,7 @@ module.exports = Object.getPrototypeOf || function (O) {
 var LIBRARY = __webpack_require__(/*! ./_library */ 61);
 var $export = __webpack_require__(/*! ./_export */ 29);
 var redefine = __webpack_require__(/*! ./_redefine */ 104);
-var hide = __webpack_require__(/*! ./_hide */ 41);
+var hide = __webpack_require__(/*! ./_hide */ 43);
 var Iterators = __webpack_require__(/*! ./_iterators */ 50);
 var $iterCreate = __webpack_require__(/*! ./_iter-create */ 165);
 var setToStringTag = __webpack_require__(/*! ./_set-to-string-tag */ 70);
@@ -19896,7 +19896,7 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./_hide */ 41);
+module.exports = __webpack_require__(/*! ./_hide */ 43);
 
 
 /***/ }),
@@ -23578,7 +23578,7 @@ module.exports = Component.exports
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "loginlogo.png?d0e7c0d35b75684fdc02bd37e1b0ddae";
+module.exports = __webpack_require__.p + "loginlogo.png?fff5a5b8a694e6cb3233104f0800ef7a";
 
 /***/ }),
 /* 135 */
@@ -23879,6 +23879,8 @@ _vue2.default.prototype.api = _api2.default;
 
 //封装公共请求(post)
 _vue2.default.prototype.post = function (url, params, next) {
+    var rootUrl = localStorage.getItem("rootUrl");
+
     var token = '';
     for (var item in params) {
         token += (token.length < 1 ? '' : '&') + item + '=' + (params[item].length < 1 ? "" : params[item]);
@@ -23894,10 +23896,12 @@ _vue2.default.prototype.post = function (url, params, next) {
     console.log(params);
     console.log("----------------------------------------");
     console.log("");
-    return _framework7EsmBundle2.default.request.post(url, params, next);
+    return _framework7EsmBundle2.default.request.post(rootUrl + url, params, next);
 };
 
 _vue2.default.prototype.get = function (url, params, next) {
+    var rootUrl = localStorage.getItem("rootUrl");
+
     var token = '';
     for (var item in params) {
         token += (token.length < 1 ? '' : '&') + item + '=' + (params[item].length < 1 ? "" : params[item]);
@@ -23913,7 +23917,7 @@ _vue2.default.prototype.get = function (url, params, next) {
     console.log(params);
     console.log("----------------------------------------");
     console.log("");
-    return _framework7EsmBundle2.default.request.get(url, params, next);
+    return _framework7EsmBundle2.default.request.get(rootUrl + url, params, next);
 };
 
 _vue2.default.options.root = _config2.default.serverPath;
@@ -24636,7 +24640,7 @@ __webpack_require__(/*! ./_object-sap */ 68)('keys', function () {
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(/*! ./_to-iobject */ 43);
+var toIObject = __webpack_require__(/*! ./_to-iobject */ 45);
 var toLength = __webpack_require__(/*! ./_to-length */ 78);
 var toAbsoluteIndex = __webpack_require__(/*! ./_to-absolute-index */ 148);
 module.exports = function (IS_INCLUDES) {
@@ -25193,7 +25197,7 @@ var setToStringTag = __webpack_require__(/*! ./_set-to-string-tag */ 70);
 var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-__webpack_require__(/*! ./_hide */ 41)(IteratorPrototype, __webpack_require__(/*! ./_wks */ 27)('iterator'), function () { return this; });
+__webpack_require__(/*! ./_hide */ 43)(IteratorPrototype, __webpack_require__(/*! ./_wks */ 27)('iterator'), function () { return this; });
 
 module.exports = function (Constructor, NAME, next) {
   Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
@@ -25239,7 +25243,7 @@ module.exports = __webpack_require__(/*! ./_descriptors */ 39) ? Object.definePr
 var addToUnscopables = __webpack_require__(/*! ./_add-to-unscopables */ 168);
 var step = __webpack_require__(/*! ./_iter-step */ 169);
 var Iterators = __webpack_require__(/*! ./_iterators */ 50);
-var toIObject = __webpack_require__(/*! ./_to-iobject */ 43);
+var toIObject = __webpack_require__(/*! ./_to-iobject */ 45);
 
 // 22.1.3.4 Array.prototype.entries()
 // 22.1.3.13 Array.prototype.keys()
@@ -25337,7 +25341,7 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ 19).Symbol;
 
 // ECMAScript 6 symbols shim
 var global = __webpack_require__(/*! ./_global */ 25);
-var has = __webpack_require__(/*! ./_has */ 42);
+var has = __webpack_require__(/*! ./_has */ 44);
 var DESCRIPTORS = __webpack_require__(/*! ./_descriptors */ 39);
 var $export = __webpack_require__(/*! ./_export */ 29);
 var redefine = __webpack_require__(/*! ./_redefine */ 104);
@@ -25353,7 +25357,7 @@ var enumKeys = __webpack_require__(/*! ./_enum-keys */ 173);
 var isArray = __webpack_require__(/*! ./_is-array */ 174);
 var anObject = __webpack_require__(/*! ./_an-object */ 32);
 var isObject = __webpack_require__(/*! ./_is-object */ 37);
-var toIObject = __webpack_require__(/*! ./_to-iobject */ 43);
+var toIObject = __webpack_require__(/*! ./_to-iobject */ 45);
 var toPrimitive = __webpack_require__(/*! ./_to-primitive */ 76);
 var createDesc = __webpack_require__(/*! ./_property-desc */ 57);
 var _create = __webpack_require__(/*! ./_object-create */ 84);
@@ -25561,7 +25565,7 @@ $JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function () {
 });
 
 // 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
-$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(/*! ./_hide */ 41)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(/*! ./_hide */ 43)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
 // 19.4.3.5 Symbol.prototype[@@toStringTag]
 setToStringTag($Symbol, 'Symbol');
 // 20.2.1.9 Math[@@toStringTag]
@@ -25622,7 +25626,7 @@ module.exports = Array.isArray || function isArray(arg) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-var toIObject = __webpack_require__(/*! ./_to-iobject */ 43);
+var toIObject = __webpack_require__(/*! ./_to-iobject */ 45);
 var gOPN = __webpack_require__(/*! ./_object-gopn */ 106).f;
 var toString = {}.toString;
 
@@ -25807,7 +25811,7 @@ module.exports = function getOwnPropertyDescriptor(it, key) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
-var toIObject = __webpack_require__(/*! ./_to-iobject */ 43);
+var toIObject = __webpack_require__(/*! ./_to-iobject */ 45);
 var $getOwnPropertyDescriptor = __webpack_require__(/*! ./_object-gopd */ 87).f;
 
 __webpack_require__(/*! ./_object-sap */ 68)('getOwnPropertyDescriptor', function () {
@@ -26316,7 +26320,7 @@ module.exports = navigator && navigator.userAgent || '';
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var hide = __webpack_require__(/*! ./_hide */ 41);
+var hide = __webpack_require__(/*! ./_hide */ 43);
 module.exports = function (target, src, safe) {
   for (var key in src) {
     if (safe && target[key]) target[key] = src[key];
@@ -27745,7 +27749,7 @@ var _component = __webpack_require__(/*! ../../utils/component */ 212);
 
 var _component2 = _interopRequireDefault(_component);
 
-var _history = __webpack_require__(/*! ../../utils/history */ 44);
+var _history = __webpack_require__(/*! ../../utils/history */ 46);
 
 var _history2 = _interopRequireDefault(_history);
 
@@ -29871,7 +29875,7 @@ var _dom = __webpack_require__(/*! dom7 */ 1);
 
 var _dom2 = _interopRequireDefault(_dom);
 
-var _history = __webpack_require__(/*! ../../utils/history */ 44);
+var _history = __webpack_require__(/*! ../../utils/history */ 46);
 
 var _history2 = _interopRequireDefault(_history);
 
@@ -30319,7 +30323,7 @@ var _utils = __webpack_require__(/*! ../../utils/utils */ 2);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _history = __webpack_require__(/*! ../../utils/history */ 44);
+var _history = __webpack_require__(/*! ../../utils/history */ 46);
 
 var _history2 = _interopRequireDefault(_history);
 
@@ -30964,7 +30968,7 @@ var _utils = __webpack_require__(/*! ../../utils/utils */ 2);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _history = __webpack_require__(/*! ../../utils/history */ 44);
+var _history = __webpack_require__(/*! ../../utils/history */ 46);
 
 var _history2 = _interopRequireDefault(_history);
 
@@ -31200,7 +31204,7 @@ var _utils = __webpack_require__(/*! ../../utils/utils */ 2);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _history = __webpack_require__(/*! ../../utils/history */ 44);
+var _history = __webpack_require__(/*! ../../utils/history */ 46);
 
 var _history2 = _interopRequireDefault(_history);
 
@@ -31436,7 +31440,7 @@ var _device = __webpack_require__(/*! ../../utils/device */ 28);
 
 var _device2 = _interopRequireDefault(_device);
 
-var _history = __webpack_require__(/*! ../../utils/history */ 44);
+var _history = __webpack_require__(/*! ../../utils/history */ 46);
 
 var _history2 = _interopRequireDefault(_history);
 
@@ -32081,7 +32085,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _history = __webpack_require__(/*! ../../utils/history */ 44);
+var _history = __webpack_require__(/*! ../../utils/history */ 46);
 
 var _history2 = _interopRequireDefault(_history);
 
@@ -69175,7 +69179,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/****** 14px ******/\n/****** 12px ******/\n/****** 12px ******/\n/****** 16px ******/\n/****** 18px ******/\n/****** 18px ******/\n/****** 18px ******/\n/****** 26px ******/\n/****** 40px ******/\n/****** 常用变量中没有定义的，page中基于base-space来计算 ******/\n/****** 18px ******/\n/****** 15px ******/\n/****** 20px ******/\n/****** 40px ******/\n/****** 24px ******/\n/****** 状态栏20px，导航栏44px ******/\n/****** 底部标签栏49px ******/\n/****** 顶部筛选高度44px ******/\n/****** 首页banner125px ******/\n/****** 输入框高度48px ******/\n/****** 按钮高度44px ******/\n/****行高12****/\n/****行高17****/\n/****行高18****/\n/****行高22****/\n/*题目题型颜色*/\n/*做题背景颜色*/\nh1, .h1 {\n  font-size: 40px; }\n\nh2, .h2 {\n  font-size: 26px; }\n\nh3, .h3 {\n  font-size: 18px; }\n\n.font-title {\n  font-size: 16px; }\n\n.small-font,\n.tip-font {\n  font-size: 12px; }\n\n.navbar-inner {\n  background-color: #70D746;\n  color: white; }\n\n.cube-toast.cube-popup {\n  z-index: 9999 !important; }\n\n.cube-popup_mask {\n  z-index: 9999 !important; }\n\n.mint-cell-title {\n  color: #333333 !important; }\n\n.home-foot {\n  position: fixed;\n  right: 0;\n  left: 0;\n  bottom: 0;\n  z-index: 1;\n  height: 40px; }\n  .home-foot .top-line {\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    height: 1px;\n    background-color: #E4E4E4; }\n  .home-foot .foot-content {\n    border: 1px solid rgba(222, 222, 222, 0.3);\n    display: flex;\n    background-color: white;\n    height: 55px; }\n    .home-foot .foot-content .home-item {\n      height: 40px;\n      color: #555;\n      font-weight: 600;\n      font-size: 12px;\n      flex: 1;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      flex-direction: column;\n      background-color: white;\n      color: #93999f; }\n      .home-foot .foot-content .home-item .iconfont {\n        font-size: 25px; }\n    .home-foot .foot-content .is-selected {\n      background-color: rgba(222, 222, 222, 0.3);\n      color: #70D746; }\n\n.common-navBar .navbar-inner {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  background-color: #70D746;\n  color: white; }\n\n.segment-bar {\n  position: relative;\n  display: flex;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4;\n  height: 30px; }\n  .segment-bar .segment-tab {\n    flex: 1;\n    font-size: 12px;\n    padding: 0.4rem 0;\n    margin-bottom: 0;\n    align-items: center;\n    text-align: center;\n    white-space: nowrap;\n    text-overflow: ellipsis;\n    overflow: hidden; }\n  .segment-bar .active {\n    border-bottom: 2px solid #70D746;\n    color: #70D746;\n    font-size: 14px;\n    font-family: monospace; }\n\n.warehouse-picker {\n  width: 100%; }\n  .warehouse-picker .picker-top-buttons {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    text-align: center !important;\n    height: 40px; }\n    .warehouse-picker .picker-top-buttons .top-button {\n      width: 50%; }\n    .warehouse-picker .picker-top-buttons .cancel {\n      color: red; }\n\n.common-scroll {\n  top: 0px;\n  bottom: 45px;\n  position: inherit; }\n  .common-scroll .no-more-data-hint img {\n    width: 100%; }\n\n.measure-item {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4;\n  padding-bottom: 10px; }\n  .measure-item .item-content-left {\n    font-size: 50px;\n    color: #70D746; }\n  .measure-item .item-content-centern {\n    width: 100%;\n    padding-left: 15px; }\n    .measure-item .item-content-centern .item-content-title {\n      padding-top: 10px; }\n    .measure-item .item-content-centern .item-content-subtitle {\n      padding-top: 2px; }\n  .measure-item .item-content-right {\n    font-size: 40px; }\n\n.common-input-cell {\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4;\n  background-color: white;\n  height: 30px; }\n  .common-input-cell .input-cell-title {\n    width: 100px;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white;\n    min-width: 100px;\n    text-align: center; }\n  .common-input-cell .comon-input {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    padding-left: 15px;\n    padding-right: 10px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    width: 100%; }\n  .common-input-cell .picker-placeholder {\n    color: #6C6C6C; }\n  .common-input-cell .disabled {\n    background-color: #F3F3F3; }\n\n.vue-selected-input {\n  height: 30px;\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4; }\n  .vue-selected-input .selecte-user-title {\n    min-width: 100px;\n    text-align: center;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white; }\n  .vue-selected-input .selecte-user-input {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    width: 100%; }\n    .vue-selected-input .selecte-user-input .search-input {\n      height: 30px;\n      display: flex;\n      flex-direction: row;\n      width: 100%; }\n      .vue-selected-input .selecte-user-input .search-input .search-text {\n        padding-left: 15px;\n        width: 100%;\n        background-color: #f5f5f5;\n        color: #93999f;\n        border-bottom: 1px solid #E4E4E4; }\n      .vue-selected-input .selecte-user-input .search-input .search-icon {\n        width: auto;\n        padding-right: 10px;\n        height: auto;\n        border-bottom: 1px solid #E4E4E4;\n        align-items: center;\n        color: #93999f;\n        background-color: #f5f5f5;\n        padding-top: 5px; }\n    .vue-selected-input .selecte-user-input .list-module {\n      overflow: auto;\n      top: 0px;\n      height: auto;\n      z-index: 9998;\n      position: relative;\n      background-color: white !important;\n      max-height: 200px; }\n      .vue-selected-input .selecte-user-input .list-module li {\n        position: relative;\n        padding: 0.5em;\n        border: 1px solid #ccc;\n        white-space: nowrap; }\n        .vue-selected-input .selecte-user-input .list-module li > span {\n          display: inline-block;\n          vertical-align: middle; }\n        .vue-selected-input .selecte-user-input .list-module li .list-module-item {\n          font-size: 12px; }\n\n.cell-content {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4; }\n  .cell-content .cell-content-title {\n    min-width: 100px;\n    text-align: center;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white; }\n  .cell-content .cell-content-subtitle {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    padding-left: 15px;\n    width: 100%;\n    color: #93999f; }\n\n.home-page .page-content {\n  background-color: white; }\n\n.home-page .home-page-swiper {\n  height: 25%; }\n  .home-page .home-page-swiper .swiper-wrapper {\n    border-bottom: 2px solid #E4E4E4; }\n  .home-page .home-page-swiper .swiper-images {\n    width: 100%;\n    height: 100%; }\n\n.home-page .home-page-content {\n  display: flex;\n  flex-wrap: wrap; }\n  .home-page .home-page-content a {\n    color: #333333; }\n  .home-page .home-page-content i {\n    font-size: 25px; }\n\n.home-item {\n  width: 50%;\n  height: 65px;\n  border-bottom: 1px solid #E4E4E4;\n  border-right: 1px solid #E4E4E4;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-around; }\n  .home-item p {\n    text-align: center !important; }\n\n.repair-manager-page .repair-scroll {\n  margin-top: -40px;\n  margin-bottom: 40px; }\n  .repair-manager-page .repair-scroll .repair-nav-items {\n    display: flex;\n    flex-direction: row; }\n\n.measure-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px; }\n  .measure-item .item-content-left {\n    margin-left: 15px;\n    margin-top: 5px;\n    margin-bottom: 5px; }\n    .measure-item .item-content-left .item-content-title {\n      font-size: 16px; }\n    .measure-item .item-content-left .item-content-subtitle {\n      font-size: 14px;\n      color: #93999f; }\n  .measure-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row; }\n    .measure-item .item-content-right i {\n      font-size: 25px; }\n    .measure-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n\n.ready-repair-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .ready-repair-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .ready-repair-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .ready-repair-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .ready-repair-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .ready-repair-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .ready-repair-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .ready-repair-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .ready-repair-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .ready-repair-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .ready-repair-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.ready-repair-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.take-orders-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .take-orders-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .take-orders-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .take-orders-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .take-orders-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .take-orders-page .repair-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .take-orders-page .repair-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .take-orders-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .take-orders-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .take-orders-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .take-orders-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .take-orders-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .take-orders-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .take-orders-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.take-orders-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.repairing-page .repairing-content {\n  top: 0px;\n  bottom: 45px; }\n  .repairing-page .repairing-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .repairing-page .repairing-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .repairing-page .repairing-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .repairing-page .repairing-content .content-bottom {\n    margin-top: 15px; }\n    .repairing-page .repairing-content .content-bottom .content-header-bottom {\n      display: flex;\n      background-color: white;\n      justify-content: space-between;\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      height: 20px; }\n      .repairing-page .repairing-content .content-bottom .content-header-bottom .content-header-title {\n        margin-left: 15px;\n        color: #93999f;\n        font-size: 14px; }\n      .repairing-page .repairing-content .content-bottom .content-header-bottom .content-add-button {\n        margin-right: 15px;\n        color: #93999f;\n        font-size: 14px; }\n    .repairing-page .repairing-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .repairing-page .repairing-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .repairing-page .repairing-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.device-measure-page .device-measure-items {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between; }\n\n.menu-list-view {\n  display: flex;\n  flex-direction: row;\n  height: 100%; }\n  .menu-list-view .menu-left-list {\n    border: 1px solid #E4E4E4 !important;\n    left: 0px;\n    top: 0px;\n    width: 50%;\n    height: 100%;\n    margin: 0px; }\n    .menu-list-view .menu-left-list li {\n      border: 1px solid #E4E4E4 !important;\n      text-align: left; }\n  .menu-list-view .menu-right-list {\n    top: 0px;\n    right: 0px;\n    width: 50%;\n    height: 100%;\n    border: 1px solid #E4E4E4 !important; }\n    .menu-list-view .menu-right-list li {\n      text-align: left;\n      font-size: 10px;\n      border: 1px solid #E4E4E4 !important; }\n\n.measure-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px; }\n  .measure-item .item-content-left {\n    margin-left: 15px; }\n    .measure-item .item-content-left .item-content-title {\n      font-size: 16px; }\n  .measure-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row; }\n    .measure-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n\n.apply-repair-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .apply-repair-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .apply-repair-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .apply-repair-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .apply-repair-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .apply-repair-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .apply-repair-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .apply-repair-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .apply-repair-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .apply-repair-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .apply-repair-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.apply-repair-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  margin-bottom: 0px;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.scan-repair-page .scan-repair-scroll {\n  height: calc(100% - 75px); }\n\n.scan-repair-page .scan-repair-add-btn {\n  margin-bottom: 0px;\n  height: 44px;\n  background-color: #70D746; }\n\n.search-page .search-content-device-scroll {\n  border: 1px solid #E4E4E4;\n  background-color: white;\n  height: 100px; }\n  .search-page .search-content-device-scroll .search-item {\n    text-align: center !important;\n    border-bottom: 1px solid #E4E4E4; }\n\n.search-page .search-content-department-scroll {\n  border: 1px solid #E4E4E4;\n  background-color: white;\n  height: 100px; }\n  .search-page .search-content-department-scroll .search-item {\n    text-align: center !important;\n    border-bottom: 1px solid #E4E4E4; }\n\n.search-page .search-content-data-scroll {\n  height: calc(100% - 200px); }\n\n.view {\n  margin-bottom: 44px; }\n\n.chats-item-content {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4;\n  margin-top: 5px;\n  align-items: center;\n  background-color: white;\n  justify-content: space-between; }\n  .chats-item-content .chats-content-type {\n    margin-top: 10px;\n    margin-bottom: 10px;\n    text-align: center;\n    padding-top: 12px;\n    border: 2px solid #70D746;\n    color: #70D746;\n    border-radius: 50%;\n    margin-left: 15px;\n    height: 50px;\n    width: 70px;\n    font-size: 16px; }\n  .chats-item-content .chats-content {\n    width: 100%;\n    margin-left: 10px; }\n    .chats-item-content .chats-content .chats-content-title {\n      font-size: 16px; }\n    .chats-item-content .chats-content .chats-content-subtitle {\n      color: #93999f;\n      font-size: 14px; }\n  .chats-item-content .chats-content-status {\n    text-align: center;\n    padding-top: 14px;\n    color: #F8C143;\n    border: 1px solid #F8C143;\n    border-radius: 50%;\n    margin-right: 15px;\n    height: 45px;\n    font-size: 14px;\n    width: 70px; }\n\n.ready-repair-bottom {\n  bottom: 0px;\n  position: absolute;\n  color: white;\n  height: 45px;\n  background-color: #70D746 !important;\n  border-color: transparent;\n  z-index: 10; }\n\n.about-page {\n  margin-top: 100px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around; }\n  .about-page .about-logo-img {\n    margin-top: 70px;\n    width: 50%;\n    height: 50%; }\n  .about-page .company-info {\n    height: 90px;\n    justify-content: space-between;\n    font-size: 14px;\n    margin-top: 60px; }\n    .about-page .company-info .tell {\n      color: #3D7ADD; }\n    .about-page .company-info .website {\n      color: #3D7ADD; }\n  .about-page .version-info {\n    position: absolute;\n    bottom: 10px;\n    width: 100%;\n    text-align: center;\n    line-height: 44px;\n    height: 44px;\n    font-size: 16px; }\n    .about-page .version-info.text {\n      color: white; }\n\n.page-login .login-background-image {\n  width: 100%;\n  height: 100%;\n  background-color: #F8F8F8; }\n\n.page-login .login-content {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .page-login .login-content .login-logo {\n    margin-top: 70px;\n    width: 50%; }\n  .page-login .login-content .login-input-div {\n    margin-top: 70px;\n    width: 90%; }\n    .page-login .login-content .login-input-div .login-input {\n      border-radius: 5%;\n      background-color: white; }\n  .page-login .login-content .login-button {\n    width: 90%;\n    color: white;\n    background-color: #70D746;\n    border-color: transparent; }\n  .page-login .login-content .warehouse-picker {\n    width: 100%; }\n    .page-login .login-content .warehouse-picker .picker-top-buttons {\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      text-align: center !important;\n      height: 40px; }\n      .page-login .login-content .warehouse-picker .picker-top-buttons .top-button {\n        width: 50%; }\n      .page-login .login-content .warehouse-picker .picker-top-buttons .cancel {\n        color: red; }\n\n.home-assetcheck .tab {\n  width: 100%;\n  font-size: 0;\n  background-color: #fff; }\n\n.home-assetcheck .tab li {\n  width: 45%;\n  display: inline-block;\n  text-align: center;\n  font-size: 1rem;\n  padding: 10px 0;\n  font-weight: 400; }\n\n.home-assetcheck .list_cont {\n  margin: 0; }\n\n.home-assetcheck .tab_item {\n  color: #666666;\n  font-size: 0;\n  margin-top: 3px;\n  background-color: #FFFFF0; }\n\n.home-assetcheck .img_box {\n  width: 20%;\n  height: auto; }\n\n.home-assetcheck .img_box i {\n  font-size: 55px;\n  color: #999999; }\n\n.home-assetcheck .text_box {\n  width: 78%;\n  font-size: 12px; }\n\n.home-assetcheck .text_box .h5 {\n  font-size: .5rem;\n  color: #333333;\n  line-height: 20px; }\n\n.home-assetcheck .text_box .h5 .tab_btn {\n  color: #666;\n  width: 2rem;\n  height: 17px;\n  line-height: 15px;\n  margin: 3px 5px 0 0;\n  font-size: 12px;\n  font-weight: 400;\n  background: none;\n  border: 1px solid #d2d2d2;\n  border-radius: 2px; }\n\n.home-assetcheck .text_box_item {\n  font-size: 12px;\n  margin: 0; }\n\n.home-assetcheck .text_box_item small + small {\n  margin-right: 5px; }\n\n.home-assetcheck .add {\n  overflow: hidden;\n  padding-top: 30px;\n  background: #FFFFF0; }\n\n.home-assetcheck form {\n  height: 100%;\n  overflow: hidden; }\n\n.home-assetcheck .form-item {\n  width: 90%;\n  margin: 0 auto 10px;\n  font-size: 0;\n  color: #666666; }\n\n.home-assetcheck .form-item .label-item {\n  font-size: 12px;\n  width: 30%;\n  height: 35px;\n  line-height: 35px;\n  color: #333333; }\n\n.home-assetcheck .form-item .input-box {\n  font-size: 12px;\n  width: 70%; }\n\n.home-assetcheck .form-item .input-box input {\n  display: block;\n  width: 95%;\n  height: 35px;\n  line-height: 35px;\n  border: 1px solid #c2c2c2;\n  border-radius: 4px;\n  text-indent: 1em; }\n\n.home-assetcheck .form-item .input-box .right-text {\n  top: 25%;\n  right: 8%;\n  z-index: 0; }\n\n.home-assetcheck .form-btn-box {\n  width: 100%;\n  bottom: 0; }\n\n.home-assetcheck .form-btn-box button {\n  font-size: 15px;\n  height: 40px;\n  line-height: 40px;\n  outline: none;\n  border: none;\n  background-color: #70D746;\n  color: #fff;\n  cursor: pointer; }\n\n.home-assetcheck .tab_show {\n  display: block; }\n\n.home-assetcheck .tab_hide {\n  display: none; }\n\n.home-assetcheck .active {\n  color: #5FB878;\n  font-weight: 500;\n  border-bottom: 2px solid #5FB878; }\n\n.detail-asset-acheck .content-header {\n  padding-left: 15px;\n  color: #93999f;\n  font-size: 14px;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4; }\n\n.detail-asset-acheck .content-top {\n  margin-top: 15px;\n  background-color: white; }\n  .detail-asset-acheck .content-top .contet-top-device-info {\n    display: flex;\n    flex-direction: row;\n    align-items: center; }\n    .detail-asset-acheck .content-top .contet-top-device-info .device-icon {\n      font-size: 80px;\n      color: #70D746;\n      margin-left: 15px;\n      margin-right: 15px; }\n    .detail-asset-acheck .content-top .contet-top-device-info .content-device-name {\n      font-size: 16px;\n      color: #333333; }\n\n.detail-asset-acheck .content-middle {\n  margin-top: 15px;\n  background-color: white; }\n  .detail-asset-acheck .content-middle .content-repair-info {\n    padding-left: 15px;\n    height: 30px;\n    font-size: 16px;\n    color: #333333; }\n  .detail-asset-acheck .content-middle .problem-description {\n    border-bottom: 1px solid #E4E4E4;\n    border-top: 1px solid #E4E4E4;\n    height: 50px; }\n\n.detail-asset-acheck .asset-checkout-bottom-btn {\n  display: flex;\n  margin-top: 15px;\n  flex-direction: row;\n  flex: 1;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n  .detail-asset-acheck .asset-checkout-bottom-btn .asset-check-bottom-btn {\n    background-color: #70D746;\n    width: 40%; }\n\n.beginAassetcheck-cont {\n  height: 100%;\n  overflow: auto; }\n  .beginAassetcheck-cont .list_item {\n    background-color: #fffbf0;\n    border-bottom: 2px solid #eeeeee; }\n    .beginAassetcheck-cont .list_item .list-item-cont {\n      font-size: 0;\n      background-color: #eeeeee; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-icon {\n      width: 20%;\n      font-size: 12px;\n      line-height: 70px; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-icon i {\n      font-size: 45px;\n      color: #009688; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-text {\n      font-size: 12px;\n      width: 80%;\n      color: #828282;\n      padding: 2px 0; }\n    .beginAassetcheck-cont .list_item .list-item-footer {\n      font-size: 12px;\n      color: #666666;\n      padding: 0 0 0 5px; }\n    .beginAassetcheck-cont .list_item .list-item-footer span {\n      font-size: 12px;\n      line-height: 20px; }\n    .beginAassetcheck-cont .list_item .list-item-footer button {\n      background: none;\n      border: 1px solid #999999;\n      border-radius: 10px;\n      font-size: 12px;\n      height: 16px;\n      line-height: 16px;\n      margin: 3px 10px 0 0;\n      padding: 0 5px;\n      width: auto; }\n  .beginAassetcheck-cont .list_item h6 {\n    line-height: 15px;\n    padding: 3px 5px;\n    color: #666666;\n    font-weight: 400;\n    font-size: 13px; }\n  .beginAassetcheck-cont .con-top-f {\n    position: fixed;\n    top: 40px;\n    left: 0;\n    width: 100%; }\n\n.new-asset-check-page .search-input {\n  height: 40px;\n  padding-left: 15px;\n  background-color: #DEDEDE4D;\n  border-bottom: 1px solid #E4E4E4; }\n  .new-asset-check-page .search-input input {\n    width: 100%;\n    height: 40px; }\n\n.new-asset-check-page .downloading-content {\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  top: 0px;\n  background-color: black;\n  opacity: 0.1; }\n\n.asset-checkou-item {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4; }\n  .asset-checkou-item .item-content-left {\n    font-size: 50px;\n    color: #70D746;\n    padding-left: 13px; }\n  .asset-checkou-item .item-content-middle {\n    width: 100%; }\n    .asset-checkou-item .item-content-middle .item-content-title {\n      padding-top: 10px; }\n    .asset-checkou-item .item-content-middle .item-content-subtitle {\n      padding-top: 5px; }\n  .asset-checkou-item .item-content-right {\n    font-size: 40px;\n    padding-right: 15px; }\n\n.asset-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px;\n  align-self: center;\n  flex: 1; }\n  .asset-item .item-content-left {\n    margin-left: 15px;\n    font-size: 60px;\n    color: #70D746; }\n  .asset-item .item-content-middle {\n    margin-top: 5px;\n    margin-left: 15px;\n    margin-bottom: 5px;\n    width: 100%; }\n    .asset-item .item-content-middle .item-content-title {\n      font-size: 16px;\n      color: #333333; }\n    .asset-item .item-content-middle .item-content-subtitle {\n      font-size: 14px;\n      color: #93999f; }\n  .asset-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    align-self: center; }\n    .asset-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/****** 14px ******/\n/****** 12px ******/\n/****** 12px ******/\n/****** 16px ******/\n/****** 18px ******/\n/****** 18px ******/\n/****** 18px ******/\n/****** 26px ******/\n/****** 40px ******/\n/****** 常用变量中没有定义的，page中基于base-space来计算 ******/\n/****** 18px ******/\n/****** 15px ******/\n/****** 20px ******/\n/****** 40px ******/\n/****** 24px ******/\n/****** 状态栏20px，导航栏44px ******/\n/****** 底部标签栏49px ******/\n/****** 顶部筛选高度44px ******/\n/****** 首页banner125px ******/\n/****** 输入框高度48px ******/\n/****** 按钮高度44px ******/\n/****行高12****/\n/****行高17****/\n/****行高18****/\n/****行高22****/\n/*题目题型颜色*/\n/*做题背景颜色*/\nh1, .h1 {\n  font-size: 40px; }\n\nh2, .h2 {\n  font-size: 26px; }\n\nh3, .h3 {\n  font-size: 18px; }\n\n.font-title {\n  font-size: 16px; }\n\n.small-font,\n.tip-font {\n  font-size: 12px; }\n\n.navbar-inner {\n  background-color: #70D746;\n  color: white; }\n\n.cube-toast.cube-popup {\n  z-index: 9999 !important; }\n\n.cube-popup_mask {\n  z-index: 9999 !important; }\n\n.mint-cell-title {\n  color: #333333 !important; }\n\n.home-foot {\n  position: fixed;\n  right: 0;\n  left: 0;\n  bottom: 0;\n  z-index: 1;\n  height: 40px; }\n  .home-foot .top-line {\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    height: 1px;\n    background-color: #E4E4E4; }\n  .home-foot .foot-content {\n    border: 1px solid rgba(222, 222, 222, 0.3);\n    display: flex;\n    background-color: white;\n    height: 55px; }\n    .home-foot .foot-content .home-item {\n      height: 40px;\n      color: #555;\n      font-weight: 600;\n      font-size: 12px;\n      flex: 1;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      flex-direction: column;\n      background-color: white;\n      color: #93999f; }\n      .home-foot .foot-content .home-item .iconfont {\n        font-size: 25px; }\n    .home-foot .foot-content .is-selected {\n      background-color: rgba(222, 222, 222, 0.3);\n      color: #70D746; }\n\n.common-navBar .navbar-inner {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  background-color: #70D746;\n  color: white; }\n\n.segment-bar {\n  position: relative;\n  display: flex;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4;\n  height: 30px; }\n  .segment-bar .segment-tab {\n    flex: 1;\n    font-size: 12px;\n    padding: 0.4rem 0;\n    margin-bottom: 0;\n    align-items: center;\n    text-align: center;\n    white-space: nowrap;\n    text-overflow: ellipsis;\n    overflow: hidden; }\n  .segment-bar .active {\n    border-bottom: 2px solid #70D746;\n    color: #70D746;\n    font-size: 14px;\n    font-family: monospace; }\n\n.warehouse-picker {\n  width: 100%; }\n  .warehouse-picker .picker-top-buttons {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    text-align: center !important;\n    height: 40px; }\n    .warehouse-picker .picker-top-buttons .top-button {\n      width: 50%; }\n    .warehouse-picker .picker-top-buttons .cancel {\n      color: red; }\n\n.common-scroll {\n  top: 0px;\n  bottom: 45px;\n  position: inherit; }\n  .common-scroll .no-more-data-hint img {\n    width: 100%; }\n\n.measure-item {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4;\n  padding-bottom: 10px; }\n  .measure-item .item-content-left {\n    font-size: 50px;\n    color: #70D746; }\n  .measure-item .item-content-centern {\n    width: 100%;\n    padding-left: 15px; }\n    .measure-item .item-content-centern .item-content-title {\n      padding-top: 10px; }\n    .measure-item .item-content-centern .item-content-subtitle {\n      padding-top: 2px; }\n  .measure-item .item-content-right {\n    font-size: 40px; }\n\n.common-input-cell {\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4;\n  background-color: white;\n  height: 30px; }\n  .common-input-cell .input-cell-title {\n    width: 100px;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white;\n    min-width: 100px;\n    text-align: center; }\n  .common-input-cell .comon-input {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    padding-left: 15px;\n    padding-right: 10px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    width: 100%; }\n  .common-input-cell .picker-placeholder {\n    color: #6C6C6C; }\n  .common-input-cell .disabled {\n    background-color: #F3F3F3; }\n\n.vue-selected-input {\n  height: 30px;\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4; }\n  .vue-selected-input .selecte-user-title {\n    min-width: 100px;\n    text-align: center;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white; }\n  .vue-selected-input .selecte-user-input {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    width: 100%; }\n    .vue-selected-input .selecte-user-input .search-input {\n      height: 30px;\n      display: flex;\n      flex-direction: row;\n      width: 100%; }\n      .vue-selected-input .selecte-user-input .search-input .search-text {\n        padding-left: 15px;\n        width: 100%;\n        background-color: #f5f5f5;\n        color: #93999f;\n        border-bottom: 1px solid #E4E4E4; }\n      .vue-selected-input .selecte-user-input .search-input .search-icon {\n        width: auto;\n        padding-right: 10px;\n        height: auto;\n        border-bottom: 1px solid #E4E4E4;\n        align-items: center;\n        color: #93999f;\n        background-color: #f5f5f5;\n        padding-top: 5px; }\n    .vue-selected-input .selecte-user-input .list-module {\n      overflow: auto;\n      top: 0px;\n      height: auto;\n      z-index: 9998;\n      position: relative;\n      background-color: white !important;\n      max-height: 200px; }\n      .vue-selected-input .selecte-user-input .list-module li {\n        position: relative;\n        padding: 0.5em;\n        border: 1px solid #ccc;\n        white-space: nowrap; }\n        .vue-selected-input .selecte-user-input .list-module li > span {\n          display: inline-block;\n          vertical-align: middle; }\n        .vue-selected-input .selecte-user-input .list-module li .list-module-item {\n          font-size: 12px; }\n\n.cell-content {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4; }\n  .cell-content .cell-content-title {\n    min-width: 100px;\n    text-align: center;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white; }\n  .cell-content .cell-content-subtitle {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    padding-left: 15px;\n    width: 100%;\n    color: #93999f; }\n\n.home-page .page-content {\n  background-color: white; }\n\n.home-page .home-page-swiper {\n  height: 25%; }\n  .home-page .home-page-swiper .swiper-wrapper {\n    border-bottom: 2px solid #E4E4E4; }\n  .home-page .home-page-swiper .swiper-images {\n    width: 100%;\n    height: 100%; }\n\n.home-page .home-page-content {\n  display: flex;\n  flex-wrap: wrap; }\n  .home-page .home-page-content a {\n    color: #333333; }\n  .home-page .home-page-content i {\n    font-size: 25px; }\n\n.home-item {\n  width: 50%;\n  height: 65px;\n  border-bottom: 1px solid #E4E4E4;\n  border-right: 1px solid #E4E4E4;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-around; }\n  .home-item p {\n    text-align: center !important; }\n\n.page-content .page-content {\n  background-color: white; }\n\n.page-content .home-page-swiper {\n  height: 25%; }\n  .page-content .home-page-swiper .swiper-wrapper {\n    border-bottom: 2px solid #E4E4E4; }\n  .page-content .home-page-swiper .swiper-images {\n    width: 100%;\n    height: 100%; }\n\n.page-content .home-page-content {\n  display: flex;\n  flex-wrap: wrap; }\n  .page-content .home-page-content a {\n    color: #333333; }\n  .page-content .home-page-content i {\n    font-size: 25px; }\n\n.repair-manager-page .repair-scroll {\n  margin-top: -40px;\n  margin-bottom: 40px; }\n  .repair-manager-page .repair-scroll .repair-nav-items {\n    display: flex;\n    flex-direction: row; }\n\n.measure-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px; }\n  .measure-item .item-content-left {\n    margin-left: 15px;\n    margin-top: 5px;\n    margin-bottom: 5px; }\n    .measure-item .item-content-left .item-content-title {\n      font-size: 16px; }\n    .measure-item .item-content-left .item-content-subtitle {\n      font-size: 14px;\n      color: #93999f; }\n  .measure-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row; }\n    .measure-item .item-content-right i {\n      font-size: 25px; }\n    .measure-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n\n.ready-repair-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .ready-repair-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .ready-repair-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .ready-repair-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .ready-repair-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .ready-repair-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .ready-repair-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .ready-repair-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .ready-repair-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .ready-repair-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .ready-repair-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.ready-repair-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.take-orders-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .take-orders-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .take-orders-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .take-orders-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .take-orders-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .take-orders-page .repair-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .take-orders-page .repair-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .take-orders-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .take-orders-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .take-orders-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .take-orders-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .take-orders-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .take-orders-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .take-orders-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.take-orders-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.repairing-page .repairing-content {\n  top: 0px;\n  bottom: 45px; }\n  .repairing-page .repairing-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .repairing-page .repairing-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .repairing-page .repairing-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .repairing-page .repairing-content .content-bottom {\n    margin-top: 15px; }\n    .repairing-page .repairing-content .content-bottom .content-header-bottom {\n      display: flex;\n      background-color: white;\n      justify-content: space-between;\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      height: 20px; }\n      .repairing-page .repairing-content .content-bottom .content-header-bottom .content-header-title {\n        margin-left: 15px;\n        color: #93999f;\n        font-size: 14px; }\n      .repairing-page .repairing-content .content-bottom .content-header-bottom .content-add-button {\n        margin-right: 15px;\n        color: #93999f;\n        font-size: 14px; }\n    .repairing-page .repairing-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .repairing-page .repairing-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .repairing-page .repairing-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.new-repair-record .content-header {\n  margin-top: 15px;\n  padding-left: 15px;\n  color: #93999f;\n  font-size: 14px;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4; }\n\n.device-measure-page .device-measure-items {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between; }\n\n.menu-list-view {\n  display: flex;\n  flex-direction: row;\n  height: 100%; }\n  .menu-list-view .menu-left-list {\n    border: 1px solid #E4E4E4 !important;\n    left: 0px;\n    top: 0px;\n    width: 50%;\n    height: 100%;\n    margin: 0px; }\n    .menu-list-view .menu-left-list li {\n      border: 1px solid #E4E4E4 !important;\n      text-align: left; }\n  .menu-list-view .menu-right-list {\n    top: 0px;\n    right: 0px;\n    width: 50%;\n    height: 100%;\n    border: 1px solid #E4E4E4 !important; }\n    .menu-list-view .menu-right-list li {\n      text-align: left;\n      font-size: 10px;\n      border: 1px solid #E4E4E4 !important; }\n\n.measure-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px; }\n  .measure-item .item-content-left {\n    margin-left: 15px; }\n    .measure-item .item-content-left .item-content-title {\n      font-size: 16px; }\n  .measure-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row; }\n    .measure-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n\n.apply-repair-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .apply-repair-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .apply-repair-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .apply-repair-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-name {\n        margin-top: 15px;\n        font-size: 16px;\n        color: #333333; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-device-subname {\n        margin-top: 5px;\n        font-size: 14px;\n        color: #93999f; }\n  .apply-repair-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .apply-repair-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .apply-repair-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .apply-repair-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .apply-repair-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .apply-repair-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .apply-repair-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.apply-repair-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  margin-bottom: 0px;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.scan-repair-page .scan-repair-scroll {\n  height: calc(100% - 75px); }\n\n.scan-repair-page .scan-repair-add-btn {\n  margin-bottom: 0px;\n  height: 44px;\n  background-color: #70D746; }\n\n.search-page .search-content-device-scroll {\n  border: 1px solid #E4E4E4;\n  background-color: white;\n  height: 100px; }\n  .search-page .search-content-device-scroll .search-item {\n    text-align: center !important;\n    border-bottom: 1px solid #E4E4E4; }\n\n.search-page .search-content-department-scroll {\n  border: 1px solid #E4E4E4;\n  background-color: white;\n  height: 100px; }\n  .search-page .search-content-department-scroll .search-item {\n    text-align: center !important;\n    border-bottom: 1px solid #E4E4E4; }\n\n.search-page .search-content-data-scroll {\n  height: calc(100% - 200px); }\n\n.view {\n  margin-bottom: 44px; }\n\n.chats-item-content {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4;\n  margin-top: 5px;\n  align-items: center;\n  background-color: white;\n  justify-content: space-between; }\n  .chats-item-content .chats-content-type {\n    margin-top: 10px;\n    margin-bottom: 10px;\n    text-align: center;\n    padding-top: 12px;\n    border: 2px solid #70D746;\n    color: #70D746;\n    border-radius: 50%;\n    margin-left: 15px;\n    height: 50px;\n    width: 70px;\n    font-size: 16px; }\n  .chats-item-content .chats-content {\n    width: 100%;\n    margin-left: 10px; }\n    .chats-item-content .chats-content .chats-content-title {\n      font-size: 16px; }\n    .chats-item-content .chats-content .chats-content-subtitle {\n      color: #93999f;\n      font-size: 14px; }\n  .chats-item-content .chats-content-status {\n    text-align: center;\n    padding-top: 14px;\n    color: #F8C143;\n    border: 1px solid #F8C143;\n    border-radius: 50%;\n    margin-right: 15px;\n    height: 45px;\n    font-size: 14px;\n    width: 70px; }\n\n.ready-repair-bottom {\n  bottom: 0px;\n  position: absolute;\n  color: white;\n  height: 45px;\n  background-color: #70D746 !important;\n  border-color: transparent;\n  z-index: 10; }\n\n.about-page {\n  margin-top: 100px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around; }\n  .about-page .about-logo-img {\n    margin-top: 70px;\n    width: 50%;\n    height: 50%; }\n  .about-page .company-info {\n    height: 90px;\n    justify-content: space-between;\n    font-size: 14px;\n    margin-top: 60px; }\n    .about-page .company-info .tell {\n      color: #3D7ADD; }\n    .about-page .company-info .website {\n      color: #3D7ADD; }\n  .about-page .version-info {\n    position: absolute;\n    bottom: 10px;\n    width: 100%;\n    text-align: center;\n    line-height: 44px;\n    height: 44px;\n    font-size: 16px; }\n    .about-page .version-info.text {\n      color: white; }\n\n.page-login .login-background-image {\n  width: 100%;\n  height: 100%;\n  background-color: #F8F8F8; }\n\n.page-login .login-content {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .page-login .login-content .login-logo {\n    margin-top: 70px;\n    width: 50%; }\n  .page-login .login-content .login-input-div {\n    margin-top: 70px;\n    width: 90%; }\n    .page-login .login-content .login-input-div .login-input {\n      border-radius: 5%;\n      background-color: white; }\n  .page-login .login-content .login-button {\n    width: 90%;\n    color: white;\n    background-color: #70D746;\n    border-color: transparent; }\n  .page-login .login-content .warehouse-picker {\n    width: 100%; }\n    .page-login .login-content .warehouse-picker .picker-top-buttons {\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      text-align: center !important;\n      height: 40px; }\n      .page-login .login-content .warehouse-picker .picker-top-buttons .top-button {\n        width: 50%; }\n      .page-login .login-content .warehouse-picker .picker-top-buttons .cancel {\n        color: red; }\n\n.home-assetcheck .tab {\n  width: 100%;\n  font-size: 0;\n  background-color: #fff; }\n\n.home-assetcheck .tab li {\n  width: 45%;\n  display: inline-block;\n  text-align: center;\n  font-size: 1rem;\n  padding: 10px 0;\n  font-weight: 400; }\n\n.home-assetcheck .list_cont {\n  margin: 0; }\n\n.home-assetcheck .tab_item {\n  color: #666666;\n  font-size: 0;\n  margin-top: 3px;\n  background-color: #FFFFF0; }\n\n.home-assetcheck .img_box {\n  width: 20%;\n  height: auto; }\n\n.home-assetcheck .img_box i {\n  font-size: 55px;\n  color: #999999; }\n\n.home-assetcheck .text_box {\n  width: 78%;\n  font-size: 12px; }\n\n.home-assetcheck .text_box .h5 {\n  font-size: .5rem;\n  color: #333333;\n  line-height: 20px; }\n\n.home-assetcheck .text_box .h5 .tab_btn {\n  color: #666;\n  width: 2rem;\n  height: 17px;\n  line-height: 15px;\n  margin: 3px 5px 0 0;\n  font-size: 12px;\n  font-weight: 400;\n  background: none;\n  border: 1px solid #d2d2d2;\n  border-radius: 2px; }\n\n.home-assetcheck .text_box_item {\n  font-size: 12px;\n  margin: 0; }\n\n.home-assetcheck .text_box_item small + small {\n  margin-right: 5px; }\n\n.home-assetcheck .add {\n  overflow: hidden;\n  padding-top: 30px;\n  background: #FFFFF0; }\n\n.home-assetcheck form {\n  height: 100%;\n  overflow: hidden; }\n\n.home-assetcheck .form-item {\n  width: 90%;\n  margin: 0 auto 10px;\n  font-size: 0;\n  color: #666666; }\n\n.home-assetcheck .form-item .label-item {\n  font-size: 12px;\n  width: 30%;\n  height: 35px;\n  line-height: 35px;\n  color: #333333; }\n\n.home-assetcheck .form-item .input-box {\n  font-size: 12px;\n  width: 70%; }\n\n.home-assetcheck .form-item .input-box input {\n  display: block;\n  width: 95%;\n  height: 35px;\n  line-height: 35px;\n  border: 1px solid #c2c2c2;\n  border-radius: 4px;\n  text-indent: 1em; }\n\n.home-assetcheck .form-item .input-box .right-text {\n  top: 25%;\n  right: 8%;\n  z-index: 0; }\n\n.home-assetcheck .form-btn-box {\n  width: 100%;\n  bottom: 0; }\n\n.home-assetcheck .form-btn-box button {\n  font-size: 15px;\n  height: 40px;\n  line-height: 40px;\n  outline: none;\n  border: none;\n  background-color: #70D746;\n  color: #fff;\n  cursor: pointer; }\n\n.home-assetcheck .tab_show {\n  display: block; }\n\n.home-assetcheck .tab_hide {\n  display: none; }\n\n.home-assetcheck .active {\n  color: #5FB878;\n  font-weight: 500;\n  border-bottom: 2px solid #5FB878; }\n\n.detail-asset-acheck .content-header {\n  padding-left: 15px;\n  color: #93999f;\n  font-size: 14px;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4; }\n\n.detail-asset-acheck .content-top {\n  margin-top: 15px;\n  background-color: white; }\n  .detail-asset-acheck .content-top .contet-top-device-info {\n    display: flex;\n    flex-direction: row;\n    align-items: center; }\n    .detail-asset-acheck .content-top .contet-top-device-info .device-icon {\n      font-size: 80px;\n      color: #70D746;\n      margin-left: 15px;\n      margin-right: 15px; }\n    .detail-asset-acheck .content-top .contet-top-device-info .content-device-name {\n      font-size: 16px;\n      color: #333333; }\n\n.detail-asset-acheck .content-middle {\n  margin-top: 15px;\n  background-color: white; }\n  .detail-asset-acheck .content-middle .content-repair-info {\n    padding-left: 15px;\n    height: 30px;\n    font-size: 16px;\n    color: #333333; }\n  .detail-asset-acheck .content-middle .problem-description {\n    border-bottom: 1px solid #E4E4E4;\n    border-top: 1px solid #E4E4E4;\n    height: 50px; }\n\n.detail-asset-acheck .asset-checkout-bottom-btn {\n  display: flex;\n  margin-top: 15px;\n  flex-direction: row;\n  flex: 1;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n  .detail-asset-acheck .asset-checkout-bottom-btn .asset-check-bottom-btn {\n    background-color: #70D746;\n    width: 40%; }\n\n.beginAassetcheck-cont {\n  height: 100%;\n  overflow: auto; }\n  .beginAassetcheck-cont .list_item {\n    background-color: #fffbf0;\n    border-bottom: 2px solid #eeeeee; }\n    .beginAassetcheck-cont .list_item .list-item-cont {\n      font-size: 0;\n      background-color: #eeeeee; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-icon {\n      width: 20%;\n      font-size: 12px;\n      line-height: 70px; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-icon i {\n      font-size: 45px;\n      color: #009688; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-text {\n      font-size: 12px;\n      width: 80%;\n      color: #828282;\n      padding: 2px 0; }\n    .beginAassetcheck-cont .list_item .list-item-footer {\n      font-size: 12px;\n      color: #666666;\n      padding: 0 0 0 5px; }\n    .beginAassetcheck-cont .list_item .list-item-footer span {\n      font-size: 12px;\n      line-height: 20px; }\n    .beginAassetcheck-cont .list_item .list-item-footer button {\n      background: none;\n      border: 1px solid #999999;\n      border-radius: 10px;\n      font-size: 12px;\n      height: 16px;\n      line-height: 16px;\n      margin: 3px 10px 0 0;\n      padding: 0 5px;\n      width: auto; }\n  .beginAassetcheck-cont .list_item h6 {\n    line-height: 15px;\n    padding: 3px 5px;\n    color: #666666;\n    font-weight: 400;\n    font-size: 13px; }\n  .beginAassetcheck-cont .con-top-f {\n    position: fixed;\n    top: 40px;\n    left: 0;\n    width: 100%; }\n\n.new-asset-check-page .search-input {\n  height: 40px;\n  padding-left: 15px;\n  background-color: #DEDEDE4D;\n  border-bottom: 1px solid #E4E4E4; }\n  .new-asset-check-page .search-input input {\n    width: 100%;\n    height: 40px; }\n\n.new-asset-check-page .downloading-content {\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  top: 0px;\n  background-color: black;\n  opacity: 0.1; }\n\n.asset-checkou-item {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4; }\n  .asset-checkou-item .item-content-left {\n    font-size: 50px;\n    color: #70D746;\n    padding-left: 13px; }\n  .asset-checkou-item .item-content-middle {\n    width: 100%; }\n    .asset-checkou-item .item-content-middle .item-content-title {\n      padding-top: 10px; }\n    .asset-checkou-item .item-content-middle .item-content-subtitle {\n      padding-top: 5px; }\n  .asset-checkou-item .item-content-right {\n    font-size: 40px;\n    padding-right: 15px; }\n\n.asset-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px;\n  align-self: center;\n  flex: 1; }\n  .asset-item .item-content-left {\n    margin-left: 15px;\n    font-size: 60px;\n    color: #70D746; }\n  .asset-item .item-content-middle {\n    margin-top: 5px;\n    margin-left: 15px;\n    margin-bottom: 5px;\n    width: 100%; }\n    .asset-item .item-content-middle .item-content-title {\n      font-size: 16px;\n      color: #333333; }\n    .asset-item .item-content-middle .item-content-subtitle {\n      font-size: 14px;\n      color: #93999f; }\n  .asset-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    align-self: center; }\n    .asset-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n", ""]);
 
 // exports
 
@@ -69303,6 +69307,9 @@ var theme = 'auto'; //
 //
 //
 //
+//
+//
+//
 
 // Import Routes...
 
@@ -69357,6 +69364,7 @@ exports.default = [{
 }, {
   path: '/home/',
   component: __webpack_require__(/*! ./assets/vue/pages/home/home.vue */ 511)
+  // component: require('./assets/vue/pages/home/index.vue')
 }, {
   path: '/assetcheck/',
   component: __webpack_require__(/*! ./assets/vue/pages/home/assetcheck/assetcheck.vue */ 526)
@@ -69470,7 +69478,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -69546,11 +69554,22 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 exports.default = {
     data: function data() {
         return {
+            mRootUrl: "http://120.78.92.212:8006",
+
             WarehouseData: [],
             popupVisible: false,
             // warehouseNameArr: [],
@@ -69570,6 +69589,10 @@ exports.default = {
         };
     },
     mounted: function mounted() {
+        if (localStorage.rootUrl) {
+            this.mRootUrl = localStorage.rootUrl;
+        }
+
         if (localStorage.account) {
             this.user.account = localStorage.account;
         }
@@ -69605,8 +69628,11 @@ exports.default = {
             localStorage.isLogined = '1';
         },
         login: function login() {
+            console.log(this.mRootUrl);
+            localStorage.setItem('rootUrl', this.mRootUrl);
+            this.globalSetting.rootUrl = this.mRootUrl;
 
-            console.log('xxxx');
+            debugger;
 
             if (this.user.account.length < 1) {
                 var self = this;
@@ -69637,12 +69663,11 @@ exports.default = {
             };
             var vm = this;
             this.get(this.api.login, params, function (response) {
-                console.log(params);
+                toast.hide();
                 var data = JSON.parse(response);
                 if (data.Status) {
                     localStorage.UserName = data.UserName;
                     vm.getRepositories();
-                    toast.hide();
                 } else {
                     var msg = data.Msg;
                     if (!vm.toastCenter) {
@@ -69655,6 +69680,10 @@ exports.default = {
                     vm.toastCenter.open();
                 }
             });
+
+            setTimeout(function () {
+                toast.hide();
+            }, 5000);
         },
         getRepositories: function getRepositories() {
 
@@ -69723,6 +69752,37 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "id": "demo-form"
     }
   }, [_c('li', {
+    staticClass: "item-content item-input"
+  }, [_c('div', {
+    staticClass: "item-inner"
+  }, [_c('div', {
+    staticClass: "item-title item-label"
+  }, [_vm._v("API")]), _vm._v(" "), _c('div', {
+    staticClass: "item-input-wrap"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.mRootUrl),
+      expression: "mRootUrl"
+    }],
+    attrs: {
+      "name": "mRootUrl",
+      "type": "text",
+      "placeholder": "请输入 API 地址与端口号"
+    },
+    domProps: {
+      "value": (_vm.mRootUrl)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.mRootUrl = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "input-clear-button"
+  })])])]), _vm._v(" "), _c('li', {
     staticClass: "item-content item-input"
   }, [_c('div', {
     staticClass: "item-inner"
@@ -73237,7 +73297,7 @@ var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
-var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
+var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 41);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
@@ -73245,7 +73305,7 @@ var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 38);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
-var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue */ 46);
+var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue */ 42);
 
 var _selectedinput2 = _interopRequireDefault(_selectedinput);
 
@@ -74399,7 +74459,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -74419,6 +74479,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
+//
+//
 //
 //
 //
@@ -74498,7 +74561,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "item-content-subtitle"
   }, [_vm._v("\n            资产状态: " + _vm._s(_vm.item.AssetStateName) + "\n        ")]), _vm._v(" "), _c('div', {
     staticClass: "item-content-subtitle"
-  }, [_vm._v("\n            使用科室: " + _vm._s(_vm.item.DepartmentName) + "\n        ")])]), _vm._v(" "), _vm._m(0)])
+  }, [_vm._v("\n            使用科室: " + _vm._s(_vm.item.DepartmentName) + "\n        ")]), _vm._v(" "), _c('div', {
+    staticClass: "item-content-subtitle"
+  }, [_vm._v("\n            规格型号: " + _vm._s(_vm.item.DepartmentName) + "\n        ")])]), _vm._v(" "), _vm._m(0)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "item-content-right"
@@ -74791,7 +74856,7 @@ var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
-var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
+var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 41);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
@@ -74799,7 +74864,7 @@ var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 38);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
-var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue */ 46);
+var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue */ 42);
 
 var _selectedinput2 = _interopRequireDefault(_selectedinput);
 
@@ -77075,7 +77140,7 @@ var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
-var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
+var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 41);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
@@ -77083,7 +77148,7 @@ var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 38);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
-var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue */ 46);
+var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue */ 42);
 
 var _selectedinput2 = _interopRequireDefault(_selectedinput);
 
@@ -77783,7 +77848,7 @@ var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
-var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
+var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 41);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
@@ -77791,7 +77856,7 @@ var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 38);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
-var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue */ 46);
+var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue */ 42);
 
 var _selectedinput2 = _interopRequireDefault(_selectedinput);
 
@@ -78919,7 +78984,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -78957,14 +79022,55 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
+var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 41);
+
+var _inputcell2 = _interopRequireDefault(_inputcell);
+
+var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue */ 42);
+
+var _selectedinput2 = _interopRequireDefault(_selectedinput);
 
 var _vuex = __webpack_require__(/*! vuex */ 31);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
     data: function data() {
         return {
-            itemData: []
+            // 维修费用
+            mRepairFee: "",
+
+            // 配件费用
+            mExpectRepairFee: "",
+
+            // 时间选择器的值
+            mRepairTime: "",
+
+            // 配件状态
+            mExpectStatus: 0,
+            slots: [{
+                flex: 1,
+                values: ['配件申请中', '配件已到达'],
+                className: 'slot1',
+                textAlign: 'center'
+            }]
+
         };
     },
 
@@ -78972,22 +79078,75 @@ exports.default = {
     computed: _extends({}, (0, _vuex.mapState)(['RepairStore'])),
 
     watch: {
-        falutDes: function falutDes(newValue) {
-            console.log(newValue);
+        mRepairFee: function mRepairFee(newValue) {
+            this.RepairStore.mCurrentRepair.RepairFee = newValue;
+        },
+
+        mExpectRepairFee: function mExpectRepairFee(newValue) {
+            this.RepairStore.mCurrentRepair.mExpectRepairFee = newValue;
         }
     },
 
-    mounted: function mounted() {},
+    mounted: function mounted() {
+        this.mRepairFee = this.RepairStore.mCurrentRepair.RepairFee;
+        this.mExpectRepairFee = this.RepairStore.mCurrentRepair.ExpectRepairFee;
+        this.mRepairTime = this.RepairStore.mCurrentRepair.RepairDate;
+    },
 
 
     methods: {
-        confirmBtnClickAction: function confirmBtnClickAction() {},
+
+        // 维修状态点击事件
+        PartsStateAction: function PartsStateAction() {},
+
+
+        // 维修事件点击事件
+        RepairTimeAction: function RepairTimeAction() {
+            this.$refs.picker.open();
+        },
+
+
+        // 选择器 value 回调
+        onValuesChange: function onValuesChange(picker, values) {
+            this.mExpectStatus = values;
+        },
+
+
+        // 时间选择器回调
+        dataPickerConfirm: function dataPickerConfirm(datetime) {
+            var year = datetime.getFullYear();
+            var month = datetime.getMonth() + 1; //js从0开始取
+            var date = datetime.getDate();
+            var repairTime = year + '-' + month + '-' + date;
+            this.RepairStore.mCurrentRepair.RepairDate = repairTime;
+        },
+        openDeviceStatusPicker: function openDeviceStatusPicker() {
+            console.log('');
+        },
         NavBack: function NavBack() {
             this.$f7router.back();
         }
     },
 
-    components: {}
+    filters: {
+        typeTransToTxt: function typeTransToTxt(value) {
+
+            // TODO: filters
+            if (value == "") {
+                return "其他";
+            } else if (value == "1") {
+                return "自修";
+            } else {
+                return "其他";
+            }
+        }
+    },
+
+    components: {
+        SelectedInput: _selectedinput2.default,
+        InputCell: _inputcell2.default
+
+    }
 };
 
 /***/ }),
@@ -79001,7 +79160,7 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('f7-page', {
-    staticClass: "repairing-page"
+    staticClass: "new-repair-record"
   }, [_c('f7-navbar', [_c('f7-nav-left', [_c('div', {
     on: {
       "click": _vm.NavBack
@@ -79012,7 +79171,94 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "title": "新增维修记录"
     }
-  })], 1)], 1)
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "content-header"
+  }, [_vm._v("订单信息")]), _vm._v(" "), _c('input-cell', {
+    attrs: {
+      "title": "维修单号",
+      "disabled": "true"
+    },
+    model: {
+      value: (_vm.RepairStore.mCurrentRepair.RepairNo),
+      callback: function($$v) {
+        _vm.$set(_vm.RepairStore.mCurrentRepair, "RepairNo", $$v)
+      },
+      expression: "RepairStore.mCurrentRepair.RepairNo"
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "content-header"
+  }, [_vm._v("报修信息")]), _vm._v(" "), _c('input-cell', {
+    attrs: {
+      "type": "DataInput",
+      "title": "维修类型",
+      "placeholder": "请选择维修类型",
+      "value": _vm._f("typeTransToTxt")(_vm.RepairStore.mCurrentRepair.PartsState),
+      "openDataPicker": _vm.PartsStateAction
+    }
+  }), _vm._v(" "), _c('input-cell', {
+    attrs: {
+      "title": "维修费用",
+      "placeholder": "请输入维修费用"
+    },
+    model: {
+      value: (_vm.mRepairFee),
+      callback: function($$v) {
+        _vm.mRepairFee = $$v
+      },
+      expression: "mRepairFee"
+    }
+  }), _vm._v(" "), _c('input-cell', {
+    attrs: {
+      "type": "DataInput",
+      "title": "维修日期",
+      "placeholder": "请选择维修日期",
+      "value": _vm.RepairStore.mCurrentRepair.RepairDate,
+      "openDataPicker": _vm.RepairTimeAction
+    }
+  }), _vm._v(" "), _c('input-cell', {
+    attrs: {
+      "title": "配件费用",
+      "placeholder": "请输入配件费用"
+    },
+    model: {
+      value: (_vm.mExpectRepairFee),
+      callback: function($$v) {
+        _vm.mExpectRepairFee = $$v
+      },
+      expression: "mExpectRepairFee"
+    }
+  }), _vm._v(" "), _c('input-cell', {
+    attrs: {
+      "type": "DataInput",
+      "title": "配件状态",
+      "placeholder": "请选择配件状态",
+      "value": _vm.deviceStatusValue,
+      "openDataPicker": _vm.openDeviceStatusPicker
+    }
+  }), _vm._v(" "), _c('mt-datetime-picker', {
+    ref: "picker",
+    attrs: {
+      "type": "date"
+    },
+    on: {
+      "confirm": _vm.dataPickerConfirm
+    },
+    model: {
+      value: (_vm.mRepairTime),
+      callback: function($$v) {
+        _vm.mRepairTime = $$v
+      },
+      expression: "mRepairTime"
+    }
+  }), _vm._v(" "), _c('picker', {
+    attrs: {
+      "slots": _vm.slots,
+      "onValuesChange": _vm.onValuesChange,
+      "pickerCancel": _vm.pickerCancel,
+      "pickerConfirm": _vm.pickerConfirm,
+      "show": _vm.popupVisible
+    }
+  })], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -79637,7 +79883,7 @@ var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
-var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
+var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 41);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
@@ -79649,7 +79895,7 @@ var _commonCell = __webpack_require__(/*! ../../../common/commonCell.vue */ 138)
 
 var _commonCell2 = _interopRequireDefault(_commonCell);
 
-var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue */ 46);
+var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue */ 42);
 
 var _selectedinput2 = _interopRequireDefault(_selectedinput);
 
@@ -80162,7 +80408,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput */ 46);
+var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput */ 42);
 
 var _selectedinput2 = _interopRequireDefault(_selectedinput);
 
@@ -80471,7 +80717,7 @@ var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
-var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
+var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 41);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
@@ -80483,7 +80729,7 @@ var _commonCell = __webpack_require__(/*! ../../../common/commonCell.vue */ 138)
 
 var _commonCell2 = _interopRequireDefault(_commonCell);
 
-var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue */ 46);
+var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue */ 42);
 
 var _selectedinput2 = _interopRequireDefault(_selectedinput);
 
@@ -80661,7 +80907,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -80686,7 +80932,7 @@ var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
-var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 45);
+var _inputcell = __webpack_require__(/*! ../../../common/inputcell.vue */ 41);
 
 var _inputcell2 = _interopRequireDefault(_inputcell);
 
@@ -80894,6 +81140,7 @@ exports.default = {
 
         // 设备型号失去焦点
         modelNumberOnblur: function modelNumberOnblur() {
+            console.log('modelNumberOnblur');
             this.getSearchData();
         },
         getDeviceNameData: function getDeviceNameData() {
@@ -81519,7 +81766,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "params": _vm.f7params
     }
-  }, [_c('f7-statusbar'), _vm._v(" "), _c('f7-view', {
+  }, [_c('f7-statusbar'), _vm._v(" "), _c('f7-panel', {
+    attrs: {
+      "left": "",
+      "cover": ""
+    }
+  }, [_c('f7-view', {
+    attrs: {
+      "url": "/panel-left/",
+      "links-view": ".view-main"
+    }
+  })], 1), _vm._v(" "), _c('f7-view', {
     staticClass: "ios-edges",
     attrs: {
       "url": "/",
@@ -82426,123 +82683,117 @@ var xxxxx = exports.xxxxx = function xxxxx(_ref, itemData) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-// 正式环境打包使用
-var rootURL = "http://120.78.92.212:8006";
-// 浏览器运行使用
-// const rootURL = ``
-
 exports.default = {
     // 登录
-    login: rootURL + "/api/Login/Login",
+    login: "/api/Login/Login",
 
     // 获取仓库集合
-    WarehouseList: rootURL + "/api/Login/WarehouseList",
+    WarehouseList: "/api/Login/WarehouseList",
 
     // 获取科室集合
-    departmentList: rootURL + "/api/Repair/DepartmentList",
+    departmentList: "/api/Repair/DepartmentList",
 
     // 未报修设备集合
-    notRepairList: rootURL + "/api/Repair/DepartmentEquListNot",
+    notRepairList: "/api/Repair/DepartmentEquListNot",
 
     // 已经报修设备集合
-    hadRepairedList: rootURL + "/api/Repair/DepartmentEquListHas",
+    hadRepairedList: "/api/Repair/DepartmentEquListHas",
 
     // 4、设备名称集合
-    equNameList: rootURL + "/api/Repair/EquNameList",
+    equNameList: "/api/Repair/EquNameList",
 
     // 报修申请
-    applyRepair: rootURL + "/api/Repair/ApplyRepair",
+    applyRepair: "/api/Repair/ApplyRepair",
 
     // 撤销申请
-    revokeApply: rootURL + "/api/Repair/Revoke",
+    revokeApply: "/api/Repair/Revoke",
 
     // 获取资产信息
-    getEquById: rootURL + "/api/Repair/GetEquById",
+    getEquById: "/api/Repair/GetEquById",
 
     // 维修, 派工, 接单信息查询
-    dispatchList: rootURL + "/api/Dispatch/DispatchList",
+    dispatchList: "/api/Dispatch/DispatchList",
 
     // 加载维修派工用户
-    getRepaitUsers: rootURL + "/api/Dispatch/GetRepaitUsers",
+    getRepaitUsers: "/api/Dispatch/GetRepaitUsers",
 
     // 派单或者转单(通过维修状态)
-    sendOrder: rootURL + "/api/Dispatch/Assign",
+    sendOrder: "/api/Dispatch/Assign",
 
     // 忽略维修派工
-    dispatchIgnore: rootURL + "/api/Dispatch/Ignore",
+    dispatchIgnore: "/api/Dispatch/Ignore",
 
     // 确认维修派工
-    confirmOrder: rootURL + "/api/PickOrder/ConfirmOrder",
+    confirmOrder: "/api/PickOrder/ConfirmOrder",
 
     // 获取维修信息
-    getRepairInfo: rootURL + "/api/PickOrder/GetRepairInfo",
+    getRepairInfo: "/api/PickOrder/GetRepairInfo",
 
     // 故障类型列表
-    getQuestionTypeList: rootURL + "/api/PickOrder/QuestionTypeList",
+    getQuestionTypeList: "/api/PickOrder/QuestionTypeList",
 
     // 故障列表
-    getQuestionList: rootURL + "/api/PickOrder/QuestionList",
+    getQuestionList: "/api/PickOrder/QuestionList",
 
     // 接单
-    checkOrder: rootURL + "/api/PickOrder/CheckOrder",
+    checkOrder: "/api/PickOrder/CheckOrder",
 
     // 撤销接单
-    cancelOrder: rootURL + "/api/PickOrder/CancelOrder",
+    cancelOrder: "/api/PickOrder/CancelOrder",
 
     // 审核列表
-    auditList: rootURL + "/api/Audit/AuditList",
+    auditList: "/api/Audit/AuditList",
 
     // 获取维修进程对象
-    getRepairProcessModel: rootURL + "/api/Audit/GetRepairProcessModel",
+    getRepairProcessModel: "/api/Audit/GetRepairProcessModel",
 
     // 维修审核
-    repairAudit: rootURL + "/api/Audit/RepairAudit",
+    repairAudit: "/api/Audit/RepairAudit",
 
     // 22、维修处理集合
-    repairHandleList: rootURL + "/api/RepairHandle/RepairHandleList",
+    repairHandleList: "/api/RepairHandle/RepairHandleList",
 
     // 23、维修过程列表
-    repairProcessList: rootURL + "/api/RepairHandle/RepairProcessList",
+    repairProcessList: "/api/RepairHandle/RepairProcessList",
 
     // 24、新增维修过程
-    addRepairProcess: rootURL + "/api/RepairHandle/AddRepairProcess",
+    addRepairProcess: "/api/RepairHandle/AddRepairProcess",
 
     // 25、维修人员列表
-    repairUserList: rootURL + "/api/RepairHandle/RepairUserList",
+    repairUserList: "/api/RepairHandle/RepairUserList",
 
     // 26、新增维修人员
-    addRepairUser: rootURL + "/api/RepairHandle/AddRepairUser",
+    addRepairUser: "/api/RepairHandle/AddRepairUser",
 
     // 27、维修配件列表
-    repairPartsList: rootURL + "/api/RepairHandle/RepairPartsList",
+    repairPartsList: "/api/RepairHandle/RepairPartsList",
 
     // 28、新增维修配件
-    addRepairParts: rootURL + "/api/RepairHandle/AddRepairParts",
+    addRepairParts: "/api/RepairHandle/AddRepairParts",
 
     // 29、提交验收
-    submitApproval: rootURL + "/api/RepairHandle/SubmitApproval",
+    submitApproval: "/api/RepairHandle/SubmitApproval",
 
     // 30、科室验收列表
-    approvalList: rootURL + "/api/Approval/ApprovalList",
+    approvalList: "/api/Approval/ApprovalList",
 
     // 31、科室验收
-    departmentApproval: rootURL + "/api/Approval/DepartmentApproval",
+    departmentApproval: "/api/Approval/DepartmentApproval",
 
     // 获取盘点单列表
-    getInventoryList: rootURL + "/api/Inventory/GetInventoryList",
+    getInventoryList: "/api/Inventory/GetInventoryList",
 
     // 获取资产列表
-    getInventoryItemList: rootURL + "/api/Inventory/GetInventoryItemList",
+    getInventoryItemList: "/api/Inventory/GetInventoryItemList",
 
     // 上传盘点单
-    updateInventoryItem: rootURL + "/api/Inventory/UpdateInventoryItem",
+    updateInventoryItem: "/api/Inventory/UpdateInventoryItem",
 
     // 消息解耦
-    getNoticeList: rootURL + "/api/BlendQuery/NoticeList",
+    getNoticeList: "/api/BlendQuery/NoticeList",
 
     // 计量资产的科室列表
-    getMeteringEqu: rootURL + "/api/Metering/MeteringEqu"
+    getMeteringEqu: "/api/Metering/MeteringEqu"
 
 };
 
@@ -82562,8 +82813,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  // serverPath: 'http://tc.zhixueyun.com/zxy-mobile-new',
-  // serverPath: '/wechatserver',
   companyName: '深圳市源泰达科技有限公司',
   supportName: '深圳市源泰达科技有限公司',
   supportPhone: '18108120400',
