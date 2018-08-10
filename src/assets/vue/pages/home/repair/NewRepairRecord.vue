@@ -15,11 +15,11 @@
         <input-cell title="维修单号" disabled=true v-model="RepairStore.mCurrentRepair.RepairNo"></input-cell>
 
         <div class="content-header">报修信息</div>
-        <input-cell type="DataInput" title="维修类型" placeholder="请选择维修类型" :value="RepairStore.mCurrentRepair.PartsState|typeTransToTxt" :openDataPicker="PartsStateAction"></input-cell>
+        <input-cell type="DataInput" title="维修类型" placeholder="请选择维修类型" :value="RepairStore.mCurrentRepair.PartsState|typeTransToTxt" :inputClickAction="PartsStateAction"></input-cell>
         <input-cell title="维修费用" placeholder="请输入维修费用" v-model="mRepairFee"></input-cell>
-        <input-cell type="DataInput" title="维修日期" placeholder="请选择维修日期" :value="RepairStore.mCurrentRepair.RepairDate" :openDataPicker="RepairTimeAction"></input-cell>
+        <input-cell type="DataInput" title="维修日期" placeholder="请选择维修日期" :value="RepairStore.mCurrentRepair.RepairDate" :inputClickAction="RepairTimeAction"></input-cell>
         <input-cell title="配件费用" placeholder="请输入配件费用" v-model="mExpectRepairFee"></input-cell>
-        <input-cell type="DataInput" title="配件状态" placeholder="请选择配件状态" :value="deviceStatusValue" :openDataPicker="openDeviceStatusPicker"></input-cell>
+        <input-cell type="DataInput" title="配件状态" placeholder="请选择配件状态" :value="deviceStatusValue" :inputClickAction="openDeviceStatusPicker"></input-cell>
 
         <!-- 时间选择器 -->
         <mt-datetime-picker ref="picker" type="date" v-model="mRepairTime" @confirm="dataPickerConfirm"></mt-datetime-picker>

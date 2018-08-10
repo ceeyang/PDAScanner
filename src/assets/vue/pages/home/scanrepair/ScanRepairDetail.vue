@@ -39,7 +39,6 @@
 import scroll from '../../../common/scroll.vue';
 import InputCell from '../../../common/inputcell.vue';
 import RepairItem from '../../../common/repairitem.vue';
-import CommonCell from '../../../common/commonCell.vue';
 import SelectedInput from '../../../common/selectedinput.vue';
 import {
     mapState,
@@ -80,7 +79,6 @@ export default {
         RepairItem,
         InputCell,
         SelectedInput,
-        CommonCell
     }
 }
 </script>

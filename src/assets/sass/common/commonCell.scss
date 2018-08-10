@@ -17,6 +17,10 @@
         background-color: $main-color-input;
         padding-left: 15px;
         width: 100%;
-        color: $main-color-subtitle;
+        color: $main-color-title;
+
+        .placeholder{
+            color: $main-font-subtitle
+        }
     }
 }

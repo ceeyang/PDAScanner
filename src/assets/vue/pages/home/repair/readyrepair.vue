@@ -43,7 +43,7 @@ codeer: cee
 
             <div class="content-bottom">
                 <div class="content-header">派修信息</div>
-                <input-cell type="DataInput" title="维修期限" placeholder="请选择日期" :value="startDataValue" :openDataPicker="openStartDataPicker"></input-cell>
+                <input-cell type="DataInput" title="维修期限" placeholder="请选择日期" :value="startDataValue" :inputClickAction="openStartDataPicker"></input-cell>
                 <selected-input title="报修人员" :data="repairUsersNameArr" placeholder="添加派修人员" @itemClick="userSearchItemClickAction" @searchAction="userInputSearchAction"></selected-input>
                 <selected-input title="故障类型" :data="falutTypeNameArr" placeholder="请输入故障类型" @itemClick="faultTypeSearchItemClickAction" @searchAction="faultTypeInputSearchAction"></selected-input>
                 <selected-input title="故障问题" :data="falutNameArr" placeholder="添加故障问题" @itemClick="faultSearchItemClickAction" @searchAction="faultInputSearchAction"></selected-input>

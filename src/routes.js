@@ -115,6 +115,11 @@ export default [{
       path: '/search/',
       component: require('./assets/vue/pages/home/search/index.vue')
   },
+  {
+      path: '/SearchItemView/:title',
+      component: require('./assets/vue/pages/home/search/SearchItemView.vue')
+  },
+
 
 
 

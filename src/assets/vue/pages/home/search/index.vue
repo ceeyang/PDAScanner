@@ -10,7 +10,7 @@
             <f7-nav-title title='搜索'></f7-nav-title>
         </f7-navbar>
 
-        <input-cell type="DataInput" title="设备类型" placeholder="请选择设备类型" :value="deviceStatusValue" :openDataPicker="openDeviceStatusPicker"></input-cell>
+        <input-cell type="DataInput" title="设备类型" placeholder="请选择设备类型" :value="deviceStatusValue" :inputClickAction="openDeviceStatusPicker"></input-cell>
 
         <!-- 设备名称选择器 -->
         <input-cell title="设备名称" placeholder="请输入设备名称" :onblur="onblur" v-model="deviceNameValue"></input-cell>
@@ -32,8 +32,8 @@
         <input-cell title="设备型号" placeholder="请输入设备型号" :onblur="modelNumberOnblur" v-model="repairNumber"></input-cell>
 
         <!-- 时间输入框 -->
-        <input-cell type="DataInput" title="开始日期" placeholder="请选择日期" :value="startDataValue" :openDataPicker="openStartDataPicker"></input-cell>
-        <input-cell type="DataInput" title="结束日期" placeholder="请选择日期" :value="endDataValue" :openDataPicker="openEndDataPicker"></input-cell>
+        <input-cell type="DataInput" title="开始日期" placeholder="请选择日期" :value="startDataValue" :inputClickAction="openStartDataPicker"></input-cell>
+        <input-cell type="DataInput" title="结束日期" placeholder="请选择日期" :value="endDataValue" :inputClickAction="openEndDataPicker"></input-cell>
 
         <!-- 搜索数据列表 -->
         <scroll class="search-content-data-scroll" :items="searchData" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">

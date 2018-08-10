@@ -8,10 +8,10 @@
 
         <!-- 时间选择器 -->
         <template v-if="type=='DataInput'">
-            <div v-if="value" class="comon-input" @click="openDataPicker">
+            <div v-if="value" class="comon-input" @click="inputClickAction">
                 {{value}}
             </div>
-            <div v-else class="comon-input picker-placeholder" @click="openDataPicker">
+            <div v-else class="comon-input picker-placeholder" @click="inputClickAction">
                 {{placeholder}}
             </div>
         </template>
@@ -34,7 +34,7 @@ export default {
     // type 可选类型:
     // 默认类型, 可不填该属性 模型文字  +  输入框
     // DataInput: 时间选择器, 输入框为时间选择器
-    props: ['type', 'title', 'placeholder', 'value', 'disabled', 'onblur', 'openDataPicker'],
+    props: ['type', 'title', 'placeholder', 'value', 'disabled', 'onblur', 'inputClickAction'],
 
     data() {
         return {

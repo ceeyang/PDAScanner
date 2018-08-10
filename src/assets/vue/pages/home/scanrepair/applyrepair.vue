@@ -17,25 +17,20 @@
 
                     <i class="iconfont device-icon">&#xe736;</i>
                     <div class="top-right">
-                        <div class="content-device-name">
-                            资产名称:  {{scanRepairStore.mEquModel.EquName || "设备名称"}}
-                        </div>
-                        <div class="content-device-subname">
-                            资产编号:  {{scanRepairStore.mEquModel.EquCode || "无"}}
-                        </div>
-                        <div class="content-device-subname">
-                            规格型号:  {{scanRepairStore.mEquModel.EquType || "无"}}
-                        </div>
+                        <information-cell title="资产名称" :value="scanRepairStore.mEquModel.EquName"></information-cell>
+                        <information-cell title="资产编号" :value="scanRepairStore.mEquModel.EquCode"></information-cell>
+                        <information-cell title="规格型号" :value="scanRepairStore.mEquModel.EquType"></information-cell>
+                        <information-cell title="序 列 号" :value="scanRepairStore.mEquModel.EquType"></information-cell>
                     </div>
                 </div>
             </div>
 
             <div class="content-middle">
                 <div class="content-header">报修信息</div>
-                <common-cell title="报修科室" :subtitle="itemData.DepartmentName || '无'"></common-cell>
-                <common-cell title="报修人员" :subtitle="username || '无'"></common-cell>
-                <selected-input title="故障问题" :data="problemNameArr" placeholder="请输入故障问题" @itemClick="problemItemClickAction" @searchAction="problemInputSearchAction"></selected-input>
-                <input-cell title="故障描述" placeholder="请输入故障描述" :value="problemDes"></input-cell>
+                <input-cell type="DataInput" title="报修科室" placeholder="请输入选择报修科室" :value="itemData.DepartmentName" :inputClickAction="departmentInputClick"></input-cell>
+                <input-cell type="DataInput" title="报修人员" placeholder="请输入选择报修人员" :value="itemData.UserName" :inputClickAction="repairUserInputClick"></input-cell>
+                <input-cell title="报修电话" placeholder="请输入输入报修电话" :value="itemData.UserName"></input-cell>
+                <input-cell title="报修地址" placeholder="请输入输入报修地址" :value="itemData.UserName"></input-cell>
             </div>
         </div>
 
@@ -48,8 +43,9 @@
 import scroll from '../../../common/scroll.vue';
 import InputCell from '../../../common/inputcell.vue';
 import RepairItem from '../../../common/repairitem.vue';
-import CommonCell from '../../../common/commonCell.vue';
 import SelectedInput from '../../../common/selectedinput.vue';
+import InformationCell from '../../../common/InformationCell.vue';
+
 import {
     mapState,
     mapActions,
@@ -98,6 +94,18 @@ export default {
     },
 
     methods: {
+
+        // 科室选择输入框点击
+        departmentInputClick() {
+            this.$f7router.navigate("/SearchItemView/")
+        },
+
+        // 报修人员输入框点击事件
+        repairUserInputClick() {
+            this.$f7router.navigate("/SearchItemView/")
+        },
+
+
 
         problemItemClickAction(title) {
             console.log(title);
@@ -249,7 +257,7 @@ export default {
         RepairItem,
         InputCell,
         SelectedInput,
-        CommonCell
+        InformationCell,
     }
 }
 </script>

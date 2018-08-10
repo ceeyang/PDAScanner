@@ -26,16 +26,9 @@
                     margin-right: 15px;
                 }
                 .top-right{
-                    .content-device-name{
-                        margin-top: 15px;
-                        font-size: $main-font-title;
-                        color: $main-color-title;
-                    }
-                    .content-device-subname{
-                        margin-top: 5px;
-                        font-size: $main-font-subtitle;
-                        color: $main-color-subtitle;
-                    }
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                 }
             }
         }

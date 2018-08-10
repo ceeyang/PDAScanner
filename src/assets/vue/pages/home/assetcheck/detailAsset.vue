@@ -48,7 +48,7 @@
 
             <div class="content-bottom">
                 <div class="content-header">状态</div>
-                <input-cell type="DataInput" title="设备类型" placeholder="请选择设备类型" :value="statusName" :openDataPicker="openDeviceStatusPicker"></input-cell>
+                <input-cell type="DataInput" title="设备类型" placeholder="请选择设备类型" :value="statusName" :inputClickAction="openDeviceStatusPicker"></input-cell>
             </div>
         </div>
 

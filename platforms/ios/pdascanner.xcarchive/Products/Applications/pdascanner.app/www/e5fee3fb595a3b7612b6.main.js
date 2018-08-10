@@ -19916,15 +19916,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Template7 1.3.5
  * Mobile-first HTML template engine
- * 
+ *
  * http://www.idangero.us/template7/
- * 
+ *
  * Copyright 2018, Vladimir Kharlampidi
  * The iDangero.us
  * http://www.idangero.us/
- * 
+ *
  * Licensed under MIT
- * 
+ *
  * Released on: January 22, 2018
  */
 var t7ctx = void 0;
