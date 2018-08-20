@@ -55,6 +55,7 @@
     "loglevel": "^1.4.1",
     "mint-ui": "^2.2.13",
     "phonegap-plugin-barcodescanner": "^8.0.0",
+    "tern-node-express": "^0.4.0",
     "vue": "^2.5.13",
     "vuex": "^3.0.1"
   },

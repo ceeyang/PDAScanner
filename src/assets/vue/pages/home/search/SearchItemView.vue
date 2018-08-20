@@ -1,5 +1,5 @@
 <template lang="html">
-    <f7-page class="search-page">
+    <f7-page class="search-items-page">
         <!-- Nav  -->
         <f7-navbar>
             <f7-nav-left>
@@ -10,27 +10,44 @@
             <f7-nav-title :title='title'></f7-nav-title>
         </f7-navbar>
 
+        <!-- 输入框 -->
+        <input class="search-input" v-model='StoreSearch.mSearchvalue' @keyup='search($event)' placeholder="🔍搜索" @blur.prevent="onblur" />
 
     </f7-page>
 </template>
 
 <script>
+import { mapState, mapActions} from 'vuex';
 export default {
     data () {
         return {
-            title: "标题"
+            title: "搜索",
         }
     },
 
+
+    computed: {
+        ...mapState([
+            'StoreSearch',
+        ])
+    },
+
     mounted() {
-        console.log(this.$f7router);
-        console.log(this.$f7router.params);
-        console.log(this.$f7router.params.title);
+        this.title = this.StoreSearch.mTitle
     },
 
     methods: {
         NavBack() {
             this.$f7router.back()
+        },
+
+        onblur() {
+            console.log('onblur');
+            this.searchData = []
+        },
+
+        search: function(e) {
+            console.log(this.StoreSearch.mSearchvalue);
         },
     },
 }

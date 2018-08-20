@@ -30,8 +30,21 @@
                 <input-cell type="DataInput" title="报修科室" placeholder="请输入选择报修科室" :value="itemData.DepartmentName" :inputClickAction="departmentInputClick"></input-cell>
                 <input-cell type="DataInput" title="报修人员" placeholder="请输入选择报修人员" :value="itemData.UserName" :inputClickAction="repairUserInputClick"></input-cell>
                 <input-cell title="报修电话" placeholder="请输入输入报修电话" :value="itemData.UserName"></input-cell>
-                <input-cell title="报修地址" placeholder="请输入输入报修地址" :value="itemData.UserName"></input-cell>
+                <input-cell type="DataInput" title="报修地址" placeholder="请输入选择报修人员" :value="itemData.UserName" :inputClickAction="repairUserInputClick"></input-cell>
+                <input-cell type="DataInput" title="故障问题" placeholder="请输入选择报修人员" :value="itemData.UserName" :inputClickAction="repairUserInputClick"></input-cell>
             </div>
+
+            <div class="content-bottom">
+                <div class="content-header">故障描述</div>
+                <cube-textarea v-model="value"></cube-textarea>
+            </div>
+
+            <div class="content-bottom">
+                <div class="content-header">备注</div>
+                <cube-textarea v-model="value"></cube-textarea>
+            </div>
+
+
         </div>
 
         <cube-button v-if="scanRepairStore.mViewType=='apply'" @click="applyButtonAction" class="ready-repair-bottom">申请报修</cube-button>
@@ -49,8 +62,6 @@ import InformationCell from '../../../common/InformationCell.vue';
 import {
     mapState,
     mapActions,
-    mapMutations,
-    mapGetters
 } from 'vuex';
 
 export default {
@@ -73,12 +84,15 @@ export default {
             repairUsersNameArr: [],
             repairUsersArr: [],
             repairUser: [],
+
+            value: ""
         }
     },
 
     computed: {
         ...mapState([
             'scanRepairStore',
+            'StoreSearch'
         ])
     },
 
@@ -86,22 +100,24 @@ export default {
 
         let itemData = JSON.parse(localStorage.ItemData);
         this.itemData = itemData
+        console.log(itemData);
 
         this.username = localStorage.UserName
 
         this.viewType = localStorage.repairViewType
-        console.log(this.viewType);
     },
 
     methods: {
 
         // 科室选择输入框点击
         departmentInputClick() {
-            this.$f7router.navigate("/SearchItemView/")
+            this.StoreSearch.mTitle = "选择科室"
+            this.$f7router.navigate(`/SearchItemView/`)
         },
 
         // 报修人员输入框点击事件
         repairUserInputClick() {
+            this.StoreSearch.mTitle = "选择报修人员"
             this.$f7router.navigate("/SearchItemView/")
         },
 

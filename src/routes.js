@@ -116,7 +116,7 @@ export default [{
       component: require('./assets/vue/pages/home/search/index.vue')
   },
   {
-      path: '/SearchItemView/:title',
+      path: '/SearchItemView/',
       component: require('./assets/vue/pages/home/search/SearchItemView.vue')
   },
 
