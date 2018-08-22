@@ -24,15 +24,24 @@ const state = {
 
     // 科室
     departmentData: [], // 当前选择科室
-    departmentDataList: [], // 当前搜索科室列表
-    departmentNameList: [], // 当前搜索科室名称列表
+
+    // 报修人员
+    mRepairUser: [],
+
+    // 报修电话
+    mRepairNumber: '',
+
+    // 报修地址:
+    mRepairLocation: '',
 
     // 问题
-    problemData: [], // 当前选择问题
-    problemDataList: [], // 当前搜索问题列表
-    problemNameList: [], // 当前搜索问题名称列表
+    mProblemData: [], // 当前选择问题
 
+    // 故障描述
+    mProblemDes: '',
 
+    // 备注
+    mRemark: '',
 
     // 详情页面的资产信息, 包括扫码申请, 新增申请, 已经设备报修申请
     mEquModel: [],

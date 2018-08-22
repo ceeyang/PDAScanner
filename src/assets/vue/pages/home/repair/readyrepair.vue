@@ -21,33 +21,27 @@ codeer: cee
                 <div class="contet-top-device-info">
                     <i class="iconfont device-icon">&#xe736;</i>
                     <div class="top-right">
-                        <div class="content-device-name">
-                            {{itemData.EquName || "设备名称"}}
-                        </div>
-                        <div class="content-device-subname">
-                            报修科室:  {{itemData.DepartmentName || "暂无科室"}}
-                        </div>
-                        <div class="content-device-subname">
-                            资产编号:  {{itemData.RepairOrder || "暂无编号"}}
-                        </div>
+                        <information-cell title="资产名称" :value="RepairStore.mReadyRepairDetail.EquName"></information-cell>
+                        <information-cell title="资产编号" :value="RepairStore.mReadyRepairDetail.EquNo"></information-cell>
+                        <information-cell title="规格型号" :value="RepairStore.mReadyRepairDetail.Size"></information-cell>
+                        <information-cell title="序 列 号" :value="RepairStore.mReadyRepairDetail.EquNumber"></information-cell>
                     </div>
                 </div>
             </div>
 
             <div class="content-middle">
                 <div class="content-header">报修信息</div>
-                <input-cell title="维修时间" disabled=true v-model="itemData.RepairDate"></input-cell>
-                <input-cell title="报修人员" disabled=true v-model="itemData.RepairPeople"></input-cell>
-                <input-cell title="维修编号" disabled=true v-model="itemData.RepairOrder"></input-cell>
+                <input-cell title="维修单号" disabled=true v-model="RepairStore.mReadyRepairDetail.RepairNo"></input-cell>
+                <input-cell title="报修科室" disabled=true v-model="RepairStore.mReadyRepairDetail.DepartmentName"></input-cell>
+                <input-cell title="报修人员" disabled=true v-model="RepairStore.mReadyRepairDetail.AssignRepairPeople"></input-cell>
+                <input-cell title="报修电话" disabled=true v-model="RepairStore.mReadyRepairDetail.RepairPhone"></input-cell>
+                <input-cell title="报修地址" disabled=true v-model="RepairStore.mReadyRepairDetail.RepairAddress"></input-cell>
+                <input-cell title="故障问题" disabled=true v-model="RepairStore.mReadyRepairDetail.FaultType"></input-cell>
             </div>
 
             <div class="content-bottom">
-                <div class="content-header">派修信息</div>
-                <input-cell type="DataInput" title="维修期限" placeholder="请选择日期" :value="startDataValue" :inputClickAction="openStartDataPicker"></input-cell>
-                <selected-input title="报修人员" :data="repairUsersNameArr" placeholder="添加派修人员" @itemClick="userSearchItemClickAction" @searchAction="userInputSearchAction"></selected-input>
-                <selected-input title="故障类型" :data="falutTypeNameArr" placeholder="请输入故障类型" @itemClick="faultTypeSearchItemClickAction" @searchAction="faultTypeInputSearchAction"></selected-input>
-                <selected-input title="故障问题" :data="falutNameArr" placeholder="添加故障问题" @itemClick="faultSearchItemClickAction" @searchAction="faultInputSearchAction"></selected-input>
-                <selected-input title="故障描述" :data="falutDesNameArr" placeholder="请输入故障描述" @itemClick="faultDesSearchItemClickAction" @searchAction="faultDesInputSearchAction"></selected-input>
+                <div class="content-header">故障描述</div>
+                <cube-textarea disabled v-model="RepairStore.mReadyRepairDetail.FaultDescribe"></cube-textarea>
             </div>
         </div>
 
@@ -63,6 +57,13 @@ import scroll from '../../../common/scroll.vue';
 import InputCell from '../../../common/inputcell.vue';
 import RepairItem from '../../../common/repairitem.vue';
 import SelectedInput from '../../../common/selectedinput.vue';
+import InformationCell from '../../../common/InformationCell'
+
+import {
+    mapState,
+    mapActions,
+} from 'vuex';
+
 
 export default {
 
@@ -103,6 +104,12 @@ export default {
 
 
         }
+    },
+
+    computed: {
+        ...mapState([
+            'RepairStore',
+        ])
     },
 
     watch: {
@@ -454,7 +461,8 @@ export default {
         scroll,
         RepairItem,
         InputCell,
-        SelectedInput
+        SelectedInput,
+        InformationCell
     }
 }
 </script>

@@ -48,3 +48,26 @@ export const getRepairProcessList = ({commit,dispatch,state}) => {
         });
     })
 }
+
+
+
+/**
+ * 获取待派工的报修基本信息
+ */
+
+ export const getReadyRepairDetail = ({ commit,dispatch,state}) => {
+     return new Promise((resolve,reject) => {
+         let RepairNo = state.mReadyRepairItme.RepairOrder.replace(/\s*/g, "")
+         let params = {
+             "RepairNo": RepairNo,
+             "Store": localStorage.storeId,
+         }
+
+         Vue.prototype.get(Vue.prototype.api.getDefaultRepairInfo, params, function(response) {
+             var data = JSON.parse(response);
+             state.mReadyRepairDetail = data.RepairInfo
+             console.log(data);
+             resolve(data)
+         });
+     })
+ }

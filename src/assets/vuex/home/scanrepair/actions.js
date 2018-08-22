@@ -110,3 +110,22 @@ export const getEquDetail = ({ commit,dispatch,state}, equId) => {
         });
     })
 }
+
+
+/**
+ * 报修基本信息
+ */
+
+ export const getRepairDetail = ({ commit,dispatch,state}, equId) => {
+     return new Promise((resolve,reject) => {
+         let params = {
+             "RepairNo": state.mEquModel.EquCode,
+             "Store": localStorage.storeId,
+         }
+         
+         Vue.prototype.get(Vue.prototype.api.getDefaultRepairInfo, params, function(response) {
+             var data = JSON.parse(response);
+             resolve(data)
+         });
+     })
+ }

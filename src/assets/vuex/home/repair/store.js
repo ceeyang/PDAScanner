@@ -1,7 +1,33 @@
 import * as actions from './actions';
 const state = {
 
-    // 处理中
+    segmentBarIndex: 0,
+
+    /////////////////////////////////////
+    ////           待派工          ///////
+    /////////////////////////////////////
+    readyrepairData: [],
+    readyrepairPage: 1,
+    // 当前处理的代派工数据
+    mReadyRepairItme: [],
+    // 当前处理的 item,的订单详细信息
+    mReadyRepairDetail: [],
+
+
+
+    /////////////////////////////////////
+    ////           待接单          ///////
+    /////////////////////////////////////
+    takeordersData: [],
+    takeordersPage: 1,
+    // 当前处理的待接单数据
+    mTakeOrderItme: [],
+
+
+
+    /////////////////////////////////////
+    ////           处理中          ///////
+    /////////////////////////////////////
     handleingData: [],
     handleingPageNumber: 1,
 
@@ -11,7 +37,7 @@ const state = {
     // 当前处理中设备的维修记录
     mCurrentRepairProcessList: [],
 
-    
+
 }
 
 export default {

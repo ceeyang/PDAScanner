@@ -87,6 +87,11 @@ export default {
     },
 
     methods: {
+        ...mapActions([
+            'getRepairDetail',
+        ]),
+
+
         NavBack() {
             this.$f7router.back()
         },
@@ -209,10 +214,18 @@ export default {
         },
 
         itemClick(item) {
+            const toast = this.$createToast({
+                time: 0,
+                txt: '加载中...',
+            })
+            toast.show()
+
             this.scanRepairStore.mEquModel = item
             this.scanRepairStore.mViewType = this.segmentBarIndex == 0 ? "apply" : "check"
-            console.log(this.scanRepairStore.mViewType);
-            this.$f7router.navigate('/applyrepair/');
+
+            let vm = this
+            vm.$f7router.navigate('/applyrepair/');
+            toast.hide()
         },
 
         switchTab(index) {

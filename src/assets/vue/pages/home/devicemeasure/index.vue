@@ -58,10 +58,6 @@ import scroll from '../../../common/scroll';
 import SectionMenu from './sectionmenu';
 import MeasureItem from './measureitem';
 
-import allData from './json/allmeasure.json';
-import TestMenuData from './json/menu.json';
-import MeteringData from './json/metering.json';
-
 export default {
 
     data() {
@@ -91,10 +87,6 @@ export default {
 
         // 获取科室列表
         this.getMeteringEqu()
-
-        this.items = allData;
-        console.log(this.items);
-        this.menuData = TestMenuData;
 
         var arr = [];
         for (var i = 0; i < this.menuData.length; i++) {

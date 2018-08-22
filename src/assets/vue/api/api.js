@@ -110,4 +110,7 @@ export default {
     // 计量资产的科室列表
     getMeteringEqu: `/api/Metering/MeteringEqu`,
 
+    // 1.	报修基本信息(共用)
+    getDefaultRepairInfo: `/api/Repair/GetRepairInfo`,
+
 }

@@ -269,6 +269,7 @@ export default {
                 'PageIndex': this.searchPageNumber || "",
                 'PageSize': this.config.PageSize || "",
             }
+            debugger
             let vm = this;
             let URL = this.deviceStatus == 0 ? this.api.notRepairList : this.api.hadRepairedList
             this.post(URL, params, function(response) {

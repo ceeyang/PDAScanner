@@ -11,11 +11,11 @@
         </f7-navbar>
 
         <!-- 分类选择器 -->
-        <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="segmentBarIndex"></segment-bar>
+        <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="RepairStore.segmentBarIndex"></segment-bar>
 
 
         <!-- 待派工 -->
-        <template v-if="segmentBarIndex==0">
+        <template v-if="RepairStore.segmentBarIndex==0">
             <scroll :items="readyrepairData" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
                 <li v-for="(item,index) in readyrepairData" :key="index" :item="item">
                     <repair-item :item="item" :itemClick="readyrepairItemClick"></repair-item>
@@ -24,7 +24,7 @@
         </template>
 
         <!-- 待接单 -->
-        <template v-if="segmentBarIndex==1">
+        <template v-if="RepairStore.segmentBarIndex==1">
             <scroll :items="takeordersData" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
                 <li v-for="(item,index) in takeordersData" :key="index" :item="item">
                     <repair-item :item="item" :itemClick="takeordersItemClick"></repair-item>
@@ -33,7 +33,7 @@
         </template>
 
         <!-- 待处理 -->
-        <template v-if="segmentBarIndex==2">
+        <template v-if="RepairStore.segmentBarIndex==2">
             <scroll :items="RepairStore.handleingData" fresh=true  :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
                 <li v-for="(item,index) in RepairStore.handleingData" :key="index" :item="item">
                     <repair-item :item="item" :itemClick="handleingItemClick"></repair-item>
@@ -87,14 +87,22 @@ export default {
         ...mapActions([
             'getRepairHandleList',
             'getRepairProcessList',
+            'getReadyRepairDetail',
+
         ]),
 
         // 待派单
-        readyrepairItemClick() {
-            this.$f7router.navigate('/readyrepair/');
+        readyrepairItemClick(item) {
+            console.log(item);
+            this.RepairStore.mReadyRepairItme = item
+            let vm = this
+            this.getReadyRepairDetail().then((res)=>{
+                vm.$f7router.navigate('/readyrepair/');
+            })
         },
         // 待接单
-        takeordersItemClick() {
+        takeordersItemClick(item) {
+            this.RepairStore.mTakeOrderItme = item
             this.$f7router.navigate('/takeorders/');
         },
         // 维修中
@@ -104,7 +112,7 @@ export default {
         },
 
         switchTab(index) {
-            this.segmentBarIndex = index;
+            this.RepairStore.segmentBarIndex = index;
             if (index == 1) {
                 if (this.takeordersData.length < 1) {
                     this.onPullingDown()
@@ -117,10 +125,10 @@ export default {
         },
 
         onPullingDown(scroll) {
-            if (this.segmentBarIndex == 0) {
+            if (this.RepairStore.segmentBarIndex == 0) {
                 this.readyrepairPage = 1
                 this.getRepairData(1, 1, scroll)
-            } else if (this.segmentBarIndex == 1){
+            } else if (this.RepairStore.segmentBarIndex == 1){
                 this.takeordersPage = 1
                 this.getRepairData(1, 2, scroll)
             } else {
@@ -131,10 +139,10 @@ export default {
         },
 
         onPullingUp(scroll) {
-            if (this.segmentBarIndex == 0) {
+            if (this.RepairStore.segmentBarIndex == 0) {
                 this.readyrepairPage += 1
                 this.getRepairData(this.readyrepairPage, 2, scroll)
-            } else if (this.segmentBarIndex == 1){
+            } else if (this.RepairStore.segmentBarIndex == 1){
                 this.takeordersPage += 1
                 this.getRepairData(this.takeordersPage, 2, scroll)
             } else {
@@ -173,7 +181,7 @@ export default {
             this.post(URL, params, function(response) {
                 var data = JSON.parse(response);
                 if (data.Status) {
-                    if (vm.segmentBarIndex == 0) {
+                    if (vm.RepairStore.segmentBarIndex == 0) {
                         if (pageNumber == 1) {
                             vm.readyrepairData = data.DispatchList;
                         } else {
@@ -183,7 +191,7 @@ export default {
                         }
                     }
 
-                    else if (vm.segmentBarIndex == 1) {
+                    else if (vm.RepairStore.segmentBarIndex == 1) {
                         if (pageNumber == 1) {
                             vm.takeordersData = data.DispatchList;
                         } else {

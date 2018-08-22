@@ -27,21 +27,21 @@
 
             <div class="content-middle">
                 <div class="content-header">报修信息</div>
-                <input-cell type="DataInput" title="报修科室" placeholder="请输入选择报修科室" :value="itemData.DepartmentName" :inputClickAction="departmentInputClick"></input-cell>
-                <input-cell type="DataInput" title="报修人员" placeholder="请输入选择报修人员" :value="itemData.UserName" :inputClickAction="repairUserInputClick"></input-cell>
-                <input-cell title="报修电话" placeholder="请输入输入报修电话" :value="itemData.UserName"></input-cell>
-                <input-cell type="DataInput" title="报修地址" placeholder="请输入选择报修人员" :value="itemData.UserName" :inputClickAction="repairUserInputClick"></input-cell>
-                <input-cell type="DataInput" title="故障问题" placeholder="请输入选择报修人员" :value="itemData.UserName" :inputClickAction="repairUserInputClick"></input-cell>
+                <input-cell type="DataInput" title="报修科室" placeholder="请选择报修科室" :value="scanRepairStore.departmentData.DepaName" :inputClickAction="departmentInputClick"></input-cell>
+                <input-cell type="DataInput" title="报修人员" placeholder="请选择报修人员" :value="scanRepairStore.mRepairUser.UserName" :inputClickAction="repairUserInputClick"></input-cell>
+                <input-cell title="报修电话" placeholder="请输入报修电话" :value="scanRepairStore.mRepairNumber"></input-cell>
+                <input-cell title="报修地址" placeholder="请输入报修地址" :value="scanRepairStore.mRepairLocation"></input-cell>
+                <input-cell type="DataInput" title="故障问题" placeholder="请选择故障问题" :value="scanRepairStore.mProblemData.QuestionTypeName" :inputClickAction="repairProblemInputClick"></input-cell>
             </div>
 
             <div class="content-bottom">
                 <div class="content-header">故障描述</div>
-                <cube-textarea v-model="value"></cube-textarea>
+                <cube-textarea v-model="scanRepairStore.mProblemDes"></cube-textarea>
             </div>
 
             <div class="content-bottom">
                 <div class="content-header">备注</div>
-                <cube-textarea v-model="value"></cube-textarea>
+                <cube-textarea v-model="scanRepairStore.mRemark"></cube-textarea>
             </div>
 
 
@@ -111,16 +111,20 @@ export default {
 
         // 科室选择输入框点击
         departmentInputClick() {
-            this.StoreSearch.mTitle = "选择科室"
+            this.StoreSearch.mType = "department"
             this.$f7router.navigate(`/SearchItemView/`)
         },
 
         // 报修人员输入框点击事件
         repairUserInputClick() {
-            this.StoreSearch.mTitle = "选择报修人员"
+            this.StoreSearch.mType = "user"
             this.$f7router.navigate("/SearchItemView/")
         },
 
+        repairProblemInputClick() {
+            this.StoreSearch.mType = "problem"
+            this.$f7router.navigate("/SearchItemView/")
+        },
 
 
         problemItemClickAction(title) {
@@ -191,32 +195,55 @@ export default {
 
         applyButtonAction() {
 
-            var storeNumber = localStorage.storeId
-
-            let params = {
-
-                "EquId": this.itemData.EquCode,
-                "EquName": this.itemData.EquName,
-                "StoreNumber": '2',
-                "Store": localStorage.storeId,
-                "RepairUserId": localStorage.account,
-                "RepairUserName": '', //
-                "DepartmentId": this.itemData.DepartmentId,
-                "DepartmentName": this.itemData.DepartmentName,
-                "RepairStatus": '1',
-                "ApplyDate": '', //
-                "SupplierId": '',
-                "SupplierName": '',
-                "RepairTerm": '',
-                "RepairPhone": '', //
-                "FaultId": '', //
-                "FaultDesription": '', //
-                "Remark": '', //
-                "RepairNo": '',
-                "RepairNoReadonly": 'true',
-
+            if (this.scanRepairStore.departmentData.DepaCode == "" || this.scanRepairStore.departmentData.DepaCode == null) {
+                if (!this.toastCenter) {
+                    this.toastCenter = this.$f7.toast.create({
+                        text: "请选择报修科室",
+                        closeTimeout: 2000,
+                        position: 'center',
+                    });
+                }
+                this.toastCenter.open();
+                return
             }
 
+            if (this.scanRepairStore.mRepairUser.UserCode == "" || this.scanRepairStore.mRepairUser.UserCode == null) {
+                if (!this.toastCenter) {
+                    this.toastCenter = this.$f7.toast.create({
+                        text: "请选择报修人员",
+                        closeTimeout: 2000,
+                        position: 'center',
+                    });
+                }
+                this.toastCenter.open();
+                return
+            }
+
+            if (this.scanRepairStore.mProblemData.QuestionTypeCode == "" || this.scanRepairStore.mProblemData.QuestionTypeCode == null) {
+                if (!this.toastCenter) {
+                    this.toastCenter = this.$f7.toast.create({
+                        text: "请选择故障问题",
+                        closeTimeout: 2000,
+                        position: 'center',
+                    });
+                }
+                this.toastCenter.open();
+                return
+            }
+
+            let params = {
+                "EquId": this.itemData.EquCode,
+                "EquName": this.itemData.EquName,
+                "Store": localStorage.storeId,
+                "RepairUserId": this.scanRepairStore.mRepairUser.UserCode,
+                "DepartmentId": this.scanRepairStore.departmentData.DepaCode,
+                "DepartmentName": this.scanRepairStore.departmentData.DepaName,
+                "RepairPhone": this.scanRepairStore.mRepairNumber,
+                "FaultId": this.scanRepairStore.mProblemData.QuestionTypeCode,
+                "FaultName": this.scanRepairStore.mProblemData.QuestionTypeName,
+                "FaultDesription": this.scanRepairStore.mProblemDes,
+                "Remark": this.scanRepairStore.mRemark,
+            }
 
             let vm = this;
             let URL = this.api.applyRepair

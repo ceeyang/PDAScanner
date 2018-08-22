@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import TestMenuData from './json/menu.json';
+//import TestMenuData from './json/menu.json';
 export default {
 
     props: ['rightItemTapAction'],
@@ -22,7 +22,7 @@ export default {
 
     mounted() {
 
-        this.menuData = TestMenuData;
+        // this.menuData = TestMenuData;
         this.leftDataArr = this.getFirstLeavelData();
 
     },
