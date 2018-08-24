@@ -33,6 +33,31 @@ export const getRepairHandleList = ({commit,dispatch,state}) => {
     })
 }
 
+
+/**
+ * 维修派工
+ */
+export const sendDeviceOrder = ({commit,dispatch,state}) => {
+    return new Promise((resolve,reject) => {
+        // 清空当前资产维修记录列表
+        state.mCurrentRepairProcessList = []
+        let params = {
+            "RepairOrder": state.mReadyRepairDetail.RepairNo.replace(/\s*/g, ""),
+            "AssignUserId": state.mSearchRepairUser.UserCode.replace(/\s*/g, ""),
+            "UserCode": localStorage.UserCode,
+            "LineNumber": 1,
+            "Store": localStorage.Store,
+            "RepairStatus":1,
+        };
+        Vue.prototype.get(Vue.prototype.api.sendOrder, params, function(response) {
+            var data = JSON.parse(response);
+            if (data.Status) {
+                state.mCurrentRepairProcessList = data.RepairProcessList
+            }
+        });
+    })
+}
+
 export const getRepairProcessList = ({commit,dispatch,state}) => {
     return new Promise((resolve,reject) => {
         // 清空当前资产维修记录列表

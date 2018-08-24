@@ -2,18 +2,20 @@
 
     .repair-content{
         top: 0px;
-        bottom: 45px;
+        bottom: 90px;
 
         .content-header{
             padding-left: 15px;
             color: $main-color-subtitle;
-            font-size: $main-font-subtitle;
             background-color: white;
+            font-size: 16px;
+            padding-top: 5px;
+            padding-bottom: 5px;
             border-bottom: 1px solid $main-line-color;
         }
 
         .content-top {
-            margin-top: 15px;
+
             background-color: white;
 
             .contet-top-device-info{
@@ -26,22 +28,13 @@
                     margin-right: 15px;
                 }
                 .top-right{
-                    .content-device-name{
-                        margin-top: 15px;
-                        font-size: $main-font-title;
-                        color: $main-color-title;
-                    }
-                    .content-device-subname{
-                        margin-top: 5px;
-                        font-size: $main-font-subtitle;
-                        color: $main-color-subtitle;
-                    }
+                    margin-top: 15px;
                 }
             }
         }
 
         .content-middle{
-            margin-top: 15px;
+            margin-top: 1px;
             background-color: white;
             .content-repair-info{
                 padding-left: 15px;
@@ -55,39 +48,61 @@
                 height: 50px;
             }
         }
-        .content-bottom{
-            margin-top: 15px;
-            .content-selecte-user{
+        .content-des{
+            // height: 150px;
+            .content-header-bottom{
+                padding-left: 15px;
+                color: $main-color-subtitle;
+                font-size: 16px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                background-color: #E1E1E1;
                 border-bottom: 1px solid $main-line-color;
-                flex: 1;
-                display: flex;
-                flex-direction: row;
-                width: 100%;
                 height: 30px;
-                .selecte-user-title{
-                    padding-left: 15px;
-                    background-color: white;
-                    width: 126px;
-                    border-right: 1px solid $main-line-color;
-                    font-size: $main-font-title;
-
-                }
-                .selecte-input{
-                    width: 100%;
-                    padding-left: 15px;
-                }
             }
-
+            .cube-textarea{
+                height: 120px;
+                border-bottom: 1px solid #E1E1E1
+            }
         }
+        .content-bottom{
+            // .cube-textarea{
+            //     height: 120px;
+            // }
+        }
+    }
+
+    .choose-user-bottom{
+        bottom: 50px;
+        position: fixed;
+        color: white;
+        height: 35px;
+        width: 100%;
+        font-size: 16px;
+        padding-top: 5px;
+        background-color: $main-background-color;
+        border-color: transparent;
+        border: 1px solid #E1E1E1;
+        border-radius: 5px;
+        z-index: 10;
+        text-align: center;
     }
 
     .ready-repair-bottom{
         bottom: 0px;
         position: fixed;
-        color: white;
         height: 45px;
-        background-color: $main-background-color;
-        border-color: transparent;
         z-index: 10;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: 1;
+        width: 100%;
+        .bottom-btn{
+            width: 100%;
+            text-align: center;
+            background-color: $main-background-color;
+            border-color: transparent;
+        }
     }
 }

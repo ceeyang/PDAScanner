@@ -41,7 +41,8 @@ export default {
     computed: {
         ...mapState([
             'StoreSearch',
-            'scanRepairStore'
+            'scanRepairStore',
+            'RepairStore',
         ])
     },
 
@@ -102,6 +103,9 @@ export default {
                     if (itemName == data) {
                         this.StoreSearch.mValue = this.StoreSearch.mSearchData[i]
                         this.scanRepairStore.mRepairUser = this.StoreSearch.mSearchData[i]
+
+                        // 设置 维修派单 回调
+                        this.RepairStore.mSearchRepairUser = this.StoreSearch.mSearchData[i]
                         break
                     }
                 }

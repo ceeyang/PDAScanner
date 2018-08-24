@@ -12,7 +12,8 @@ const state = {
     mReadyRepairItme: [],
     // 当前处理的 item,的订单详细信息
     mReadyRepairDetail: [],
-
+    // 当前派修的人员
+    mSearchRepairUser: [],
 
 
     /////////////////////////////////////

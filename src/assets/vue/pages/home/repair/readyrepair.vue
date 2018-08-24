@@ -15,7 +15,7 @@ codeer: cee
             <f7-nav-title title='维修派单'></f7-nav-title>
         </f7-navbar>
 
-        <div class="repair-content">
+        <cube-scroll class="repair-content">
             <div class="content-top">
                 <div class="content-header">设备信息</div>
                 <div class="contet-top-device-info">
@@ -39,15 +39,22 @@ codeer: cee
                 <input-cell title="故障问题" disabled=true v-model="RepairStore.mReadyRepairDetail.FaultType"></input-cell>
             </div>
 
-            <div class="content-bottom">
-                <div class="content-header">故障描述</div>
-                <cube-textarea disabled v-model="RepairStore.mReadyRepairDetail.FaultDescribe"></cube-textarea>
+            <div class="content-des">
+                <div class="content-header-bottom">故障描述</div>
+                <cube-textarea class="input-content" disabled v-model="RepairStore.mReadyRepairDetail.FaultDescribe"></cube-textarea>
             </div>
+
+            <div class="content-bottom">
+                <div class="content-header">派工信息</div>
+                <input-cell title="派修人员" placeholder="请选择派修人员"  disabled=true v-model="RepairStore.mSearchRepairUser.UserName"></input-cell>
+            </div>
+        </cube-scroll>
+
+        <div @click="chooseUserButtonAction" class="choose-user-bottom">请选择工程师</div>
+        <div class="ready-repair-bottom">
+            <cube-button class="bottom-btn" @click="readyButtonAction">派工</cube-button>
+            <cube-button class="bottom-btn" @click="readyButtonAction">忽略</cube-button>
         </div>
-
-        <mt-datetime-picker ref="picker" type="date" v-model="pickerValue" @confirm="dataPickerConfirm"></mt-datetime-picker>
-
-        <cube-button @click="readyButtonAction" class="ready-repair-bottom">维修派工</cube-button>
 
     </f7-page>
 </template>
@@ -109,6 +116,7 @@ export default {
     computed: {
         ...mapState([
             'RepairStore',
+            'StoreSearch',
         ])
     },
 
@@ -134,21 +142,13 @@ export default {
     },
 
     methods: {
-        onblur() {
-
+        chooseUserButtonAction() {
+            this.StoreSearch.mType = "user"
+            this.$f7router.navigate(`/SearchItemView/`)
         },
 
         NavBack() {
                 this.$f7router.back()
-            },
-
-        // 时间选择器回调
-        dataPickerConfirm(datetime) {
-            var year = datetime.getFullYear();
-            var month = datetime.getMonth() + 1; //js从0开始取
-            var date = datetime.getDate();
-            var dateTime = year + '-' + month + '-' + date;
-            this.startDataValue = dateTime;
         },
 
         // 打开时间选择器
@@ -337,10 +337,6 @@ export default {
                     vm.toastCenter.open();
                 }
             });
-        },
-
-        onblur() {
-
         },
 
         readyButtonAction() {
