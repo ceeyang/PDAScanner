@@ -12,6 +12,7 @@ const state = {
     mReadyRepairItme: [],
     // 当前处理的 item,的订单详细信息
     mReadyRepairDetail: [],
+
     // 当前派修的人员
     mSearchRepairUser: [],
 
@@ -23,6 +24,8 @@ const state = {
     takeordersPage: 1,
     // 当前处理的待接单数据
     mTakeOrderItme: [],
+    // 当前处理的待接单数据详情
+    mTakeOrderItmeDetail: [],
 
 
 
@@ -34,9 +37,15 @@ const state = {
 
     // 当前处理的维修设备
     mCurrentRepair: [],
+    // code by yangxichuan
+    // 如果有详情, 新增一个详情接口, 返回详情内容
+    mCurrentRepairDetail: [],
 
     // 当前处理中设备的维修记录
     mCurrentRepairProcessList: [],
+
+    // 当前选择的维修类型
+    mCurrentRepairType: [],
 
 
 }

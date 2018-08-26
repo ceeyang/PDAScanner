@@ -80,12 +80,18 @@ export default {
     },
 
     mounted() {
-        this.getRepairData(1, 1);
+        // 设置了下拉刷新, 进来的时候会默认刷新一次
+        // this.getRepairData(1, 1);
+
+        // 第一次进入该页面的时候加载数据
+        if (this.readyrepairData.length < 1) {
+            this.onPullingDown()
+        }
     },
 
     methods: {
         ...mapActions([
-            'getRepairHandleList',
+            'getRepaiingrHandleList',
             'getRepairProcessList',
             'getReadyRepairDetail',
 
@@ -96,14 +102,26 @@ export default {
             console.log(item);
             this.RepairStore.mReadyRepairItme = item
             let vm = this
-            this.getReadyRepairDetail().then((res)=>{
+            this.getReadyRepairDetail(item.RepairOrder.replace(/\s*/g, "")).then((data)=>{
+                this.RepairStore.mReadyRepairDetail = data.RepairInfo
                 vm.$f7router.navigate('/readyrepair/');
             })
         },
         // 待接单
         takeordersItemClick(item) {
             this.RepairStore.mTakeOrderItme = item
-            this.$f7router.navigate('/takeorders/');
+            let vm = this
+            this.getReadyRepairDetail(item.RepairOrder.replace(/\s*/g, "")).then((data)=>{
+                // code by yangxichuan
+                //vm.RepairStore.mTakeOrderItmeDetail = data.RepairInfo
+                //vm.$f7router.navigate('/takeorders/');
+                // else
+
+                vm.RepairStore.mCurrentRepair = data.RepairInfo
+                vm.RepairStore.mCurrentRepairDetail = data.RepairInfo
+                vm.$f7router.navigate('/repairing/');
+
+            })
         },
         // 维修中
         handleingItemClick(itemData) {
@@ -111,9 +129,17 @@ export default {
             this.$f7router.navigate('/repairing/');
         },
 
+        /**
+         * 顶部 segment bar 点击事件
+         * @param  {[type]} index 当前 index
+         */
         switchTab(index) {
             this.RepairStore.segmentBarIndex = index;
-            if (index == 1) {
+            if (index == 0) {
+                if (this.readyrepairData.length < 1) {
+                    this.onPullingDown()
+                }
+            } else if (index == 1) {
                 if (this.takeordersData.length < 1) {
                     this.onPullingDown()
                 }
@@ -124,7 +150,12 @@ export default {
             }
         },
 
+        /**
+         * 下拉刷新
+         * @param  {[type]} scroll scroll dom, 用于结束刷新
+         */
         onPullingDown(scroll) {
+            console.log("onPullingDown");
             if (this.RepairStore.segmentBarIndex == 0) {
                 this.readyrepairPage = 1
                 this.getRepairData(1, 1, scroll)
@@ -132,13 +163,21 @@ export default {
                 this.takeordersPage = 1
                 this.getRepairData(1, 2, scroll)
             } else {
-                this.waitehandlePage = 1
-                this.getRepairHandleList()
-                console.log(this.RepairStore.handleingData);
+                this.RepairStore.handleingPageNumber = 1
+                this.getRepaiingrHandleList().then((res)=>{
+                    if (scroll && scroll.forceUpdate) {
+                        scroll.forceUpdate();
+                    }
+                })
             }
         },
 
+        /**
+         * 上拉加载更多
+         * @param  {[type]} scroll scroll dom, 用于结束刷新
+         */
         onPullingUp(scroll) {
+            console.log("onPullingUp");
             if (this.RepairStore.segmentBarIndex == 0) {
                 this.readyrepairPage += 1
                 this.getRepairData(this.readyrepairPage, 2, scroll)
@@ -147,12 +186,15 @@ export default {
                 this.getRepairData(this.takeordersPage, 2, scroll)
             } else {
                 this.RepairStore.handleingPageNumber += 1
-                this.getRepairHandleList()
+                this.getRepaiingrHandleList().then((res)=>{
+                    if (scroll && scroll.forceUpdate) {
+                        scroll.forceUpdate();
+                    }
+                })
             }
         },
 
         getRepairData(pageNumber, type, scroll) {
-
             const toast = this.$createToast({
                 time: 0,
                 txt: '加载中...',

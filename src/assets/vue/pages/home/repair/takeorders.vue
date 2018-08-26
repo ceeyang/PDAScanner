@@ -1,5 +1,10 @@
+<!--
+申请设备维修页面
+codeer: cee
+2018-06-25 18:16:13
+-->
 <template lang="html">
-    <f7-page class="ready-repair-page">
+    <f7-page class="take-order-page">
         <!-- Nav  -->
         <f7-navbar>
             <f7-nav-left>
@@ -10,41 +15,42 @@
             <f7-nav-title title='维修接单'></f7-nav-title>
         </f7-navbar>
 
-        <div class="repair-content">
-            <div class="content-top">
-                <div class="content-header">设备信息</div>
-                <div class="contet-top-device-info">
-                    <i class="iconfont device-icon">&#xe736;</i>
-                    <div class="top-right">
-                        <div class="content-device-name">
-                            {{itemData.EquName || "设备名称"}}
-                        </div>
-                        <div class="content-device-subname">
-                            报修科室:  {{itemData.DepartmentName || "暂无科室"}}
-                        </div>
-                        <div class="content-device-subname">
-                            资产编号:  {{itemData.RepairOrder || "暂无编号"}}
+        <cube-scroll class="repair-content" :item="mSectionHeaderTitles">
+            <li v-for="(item,index) in mSectionHeaderTitles" :key="index" :item="item">
+                <!-- 设备信息 -->
+                <div v-if="index==0" class="content-top">
+                    <div class="content-header">{{item}}</div>
+                    <div class="contet-top-device-info">
+                        <i class="iconfont device-icon">&#xe736;</i>
+                        <div class="top-right">
+                            <information-cell title="资产名称" :value="RepairStore.mTakeOrderItmeDetail.EquName"></information-cell>
+                            <information-cell title="资产编号" :value="RepairStore.mTakeOrderItmeDetail.EquNo"></information-cell>
+                            <information-cell title="规格型号" :value="RepairStore.mTakeOrderItmeDetail.Size"></information-cell>
+                            <information-cell title="序 列 号" :value="RepairStore.mTakeOrderItmeDetail.EquNumber"></information-cell>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="content-bottom">
-                <div class="content-header">维修信息</div>
-                <input-cell title="维修时间" disabled=true v-model="itemData.RepairDate"></input-cell>
-                <input-cell title="报修人员" disabled=true v-model="itemData.RepairPeople"></input-cell>
-                <input-cell title="维修编号" disabled=true v-model="itemData.RepairOrder"></input-cell>
+                <!-- 报修信息 -->
+                <div v-if="index==1" class="content-middle">
+                    <div class="content-header">{{item}}</div>
+                    <input-cell title="维修单号" disabled=true v-model="RepairStore.mTakeOrderItmeDetail.RepairNo"></input-cell>
+                    <input-cell title="报修科室" disabled=true v-model="RepairStore.mTakeOrderItmeDetail.DepartmentName"></input-cell>
+                    <input-cell title="报修人员" disabled=true v-model="RepairStore.mTakeOrderItmeDetail.AssignRepairPeople"></input-cell>
+                    <input-cell title="报修电话" disabled=true v-model="RepairStore.mTakeOrderItmeDetail.RepairPhone"></input-cell>
+                    <input-cell title="报修地址" disabled=true v-model="RepairStore.mTakeOrderItmeDetail.RepairAddress"></input-cell>
+                    <input-cell title="故障问题" disabled=true v-model="RepairStore.mTakeOrderItmeDetail.FaultType"></input-cell>
+                </div>
 
-                <selected-input title="故障类型" :data="falutTypeNameArr" placeholder="请输入故障类型" @itemClick="faultTypeSearchItemClickAction" @searchAction="faultTypeInputSearchAction"></selected-input>
-                <selected-input title="故障问题" :data="falutNameArr" placeholder="请输入故障问题" @itemClick="faultSearchItemClickAction" @searchAction="faultInputSearchAction"></selected-input>
-                <selected-input title="故障描述" :data="falutDesNameArr" placeholder="请输入故障描述" @itemClick="faultDesSearchItemClickAction" @searchAction="faultDesInputSearchAction"></selected-input>
+                <!-- 故障描述 -->
+                <div v-if="index==2" class="content-des">
+                    <div class="content-header-bottom">{{item}}</div>
+                    <cube-textarea disabled v-model="RepairStore.mTakeOrderItmeDetail.FaultDescribe"></cube-textarea>
+                </div>
+            </li>
+        </cube-scroll>
 
-            </div>
-        </div>
-
-        <mt-datetime-picker ref="picker" type="date" v-model="pickerValue" @confirm="dataPickerConfirm"></mt-datetime-picker>
-        <cube-button @click="readyButtonAction" class="ready-repair-bottom">我要接单</cube-button>
-
+        <cube-button class="content-bottom" @click="readyButtonAction">接单</cube-button>
     </f7-page>
 </template>
 
@@ -53,40 +59,28 @@ import scroll from '../../../common/scroll.vue';
 import InputCell from '../../../common/inputcell.vue';
 import RepairItem from '../../../common/repairitem.vue';
 import SelectedInput from '../../../common/selectedinput.vue';
+import InformationCell from '../../../common/InformationCell'
 
 import {
     mapState,
     mapActions,
-    mapMutations,
-    mapGetters
 } from 'vuex';
+
 
 export default {
 
     data() {
         return {
-            itemData: [],
-
-            falutType: [],
-            falutTypeNameArr:[],
-            falutTypeArr: [],
-
-
-            // 故障问题
-            fault: [],
-            falutNameArr: [],
-            falutsArr: [],
-            falutDesNameArr: [],
-            falutDes: '', // 故障描述
-
-
-            // 报修期限
-            startDataValue: '',
-            pickerValue: '',
+            mSectionHeaderTitles: ['设备信息', '报修信息', '故障描述'],
         }
     },
 
-
+    computed: {
+        ...mapState([
+            'RepairStore',
+            'StoreSearch',
+        ])
+    },
 
     watch: {
         falutDes: function(newValue){
@@ -96,246 +90,47 @@ export default {
 
     mounted() {
 
-        let itemData = JSON.parse(localStorage.ItemData);
-        this.itemData = itemData
-        console.log(itemData);
     },
 
     methods: {
+        /**
+         * action 方法映射
+         */
+        ...mapActions([
+            'repairCheckOrder',
+        ]),
+
+        /**
+         * 选择工程师按钮点击事件
+         */
+        chooseUserButtonAction() {
+            this.StoreSearch.mType = "user"
+            this.$f7router.navigate(`/SearchItemView/`)
+        },
+
+        /**
+         * 返回
+         */
         NavBack() {
-                this.$f7router.back()
-            },
-
-        // 时间选择器回调
-        dataPickerConfirm(datetime) {
-            var year = datetime.getFullYear();
-            var month = datetime.getMonth() + 1; //js从0开始取
-            var date = datetime.getDate();
-            var dateTime = year + '-' + month + '-' + date;
-            this.startDataValue = dateTime;
+            this.$f7router.back()
         },
 
-        // 打开时间选择器
-        openStartDataPicker() {
-            this.$refs.picker.open();
-        },
-
-        // 故障描述选择器回调
-        faultTypeSearchItemClickAction(data, event) {
-            for (var i = 0; i < this.falutTypeArr.length; i++) {
-                if (this.falutTypeArr[i].QuestionTypeName == data) {
-                    this.falutType = this.falutTypeArr[i]
-                    return
-                }
-            }
-        },
-
-        // 故障问题选择器回调
-        faultSearchItemClickAction(data, event) {
-
-
-        },
-        // 故障描述选择器回调
-        faultDesSearchItemClickAction(data, event) {
-            this.currentSelecteInputData = []
-
-        },
-
-        // 故障类型输入事件
-        faultTypeInputSearchAction(searchvalue) {
-
-            let params = {
-                'QueryText': searchvalue,
-            };
-
-            let vm = this;
-            this.get(this.api.getQuestionTypeList, params, function(response) {
-                console.log(params);
-                var data = JSON.parse(response);
-                if (data.Status) {
-                    vm.falutTypeArr = data.QuestionTypeList
-                    vm.falutTypeNameArr = []
-                    var nameArr = []
-                    for (var i = 0; i < vm.falutTypeArr.length; i++) {
-                        nameArr.push(vm.falutTypeArr[i].QuestionTypeName)
-                    }
-                    vm.falutTypeNameArr = nameArr
-                } else {
-                    let msg = data.Msg;
-                    console.log(msg);
-                    if (!vm.toastCenter) {
-                        vm.toastCenter = vm.$f7.toast.create({
-                            text: msg,
-                            closeTimeout: 2000,
-                            position: 'center',
-                        });
-                    }
-                    vm.toastCenter.open();
-                }
-            });
-        },
-
-        // 故障输入搜索事件
-        faultInputSearchAction(searchvalue) {
-
-            let params = {
-                'QueryText': searchvalue,
-                'QuestionTypeId': this.falutType.QuestionTypeCode | ""
-            };
-
-            let vm = this;
-            this.get(this.api.getQuestionList, params, function(response) {
-                console.log(params);
-                var data = JSON.parse(response);
-                if (data.Status) {
-                    vm.repairUsersArr = data.AssignUserList;
-                    vm.parseUsers()
-                } else {
-                    let msg = data.Msg;
-                    console.log(msg);
-                    if (!vm.toastCenter) {
-                        vm.toastCenter = vm.$f7.toast.create({
-                            text: msg,
-                            closeTimeout: 2000,
-                            position: 'center',
-                        });
-                    }
-                    vm.toastCenter.open();
-                }
-            });
-        },
-
-        // 故障问题输入的时候选择器
-        faultDesInputSearchAction(searchvalue) {
-
-            let params = {
-                'QueryText': searchvalue,
-                'UserCode': localStorage.account,
-                // 'PageIndex': 1,
-                // 'PageSize': 100,
-            };
-
-            let vm = this;
-            this.get(this.api.getQuestionList, params, function(response) {
-                console.log(params);
-                var data = JSON.parse(response);
-                if (data.Status) {
-
-                } else {
-                    let msg = data.Msg;
-                    console.log(msg);
-                    if (!vm.toastCenter) {
-                        vm.toastCenter = vm.$f7.toast.create({
-                            text: msg,
-                            closeTimeout: 2000,
-                            position: 'center',
-                        });
-                    }
-                    vm.toastCenter.open();
-                }
-            });
-        },
-
+        /**
+         * 派工
+         */
         readyButtonAction() {
-
-            if (this.repairUser.UserName == undefined) {
-                const toast = this.$createToast({
-                    time: 0,
-                    txt: '请选择派修人员',
-                    type: 'error'
-                })
-                toast.show()
-                setTimeout(() => {
-                    toast.hide()
-                }, 2000)
-
-                return
-            }
-
-            if (this.startDataValue == '') {
-                const toast = this.$createToast({
-                    time: 0,
-                    txt: '请选择维修期限',
-                    type: 'error'
-                })
-                toast.show()
-                setTimeout(() => {
-                    toast.hide()
-                }, 2000)
-
-                return
-            }
-
-            let params = {
-                "DepartmentId": this.itemData.DepartmentId | "",
-                "DepartmentName": this.itemData.DepartmentName | "",
-                "ApplyDate": '',
-                "RepairTerm": this.startDataValue | "",
-                "EquId": this.itemData.EquCode | "",
-                "EquName": this.itemData.EquName | "",
-                "SpecType": '',
-                "RepairPhone": '',
-                "RepairStatus": '',
-                "Factory": '',
-                "FaultId": 'xxxx',
-                "RepairUserId": this.repairUser.UserCode | "",
-                "RepairUserName": this.repairUser.UserName | "",
-                "FaultDesription": this.repairIntroduction | "",
-                "Remark": '',
-                "StoreNumber": '',
-                "Store": '',
-                "SupplierId": '',
-                "SupplierName": '',
-                "RepairNo": '',
-                "RepairNoReadonly": '',
-            };
-
-            console.log(params);
-            debugger
-
-            let vm = this;
-            let URL = this.api.ApplyRepair;
-            this.post(URL, params, function(response) {
-                var data = JSON.parse(response);
-
-                console.log(params);
-
-                console.log("---------------------------------------------------------------------: ");
-                console.log(" 请求地址: " + URL);
-                console.log(" 返回数据: ");
-                console.log(data);
-                console.log("---------------------------------------------------------------------- ");
-
-                if (data.Status) {
-
-                } else {
-
-
-                }
-            });
+            this.repairCheckOrder().then((res)=>{
+                console.log(res);
+            })
 
         },
 
-        itemClick() {
+        /**
+         * 忽略派工
+         */
+        ignoreButtonAction() {
 
-        },
-
-        switchTab(index) {
-            this.currentIndex = index;
-        },
-
-        onPullingDown(scroll) {
-            console.log('pullingDown: ' + scroll);
-            setTimeout(function() {
-                scroll.forceUpdate();
-            }, 1000);
-        },
-
-        onPullingUp(scroll) {
-            setTimeout(function() {
-                scroll.forceUpdate();
-            }, 1000);
-        },
+        }
     },
 
 
@@ -343,7 +138,8 @@ export default {
         scroll,
         RepairItem,
         InputCell,
-        SelectedInput
+        SelectedInput,
+        InformationCell
     }
 }
 </script>

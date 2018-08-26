@@ -1,14 +1,16 @@
 .information-cell-content{
     display: flex;
     flex: 1;
-    height: 20px;
-    align-items: center;
+    height: 25px;
+    align-items: left;
     .content-name{
         margin-top: 3px;
         color: $main-color-title;
-        width: 90px;
+        width: 100px !important;
+        font-size: 14px;
         text-align: center;
         font-size: $main-font-subtitle;
+        padding-left: 8px;
     }
     .content-value{
         margin-top: 3px;

@@ -59,6 +59,10 @@ export default {
             this.title = "请选择故障问题"
         }
 
+        if (this.StoreSearch.mType == "Repair_type") {
+            this.title = "请选择维修类型"
+        }
+
         this.search()
     },
 
@@ -106,6 +110,9 @@ export default {
 
                         // 设置 维修派单 回调
                         this.RepairStore.mSearchRepairUser = this.StoreSearch.mSearchData[i]
+
+                        // 设置 维修中,新增维修人员 回调
+                        // this.RepairStore.mSearchRepairUser = this.StoreSearch.mSearchData[i]
                         break
                     }
                 }
@@ -115,6 +122,18 @@ export default {
                     if (itemName == data) {
                         this.StoreSearch.mValue = this.StoreSearch.mSearchData[i]
                         this.scanRepairStore.mProblemData = this.StoreSearch.mSearchData[i]
+                        break
+                    }
+                }
+
+                // code by yangxichuan
+                // 此处需要设置该值的来源
+                // 维修类型
+                else if (this.StoreSearch.mType == "Repair_type") {
+                    itemName = this.StoreSearch.mSearchData[i].QuestionTypeName // !!!
+                    if (itemName == data) {
+                        this.StoreSearch.mValue = this.StoreSearch.mSearchData[i]
+                        this.RepairStore.mCurrentRepairType = this.StoreSearch.mSearchData[i]
                         break
                     }
                 }

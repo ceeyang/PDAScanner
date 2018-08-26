@@ -1,20 +1,27 @@
 .repairing-page{
     .repairing-content{
         top: 0px;
-        bottom: 45px;
-
+        height: 100%;
         .content-header{
             padding-left: 15px;
             color: $main-color-subtitle;
-            font-size: $main-font-subtitle;
             background-color: white;
-            border-bottom: 1px solid $main-line-color;
+            font-size: 16px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #8E8E8E;
+        }
+        .header-add-btn{
+            display: flex;
+            justify-content: space-between;
+            .add-btn{
+                margin-right: 15px;
+                border-radius: 10px;
+            }
         }
 
         .content-top {
-            margin-top: 15px;
             background-color: white;
-
             .contet-top-device-info{
                 display: flex;
                 flex-direction: row;
@@ -25,62 +32,100 @@
                     margin-right: 15px;
                 }
                 .top-right{
-                    .content-device-name{
-                        margin-top: 15px;
-                        font-size: $main-font-title;
-                        color: $main-color-title;
-                    }
-                    .content-device-subname{
-                        margin-top: 5px;
-                        font-size: $main-font-subtitle;
-                        color: $main-color-subtitle;
-                    }
+                    margin-top: 15px;
                 }
             }
         }
 
-        .content-bottom{
-            margin-top: 15px;
-            .content-header-bottom{
-                display: flex;
-                background-color: white;
-                justify-content: space-between;
-                border-bottom: 1px solid $main-line-color;
-                flex: 1;
-
-                height: 20px;
-                .content-header-title{
-                    margin-left: 15px;
-                    color: $main-color-subtitle;
-                    font-size: $main-font-subtitle;
-                }
-                .content-add-button{
-                    margin-right: 15px;
-                    color: $main-color-subtitle;
-                    font-size: $main-font-subtitle;
-                }
-            }
-            .content-selecte-user{
-                border-bottom: 1px solid $main-line-color;
-                flex: 1;
-                display: flex;
-                flex-direction: row;
-                width: 100%;
+        .content-middle{
+            margin-top: 1px;
+            background-color: white;
+            .content-repair-info{
+                padding-left: 15px;
                 height: 30px;
-                .selecte-user-title{
-                    padding-left: 15px;
-                    background-color: white;
-                    width: 126px;
-                    border-right: 1px solid $main-line-color;
-                    font-size: $main-font-title;
-
-                }
-                .selecte-input{
-                    width: 100%;
-                    padding-left: 15px;
-                }
+                font-size: $main-font-title;
+                color: $main-color-title;
             }
+            .problem-description{
+                border-bottom: 1px solid $main-line-color;
+                border-top: 1px solid $main-line-color;
+                height: 50px;
+            }
+        }
+        .content-des{
+            background-color: white;
+            .content-header-bottom{
+                padding-left: 15px;
+                color: #4A4A4A;
+                font-size: 16px;
+                padding-top: 3px;
+                padding-bottom: 5px;
+                background-color: #E1E1E1;
+                border-bottom: 1px solid $main-line-color;
+                height: 30px;
+            }
+            .cube-textarea-wrapper{
+                height: 120px;
+                padding-left: 8px;
+            }
+            .cube-textarea{
+                height: 120px;
+                border-bottom: 1px solid #E1E1E1
+            }
+        }
+    }
 
+    .content-bottom{
+        background-color: white;
+        .content-bottom-content{
+            display: flex;
+            justify-content: flex-start;
+            .user-item{
+                text-align: center;
+                text-align-last: center;
+                font-size: 14px;
+                background-color: #8E8E8E;
+                width: 50px;
+                height: 50px;
+                border-radius:  25px;
+                padding-top: 14px;
+                margin-left: 15px;
+                margin-top: 15px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .content-parts{
+        .content-bottom-content{
+
+        }
+    }
+
+    .content-repair-info{
+        margin-top: 1px;
+    }
+
+    .content-result{
+        background-color: white;
+        .content-header-bottom{
+            padding-left: 15px;
+            color: #4A4A4A;
+            font-size: 16px;
+            padding-top: 3px;
+            padding-bottom: 5px;
+            padding-left: 15px;
+            background-color: #E1E1E1;
+            border-bottom: 1px solid $main-line-color;
+            height: 30px;
+        }
+        .cube-textarea-wrapper{
+            height: 120px;
+            padding-left: 8px;
+        }
+        .cube-textarea{
+            height: 120px;
+            border-bottom: 1px solid #E1E1E1
         }
     }
 }

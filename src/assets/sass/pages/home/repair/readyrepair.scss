@@ -2,8 +2,7 @@
 
     .repair-content{
         top: 0px;
-        bottom: 90px;
-
+        height: calc(100% - 85px) !important;
         .content-header{
             padding-left: 15px;
             color: $main-color-subtitle;
@@ -60,49 +59,49 @@
                 border-bottom: 1px solid $main-line-color;
                 height: 30px;
             }
+            .cube-textarea-wrapper{
+                height: 120px;
+            }
             .cube-textarea{
                 height: 120px;
                 border-bottom: 1px solid #E1E1E1
             }
         }
-        .content-bottom{
-            // .cube-textarea{
-            //     height: 120px;
-            // }
-        }
     }
 
-    .choose-user-bottom{
-        bottom: 50px;
-        position: fixed;
-        color: white;
-        height: 35px;
-        width: 100%;
-        font-size: 16px;
-        padding-top: 5px;
-        background-color: $main-background-color;
-        border-color: transparent;
-        border: 1px solid #E1E1E1;
-        border-radius: 5px;
-        z-index: 10;
-        text-align: center;
-    }
-
-    .ready-repair-bottom{
-        bottom: 0px;
-        position: fixed;
-        height: 45px;
-        z-index: 10;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        flex: 1;
-        width: 100%;
-        .bottom-btn{
+    .content-bottom{
+        height: 85px;
+        .choose-user-bottom{
+            bottom: 50px;
+            position: fixed;
+            color: white;
+            height: 35px;
             width: 100%;
-            text-align: center;
+            font-size: 16px;
+            padding-top: 5px;
             background-color: $main-background-color;
             border-color: transparent;
+            border: 1px solid #E1E1E1;
+            border-radius: 5px;
+            z-index: 10;
+            text-align: center;
+        }
+        .ready-repair-bottom{
+            bottom: 0px;
+            position: fixed;
+            height: 45px;
+            z-index: 10;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex: 1;
+            width: 100%;
+            .bottom-btn{
+                width: 100%;
+                text-align: center;
+                background-color: $main-background-color;
+                border-color: transparent;
+            }
         }
     }
 }

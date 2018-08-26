@@ -1,0 +1,16 @@
+.parts-item-cell{
+    background-color: white;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #888888;
+    border: 1px solid $main-line-color;
+    .item-content-title{
+        padding-left: 15px;
+        padding-top: 10px;
+    }
+    .item-content-bottom{
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-around;
+    }
+}

@@ -165,8 +165,8 @@ export default {
                 return;
             }
 
-            this.statusName = values;
-            this.status = this.getStatusWith(values)
+            this.statusName = values[0];
+            this.status = this.getStatusWith(values[0])
 
             console.log(this.status);
         },

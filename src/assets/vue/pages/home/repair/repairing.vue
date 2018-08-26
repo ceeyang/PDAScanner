@@ -10,50 +10,100 @@
             <f7-nav-title title='维修详情'></f7-nav-title>
         </f7-navbar>
 
-        <div class="repairing-content">
-            <div class="content-top">
-                <div class="content-header">设备信息</div>
-                <div class="contet-top-device-info">
-                    <i class="iconfont device-icon">&#xe736;</i>
-                    <div class="top-right">
-                        <div class="content-device-name">
-                            设备名称:  {{RepairStore.mCurrentRepair.EquName || "暂无名称"}}
-                        </div>
-                        <div class="content-device-subname">
-                            报修科室:  {{RepairStore.mCurrentRepair.DepartmentName || "暂无科室"}}
-                        </div>
-                        <div class="content-device-subname">
-                            维修单号:  {{RepairStore.mCurrentRepair.RepairNo || "暂无编号"}}
+        <cube-scroll class="repairing-content" :item="mSectionHeaderTitles">
+            <li v-for="(item,index) in mSectionHeaderTitles" :key="index" :item="item">
+                <!-- 设备信息 -->
+                <div v-if="index==0" class="content-top">
+                    <div class="content-header">{{item}}</div>
+                    <div class="contet-top-device-info">
+                        <i class="iconfont device-icon">&#xe736;</i>
+                        <div class="top-right">
+                            <information-cell title="资产名称" :value="RepairStore.mCurrentRepairDetail.EquName"></information-cell>
+                            <information-cell title="资产编号" :value="RepairStore.mCurrentRepairDetail.EquNo"></information-cell>
+                            <information-cell title="规格型号" :value="RepairStore.mCurrentRepairDetail.Size"></information-cell>
+                            <information-cell title="序 列 号" :value="RepairStore.mCurrentRepairDetail.EquNumber"></information-cell>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="content-bottom">
-                <div class="content-header-bottom">
-                    <div class="content-header-title">
-                        维修过程记录
+                <!-- 报修信息 -->
+                <div v-if="index==1" class="content-middle">
+                    <div class="content-header">{{item}}</div>
+                    <information-cell title="维修单号" :value="RepairStore.mCurrentRepairDetail.RepairNo"></information-cell>
+                    <information-cell title="报修科室" :value="RepairStore.mCurrentRepairDetail.DepartmentName"></information-cell>
+                    <information-cell title="报修人员" :value="RepairStore.mCurrentRepairDetail.AssignRepairPeople"></information-cell>
+                    <information-cell title="报修电话" :value="RepairStore.mCurrentRepairDetail.RepairPhone"></information-cell>
+                    <information-cell title="报修地址" :value="RepairStore.mCurrentRepairDetail.RepairAddress"></information-cell>
+                    <information-cell title="故障问题" :value="RepairStore.mCurrentRepairDetail.FaultType"></information-cell>
+                </div>
+
+                <!-- 故障描述 -->
+                <div v-if="index==2" class="content-des">
+                    <div class="content-header-bottom">{{item}}</div>
+                    <cube-textarea disabled v-model="RepairStore.mCurrentRepairDetail.FaultDescribe"></cube-textarea>
+                </div>
+
+                <!-- 维修人员 -->
+                <div v-if="index==3" class="content-bottom">
+                    <div class="content-header header-add-btn">
+                        <span>{{item}}</span>
+                        <div class="add-btn" @click="addUser">+</div>
                     </div>
-                    <div class="content-add-button" @click="addClickAction">
-                        <i class="iconfont">&#xe6df;</i>
+                    <div class="content-bottom-content">
+                        <div class="user-item" v-for="(title, index) in mRepairUserTitles">
+                            {{title}}
+                        </div>
                     </div>
                 </div>
-                <scroll :items="RepairStore.mCurrentRepairProcessList">
-                    <li v-for="(item,index) in RepairStore.mCurrentRepairProcessList" :key="index" :item="item">
-                        <repairing-item :item="item" :itemClick="repairingItemClick" :itemDeleteBtnClick="itemDeleteBtnClick"></repairing-item>
-                    </li>
-                </scroll>
-            </div>
-        </div>
+
+                <!-- 配件明细 -->
+                <div v-if="index==4" class="content-parts">
+                    <div class="content-header header-add-btn">
+                        <span>{{item}}</span>
+                        <div class="add-btn" @click="addAccessories">+</div>
+                    </div>
+                    <div class="content-bottom-content">
+
+                        <!-- // code by yangxichuan
+                        // 此处需要设置该值的来源 -->
+                        <!-- <div class="user-item" v-for="(title, index) in mPartsItemArr">
+                            <parts-item></parts-item>
+                        </div> -->
+
+                        <parts-item v-for="i in 3"></parts-item>
+                    </div>
+                </div>
+
+                <!-- 维修信息 -->
+                <div v-if="index==5" class="content-repair-info">
+                    <div class="content-header">{{item}}</div>
+                    <input-cell title="配件费用" placeholder="请输入配件费用" value="300"></input-cell>
+                    <input-cell title="维修费用" placeholder="请输入维修费用" value="300"></input-cell>
+                    <input-cell title="合计费用" placeholder="请输入配件费用" value="600"></input-cell>
+                    <input-cell type="DataInput" title="维修类型" placeholder="请选择维修类型" :value="mCurrentSelectedType" :inputClickAction="repairTypeInputClick"></input-cell>
+                </div>
+
+                <!-- 维修结果 -->
+                <div v-if="index==6" class="content-result">
+                    <div class="content-header-bottom">{{item}}</div>
+                    <!-- <cube-textarea v-model="快修好了, 这是死数据, 因为接口没调通"></cube-textarea> -->
+                    <cube-textarea value="快修好了, 这是死数据, 因为接口没调通"></cube-textarea>
+                </div>
 
 
+            </li>
+        </cube-scroll>
+
+        <picker :slots='mSlots' :onValuesChange="onValuesChange" :pickerCancel="pickerCancel" :pickerConfirm="pickerConfirm" :show="mPopupVisible"></picker>
     </f7-page>
 </template>
 
 <script>
 import scroll from '../../../common/scroll.vue';
-import RepairingItem from "./RepairingItem.vue";
-
+import InputCell from '../../../common/inputcell.vue';
+import InformationCell from '../../../common/InformationCell'
+import PartsItem from '../../../common/PartsItem'
+import Picker from '../../../common/picker.vue';
 
 import {
     mapState,
@@ -66,13 +116,35 @@ export default {
 
     data() {
         return {
+            mSectionHeaderTitles: ['设备信息', '报修信息', '故障描述', '维修人', '配件明细', '维修信息', '维修结果'],
 
+            // code by yangxichuan
+            // 此处需要设置该值的来源
+            mRepairUserTitles: ['汪志', '管理员'],
+
+            // code by yangxichuan
+            // 此处需要设置该值的来
+            mPartsItemArr: [],
+
+            mPartsPrices: '300',
+
+            mSlots: [{
+                flex: 1,
+                values: ['自修', '保修', '原厂', '第三方维修'],
+                className: 'slot1',
+                textAlign: 'center'
+            }, ],
+
+            mPopupVisible: false,
+
+            mCurrentSelectedType: '',
         }
     },
 
     computed: {
         ...mapState([
             'RepairStore',
+            'StoreSearch'
         ])
     },
 
@@ -90,6 +162,56 @@ export default {
 
     methods: {
 
+        /**
+         * 维修类型选择器, 取消按钮点击事件
+         */
+        pickerCancel() {
+            console.log('cancel');
+            this.mPopupVisible = false
+        },
+
+        /**
+         * 维修类型选择器, 确认按钮点击事件
+         */
+        pickerConfirm() {
+            this.mPopupVisible = false
+        },
+
+        /**
+         * 维修类型选择器 值变化的事件
+         */
+        onValuesChange(picker, values) {
+            console.log(values);
+            this.mCurrentSelectedType = values[0]
+            // this.statusName = values;
+            // this.status = this.getStatusWith(values)
+        },
+
+        /**
+         * 维修类型输入框点击事件
+         */
+        repairTypeInputClick() {
+            this.mPopupVisible = true
+        },
+
+        /**
+         * 新增用户
+         */
+        addUser() {
+            /** 搜索类型 */
+            this.StoreSearch.mType = "user"
+            /** 搜索结果回调类型 */
+            this.StoreSearch.mCallbackType = "Repairing_AddUser"
+            this.$f7router.navigate(`/SearchItemView/`)
+        },
+
+        /**
+         * 添加配件
+         */
+        addAccessories() {
+
+        },
+
         addClickAction() {
             this.$f7router.navigate("/NewRepairRecord/")
         },
@@ -100,53 +222,6 @@ export default {
 
         repairingItemClick(item) {
             console.log(item);
-        },
-
-        itemDeleteBtnClick(item) {
-            let vm = this
-            this.$createDialog({
-                type: 'confirm',
-                icon: 'cubeic-alert',
-                content: '是否确认删除该条数据?',
-                confirmBtn: {
-                    text: '删除',
-                    active: true,
-                    disabled: false,
-                    href: 'javascript:;'
-                },
-                cancelBtn: {
-                    text: '取消',
-                    active: false,
-                    disabled: false,
-                    href: 'javascript:;'
-                },
-                onConfirm: () => {
-                    vm.deleteItem(item)
-                },
-                onCancel: () => {
-
-                }
-            }).show()
-        },
-
-        deleteItem(item){
-
-            // let tempArr = []
-            // for (var i = 0; i < this.RepairStore.mCurrentRepairProcessList.length; i++) {
-            //     if (this.RepairStore.mCurrentRepairProcessList.[i].LineNumber != itemd.LineNumber) {
-            //         tempArr.push(this.RepairStore.mCurrentRepairProcessList.[i])
-            //     }
-            // }
-            // this.RepairStore.mCurrentRepairProcessList = tempArr
-
-            if (!this.toastCenter) {
-                this.toastCenter = this.$f7.toast.create({
-                    text: "删除成功, #^_^# ",
-                    closeTimeout: 2000,
-                    position: 'center',
-                });
-            }
-            this.toastCenter.open();
         },
 
         onPullingDown(scroll) {
@@ -160,8 +235,11 @@ export default {
 
 
     components: {
-        RepairingItem,
-        scroll
+        scroll,
+        InformationCell,
+        InputCell,
+        PartsItem,
+        Picker
     }
 }
 </script>

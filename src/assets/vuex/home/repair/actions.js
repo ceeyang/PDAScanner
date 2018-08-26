@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { resolve } from 'path';
 
-export const getRepairHandleList = ({commit,dispatch,state}) => {
+export const getRepaiingrHandleList = ({commit,dispatch,state}) => {
     return new Promise((resolve,reject) => {
         let params = {
             "UserCode": localStorage.account,
@@ -16,7 +16,7 @@ export const getRepairHandleList = ({commit,dispatch,state}) => {
             "SortWay": "",
             "StartDate": "",
             "EndDate": "",
-            "PageIndex": state.handleingPageNumber,
+            // "PageIndex": state.handleingPageNumber,
             "PageSize": 10,
         };
 
@@ -24,10 +24,10 @@ export const getRepairHandleList = ({commit,dispatch,state}) => {
             var data = JSON.parse(response);
             if (data.Status) {
                 state.handleingData = data.RepairHandleList
-                console.log(state.handleingData);
+                resolve(true)
             } else {
-                let msg = data.Msg;
-                console.log(msg);
+                console.log(data.Msg);
+                resolve(false)
             }
         });
     })
@@ -41,18 +41,72 @@ export const sendDeviceOrder = ({commit,dispatch,state}) => {
     return new Promise((resolve,reject) => {
         // 清空当前资产维修记录列表
         state.mCurrentRepairProcessList = []
+        debugger
         let params = {
             "RepairOrder": state.mReadyRepairDetail.RepairNo.replace(/\s*/g, ""),
             "AssignUserId": state.mSearchRepairUser.UserCode.replace(/\s*/g, ""),
-            "UserCode": localStorage.UserCode,
+            "UserCode": localStorage.account,
             "LineNumber": 1,
-            "Store": localStorage.Store,
+            "Store": localStorage.storeId,
             "RepairStatus":1,
         };
-        Vue.prototype.get(Vue.prototype.api.sendOrder, params, function(response) {
+        Vue.prototype.post(Vue.prototype.api.sendOrder, params, function(response) {
             var data = JSON.parse(response);
+            debugger
             if (data.Status) {
                 state.mCurrentRepairProcessList = data.RepairProcessList
+                resolve(true)
+            }
+            resolve(false)
+
+        });
+    })
+}
+
+/**
+ * 忽略订单
+ */
+export const ignoreDeviceOrder = ({commit,dispatch,state}) => {
+    return new Promise((resolve,reject) => {
+        // 清空当前资产维修记录列表
+        state.mCurrentRepairProcessList = []
+        let params = {
+            "RepairOrder": state.mReadyRepairDetail.RepairNo.replace(/\s*/g, ""),
+            "UserCode": localStorage.account,
+        };
+        Vue.prototype.post(Vue.prototype.api.dispatchIgnore, params, function(response) {
+            var data = JSON.parse(response);
+            debugger
+            if (data.Status) {
+
+                resolve(true)
+            }
+            resolve(false)
+
+        });
+    })
+}
+
+/**
+ * 维修接单
+ */
+export const repairCheckOrder = ({commit,dispatch,state}) => {
+    return new Promise((resolve,reject) => {
+        // 清空当前资产维修记录列表
+        state.mCurrentRepairProcessList = []
+        let params = {
+            "RepairOrder": state.mTakeOrderItmeDetail.RepairNo.replace(/\s*/g, ""),
+            "Store": localStorage.storeId,
+            "UserCode": localStorage.account,
+        };
+        Vue.prototype.post(Vue.prototype.api.checkOrder, params, function(response) {
+            var data = JSON.parse(response)
+            console.log(data)
+            if (data.Status) {
+                resolve(true)
+
+            } else {
+                resolve(false)
             }
         });
     })
@@ -80,9 +134,8 @@ export const getRepairProcessList = ({commit,dispatch,state}) => {
  * 获取待派工的报修基本信息
  */
 
- export const getReadyRepairDetail = ({ commit,dispatch,state}) => {
+ export const getReadyRepairDetail = ({ commit,dispatch,state}, RepairNo) => {
      return new Promise((resolve,reject) => {
-         let RepairNo = state.mReadyRepairItme.RepairOrder.replace(/\s*/g, "")
          let params = {
              "RepairNo": RepairNo,
              "Store": localStorage.storeId,
@@ -90,9 +143,27 @@ export const getRepairProcessList = ({commit,dispatch,state}) => {
 
          Vue.prototype.get(Vue.prototype.api.getDefaultRepairInfo, params, function(response) {
              var data = JSON.parse(response);
-             state.mReadyRepairDetail = data.RepairInfo
              console.log(data);
              resolve(data)
          });
      })
  }
+
+
+ /**
+  * 忽略维修
+  */
+
+  export const dispatchIgnoreRepair = ({ commit,dispatch,state}) => {
+      return new Promise((resolve,reject) => {
+          let params = {
+              "UserCode": localStorage.account,
+              "RepairOrder": state.mReadyRepairDetail.RepairNo.replace(/\s*/g, ""),
+          }
+
+          Vue.prototype.post(Vue.prototype.api.dispatchIgnore, params, function(response) {
+              var data = JSON.parse(response);
+              resolve(data)
+          });
+      })
+  }
