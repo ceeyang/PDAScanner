@@ -113,13 +113,13 @@ export default {
             let vm = this
             this.getReadyRepairDetail(item.RepairOrder.replace(/\s*/g, "")).then((data)=>{
                 // code by yangxichuan
-                //vm.RepairStore.mTakeOrderItmeDetail = data.RepairInfo
-                //vm.$f7router.navigate('/takeorders/');
+                vm.RepairStore.mTakeOrderItmeDetail = data.RepairInfo
+                vm.$f7router.navigate('/takeorders/');
                 // else
 
-                vm.RepairStore.mCurrentRepair = data.RepairInfo
-                vm.RepairStore.mCurrentRepairDetail = data.RepairInfo
-                vm.$f7router.navigate('/repairing/');
+                // vm.RepairStore.mCurrentRepair = data.RepairInfo
+                // vm.RepairStore.mCurrentRepairDetail = data.RepairInfo
+                // vm.$f7router.navigate('/repairing/');
 
             })
         },

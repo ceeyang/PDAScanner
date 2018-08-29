@@ -65,6 +65,9 @@ Vue.prototype.api=api
 //封装公共请求(post)
 Vue.prototype.post=function(url, params, next){
     let rootUrl = localStorage.getItem("rootUrl")
+
+    // code by yangxichuan
+    // 置空可以使用浏览器
     rootUrl = ""
 
     var token = '';
@@ -88,6 +91,9 @@ Vue.prototype.post=function(url, params, next){
 
 Vue.prototype.get=function(url, params, next){
     let rootUrl = localStorage.getItem("rootUrl")
+
+    // code by yangxichuan
+    // 置空可以使用浏览器
     rootUrl = ""
 
     var token = '';

@@ -24,9 +24,9 @@
     </feature>
     <hook src="hooks/hookers.js" type="before_prepare" />
     <hook src="hooks/beforedep.js" type="before_deploy" />
-    <name>pdascanner</name>
+    <name>医修</name>
     <description>
-        Brand new cordova project!
+        医疗管理系统, 深圳市源泰达科技有限公司出品.
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
