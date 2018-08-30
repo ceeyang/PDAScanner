@@ -70,22 +70,23 @@ Vue.prototype.post=function(url, params, next){
     // 置空可以使用浏览器
     rootUrl = ""
 
+    console.log("\n\nRequest Start----------------------------------------");
+    console.log('rootUrl :');
+    console.log(rootUrl);
+    console.log("params :");
     var token = '';
     for (var item in params) {
+        console.log(item);
+        console.log(params[item]);
         token += (token.length<1?'':'&') + item + '=' + (params[item] ==  undefined ? "" : params[item]);
         // token += (token.length<1?'':'&') + item + '=' + params[item]
     }
+    console.log('token :');
+    console.log(token);
     token = token + MD5KEY;
     token = md5(token);
     params.Token = token;
-    console.log("");
-    console.log("----------------------------------------");
-    console.log('RequestUrl: ');
-    console.log(url);
-    console.log('RequestParams: ');
-    console.log(params);
-    console.log("----------------------------------------");
-    console.log("");
+    console.log("\nRequestEnd----------------------------------------\n\n");
     return Framework7.request.post(rootUrl+url, params, next);
 }
 

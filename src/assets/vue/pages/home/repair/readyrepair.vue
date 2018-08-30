@@ -133,18 +133,76 @@ export default {
          * 派工
          */
         readyButtonAction() {
-            this.sendDeviceOrder().then((res)=>{
-                console.log(res);
-            })
 
+            let userCode = this.RepairStore.mSearchRepairUser.UserCode
+            console.log(userCode);
+            if (userCode === undefined) {
+                const toast = this.$createToast({
+                    time: 0,
+                    txt: '请选择派修人员',
+                    type: 'error',
+                    onTimeout: () => {
+                        toast.hide()
+                    }
+                })
+                toast.show()
+                return
+            }
+
+            let vm = this
+            this.sendDeviceOrder().then((data)=>{
+                if (data.Status) {
+                    debugger
+                    const toast = vm.$createToast({
+                        time: 0,
+                        txt: "派单成功",
+                        type: 'correct',
+                    })
+                    toast.show()
+                    setTimeout(function () {
+                        toast.hide()
+                        vm.RepairStore.mSearchRepairUser = []
+                        vm.$f7router.back()
+                    }, 2000);
+                } else {
+                    const toast = this.$createToast({
+                        time: 0,
+                        txt: "派单失败, 请稍后再试",
+                        type: 'error',
+
+                    })
+                    toast.show()
+                    setTimeout(function () {
+                        toast.hide()
+                    }, 2000);
+                }
+            })
         },
 
         /**
          * 忽略派工
          */
         ignoreButtonAction() {
+            let vm = this
             this.dispatchIgnoreRepair().then((res)=>{
-                console.log(res);
+                var type = "correct"
+                var msg = "订单忽略成功"
+
+                if (res.Status == false) {
+                    type = "error"
+                    msg = "订单忽略失败"
+                }
+
+                const toast = this.$createToast({
+                    time: 0,
+                    txt: msg,
+                    type: type,
+                })
+                toast.show()
+                setTimeout(function () {
+                    toast.hide()
+                    vm.$f7router.back()
+                }, 2000);
             })
         }
     },

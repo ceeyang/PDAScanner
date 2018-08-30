@@ -84,9 +84,7 @@ export default {
         // this.getRepairData(1, 1);
 
         // 第一次进入该页面的时候加载数据
-        if (this.readyrepairData.length < 1) {
-            this.onPullingDown()
-        }
+        this.onPullingDown()
     },
 
     methods: {
@@ -198,6 +196,7 @@ export default {
             const toast = this.$createToast({
                 time: 0,
                 txt: '加载中...',
+                //mask: true
             })
             toast.show()
 
@@ -209,7 +208,7 @@ export default {
                 'StartDate': '',
                 'EndDate': '',
                 'RepairOrder': '',
-                'RepairStatus': '',
+                'RepairStatus': '1',
                 'SortType': '',
                 'AssignOrConfirm': type,
                 'PageIndex': pageNumber,

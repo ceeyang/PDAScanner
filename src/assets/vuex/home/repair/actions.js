@@ -16,7 +16,7 @@ export const getRepaiingrHandleList = ({commit,dispatch,state}) => {
             "SortWay": "",
             "StartDate": "",
             "EndDate": "",
-            // "PageIndex": state.handleingPageNumber,
+            "PageIndex": state.handleingPageNumber,
             "PageSize": 10,
         };
 
@@ -48,6 +48,7 @@ export const sendDeviceOrder = ({commit,dispatch,state}) => {
             "UserCode": localStorage.account,
             "LineNumber": 1,
             "Store": localStorage.storeId,
+            "EquCode": state.mReadyRepairItme.EquCode.replace(/\s*/g, ""),
             "RepairStatus":1,
         };
         Vue.prototype.post(Vue.prototype.api.sendOrder, params, function(response) {
@@ -55,9 +56,10 @@ export const sendDeviceOrder = ({commit,dispatch,state}) => {
             debugger
             if (data.Status) {
                 state.mCurrentRepairProcessList = data.RepairProcessList
-                resolve(true)
+                resolve(data)
+
             }
-            resolve(false)
+            resolve(data)
 
         });
     })
@@ -74,6 +76,8 @@ export const ignoreDeviceOrder = ({commit,dispatch,state}) => {
             "RepairOrder": state.mReadyRepairDetail.RepairNo.replace(/\s*/g, ""),
             "UserCode": localStorage.account,
         };
+        debugger
+        console.log(params);
         Vue.prototype.post(Vue.prototype.api.dispatchIgnore, params, function(response) {
             var data = JSON.parse(response);
             debugger
@@ -157,8 +161,8 @@ export const getRepairProcessList = ({commit,dispatch,state}) => {
   export const dispatchIgnoreRepair = ({ commit,dispatch,state}) => {
       return new Promise((resolve,reject) => {
           let params = {
-              "UserCode": localStorage.account,
               "RepairOrder": state.mReadyRepairDetail.RepairNo.replace(/\s*/g, ""),
+              "UserCode": localStorage.account,
           }
 
           Vue.prototype.post(Vue.prototype.api.dispatchIgnore, params, function(response) {
