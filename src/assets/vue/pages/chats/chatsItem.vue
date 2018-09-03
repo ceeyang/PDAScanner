@@ -1,14 +1,15 @@
 <template lang="html">
     <div class="chats-item-content" @click="itemClickAction(item,$event)">
-        <div class="chats-content-type">
-            {{transToTxtWithTypeID(item.TypeId)}}
-        </div>
+        <i class="iconfont chats-content-type">&#xe626;</i>
         <div class="chats-content">
             <div class="chats-content-title">
                 {{item.EquName}}
             </div>
             <div class="chats-content-subtitle">
                 {{item.RepairUserName}}
+            </div>
+            <div class="chats-content-subtitle">
+                {{item.OrderNo}}
             </div>
             <div class="chats-content-subtitle">
                 {{item.RepairDate}}
@@ -32,7 +33,7 @@ export default {
 
         transToTxtWithState(value) {
             if (value == "1 ") {
-                return "代派工"
+                return "待派工"
             }
 
             else if (value == "3 " || value == "3") {

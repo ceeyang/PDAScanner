@@ -123,8 +123,12 @@ export default {
         },
         // 维修中
         handleingItemClick(itemData) {
+            console.log(itemData);
             this.RepairStore.mCurrentRepair = itemData
-            this.$f7router.navigate('/repairing/');
+            this.getReadyRepairDetail(itemData.RepairNo.replace(/\s*/g, "")).then((data)=>{
+                this.RepairStore.mCurrentRepairDetail = data.RepairInfo
+                this.$f7router.navigate('/repairing/');
+            })
         },
 
         /**

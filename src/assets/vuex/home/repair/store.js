@@ -41,12 +41,26 @@ const state = {
     // 如果有详情, 新增一个详情接口, 返回详情内容
     mCurrentRepairDetail: [],
 
+    // 当前设备的维修人记录
+    mCurrentRepairUsers: [],
+
     // 当前处理中设备的维修记录
     mCurrentRepairProcessList: [],
 
     // 当前选择的维修类型
     mCurrentRepairType: [],
 
+    // 当前维修订单的 配件数据列表
+    mCurrentRepairingParts: [],
+
+    // 配件费用
+    mRepairingPartsExpense: '0',
+
+    // 维修费用
+    mRepairingExpense: '0',
+
+    // 维修类型
+    mRepairType: '自修',
 
 }
 

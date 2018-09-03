@@ -4,7 +4,7 @@
         height: 100%;
         .content-header{
             padding-left: 15px;
-            color: $main-color-subtitle;
+            color: $main-color-repair-main;
             background-color: white;
             font-size: 16px;
             padding-top: 5px;
@@ -70,7 +70,6 @@
             }
             .cube-textarea{
                 height: 120px;
-                border-bottom: 1px solid #E1E1E1
             }
         }
     }
@@ -80,6 +79,12 @@
         .content-bottom-content{
             display: flex;
             justify-content: flex-start;
+            .user-empty{
+                padding-left: 20px;
+                padding-top: 15px;
+                color: lightgray;
+                padding-bottom: 20px;
+            }
             .user-item{
                 text-align: center;
                 text-align-last: center;
@@ -97,8 +102,14 @@
     }
 
     .content-parts{
-        .content-bottom-content{
-
+        .content-parts-content{
+            background-color: white;
+            .parts-empty{
+                padding-left: 20px;
+                padding-top: 15px;
+                color: lightgray;
+                padding-bottom: 20px;
+            }
         }
     }
 

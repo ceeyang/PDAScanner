@@ -16,19 +16,9 @@
 
         <template v-if="StoreSearch.mSearchdDataTitles.length > 0">
             <cube-scroll class="list-module" :item="StoreSearch.mSearchdDataTitles">
-
-                <template v-if="StoreSearch.mType=='Part'">
-                    <div v-for="(item,index) in StoreSearch.mSearchdDataTitles" @click="itemClick(item,$event)" :key="index" :item="item">
-                        <parts-item  :item="item"></parts-item>
-                    </div>
-                </template>
-
-                <template v-else>
-                    <li v-for="(item,index) in StoreSearch.mSearchdDataTitles" @click="itemClick(item,$event)" :key="index" :item="item">
-                        <span class="list-module-item">{{item}}</span>
-                    </li>
-                </template>
-
+                <li else v-for="(item,index) in StoreSearch.mSearchdDataTitles" @click="itemClick(item,$event)" :key="index" :item="item">
+                    <span class="list-module-item">{{item}}</span>
+                </li>
             </cube-scroll>
         </template>
         <template v-else>
@@ -39,12 +29,12 @@
 </template>
 
 <script>
-import { mapState, mapActions} from 'vuex';
 import PartsItem from '../../../common/PartsItem'
+import { mapState, mapActions} from 'vuex';
 export default {
     data () {
         return {
-            title: "搜索",
+            title: "请选择配件",
         }
     },
 
@@ -129,11 +119,7 @@ export default {
                         // 设置 维修中,新增维修人员 回调
                         if (this.StoreSearch.mCallbackType == "Repairing_AddUser") {
                             this.addUser(item).then((res)=>{
-                                if (res.Status) {
-                                    this.showSuccess("新增用户成功!")
-                                } else {
 
-                                }
                             })
                         }
 
@@ -152,11 +138,10 @@ export default {
 
                 // 配件列表
                 else if (this.StoreSearch.mType == "Part") {
-                    let parts = this.StoreSearch.mSearchData[i]
-                    if (parts.PartsCode == data.PartsCode) {
+                    itemName = this.StoreSearch.mSearchData[i].QuestionTypeName // !!!
+                    if (itemName == data) {
                         this.StoreSearch.mValue = this.StoreSearch.mSearchData[i]
                         this.RepairStore.mCurrentRepairType = this.StoreSearch.mSearchData[i]
-
                         break
                     }
                 }
@@ -165,7 +150,7 @@ export default {
         },
     },
 
-    components:{
+    components: {
         PartsItem,
     }
 }

@@ -80,6 +80,9 @@ export default {
     // 26、新增维修人员
     addRepairUser: `/api/RepairHandle/AddRepairUser`,
 
+    //
+    allPartsList: `api/RepairHandle/PartsList`,
+
     // 27、维修配件列表
     repairPartsList: `/api/RepairHandle/RepairPartsList`,
 
@@ -112,5 +115,16 @@ export default {
 
     // 1.	报修基本信息(共用)
     getDefaultRepairInfo: `/api/Repair/GetRepairInfo`,
+
+    /**
+     * 设备已有维修人员
+     *
+     * get
+     *
+     * RepairNo：维修单号
+     * LineNumber：行号
+     */
+    getRepairingUser: `api/RepairHandle/RepairUserList`
+
 
 }

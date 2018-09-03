@@ -50,8 +50,9 @@
                         <div class="add-btn" @click="addUser">+</div>
                     </div>
                     <div class="content-bottom-content">
-                        <div class="user-item" v-for="(title, index) in mRepairUserTitles">
-                            {{title}}
+                        <div v-if="RepairStore.mCurrentRepairUsers==false" class="user-empty">暂无维修人员</div>
+                        <div v-else class="user-item" v-for="(item, index) in RepairStore.mCurrentRepairUsers">
+                            {{item.UserName}}
                         </div>
                     </div>
                 </div>
@@ -62,24 +63,27 @@
                         <span>{{item}}</span>
                         <div class="add-btn" @click="addAccessories">+</div>
                     </div>
-                    <div class="content-bottom-content">
-
-                        <!-- // code by yangxichuan
-                        // 此处需要设置该值的来源 -->
-                        <!-- <div class="user-item" v-for="(title, index) in mPartsItemArr">
-                            <parts-item></parts-item>
-                        </div> -->
-
-                        <parts-item v-for="i in 3"></parts-item>
+                    <div class="content-parts-content">
+                        <template v-if="RepairStore.mCurrentRepairingParts==false">
+                            <div class="parts-empty">暂无维修配件</div>
+                        </template>
+                        <template v-else v-for="(part, index) in RepairStore.mCurrentRepairingParts"><parts-item :item="part"></parts-item></template>
                     </div>
+
+                    <!-- <div class="content-parts-content">
+
+                        <div >
+
+                        </div>
+                    </div> -->
                 </div>
 
                 <!-- 维修信息 -->
                 <div v-if="index==5" class="content-repair-info">
                     <div class="content-header">{{item}}</div>
-                    <input-cell title="配件费用" placeholder="请输入配件费用" value="300"></input-cell>
-                    <input-cell title="维修费用" placeholder="请输入维修费用" value="300"></input-cell>
-                    <input-cell title="合计费用" placeholder="请输入配件费用" value="600"></input-cell>
+                    <input-cell title="配件费用" placeholder="请输入配件费用" v-model="RepairStore.InventoryTime"></input-cell>
+                    <input-cell title="维修费用" placeholder="请输入维修费用" v-model="RepairStore.mRepairingExpense"></input-cell>
+                    <input-cell title="合计费用" disable=true value="RepairStore.InventoryTime + RepairStore.mRepairingExpense"></input-cell>
                     <input-cell type="DataInput" title="维修类型" placeholder="请选择维修类型" :value="mCurrentSelectedType" :inputClickAction="repairTypeInputClick"></input-cell>
                 </div>
 
@@ -119,10 +123,6 @@ export default {
             mSectionHeaderTitles: ['设备信息', '报修信息', '故障描述', '维修人', '配件明细', '维修信息', '维修结果'],
 
             // code by yangxichuan
-            // 此处需要设置该值的来源
-            mRepairUserTitles: ['汪志', '管理员'],
-
-            // code by yangxichuan
             // 此处需要设置该值的来
             mPartsItemArr: [],
 
@@ -157,10 +157,23 @@ export default {
     mounted() {
 
         // 初始化维修记录
-        this.$store.dispatch('getRepairProcessList')
+        this.getRepairProcessList()
+
+        // 初始化维修人员
+        this.getRepairingUser()
+
+        // 初始化配件数据
+        this.getPartList()
     },
 
     methods: {
+
+        ...mapActions([
+            'getHandleRepairingUser',
+            'getRepairProcessList',
+
+            'getPartList',
+        ]),
 
         /**
          * 维修类型选择器, 取消按钮点击事件
@@ -195,6 +208,13 @@ export default {
         },
 
         /**
+         * 查询已有的维修用户
+         */
+        getRepairingUser() {
+            this.getHandleRepairingUser()
+        },
+
+        /**
          * 新增用户
          */
         addUser() {
@@ -209,7 +229,9 @@ export default {
          * 添加配件
          */
         addAccessories() {
-
+            this.StoreSearch.mType = "Part"
+            this.StoreSearch.mCallbackType = "Repairing_AddPart"
+            this.$f7router.navigate(`/SearchItemView/`)
         },
 
         addClickAction() {

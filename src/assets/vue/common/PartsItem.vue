@@ -2,18 +2,18 @@
     <div class="parts-item-cell" @click='itemClicks'>
 
         <div class="item-content-title">
-            一次性导管
+            {{item.PartsName}}
         </div>
 
         <!-- 下面的视图 -->
         <div class="item-content-bottom">
 
             <div class="content-size">
-                规格: G520
+                规格: {{item.Size}}
             </div>
 
             <div class="content-unit">
-                单位: 个
+                单位: {{item.Unit}}
             </div>
 
             <div class="content-count">
@@ -21,7 +21,7 @@
             </div>
 
             <div class="content-price">
-                ¥ 300
+                ¥ {{parseMoney(item.Price)}}
             </div>
 
             <div class="item-content-right">
@@ -57,6 +57,11 @@ export default {
                 localStorage.setItem('ItemData',itemDataJson);
                 this.itemClick();
             }
+        },
+
+        parseMoney(value) {
+            var stringS = String(value).split('.')
+            return stringS[0]
         }
     }
 }
