@@ -1,6 +1,7 @@
 export default [{
     path: '/',
-    component: require('./assets/vue/pages/mine/login.vue')
+    // component: require('./assets/vue/pages/mine/login.vue')
+    component: require('./assets/vue/pages/main/Tabs.vue')
   },
   {
     path: '/chats/',

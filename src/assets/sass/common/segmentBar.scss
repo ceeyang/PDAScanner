@@ -1,25 +1,26 @@
 .segment-bar {
     position: relative;
-  display: flex;
-  background-color: white;
-  border-bottom: 1px solid $main-line-color;
-  height: 30px;
-  .segment-tab {
-    flex: 1;
-    font-size: $small-font;
-    padding: 0.4rem 0;
-    margin-bottom: 0;
-    align-items: center;
-    text-align: center;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid $main-line-color;
+    height: 30px;
+    top:0px;
+    .segment-tab {
+        flex: 1;
+        font-size: $small-font;
+        padding: 0.4rem 0;
+        margin-bottom: 0;
+        align-items: center;
+        text-align: center;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
 
-  .active {
-    border-bottom: 2px solid $main-background-color;
-    color: $main-background-color;
-    font-size: 14px;
-    font-family: monospace;
-  }
+    .active {
+        border-bottom: 2px solid $main-background-color;
+        color: $main-background-color;
+        font-size: 14px;
+        font-family: monospace;
+    }
 }

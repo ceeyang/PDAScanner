@@ -1,10 +1,6 @@
 <template>
 <f7-page class="chats-page no-swipeback">
-
-    <!-- Nav -->
-    <f7-navbar>
-        <f7-nav-title title='消息'></f7-nav-title>
-    </f7-navbar>
+    <f7-navbar sliding title="消息"></f7-navbar>
 
     <!-- segment 选择器 -->
     <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="currentIndex"></segment-bar>
@@ -34,22 +30,17 @@
                     <repair-item :item="item" :itemClick="itemClick"></repair-item>
                 </li>
             </scroll>
-        </template>
+    </template>
 
-    <!-- tabbar -->
-    <foot-bar select="chats"></foot-bar>
 </f7-page>
 </template>
-
 <script>
-import FootBar from '../../common/footBar';
-import NavBar from '../../common/navBar';
 import SegmentBar from '../../common/segmentBar';
 import scroll from '../../common/scroll';
 import ChatsItem from './ChatsItem'
 
 export default {
-
+    name: 'Home',
     data() {
         return {
             titlesArray: ['全部', '待维修', '已完成'],
@@ -80,11 +71,11 @@ export default {
                 if (data.State == "1" || data.State == "1 ") {
                     let equNumber = data.EquId
                     // 去除空格
-                    equNumber = equNumber.replace(/\s*/g,"")
+                    equNumber = equNumber.replace(/\s*/g, "")
                     //this.getEquInfo(equNumber)
 
                     let itemDataJson = JSON.stringify(data);
-                    localStorage.setItem('ItemData',itemDataJson);
+                    localStorage.setItem('ItemData', itemDataJson);
                     this.$f7router.navigate('/readyrepair/');
                 }
             }
@@ -99,7 +90,7 @@ export default {
             toast.show()
 
             let params = {
-                "EquNo":EquId,
+                "EquNo": EquId,
                 "UserCode": localStorage.account,
                 // 'Store': localStorage.storeId,
             };
@@ -123,7 +114,7 @@ export default {
                 toast.hide()
             });
 
-            setTimeout(function () {
+            setTimeout(function() {
                 toast.hide()
             }, 2000);
         },
@@ -157,11 +148,11 @@ export default {
             toast.show()
 
             let params = {
-                "State":'1',
+                "State": '1',
                 "UserCode": localStorage.account,
                 "StoreId": localStorage.storeId,
-                "StartDate":'',
-                "EndDate":'',
+                "StartDate": '',
+                "EndDate": '',
                 "PageIndex": 1,
                 "PageSize": this.config.PageSize,
             };
@@ -209,17 +200,9 @@ export default {
     },
 
     components: {
-        FootBar,
-        NavBar,
         SegmentBar,
         scroll,
         ChatsItem,
     }
-}
+};
 </script>
-
-<style lang="css">
-.ptr-preloader{
-    margin-top: -70px;
-}
-</style>
