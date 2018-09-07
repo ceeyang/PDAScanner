@@ -81,9 +81,9 @@
                 <!-- 维修信息 -->
                 <div v-if="index==5" class="content-repair-info">
                     <div class="content-header">{{item}}</div>
-                    <input-cell title="配件费用" placeholder="请输入配件费用" v-model="RepairStore.InventoryTime"></input-cell>
+                    <input-cell title="配件费用" placeholder="请输入配件费用" v-model="RepairStore.mRepairingPartsExpense"></input-cell>
                     <input-cell title="维修费用" placeholder="请输入维修费用" v-model="RepairStore.mRepairingExpense"></input-cell>
-                    <input-cell title="合计费用" disable=true value="RepairStore.InventoryTime + RepairStore.mRepairingExpense"></input-cell>
+                    <input-cell title="合计费用" disable=true :value="Number(RepairStore.mRepairingPartsExpense) + Number(RepairStore.mRepairingExpense)"></input-cell>
                     <input-cell type="DataInput" title="维修类型" placeholder="请选择维修类型" :value="mCurrentSelectedType" :inputClickAction="repairTypeInputClick"></input-cell>
                 </div>
 
@@ -91,7 +91,7 @@
                 <div v-if="index==6" class="content-result">
                     <div class="content-header-bottom">{{item}}</div>
                     <!-- <cube-textarea v-model="快修好了, 这是死数据, 因为接口没调通"></cube-textarea> -->
-                    <cube-textarea value="快修好了, 这是死数据, 因为接口没调通"></cube-textarea>
+                    <cube-textarea value=""></cube-textarea>
                 </div>
 
 

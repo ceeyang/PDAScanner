@@ -106,7 +106,7 @@ export default {
 
 
         if (localStorage.isLogined == '1') {
-            this.$f7router.navigate('/home/', {"animate": false});
+            this.$f7router.navigate('/', {"animate": false});
         }
 
     },
@@ -131,7 +131,7 @@ export default {
             }
 
             this.popupVisible = false;
-            this.$f7router.navigate('/home/', {"animate": false});
+            this.$f7router.navigate('/', {"animate": false});
             localStorage.isLogined = '1';
         },
 

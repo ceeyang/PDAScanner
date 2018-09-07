@@ -23,7 +23,7 @@
                 <f7-icon slot="media" icon="fa fa-user fa-fw"></f7-icon>
             </f7-list-item>
         </f7-list>
-        
+
     </f7-page>
 </template>
 
@@ -38,8 +38,24 @@ export default {
         }
     },
 
+    mounted() {
+
+        // this.openDialog()
+
+        if (localStorage.isLogined == '0') {
+            this.$f7router.navigate('/login/', {"animate": false});
+        }
+    },
+
     methods: {
 
+        openDialog() {
+            const self = this;
+            self.$f7.dialog.preloader();
+            setTimeout(() => {
+                self.$f7.dialog.close();
+            }, 2000);
+        },
     },
 }
 </script>

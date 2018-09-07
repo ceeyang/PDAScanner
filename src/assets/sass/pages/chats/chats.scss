@@ -1,5 +1,10 @@
 .chats-page{
     .page-content{
         padding-top: 44px !important;
+
+        .chats-content-total{
+            padding-left: 15px;
+            border-bottom: 1px solid $main-color-line;
+        }
     }
 }

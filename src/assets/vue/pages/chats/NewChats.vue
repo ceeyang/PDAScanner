@@ -5,6 +5,8 @@
     <!-- segment 选择器 -->
     <segment-bar :titles="titlesArray" @switchTab="switchTab" :selectedIndex="currentIndex"></segment-bar>
 
+    <div class="chats-content-total">共计: {{mTotalValues}} 条</div>
+
     <!-- 全部 -->
     <template v-if="currentIndex==0">
         <scroll :items="allDataArr" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
@@ -38,7 +40,10 @@
 import SegmentBar from '../../common/segmentBar';
 import scroll from '../../common/scroll';
 import ChatsItem from './ChatsItem'
-
+import {
+    mapState,
+    mapActions,
+} from 'vuex';
 export default {
     name: 'Home',
     data() {
@@ -49,35 +54,99 @@ export default {
             loadMoreNot: true,
             firstLoad: true,
 
+
             allDataArr: [],
             unFinishedDataArr: [],
             finishedDataArr: [],
+
+            mTotalValues: 0,
         }
     },
+
+    computed: {
+        ...mapState([
+            'RepairStore',
+        ])
+    },
+
 
     mounted() {
         this.getChatsList()
     },
 
+    watch: {
+        currentIndex: function (newValue, oldValue) {
+            if (newValue == 0) {
+                this.mTotalValues = this.allDataArr.length
+            }
+
+            else if (newValue == 1) {
+                this.mTotalValues = this.unFinishedDataArr.length
+            }
+
+            else if (newValue == 2) {
+                this.mTotalValues = this.finishedDataArr.length
+            }
+        }
+    },
+
     methods: {
 
-        itemClick(data) {
+        ...mapActions([
+            'getRepaiingrHandleList',
+            'getRepairProcessList',
+            'getReadyRepairDetail',   // 待接单
 
-            console.log(data);
+        ]),
+
+        itemClick(item) {
+
+            console.log(item);
+
+            // 去除空格
+            let itemTypeID = item.TypeId.replace(/\s*/g, "")
+            let itemStatus = item.State.replace(/\s*/g, "")
+            let itemRepairOrder = item.OrderNo.replace(/\s*/g, "")
 
             // 维修
-            if (data.TypeId == "1" || data.TypeId == "1 ") {
+            if (itemTypeID == "1") {
                 // 待派工
-                if (data.State == "1" || data.State == "1 ") {
-                    let equNumber = data.EquId
-                    // 去除空格
-                    equNumber = equNumber.replace(/\s*/g, "")
-                    //this.getEquInfo(equNumber)
-
-                    let itemDataJson = JSON.stringify(data);
-                    localStorage.setItem('ItemData', itemDataJson);
-                    this.$f7router.navigate('/readyrepair/');
+                if (itemStatus == "1") {
+                    this.RepairStore.mReadyRepairItme = item
+                    let vm = this
+                    this.getReadyRepairDetail(itemRepairOrder).then((data)=>{
+                        this.RepairStore.mReadyRepairDetail = data.RepairInfo
+                        vm.$f7router.navigate('/readyrepair/');
+                    })
                 }
+
+                // 待接单
+                else if (itemStatus == "6") {
+                    this.RepairStore.mTakeOrderItme = item
+                    let vm = this
+                    this.getReadyRepairDetail(itemRepairOrder).then((data)=>{
+                        vm.RepairStore.mTakeOrderItmeDetail = data.RepairInfo
+                        vm.$f7router.navigate('/takeorders/');
+                    })
+                }
+
+                else {
+                    var toastCenter = this.$f7.toast.create({
+                      text: '暂不支持该类型, 请前往 PC 处理',
+                      position: 'top',
+                      closeTimeout: 2000,
+                    });
+                    toastCenter.open()
+                }
+            }
+
+            else {
+                var toastCenter = this.$f7.toast.create({
+                  text: '暂不支持该类型, 请前往 PC 处理',
+                  position: 'center',
+                  closeTimeout: 2000,
+                });
+                toastCenter.open()
             }
         },
 
@@ -163,6 +232,7 @@ export default {
                 console.log(data);
                 if (data.Status) {
                     vm.allDataArr = data.NoticeList
+                    vm.mTotalValues = data.Total
                 } else {
                     let msg = data.Msg;
                     if (!vm.toastCenter) {

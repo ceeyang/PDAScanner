@@ -1,9 +1,13 @@
 <template lang="html">
     <div class="chats-item-content" @click="itemClickAction(item,$event)">
         <i class="iconfont chats-content-type">&#xe626;</i>
+
         <div class="chats-content">
             <div class="chats-content-title">
                 {{item.EquName}}
+            </div>
+            <div class="chats-content-subtitle">
+                {{item.DepartmentName}}
             </div>
             <div class="chats-content-subtitle">
                 {{item.RepairUserName}}
@@ -11,7 +15,7 @@
             <div class="chats-content-subtitle">
                 {{item.OrderNo}}
             </div>
-            <div class="chats-content-subtitle">
+            <div class="chats-content-subtitle last">
                 {{item.RepairDate}}
             </div>
         </div>

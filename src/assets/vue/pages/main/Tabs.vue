@@ -6,15 +6,15 @@
 
     <!-- 底部 tabbar  -->
     <f7-toolbar tabbar labels>
-        <f7-link icon-f7="chats_fill" text="消息" tab-link="#chats"></f7-link>
-        <f7-link icon-f7="home_fill" text="首页" tab-link="#home" active></f7-link>
+        <f7-link icon-f7="chats_fill" text="消息" tab-link="#chats" active  tab-link-active></f7-link>
+        <f7-link icon-f7="home_fill" text="首页" tab-link="#home"></f7-link>
         <f7-link icon-f7="persons" text="我的" tab-link="#mine"></f7-link>
     </f7-toolbar>
 
     <!-- 内存跟试图, page-content -->
     <!-- <f7-tabs swipeable routable> -->
     <f7-tabs routable>
-        <f7-tab id="chats" tab-active>
+        <f7-tab id="chats" tab-active tab-link-active>
             <chats-page />
         </f7-tab>
         <f7-tab id="home">

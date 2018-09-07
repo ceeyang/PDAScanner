@@ -54,10 +54,10 @@ const state = {
     mCurrentRepairingParts: [],
 
     // 配件费用
-    mRepairingPartsExpense: '0',
+    mRepairingPartsExpense: 0,
 
     // 维修费用
-    mRepairingExpense: '0',
+    mRepairingExpense: 0,
 
     // 维修类型
     mRepairType: '自修',
