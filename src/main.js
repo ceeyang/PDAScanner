@@ -97,18 +97,6 @@ Vue.prototype.get=function(url, params, next){
     return Framework7.request.get(rootUrl+url, params, next);
 }
 
-Vue.prototype.showSuccess=function(msg){
-    const toast = app.$createToast({
-                        time: 0,
-                        txt: "msg",
-                        type: 'correct',
-                    })
-    toast.show()
-    setTimeout(function () {
-        toast.hide()
-    }, 2000);
-}
-
 Vue.options.root = projectConfig.serverPath
 Vue.options.timeout = 3000;
 

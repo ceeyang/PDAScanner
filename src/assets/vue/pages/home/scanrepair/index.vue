@@ -153,6 +153,7 @@ export default {
             const toast = this.$createToast({
                 time: 0,
                 txt: '加载中...',
+                mask: true,
             })
             toast.show()
 
@@ -217,6 +218,7 @@ export default {
             const toast = this.$createToast({
                 time: 0,
                 txt: '加载中...',
+                mask: true,
             })
             toast.show()
 

@@ -72,6 +72,7 @@ export default {
                             time: 0,
                             type: 'error',
                             txt: '该单号已经存在了!',
+                            mask: true
                         })
                         toast.show()
                         let vm = this
@@ -102,6 +103,7 @@ export default {
             const toast = this.$createToast({
                 time: 0,
                 txt: '正在缓存资产数据...',
+                mask: true
             })
             toast.show()
             console.log('toast.show()');
@@ -146,6 +148,7 @@ export default {
             const toast = this.$createToast({
                 time: 0,
                 txt: '加载中...',
+                mask: true
             })
             toast.show()
 

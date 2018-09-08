@@ -3691,68 +3691,6 @@ exports.default = function (obj, key, value) {
 
 /***/ }),
 /* 25 */
-/*!******************************************!*\
-  !*** ./src/assets/vue/common/scroll.vue ***!
-  \******************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var Component = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/component-normalizer */ 7)(
-  /* script */
-  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./scroll.vue */ 495),
-  /* template */
-  __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-532cafb2","hasScoped":false}!../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./scroll.vue */ 496),
-  /* styles */
-  null,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/yangxichuan/Desktop/pdascanner/src/assets/vue/common/scroll.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] scroll.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-532cafb2", Component.options)
-  } else {
-    hotAPI.reload("data-v-532cafb2", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 26 */
-/*!*********************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_global.js ***!
-  \*********************************************************/
-/*! dynamic exports provided */
-/*! all exports used */
-/***/ (function(module, exports) {
-
-// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
-var global = module.exports = typeof window != 'undefined' && window.Math == Math
-  ? window : typeof self != 'undefined' && self.Math == Math ? self
-  // eslint-disable-next-line no-new-func
-  : Function('return this')();
-if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
-
-
-/***/ }),
-/* 27 */
 /*!********************************************!*\
   !*** ./node_modules/vuex/dist/vuex.esm.js ***!
   \********************************************/
@@ -4703,6 +4641,68 @@ var index_esm = {
 
 
 /***/ }),
+/* 26 */
+/*!******************************************!*\
+  !*** ./src/assets/vue/common/scroll.vue ***!
+  \******************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/component-normalizer */ 7)(
+  /* script */
+  __webpack_require__(/*! !babel-loader?{"presets":["env"],"plugins":["transform-object-rest-spread"]}!../../../../node_modules/vue-loader/lib/selector?type=script&index=0!./scroll.vue */ 495),
+  /* template */
+  __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-532cafb2","hasScoped":false}!../../../../node_modules/vue-loader/lib/selector?type=template&index=0!./scroll.vue */ 496),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/yangxichuan/Desktop/pdascanner/src/assets/vue/common/scroll.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] scroll.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-532cafb2", Component.options)
+  } else {
+    hotAPI.reload("data-v-532cafb2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 27 */
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_global.js ***!
+  \*********************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports) {
+
+// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+var global = module.exports = typeof window != 'undefined' && window.Math == Math
+  ? window : typeof self != 'undefined' && self.Math == Math ? self
+  // eslint-disable-next-line no-new-func
+  : Function('return this')();
+if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
+
+
+/***/ }),
 /* 28 */
 /*!******************************************************!*\
   !*** ./node_modules/core-js/library/modules/_wks.js ***!
@@ -4713,7 +4713,7 @@ var index_esm = {
 
 var store = __webpack_require__(/*! ./_shared */ 83)('wks');
 var uid = __webpack_require__(/*! ./_uid */ 67);
-var Symbol = __webpack_require__(/*! ./_global */ 26).Symbol;
+var Symbol = __webpack_require__(/*! ./_global */ 27).Symbol;
 var USE_SYMBOL = typeof Symbol == 'function';
 
 var $exports = module.exports = function (name) {
@@ -4864,7 +4864,7 @@ exports.default = Device;
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(/*! ./_global */ 26);
+var global = __webpack_require__(/*! ./_global */ 27);
 var core = __webpack_require__(/*! ./_core */ 19);
 var ctx = __webpack_require__(/*! ./_ctx */ 49);
 var hide = __webpack_require__(/*! ./_hide */ 43);
@@ -18092,7 +18092,7 @@ module.exports = function (it, tag, stat) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./es6.array.iterator */ 175);
-var global = __webpack_require__(/*! ./_global */ 26);
+var global = __webpack_require__(/*! ./_global */ 27);
 var hide = __webpack_require__(/*! ./_hide */ 43);
 var Iterators = __webpack_require__(/*! ./_iterators */ 51);
 var TO_STRING_TAG = __webpack_require__(/*! ./_wks */ 28)('toStringTag');
@@ -18675,7 +18675,7 @@ module.exports = { "default": __webpack_require__(/*! core-js/library/fn/object/
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(/*! ./_is-object */ 37);
-var document = __webpack_require__(/*! ./_global */ 26).document;
+var document = __webpack_require__(/*! ./_global */ 27).document;
 // typeof document.createElement is 'object' in old IE
 var is = isObject(document) && isObject(document.createElement);
 module.exports = function (it) {
@@ -18782,7 +18782,7 @@ module.exports = function (key) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var core = __webpack_require__(/*! ./_core */ 19);
-var global = __webpack_require__(/*! ./_global */ 26);
+var global = __webpack_require__(/*! ./_global */ 27);
 var SHARED = '__core-js_shared__';
 var store = global[SHARED] || (global[SHARED] = {});
 
@@ -18895,7 +18895,7 @@ exports.f = __webpack_require__(/*! ./_wks */ 28);
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(/*! ./_global */ 26);
+var global = __webpack_require__(/*! ./_global */ 27);
 var core = __webpack_require__(/*! ./_core */ 19);
 var LIBRARY = __webpack_require__(/*! ./_library */ 62);
 var wksExt = __webpack_require__(/*! ./_wks-ext */ 87);
@@ -20006,7 +20006,7 @@ module.exports = __webpack_require__(/*! ./_hide */ 43);
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var document = __webpack_require__(/*! ./_global */ 26).document;
+var document = __webpack_require__(/*! ./_global */ 27).document;
 module.exports = document && document.documentElement;
 
 
@@ -20125,7 +20125,7 @@ var ctx = __webpack_require__(/*! ./_ctx */ 49);
 var invoke = __webpack_require__(/*! ./_invoke */ 199);
 var html = __webpack_require__(/*! ./_html */ 107);
 var cel = __webpack_require__(/*! ./_dom-create */ 77);
-var global = __webpack_require__(/*! ./_global */ 26);
+var global = __webpack_require__(/*! ./_global */ 27);
 var process = global.process;
 var setTask = global.setImmediate;
 var clearTask = global.clearImmediate;
@@ -24102,7 +24102,7 @@ _vue2.default.prototype.post = function (url, params, next) {
 
     // code by yangxichuan
     // 置空可以使用浏览器
-    rootUrl = "";
+    // rootUrl = ""
 
     var token = '';
     for (var item in params) {
@@ -24119,7 +24119,7 @@ _vue2.default.prototype.get = function (url, params, next) {
 
     // code by yangxichuan
     // 置空可以使用浏览器
-    rootUrl = "";
+    // rootUrl = ""
 
     var token = '';
     for (var item in params) {
@@ -24939,7 +24939,7 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ 19).Number.isFin
 
 // 20.1.2.2 Number.isFinite(number)
 var $export = __webpack_require__(/*! ./_export */ 30);
-var _isFinite = __webpack_require__(/*! ./_global */ 26).isFinite;
+var _isFinite = __webpack_require__(/*! ./_global */ 27).isFinite;
 
 $export($export.S, 'Number', {
   isFinite: function isFinite(it) {
@@ -25563,7 +25563,7 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ 19).Symbol;
 "use strict";
 
 // ECMAScript 6 symbols shim
-var global = __webpack_require__(/*! ./_global */ 26);
+var global = __webpack_require__(/*! ./_global */ 27);
 var has = __webpack_require__(/*! ./_has */ 44);
 var DESCRIPTORS = __webpack_require__(/*! ./_descriptors */ 40);
 var $export = __webpack_require__(/*! ./_export */ 30);
@@ -26074,7 +26074,7 @@ module.exports = __webpack_require__(/*! ../modules/_core */ 19).Promise;
 "use strict";
 
 var LIBRARY = __webpack_require__(/*! ./_library */ 62);
-var global = __webpack_require__(/*! ./_global */ 26);
+var global = __webpack_require__(/*! ./_global */ 27);
 var ctx = __webpack_require__(/*! ./_ctx */ 49);
 var classof = __webpack_require__(/*! ./_classof */ 90);
 var $export = __webpack_require__(/*! ./_export */ 30);
@@ -26448,7 +26448,7 @@ module.exports = function (fn, args, that) {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(/*! ./_global */ 26);
+var global = __webpack_require__(/*! ./_global */ 27);
 var macrotask = __webpack_require__(/*! ./_task */ 114).set;
 var Observer = global.MutationObserver || global.WebKitMutationObserver;
 var process = global.process;
@@ -26528,7 +26528,7 @@ module.exports = function () {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(/*! ./_global */ 26);
+var global = __webpack_require__(/*! ./_global */ 27);
 var navigator = global.navigator;
 
 module.exports = navigator && navigator.userAgent || '';
@@ -26563,7 +26563,7 @@ module.exports = function (target, src, safe) {
 
 "use strict";
 
-var global = __webpack_require__(/*! ./_global */ 26);
+var global = __webpack_require__(/*! ./_global */ 27);
 var core = __webpack_require__(/*! ./_core */ 19);
 var dP = __webpack_require__(/*! ./_object-dp */ 36);
 var DESCRIPTORS = __webpack_require__(/*! ./_descriptors */ 40);
@@ -26592,7 +26592,7 @@ module.exports = function (KEY) {
 
 var $export = __webpack_require__(/*! ./_export */ 30);
 var core = __webpack_require__(/*! ./_core */ 19);
-var global = __webpack_require__(/*! ./_global */ 26);
+var global = __webpack_require__(/*! ./_global */ 27);
 var speciesConstructor = __webpack_require__(/*! ./_species-constructor */ 113);
 var promiseResolve = __webpack_require__(/*! ./_promise-resolve */ 116);
 
@@ -69402,7 +69402,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/****** 14px ******/\n/****** 12px ******/\n/****** 12px ******/\n/****** 16px ******/\n/****** 18px ******/\n/****** 18px ******/\n/****** 18px ******/\n/****** 26px ******/\n/****** 40px ******/\n/****** 常用变量中没有定义的，page中基于base-space来计算 ******/\n/****** 18px ******/\n/****** 15px ******/\n/****** 20px ******/\n/****** 40px ******/\n/****** 24px ******/\n/****** 状态栏20px，导航栏44px ******/\n/****** 底部标签栏49px ******/\n/****** 顶部筛选高度44px ******/\n/****** 首页banner125px ******/\n/****** 输入框高度48px ******/\n/****** 按钮高度44px ******/\n/****行高12****/\n/****行高17****/\n/****行高18****/\n/****行高22****/\n/*题目题型颜色*/\n/*做题背景颜色*/\nh1, .h1 {\n  font-size: 40px; }\n\nh2, .h2 {\n  font-size: 26px; }\n\nh3, .h3 {\n  font-size: 18px; }\n\n.font-title {\n  font-size: 16px; }\n\n.small-font,\n.tip-font {\n  font-size: 12px; }\n\n.navbar-inner {\n  background-color: #70D746;\n  color: white; }\n\n.cube-toast.cube-popup {\n  z-index: 9999 !important; }\n\n.cube-popup_mask {\n  z-index: 9999 !important; }\n\n.mint-cell-title {\n  color: #333333 !important; }\n\n.home-foot {\n  position: fixed;\n  right: 0;\n  left: 0;\n  bottom: 0;\n  z-index: 1;\n  height: 40px; }\n  .home-foot .top-line {\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    height: 1px;\n    background-color: #E4E4E4; }\n  .home-foot .foot-content {\n    border: 1px solid rgba(222, 222, 222, 0.3);\n    display: flex;\n    background-color: white;\n    height: 55px; }\n    .home-foot .foot-content .home-item {\n      height: 40px;\n      color: #555;\n      font-weight: 600;\n      font-size: 12px;\n      flex: 1;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      flex-direction: column;\n      background-color: white;\n      color: #93999f; }\n      .home-foot .foot-content .home-item .iconfont {\n        font-size: 25px; }\n    .home-foot .foot-content .is-selected {\n      background-color: rgba(222, 222, 222, 0.3);\n      color: #70D746; }\n\n.common-navBar .navbar-inner {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  background-color: #70D746;\n  color: white; }\n\n.segment-bar {\n  position: relative;\n  display: flex;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4;\n  height: 30px;\n  top: 0px; }\n  .segment-bar .segment-tab {\n    flex: 1;\n    font-size: 12px;\n    padding: 0.4rem 0;\n    margin-bottom: 0;\n    align-items: center;\n    text-align: center;\n    white-space: nowrap;\n    text-overflow: ellipsis;\n    overflow: hidden; }\n  .segment-bar .active {\n    border-bottom: 2px solid #70D746;\n    color: #70D746;\n    font-size: 14px;\n    font-family: monospace; }\n\n.warehouse-picker {\n  width: 100%; }\n  .warehouse-picker .picker-top-buttons {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    text-align: center !important;\n    height: 40px; }\n    .warehouse-picker .picker-top-buttons .top-button {\n      width: 50%; }\n    .warehouse-picker .picker-top-buttons .cancel {\n      color: red; }\n\n.common-scroll {\n  top: 0px;\n  bottom: 45px;\n  position: inherit; }\n  .common-scroll .no-more-data-hint img {\n    width: 100%; }\n\n.measure-item {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4;\n  padding-bottom: 10px; }\n  .measure-item .item-content-left {\n    font-size: 50px;\n    color: #70D746; }\n  .measure-item .item-content-centern {\n    width: 100%;\n    padding-left: 15px; }\n    .measure-item .item-content-centern .item-content-title {\n      padding-top: 10px; }\n    .measure-item .item-content-centern .item-content-subtitle {\n      padding-top: 2px; }\n  .measure-item .item-content-right {\n    font-size: 40px; }\n\n.common-input-cell {\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4;\n  background-color: white;\n  height: 30px; }\n  .common-input-cell .input-cell-title {\n    width: 100px;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white;\n    min-width: 100px;\n    text-align: center; }\n  .common-input-cell .comon-input {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    padding-left: 15px;\n    padding-right: 10px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    width: 100%; }\n  .common-input-cell .picker-placeholder {\n    color: #6C6C6C; }\n  .common-input-cell .disabled {\n    background-color: #F3F3F3; }\n\n.vue-selected-input {\n  height: 30px;\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4; }\n  .vue-selected-input .selecte-user-title {\n    min-width: 100px;\n    text-align: center;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white; }\n  .vue-selected-input .selecte-user-input {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    width: 100%; }\n    .vue-selected-input .selecte-user-input .search-input {\n      height: 30px;\n      display: flex;\n      flex-direction: row;\n      width: 100%; }\n      .vue-selected-input .selecte-user-input .search-input .search-text {\n        padding-left: 15px;\n        width: 100%;\n        background-color: #f5f5f5;\n        color: #93999f;\n        border-bottom: 1px solid #E4E4E4; }\n      .vue-selected-input .selecte-user-input .search-input .search-icon {\n        width: auto;\n        padding-right: 10px;\n        height: auto;\n        border-bottom: 1px solid #E4E4E4;\n        align-items: center;\n        color: #93999f;\n        background-color: #f5f5f5;\n        padding-top: 5px; }\n    .vue-selected-input .selecte-user-input .list-module {\n      overflow: auto;\n      top: 0px;\n      height: auto;\n      z-index: 9998;\n      position: relative;\n      background-color: white !important;\n      max-height: 200px; }\n      .vue-selected-input .selecte-user-input .list-module li {\n        position: relative;\n        padding: 0.5em;\n        border: 1px solid #ccc;\n        white-space: nowrap; }\n        .vue-selected-input .selecte-user-input .list-module li > span {\n          display: inline-block;\n          vertical-align: middle; }\n        .vue-selected-input .selecte-user-input .list-module li .list-module-item {\n          font-size: 12px; }\n\n.cell-content {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4; }\n  .cell-content .cell-content-title {\n    min-width: 100px;\n    text-align: center;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white; }\n  .cell-content .cell-content-subtitle {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    padding-left: 15px;\n    width: 100%;\n    color: #333333; }\n    .cell-content .cell-content-subtitle .placeholder {\n      color: 14px; }\n\n.information-cell-content {\n  display: flex;\n  flex: 1;\n  height: 25px;\n  align-items: left; }\n  .information-cell-content .content-name {\n    margin-top: 3px;\n    color: #333333;\n    width: 100px !important;\n    font-size: 14px;\n    text-align: center;\n    font-size: 14px;\n    padding-left: 8px; }\n  .information-cell-content .content-value {\n    margin-top: 3px;\n    width: 100%;\n    margin-left: 5px;\n    color: #93999f; }\n\n.parts-item-cell {\n  background-color: white;\n  border-radius: 5px;\n  border-width: 1px;\n  border-color: #888888;\n  border: 1px solid #E4E4E4; }\n  .parts-item-cell .item-content-title {\n    padding-left: 15px;\n    padding-top: 10px; }\n  .parts-item-cell .item-content-bottom {\n    padding-top: 10px;\n    display: flex;\n    justify-content: space-around; }\n\n.home-page .page-content {\n  background-color: white;\n  padding-top: 44px !important; }\n\n.home-page .home-page-swiper {\n  height: 25%; }\n  .home-page .home-page-swiper .swiper-wrapper {\n    border-bottom: 2px solid #E4E4E4; }\n  .home-page .home-page-swiper .swiper-images {\n    width: 100%;\n    height: 100%; }\n\n.home-page .home-page-content {\n  display: flex;\n  flex-wrap: wrap; }\n  .home-page .home-page-content a {\n    color: #333333; }\n  .home-page .home-page-content i {\n    font-size: 25px; }\n\n.home-item {\n  width: 50%;\n  height: 65px;\n  border-bottom: 1px solid #E4E4E4;\n  border-right: 1px solid #E4E4E4;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-around; }\n  .home-item p {\n    text-align: center !important; }\n\n.page-content .page-content {\n  background-color: white; }\n\n.page-content .home-page-swiper {\n  height: 25%; }\n  .page-content .home-page-swiper .swiper-wrapper {\n    border-bottom: 2px solid #E4E4E4; }\n  .page-content .home-page-swiper .swiper-images {\n    width: 100%;\n    height: 100%; }\n\n.page-content .home-page-content {\n  display: flex;\n  flex-wrap: wrap; }\n  .page-content .home-page-content a {\n    color: #333333; }\n  .page-content .home-page-content i {\n    font-size: 25px; }\n\n.repair-manager-page .repair-scroll {\n  margin-top: -40px;\n  margin-bottom: 40px; }\n  .repair-manager-page .repair-scroll .repair-nav-items {\n    display: flex;\n    flex-direction: row; }\n\n.measure-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px; }\n  .measure-item .item-content-left {\n    margin-left: 15px;\n    margin-top: 5px;\n    margin-bottom: 5px; }\n    .measure-item .item-content-left .item-content-title {\n      font-size: 16px; }\n    .measure-item .item-content-left .item-content-subtitle {\n      font-size: 14px;\n      color: #93999f; }\n  .measure-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row; }\n    .measure-item .item-content-right i {\n      font-size: 25px; }\n    .measure-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n\n.ready-repair-page .repair-content {\n  top: 0px;\n  height: calc(100% - 85px) !important; }\n  .ready-repair-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    background-color: white;\n    font-size: 16px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    border-bottom: 1px solid #E4E4E4; }\n  .ready-repair-page .repair-content .content-top {\n    background-color: white; }\n    .ready-repair-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .top-right {\n        margin-top: 15px; }\n  .ready-repair-page .repair-content .content-middle {\n    margin-top: 1px;\n    background-color: white; }\n    .ready-repair-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .ready-repair-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .ready-repair-page .repair-content .content-des .content-header-bottom {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 16px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    background-color: #E1E1E1;\n    border-bottom: 1px solid #E4E4E4;\n    height: 30px; }\n  .ready-repair-page .repair-content .content-des .cube-textarea-wrapper {\n    height: 120px; }\n  .ready-repair-page .repair-content .content-des .cube-textarea {\n    height: 120px;\n    border-bottom: 1px solid #E1E1E1; }\n\n.ready-repair-page .content-bottom {\n  height: 85px; }\n  .ready-repair-page .content-bottom .choose-user-bottom {\n    bottom: 50px;\n    position: fixed;\n    color: white;\n    height: 35px;\n    width: 100%;\n    font-size: 16px;\n    padding-top: 5px;\n    background-color: #70D746;\n    border-color: transparent;\n    border: 1px solid #E1E1E1;\n    border-radius: 5px;\n    z-index: 10;\n    text-align: center; }\n  .ready-repair-page .content-bottom .ready-repair-bottom {\n    bottom: 0px;\n    position: fixed;\n    height: 45px;\n    z-index: 10;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    flex: 1;\n    width: 100%; }\n    .ready-repair-page .content-bottom .ready-repair-bottom .bottom-btn {\n      width: 100%;\n      text-align: center;\n      background-color: #70D746;\n      border-color: transparent; }\n\n.take-order-page .repair-content {\n  top: 0px;\n  height: calc(100% - 45px) !important; }\n  .take-order-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    background-color: white;\n    font-size: 16px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    border-bottom: 1px solid #E4E4E4; }\n  .take-order-page .repair-content .content-top {\n    background-color: white; }\n    .take-order-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .take-order-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .take-order-page .repair-content .content-top .contet-top-device-info .top-right {\n        margin-top: 15px; }\n  .take-order-page .repair-content .content-middle {\n    margin-top: 1px;\n    background-color: white; }\n    .take-order-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .take-order-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .take-order-page .repair-content .content-des .content-header-bottom {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 16px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    background-color: #E1E1E1;\n    border-bottom: 1px solid #E4E4E4;\n    height: 30px; }\n  .take-order-page .repair-content .content-des .cube-textarea-wrapper {\n    height: 120px; }\n  .take-order-page .repair-content .content-des .cube-textarea {\n    height: 120px;\n    border-bottom: 1px solid #E1E1E1; }\n\n.take-order-page .content-bottom {\n  height: 45px;\n  width: 100%;\n  text-align: center;\n  background-color: #70D746;\n  border-color: transparent; }\n\n.repairing-page .repairing-content {\n  top: 0px;\n  height: 100%; }\n  .repairing-page .repairing-content .content-header {\n    padding-left: 15px;\n    color: #505050;\n    background-color: white;\n    font-size: 16px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    border-bottom: 1px solid #8E8E8E; }\n  .repairing-page .repairing-content .header-add-btn {\n    display: flex;\n    justify-content: space-between; }\n    .repairing-page .repairing-content .header-add-btn .add-btn {\n      margin-right: 15px;\n      border-radius: 10px; }\n  .repairing-page .repairing-content .content-top {\n    background-color: white; }\n    .repairing-page .repairing-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .top-right {\n        margin-top: 15px; }\n  .repairing-page .repairing-content .content-middle {\n    margin-top: 1px;\n    background-color: white; }\n    .repairing-page .repairing-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .repairing-page .repairing-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .repairing-page .repairing-content .content-des {\n    background-color: white; }\n    .repairing-page .repairing-content .content-des .content-header-bottom {\n      padding-left: 15px;\n      color: #4A4A4A;\n      font-size: 16px;\n      padding-top: 3px;\n      padding-bottom: 5px;\n      background-color: #E1E1E1;\n      border-bottom: 1px solid #E4E4E4;\n      height: 30px; }\n    .repairing-page .repairing-content .content-des .cube-textarea-wrapper {\n      height: 120px;\n      padding-left: 8px; }\n    .repairing-page .repairing-content .content-des .cube-textarea {\n      height: 120px; }\n\n.repairing-page .content-bottom {\n  background-color: white; }\n  .repairing-page .content-bottom .content-bottom-content {\n    display: flex;\n    justify-content: flex-start; }\n    .repairing-page .content-bottom .content-bottom-content .user-empty {\n      padding-left: 20px;\n      padding-top: 15px;\n      color: lightgray;\n      padding-bottom: 20px; }\n    .repairing-page .content-bottom .content-bottom-content .user-item {\n      text-align: center;\n      text-align-last: center;\n      font-size: 14px;\n      background-color: #8E8E8E;\n      width: 50px;\n      height: 50px;\n      border-radius: 25px;\n      padding-top: 14px;\n      margin-left: 15px;\n      margin-top: 15px;\n      margin-bottom: 20px; }\n\n.repairing-page .content-parts .content-parts-content {\n  background-color: white; }\n  .repairing-page .content-parts .content-parts-content .parts-empty {\n    padding-left: 20px;\n    padding-top: 15px;\n    color: lightgray;\n    padding-bottom: 20px; }\n\n.repairing-page .content-repair-info {\n  margin-top: 1px; }\n\n.repairing-page .content-result {\n  background-color: white; }\n  .repairing-page .content-result .content-header-bottom {\n    padding-left: 15px;\n    color: #4A4A4A;\n    font-size: 16px;\n    padding-top: 3px;\n    padding-bottom: 5px;\n    padding-left: 15px;\n    background-color: #E1E1E1;\n    border-bottom: 1px solid #E4E4E4;\n    height: 30px; }\n  .repairing-page .content-result .cube-textarea-wrapper {\n    height: 120px;\n    padding-left: 8px; }\n  .repairing-page .content-result .cube-textarea {\n    height: 120px;\n    border-bottom: 1px solid #E1E1E1; }\n\n.new-repair-record .content-header {\n  margin-top: 15px;\n  padding-left: 15px;\n  color: #93999f;\n  font-size: 14px;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4; }\n\n.device-measure-page .device-measure-items {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between; }\n\n.menu-list-view {\n  display: flex;\n  flex-direction: row;\n  height: 100%; }\n  .menu-list-view .menu-left-list {\n    border: 1px solid #E4E4E4 !important;\n    left: 0px;\n    top: 0px;\n    width: 50%;\n    height: 100%;\n    margin: 0px; }\n    .menu-list-view .menu-left-list li {\n      border: 1px solid #E4E4E4 !important;\n      text-align: left; }\n  .menu-list-view .menu-right-list {\n    top: 0px;\n    right: 0px;\n    width: 50%;\n    height: 100%;\n    border: 1px solid #E4E4E4 !important; }\n    .menu-list-view .menu-right-list li {\n      text-align: left;\n      font-size: 10px;\n      border: 1px solid #E4E4E4 !important; }\n\n.measure-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px; }\n  .measure-item .item-content-left {\n    margin-left: 15px; }\n    .measure-item .item-content-left .item-content-title {\n      font-size: 16px; }\n  .measure-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row; }\n    .measure-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n\n.apply-repair-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .apply-repair-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .apply-repair-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .apply-repair-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .top-right {\n        display: flex;\n        flex-direction: column;\n        justify-content: center; }\n  .apply-repair-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .apply-repair-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .apply-repair-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .apply-repair-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .apply-repair-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .apply-repair-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .apply-repair-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.apply-repair-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  margin-bottom: 0px;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.scan-repair-page .scan-repair-scroll {\n  height: calc(100% - 75px); }\n\n.scan-repair-page .scan-repair-add-btn {\n  margin-bottom: 0px;\n  height: 44px;\n  background-color: #70D746; }\n\n.search-page .search-content-device-scroll {\n  border: 1px solid #E4E4E4;\n  background-color: white;\n  height: 100px; }\n  .search-page .search-content-device-scroll .search-item {\n    text-align: center !important;\n    border-bottom: 1px solid #E4E4E4; }\n\n.search-page .search-content-department-scroll {\n  border: 1px solid #E4E4E4;\n  background-color: white;\n  height: 100px; }\n  .search-page .search-content-department-scroll .search-item {\n    text-align: center !important;\n    border-bottom: 1px solid #E4E4E4; }\n\n.search-page .search-content-data-scroll {\n  height: calc(100% - 200px); }\n\n.search-items-page {\n  width: 100%; }\n  .search-items-page .search-input {\n    width: 100%;\n    height: 44px;\n    text-align: center;\n    padding-left: 10px;\n    border: 4px solid #DEDEDE; }\n  .search-items-page .list-module {\n    height: auto;\n    position: relative;\n    background-color: white !important; }\n    .search-items-page .list-module li {\n      position: relative;\n      padding: 0.5em;\n      border-bottom: 1px solid #EDECF2;\n      height: 44px;\n      white-space: nowrap; }\n      .search-items-page .list-module li > span {\n        display: inline-block;\n        vertical-align: middle; }\n      .search-items-page .list-module li .list-module-item {\n        font-size: 12px; }\n  .search-items-page img {\n    width: 100%;\n    height: 100%; }\n\n.chats-page .page-content {\n  padding-top: 44px !important; }\n\n.chats-item-content {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4;\n  margin-top: 5px;\n  align-items: center;\n  background-color: white;\n  justify-content: space-between; }\n  .chats-item-content .chats-content-type {\n    margin-top: 10px;\n    font-size: 50px;\n    margin-left: 10px;\n    color: #999999; }\n  .chats-item-content .chats-content {\n    width: 100%;\n    margin-left: 10px; }\n    .chats-item-content .chats-content .chats-content-title {\n      font-size: 16px; }\n    .chats-item-content .chats-content .chats-content-subtitle {\n      color: #93999f;\n      font-size: 14px; }\n  .chats-item-content .chats-content-status {\n    text-align: center;\n    padding-top: 14px;\n    color: white;\n    background-color: rgba(153, 153, 153, 0.5);\n    border-radius: 50%;\n    margin-right: 15px;\n    height: 45px;\n    font-size: 14px;\n    width: 70px; }\n\n.ready-repair-bottom {\n  bottom: 0px;\n  position: absolute;\n  color: white;\n  height: 45px;\n  background-color: #70D746 !important;\n  border-color: transparent;\n  z-index: 10; }\n\n.mine-page .page-content {\n  padding-top: 44px !important; }\n\n.about-page {\n  margin-top: 100px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around; }\n  .about-page .about-logo-img {\n    margin-top: 70px;\n    width: 50%;\n    height: 50%; }\n  .about-page .company-info {\n    height: 90px;\n    justify-content: space-between;\n    font-size: 14px;\n    margin-top: 60px; }\n    .about-page .company-info .tell {\n      color: #3D7ADD; }\n    .about-page .company-info .website {\n      color: #3D7ADD; }\n  .about-page .version-info {\n    position: absolute;\n    bottom: 10px;\n    width: 100%;\n    text-align: center;\n    line-height: 44px;\n    height: 44px;\n    font-size: 16px; }\n    .about-page .version-info.text {\n      color: white; }\n\n.page-login .login-background-image {\n  width: 100%;\n  height: 100%;\n  background-color: #F8F8F8; }\n\n.page-login .login-content {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .page-login .login-content .login-logo {\n    margin-top: 70px;\n    width: 50%; }\n  .page-login .login-content .login-input-div {\n    margin-top: 70px;\n    width: 90%; }\n    .page-login .login-content .login-input-div .login-input {\n      border-radius: 5%;\n      background-color: white; }\n  .page-login .login-content .login-button {\n    width: 90%;\n    color: white;\n    background-color: #70D746;\n    border-color: transparent; }\n  .page-login .login-content .warehouse-picker {\n    width: 100%; }\n    .page-login .login-content .warehouse-picker .picker-top-buttons {\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      text-align: center !important;\n      height: 40px; }\n      .page-login .login-content .warehouse-picker .picker-top-buttons .top-button {\n        width: 50%; }\n      .page-login .login-content .warehouse-picker .picker-top-buttons .cancel {\n        color: red; }\n\n.home-assetcheck .tab {\n  width: 100%;\n  font-size: 0;\n  background-color: #fff; }\n\n.home-assetcheck .tab li {\n  width: 45%;\n  display: inline-block;\n  text-align: center;\n  font-size: 1rem;\n  padding: 10px 0;\n  font-weight: 400; }\n\n.home-assetcheck .list_cont {\n  margin: 0; }\n\n.home-assetcheck .tab_item {\n  color: #666666;\n  font-size: 0;\n  margin-top: 3px;\n  background-color: #FFFFF0; }\n\n.home-assetcheck .img_box {\n  width: 20%;\n  height: auto; }\n\n.home-assetcheck .img_box i {\n  font-size: 55px;\n  color: #999999; }\n\n.home-assetcheck .text_box {\n  width: 78%;\n  font-size: 12px; }\n\n.home-assetcheck .text_box .h5 {\n  font-size: .5rem;\n  color: #333333;\n  line-height: 20px; }\n\n.home-assetcheck .text_box .h5 .tab_btn {\n  color: #666;\n  width: 2rem;\n  height: 17px;\n  line-height: 15px;\n  margin: 3px 5px 0 0;\n  font-size: 12px;\n  font-weight: 400;\n  background: none;\n  border: 1px solid #d2d2d2;\n  border-radius: 2px; }\n\n.home-assetcheck .text_box_item {\n  font-size: 12px;\n  margin: 0; }\n\n.home-assetcheck .text_box_item small + small {\n  margin-right: 5px; }\n\n.home-assetcheck .add {\n  overflow: hidden;\n  padding-top: 30px;\n  background: #FFFFF0; }\n\n.home-assetcheck form {\n  height: 100%;\n  overflow: hidden; }\n\n.home-assetcheck .form-item {\n  width: 90%;\n  margin: 0 auto 10px;\n  font-size: 0;\n  color: #666666; }\n\n.home-assetcheck .form-item .label-item {\n  font-size: 12px;\n  width: 30%;\n  height: 35px;\n  line-height: 35px;\n  color: #333333; }\n\n.home-assetcheck .form-item .input-box {\n  font-size: 12px;\n  width: 70%; }\n\n.home-assetcheck .form-item .input-box input {\n  display: block;\n  width: 95%;\n  height: 35px;\n  line-height: 35px;\n  border: 1px solid #c2c2c2;\n  border-radius: 4px;\n  text-indent: 1em; }\n\n.home-assetcheck .form-item .input-box .right-text {\n  top: 25%;\n  right: 8%;\n  z-index: 0; }\n\n.home-assetcheck .form-btn-box {\n  width: 100%;\n  bottom: 0; }\n\n.home-assetcheck .form-btn-box button {\n  font-size: 15px;\n  height: 40px;\n  line-height: 40px;\n  outline: none;\n  border: none;\n  background-color: #70D746;\n  color: #fff;\n  cursor: pointer; }\n\n.home-assetcheck .tab_show {\n  display: block; }\n\n.home-assetcheck .tab_hide {\n  display: none; }\n\n.home-assetcheck .active {\n  color: #5FB878;\n  font-weight: 500;\n  border-bottom: 2px solid #5FB878; }\n\n.detail-asset-acheck .content-header {\n  padding-left: 15px;\n  color: #93999f;\n  font-size: 14px;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4; }\n\n.detail-asset-acheck .content-top {\n  margin-top: 15px;\n  background-color: white; }\n  .detail-asset-acheck .content-top .contet-top-device-info {\n    display: flex;\n    flex-direction: row;\n    align-items: center; }\n    .detail-asset-acheck .content-top .contet-top-device-info .device-icon {\n      font-size: 80px;\n      color: #70D746;\n      margin-left: 15px;\n      margin-right: 15px; }\n    .detail-asset-acheck .content-top .contet-top-device-info .content-device-name {\n      font-size: 16px;\n      color: #333333; }\n\n.detail-asset-acheck .content-middle {\n  margin-top: 15px;\n  background-color: white; }\n  .detail-asset-acheck .content-middle .content-repair-info {\n    padding-left: 15px;\n    height: 30px;\n    font-size: 16px;\n    color: #333333; }\n  .detail-asset-acheck .content-middle .problem-description {\n    border-bottom: 1px solid #E4E4E4;\n    border-top: 1px solid #E4E4E4;\n    height: 50px; }\n\n.detail-asset-acheck .asset-checkout-bottom-btn {\n  display: flex;\n  margin-top: 15px;\n  flex-direction: row;\n  flex: 1;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n  .detail-asset-acheck .asset-checkout-bottom-btn .asset-check-bottom-btn {\n    background-color: #70D746;\n    width: 40%; }\n\n.beginAassetcheck-cont {\n  height: 100%;\n  overflow: auto; }\n  .beginAassetcheck-cont .list_item {\n    background-color: #fffbf0;\n    border-bottom: 2px solid #eeeeee; }\n    .beginAassetcheck-cont .list_item .list-item-cont {\n      font-size: 0;\n      background-color: #eeeeee; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-icon {\n      width: 20%;\n      font-size: 12px;\n      line-height: 70px; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-icon i {\n      font-size: 45px;\n      color: #009688; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-text {\n      font-size: 12px;\n      width: 80%;\n      color: #828282;\n      padding: 2px 0; }\n    .beginAassetcheck-cont .list_item .list-item-footer {\n      font-size: 12px;\n      color: #666666;\n      padding: 0 0 0 5px; }\n    .beginAassetcheck-cont .list_item .list-item-footer span {\n      font-size: 12px;\n      line-height: 20px; }\n    .beginAassetcheck-cont .list_item .list-item-footer button {\n      background: none;\n      border: 1px solid #999999;\n      border-radius: 10px;\n      font-size: 12px;\n      height: 16px;\n      line-height: 16px;\n      margin: 3px 10px 0 0;\n      padding: 0 5px;\n      width: auto; }\n  .beginAassetcheck-cont .list_item h6 {\n    line-height: 15px;\n    padding: 3px 5px;\n    color: #666666;\n    font-weight: 400;\n    font-size: 13px; }\n  .beginAassetcheck-cont .con-top-f {\n    position: fixed;\n    top: 40px;\n    left: 0;\n    width: 100%; }\n\n.new-asset-check-page .search-input {\n  height: 40px;\n  padding-left: 15px;\n  background-color: #DEDEDE4D;\n  border-bottom: 1px solid #E4E4E4; }\n  .new-asset-check-page .search-input input {\n    width: 100%;\n    height: 40px; }\n\n.new-asset-check-page .downloading-content {\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  top: 0px;\n  background-color: black;\n  opacity: 0.1; }\n\n.asset-checkou-item {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4; }\n  .asset-checkou-item .item-content-left {\n    font-size: 50px;\n    color: #70D746;\n    padding-left: 13px; }\n  .asset-checkou-item .item-content-middle {\n    width: 100%; }\n    .asset-checkou-item .item-content-middle .item-content-title {\n      padding-top: 10px; }\n    .asset-checkou-item .item-content-middle .item-content-subtitle {\n      padding-top: 5px; }\n  .asset-checkou-item .item-content-right {\n    font-size: 40px;\n    padding-right: 15px; }\n\n.asset-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px;\n  align-self: center;\n  flex: 1; }\n  .asset-item .item-content-left {\n    margin-left: 15px;\n    font-size: 60px;\n    color: #70D746; }\n  .asset-item .item-content-middle {\n    margin-top: 5px;\n    margin-left: 15px;\n    margin-bottom: 5px;\n    width: 100%; }\n    .asset-item .item-content-middle .item-content-title {\n      font-size: 16px;\n      color: #333333; }\n    .asset-item .item-content-middle .item-content-subtitle {\n      font-size: 14px;\n      color: #93999f; }\n  .asset-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    align-self: center; }\n    .asset-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/****** 14px ******/\n/****** 12px ******/\n/****** 12px ******/\n/****** 16px ******/\n/****** 18px ******/\n/****** 18px ******/\n/****** 18px ******/\n/****** 26px ******/\n/****** 40px ******/\n/****** 常用变量中没有定义的，page中基于base-space来计算 ******/\n/****** 18px ******/\n/****** 15px ******/\n/****** 20px ******/\n/****** 40px ******/\n/****** 24px ******/\n/****** 状态栏20px，导航栏44px ******/\n/****** 底部标签栏49px ******/\n/****** 顶部筛选高度44px ******/\n/****** 首页banner125px ******/\n/****** 输入框高度48px ******/\n/****** 按钮高度44px ******/\n/****行高12****/\n/****行高17****/\n/****行高18****/\n/****行高22****/\n/*题目题型颜色*/\n/*做题背景颜色*/\nh1, .h1 {\n  font-size: 40px; }\n\nh2, .h2 {\n  font-size: 26px; }\n\nh3, .h3 {\n  font-size: 18px; }\n\n.font-title {\n  font-size: 16px; }\n\n.small-font,\n.tip-font {\n  font-size: 12px; }\n\n.navbar-inner {\n  background-color: #70D746;\n  color: white; }\n\n.cube-toast.cube-popup {\n  z-index: 9999 !important; }\n\n.cube-popup_mask {\n  z-index: 9999 !important; }\n\n.mint-cell-title {\n  color: #333333 !important; }\n\n.home-foot {\n  position: fixed;\n  right: 0;\n  left: 0;\n  bottom: 0;\n  z-index: 1;\n  height: 40px; }\n  .home-foot .top-line {\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    height: 1px;\n    background-color: #E4E4E4; }\n  .home-foot .foot-content {\n    border: 1px solid rgba(222, 222, 222, 0.3);\n    display: flex;\n    background-color: white;\n    height: 55px; }\n    .home-foot .foot-content .home-item {\n      height: 40px;\n      color: #555;\n      font-weight: 600;\n      font-size: 12px;\n      flex: 1;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      flex-direction: column;\n      background-color: white;\n      color: #93999f; }\n      .home-foot .foot-content .home-item .iconfont {\n        font-size: 25px; }\n    .home-foot .foot-content .is-selected {\n      background-color: rgba(222, 222, 222, 0.3);\n      color: #70D746; }\n\n.common-navBar .navbar-inner {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  background-color: #70D746;\n  color: white; }\n\n.segment-bar {\n  position: relative;\n  display: flex;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4;\n  height: 30px;\n  top: 0px; }\n  .segment-bar .segment-tab {\n    flex: 1;\n    font-size: 12px;\n    padding: 0.4rem 0;\n    margin-bottom: 0;\n    align-items: center;\n    text-align: center;\n    white-space: nowrap;\n    text-overflow: ellipsis;\n    overflow: hidden; }\n  .segment-bar .active {\n    border-bottom: 2px solid #70D746;\n    color: #70D746;\n    font-size: 14px;\n    font-family: monospace; }\n\n.warehouse-picker {\n  width: 100%; }\n  .warehouse-picker .picker-top-buttons {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    text-align: center !important;\n    height: 40px; }\n    .warehouse-picker .picker-top-buttons .top-button {\n      width: 50%; }\n    .warehouse-picker .picker-top-buttons .cancel {\n      color: red; }\n\n.common-scroll {\n  top: 0px;\n  bottom: 45px;\n  position: inherit; }\n  .common-scroll .no-more-data-hint img {\n    width: 100%; }\n\n.measure-item {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4;\n  padding-bottom: 10px; }\n  .measure-item .item-content-left {\n    font-size: 50px;\n    color: #70D746; }\n  .measure-item .item-content-centern {\n    width: 100%;\n    padding-left: 15px; }\n    .measure-item .item-content-centern .item-content-title {\n      padding-top: 10px; }\n    .measure-item .item-content-centern .item-content-subtitle {\n      padding-top: 2px; }\n  .measure-item .item-content-right {\n    font-size: 40px; }\n\n.common-input-cell {\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4;\n  background-color: white;\n  height: 30px; }\n  .common-input-cell .input-cell-title {\n    width: 100px;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white;\n    min-width: 100px;\n    text-align: center; }\n  .common-input-cell .comon-input {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    padding-left: 15px;\n    padding-right: 10px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    width: 100%; }\n  .common-input-cell .picker-placeholder {\n    color: #6C6C6C; }\n  .common-input-cell .disabled {\n    background-color: #F3F3F3; }\n\n.vue-selected-input {\n  height: 30px;\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4; }\n  .vue-selected-input .selecte-user-title {\n    min-width: 100px;\n    text-align: center;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white; }\n  .vue-selected-input .selecte-user-input {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    width: 100%; }\n    .vue-selected-input .selecte-user-input .search-input {\n      height: 30px;\n      display: flex;\n      flex-direction: row;\n      width: 100%; }\n      .vue-selected-input .selecte-user-input .search-input .search-text {\n        padding-left: 15px;\n        width: 100%;\n        background-color: #f5f5f5;\n        color: #93999f;\n        border-bottom: 1px solid #E4E4E4; }\n      .vue-selected-input .selecte-user-input .search-input .search-icon {\n        width: auto;\n        padding-right: 10px;\n        height: auto;\n        border-bottom: 1px solid #E4E4E4;\n        align-items: center;\n        color: #93999f;\n        background-color: #f5f5f5;\n        padding-top: 5px; }\n    .vue-selected-input .selecte-user-input .list-module {\n      overflow: auto;\n      top: 0px;\n      height: auto;\n      z-index: 9998;\n      position: relative;\n      background-color: white !important;\n      max-height: 200px; }\n      .vue-selected-input .selecte-user-input .list-module li {\n        position: relative;\n        padding: 0.5em;\n        border: 1px solid #ccc;\n        white-space: nowrap; }\n        .vue-selected-input .selecte-user-input .list-module li > span {\n          display: inline-block;\n          vertical-align: middle; }\n        .vue-selected-input .selecte-user-input .list-module li .list-module-item {\n          font-size: 12px; }\n\n.cell-content {\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4; }\n  .cell-content .cell-content-title {\n    min-width: 100px;\n    text-align: center;\n    padding-top: 3px;\n    color: #333333;\n    background-color: white; }\n  .cell-content .cell-content-subtitle {\n    font-size: 14px;\n    background-color: #DEDEDE4D;\n    padding-left: 15px;\n    width: 100%;\n    color: #333333; }\n    .cell-content .cell-content-subtitle .placeholder {\n      color: 14px; }\n\n.information-cell-content {\n  display: flex;\n  flex: 1;\n  height: 25px;\n  align-items: left; }\n  .information-cell-content .content-name {\n    margin-top: 3px;\n    color: #333333;\n    width: 100px !important;\n    font-size: 14px;\n    text-align: center;\n    font-size: 14px;\n    padding-left: 8px; }\n  .information-cell-content .content-value {\n    margin-top: 3px;\n    width: 100%;\n    margin-left: 5px;\n    color: #93999f; }\n\n.parts-item-cell {\n  background-color: white;\n  border-radius: 5px;\n  border-width: 1px;\n  border-color: #888888;\n  border: 1px solid #E4E4E4; }\n  .parts-item-cell .item-content-title {\n    padding-left: 15px;\n    padding-top: 10px; }\n  .parts-item-cell .item-content-bottom {\n    padding-top: 10px;\n    display: flex;\n    justify-content: space-around; }\n\n.home-page .page-content {\n  background-color: white;\n  padding-top: 44px !important; }\n\n.home-page .home-page-swiper {\n  height: 25%; }\n  .home-page .home-page-swiper .swiper-wrapper {\n    border-bottom: 2px solid #E4E4E4; }\n  .home-page .home-page-swiper .swiper-images {\n    width: 100%;\n    height: 100%; }\n\n.home-page .home-page-content {\n  display: flex;\n  flex-wrap: wrap; }\n  .home-page .home-page-content a {\n    color: #333333; }\n  .home-page .home-page-content i {\n    font-size: 25px; }\n\n.home-item {\n  width: 50%;\n  height: 65px;\n  border-bottom: 1px solid #E4E4E4;\n  border-right: 1px solid #E4E4E4;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-around; }\n  .home-item p {\n    text-align: center !important; }\n\n.page-content .page-content {\n  background-color: white; }\n\n.page-content .home-page-swiper {\n  height: 25%; }\n  .page-content .home-page-swiper .swiper-wrapper {\n    border-bottom: 2px solid #E4E4E4; }\n  .page-content .home-page-swiper .swiper-images {\n    width: 100%;\n    height: 100%; }\n\n.page-content .home-page-content {\n  display: flex;\n  flex-wrap: wrap; }\n  .page-content .home-page-content a {\n    color: #333333; }\n  .page-content .home-page-content i {\n    font-size: 25px; }\n\n.repair-manager-page .repair-scroll {\n  margin-top: -40px;\n  margin-bottom: 40px; }\n  .repair-manager-page .repair-scroll .repair-nav-items {\n    display: flex;\n    flex-direction: row; }\n\n.measure-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px; }\n  .measure-item .item-content-left {\n    margin-left: 15px;\n    margin-top: 5px;\n    margin-bottom: 5px; }\n    .measure-item .item-content-left .item-content-title {\n      font-size: 16px; }\n    .measure-item .item-content-left .item-content-subtitle {\n      font-size: 14px;\n      color: #93999f; }\n  .measure-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row; }\n    .measure-item .item-content-right i {\n      font-size: 25px; }\n    .measure-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n\n.ready-repair-page .repair-content {\n  top: 0px;\n  height: calc(100% - 85px) !important; }\n  .ready-repair-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    background-color: white;\n    font-size: 16px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    border-bottom: 1px solid #E4E4E4; }\n  .ready-repair-page .repair-content .content-top {\n    background-color: white; }\n    .ready-repair-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .ready-repair-page .repair-content .content-top .contet-top-device-info .top-right {\n        margin-top: 15px; }\n        .ready-repair-page .repair-content .content-top .contet-top-device-info .top-right .content-name {\n          width: 160px !important; }\n  .ready-repair-page .repair-content .content-middle {\n    margin-top: 1px;\n    background-color: white; }\n    .ready-repair-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .ready-repair-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .ready-repair-page .repair-content .content-des .content-header-bottom {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 16px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    background-color: #E1E1E1;\n    border-bottom: 1px solid #E4E4E4;\n    height: 30px; }\n  .ready-repair-page .repair-content .content-des .cube-textarea-wrapper {\n    height: 120px; }\n  .ready-repair-page .repair-content .content-des .cube-textarea {\n    height: 120px;\n    border-bottom: 1px solid #E1E1E1; }\n\n.ready-repair-page .content-bottom {\n  height: 85px; }\n  .ready-repair-page .content-bottom .choose-user-bottom {\n    bottom: 50px;\n    position: fixed;\n    color: white;\n    height: 35px;\n    width: 100%;\n    font-size: 16px;\n    padding-top: 5px;\n    background-color: #70D746;\n    border-color: transparent;\n    border: 1px solid #E1E1E1;\n    border-radius: 5px;\n    z-index: 10;\n    text-align: center; }\n  .ready-repair-page .content-bottom .ready-repair-bottom {\n    bottom: 0px;\n    position: fixed;\n    height: 45px;\n    z-index: 10;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    flex: 1;\n    width: 100%; }\n    .ready-repair-page .content-bottom .ready-repair-bottom .bottom-btn {\n      width: 100%;\n      text-align: center;\n      background-color: #70D746;\n      border-color: transparent; }\n\n.take-order-page .repair-content {\n  top: 0px;\n  height: calc(100% - 45px) !important; }\n  .take-order-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    background-color: white;\n    font-size: 16px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    border-bottom: 1px solid #E4E4E4; }\n  .take-order-page .repair-content .content-top {\n    background-color: white; }\n    .take-order-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .take-order-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .take-order-page .repair-content .content-top .contet-top-device-info .top-right {\n        margin-top: 15px; }\n  .take-order-page .repair-content .content-middle {\n    margin-top: 1px;\n    background-color: white; }\n    .take-order-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .take-order-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .take-order-page .repair-content .content-des .content-header-bottom {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 16px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    background-color: #E1E1E1;\n    border-bottom: 1px solid #E4E4E4;\n    height: 30px; }\n  .take-order-page .repair-content .content-des .cube-textarea-wrapper {\n    height: 120px; }\n  .take-order-page .repair-content .content-des .cube-textarea {\n    height: 120px;\n    border-bottom: 1px solid #E1E1E1; }\n\n.take-order-page .content-bottom {\n  height: 45px;\n  width: 100%;\n  text-align: center;\n  background-color: #70D746;\n  border-color: transparent; }\n\n.repairing-page .repairing-content {\n  top: 0px;\n  height: 100%; }\n  .repairing-page .repairing-content .content-header {\n    padding-left: 15px;\n    color: #505050;\n    background-color: white;\n    font-size: 16px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    border-bottom: 1px solid #8E8E8E; }\n  .repairing-page .repairing-content .header-add-btn {\n    display: flex;\n    justify-content: space-between; }\n    .repairing-page .repairing-content .header-add-btn .add-btn {\n      margin-right: 15px;\n      border-radius: 10px; }\n  .repairing-page .repairing-content .content-top {\n    background-color: white; }\n    .repairing-page .repairing-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .repairing-page .repairing-content .content-top .contet-top-device-info .top-right {\n        margin-top: 15px; }\n  .repairing-page .repairing-content .content-middle {\n    margin-top: 1px;\n    background-color: white; }\n    .repairing-page .repairing-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .repairing-page .repairing-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .repairing-page .repairing-content .content-des {\n    background-color: white; }\n    .repairing-page .repairing-content .content-des .content-header-bottom {\n      padding-left: 15px;\n      color: #4A4A4A;\n      font-size: 16px;\n      padding-top: 3px;\n      padding-bottom: 5px;\n      background-color: #E1E1E1;\n      border-bottom: 1px solid #E4E4E4;\n      height: 30px; }\n    .repairing-page .repairing-content .content-des .cube-textarea-wrapper {\n      height: 120px;\n      padding-left: 8px; }\n    .repairing-page .repairing-content .content-des .cube-textarea {\n      height: 120px; }\n\n.repairing-page .content-bottom {\n  background-color: white; }\n  .repairing-page .content-bottom .content-bottom-content {\n    display: flex;\n    justify-content: flex-start; }\n    .repairing-page .content-bottom .content-bottom-content .user-empty {\n      padding-left: 20px;\n      padding-top: 15px;\n      color: lightgray;\n      padding-bottom: 20px; }\n    .repairing-page .content-bottom .content-bottom-content .user-item {\n      text-align: center;\n      text-align-last: center;\n      font-size: 14px;\n      background-color: #8E8E8E;\n      width: 50px;\n      height: 50px;\n      border-radius: 25px;\n      padding-top: 14px;\n      margin-left: 15px;\n      margin-top: 15px;\n      margin-bottom: 20px; }\n\n.repairing-page .content-parts .content-parts-content {\n  background-color: white; }\n  .repairing-page .content-parts .content-parts-content .parts-empty {\n    padding-left: 20px;\n    padding-top: 15px;\n    color: lightgray;\n    padding-bottom: 20px; }\n\n.repairing-page .content-repair-info {\n  margin-top: 1px; }\n\n.repairing-page .content-result {\n  background-color: white; }\n  .repairing-page .content-result .content-header-bottom {\n    padding-left: 15px;\n    color: #4A4A4A;\n    font-size: 16px;\n    padding-top: 3px;\n    padding-bottom: 5px;\n    padding-left: 15px;\n    background-color: #E1E1E1;\n    border-bottom: 1px solid #E4E4E4;\n    height: 30px; }\n  .repairing-page .content-result .cube-textarea-wrapper {\n    height: 120px;\n    padding-left: 8px; }\n  .repairing-page .content-result .cube-textarea {\n    height: 120px;\n    border-bottom: 1px solid #E1E1E1; }\n\n.new-repair-record .content-header {\n  margin-top: 15px;\n  padding-left: 15px;\n  color: #93999f;\n  font-size: 14px;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4; }\n\n.device-measure-page .device-measure-items {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between; }\n\n.menu-list-view {\n  display: flex;\n  flex-direction: row;\n  height: 100%; }\n  .menu-list-view .menu-left-list {\n    border: 1px solid #E4E4E4 !important;\n    left: 0px;\n    top: 0px;\n    width: 50%;\n    height: 100%;\n    margin: 0px; }\n    .menu-list-view .menu-left-list li {\n      border: 1px solid #E4E4E4 !important;\n      text-align: left; }\n  .menu-list-view .menu-right-list {\n    top: 0px;\n    right: 0px;\n    width: 50%;\n    height: 100%;\n    border: 1px solid #E4E4E4 !important; }\n    .menu-list-view .menu-right-list li {\n      text-align: left;\n      font-size: 10px;\n      border: 1px solid #E4E4E4 !important; }\n\n.measure-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px; }\n  .measure-item .item-content-left {\n    margin-left: 15px; }\n    .measure-item .item-content-left .item-content-title {\n      font-size: 16px; }\n  .measure-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row; }\n    .measure-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n\n.apply-repair-page .repair-content {\n  top: 0px;\n  bottom: 45px; }\n  .apply-repair-page .repair-content .content-header {\n    padding-left: 15px;\n    color: #93999f;\n    font-size: 14px;\n    background-color: white;\n    border-bottom: 1px solid #E4E4E4; }\n  .apply-repair-page .repair-content .content-top {\n    margin-top: 15px;\n    background-color: white; }\n    .apply-repair-page .repair-content .content-top .contet-top-device-info {\n      display: flex;\n      flex-direction: row; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .device-icon {\n        font-size: 80px;\n        color: #70D746;\n        margin-left: 15px;\n        margin-right: 15px; }\n      .apply-repair-page .repair-content .content-top .contet-top-device-info .top-right {\n        display: flex;\n        flex-direction: column;\n        justify-content: center; }\n  .apply-repair-page .repair-content .content-middle {\n    margin-top: 15px;\n    background-color: white; }\n    .apply-repair-page .repair-content .content-middle .content-repair-info {\n      padding-left: 15px;\n      height: 30px;\n      font-size: 16px;\n      color: #333333; }\n    .apply-repair-page .repair-content .content-middle .problem-description {\n      border-bottom: 1px solid #E4E4E4;\n      border-top: 1px solid #E4E4E4;\n      height: 50px; }\n  .apply-repair-page .repair-content .content-bottom {\n    margin-top: 15px; }\n    .apply-repair-page .repair-content .content-bottom .content-selecte-user {\n      border-bottom: 1px solid #E4E4E4;\n      flex: 1;\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      height: 30px; }\n      .apply-repair-page .repair-content .content-bottom .content-selecte-user .selecte-user-title {\n        padding-left: 15px;\n        background-color: white;\n        width: 126px;\n        border-right: 1px solid #E4E4E4;\n        font-size: 16px; }\n      .apply-repair-page .repair-content .content-bottom .content-selecte-user .selecte-input {\n        width: 100%;\n        padding-left: 15px; }\n\n.apply-repair-page .ready-repair-bottom {\n  bottom: 0px;\n  position: fixed;\n  margin-bottom: 0px;\n  color: white;\n  height: 45px;\n  background-color: #70D746;\n  border-color: transparent;\n  z-index: 10; }\n\n.scan-repair-page .scan-repair-scroll {\n  height: calc(100% - 75px); }\n\n.scan-repair-page .scan-repair-add-btn {\n  margin-bottom: 0px;\n  height: 44px;\n  background-color: #70D746; }\n\n.search-page .search-content-device-scroll {\n  border: 1px solid #E4E4E4;\n  background-color: white;\n  height: 100px; }\n  .search-page .search-content-device-scroll .search-item {\n    text-align: center !important;\n    border-bottom: 1px solid #E4E4E4; }\n\n.search-page .search-content-department-scroll {\n  border: 1px solid #E4E4E4;\n  background-color: white;\n  height: 100px; }\n  .search-page .search-content-department-scroll .search-item {\n    text-align: center !important;\n    border-bottom: 1px solid #E4E4E4; }\n\n.search-page .search-content-data-scroll {\n  height: calc(100% - 200px); }\n\n.search-items-page {\n  width: 100%; }\n  .search-items-page .search-input {\n    width: 100%;\n    height: 44px;\n    text-align: center;\n    padding-left: 10px;\n    border: 4px solid #DEDEDE; }\n  .search-items-page .list-module {\n    height: auto;\n    position: relative;\n    background-color: white !important; }\n    .search-items-page .list-module li {\n      position: relative;\n      padding: 0.5em;\n      border-bottom: 1px solid #EDECF2;\n      height: 44px;\n      white-space: nowrap; }\n      .search-items-page .list-module li > span {\n        display: inline-block;\n        vertical-align: middle; }\n      .search-items-page .list-module li .list-module-item {\n        font-size: 12px; }\n  .search-items-page img {\n    width: 100%;\n    height: 100%; }\n\n.chats-page .page-content {\n  padding-top: 44px !important; }\n  .chats-page .page-content .chats-content-total {\n    padding-left: 15px;\n    border-bottom: 1px solid #E4E4E4; }\n\n.chats-item-content {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4;\n  margin-top: 5px;\n  align-items: center;\n  background-color: white;\n  justify-content: space-between; }\n  .chats-item-content .chats-content-type {\n    margin-top: 10px;\n    font-size: 50px;\n    margin-left: 10px;\n    color: #999999; }\n  .chats-item-content .chats-content {\n    width: 100%;\n    margin-left: 10px; }\n    .chats-item-content .chats-content .chats-content-title {\n      font-size: 16px; }\n    .chats-item-content .chats-content .chats-content-subtitle {\n      color: #93999f;\n      font-size: 14px; }\n    .chats-item-content .chats-content .last {\n      padding-bottom: 15px; }\n  .chats-item-content .chats-content-status {\n    text-align: center;\n    padding-top: 14px;\n    color: white;\n    background-color: rgba(153, 153, 153, 0.5);\n    border-radius: 50%;\n    margin-right: 15px;\n    height: 45px;\n    font-size: 14px;\n    width: 70px; }\n\n.ready-repair-bottom {\n  bottom: 0px;\n  position: absolute;\n  color: white;\n  height: 45px;\n  background-color: #70D746 !important;\n  border-color: transparent;\n  z-index: 10; }\n\n.mine-page .page-content {\n  padding-top: 44px !important; }\n\n.about-page {\n  margin-top: 100px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around; }\n  .about-page .about-logo-img {\n    margin-top: 70px;\n    width: 50%;\n    height: 50%; }\n  .about-page .company-info {\n    height: 90px;\n    justify-content: space-between;\n    font-size: 14px;\n    margin-top: 60px; }\n    .about-page .company-info .tell {\n      color: #3D7ADD; }\n    .about-page .company-info .website {\n      color: #3D7ADD; }\n  .about-page .version-info {\n    position: absolute;\n    bottom: 10px;\n    width: 100%;\n    text-align: center;\n    line-height: 44px;\n    height: 44px;\n    font-size: 16px; }\n    .about-page .version-info.text {\n      color: white; }\n\n.page-login .login-background-image {\n  width: 100%;\n  height: 100%;\n  background-color: #F8F8F8; }\n\n.page-login .login-content {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .page-login .login-content .login-logo {\n    margin-top: 70px;\n    width: 50%; }\n  .page-login .login-content .login-input-div {\n    margin-top: 70px;\n    width: 90%; }\n    .page-login .login-content .login-input-div .login-input {\n      border-radius: 5%;\n      background-color: white; }\n  .page-login .login-content .login-button {\n    width: 90%;\n    color: white;\n    background-color: #70D746;\n    border-color: transparent; }\n  .page-login .login-content .warehouse-picker {\n    width: 100%; }\n    .page-login .login-content .warehouse-picker .picker-top-buttons {\n      display: flex;\n      flex-direction: row;\n      width: 100%;\n      text-align: center !important;\n      height: 40px; }\n      .page-login .login-content .warehouse-picker .picker-top-buttons .top-button {\n        width: 50%; }\n      .page-login .login-content .warehouse-picker .picker-top-buttons .cancel {\n        color: red; }\n\n.home-assetcheck .tab {\n  width: 100%;\n  font-size: 0;\n  background-color: #fff; }\n\n.home-assetcheck .tab li {\n  width: 45%;\n  display: inline-block;\n  text-align: center;\n  font-size: 1rem;\n  padding: 10px 0;\n  font-weight: 400; }\n\n.home-assetcheck .list_cont {\n  margin: 0; }\n\n.home-assetcheck .tab_item {\n  color: #666666;\n  font-size: 0;\n  margin-top: 3px;\n  background-color: #FFFFF0; }\n\n.home-assetcheck .img_box {\n  width: 20%;\n  height: auto; }\n\n.home-assetcheck .img_box i {\n  font-size: 55px;\n  color: #999999; }\n\n.home-assetcheck .text_box {\n  width: 78%;\n  font-size: 12px; }\n\n.home-assetcheck .text_box .h5 {\n  font-size: .5rem;\n  color: #333333;\n  line-height: 20px; }\n\n.home-assetcheck .text_box .h5 .tab_btn {\n  color: #666;\n  width: 2rem;\n  height: 17px;\n  line-height: 15px;\n  margin: 3px 5px 0 0;\n  font-size: 12px;\n  font-weight: 400;\n  background: none;\n  border: 1px solid #d2d2d2;\n  border-radius: 2px; }\n\n.home-assetcheck .text_box_item {\n  font-size: 12px;\n  margin: 0; }\n\n.home-assetcheck .text_box_item small + small {\n  margin-right: 5px; }\n\n.home-assetcheck .add {\n  overflow: hidden;\n  padding-top: 30px;\n  background: #FFFFF0; }\n\n.home-assetcheck form {\n  height: 100%;\n  overflow: hidden; }\n\n.home-assetcheck .form-item {\n  width: 90%;\n  margin: 0 auto 10px;\n  font-size: 0;\n  color: #666666; }\n\n.home-assetcheck .form-item .label-item {\n  font-size: 12px;\n  width: 30%;\n  height: 35px;\n  line-height: 35px;\n  color: #333333; }\n\n.home-assetcheck .form-item .input-box {\n  font-size: 12px;\n  width: 70%; }\n\n.home-assetcheck .form-item .input-box input {\n  display: block;\n  width: 95%;\n  height: 35px;\n  line-height: 35px;\n  border: 1px solid #c2c2c2;\n  border-radius: 4px;\n  text-indent: 1em; }\n\n.home-assetcheck .form-item .input-box .right-text {\n  top: 25%;\n  right: 8%;\n  z-index: 0; }\n\n.home-assetcheck .form-btn-box {\n  width: 100%;\n  bottom: 0; }\n\n.home-assetcheck .form-btn-box button {\n  font-size: 15px;\n  height: 40px;\n  line-height: 40px;\n  outline: none;\n  border: none;\n  background-color: #70D746;\n  color: #fff;\n  cursor: pointer; }\n\n.home-assetcheck .tab_show {\n  display: block; }\n\n.home-assetcheck .tab_hide {\n  display: none; }\n\n.home-assetcheck .active {\n  color: #5FB878;\n  font-weight: 500;\n  border-bottom: 2px solid #5FB878; }\n\n.detail-asset-acheck .content-header {\n  padding-left: 15px;\n  color: #93999f;\n  font-size: 14px;\n  background-color: white;\n  border-bottom: 1px solid #E4E4E4; }\n\n.detail-asset-acheck .content-top {\n  margin-top: 15px;\n  background-color: white; }\n  .detail-asset-acheck .content-top .contet-top-device-info {\n    display: flex;\n    flex-direction: row;\n    align-items: center; }\n    .detail-asset-acheck .content-top .contet-top-device-info .device-icon {\n      font-size: 80px;\n      color: #70D746;\n      margin-left: 15px;\n      margin-right: 15px; }\n    .detail-asset-acheck .content-top .contet-top-device-info .content-device-name {\n      font-size: 16px;\n      color: #333333; }\n\n.detail-asset-acheck .content-middle {\n  margin-top: 15px;\n  background-color: white; }\n  .detail-asset-acheck .content-middle .content-repair-info {\n    padding-left: 15px;\n    height: 30px;\n    font-size: 16px;\n    color: #333333; }\n  .detail-asset-acheck .content-middle .problem-description {\n    border-bottom: 1px solid #E4E4E4;\n    border-top: 1px solid #E4E4E4;\n    height: 50px; }\n\n.detail-asset-acheck .asset-checkout-bottom-btn {\n  display: flex;\n  margin-top: 15px;\n  flex-direction: row;\n  flex: 1;\n  align-items: center;\n  justify-content: space-around;\n  width: 100%; }\n  .detail-asset-acheck .asset-checkout-bottom-btn .asset-check-bottom-btn {\n    background-color: #70D746;\n    width: 40%; }\n\n.beginAassetcheck-cont {\n  height: 100%;\n  overflow: auto; }\n  .beginAassetcheck-cont .list_item {\n    background-color: #fffbf0;\n    border-bottom: 2px solid #eeeeee; }\n    .beginAassetcheck-cont .list_item .list-item-cont {\n      font-size: 0;\n      background-color: #eeeeee; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-icon {\n      width: 20%;\n      font-size: 12px;\n      line-height: 70px; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-icon i {\n      font-size: 45px;\n      color: #009688; }\n    .beginAassetcheck-cont .list_item .list-item-cont .item-cont-text {\n      font-size: 12px;\n      width: 80%;\n      color: #828282;\n      padding: 2px 0; }\n    .beginAassetcheck-cont .list_item .list-item-footer {\n      font-size: 12px;\n      color: #666666;\n      padding: 0 0 0 5px; }\n    .beginAassetcheck-cont .list_item .list-item-footer span {\n      font-size: 12px;\n      line-height: 20px; }\n    .beginAassetcheck-cont .list_item .list-item-footer button {\n      background: none;\n      border: 1px solid #999999;\n      border-radius: 10px;\n      font-size: 12px;\n      height: 16px;\n      line-height: 16px;\n      margin: 3px 10px 0 0;\n      padding: 0 5px;\n      width: auto; }\n  .beginAassetcheck-cont .list_item h6 {\n    line-height: 15px;\n    padding: 3px 5px;\n    color: #666666;\n    font-weight: 400;\n    font-size: 13px; }\n  .beginAassetcheck-cont .con-top-f {\n    position: fixed;\n    top: 40px;\n    left: 0;\n    width: 100%; }\n\n.new-asset-check-page .search-input {\n  height: 40px;\n  padding-left: 15px;\n  background-color: #DEDEDE4D;\n  border-bottom: 1px solid #E4E4E4; }\n  .new-asset-check-page .search-input input {\n    width: 100%;\n    height: 40px; }\n\n.new-asset-check-page .downloading-content {\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  top: 0px;\n  background-color: black;\n  opacity: 0.1; }\n\n.asset-checkou-item {\n  display: flex;\n  flex-direction: row;\n  flex: 1;\n  border-bottom: 1px solid #E4E4E4; }\n  .asset-checkou-item .item-content-left {\n    font-size: 50px;\n    color: #70D746;\n    padding-left: 13px; }\n  .asset-checkou-item .item-content-middle {\n    width: 100%; }\n    .asset-checkou-item .item-content-middle .item-content-title {\n      padding-top: 10px; }\n    .asset-checkou-item .item-content-middle .item-content-subtitle {\n      padding-top: 5px; }\n  .asset-checkou-item .item-content-right {\n    font-size: 40px;\n    padding-right: 15px; }\n\n.asset-item {\n  background-color: white;\n  display: flex;\n  flex-direction: row;\n  border-bottom: 1px solid #E4E4E4;\n  border-top: 1px solid #E4E4E4;\n  margin-top: 5px;\n  align-self: center;\n  flex: 1; }\n  .asset-item .item-content-left {\n    margin-left: 15px;\n    font-size: 60px;\n    color: #70D746; }\n  .asset-item .item-content-middle {\n    margin-top: 5px;\n    margin-left: 15px;\n    margin-bottom: 5px;\n    width: 100%; }\n    .asset-item .item-content-middle .item-content-title {\n      font-size: 16px;\n      color: #333333; }\n    .asset-item .item-content-middle .item-content-subtitle {\n      font-size: 14px;\n      color: #93999f; }\n  .asset-item .item-content-right {\n    margin-right: 15px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    align-self: center; }\n    .asset-item .item-content-right .item-content-status {\n      border: 1px solid #70D746;\n      font-size: 15px;\n      text-align: center; }\n", ""]);
 
 // exports
 
@@ -69946,7 +69946,7 @@ var _env = __webpack_require__(/*! assets/js/common/env.js */ 137);
 
 var Env = _interopRequireWildcard(_env);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -70311,17 +70311,58 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 var _segmentBar = __webpack_require__(/*! ../../common/segmentBar */ 56);
 
 var _segmentBar2 = _interopRequireDefault(_segmentBar);
 
-var _scroll = __webpack_require__(/*! ../../common/scroll */ 25);
+var _scroll = __webpack_require__(/*! ../../common/scroll */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
 var _ChatsItem = __webpack_require__(/*! ./ChatsItem */ 142);
 
 var _ChatsItem2 = _interopRequireDefault(_ChatsItem);
+
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -70337,32 +70378,80 @@ exports.default = {
 
             allDataArr: [],
             unFinishedDataArr: [],
-            finishedDataArr: []
+            finishedDataArr: [],
+
+            mTotalValues: 0
         };
     },
+
+
+    computed: _extends({}, (0, _vuex.mapState)(['RepairStore'])),
+
     mounted: function mounted() {
         this.getChatsList();
     },
 
 
-    methods: {
-        itemClick: function itemClick(data) {
+    watch: {
+        currentIndex: function currentIndex(newValue, oldValue) {
+            if (newValue == 0) {
+                this.mTotalValues = this.allDataArr.length;
+            } else if (newValue == 1) {
+                this.mTotalValues = this.unFinishedDataArr.length;
+            } else if (newValue == 2) {
+                this.mTotalValues = this.finishedDataArr.length;
+            }
+        }
+    },
 
-            console.log(data);
+    methods: _extends({}, (0, _vuex.mapActions)(['getRepaiingrHandleList', 'getRepairProcessList', 'getReadyRepairDetail'] // 待接单
+
+    ), {
+        itemClick: function itemClick(item) {
+            var _this = this;
+
+            console.log(item);
+
+            // 去除空格
+            var itemTypeID = item.TypeId.replace(/\s*/g, "");
+            var itemStatus = item.State.replace(/\s*/g, "");
+            var itemRepairOrder = item.OrderNo.replace(/\s*/g, "");
 
             // 维修
-            if (data.TypeId == "1" || data.TypeId == "1 ") {
+            if (itemTypeID == "1") {
                 // 待派工
-                if (data.State == "1" || data.State == "1 ") {
-                    var equNumber = data.EquId;
-                    // 去除空格
-                    equNumber = equNumber.replace(/\s*/g, "");
-                    //this.getEquInfo(equNumber)
-
-                    var itemDataJson = JSON.stringify(data);
-                    localStorage.setItem('ItemData', itemDataJson);
-                    this.$f7router.navigate('/readyrepair/');
+                if (itemStatus == "1") {
+                    this.RepairStore.mReadyRepairItme = item;
+                    var vm = this;
+                    this.getReadyRepairDetail(itemRepairOrder).then(function (data) {
+                        _this.RepairStore.mReadyRepairDetail = data.RepairInfo;
+                        vm.$f7router.navigate('/readyrepair/');
+                    });
                 }
+
+                // 待接单
+                else if (itemStatus == "6") {
+                        this.RepairStore.mTakeOrderItme = item;
+                        var _vm = this;
+                        this.getReadyRepairDetail(itemRepairOrder).then(function (data) {
+                            _vm.RepairStore.mTakeOrderItmeDetail = data.RepairInfo;
+                            _vm.$f7router.navigate('/takeorders/');
+                        });
+                    } else {
+                        var toastCenter = this.$f7.toast.create({
+                            text: '暂不支持该类型, 请前往 PC 处理',
+                            position: 'top',
+                            closeTimeout: 2000
+                        });
+                        toastCenter.open();
+                    }
+            } else {
+                var toastCenter = this.$f7.toast.create({
+                    text: '暂不支持该类型, 请前往 PC 处理',
+                    position: 'center',
+                    closeTimeout: 2000
+                });
+                toastCenter.open();
             }
         },
         getEquInfo: function getEquInfo(EquId) {
@@ -70434,6 +70523,7 @@ exports.default = {
                 console.log(data);
                 if (data.Status) {
                     vm.allDataArr = data.NoticeList;
+                    vm.mTotalValues = data.Total;
                 } else {
                     var msg = data.Msg;
                     if (!vm.toastCenter) {
@@ -70467,49 +70557,14 @@ exports.default = {
             console.log('.....');
             this.$f7.ptr.done();
         }
-    },
+    }),
 
     components: {
         SegmentBar: _segmentBar2.default,
         scroll: _scroll2.default,
         ChatsItem: _ChatsItem2.default
     }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
 /* 493 */
@@ -70793,7 +70848,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -70813,6 +70868,10 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
+//
+//
+//
 //
 //
 //
@@ -70900,10 +70959,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "chats-content-title"
   }, [_vm._v("\n            " + _vm._s(_vm.item.EquName) + "\n        ")]), _vm._v(" "), _c('div', {
     staticClass: "chats-content-subtitle"
+  }, [_vm._v("\n            " + _vm._s(_vm.item.DepartmentName) + "\n        ")]), _vm._v(" "), _c('div', {
+    staticClass: "chats-content-subtitle"
   }, [_vm._v("\n            " + _vm._s(_vm.item.RepairUserName) + "\n        ")]), _vm._v(" "), _c('div', {
     staticClass: "chats-content-subtitle"
   }, [_vm._v("\n            " + _vm._s(_vm.item.OrderNo) + "\n        ")]), _vm._v(" "), _c('div', {
-    staticClass: "chats-content-subtitle"
+    staticClass: "chats-content-subtitle last"
   }, [_vm._v("\n            " + _vm._s(_vm.item.RepairDate) + "\n        ")])]), _vm._v(" "), _c('div', {
     staticClass: "chats-content-status"
   }, [_vm._v("\n        " + _vm._s(_vm.transToTxtWithState(_vm.item.State)) + "\n    ")])])
@@ -70941,7 +71002,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "switchTab": _vm.switchTab
     }
-  }), _vm._v(" "), (_vm.currentIndex == 0) ? [_c('scroll', {
+  }), _vm._v(" "), _c('div', {
+    staticClass: "chats-content-total"
+  }, [_vm._v("共计: " + _vm._s(_vm.mTotalValues) + " 条")]), _vm._v(" "), (_vm.currentIndex == 0) ? [_c('scroll', {
     attrs: {
       "items": _vm.allDataArr,
       "fresh": "true",
@@ -71105,7 +71168,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -71163,9 +71226,25 @@ exports.default = {
             }
         };
     },
+    mounted: function mounted() {
+
+        // this.openDialog()
+
+        if (localStorage.isLogined == '0') {
+            this.$f7router.navigate('/login/', { "animate": false });
+        }
+    },
 
 
-    methods: {}
+    methods: {
+        openDialog: function openDialog() {
+            var self = this;
+            self.$f7.dialog.preloader();
+            setTimeout(function () {
+                self.$f7.dialog.close();
+            }, 2000);
+        }
+    }
 };
 
 /***/ }),
@@ -71259,14 +71338,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "icon-f7": "chats_fill",
       "text": "消息",
-      "tab-link": "#chats"
+      "tab-link": "#chats",
+      "active": "",
+      "tab-link-active": ""
     }
   }), _vm._v(" "), _c('f7-link', {
     attrs: {
       "icon-f7": "home_fill",
       "text": "首页",
-      "tab-link": "#home",
-      "active": ""
+      "tab-link": "#home"
     }
   }), _vm._v(" "), _c('f7-link', {
     attrs: {
@@ -71281,7 +71361,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('f7-tab', {
     attrs: {
       "id": "chats",
-      "tab-active": ""
+      "tab-active": "",
+      "tab-link-active": ""
     }
   }, [_c('chats-page')], 1), _vm._v(" "), _c('f7-tab', {
     attrs: {
@@ -71428,7 +71509,7 @@ var _segmentBar = __webpack_require__(/*! ../../common/segmentBar */ 56);
 
 var _segmentBar2 = _interopRequireDefault(_segmentBar);
 
-var _scroll = __webpack_require__(/*! ../../common/scroll */ 25);
+var _scroll = __webpack_require__(/*! ../../common/scroll */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -72837,7 +72918,7 @@ exports.default = {
         }
 
         if (localStorage.isLogined == '1') {
-            this.$f7router.navigate('/home/', { "animate": false });
+            this.$f7router.navigate('/', { "animate": false });
         }
     },
 
@@ -72859,7 +72940,7 @@ exports.default = {
             }
 
             this.popupVisible = false;
-            this.$f7router.navigate('/home/', { "animate": false });
+            this.$f7router.navigate('/', { "animate": false });
             localStorage.isLogined = '1';
         },
         login: function login() {
@@ -73323,7 +73404,7 @@ var _env = __webpack_require__(/*! assets/js/common/env.js */ 137);
 
 var Env = _interopRequireWildcard(_env);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -73644,7 +73725,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -74119,7 +74200,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -74492,7 +74573,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -75504,7 +75585,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -75516,7 +75597,7 @@ var _AssetItem = __webpack_require__(/*! ./AssetItem */ 577);
 
 var _AssetItem2 = _interopRequireDefault(_AssetItem);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -76094,7 +76175,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -76114,7 +76195,7 @@ var _picker = __webpack_require__(/*! ../../../common/picker.vue */ 99);
 
 var _picker2 = _interopRequireDefault(_picker);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -76883,7 +76964,7 @@ var _segmentBar = __webpack_require__(/*! ../../../common/segmentBar */ 56);
 
 var _segmentBar2 = _interopRequireDefault(_segmentBar);
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -77949,7 +78030,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -77961,7 +78042,7 @@ var _repairitem = __webpack_require__(/*! ../../../common/repairitem */ 39);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -78464,7 +78545,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -78484,7 +78565,7 @@ var _InformationCell = __webpack_require__(/*! ../../../common/InformationCell *
 
 var _InformationCell2 = _interopRequireDefault(_InformationCell);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -79098,7 +79179,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -79118,7 +79199,7 @@ var _InformationCell = __webpack_require__(/*! ../../../common/InformationCell *
 
 var _InformationCell2 = _interopRequireDefault(_InformationCell);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -79575,7 +79656,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -79595,7 +79676,7 @@ var _picker = __webpack_require__(/*! ../../../common/picker.vue */ 99);
 
 var _picker2 = _interopRequireDefault(_picker);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -80062,11 +80143,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "placeholder": "请输入配件费用"
       },
       model: {
-        value: (_vm.RepairStore.InventoryTime),
+        value: (_vm.RepairStore.mRepairingPartsExpense),
         callback: function($$v) {
-          _vm.$set(_vm.RepairStore, "InventoryTime", $$v)
+          _vm.$set(_vm.RepairStore, "mRepairingPartsExpense", $$v)
         },
-        expression: "RepairStore.InventoryTime"
+        expression: "RepairStore.mRepairingPartsExpense"
       }
     }), _vm._v(" "), _c('input-cell', {
       attrs: {
@@ -80084,7 +80165,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "title": "合计费用",
         "disable": "true",
-        "value": "RepairStore.InventoryTime + RepairStore.mRepairingExpense"
+        "value": Number(_vm.RepairStore.mRepairingPartsExpense) + Number(_vm.RepairStore.mRepairingExpense)
       }
     }), _vm._v(" "), _c('input-cell', {
       attrs: {
@@ -80100,7 +80181,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "content-header-bottom"
     }, [_vm._v(_vm._s(item))]), _vm._v(" "), _c('cube-textarea', {
       attrs: {
-        "value": "快修好了, 这是死数据, 因为接口没调通"
+        "value": ""
       }
     })], 1) : _vm._e()])
   })), _vm._v(" "), _c('picker', {
@@ -80277,7 +80358,7 @@ var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue *
 
 var _selectedinput2 = _interopRequireDefault(_selectedinput);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -80659,7 +80740,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -80671,7 +80752,7 @@ var _repairitem = __webpack_require__(/*! ../../../common/repairitem.vue */ 39);
 
 var _repairitem2 = _interopRequireDefault(_repairitem);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -81126,7 +81207,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -81146,7 +81227,7 @@ var _InformationCell = __webpack_require__(/*! ../../../common/InformationCell.v
 
 var _InformationCell2 = _interopRequireDefault(_InformationCell);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -81643,7 +81724,7 @@ var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput */ 42
 
 var _selectedinput2 = _interopRequireDefault(_selectedinput);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -81944,7 +82025,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -81960,7 +82041,7 @@ var _selectedinput = __webpack_require__(/*! ../../../common/selectedinput.vue *
 
 var _selectedinput2 = _interopRequireDefault(_selectedinput);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -82154,7 +82235,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 25);
+var _scroll = __webpack_require__(/*! ../../../common/scroll.vue */ 26);
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
@@ -82783,7 +82864,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 var _PartsItem = __webpack_require__(/*! ../../../common/PartsItem */ 146);
 
@@ -83408,7 +83489,7 @@ var _vue = __webpack_require__(/*! vue */ 32);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vuex = __webpack_require__(/*! vuex */ 27);
+var _vuex = __webpack_require__(/*! vuex */ 25);
 
 var _vuex2 = _interopRequireDefault(_vuex);
 
@@ -84159,10 +84240,10 @@ var state = {
     mCurrentRepairingParts: [],
 
     // 配件费用
-    mRepairingPartsExpense: '0',
+    mRepairingPartsExpense: 0,
 
     // 维修费用
-    mRepairingExpense: '0',
+    mRepairingExpense: 0,
 
     // 维修类型
     mRepairType: '自修'

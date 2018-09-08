@@ -97,6 +97,7 @@ export default {
             const toast = this.$createToast({
                 time: 0,
                 txt: '上传中...',
+                mask: true
             })
             toast.show()
 
@@ -109,7 +110,8 @@ export default {
                 const errorToast = this.$createToast({
                     time: 0,
                     txt: '还没有盘点单可以上传哦...',
-                    type: 'error'
+                    type: 'error',
+                    mask: true
                 })
                 errorToast.show()
                 setTimeout(function () {
@@ -152,7 +154,8 @@ export default {
                 const errorToast = this.$createToast({
                     time: 0,
                     txt: msg,
-                    type: type
+                    type: type,
+                    mask: true
                 })
                 errorToast.show()
                 setTimeout(function () {

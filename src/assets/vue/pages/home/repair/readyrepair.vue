@@ -141,6 +141,7 @@ export default {
                     time: 0,
                     txt: '请选择派修人员',
                     type: 'error',
+                    mask: true,
                     onTimeout: () => {
                         toast.hide()
                     }
@@ -157,6 +158,7 @@ export default {
                         time: 0,
                         txt: "派单成功",
                         type: 'correct',
+                        mask: true,
                     })
                     toast.show()
                     setTimeout(function () {
@@ -169,6 +171,7 @@ export default {
                         time: 0,
                         txt: "派单失败, 请稍后再试",
                         type: 'error',
+                        mask: true
 
                     })
                     toast.show()
@@ -197,6 +200,7 @@ export default {
                     time: 0,
                     txt: msg,
                     type: type,
+                    mask: true
                 })
                 toast.show()
                 setTimeout(function () {

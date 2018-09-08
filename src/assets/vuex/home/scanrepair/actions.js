@@ -81,6 +81,7 @@ export const applyRepair = ({ commit,dispatch,state}, searchvalue) => {
                 time: 0,
                 txt: msg,
                 type: type,
+                mask: true,
                 time: 2000,
                 onTimeout: () => {
                     toast.hide()
@@ -122,7 +123,7 @@ export const getEquDetail = ({ commit,dispatch,state}, equId) => {
              "RepairNo": state.mEquModel.EquCode,
              "Store": localStorage.storeId,
          }
-         
+
          Vue.prototype.get(Vue.prototype.api.getDefaultRepairInfo, params, function(response) {
              var data = JSON.parse(response);
              resolve(data)

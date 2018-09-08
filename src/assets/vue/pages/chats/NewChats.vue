@@ -103,6 +103,8 @@ export default {
 
             console.log(item);
 
+
+
             // 去除空格
             let itemTypeID = item.TypeId.replace(/\s*/g, "")
             let itemStatus = item.State.replace(/\s*/g, "")
@@ -110,11 +112,19 @@ export default {
 
             // 维修
             if (itemTypeID == "1") {
+
+                const toast = this.$createToast({
+                    time: 0,
+                    txt: '加载中...',
+                    mask: true
+                })
+                toast.show()
                 // 待派工
                 if (itemStatus == "1") {
                     this.RepairStore.mReadyRepairItme = item
                     let vm = this
                     this.getReadyRepairDetail(itemRepairOrder).then((data)=>{
+                        toast.hide()
                         this.RepairStore.mReadyRepairDetail = data.RepairInfo
                         vm.$f7router.navigate('/readyrepair/');
                     })
@@ -125,12 +135,14 @@ export default {
                     this.RepairStore.mTakeOrderItme = item
                     let vm = this
                     this.getReadyRepairDetail(itemRepairOrder).then((data)=>{
+                        toast.hide()
                         vm.RepairStore.mTakeOrderItmeDetail = data.RepairInfo
                         vm.$f7router.navigate('/takeorders/');
                     })
                 }
 
                 else {
+                    self.$f7.dialog.close();
                     var toastCenter = this.$f7.toast.create({
                       text: '暂不支持该类型, 请前往 PC 处理',
                       position: 'top',
@@ -155,6 +167,7 @@ export default {
             const toast = this.$createToast({
                 time: 0,
                 txt: '加载中...',
+                mask: true
             })
             toast.show()
 
@@ -213,6 +226,7 @@ export default {
             const toast = this.$createToast({
                 time: 0,
                 txt: '加载中...',
+                mask: true
             })
             toast.show()
 

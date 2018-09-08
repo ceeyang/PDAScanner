@@ -104,9 +104,8 @@ export default {
             this.user.password = localStorage.password;
         }
 
-
         if (localStorage.isLogined == '1') {
-            this.$f7router.navigate('/', {"animate": false});
+            this.$f7router.navigate('/tabs/', {"animate": false});
         }
 
     },
@@ -131,12 +130,12 @@ export default {
             }
 
             this.popupVisible = false;
-            this.$f7router.navigate('/', {"animate": false});
+            this.$f7router.navigate('/tabs/');
             localStorage.isLogined = '1';
         },
 
         login() {
-            console.log(this.mRootUrl);
+
             localStorage.setItem('rootUrl', this.mRootUrl);
             this.globalSetting.rootUrl = this.mRootUrl
 
@@ -169,6 +168,7 @@ export default {
             const toast = this.$createToast({
                 time: 0,
                 txt: '登录中...',
+                mask: true,
             })
             toast.show()
 
@@ -217,6 +217,7 @@ export default {
             const toast = this.$createToast({
                 time: 0,
                 txt: '获取仓库地址中...',
+                mask: true,
             })
             toast.show()
 

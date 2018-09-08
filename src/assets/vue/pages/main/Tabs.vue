@@ -24,7 +24,6 @@
             <mine-page />
         </f7-tab>
     </f7-tabs>
-
 </f7-page>
 </template>
 
@@ -32,13 +31,22 @@
 import Home from '../home/NewHome';
 import Chats from '../chats/NewChats';
 import Mine from '../mine/NewMine';
+import Login from '../mine/login';
 
 export default {
     name: 'Tabs',
+
+    data() {
+        return {
+
+        }
+    },
+
     components: {
         'home-page': Home,
         'chats-page': Chats,
-        'mine-page': Mine
+        'mine-page': Mine,
+        'login-page': Login,
     },
 
     mounted() {

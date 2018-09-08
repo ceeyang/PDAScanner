@@ -1,6 +1,10 @@
 export default [{
     path: '/',
-    // component: require('./assets/vue/pages/mine/login.vue')
+    component: require('./assets/vue/pages/mine/login.vue')
+    // component: require('./assets/vue/pages/main/Tabs.vue')
+  },
+  {
+    path: '/tabs/',
     component: require('./assets/vue/pages/main/Tabs.vue')
   },
   {
@@ -133,5 +137,14 @@ export default [{
     component: require('./assets/vue/pages/home/morefunction/index.vue')
   },
 
+
+  {
+    path: '/approve/',
+    component: require('./assets/vue/pages/home/approve/index.vue')
+  },
+  {
+    path: '/approveDetail/',
+    component: require('./assets/vue/pages/home/approve/approve.vue')
+  },
 
 ]

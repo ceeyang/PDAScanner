@@ -132,6 +132,7 @@ export default {
             const toast = this.$createToast({
                 time: 0,
                 txt: '获取资产信息中...',
+                mask: true
             })
             toast.show()
 

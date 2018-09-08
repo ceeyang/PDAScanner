@@ -263,6 +263,7 @@ export default {
                     txt: msg,
                     type: type,
                     time: 2000,
+                    mask: true,
                     onTimeout: () => {
                         toast.hide()
                     }
