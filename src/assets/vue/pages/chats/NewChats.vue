@@ -74,6 +74,10 @@ export default {
         this.getChatsList()
     },
 
+    beforein() {
+        // this.getChatsList()
+    },
+
     watch: {
         currentIndex: function (newValue, oldValue) {
             if (newValue == 0) {

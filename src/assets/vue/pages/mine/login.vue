@@ -105,7 +105,7 @@ export default {
         }
 
         if (localStorage.isLogined == '1') {
-            this.$f7router.navigate('/tabs/', {"animate": false});
+            this.$f7router.navigate('/tabs/', {"animate": true});
         }
 
     },
@@ -130,7 +130,7 @@ export default {
             }
 
             this.popupVisible = false;
-            this.$f7router.navigate('/tabs/');
+            this.$f7router.navigate('/tabs/',{"reloadCurrent":true});
             localStorage.isLogined = '1';
         },
 
