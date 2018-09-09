@@ -1,14 +1,7 @@
 <template lang="html">
     <f7-page class="approve-detail-page">
         <!-- Nav  -->
-        <f7-navbar>
-            <f7-nav-left>
-                <div @click="NavBack">
-                    <i class="iconfont">&#xe605;</i>
-                </div>
-            </f7-nav-left>
-            <f7-nav-title title='维修详情'></f7-nav-title>
-        </f7-navbar>
+        <f7-navbar backLink title="维修详情"></f7-navbar>
 
         <cube-scroll class="repairing-content" :item="mSectionHeaderTitles">
             <li v-for="(item,index) in mSectionHeaderTitles" :key="index" :item="item">
@@ -149,6 +142,11 @@ export default {
             this.submitApproval().then((res) => {
                 toast.hide()
             })
+
+            // 防止卡死, 10秒停止刷新
+            setTimeout(function () {
+                toast.hide()
+            }, 10000);
         },
 
         /**
@@ -166,7 +164,7 @@ export default {
             const toast = this.$createToast({
                 time: 0,
                 txt: '加载中...',
-                mask: true,
+                // mask: true,
             })
             toast.show()
 
@@ -196,7 +194,7 @@ export default {
             const toast = this.$createToast({
                 time: 0,
                 txt: '加载中...',
-                mask: true,
+                // mask: true,
             })
             toast.show()
 

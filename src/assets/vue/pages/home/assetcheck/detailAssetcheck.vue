@@ -1,14 +1,7 @@
 <template lang="html">
     <f7-page class="detail-asset-acheck">
         <!-- Nav  -->
-        <f7-navbar>
-            <f7-nav-left>
-                <div @click="NavBack">
-                    <i class="iconfont">&#xe605;</i>
-                </div>
-            </f7-nav-left>
-            <f7-nav-title title='盘点详情'></f7-nav-title>
-        </f7-navbar>
+        <f7-navbar backLink title="盘点详情"></f7-navbar>
 
 
             <div class="content-top">

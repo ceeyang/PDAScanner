@@ -6,14 +6,7 @@ codeer: cee
 <template lang="html">
     <f7-page class="take-order-page">
         <!-- Nav  -->
-        <f7-navbar>
-            <f7-nav-left>
-                <div @click="NavBack">
-                    <i class="iconfont">&#xe605;</i>
-                </div>
-            </f7-nav-left>
-            <f7-nav-title title='维修接单'></f7-nav-title>
-        </f7-navbar>
+        <f7-navbar backLink title="维修接单"></f7-navbar>
 
         <cube-scroll class="repair-content" :item="mSectionHeaderTitles">
             <li v-for="(item,index) in mSectionHeaderTitles" :key="index" :item="item">

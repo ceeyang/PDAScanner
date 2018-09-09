@@ -1,19 +1,13 @@
 <template>
 <f7-page class="asset-check-page">
-    <f7-navbar>
-        <f7-nav-left>
-            <div @click="NavBack">
-                <i class="iconfont">&#xe605;</i>
-            </div>
-        </f7-nav-left>
-        <f7-nav-title title='设备盘点'></f7-nav-title>
+
+    <f7-navbar backLink title="设备盘点">
         <f7-nav-right>
             <div @click="addDevice">
                 <i class="iconfont">&#xe6b9;</i>
             </div>
         </f7-nav-right>
     </f7-navbar>
-
 
     <scroll class="asset-check-scroll" :items="data" fresh=true :onPullingDown='onPullingDown' :onPullingUp="onPullingUp">
         <li v-for="(item,index) in data" :key="index" :item="item">

@@ -1,14 +1,7 @@
 <template lang="html">
     <f7-page class="apply-repair-page">
         <!-- Nav  -->
-        <f7-navbar>
-            <f7-nav-left>
-                <div @click="NavBack">
-                    <i class="iconfont">&#xe605;</i>
-                </div>
-            </f7-nav-left>
-            <f7-nav-title :title="scanRepairStore.mViewType=='apply'?'申请报修':'查看详情'"></f7-nav-title>
-        </f7-navbar>
+        <f7-navbar backLink :title="scanRepairStore.mViewType=='apply'?'申请报修':'查看详情'"></f7-navbar>
 
         <div class="repair-content">
             <div class="content-top">

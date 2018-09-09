@@ -1,14 +1,7 @@
 <template lang="html">
     <f7-page>
 
-        <f7-navbar>
-            <f7-nav-left>
-                <div @click="NavBack">
-                    <i class="iconfont">&#xe605;</i>
-                </div>
-            </f7-nav-left>
-            <f7-nav-title title='新增资产报修'></f7-nav-title>
-        </f7-navbar>
+        <f7-navbar backLink title="新增资产报修"></f7-navbar>
 
         <selected-input title="报修科室" :data="scanRepairStore.departmentNameList" placeholder="请添加科室" @itemClick="departmentSearchItemClickAction" @searchAction="departmentInputSearchAction"></selected-input>
         <selected-input title="资产名称" :data="scanRepairStore.EquNameList" placeholder="请添加资产名称" @itemClick="EquSearchItemClickAction" @searchAction="EquInputSearchAction"></selected-input>

@@ -1,14 +1,7 @@
 <template lang="html">
     <f7-page class="new-repair-record">
         <!-- Nav  -->
-        <f7-navbar>
-            <f7-nav-left>
-                <div @click="NavBack">
-                    <i class="iconfont">&#xe605;</i>
-                </div>
-            </f7-nav-left>
-            <f7-nav-title title='新增维修记录'></f7-nav-title>
-        </f7-navbar>
+        <f7-navbar backLink title="新增维修记录"></f7-navbar>
 
 
         <div class="content-header">订单信息</div>

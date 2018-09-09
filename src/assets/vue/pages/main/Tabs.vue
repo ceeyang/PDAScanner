@@ -4,26 +4,34 @@
     <!-- 导航栏 -->
     <!-- <f7-navbar sliding title="消息"></f7-navbar> -->
 
-    <!-- 底部 tabbar  -->
-    <f7-toolbar tabbar labels>
-        <f7-link icon-f7="chats_fill" text="消息" tab-link="#chats" active  tab-link-active></f7-link>
-        <f7-link icon-f7="home_fill" text="首页" tab-link="#home"></f7-link>
-        <f7-link icon-f7="persons" text="我的" tab-link="#mine"></f7-link>
-    </f7-toolbar>
+    <template v-if="isLogined==true">
+        <!-- 底部 tabbar  -->
+        <f7-toolbar tabbar labels>
+            <f7-link icon-f7="chats_fill" text="消息" tab-link="#chats" active  tab-link-active></f7-link>
+            <f7-link icon-f7="home_fill" text="首页" tab-link="#home"></f7-link>
+            <f7-link icon-f7="persons" text="我的" tab-link="#mine"></f7-link>
+        </f7-toolbar>
 
-    <!-- 内存跟试图, page-content -->
-    <!-- <f7-tabs swipeable routable> -->
-    <f7-tabs routable>
-        <f7-tab id="chats" tab-active tab-link-active>
-            <chats-page />
-        </f7-tab>
-        <f7-tab id="home">
-            <home-page />
-        </f7-tab>
-        <f7-tab id="mine">
-            <mine-page />
-        </f7-tab>
-    </f7-tabs>
+        <!-- 内存跟试图, page-content -->
+        <!-- <f7-tabs swipeable routable> -->
+        <f7-tabs routable>
+            <f7-tab id="chats" tab-active tab-link-active>
+                <chats-page />
+            </f7-tab>
+            <f7-tab id="home">
+                <home-page />
+            </f7-tab>
+            <f7-tab id="mine">
+                <mine-page />
+            </f7-tab>
+        </f7-tabs>
+    </template>
+
+    <template v-else>
+        开始登陆
+    </template>
+
+
 </f7-page>
 </template>
 
@@ -38,7 +46,7 @@ export default {
 
     data() {
         return {
-
+            isLogined: false
         }
     },
 
@@ -50,7 +58,12 @@ export default {
     },
 
     mounted() {
-
+        if (localStorage.isLogined != '1') {
+            this.isLogined = false
+            this.$f7router.navigate('/login/', {"animate": false});
+        } else {
+            this.isLogined = true
+        }
     },
 
     computed: {}

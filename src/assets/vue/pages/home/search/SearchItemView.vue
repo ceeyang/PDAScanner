@@ -1,14 +1,7 @@
 <template lang="html">
     <f7-page class="search-items-page">
         <!-- Nav  -->
-        <f7-navbar>
-            <f7-nav-left>
-                <div @click="NavBack">
-                    <i class="iconfont">&#xe605;</i>
-                </div>
-            </f7-nav-left>
-            <f7-nav-title :title='title'></f7-nav-title>
-        </f7-navbar>
+        <f7-navbar backLink :title="title"></f7-navbar>
 
         <!-- 输入框 -->
         <input class="search-input" v-model='StoreSearch.mSearchvalue' @keyup='search($event)' placeholder="🔍 搜索" @blur.prevent="onblur" />
