@@ -16,6 +16,12 @@
             </div>
         </template>
 
+        <!-- 时间选择器 -->
+        <template v-else-if="type=='InputDisable'">
+            <div v-if="value" class="comon-input">{{value}}</div>
+            <div v-else class="comon-input picker-placeholder">{{placeholder}}</div>
+        </template>
+
         <!-- 默认输入框 -->
         <template v-else>
             <template v-if="disabled">
@@ -34,6 +40,7 @@ export default {
     // type 可选类型:
     // 默认类型, 可不填该属性 模型文字  +  输入框
     // DataInput: 时间选择器, 输入框为时间选择器
+    // InputDisable: 默认显示框
     props: ['type', 'title', 'placeholder', 'value', 'disabled', 'onblur', 'inputClickAction'],
 
     data() {

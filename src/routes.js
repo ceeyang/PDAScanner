@@ -144,7 +144,7 @@ export default [{
   },
   {
     path: '/approveDetail/',
-    component: require('./assets/vue/pages/home/approve/approve.vue')
+    component: require('./assets/vue/pages/home/approve/approveDetail.vue')
   },
 
 ]

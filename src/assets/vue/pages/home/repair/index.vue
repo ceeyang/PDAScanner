@@ -97,35 +97,49 @@ export default {
 
         // 待派单
         readyrepairItemClick(item) {
-            console.log(item);
+            const toast = this.$createToast({
+                time: 0,
+                txt: '加载中...',
+                mask: true,
+            })
+            toast.show()
+
             this.RepairStore.mReadyRepairItme = item
             let vm = this
             this.getReadyRepairDetail(item.RepairOrder.replace(/\s*/g, "")).then((data)=>{
+                toast.hide()
                 this.RepairStore.mReadyRepairDetail = data.RepairInfo
                 vm.$f7router.navigate('/readyrepair/');
             })
         },
         // 待接单
         takeordersItemClick(item) {
+            const toast = this.$createToast({
+                time: 0,
+                txt: '加载中...',
+                mask: true,
+            })
+            toast.show()
             this.RepairStore.mTakeOrderItme = item
             let vm = this
             this.getReadyRepairDetail(item.RepairOrder.replace(/\s*/g, "")).then((data)=>{
-                // code by yangxichuan
+                toast.hide()
                 vm.RepairStore.mTakeOrderItmeDetail = data.RepairInfo
                 vm.$f7router.navigate('/takeorders/');
-                // else
-
-                // vm.RepairStore.mCurrentRepair = data.RepairInfo
-                // vm.RepairStore.mCurrentRepairDetail = data.RepairInfo
-                // vm.$f7router.navigate('/repairing/');
-
             })
         },
         // 维修中
         handleingItemClick(itemData) {
-            console.log(itemData);
+            const toast = this.$createToast({
+                time: 0,
+                txt: '加载中...',
+                mask: true,
+            })
+            toast.show()
+
             this.RepairStore.mCurrentRepair = itemData
             this.getReadyRepairDetail(itemData.RepairNo.replace(/\s*/g, "")).then((data)=>{
+                toast.hide()
                 this.RepairStore.mCurrentRepairDetail = data.RepairInfo
                 this.$f7router.navigate('/repairing/');
             })

@@ -50,6 +50,9 @@ const state = {
     // 当前选择的维修类型
     mCurrentRepairType: [],
 
+    // 原始配件个数
+    mLastPartsCount: 0,
+
     // 当前维修订单的 配件数据列表
     mCurrentRepairingParts: [],
 
@@ -62,6 +65,8 @@ const state = {
     // 维修类型
     mRepairType: '自修',
 
+    // 维修结果
+    mRepairResult: "",
 }
 
 export default {

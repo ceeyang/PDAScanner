@@ -8,6 +8,7 @@ import assetCheckStore from './home/assetcheck/store';
 import RepairStore from './home/repair/store';
 import MeasureStore from './home/measure/store';
 import StoreSearch from './home/search/store';
+import StoreApprove from './home/approve/store';
 
 
 
@@ -19,5 +20,6 @@ export default new Vuex.Store({
       RepairStore,
       MeasureStore,
       StoreSearch,
+      StoreApprove
   }
 })

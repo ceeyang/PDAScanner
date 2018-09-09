@@ -1,7 +1,7 @@
 .repairing-page{
     .repairing-content{
         top: 0px;
-        height: 100%;
+        height: calc(100% - 45px);
         .content-header{
             padding-left: 15px;
             color: $main-color-repair-main;

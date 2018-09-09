@@ -83,8 +83,10 @@ export default {
             'searchValue',
 
             // repairing
-            'addUser'
+            'addUser',
 
+            // 新增维修设备
+            'addPart',
         ]),
 
 
@@ -130,7 +132,14 @@ export default {
                         if (this.StoreSearch.mCallbackType == "Repairing_AddUser") {
                             this.addUser(item).then((res)=>{
                                 if (res.Status) {
-                                    this.showSuccess("新增用户成功!")
+                                    if (!this.toastCenter) {
+                                        this.toastCenter = this.$f7.toast.create({
+                                            text: "新增用户成功",
+                                            closeTimeout: 2000,
+                                            position: 'center',
+                                        });
+                                    }
+                                    this.toastCenter.open();
                                 } else {
 
                                 }
@@ -154,6 +163,23 @@ export default {
                 else if (this.StoreSearch.mType == "Part") {
                     let parts = this.StoreSearch.mSearchData[i]
                     if (parts.PartsCode == data.PartsCode) {
+
+                        console.log(parts);
+                        this.addPart(parts).then((res)=>{
+                            if (res.Status) {
+                                if (!this.toastCenter) {
+                                    this.toastCenter = this.$f7.toast.create({
+                                        text: "新增配件成功",
+                                        closeTimeout: 2000,
+                                        position: 'center',
+                                    });
+                                }
+                                this.toastCenter.open();
+                            } else {
+
+                            }
+                        })
+
                         this.StoreSearch.mValue = this.StoreSearch.mSearchData[i]
                         this.RepairStore.mCurrentRepairType = this.StoreSearch.mSearchData[i]
 

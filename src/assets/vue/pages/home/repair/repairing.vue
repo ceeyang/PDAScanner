@@ -70,33 +70,28 @@
                         <template v-else v-for="(part, index) in RepairStore.mCurrentRepairingParts"><parts-item :item="part"></parts-item></template>
                     </div>
 
-                    <!-- <div class="content-parts-content">
-
-                        <div >
-
-                        </div>
-                    </div> -->
                 </div>
 
                 <!-- 维修信息 -->
                 <div v-if="index==5" class="content-repair-info">
                     <div class="content-header">{{item}}</div>
-                    <input-cell title="配件费用" placeholder="请输入配件费用" v-model="RepairStore.mRepairingPartsExpense"></input-cell>
+                    <input-cell type="InputDisable" title="配件费用" placeholder="请输入配件费用" :value="RepairStore.mRepairingPartsExpense"></input-cell>
                     <input-cell title="维修费用" placeholder="请输入维修费用" v-model="RepairStore.mRepairingExpense"></input-cell>
-                    <input-cell title="合计费用" disable=true :value="Number(RepairStore.mRepairingPartsExpense) + Number(RepairStore.mRepairingExpense)"></input-cell>
+                    <input-cell type="InputDisable" title="合计费用"  :value="Number(RepairStore.mRepairingPartsExpense) + Number(RepairStore.mRepairingExpense)"></input-cell>
                     <input-cell type="DataInput" title="维修类型" placeholder="请选择维修类型" :value="mCurrentSelectedType" :inputClickAction="repairTypeInputClick"></input-cell>
                 </div>
 
                 <!-- 维修结果 -->
                 <div v-if="index==6" class="content-result">
                     <div class="content-header-bottom">{{item}}</div>
-                    <!-- <cube-textarea v-model="快修好了, 这是死数据, 因为接口没调通"></cube-textarea> -->
-                    <cube-textarea value=""></cube-textarea>
+                    <cube-textarea v-model="RepairStore.mRepairResult"></cube-textarea>
                 </div>
 
 
             </li>
         </cube-scroll>
+
+        <cube-button @click="submitButtonDidClick" class="ready-repair-bottom">保存</cube-button>
 
         <picker :slots='mSlots' :onValuesChange="onValuesChange" :pickerCancel="pickerCancel" :pickerConfirm="pickerConfirm" :show="mPopupVisible"></picker>
     </f7-page>
@@ -149,9 +144,9 @@ export default {
     },
 
     watch: {
-        falutDes: function(newValue){
+        falutDes: function(newValue) {
             console.log(newValue);
-        }
+        },
     },
 
     mounted() {
@@ -164,6 +159,9 @@ export default {
 
         // 初始化配件数据
         this.getPartList()
+
+        // 刷新配件总共配件价格
+        this.updatePartsPrices()
     },
 
     methods: {
@@ -173,7 +171,29 @@ export default {
             'getRepairProcessList',
 
             'getPartList',
+
+            // 刷新配件总共配件价格
+            'updatePartsPrices',
+
+            // 维修记录保存
+            'submitApproval'
         ]),
+
+        /**
+         * 保存按钮点击事件
+         */
+        submitButtonDidClick() {
+            const toast = this.$createToast({
+                time: 0,
+                txt: '加载中...',
+                mask: true,
+            })
+            toast.show()
+
+            this.submitApproval().then((res) => {
+                toast.hide()
+            })
+        },
 
         /**
          * 维修类型选择器, 取消按钮点击事件
@@ -196,8 +216,21 @@ export default {
         onValuesChange(picker, values) {
             console.log(values);
             this.mCurrentSelectedType = values[0]
-            // this.statusName = values;
-            // this.status = this.getStatusWith(values)
+            this.RepairStore.mRepairType = this.getStatusWith(values[0])
+        },
+
+        getStatusWith(value) {
+            if (value == "自修") {
+                return ""
+            } else if (value == "保修") {
+                return 1
+            } else if (value == "原厂") {
+                return 2
+            } else if (value == "第三方维修") {
+                return 3
+            }
+
+            return ""
         },
 
         /**

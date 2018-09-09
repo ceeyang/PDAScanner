@@ -44,6 +44,8 @@ export const applyRepair = ({ commit,dispatch,state}, searchvalue) => {
     return new Promise((resolve,reject) => {
 
         var storeNumber = localStorage.storeId
+        let phoneNumber = state.mRepairNumber
+        console.log(phoneNumber);
         let params = {
             "EquId": state.EquData.EquCode,
             "EquName": state.EquData.EquName,
@@ -58,7 +60,7 @@ export const applyRepair = ({ commit,dispatch,state}, searchvalue) => {
             "SupplierId": '',
             "SupplierName": '',
             "RepairTerm": '',
-            "RepairPhone": '', //
+            "RepairPhone": state.mRepairNumber || "", //
             "FaultId": state.problemData.FaultId || "", //
             "FaultDesription": state.problemData.FaultDesription || "", //
             "Remark": '', //

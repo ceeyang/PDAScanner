@@ -124,7 +124,17 @@ export default {
      * RepairNo：维修单号
      * LineNumber：行号
      */
-    getRepairingUser: `api/RepairHandle/RepairUserList`
+    getRepairingUser: `api/RepairHandle/RepairUserList`,
 
 
+    /**
+     *  审核人列表
+     */
+    getApproveAuditorList: `api/Audit/AuditorList`,
+
+
+    /**
+     *  审核
+     */
+    requestRepairAudit: `api/Audit/RepairAudit`,
 }

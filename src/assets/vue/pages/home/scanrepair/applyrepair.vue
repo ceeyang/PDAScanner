@@ -29,8 +29,8 @@
                 <div class="content-header">报修信息</div>
                 <input-cell type="DataInput" title="报修科室" placeholder="请选择报修科室" :value="scanRepairStore.departmentData.DepaName" :inputClickAction="departmentInputClick"></input-cell>
                 <input-cell type="DataInput" title="报修人员" placeholder="请选择报修人员" :value="scanRepairStore.mRepairUser.UserName" :inputClickAction="repairUserInputClick"></input-cell>
-                <input-cell title="报修电话" placeholder="请输入报修电话" :value="scanRepairStore.mRepairNumber"></input-cell>
-                <input-cell title="报修地址" placeholder="请输入报修地址" :value="scanRepairStore.mRepairLocation"></input-cell>
+                <input-cell title="报修电话" placeholder="请输入报修电话" v-model="scanRepairStore.mRepairNumber"></input-cell>
+                <input-cell title="报修地址" placeholder="请输入报修地址" v-model="scanRepairStore.mRepairLocation"></input-cell>
                 <input-cell type="DataInput" title="故障问题" placeholder="请选择故障问题" :value="scanRepairStore.mProblemData.QuestionTypeName" :inputClickAction="repairProblemInputClick"></input-cell>
             </div>
 
@@ -231,6 +231,9 @@ export default {
                 return
             }
 
+            debugger
+            console.log(this.scanRepairStore.mRepairNumber);
+
             let params = {
                 "EquId": this.itemData.EquCode,
                 "EquName": this.itemData.EquName,
@@ -243,6 +246,7 @@ export default {
                 "FaultName": this.scanRepairStore.mProblemData.QuestionTypeName,
                 "FaultDesription": this.scanRepairStore.mProblemDes,
                 "Remark": this.scanRepairStore.mRemark,
+                "RepairAddress": this.scanRepairStore.mRepairLocation,
             }
 
             let vm = this;

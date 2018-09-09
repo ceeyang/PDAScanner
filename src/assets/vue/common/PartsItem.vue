@@ -17,7 +17,7 @@
             </div>
 
             <div class="content-count">
-                数量: 1
+                数量: {{item.Count}}
             </div>
 
             <div class="content-price">
@@ -62,7 +62,7 @@ export default {
         parseMoney(value) {
             var stringS = String(value).split('.')
             return stringS[0]
-        }
+        },
     }
 }
 </script>

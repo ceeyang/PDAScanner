@@ -1,8 +1,3 @@
-<!--
-申请设备维修页面
-codeer: cee
-2018-06-25 18:16:13
--->
 <template lang="html">
     <f7-page class="ready-repair-page">
         <!-- Nav  -->
@@ -36,7 +31,7 @@ codeer: cee
                     <div class="content-header">{{item}}</div>
                     <input-cell title="维修单号" disabled=true v-model="RepairStore.mReadyRepairDetail.RepairNo"></input-cell>
                     <input-cell title="报修科室" disabled=true v-model="RepairStore.mReadyRepairDetail.DepartmentName"></input-cell>
-                    <input-cell title="报修人员" disabled=true v-model="RepairStore.mReadyRepairDetail.AssignRepairPeople"></input-cell>
+                    <input-cell title="报修人员" disabled=true v-model="RepairStore.mReadyRepairDetail.RepairPeople"></input-cell>
                     <input-cell title="报修电话" disabled=true v-model="RepairStore.mReadyRepairDetail.RepairPhone"></input-cell>
                     <input-cell title="报修地址" disabled=true v-model="RepairStore.mReadyRepairDetail.RepairAddress"></input-cell>
                     <input-cell title="故障问题" disabled=true v-model="RepairStore.mReadyRepairDetail.FaultType"></input-cell>
