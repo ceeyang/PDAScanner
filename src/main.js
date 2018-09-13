@@ -88,7 +88,7 @@ Vue.prototype.get=function(url, params, next){
     rootUrl = ""
 
     var token = '';
-    for (var item in params) {
+    for (var item in params) {s
         token += (token.length<1?'':'&') + item + '=' + (params[item] ==  undefined ? "" : params[item]);
     }
     token = token + MD5KEY;
