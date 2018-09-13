@@ -1,4 +1,6 @@
 <template lang="html">
+
+    <!-- 申请报修 -->
     <f7-page class="apply-repair-page">
         <!-- Nav  -->
         <f7-navbar backLink :title="scanRepairStore.mViewType=='apply'?'申请报修':'查看详情'"></f7-navbar>
@@ -98,6 +100,13 @@ export default {
         this.username = localStorage.UserName
 
         this.viewType = localStorage.repairViewType
+
+        /// 判断当前是否选择了报修用户, 如果没有, 则设置当前登录用户为默认报修人员
+        if (this.scanRepairStore.mRepairUser.UserCode == ""   ||
+            this.scanRepairStore.mRepairUser.UserCode == null ){
+            this.scanRepairStore.mRepairUser.UserCode = localStorage.account
+            this.scanRepairStore.mRepairUser.UserName = localStorage.UserName
+        }
     },
 
     methods: {
@@ -223,9 +232,6 @@ export default {
                 this.toastCenter.open();
                 return
             }
-
-            debugger
-            console.log(this.scanRepairStore.mRepairNumber);
 
             let params = {
                 "EquId": this.itemData.EquCode,

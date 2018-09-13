@@ -121,18 +121,12 @@ export default {
             // 维修
             if (itemTypeID == "1") {
 
-                const toast = this.$createToast({
-                    time: 0,
-                    txt: '加载中...',
-                    mask: true
-                })
-                toast.show()
                 // 待派工
                 if (itemStatus == "1") {
                     this.RepairStore.mReadyRepairItme = item
                     let vm = this
                     this.getReadyRepairDetail(itemRepairOrder).then((data)=>{
-                        toast.hide()
+                        // toast.hide()
                         this.RepairStore.mReadyRepairDetail = data.RepairInfo
                         vm.$f7router.navigate('/readyrepair/');
                     })
@@ -143,7 +137,7 @@ export default {
                     this.RepairStore.mTakeOrderItme = item
                     let vm = this
                     this.getReadyRepairDetail(itemRepairOrder).then((data)=>{
-                        toast.hide()
+                        // toast.hide()
                         vm.RepairStore.mTakeOrderItmeDetail = data.RepairInfo
                         vm.$f7router.navigate('/takeorders/');
                     })
@@ -172,12 +166,12 @@ export default {
 
         getEquInfo(EquId) {
 
-            const toast = this.$createToast({
-                time: 0,
-                txt: '加载中...',
-                mask: true
-            })
-            toast.show()
+            // const toast = this.$createToast({
+            //     time: 0,
+            //     txt: '加载中...',
+            //     mask: true
+            // })
+            // toast.show()
 
             let params = {
                 "EquNo": EquId,
@@ -201,18 +195,20 @@ export default {
                     }
                     vm.toastCenter.open();
                 }
-                toast.hide()
+                //toast.hide()
             });
 
-            setTimeout(function() {
-                toast.hide()
-            }, 2000);
+            // setTimeout(function() {
+            //     toast.hide()
+            // }, 2000);
         },
 
+        /// 下拉加载更多
         onPullingDown(scroll) {
             this.getChatsList(scroll)
         },
 
+        /// 上啦加载更多
         onPullingUp(scroll) {
 
             setTimeout(function() {
@@ -231,12 +227,12 @@ export default {
         },
 
         getChatsList(scroll) {
-            const toast = this.$createToast({
-                time: 0,
-                txt: '加载中',
-                mask: true
-            })
-            toast.show()
+            // const toast = this.$createToast({
+            //     time: 0,
+            //     txt: '加载中',
+            //     mask: true
+            // })
+            // toast.show()
 
             let params = {
                 "State": '1',
@@ -269,14 +265,14 @@ export default {
                 if (scroll && scroll.forceUpdate) {
                     scroll.forceUpdate();
                 }
-                toast.hide()
+                // toast.hide()
             });
 
-            if (scroll && scroll.forceUpdate) {
-                setTimeout(function() {
-                    scroll.forceUpdate();
-                }, 5000);
-            }
+            // if (scroll && scroll.forceUpdate) {
+            //     setTimeout(function() {
+            //         scroll.forceUpdate();
+            //     }, 5000);
+            // }
         },
 
         // 导航栏点击事件

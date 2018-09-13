@@ -70,6 +70,10 @@ export default {
                 done();
                 toast.hide()
             })
+
+            setTimeout(function () {
+                toast.hide()
+            }, 5000);
         },
 
 

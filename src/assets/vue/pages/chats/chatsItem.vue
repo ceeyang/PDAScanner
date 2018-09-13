@@ -16,7 +16,7 @@
                 {{item.OrderNo}}
             </div>
             <div class="chats-content-subtitle last">
-                {{item.RepairDate}}
+                {{funConvertUTCToNormalDateTime(item.RepairDate)}}
             </div>
         </div>
         <div class="chats-content-status">
@@ -73,7 +73,18 @@ export default {
             else {
                 return "计量 "
             }
+        },
+
+
+
+        funConvertUTCToNormalDateTime(utc) {
+          var date = new Date(utc);
+          var ndt;
+          // ndt = date.getUTCDate() + "/" + (date.getUTCMonth() + 1) + "/" + date.getUTCFullYear() + " " + date.getUTCHours() + ":" + date.getUTCMinutes() + ":" + date.getUTCSeconds();
+          ndt = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate()
+          return ndt;
         }
+
     }
 
 }

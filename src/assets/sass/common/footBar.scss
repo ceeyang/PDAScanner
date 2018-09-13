@@ -1,44 +1,47 @@
-.home-foot{
-
+.home-foot {
     position: fixed;
     right: 0;
     left: 0;
     bottom: 0;
     z-index: 1;
-    height: 40px;
+    height: 49px;
 
-    .top-line{
-        top: 0px;
-        left: 0px;
+    .top-line {
+        top: 0;
+        left: 0;
         width: 100%;
         height: 1px;
         background-color: $main-line-color;
     }
 
-    .foot-content{
-        border: 1px solid $color-Light-grey;
+    .foot-content {
+
         display: flex;
         background-color: white;
-        height: 55px;
-        .home-item{
-            height: 40px;
-          color: #555;
-          font-weight: 600;
-          font-size: $small-font;
-          flex:1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          .iconfont{
-            font-size: 25px;
-          }
-          background-color: white;
-          color: $main-color-subtitle;
+        height: 49px;
+        justify-content: space-between;
+
+        .tabbar-item {
+            height: 49px;
+            color: #555;
+            font-weight: 600;
+            font-size: $small-font;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            .iconfont {
+                font-size: 20px;
+            }
+            background-color: white;
+            color: $main-color-subtitle;
         }
-        .is-selected{
-          background-color: $color-Light-grey;
-          color: $main-background-color;
+
+        .is-selected {
+            // background-color: $color-Light-grey;
+            color: $main-background-color;
         }
     }
 }

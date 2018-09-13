@@ -76,7 +76,7 @@ export default {
     },
 
     watch: {
-        falutDes: function(newValue){
+        falutDes: function(newValue) {
             console.log(newValue);
         }
     },
@@ -112,8 +112,20 @@ export default {
          * 派工
          */
         readyButtonAction() {
-            this.repairCheckOrder().then((res)=>{
-                console.log(res);
+            const vm = this
+            this.repairCheckOrder().then((res) => {
+                this.$f7router.back()
+                const toast = vm.$createToast({
+                    time: 0,
+                    txt: "接单成功",
+                    type: 'correct',
+                    mask: true,
+                })
+                toast.show()
+                setTimeout(function() {
+                    toast.hide()
+                    vm.$f7router.back()
+                }, 2000);
             })
 
         },
@@ -122,7 +134,20 @@ export default {
          * 忽略派工
          */
         ignoreButtonAction() {
-
+            const vm = this
+            this.ignoreDeviceOrder().then((res) => {
+                const toast = vm.$createToast({
+                    time: 0,
+                    txt: "忽略成功",
+                    type: 'correct',
+                    mask: true,
+                })
+                toast.show()
+                setTimeout(function() {
+                    toast.hide()
+                    vm.$f7router.back()
+                }, 2000);
+            })
         }
     },
 

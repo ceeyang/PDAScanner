@@ -51,7 +51,7 @@ export const sendDeviceOrder = ({
   return new Promise((resolve, reject) => {
     // 清空当前资产维修记录列表
     state.mCurrentRepairProcessList = []
-    debugger
+
     let params = {
       "RepairOrder": state.mReadyRepairDetail.RepairNo.replace(/\s*/g, ""),
       "AssignUserId": state.mSearchRepairUser.UserCode.replace(/\s*/g, ""),
@@ -63,7 +63,7 @@ export const sendDeviceOrder = ({
     };
     Vue.prototype.post(Vue.prototype.api.sendOrder, params, function(response) {
       var data = JSON.parse(response);
-      debugger
+
       if (data.Status) {
         state.mCurrentRepairProcessList = data.RepairProcessList
         resolve(data)
@@ -90,11 +90,11 @@ export const ignoreDeviceOrder = ({
       "RepairOrder": state.mReadyRepairDetail.RepairNo.replace(/\s*/g, ""),
       "UserCode": localStorage.account,
     };
-    debugger
+
     console.log(params);
     Vue.prototype.post(Vue.prototype.api.dispatchIgnore, params, function(response) {
       var data = JSON.parse(response);
-      debugger
+
       if (data.Status) {
 
         resolve(true)

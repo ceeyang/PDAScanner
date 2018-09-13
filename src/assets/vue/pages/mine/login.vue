@@ -105,7 +105,8 @@ export default {
         }
 
         if (localStorage.isLogined == '1') {
-            this.$f7router.navigate('/tabs/', {"animate": true});
+            // this.$f7router.navigate('/tabs/', {"reloadCurrent":true});
+            this.$f7router.navigate('/home/', {"reloadCurrent":true, "domCache": true});
         }
 
     },
@@ -130,7 +131,8 @@ export default {
             }
 
             this.popupVisible = false;
-            this.$f7router.navigate('/tabs/',{"reloadCurrent":true});
+            // this.$f7router.navigate('/tabs/',{"reloadCurrent":true});
+            this.$f7router.navigate('/home/', {"reloadCurrent":true, "domCache": true});
             localStorage.isLogined = '1';
         },
 

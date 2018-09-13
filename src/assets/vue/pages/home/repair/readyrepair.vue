@@ -1,3 +1,7 @@
+<!--         -->
+<!-- 维修派单 -->
+<!--        -->
+
 <template lang="html">
     <f7-page class="ready-repair-page">
         <!-- Nav  -->
@@ -39,18 +43,15 @@
                 <!-- 派修人员 -->
                 <div v-if="index==3" class="content-bottom">
                     <div class="content-header">{{item}}</div>
-                    <input-cell title="派修人员" placeholder="请选择派修人员"  disabled=true v-model="RepairStore.mSearchRepairUser.UserName"></input-cell>
+                    <input-cell type="DataInput" title="派修人员" placeholder="请选择派修人员" :value="RepairStore.mSearchRepairUser.UserName" :inputClickAction="chooseUserButtonAction"></input-cell>
                 </div>
 
             </li>
         </cube-scroll>
 
-        <div class="content-bottom">
-            <div @click="chooseUserButtonAction" class="choose-user-bottom">请选择工程师</div>
-            <div class="ready-repair-bottom">
-                <cube-button class="bottom-btn" @click="readyButtonAction">派工</cube-button>
-                <cube-button class="bottom-btn" @click="ignoreButtonAction">忽略</cube-button>
-            </div>
+        <div class="ready-repair-bottom">
+            <cube-button class="bottom-btn" @click="readyButtonAction">派工</cube-button>
+            <cube-button class="bottom-btn" @click="ignoreButtonAction">忽略</cube-button>
         </div>
     </f7-page>
 </template>
@@ -141,7 +142,6 @@ export default {
             let vm = this
             this.sendDeviceOrder().then((data)=>{
                 if (data.Status) {
-                    debugger
                     const toast = vm.$createToast({
                         time: 0,
                         txt: "派单成功",
