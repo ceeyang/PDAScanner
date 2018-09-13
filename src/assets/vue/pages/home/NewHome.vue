@@ -16,12 +16,15 @@
     <f7-swiper pagination class="home-page-swiper">
         <f7-swiper-slide>
             <img class="swiper-images" src="../../../images/swiperImage1.png" />
+
         </f7-swiper-slide>
         <f7-swiper-slide>
             <img class="swiper-images" src="../../../images/swiperImage0.png" />
+
         </f7-swiper-slide>
         <f7-swiper-slide>
             <img class="swiper-images" src="../../../images/swiperImage2.png" />
+
         </f7-swiper-slide>
     </f7-swiper>
 
@@ -40,7 +43,9 @@
 
 <script>
 import HomeItem from './homeItem';
-import {exec} from 'assets/js/common/androidPlugin.js'
+import {
+    exec
+} from 'assets/js/common/androidPlugin.js'
 import * as Env from 'assets/js/common/env.js'
 import {
     mapState,
@@ -65,33 +70,41 @@ export default {
 
     mounted() {
         this.companyName = this.globalSetting.companyName;
-        if (Env.isAndroid) {//android platform
-            exec('ScannerPlugin','init',[],this.handleCode,()=>{})
+        if (Env.isAndroid) { //android platform
+            exec('ScannerPlugin', 'init', [], this.handleCode, () => {})
         }
-    },
 
+        let $$ = this.$$
+        $$(document).on('page:beforein', function (e) {
+            console.log("document: page:beforein");
+        })
+
+        this.$$("document").on('tab:show', function (e) {
+            console.log("tab:show");
+        })
+    },
 
     beforeCreate: function() {
-        //('创建vue实例前',this);
+        console.log('创建vue实例前', this);
     },
     created: function() {
-        //('创建vue实例后',this);
+        console.log('创建vue实例后', this);
     },
     beforeMount: function() {
-        //('挂载到dom前',this);
+        console.log('挂载到dom前', this);
     },
 
     beforeUpdate: function() {
-        //('数据变化更新前',this);
+        console.log('数据变化更新前', this);
     },
     updated: function() {
-        //('数据变化更新后',this);
+        console.log('数据变化更新后', this);
     },
     beforeDestroy: function() {
-        //('vue实例销毁前',this);
+        console.log('vue实例销毁前', this);
     },
     destroyed: function() {
-        //('vue实例销毁后',this);
+        console.log('vue实例销毁后', this);
     },
 
     methods: {
@@ -120,7 +133,7 @@ export default {
             }, 1000);
         },
 
-        handleCode(res){
+        handleCode(res) {
             console.log(res);
 
             const toast = this.$createToast({
@@ -147,15 +160,15 @@ export default {
                     vm.toastCenter.open();
                 }
             })
-            setTimeout(function () {
+            setTimeout(function() {
                 toast.hide()
             }, 3000);
         },
 
         barcodeScanner() {
             let vm = this
-            if (Env.isAndroid) {//android platform
-                exec('ScannerPlugin','camera',[],this.handleCode,(error)=>{
+            if (Env.isAndroid) { //android platform
+                exec('ScannerPlugin', 'camera', [], this.handleCode, (error) => {
                     if (!vm.toastCenter) {
                         vm.toastCenter = vm.$f7.toast.create({
                             text: "扫码失败, 请重试",
@@ -166,7 +179,7 @@ export default {
                     vm.toastCenter.open();
                 })
             }
-            if(Env.isIOS){
+            if (Env.isIOS) {
 
             }
         },

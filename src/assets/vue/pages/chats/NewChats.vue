@@ -1,5 +1,5 @@
 <template>
-<f7-page class="chats-page no-swipeback">
+<f7-page cached tab class="chats-page no-swipeback">
     <f7-navbar sliding title="消息"></f7-navbar>
 
     <!-- segment 选择器 -->
@@ -63,6 +63,12 @@ export default {
         }
     },
 
+    on: {
+        show() {
+            console.log("page show");
+        },
+    },
+
     computed: {
         ...mapState([
             'RepairStore',
@@ -106,8 +112,6 @@ export default {
         itemClick(item) {
 
             console.log(item);
-
-
 
             // 去除空格
             let itemTypeID = item.TypeId.replace(/\s*/g, "")
@@ -229,7 +233,7 @@ export default {
         getChatsList(scroll) {
             const toast = this.$createToast({
                 time: 0,
-                txt: '加载中...',
+                txt: '加载中',
                 mask: true
             })
             toast.show()

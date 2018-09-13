@@ -12,20 +12,17 @@
 // Import Routes...
 import routes from './routes.js'
 
-/// Default ios theme
-let theme = 'ios';
-if (document.location.search.indexOf('theme=') >= 0) {
-  theme = document.location.search.split('theme=')[1].split('&')[0];
-}
-
 
 export default {
     data() {
         return {
             f7params: {
-                theme,
+                name: "医修",
+                theme: "ios",
                 routes,
+                cache: true,
                 id: 'io.framework7.testapp',
+                swipeBackPage: false
             }
         }
     }

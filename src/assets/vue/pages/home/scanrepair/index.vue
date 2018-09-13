@@ -31,7 +31,7 @@
         </template>
 
 
-        <cube-button class="scan-repair-add-btn" @click="newApplyButton">新增</cube-button>
+        <!-- <cube-button class="scan-repair-add-btn" @click="newApplyButton">新增</cube-button> -->
 
     </f7-page>
 </template>

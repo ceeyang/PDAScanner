@@ -1,4 +1,3 @@
-
 // Import Vue
 import Vue from 'vue'
 
@@ -21,7 +20,7 @@ import FontAwesome from 'font-awesome/css/font-awesome.css'
 import AppStyles from './assets/sass/main.scss'
 
 // Import gobal css
-import  gobal from './assets/css/gobal.css'
+import gobal from './assets/css/gobal.css'
 
 // Import App Component
 import app from './main.vue'
@@ -60,41 +59,41 @@ import md5 from 'js-md5';
 let MD5KEY = 'YTDF5EF3A6174564E5981A446158F106'
 
 //封装全局的api请求
-Vue.prototype.api=api
+Vue.prototype.api = api
 
 //封装公共请求(post)
-Vue.prototype.post=function(url, params, next){
-    let rootUrl = localStorage.getItem("rootUrl")
+Vue.prototype.post = function(url, params, next) {
+  let rootUrl = localStorage.getItem("rootUrl")
 
-    // code by yangxichuan
-    // 置空可以使用浏览器
-    rootUrl = ""
+  // code by yangxichuan
+  // 置空可以使用浏览器
+  rootUrl = ""
 
-    var token = '';
-    for (var item in params) {
-        token += (token.length<1?'':'&') + item + '=' + (params[item] ==  undefined ? "" : params[item]);
-    }
-    token = token + MD5KEY;
-    token = md5(token);
-    params.Token = token;
-    return Framework7.request.post(rootUrl+url, params, next);
+  var token = '';
+  for (var item in params) {
+    token += (token.length < 1 ? '' : '&') + item + '=' + (params[item] == undefined ? "" : params[item]);
+  }
+  token = token + MD5KEY;
+  token = md5(token);
+  params.Token = token;
+  return Framework7.request.post(rootUrl + url, params, next);
 }
 
-Vue.prototype.get=function(url, params, next){
-    let rootUrl = localStorage.getItem("rootUrl")
+Vue.prototype.get = function(url, params, next) {
+  let rootUrl = localStorage.getItem("rootUrl")
 
-    // code by yangxichuan
-    // 置空可以使用浏览器
-    rootUrl = ""
+  // code by yangxichuan
+  // 置空可以使用浏览器
+  rootUrl = ""
 
-    var token = '';
-    for (var item in params) {s
-        token += (token.length<1?'':'&') + item + '=' + (params[item] ==  undefined ? "" : params[item]);
-    }
-    token = token + MD5KEY;
-    token = md5(token);
-    params.Token = token;
-    return Framework7.request.get(rootUrl+url, params, next);
+  var token = '';
+  for (var item in params) {
+    token += (token.length < 1 ? '' : '&') + item + '=' + (params[item] == undefined ? "" : params[item]);
+  }
+  token = token + MD5KEY;
+  token = md5(token);
+  params.Token = token;
+  return Framework7.request.get(rootUrl + url, params, next);
 }
 
 Vue.options.root = projectConfig.serverPath
@@ -102,14 +101,14 @@ Vue.options.timeout = 3000;
 
 
 Vue.mixin({
-    data () {
-        return {
-            globalSetting: projectConfig,
-            config: {
-                "PageSize": 10,
-            }
-        }
+  data() {
+    return {
+      globalSetting: projectConfig,
+      config: {
+        "PageSize": 10,
+      }
     }
+  }
 })
 
 // Init Vue App
@@ -117,6 +116,24 @@ export default new Vue({
   // Root Element
   el: '#app',
   store,
+
+
+  // App root data
+  data() {
+    return {
+      // Framework7 parameters that we pass to <f7-app> component
+      f7params: {
+        // Array with app routes
+        // routes: routes,
+        // App Name
+        name: '医修',
+        // App id
+        id: 'com.ceeyang.pdascanner',
+        // ...
+      }
+    };
+  },
+
   render: c => c('app'),
   components: {
     app

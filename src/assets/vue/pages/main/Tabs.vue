@@ -1,5 +1,5 @@
 <template>
-<f7-page tabbar-fixed with-subnavbar>
+<f7-page tabbar-fixed with-subnavbar cached no-page-content>
 
     <!-- 导航栏 -->
     <!-- <f7-navbar sliding title="消息"></f7-navbar> -->
@@ -64,6 +64,12 @@ export default {
         } else {
             this.isLogined = true
         }
+
+        let $$ = this.$$
+
+        $$('document').on('page:beforein', function (e) {
+
+        });
     },
 
     computed: {}

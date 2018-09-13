@@ -78,26 +78,26 @@ export default {
 
 
     beforeCreate: function() {
-        //('创建vue实例前',this);
+        console.log('创建vue实例前',this);
     },
     created: function() {
-        //('创建vue实例后',this);
+        console.log('创建vue实例后',this);
     },
     beforeMount: function() {
-        //('挂载到dom前',this);
+        console.log('挂载到dom前',this);
     },
 
     beforeUpdate: function() {
-        //('数据变化更新前',this);
+        console.log('数据变化更新前',this);
     },
     updated: function() {
-        //('数据变化更新后',this);
+        console.log('数据变化更新后',this);
     },
     beforeDestroy: function() {
-        //('vue实例销毁前',this);
+        console.log('vue实例销毁前',this);
     },
     destroyed: function() {
-        //('vue实例销毁后',this);
+        console.log('vue实例销毁后',this);
     },
 
     methods: {

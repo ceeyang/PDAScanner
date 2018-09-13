@@ -1,5 +1,5 @@
 <template>
-<f7-page ptr @ptr:refresh="headerRefreshAction" infinite :infinite-distance="50" :infinite-preloader="showPreloader" @infinite="footerRefreshAction">
+<f7-page cached ptr @ptr:refresh="headerRefreshAction" infinite :infinite-distance="50" :infinite-preloader="showPreloader" @infinite="footerRefreshAction">
 
     <f7-navbar backLink title="我的审批"></f7-navbar>
     <f7-list media-list>
