@@ -135,7 +135,7 @@ export default {
         newApplyButton() {
             localStorage.removeItem('ItemData');
             localStorage.setItem('repairViewType', "apply");
-            this.$f7router.navigate('/newRepair/');
+            this.$f7router.navigate('/newRepair/',{"domCache":true});
         },
 
         searchButtonAction() {

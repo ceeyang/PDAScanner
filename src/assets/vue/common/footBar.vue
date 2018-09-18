@@ -44,11 +44,11 @@
             switchFootBar(val){
                 let _this = this
                 if ('chats' === val) {
-                    this.$f7router.navigate('/chats/', {"animate":false});
+                    this.$f7router.refreshPage('/chats/', {"history":true, "pushState":true});
                 } else if ('home' === val) {
-                    _this.$f7router.navigate('/home/', {"animate":false});
+                    _this.$f7router.refreshPage('/home/');
                 } else if ('mine' == val) {
-                    _this.$f7router.navigate('/mine/', {"animate":false});
+                    _this.$f7router.refreshPage('/mine/', {"history":true});
                 }
             }
         },

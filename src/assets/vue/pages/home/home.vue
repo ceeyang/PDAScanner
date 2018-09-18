@@ -142,7 +142,7 @@ export default {
                 toast.hide()
                 if (data.Status && data.EquModel !== null) {
                     vm.scanRepairStore.mViewType = "apply"
-                    vm.$f7router.navigate("/applyrepair/")
+                    vm.$f7router.navigate("/applyrepair/",{"domCache":true})
                 } else {
                     if (!vm.toastCenter) {
                         vm.toastCenter = vm.$f7.toast.create({

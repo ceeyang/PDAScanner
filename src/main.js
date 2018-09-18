@@ -127,6 +127,8 @@ export default new Vue({
         // routes: routes,
         // App Name
         name: '医修',
+        cache: true,
+        domCache: true,
         // App id
         id: 'com.ceeyang.pdascanner',
         // ...
