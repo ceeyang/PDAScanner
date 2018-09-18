@@ -1,7 +1,7 @@
 export default [{
     path: '/',
-    component: require('./assets/vue/pages/mine/login.vue'),
-    // component: require('./assets/vue/pages/main/Tabs.vue'),
+    // component: require('./assets/vue/pages/mine/login.vue'),
+    component: require('./assets/vue/pages/main/Tabs.vue'),
     domCache: true,
   },
   {
@@ -177,4 +177,11 @@ export default [{
     domCache: true,
   },
 
+
+  /// 设置主题
+  {
+    path: '/colortheme/',
+    component: require('./assets/vue/pages/mine/themes.vue'),
+    domCache: true,
+  },
 ]

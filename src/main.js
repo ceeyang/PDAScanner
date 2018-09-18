@@ -132,6 +132,8 @@ export default new Vue({
         // App id
         id: 'com.ceeyang.pdascanner',
         // ...
+        stackPages:true,
+        animateWithJS:true
       }
     };
   },

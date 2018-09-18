@@ -2,10 +2,10 @@
     <!-- App -->
     <f7-app :params="f7params">
         <f7-statusbar></f7-statusbar>
-        <!-- <f7-panel left cover>
+        <f7-panel left cover>
             <f7-view url="/panel-left/" links-view=".view-main" />
-        </f7-panel> -->
-        <f7-view url="/" :main="true" class="ios-edges"></f7-view>
+        </f7-panel>
+        <f7-view url="/" :main="true" :stack-pages="true" class="ios-edges"></f7-view>
     </f7-app>
 </template>
 <script>
@@ -21,8 +21,7 @@ export default {
                 theme: "ios",
                 routes,
                 cache: true,
-                id: 'io.framework7.testapp',
-                swipeBackPage: false
+                id: 'com.ceeyang.pdascanner',
             }
         }
     }
