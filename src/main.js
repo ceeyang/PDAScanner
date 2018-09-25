@@ -67,7 +67,7 @@ Vue.prototype.post = function(url, params, next) {
 
   // code by yangxichuan
   // 置空可以使用浏览器
-  // rootUrl = ""
+  rootUrl = ""
 
   var token = '';
   for (var item in params) {
@@ -84,7 +84,7 @@ Vue.prototype.get = function(url, params, next) {
 
   // code by yangxichuan
   // 置空可以使用浏览器
-  // rootUrl = ""
+  rootUrl = ""
 
   var token = '';
   for (var item in params) {

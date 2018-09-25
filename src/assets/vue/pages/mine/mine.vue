@@ -42,6 +42,15 @@ export default {
         }
     },
 
+    mounted() {
+        if (localStorage.UserName) {
+            this.user.name = localStorage.UserName
+        }
+
+        let $$ = this.$$
+        
+    },
+
     methods: {
 
     },

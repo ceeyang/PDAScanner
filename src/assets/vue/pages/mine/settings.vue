@@ -40,21 +40,18 @@ export default {
 
     methods:{
         logoutpop(){
-            console.log('logoutpop');
             this.show = true;
-            console.log(this.show);
         },
 
         logout(){
             this.show = false;
             localStorage.setItem('isLogined','0');
-            this.$f7router.navigate('/', {"animate":false});
+            this.$f7router.back('/', {"force": true, "animate":false});
+            // this.$f7router.navigate('/', {"animate":false});
         },
 
         cancel(){
-            console.log('cancel');
             this.show = false;
-            console.log(this.show);
         },
 
         NavBack() {

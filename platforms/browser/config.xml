@@ -2,9 +2,9 @@
 <widget id="com.ceeyang.pdascanner" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <hook src="hooks/hookers.js" type="before_prepare" />
     <hook src="hooks/beforedep.js" type="before_deploy" />
-    <name>医修</name>
+    <name>pdascanner</name>
     <description>
-        医疗管理系统, 深圳市源泰达科技有限公司出品.
+        Brand new cordova project!
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team

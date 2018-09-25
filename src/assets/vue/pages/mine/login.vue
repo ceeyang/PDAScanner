@@ -96,8 +96,7 @@ export default {
         }
 
         if (localStorage.isLogined == '1') {
-            this.$f7router.navigate('/tabs/', {"reloadCurrent":true});
-            // this.$f7router.navigate('/');
+            this.$f7router.navigate('/tabs/', {"animate":false});
         }
 
     },
@@ -122,8 +121,12 @@ export default {
             }
 
             this.popupVisible = false;
-            this.$f7router.navigate('/',{"reloadCurrent":true});
-            // this.$f7router.navigate('/');
+            // if (localStorage.logoutpop == 1) {
+            //     this.$f7router.back('/tabs/', {"animate":false});
+            // } else {
+            //     this.$f7router.navigate('/tabs/', {"animate":false});
+            // }
+            this.$f7router.navigate('/tabs/', {"animate":false});
             localStorage.isLogined = '1';
         },
 

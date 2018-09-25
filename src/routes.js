@@ -1,10 +1,12 @@
 export default [{
+    name: 'root',
     path: '/',
     component: require('./assets/vue/pages/mine/login.vue'),
     // component: require('./assets/vue/pages/main/Tabs.vue'),
     domCache: true,
   },
   {
+    name: 'tabs',
     path: '/tabs/',
     component: require('./assets/vue/pages/main/Tabs.vue'),
     domCache: true,

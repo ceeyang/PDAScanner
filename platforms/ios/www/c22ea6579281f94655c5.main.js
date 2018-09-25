@@ -69960,7 +69960,7 @@ exports.default = {
             }
 
             this.popupVisible = false;
-            this.$f7router.navigate('/', { "reloadCurrent": true });
+            this.$f7router.navigate('/');
             // this.$f7router.navigate('/');
             localStorage.isLogined = '1';
         },
