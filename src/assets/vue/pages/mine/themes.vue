@@ -51,6 +51,7 @@
         const self = this;
         const app = self.$f7;
         const currentColorClass = app.root[0].className.match(/color-theme-([a-z]*)/);
+        console.log(currentColorClass);
         if (currentColorClass) app.root.removeClass(currentColorClass[0]);
         app.root.addClass(`color-theme-${color}`);
       },

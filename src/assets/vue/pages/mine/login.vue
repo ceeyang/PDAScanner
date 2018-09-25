@@ -121,11 +121,6 @@ export default {
             }
 
             this.popupVisible = false;
-            // if (localStorage.logoutpop == 1) {
-            //     this.$f7router.back('/tabs/', {"animate":false});
-            // } else {
-            //     this.$f7router.navigate('/tabs/', {"animate":false});
-            // }
             this.$f7router.navigate('/tabs/', {"animate":false});
             localStorage.isLogined = '1';
         },

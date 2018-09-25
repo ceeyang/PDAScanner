@@ -47,7 +47,6 @@ export default {
             this.show = false;
             localStorage.setItem('isLogined','0');
             this.$f7router.back('/', {"force": true, "animate":false});
-            // this.$f7router.navigate('/', {"animate":false});
         },
 
         cancel(){
@@ -57,10 +56,6 @@ export default {
         NavBack() {
                 this.$f7router.back()
             },
-
-
-
-
     }
 
 }

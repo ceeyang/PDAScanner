@@ -29,10 +29,9 @@
 </template>
 
 <script>
-import Home from '../home/NewHome';
 import Chats from '../chats/NewChats';
+import Home from '../home/NewHome';
 import Mine from '../mine/NewMine';
-import Login from '../mine/login';
 
 export default {
     name: 'Tabs',
@@ -47,17 +46,8 @@ export default {
         'home-page': Home,
         'chats-page': Chats,
         'mine-page': Mine,
-        'login-page': Login,
     },
 
-    mounted() {
-        // if (localStorage.isLogined != '1') {
-        //     this.isLogined = false
-        //     this.$f7router.navigate('/login/', {"animate": false});
-        // } else {
-        //     this.isLogined = true
-        // }
-    },
 
     computed: {}
 };

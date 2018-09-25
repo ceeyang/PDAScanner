@@ -1,5 +1,5 @@
 <template>
-    <f7-page class="mine-page no-swipeback">
+    <f7-page class="no-swipeback">
 
         <!-- Nav -->
         <!-- 封装该组件后 ios 下显示异常, 暂不知原因 -->
@@ -8,10 +8,16 @@
             <f7-nav-title title='我'></f7-nav-title>
         </f7-navbar>
 
-        <f7-list class="components-list">
-            <f7-list-item class="user-info-item" link="/settings/"panel-close>
+        <f7-list>
+            <!-- <f7-list-item link="/settings/"panel-close>
                 <img class="header-image" src="../../../images/headerimg.png">
                 <span class="user-info-name">{{user.name}}</span>
+            </f7-list-item> -->
+
+            <f7-list-item
+            link="#"
+            :title={{user.name}}
+            <img slot="media" src="http://120.78.92.212:8066/BLadmin/img/login_logo.png" width="44" />
             </f7-list-item>
         </f7-list>
 
@@ -48,7 +54,7 @@ export default {
         }
 
         let $$ = this.$$
-        
+
     },
 
     methods: {

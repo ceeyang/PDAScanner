@@ -3,7 +3,7 @@
         <div class="content-name">
             {{title}}
         </div>
-        :
+        
         <div class="content-value">
             {{value}}
         </div>

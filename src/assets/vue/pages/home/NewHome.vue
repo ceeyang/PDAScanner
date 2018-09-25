@@ -16,36 +16,16 @@
     <f7-swiper pagination class="home-page-swiper">
         <f7-swiper-slide>
             <img class="swiper-images" src="../../../images/swiperImage1.png" />
-
-
-
-
-
-
-
         </f7-swiper-slide>
+
         <f7-swiper-slide>
             <img class="swiper-images" src="../../../images/swiperImage0.png" />
-
-
-
-
-
-
-
         </f7-swiper-slide>
+
         <f7-swiper-slide>
             <img class="swiper-images" src="../../../images/swiperImage2.png" />
-
-
-
-
-
-
-
         </f7-swiper-slide>
     </f7-swiper>
-
 
     <div class="home-page-content">
         <home-item text="科室报修" :href='/scanrepair/'> <i class="iconfont">&#xe617;</i> </home-item>
