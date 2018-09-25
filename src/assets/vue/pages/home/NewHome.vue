@@ -19,15 +19,27 @@
 
 
 
+
+
+
+
         </f7-swiper-slide>
         <f7-swiper-slide>
             <img class="swiper-images" src="../../../images/swiperImage0.png" />
 
 
 
+
+
+
+
         </f7-swiper-slide>
         <f7-swiper-slide>
             <img class="swiper-images" src="../../../images/swiperImage2.png" />
+
+
+
+
 
 
 
@@ -80,29 +92,29 @@ export default {
             exec('ScannerPlugin', 'init', [], this.handleCode, () => {})
         }
     },
-    // 
-    // beforeCreate: function() {
-    //     console.log('创建vue实例前', this);
-    // },
-    // created: function() {
-    //     console.log('创建vue实例后', this);
-    // },
-    // beforeMount: function() {
-    //     console.log('挂载到dom前', this);
-    // },
-    //
-    // beforeUpdate: function() {
-    //     console.log('数据变化更新前', this);
-    // },
-    // updated: function() {
-    //     console.log('数据变化更新后', this);
-    // },
-    // beforeDestroy: function() {
-    //     console.log('vue实例销毁前', this);
-    // },
-    // destroyed: function() {
-    //     console.log('vue实例销毁后', this);
-    // },
+
+    beforeCreate: function() {
+        // console.log('创建vue实例前', this);
+    },
+    created: function() {
+        // console.log('创建vue实例后', this);
+    },
+    beforeMount: function() {
+        // console.log('挂载到dom前', this);
+    },
+
+    beforeUpdate: function() {
+        // console.log('数据变化更新前', this);
+    },
+    updated: function() {
+        // console.log('数据变化更新后', this);
+    },
+    beforeDestroy: function() {
+        // console.log('vue实例销毁前', this);
+    },
+    destroyed: function() {
+        // console.log('vue实例销毁后', this);
+    },
 
     methods: {
         ...mapActions([
@@ -177,7 +189,29 @@ export default {
                 })
             }
             if (Env.isIOS) {
-
+                cordova.plugins.barcodeScanner.scan(
+                    function(result) {
+                        alert("We got a barcode\n" +
+                            "Result: " + result.text + "\n" +
+                            "Format: " + result.format + "\n" +
+                            "Cancelled: " + result.cancelled);
+                    },
+                    function(error) {
+                        alert("Scanning failed: " + error);
+                    }, {
+                        preferFrontCamera: true, // iOS and Android
+                        showFlipCameraButton: true, // iOS and Android
+                        showTorchButton: true, // iOS and Android
+                        torchOn: true, // Android, launch with the torch switched on (if available)
+                        saveHistory: true, // Android, save scan history (default false)
+                        prompt: "Place a barcode inside the scan area", // Android
+                        resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+                        formats: "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+                        orientation: "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+                        disableAnimations: true, // iOS
+                        disableSuccessBeep: false // iOS and Android
+                    }
+                );
             }
         },
     },
