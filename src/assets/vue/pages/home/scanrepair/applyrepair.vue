@@ -42,7 +42,7 @@
 
         </div>
 
-        <cube-button v-if="scanRepairStore.mViewType=='apply'" @click="applyButtonAction" class="ready-repair-bottom">申请报修</cube-button>
+        <cube-button v-show="isOriginHei" v-if="scanRepairStore.mViewType=='apply'" @click="applyButtonAction" class="ready-repair-bottom">申请报修</cube-button>
 
     </f7-page>
 </template>
@@ -80,7 +80,12 @@ export default {
             repairUsersArr: [],
             repairUser: [],
 
-            value: ""
+            value: "",
+
+            isOriginHei: true,
+            screenHeight: document.body.clientHeight, // 这里是给到了一个默认值 （这个很重要），
+            originHeight: document.body.clientHeight, //默认高度在watch里拿来做比较
+
         }
     },
 
@@ -102,11 +107,29 @@ export default {
         this.viewType = localStorage.repairViewType
 
         /// 判断当前是否选择了报修用户, 如果没有, 则设置当前登录用户为默认报修人员
-        if (this.scanRepairStore.mRepairUser.UserCode == ""   ||
-            this.scanRepairStore.mRepairUser.UserCode == null ){
+        if (this.scanRepairStore.mRepairUser.UserCode == "" ||
+            this.scanRepairStore.mRepairUser.UserCode == null) {
             this.scanRepairStore.mRepairUser.UserCode = localStorage.account
             this.scanRepairStore.mRepairUser.UserName = localStorage.UserName
         }
+
+        const that = this
+        window.onresize = () => {
+            return (() => {
+                window.screenHeight = document.body.clientHeight
+                that.screenHeight = window.screenHeight
+            })()
+        }
+    },
+
+    watch: {
+        screenHeight(val) {
+            if (this.originHeight != val) {
+                this.isOriginHei = false;
+            } else {
+                this.isOriginHei = true;
+            }
+        },
     },
 
     methods: {
@@ -138,8 +161,8 @@ export default {
         },
 
         NavBack() {
-                this.$f7router.back()
-            },
+            this.$f7router.back()
+        },
 
         // 遍历用户模型列表取出名称
         parseUsers() {

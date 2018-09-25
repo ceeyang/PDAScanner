@@ -1,7 +1,7 @@
 export default [{
     path: '/',
-    // component: require('./assets/vue/pages/mine/login.vue'),
-    component: require('./assets/vue/pages/main/Tabs.vue'),
+    component: require('./assets/vue/pages/mine/login.vue'),
+    // component: require('./assets/vue/pages/main/Tabs.vue'),
     domCache: true,
   },
   {
@@ -184,4 +184,10 @@ export default [{
     component: require('./assets/vue/pages/mine/themes.vue'),
     domCache: true,
   },
+  {
+    path: '/changeRoot/',
+    component: require('./assets/vue/pages/mine/changeRoot.vue'),
+    domCache: true,
+  },
+
 ]

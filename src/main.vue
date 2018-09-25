@@ -24,6 +24,21 @@ export default {
                 id: 'com.ceeyang.pdascanner',
             }
         }
+    },
+
+    mounted() {
+
+        if (localStorage.isLogined != '1') {
+            //this.$f7router.navigate('/login/', {"animate": false});
+        } else {
+            //this.$f7router.navigate('/')
+        }
+
+        let $$ = this.$$
+
+        $$('document').on('page:beforein', function (e) {
+
+        });
     }
 }
 </script>

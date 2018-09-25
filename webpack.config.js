@@ -107,7 +107,7 @@ let config = function (env) {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Credentials": "true",
             "Access-Control-Allow-Headers": "X-Requested-With,Content-Type,Accept-Ranges",
-            "Access-Control-Allow-Methods": "GET,HEAD,POST,PUT,DELETE,TRACE,OPTIONS,PATCH"
+            "Access-Control-Allow-Methods": "GET,HEAD,POST,PUT,DELETE,TRACE,OPTIONS,PATCH",
         },
         host: "0.0.0.0",
         proxy: {

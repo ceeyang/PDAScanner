@@ -17,13 +17,19 @@
         <f7-swiper-slide>
             <img class="swiper-images" src="../../../images/swiperImage1.png" />
 
+
+
         </f7-swiper-slide>
         <f7-swiper-slide>
             <img class="swiper-images" src="../../../images/swiperImage0.png" />
 
+
+
         </f7-swiper-slide>
         <f7-swiper-slide>
             <img class="swiper-images" src="../../../images/swiperImage2.png" />
+
+
 
         </f7-swiper-slide>
     </f7-swiper>
@@ -73,39 +79,30 @@ export default {
         if (Env.isAndroid) { //android platform
             exec('ScannerPlugin', 'init', [], this.handleCode, () => {})
         }
-
-        let $$ = this.$$
-        $$(document).on('page:beforein', function (e) {
-            console.log("document: page:beforein");
-        })
-
-        this.$$("document").on('tab:show', function (e) {
-            console.log("tab:show");
-        })
     },
-
-    beforeCreate: function() {
-        console.log('创建vue实例前', this);
-    },
-    created: function() {
-        console.log('创建vue实例后', this);
-    },
-    beforeMount: function() {
-        console.log('挂载到dom前', this);
-    },
-
-    beforeUpdate: function() {
-        console.log('数据变化更新前', this);
-    },
-    updated: function() {
-        console.log('数据变化更新后', this);
-    },
-    beforeDestroy: function() {
-        console.log('vue实例销毁前', this);
-    },
-    destroyed: function() {
-        console.log('vue实例销毁后', this);
-    },
+    // 
+    // beforeCreate: function() {
+    //     console.log('创建vue实例前', this);
+    // },
+    // created: function() {
+    //     console.log('创建vue实例后', this);
+    // },
+    // beforeMount: function() {
+    //     console.log('挂载到dom前', this);
+    // },
+    //
+    // beforeUpdate: function() {
+    //     console.log('数据变化更新前', this);
+    // },
+    // updated: function() {
+    //     console.log('数据变化更新后', this);
+    // },
+    // beforeDestroy: function() {
+    //     console.log('vue实例销毁前', this);
+    // },
+    // destroyed: function() {
+    //     console.log('vue实例销毁后', this);
+    // },
 
     methods: {
         ...mapActions([

@@ -8,8 +8,9 @@
         <!-- list -->
         <f7-list>
             <!-- <f7-list-item link="/modifypsd/" title="修改密码"></f7-list-item> -->
-            <f7-list-item @click='logoutpop' title="退出登录"></f7-list-item>
             <f7-list-item link="/colortheme/" title="选择主题"></f7-list-item>
+            <f7-list-item link="/changeRoot/" title="API 地址"></f7-list-item>
+            <f7-list-item @click='logoutpop' title="退出登录"></f7-list-item>
         </f7-list>
 
 

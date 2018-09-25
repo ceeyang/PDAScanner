@@ -16,15 +16,6 @@
                 <form class="login-input list form-store-data" id="demo-form">
                     <li class="item-content item-input">
                         <div class="item-inner">
-                            <div class="item-title item-label">API</div>
-                            <div class="item-input-wrap">
-                                <input v-model='mRootUrl' name="mRootUrl" type="text" placeholder="请输入 API 地址与端口号">
-                                <span class="input-clear-button"></span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item-content item-input">
-                        <div class="item-inner">
                             <div class="item-title item-label">账号</div>
                             <div class="item-input-wrap">
                                 <input v-model='user.account' name="name" type="text" placeholder="请输入您的账号">
@@ -105,8 +96,8 @@ export default {
         }
 
         if (localStorage.isLogined == '1') {
-            // this.$f7router.navigate('/tabs/', {"reloadCurrent":true});
-            this.$f7router.navigate('/home/', {"reloadCurrent":true, "domCache": true});
+            this.$f7router.navigate('/tabs/', {"reloadCurrent":true});
+            // this.$f7router.navigate('/');
         }
 
     },
@@ -131,8 +122,8 @@ export default {
             }
 
             this.popupVisible = false;
-            // this.$f7router.navigate('/tabs/',{"reloadCurrent":true});
-            this.$f7router.navigate('/home/', {"reloadCurrent":true, "domCache": true});
+            this.$f7router.navigate('/',{"reloadCurrent":true});
+            // this.$f7router.navigate('/');
             localStorage.isLogined = '1';
         },
 
@@ -201,17 +192,6 @@ export default {
                     vm.toastCenter.open();
                 }
             });
-
-            setTimeout(function () {
-                if (!this.toastCenter) {
-                    this.toastCenter = this.$f7.toast.create({
-                        text: "API 地址输入错误",
-                        closeTimeout: 2000,
-                        position: 'center',
-                    });
-                }
-                this.toastCenter.open();
-            }, 5000);
         },
 
         getRepositories() {
